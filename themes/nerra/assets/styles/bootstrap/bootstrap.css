@@ -1,0 +1,266 @@
+/*!
+ * Bluestrap v1.0
+ *
+ * Bootstrap minify to take only his fluid grid system
+ *
+ * Modify by Blue4You Developer Team
+ */
+
+.container {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 940px;
+  *zoom: 1;
+}
+
+.container:before,
+.container:after {
+  display: table;
+  content: "";
+}
+
+.container:after {
+  clear: both;
+}
+
+[class*="span"] {
+  float: left;
+  margin-left: 20px;
+}
+
+.container:before,
+.container:after {
+  display: table;
+  content: "";
+}
+
+.container:after {
+  clear: both;
+}
+
+.container [class*="span"] {
+  display: block;
+  float: left;
+  width: 100%;
+  min-height: 20px;
+  margin-left: 2.127659574%;
+  *margin-left: 2.0744680846382977%;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+      -ms-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.container [class*="span"]:first-child {
+  margin-left: 0;
+}
+
+.container .span-12 {
+  width: 99.99999998999999%;
+  *width: 99.94680850063828%;
+}
+
+.container .span-11 {
+  width: 91.489361693%;
+  *width: 91.4361702036383%;
+}
+
+.container .span-10 {
+  width: 82.97872339599999%;
+  *width: 82.92553190663828%;
+}
+
+.container .span-9 {
+  width: 74.468085099%;
+  *width: 74.4148936096383%;
+}
+
+.container .span-8 {
+  width: 65.95744680199999%;
+  *width: 65.90425531263828%;
+}
+
+.container .span-7 {
+  width: 57.446808505%;
+  *width: 57.3936170156383%;
+}
+
+.container .span-6 {
+  width: 48.93617020799999%;
+  *width: 48.88297871863829%;
+}
+
+.container .span-5 {
+  width: 40.425531911%;
+  *width: 40.3723404216383%;
+}
+
+.container .span-4 {
+  width: 31.914893614%;
+  *width: 31.8617021246383%;
+}
+
+.container .span-3 {
+  width: 23.404255317%;
+  *width: 23.3510638276383%;
+}
+
+.container .span-2 {
+  width: 14.89361702%;
+  *width: 14.8404255306383%;
+}
+
+.container .span-1 {
+  width: 6.382978723%;
+  *width: 6.329787233638298%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-rendering: optimizelegibility;
+}
+
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+input[type="radio"],
+input[type="checkbox"] {
+  width: auto;
+}
+
+select,
+input[type="file"] {
+  height: 28px;
+  /* In IE7, the height of the select element cannot be changed by height, only font-size */
+
+  *margin-top: 4px;
+  /* For IE7, add top margin to align select with labels */
+
+  line-height: 28px;
+}
+
+select[multiple],
+select[size] {
+  height: auto;
+}
+
+select:focus,
+input[type="file"]:focus,
+input[type="radio"]:focus,
+input[type="checkbox"]:focus {
+  outline: thin dotted #333;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+
+input[class*="span"],
+select[class*="span"],
+textarea[class*="span"],
+.container input[class*="span"],
+.container select[class*="span"],
+.container textarea[class*="span"] {
+  float: none;
+  margin-left: 0;
+}
+
+
+input,
+textarea {
+  margin-left: 0;
+}
+
+input[disabled],
+select[disabled],
+textarea[disabled],
+input[readonly],
+select[readonly],
+textarea[readonly] {
+  cursor: not-allowed;
+  background-color: #eeeeee;
+  border-color: #ddd;
+}
+
+input[type="radio"][disabled],
+input[type="checkbox"][disabled],
+input[type="radio"][readonly],
+input[type="checkbox"][readonly] {
+  background-color: transparent;
+}
+
+input:focus:required:invalid,
+textarea:focus:required:invalid,
+select:focus:required:invalid {
+  color: #b94a48;
+  border-color: #ee5f5b;
+}
+
+input:focus:required:invalid:focus,
+textarea:focus:required:invalid:focus,
+select:focus:required:invalid:focus {
+  border-color: #e9322d;
+  -webkit-box-shadow: 0 0 6px #f8b9b7;
+     -moz-box-shadow: 0 0 6px #f8b9b7;
+          box-shadow: 0 0 6px #f8b9b7;
+}
+
+:-moz-placeholder {
+  color: #999999;
+}
+
+:-ms-input-placeholder {
+  color: #999999;
+}
+
+::-webkit-input-placeholder {
+  color: #999999;
+}
+
+table {
+  max-width: 100%;
+  background-color: transparent;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+table {
+  width: 100%;
+  margin-bottom: 18px;
+}
+
+table th,
+table td {
+  padding: 8px;
+  line-height: 18px;
+  text-align: left;
+  vertical-align: top;
+  border-top: 1px solid #dddddd;
+}
+
+table th {
+  font-weight: bold;
+}
+
+table thead th {
+  vertical-align: bottom;
+}
+
+table caption + thead tr:first-child th,
+table caption + thead tr:first-child td,
+table colgroup + thead tr:first-child th,
+table colgroup + thead tr:first-child td,
+table thead:first-child tr:first-child th,
+table thead:first-child tr:first-child td {
+  border-top: 0;
+}
+
+table tbody + tbody {
+  border-top: 2px solid #dddddd;
+}
+
+/* --------------- That's All Folks ------------------------------------------/*
+
+/* ---------------------------------------------------------------------------/*

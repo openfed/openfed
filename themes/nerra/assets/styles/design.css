@@ -1,0 +1,7 @@
+/* Bug ie7 overwriting property from system menu.css */
+ul li.leaf											{ list-style-image: none;}
+
+/* Override z-index of admin-menu */
+#admin-menu, #admin-menu ul                         { z-index: 1000; margin: 0px; }
+
+#skip-link, .element-invisible						{ display:none;}

@@ -1,0 +1,62 @@
+<?php
+/**
+ * @file
+ * Install, update and uninstall functions for the openfed install profile.
+ */
+
+/**
+ * Implements hook_install().
+ *
+ * Performs actions to set up the site for this profile.
+ *
+ * @see system_install()
+ */
+function openfed_install() {
+  
+  /*
+   * Install of text format 
+   */
+  require_once('includes/install/openfed_text_format.inc');
+  
+  /*
+   * Install of roles
+   */
+  require_once('includes/install/openfed_roles.inc');
+
+  /*
+   * Configuration of users
+   */
+  require_once('includes/install/openfed_users.inc');
+      
+  /*
+   * MENU
+   */
+  require_once('includes/install/openfed_menus.inc');
+      
+  /*
+   * THEME
+   */
+  require_once('includes/install/openfed_themes.inc');
+  
+  /*
+   * BLOCK
+   */
+  require_once('includes/install/openfed_blocks.inc');
+  
+  /*
+   * CKeditor
+   */
+  require_once('includes/install/openfed_ckeditor.inc');
+  
+  /*
+   * Date
+   */
+  require_once('includes/install/openfed_date.inc');
+  
+  /*
+   * Regional
+   */
+  require_once('includes/install/openfed_regional.inc');
+  
+  variable_set('install_profile', 'openfed');
+}

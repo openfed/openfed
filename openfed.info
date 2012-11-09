@@ -1,2 +1,162 @@
-#openfed info file
-name = Openfed.
+name = OpenFED
+description = Select this profile to install OpenFED distribution
+core = 7.x
+version = 0.1
+
+files[] = openfed.profile
+
+; core
+  dependencies[] = aggregator
+  dependencies[] = block
+  dependencies[] = color
+  dependencies[] = contextual
+  dependencies[] = dblog
+  dependencies[] = field_ui
+  dependencies[] = file
+  dependencies[] = image
+  dependencies[] = list
+  dependencies[] = locale
+  dependencies[] = menu
+  dependencies[] = number
+  dependencies[] = options
+  dependencies[] = path
+  dependencies[] = search
+  dependencies[] = statistics
+  dependencies[] = syslog
+  dependencies[] = taxonomy
+  dependencies[] = text
+  dependencies[] = translation
+; custom
+  ; Administration
+    dependencies[] = admin_menu
+    dependencies[] = admin_menu_toolbar
+    dependencies[] = admin_theme
+    dependencies[] = admin_path
+  ; CCK
+    dependencies[] = multiselect
+  ; Chaos Tools
+    dependencies[] = ctools
+    dependencies[] = stylizer
+    dependencies[] = views_content
+  ; Date
+    dependencies[] = date
+    dependencies[] = date_all_day
+    dependencies[] = date_api
+    dependencies[] = date_popup
+    dependencies[] = date_views
+  ; Development
+    dependencies[] = devel
+  ; Display suite
+    dependencies[] = ds
+    dependencies[] = ds_extras
+    dependencies[] = ds_forms
+    dependencies[] = ds_search
+  ; Features
+    dependencies[] = features
+    dependencies[] = features_override
+  ; Fields
+    dependencies[] = email
+    dependencies[] = entityreference
+    dependencies[] = field_group
+    dependencies[] = link
+  ; Flag
+    dependencies[] = flag
+  ; Form Elements
+    dependencies[] = hierarchical_select
+    dependencies[] = hs_taxonomy
+    dependencies[] = hs_taxonomy_views
+  ; Markup
+    dependencies[] = html5_tools
+  ; Media
+    dependencies[] = file_entity
+    dependencies[] = imagecache_actions
+    dependencies[] = imagecache_actions
+    dependencies[] = imagecache_canvasactions
+    dependencies[] = imagecache_coloractions
+    dependencies[] = imce
+    dependencies[] = imce_mkdir
+    dependencies[] = media
+    dependencies[] = media_internet
+  ; Meta tags
+    dependencies[] = metatag
+  ; Multilingual - i18n
+    dependencies[] = i18n_block
+    dependencies[] = countries_i18n
+    dependencies[] = i18n_field
+    dependencies[] = i18n
+    dependencies[] = i18n_menu
+    dependencies[] = i18n_node
+    dependencies[] = i18n_select
+    dependencies[] = i18n_path
+    dependencies[] = i18n_string
+    dependencies[] = i18n_sync
+    dependencies[] = i18n_taxonomy
+    dependencies[] = i18n_redirect
+    dependencies[] = i18n_translation
+    dependencies[] = i18n_variable
+  ; Other
+    dependencies[] = navigation404
+    dependencies[] = elements
+    dependencies[] = entity
+    dependencies[] = entity_token
+    dependencies[] = libraries
+    dependencies[] = linkchecker
+    dependencies[] = logintoboggan
+    dependencies[] = logintoboggan_variable
+    dependencies[] = menu_attributes
+    dependencies[] = menu_block
+    dependencies[] = menu_firstchild
+    dependencies[] = menu_position
+    dependencies[] = override_node_options
+    dependencies[] = pathauto
+    dependencies[] = redirect
+    dependencies[] = robotstxt
+    dependencies[] = scheduler
+    dependencies[] = security_review
+    dependencies[] = site_map
+    dependencies[] = site_verify
+    dependencies[] = special_menu_items
+    dependencies[] = strongarm
+    dependencies[] = table_altrow
+    dependencies[] = text_resize
+    dependencies[] = token
+    dependencies[] = transliteration
+  ; Panels
+    dependencies[] = panels_mini
+    dependencies[] = panels_node
+    dependencies[] = panels
+  ; Path management
+    dependencies[] = globalredirect
+  ; Permissions
+    dependencies[] = view_unpublished
+  ; Print
+    dependencies[] = print
+  ; Security
+    dependencies[] = seckit
+  ; Statistics
+    dependencies[] = googleanalytics
+  ; User interface
+    dependencies[] = addanother
+    dependencies[] = ckeditor
+    dependencies[] = ckeditor_link
+    dependencies[] = extlink
+    dependencies[] = jquery_plugin
+  ; Variable
+    dependencies[] = variable
+    dependencies[] = variable_views
+  ; Views
+    dependencies[] = views
+    dependencies[] = views_bulk_operations
+    dependencies[] = views_slideshow
+    dependencies[] = views_slideshow_cycle
+    dependencies[] = views_ui
+  ; XML sitemap
+    dependencies[] = xmlsitemap
+    dependencies[] = xmlsitemap_node
+
+
+
+
+
+
+

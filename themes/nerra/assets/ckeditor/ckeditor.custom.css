@@ -1,0 +1,2 @@
+/* Bug ie7 overwriting property from system menu.css */
+ul li.leaf											{ list-style-image: none;}

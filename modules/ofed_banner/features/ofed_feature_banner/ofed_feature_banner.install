@@ -1,0 +1,43 @@
+<?php
+
+/**
+ * Implements hook_schema().
+ */
+function ofed_feature_banner_schema() {
+
+}
+
+/**
+ * Implements hook_install().
+ */
+function ofed_feature_banner_install() {
+  // If the related feature is not enabled.
+  if(!module_exists('ofed_banner')) {
+    // Enable it.
+    module_enable(array('ofed_banner'));
+  }
+  
+  // Install menu link(s).
+  $menus = menu_get_menus(FALSE);
+  if(isset($menus['menu-cms-menu'])) {
+    $item = array(
+      'link_title' => t('Banners'), 
+      'link_path' => 'cms/banners',
+      'router_path' => 'cms/banners',
+      'menu_name' => 'menu-cms-menu',
+      'customized' => 1,
+    );
+    menu_link_save($item);
+  }
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function ofed_feature_banner_uninstall() {
+  // If the related feature is enabled.
+  if(module_exists('ofed_banner')) {
+    // Disable it.
+    module_disable(array('ofed_banner'));
+  }
+}
