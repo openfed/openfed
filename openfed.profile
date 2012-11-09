@@ -52,9 +52,6 @@ function system_form_install_settings_form_alter(&$form, &$form_state, &$install
   // Set the default value for the database settings.
   // For MYSQL
   $form['settings']['mysql']['advanced_options']['db_prefix']['#default_value'] = 'drupal_';
-//  $form['settings']['mysql']['database']['#default_value'] = 'ID36540_submari';
-//  $form['settings']['mysql']['username']['#default_value'] = 'ID36540_submari';
-//  $form['settings']['mysql']['password']['#default_value'] = 'fedsub17-';
   // For SQLITE.
   $form['settings']['sqlite']['advanced_options']['db_prefix']['#default_value'] = 'drupal_';
 }
