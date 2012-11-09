@@ -1,3 +1,4 @@
 7.x-0.1
 -------
+Issue #1836414: workaround for building distro in sandbox
 First Release
