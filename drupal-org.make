@@ -2,8 +2,6 @@
 api = 2
 core = 7.x
 
-projects[drupal][version] = 7.17
-
 ;
 ; Libraries
 ; Please fill the following out. Type may be one of get, git, bzr or svn, and url is the url of the download.
