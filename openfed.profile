@@ -34,7 +34,7 @@ require_once('includes/form/openfed_complete_function.inc');
  */
 function openfed_form_install_configure_form_alter(&$form, $form_state) {
   // Pre-populate the site name with the server name.
-  $form['site_information']['site_name']['#default_value'] = 'openFED';
+  $form['site_information']['site_name']['#default_value'] = 'OpenFED';
   $form['server_settings']['site_default_country']['#default_value'] = 'BE';
   
   // Only check for updates, no need for email notifications

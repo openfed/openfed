@@ -9,7 +9,7 @@ core = 7.x
 
 ; CK Editor
 libraries[ckeditor][download][type] = get
-libraries[ckeditor][download][url] = http://download.cksource.com/CKEditor/CKEditor/CKEditor%203.6.4/ckeditor_3.6.4.tar.gz
+libraries[ckeditor][download][url] = http://download.cksource.com/CKEditor/CKEditor/CKEditor%203.6.5/ckeditor_3.6.5.tar.gz
 libraries[ckeditor][directory_name] = "ckeditor"
 libraries[ckeditor][destination] = libraries
 
@@ -39,6 +39,9 @@ projects[beididp][subdir] = contrib
 projects[calendar][version] = "3.4"
 projects[calendar][subdir] = contrib 
 
+projects[ckeditor][version] = "1.9"
+projects[ckeditor][subdir] = contrib 
+
 projects[ckeditor_link][version] = "2.2"
 projects[ckeditor_link][subdir] = contrib 
 
@@ -60,13 +63,13 @@ projects[devel][subdir] = contrib
 projects[diff][version] = "2.0"
 projects[diff][subdir] = contrib 
 
-projects[ds][version] = "1.5"
+projects[ds][version] = "2.0"
 projects[ds][subdir] = contrib 
 
 projects[elements][version] = "1.2"
 projects[elements][subdir] = contrib 
 
-projects[email][version] = "1.1"
+projects[email][version] = "1.2"
 projects[email][subdir] = contrib 
 
 projects[emfield][version] = "1.0-alpha1"
@@ -93,13 +96,13 @@ projects[field_group][subdir] = contrib
 projects[field_permissions][version] = "1.0-beta2"
 projects[field_permissions][subdir] = contrib 
 
-projects[flag][version] = "2.0-beta8"
+projects[flag][version] = "2.0"
 projects[flag][subdir] = contrib 
 
 projects[globalredirect][version] = "1.5"
 projects[globalredirect][subdir] = contrib 
 
-projects[google_analytics][version] = "1.2"
+projects[google_analytics][version] = "1.3"
 projects[google_analytics][subdir] = contrib 
 
 projects[hierarchical_select][version] = "3.0-alpha5"
@@ -114,7 +117,7 @@ projects[i18n][subdir] = contrib
 projects[imagecache_actions][version] = "1.0"
 projects[imagecache_actions][subdir] = contrib 
 
-projects[imce][version] = "1.5"
+projects[imce][version] = "1.6"
 projects[imce][subdir] = contrib 
 
 projects[imce_mkdir][version] = "1.0"
@@ -156,7 +159,7 @@ projects[menu_firstchild][subdir] = contrib
 projects[menu_position][version] = "1.1"
 projects[menu_position][subdir] = contrib
 
-projects[metatag][version] = "1.0-alpha8"
+projects[metatag][version] = "1.0-beta2"
 projects[metatag][subdir] = contrib
 
 projects[module_filter][version] = "1.7"
@@ -186,10 +189,10 @@ projects[pathauto][subdir] = contrib
 projects[performance][version] = "1.6"
 projects[performance][subdir] = contrib
 
-projects[print][version] = "1.1"
+projects[print][version] = "1.2"
 projects[print][subdir] = contrib
 
-projects[redirect][version] = "1.0-beta4"
+projects[redirect][version] = "1.0-rc1"
 projects[redirect][subdir] = contrib
 
 projects[robotstxt][version] = "1.0"
@@ -231,7 +234,7 @@ projects[table_altrow][subdir] = contrib
 projects[text_resize][version] = "1.7"
 projects[text_resize][subdir] = contrib
 
-projects[token][version] = "1.2"
+projects[token][version] = "1.4"
 projects[token][subdir] = contrib
 
 projects[translation_helpers][version] = "1.0"
@@ -246,7 +249,7 @@ projects[variable][subdir] = contrib
 projects[view_unpublished][version] = "1.1"
 projects[view_unpublished][subdir] = contrib
 
-projects[views][version] = "3.4"
+projects[views][version] = "3.5"
 projects[views][subdir] = contrib
 
 projects[views_bulk_operations][version] = "3.0"
