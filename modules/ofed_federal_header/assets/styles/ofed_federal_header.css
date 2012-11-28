@@ -4,7 +4,7 @@
   display:none;
 }
 #ofed-federal-header-wrapper{
-  background: #fff url(../images/federal_header_bg.gif) repeat-x left bottom scroll;
+  background: url(../images/federal_header_bg.gif) repeat-x left bottom scroll;
   position: relative;
 }
 #ofed-federal-header-wrapper #ofed-federal-header-link{
@@ -12,7 +12,7 @@
   font-family: arial, verdana, sans-serif;
   font-size: 0.8em;
   text-align: right;
-  padding: 0.9em 2.7em 0.8em 0;
+  padding: 0.9em 4em 0.8em 0;
   line-height: 1.22em;
 }
 #ofed-federal-header-wrapper #ofed-federal-header-logo{

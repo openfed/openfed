@@ -115,8 +115,8 @@ function ofed_switcher_menu() {
 }
 
 /**
- * @todo Need to be documented.
- * @return type 
+ * configuration page of the switcher module
+ * return form
  */
 function ofed_switcher_admin() {
   $form = array();
@@ -161,8 +161,8 @@ function ofed_switcher_admin() {
 }
 
 /**
- * @todo Need to be documented.
- * @return type 
+ * Dispaly the first page in the cms interface to manage content, user, block depending the permission
+ * return string return the template content
  */
 function ofed_switcher_dashboard() {
   $dashboard = array();

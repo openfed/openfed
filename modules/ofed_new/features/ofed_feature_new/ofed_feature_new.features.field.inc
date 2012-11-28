@@ -79,7 +79,7 @@ function ofed_feature_new_field_default_fields() {
           'rows' => '5',
         ),
         'type' => 'text_textarea',
-        'weight' => '6',
+        'weight' => '5',
       ),
     ),
   );
@@ -273,7 +273,7 @@ function ofed_feature_new_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'entityreference_autocomplete',
-        'weight' => '7',
+        'weight' => '6',
       ),
     ),
   );
@@ -363,7 +363,7 @@ function ofed_feature_new_field_default_fields() {
           'progress_indicator' => 'throbber',
         ),
         'type' => 'image_image',
-        'weight' => '8',
+        'weight' => '7',
       ),
     ),
   );
@@ -453,6 +453,75 @@ function ofed_feature_new_field_default_fields() {
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_field',
+        'weight' => '8',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-ofed_new-field_ofed_new_source'.
+  $fields['node-ofed_new-field_ofed_new_source'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_ofed_new_source',
+      'foreign keys' => array(
+        'format' => array(
+          'columns' => array(
+            'format' => 'format',
+          ),
+          'table' => 'filter_format',
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'text',
+      'settings' => array(
+        'max_length' => '255',
+      ),
+      'translatable' => '0',
+      'type' => 'text',
+    ),
+    'field_instance' => array(
+      'bundle' => 'ofed_new',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => 'Add the source of this new.',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => 8,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_ofed_new_source',
+      'label' => 'Source',
+      'required' => 0,
+      'settings' => array(
+        'text_processing' => '0',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'text',
+        'settings' => array(
+          'size' => '60',
+        ),
+        'type' => 'text_textfield',
         'weight' => '9',
       ),
     ),
@@ -527,7 +596,7 @@ function ofed_feature_new_field_default_fields() {
           'rows' => '5',
         ),
         'type' => 'text_textarea',
-        'weight' => '5',
+        'weight' => '4',
       ),
     ),
   );
@@ -611,7 +680,7 @@ function ofed_feature_new_field_default_fields() {
           'progress_indicator' => 'throbber',
         ),
         'type' => 'image_image',
-        'weight' => '4',
+        'weight' => '3',
       ),
     ),
   );
@@ -619,6 +688,7 @@ function ofed_feature_new_field_default_fields() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Add an additional document related to this news.');
+  t('Add the source of this new.');
   t('Content');
   t('Date');
   t('Document(s)');
@@ -628,6 +698,7 @@ function ofed_feature_new_field_default_fields() {
   t('Fill the summary of this new.');
   t('Image(s)');
   t('Link(s)');
+  t('Source');
   t('Summary');
   t('Thumb');
   t('Upload an additional image related to this news.');

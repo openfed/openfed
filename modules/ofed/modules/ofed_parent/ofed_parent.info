@@ -1,0 +1,6 @@
+name = Parent element
+description = "Show the first parent of the hierarchy<br>
+               Contains a <strong>block</strong>"
+package = openFED
+core = 7.x
+version = "7.x-1.0"

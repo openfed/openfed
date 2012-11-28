@@ -49,24 +49,24 @@
 </section>
 
 
-<section class="top">
-  <div class="container">
-    
-    <?php if( !empty($page['top']) ): ?>
-    <!-- Region top -->
+<?php if( !empty($page['top']) ): ?>
+<!-- Region top -->
+  <section class="top">
+    <div class="container">
       <div class="top">
         <?php print render($page['top']); ?>
       </div>	
-    <?php endif; ?>
-    
-    <?php if ( theme_get_setting('cms_theme_breadcrumb_display') && $breadcrumb): ?>
-    <!-- Region Breadcrumb -->
-      <nav class="breadcrumb"><?php print $breadcrumb; ?></nav>
-    <?php endif; ?>
-      
-  </div>
-</section>
+    </div>
+  </section>
+<?php endif; ?>
 
+
+<?php if ( theme_get_setting('cms_theme_breadcrumb_display') && $breadcrumb): ?>
+<!-- Region Breadcrumb -->
+  <nav class="breadcrumb"><?php print $breadcrumb; ?></nav>
+<?php endif; ?>
+
+  
 <section class="site">
   <div class="container">
     

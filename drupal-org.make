@@ -36,6 +36,9 @@ projects[backup_migrate][subdir] = contrib
 projects[beididp][version] = "0.7"
 projects[beididp][subdir] = contrib 
 
+projects[better_formats][version] = "1.0-beta1"
+projects[better_formats][subdir] = contrib 
+
 projects[calendar][version] = "3.4"
 projects[calendar][subdir] = contrib 
 
@@ -63,6 +66,9 @@ projects[devel][subdir] = contrib
 projects[diff][version] = "2.0"
 projects[diff][subdir] = contrib 
 
+projects[draggableviews][version] = "2.0"
+projects[draggableviews][subdir] = contrib 
+
 projects[ds][version] = "2.0"
 projects[ds][subdir] = contrib 
 
@@ -71,9 +77,6 @@ projects[elements][subdir] = contrib
 
 projects[email][version] = "1.2"
 projects[email][subdir] = contrib 
-
-projects[emfield][version] = "1.0-alpha1"
-projects[emfield][subdir] = contrib 
 
 projects[entity][version] = "1.0-rc3"
 projects[entity][subdir] = contrib 
@@ -132,6 +135,9 @@ projects[jquery_update][subdir] = contrib
 projects[l10n_client][version] = "1.1"
 projects[l10n_client][subdir] = contrib 
 
+projects[lexicon][version] = "1.10"
+projects[lexicon][subdir] = contrib
+
 projects[libraries][version] = "2.0"
 projects[libraries][subdir] = contrib
 
@@ -165,6 +171,9 @@ projects[metatag][subdir] = contrib
 projects[module_filter][version] = "1.7"
 projects[module_filter][subdir] = contrib
 
+projects[mollom][version] = "2.3"
+projects[mollom][subdir] = contrib
+
 projects[multiple_node_menu][version] = "1.0-beta1"
 projects[multiple_node_menu][subdir] = contrib
 
@@ -182,6 +191,12 @@ projects[page_title][subdir] = contrib
 
 projects[panels][version] = "3.3"
 projects[panels][subdir] = contrib
+
+projects[partial_date][version] = "1.0-beta1"
+projects[partial_date][subdir] = contrib
+
+projects[path_breadcrumbs][version] = "2.0-beta17"
+projects[path_breadcrumbs][subdir] = contrib
 
 projects[pathauto][version] = "1.2"
 projects[pathauto][subdir] = contrib
@@ -240,6 +255,12 @@ projects[token][subdir] = contrib
 projects[translation_helpers][version] = "1.0"
 projects[translation_helpers][subdir] = contrib
 
+projects[translation_overview][version] = "2.0-beta1"
+projects[translation_overview][subdir] = contrib
+
+projects[translation_table][version] = "1.0-beta1"
+projects[translation_table][subdir] = contrib
+
 projects[transliteration][version] = "3.1"
 projects[transliteration][subdir] = contrib
 
@@ -260,6 +281,9 @@ projects[views_slideshow][subdir] = contrib
 
 projects[webform][version] = "3.18"
 projects[webform][subdir] = contrib
+
+projects[weight][version] = "2.1"
+projects[weight][subdir] = contrib
 
 projects[xmlsitemap][version] = "2.0-rc1"
 projects[xmlsitemap][subdir] = contrib

@@ -211,7 +211,7 @@ fieldset#edit-update-notifications {
 	padding: 10px;
 	margin: 10px;
 	min-width: 40%;
-	min-height: 120px;
+	min-height: 90px;
 	background-color: #fff!important;
   	background-image: -moz-linear-gradient(top, #ffffff, #ededed)!important;
   	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#ededed))!important;
@@ -231,62 +231,54 @@ fieldset#edit-update-notifications {
   	position: relative;
 }
 
-/* If Javascript is disabled */
-#openfed-functionnalities-form	.form-type-checkbox	input.form-checkbox		{
- 	position: absolute;
- 	right: 15px;
- 	bottom: 25px;
-}
-/* end Javascirpt is disabled */
-
-#openfed-functionnalities-form	.form-type-checkbox label					{
- 	position: absolute;
- 	right: 15px;
- 	top: 10px;	
+#openfed-functionnalities-form	.form-type-checkbox	input.form-checkbox{
+	display:none;
 }
 
-#openfed-functionnalities-form	.form-type-checkbox div.button				{
+#openfed-functionnalities-form	.form-type-checkbox label				{
 	border: 1px solid;
 	display: inline-block;
 	*display: inline !important;
   /* IE7 inline-block hack */
- 	padding: 2px 7px 2px 25px;
+ 	padding: 2px 15px 2px 30px;
  	position: absolute;
- 	right: 7px;
- 	bottom: 36px;
-	font-size: .9em;
+ 	right: 15px;
+ 	bottom: 25px;
 }	
-#openfed-functionnalities-form	.form-type-checkbox div.button.enabled		{
+#openfed-functionnalities-form	.form-type-checkbox label.enabled		{
 	background: #f8fff0 url(../icons/sprites.png) no-repeat 5px 5px;
 	border-color: #bbee77;
 	color: #234600;
 }	
-#openfed-functionnalities-form	.form-type-checkbox div.button.disabled		{
+#openfed-functionnalities-form	.form-type-checkbox label.disabled		{
 	background: #F2DEDE url(../icons/sprites.png) no-repeat 5px -18px;
 	color: #B94A48;
 	border-color: #dda2a9;
 }	
 
-#openfed-functionnalities-form	.form-type-checkbox .description			{
+#openfed-functionnalities-form	.form-type-checkbox .description		{
 	position: absolute;
-	left: 7px;
-	top: 55px;
-	line-height: 1.5em!important;
-	font-size: .75em!important;
-	color: black!important;
+ 	right: 15px;
+ 	top: 15px;
+ 	line-height: 1.5em!important;
+	font-size: 1em!important;
+	color: #000000!important;
 	margin: 0!important;
-	width: 58%;
 }
-#openfed-functionnalities-form	.form-type-checkbox .picture				{
+#openfed-functionnalities-form	.form-type-checkbox .picture			{
 	position: absolute;
- 	left: 7px;
- 	top: 7px;
+ 	left: 15px;
+ 	top: 15px;
+}
+#openfed-functionnalities-form	.form-type-checkbox	.full-description	{
+	display:none;	
 }
 
 /* FEATURES ON HOVER       *
  * 
- *                 
-#openfed-functionnalities-form	.form-type-checkbox:hover					{
+ *                 */
+
+#openfed-functionnalities-form	.form-type-checkbox:hover						{
 
 }
 
@@ -294,11 +286,11 @@ fieldset#edit-update-notifications {
 	
 }
 
-#openfed-functionnalities-form	.form-type-checkbox:hover div.button		{
+#openfed-functionnalities-form	.form-type-checkbox:hover label				{
 	border: 1px solid;
 	display: inline-block;
 	*display: inline !important;
-
+  /* IE7 inline-block hack */
  	padding: 0px 15px 0px 15px;
  	position: absolute;
  	right: 15px;
@@ -309,7 +301,7 @@ fieldset#edit-update-notifications {
   	cursor: pointer;
   	
 }	
-#openfed-functionnalities-form	.form-type-checkbox:hover div.button.enabled{
+#openfed-functionnalities-form	.form-type-checkbox:hover label.enabled		{
 	color: white;
 	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 	background-color: #5BB75B;
@@ -324,7 +316,7 @@ fieldset#edit-update-notifications {
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff62c462', endColorstr='#ff51a351', GradientType=0);
 	filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
 }	
-#openfed-functionnalities-form	.form-type-checkbox:hover div.button.disabled		{
+#openfed-functionnalities-form	.form-type-checkbox:hover label.disabled		{
 	color: white;
 	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 	background-color: #DA4F49;
@@ -361,6 +353,5 @@ fieldset#edit-update-notifications {
 	top: 40px;
 	font-size: 0.8em;
 }
-*/
 
 

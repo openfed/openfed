@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the openFED videos - Feature feature.
+ */
+
+include_once 'ofed_feature_video.features.inc';

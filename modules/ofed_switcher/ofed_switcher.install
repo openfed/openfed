@@ -35,6 +35,7 @@ function ofed_switcher_install() {
       'cache' => -1,
     );
   }
+  
   $default_values[] = array(
     'module' => 'ofed_switcher',
     'delta' => 'ofed_switcher',

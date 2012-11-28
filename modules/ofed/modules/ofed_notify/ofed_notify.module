@@ -1,0 +1,240 @@
+<?php
+
+/**
+ * Implementation of hook_field_info().
+ * 
+ * @return type 
+ */
+function ofed_notify_field_info() {
+  return array(
+      'ofed_notify' => array(
+          'label' => t('Notification'),
+          'instance_settings' => array(),
+          'default_widget' => 'ofed_notify',
+          'default_formatter' => 'ofed_notify'
+      ),
+  );
+}
+
+/**
+ * Implementation of hook_fields_is_empty().
+ * 
+ * @param type $item
+ * @param type $field
+ * @return boolean 
+ */
+function ofed_notify_field_is_empty($item, $field) {
+  return FALSE;
+}
+
+/**
+ * Implementation of hook_fields_validate().
+ * 
+ * @param type $entity_type
+ * @param type $entity
+ * @param type $field
+ * @param type $instance
+ * @param type $langcode
+ * @param type $items
+ * @param type $errors 
+ */
+function ofed_notify_field_validate($entity_type, $entity, $field, $instance, $langcode, $items, &$errors) {
+  
+}
+
+/**
+ * @todo This function need to be documented.
+ * @param type $entity_type
+ * @param type $entity
+ * @param type $field
+ * @param type $instance
+ * @param type $langcode
+ * @param type $items 
+ */
+function ofed_notify_field_insert($entity_type, $entity, $field, $instance, $langcode, &$items) {
+  foreach($items as $delta => $item) {
+    if($item['notification'] == 1) {
+      $role_list = '';
+      if($field['settings']['notification_roles'][DRUPAL_AUTHENTICATED_RID] == DRUPAL_AUTHENTICATED_RID) {
+        foreach($field['settings']['notification_roles'] as $notify_key => $notify_value) {
+          $role_list .= $notify_key . ', ';
+        }
+      }
+      else {
+        foreach($field['settings']['notification_roles'] as $notify_key => $notify_value) {
+          if($notify_key == $notify_value) {
+            $role_list .= $notify_key . ', ';
+          }
+        }
+      }
+
+      $params = array();
+      $params['subject'] = $field['settings']['notification_subject'];
+      $params['body'] = nl2br($field['settings']['notification_body']);
+
+      if($entity->nid != '') {
+        $params['link'] = l($entity->title, 'node/' . $entity->nid);
+      }
+      else {
+        $params['link'] = $entity->title;
+      }
+
+      $role_list = substr($role_list, 0, strlen($role_list) - 2);
+      $uids = db_query('SELECT DISTINCT u.uid FROM {users} u 
+                        INNER JOIN {users_roles} r ON u.uid = r.uid 
+                        WHERE u.status = 1 AND r.rid IN (' . $role_list . ')')->fetchCol();
+
+      foreach($uids as $uid) {
+        $person = user_load($uid);
+        if($GLOBALS['user']->uid != $person->uid) {
+          $params['account'] = $person;
+          drupal_mail('ofed_notify', 'notification_mail', $person->mail, user_preferred_language($person), $params);
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Implementation of hook_field_widget_info().
+ * 
+ * @return type 
+ */
+function ofed_notify_field_widget_info() {
+  return array(
+      'ofed_notify' => array(
+          'label' => t('Send notification'),
+          'description' => t('Provides checkbox fields.'),
+          'field types' => array('ofed_notify'),
+      ),
+  );
+}
+
+/**
+ * Implementation of hook_field_widget_form().
+ * 
+ * @param type $form
+ * @param type $form_state
+ * @param type $field
+ * @param type $instance
+ * @param type $langcode
+ * @param type $items
+ * @param type $delta
+ * @param type $element
+ * @return string 
+ */
+function ofed_notify_field_widget_form(&$form, &$form_state, $field, $instance, $langcode, $items, $delta, $element) {
+  $fields = array(
+      'notification' => t('Send notification'),
+  );
+
+  foreach($fields as $key => $label) {
+    $value = isset($items[$delta][$key]) ? $items[$delta][$key] : '';
+
+    switch($key) {
+      case 'notification' :
+        $element[$key] = array(
+            '#type' => 'checkbox',
+            '#title' => t('Send notification'),
+            '#default_value' => 0,
+            '#required' => FALSE,
+        );
+        break;
+    }
+  }
+
+  return $element;
+}
+
+/**
+ * Implementation of hook_field_settings_form().
+ * 
+ * @param type $field
+ * @param type $instance
+ * @param type $has_data
+ * @return type 
+ */
+function ofed_notify_field_settings_form($field, $instance, $has_data) {
+  $settings = $field['settings'];
+
+  $roles = user_roles(TRUE);
+
+  if(!isset($settings['notification_roles'])) {
+    $settings['notification_roles'] = array();
+  }
+  if(!isset($settings['notification_subject'])) {
+    $settings['notification_subject'] = t('Notification sent from @site-name');
+  }
+  if(!isset($settings['notification_body'])) {
+    $settings['notification_body'] = t('<p>Dear Intranet user @user-name,</p>
+        <p>The Events section has been updated.</p>
+        <p>Please Log in to the Intranet to learn more.</p>
+        <p>Here is the link to: @link</p>');
+  }
+
+  $form['notification_roles'] = array(
+      '#type' => 'checkboxes',
+      '#title' => t('Roles to notify'),
+      '#default_value' => $settings['notification_roles'],
+      '#options' => $roles,
+      '#required' => TRUE,
+      '#description' => t('Choose which role that must be notify'),
+  );
+
+  $form['notification_subject'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Subject of the mail'),
+      '#default_value' => $settings['notification_subject'],
+      '#required' => TRUE,
+      '#description' => t('You can use this token : <ul>
+      <li>@site-name for name of the website</li>
+      </ul>'),
+  );
+
+  $form['notification_body'] = array(
+      '#type' => 'textarea',
+      '#title' => t('Content of the mail'),
+      '#default_value' => $settings['notification_body'],
+      '#required' => TRUE,
+      '#description' => t('You can use this token : <ul>
+      <li>@site-name for name of the website</li>
+      <li>@user-name for name of the user</li>
+      <li>@link for link to the content</li>
+      </ul>'),
+  );
+
+  return $form;
+}
+
+/**
+ * @todo This function need to be documented.
+ * @param type $key
+ * @param type $message
+ * @param type $params 
+ */
+function ofed_notify_mail($key, &$message, $params) {
+  $options = array(
+      'langcode' => $message['language'],
+  );
+
+  switch($key) {
+    case 'notification_mail':
+      $headers = array(
+          'MIME-Version' => '1.0',
+          'Content-Type' => 'text/html; charset=UTF-8; format=flowed',
+          'Content-Transfer-Encoding' => '8Bit',
+          'X-Mailer' => 'Drupal'
+      );
+
+      foreach($headers as $key => $value) {
+        $message['headers'][$key] = $value;
+      }
+
+      $message['subject'] = str_replace('@site-name', variable_get('site_name', 'Drupal'), $params['subject']);
+      $message['body'] = str_replace('@site-name', variable_get('site_name', 'Drupal'), $params['body']);
+      $message['body'] = str_replace('@user-name', $params['account']->name, $message['body']);
+      $message['body'] = str_replace('@link', $params['link'], $message['body']);
+      $message['body'] = '<div>' . $message['body'] . '</div>';
+      break;
+  }
+}

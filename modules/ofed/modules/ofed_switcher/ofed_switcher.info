@@ -1,0 +1,9 @@
+name = Interface switcher
+description = "Add a block to switch between public website and administration<br>
+               Contains a <strong>block</strong> and an <strong>admin interface</strong>"
+package = openFED
+core = 7.x
+version = "7.x-1.0"
+
+dependencies[] = menu
+dependencies[] = redirect

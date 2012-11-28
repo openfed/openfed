@@ -3,6 +3,7 @@
 $enable = array(
   'theme_default' => 'nerra',
   'admin_theme' => 'cms_theme',
+  'maintenance_theme' => 'maintenance',
 );
 theme_enable($enable);
 

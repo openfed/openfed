@@ -1,0 +1,7 @@
+name = Blog - Module
+description = Manage blog.
+package = openFED
+core = 7.x
+version = "7.x-1.0"
+
+dependencies[] = ofed_feature_blog

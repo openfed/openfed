@@ -24,15 +24,16 @@ $arr = array(
     'anonymous',
     'site_frontpage',
     'site_403',
-    'site_404',
+                //'site_404', // => give error on submit in site information
     'maintenance_mode_message',
   // Feed settings
-    
+    'feed_description',
   // Regional settings
     'date_first_day',
     'user_default_timezone',
   // Theme settings
-    
+    'theme_settings',
+    'theme_[theme]_settings',
   // User emails
     'user_mail_register_admin_created_[mail_part]',
     'user_mail_register_no_approval_required_[mail_part]',
@@ -63,27 +64,3 @@ $arr = Array(
   )
 );
 variable_set('language_negotiation_language', $arr);
-  
-
-
-
-// TODO DEBUG why it redirect to the public website when we active a functionalities in penultimate task install
-// 
-//$values = array(
-//  'fr' => 'French', 
-//  'nl' => 'Dutch (Nederlands)'
-//);
-//
-//include_once DRUPAL_ROOT . '/includes/iso.inc';
-//$predefined = _locale_get_predefined_list();
-//
-//foreach( $values as $key => $value ) {
-//  
-//  locale_add_language($key);
-//  drupal_set_message(t('The language %language has been created and can now be used. More information is available on the <a href="@locale-help">help screen</a>.', array('%language' => t($predefined[$key][0]), '@locale-help' => url('admin/help/locale'))));
-//
-//  if ($batch = locale_batch_by_language($key, '_locale_batch_language_finished')) {
-//    batch_set($batch);
-//  }
-//  
-//}

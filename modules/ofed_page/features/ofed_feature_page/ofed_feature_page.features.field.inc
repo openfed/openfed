@@ -10,14 +10,14 @@
 function ofed_feature_page_field_default_fields() {
   $fields = array();
 
-  // Exported field: 'node-ofed_page-field_ofed_page_content'.
-  $fields['node-ofed_page-field_ofed_page_content'] = array(
+  // Exported field: 'node-ofed_page-field_ofed_page_body'.
+  $fields['node-ofed_page-field_ofed_page_body'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
       'deleted' => '0',
       'entity_types' => array(),
-      'field_name' => 'field_ofed_page_content',
+      'field_name' => 'field_ofed_page_body',
       'foreign keys' => array(
         'format' => array(
           'columns' => array(
@@ -58,8 +58,8 @@ function ofed_feature_page_field_default_fields() {
         ),
       ),
       'entity_type' => 'node',
-      'field_name' => 'field_ofed_page_content',
-      'label' => 'Content',
+      'field_name' => 'field_ofed_page_body',
+      'label' => 'Body',
       'required' => 0,
       'settings' => array(
         'text_processing' => '1',
@@ -110,7 +110,7 @@ function ofed_feature_page_field_default_fields() {
           ),
           'sort' => array(
             'direction' => 'ASC',
-            'field' => 'field_ofed_download_content:value',
+            'field' => 'field_ofed_download_body:value',
             'property' => 'nid',
             'type' => 'none',
           ),
@@ -318,7 +318,7 @@ function ofed_feature_page_field_default_fields() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Add an additional document related to this page.');
-  t('Content');
+  t('Body');
   t('Document(s)');
   t('Fill the content of this page.');
   t('Fill the summary of this page.');

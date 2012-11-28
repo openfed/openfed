@@ -1,0 +1,21 @@
+<?php
+
+/**
+ * Implementation of hook_field_schema().
+ * @param type $field
+ * @return type 
+ */
+function ofed_notify_field_schema($field) {
+  $columns = array(
+    'notification' => array(
+      'type' => 'int',
+      'not null' => FALSE,
+      'default' => 0
+    ),
+  );
+  return array(
+    'columns' => $columns,
+    'indexes' => array(),
+    'foreign keys' => array(),
+  );
+}

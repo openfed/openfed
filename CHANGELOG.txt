@@ -1,4 +1,60 @@
-7.x-0.1
--------
-Issue #1836414: workaround for building distro in sandbox
-First Release
+CHANGELOG
+=========
+
+7.x-0.2 : 21 november 2102
+--------------------------
+ * Issue #1837894 : Library update: ckeditor
+ * Issue #1838178 : Missing module: ckeditor
+
+ * Drupal updated to 7.17
+ * Module updated 
+    - ds (2.0)
+    - email (1.2)
+    - flag (2.0)
+    - google_analytics (1.3)
+    - imce (1.6)
+    - metatag (1.0-beta2)
+    - print (1.2)
+    - redirect (1.0-rc1)
+    - token (1.4)
+    - views (3.5)
+
+ * Module added: 
+    - better_formats
+    - draggableviews
+    - lexicon
+    - mollom
+    - partial_date
+    - path_breadcrumbs
+    - translattion_overview
+    - translation_table
+    - weight
+
+ * Theme added:
+    - maintenance : manage a maintenance theme for the install profile and batching process
+
+ * Tasks added:
+    - install task about language selection
+      - install batch task to enable selected language
+    - install task about functionalities selection
+      - install batch task to enable selected functionalities
+
+ * Config added:
+    - ckeditor_link
+    - extlink
+    - flag
+    - globalredirect
+    - html5_tools
+    - i18n
+    - linkchecker
+    - logintoboggan
+    - pathauto
+    - print
+    - search_config
+    - site_map
+    - views
+
+7.x-0.1 : 9 november 2012
+-------------------------
+ * Issue #1836414 : workaround for building distro in sandbox
+ * First Release

@@ -1,0 +1,7 @@
+name = Meetings - Module
+description = Manage meetings.
+package = openFED
+core = 7.x
+version = "7.x-1.0"
+
+dependencies[] = ofed_feature_meeting

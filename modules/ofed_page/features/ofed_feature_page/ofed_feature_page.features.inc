@@ -75,7 +75,7 @@ function ofed_feature_page_image_default_styles() {
           'xpos' => 0,
           'ypos' => 0,
           'alpha' => '100',
-          'path' => 'module://ofed/modules/ofed_page/assets/images/transparent_150x150.png',
+          'path' => 'module://ofed_page/assets/images/transparent_150x150.png',
           'dimensions' => 'background',
         ),
         'weight' => '3',

@@ -33,6 +33,8 @@ function openfed_menu_form_submit($form, &$form_state) {
   $values = $form_state['values'];
   $blocks = array();
   if ( !empty($values['menu_list']) ) {
+    $ck_link = variable_get('ckeditor_link_autocomplete_menus');
+    
     if ( $values['menu_list']['menu-tools-menu'] === 'menu-tools-menu' ) {
       // Create a tools menu.
         $menu = array();
@@ -52,6 +54,7 @@ function openfed_menu_form_submit($form, &$form_state) {
           'cache' => -1,
         );
         $blocks[] = $block_tools;
+        $ck_link['menu-tools-menu'] = 'menu-tools-menu';
     }
     if ( $values['menu_list']['menu-footer-menu'] === 'menu-footer-menu' ) {
       // Create a footer menu.
@@ -72,6 +75,7 @@ function openfed_menu_form_submit($form, &$form_state) {
           'cache' => -1,
         );
         $blocks[] = $block_footer;
+        $ck_link['menu-footer-menu'] = 'menu-footer-menu';
     }
     menu_rebuild();
     if (!empty($blocks)) {
@@ -80,6 +84,7 @@ function openfed_menu_form_submit($form, &$form_state) {
         $query->values($record);
       }
       $query->execute();
+      variable_set('ckeditor_link_autocomplete_menus', $ck_link);
     }
 
   }

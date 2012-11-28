@@ -75,7 +75,7 @@ function ofed_feature_banner_image_default_styles() {
           'xpos' => 0,
           'ypos' => 0,
           'alpha' => '100',
-          'path' => 'module://ofed/modules/ofed_banner/assets/images/transparent_400x300.png',
+          'path' => 'module://ofed_banner/assets/images/transparent_400x300.png',
           'dimensions' => 'background',
         ),
         'weight' => '3',

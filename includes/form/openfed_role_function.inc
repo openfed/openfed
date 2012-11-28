@@ -12,7 +12,7 @@ function openfed_role_form() {
   $form['role_list'] = array(
     '#type' => 'checkboxes',
     '#title' => st('Roles'),
-    '#options' => openfed_getAllRoles(),
+    '#options' => _openfed_return_roles_list(),
   );
   $form['submit'] = array(
     '#type' => 'submit',
@@ -29,65 +29,52 @@ function openfed_role_form() {
 function openfed_role_form_submit($form, &$form_state) {
   $values = $form_state['values'];
 
-  $web_role = new stdClass();
-  $web_role->name = 'Builder';
-  $web_role->weight = 4;
-  user_role_save($web_role);
-
-  $web_role = user_role_load_by_name('Builder');
-  $web_role_rid = $web_role->rid;
-  $web_role_permissions = array(
-      'use text format full_html' => TRUE,
-      'use add another' => TRUE,
-  );
-  user_role_change_permissions($web_role_rid, $web_role_permissions);
-    
   if ( !empty($values['role_list']) ) {
     
     if ( $values['role_list']['configurator'] === 'configurator' ) {
-      $web_role = new stdClass();
-      $web_role->name = 'Configurator';
-      $web_role->weight = 5;
-      user_role_save($web_role);
+      $conf_role = new stdClass();
+      $conf_role->name = 'Configurator';
+      $conf_role->weight = 5;
+      user_role_save($conf_role);
       
-      $web_role = user_role_load_by_name('Configurator');
-      $web_role_rid = $web_role->rid;
-      $web_role_permissions = array(
+      $conf_role = user_role_load_by_name('Configurator');
+      $conf_role_rid = $conf_role->rid;
+      $conf_role_permissions = array(
           'use text format full_html' => TRUE,
           'use add another' => TRUE,
       );
-      user_role_change_permissions($web_role_rid, $web_role_permissions);
+      user_role_change_permissions($conf_role_rid, $conf_role_permissions);
     }
     
-    if ( $values['role_list']['editor'] === 'editor' ) {
-      $web_role = new stdClass();
-      $web_role->name = 'Editor';
-      $web_role->weight = 6;
-      user_role_save($web_role);
+    if ( $values['role_list']['content_manager'] === 'content_manager' ) {
+      $cm_role = new stdClass();
+      $cm_role->name = 'Content Manager';
+      $cm_role->weight = 6;
+      user_role_save($cm_role);
       
-      $web_role = user_role_load_by_name('Editor');
-      $web_role_rid = $web_role->rid;
-      $web_role_permissions = array(
+      $cm_role = user_role_load_by_name('Content Manager');
+      $cm_role_rid = $cm_role->rid;
+      $cm_role_permissions = array(
           'use text format full_html' => TRUE,
           'use add another' => TRUE,
       );
-      user_role_change_permissions($web_role_rid, $web_role_permissions);
+      user_role_change_permissions($cm_role_rid, $cm_role_permissions);
     }
     
     
-    if ( $values['role_list']['user'] === 'user' ) {
-      $user_role = new stdClass();
-      $user_role->name = 'User';
-      $user_role->weight = 7;
-      user_role_save($user_role);
+    if ( $values['role_list']['user_manager'] === 'user_manager' ) {
+      $um_role = new stdClass();
+      $um_role->name = 'User Manager';
+      $um_role->weight = 7;
+      user_role_save($um_role);
       
-      $user_role = user_role_load_by_name('User');
-      $user_role_rid = $user_role->rid;
-      $user_role_permissions = array(
+      $um_role = user_role_load_by_name('User Manager');
+      $um_role_rid = $um_role->rid;
+      $um_role_permissions = array(
           'use text format filtered_html' => TRUE,
           'use add another' => TRUE,
       );
-      user_role_change_permissions($user_role_rid, $user_role_permissions);
+      user_role_change_permissions($um_role_rid, $um_role_permissions);
     }
   }
 }

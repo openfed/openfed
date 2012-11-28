@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * Implements hook_schema().
+ */
+function ofed_page_schema() {
+
+}
+
+/**
+ * Implements hook_install().
+ */
+function ofed_page_install() {
+
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function ofed_page_uninstall() {
+  
+}

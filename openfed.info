@@ -1,7 +1,7 @@
 name = OpenFED
 description = Select this profile to install OpenFED distribution
 core = 7.x
-version = 0.1
+version = 0.2
 
 files[] = openfed.profile
 
@@ -44,13 +44,16 @@ files[] = openfed.profile
     dependencies[] = date_api
     dependencies[] = date_popup
     dependencies[] = date_views
+    dependencies[] = partial_date
   ; Development
     dependencies[] = devel
   ; Display suite
     dependencies[] = ds
     dependencies[] = ds_extras
+    dependencies[] = ds_format
     dependencies[] = ds_forms
     dependencies[] = ds_search
+    dependencies[] = ds_ui
   ; Features
     dependencies[] = features
     dependencies[] = features_override
@@ -93,9 +96,13 @@ files[] = openfed.profile
     dependencies[] = i18n_taxonomy
     dependencies[] = i18n_redirect
     dependencies[] = i18n_translation
+    dependencies[] = translation_table
     dependencies[] = i18n_variable
+  ; Multilanguage
+    dependencies[] = translation_helpers
   ; Other
     dependencies[] = navigation404
+    dependencies[] = better_formats
     dependencies[] = elements
     dependencies[] = entity
     dependencies[] = entity_token
@@ -107,6 +114,7 @@ files[] = openfed.profile
     dependencies[] = menu_block
     dependencies[] = menu_firstchild
     dependencies[] = menu_position
+    dependencies[] = mollom
     dependencies[] = override_node_options
     dependencies[] = pathauto
     dependencies[] = redirect
@@ -125,14 +133,21 @@ files[] = openfed.profile
     dependencies[] = panels_mini
     dependencies[] = panels_node
     dependencies[] = panels
+  ; Path breadcrumbs
+    dependencies[] = path_breadcrumbs_ui
+    dependencies[] = path_breadcrumbs
   ; Path management
     dependencies[] = globalredirect
   ; Permissions
     dependencies[] = view_unpublished
   ; Print
     dependencies[] = print
+  ; Search
+    dependencies[] = search_config
   ; Security
     dependencies[] = seckit
+  ; Seo
+    dependencies[] = page_title
   ; Statistics
     dependencies[] = googleanalytics
   ; User interface
@@ -150,6 +165,8 @@ files[] = openfed.profile
     dependencies[] = views_slideshow
     dependencies[] = views_slideshow_cycle
     dependencies[] = views_ui
+  ; Webform
+    dependencies[] = webform
   ; XML sitemap
     dependencies[] = xmlsitemap
     dependencies[] = xmlsitemap_node

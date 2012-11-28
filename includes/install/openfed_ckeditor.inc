@@ -1,18 +1,5 @@
 <?php
 /**
- * Update the Global format for ckeditor path
- */
-//$arrGP = array();
-//$arrGP['ckeditor_path'] = 'profiles/openfed/libraries/ckeditor'; 
-//db_update('ckeditor_settings')
-//                ->fields(array(
-//                    'settings' => serialize($arrGP),
-//                ))
-//                ->condition('name', 'CKEditor Global Profile', '=')
-//                ->execute();
-
-    
-/**
  * Updatd the Full format for ckeditor 
  */
 $arr = array();

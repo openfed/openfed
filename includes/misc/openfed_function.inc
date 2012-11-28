@@ -1,26 +1,39 @@
 <?php
 
 /**
+ * Return the array for the list of potential languages.
+ * 
+ * @return array 
+ */
+function _openfed_return_languages_list() {
+  $languages_list = array(
+    'fr' => 'French', 
+    'nl' => 'Dutch (Nederlands)'
+  );
+  return $languages_list;
+}
+
+/**
  * Return the array for the list of all roles.
  * 
- * @return string 
+ * @return array 
  */
-function openfed_getAllRoles() {
+function _openfed_return_roles_list() {
   $role_list = array(
-    //'builder' => 'Builder: gives access to the features activation once the website is set up (modules and content-types)',
-    'configurator' => 'Configurator: gives access to the modules and content-types configuration',
-    'editor' => 'Editor: if there will be a content editor, who will have access to the CMS and who will be able to manage full html format',
-    'user' => 'User: if there will be authenticated users on the website, able to manage filtered html'
+    'configurator' => 'Configurator : ',
+    'content_manager' => 'Content Manager : ',
+    'user_manager' => 'User Manager : ',
   );
   return $role_list;
 }
 
+
 /**
  * Return the array for the list of all functionalities.
  * 
- * @return string 
+ * @return array 
  */
-function openfed_getAllFunctionalities() {
+function _openfed_return_functionalities_list() {
   $features = drupal_get_path('profile', 'openfed').'/assets/images/features.gif';
   $modules = drupal_get_path('profile', 'openfed').'/assets/images/modules.gif';
   
@@ -79,6 +92,11 @@ function openfed_getAllFunctionalities() {
       'description' => 'Provide the official Belgian Federal Authorities header.',
     ),
       
+    'lexicon' => array(
+      'title' => 'Lexicon',
+      'picture' => $modules,
+      'description' => 'Maintain one or more lexicons on your site and optionally mark term from one or more lexicons in the content of the website.',
+    ),
     'backup_migrate' => array(
       'title' => 'Backup Migrate',
       'picture' => $modules,
@@ -139,13 +157,10 @@ function openfed_getAllFunctionalities() {
       'picture' => $modules,
       'description' => 'Enables secure login.',
     ),
-      
-      
-      
-
   );
   return $function_list;
 }
+
 
 /**
  * Preprocess of the module list in functionalities install task
@@ -194,6 +209,7 @@ function form_process_checkboxes_at_install($element) {
   }
   return $element;
 }
+
 
 /**
  * Return the template for a checkbox item with description and full description possibilities.

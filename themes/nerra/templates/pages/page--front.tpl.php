@@ -41,23 +41,22 @@
 </section>
 
 
-<section class="top">
-  <div class="container">
-    
-    <?php if( !empty($page['top']) ): ?>
-    <!-- Region top -->
-      <div class="top">
-        <?php print render($page['top']); ?>
-      </div>	
-    <?php endif; ?>
-    
-    <?php if ( theme_get_setting('nerra_breadcrumb_display') && theme_get_setting('nerra_breadcrumb_homepage') && $breadcrumb): ?>
-    <!-- Region Breadcrumb -->
-      <nav class="breadcrumb"><?php print $breadcrumb; ?></nav>
-    <?php endif; ?>
+<?php if( !empty($page['top']) ): ?>
+  <!-- Region top -->
+    <section class="top">
+      <div class="container">
+        <div class="top">
+          <?php print render($page['top']); ?>
+        </div>	
+      </div>
+    </section>
+<?php endif; ?>
       
-  </div>
-</section>
+
+<?php if ( theme_get_setting('nerra_breadcrumb_display') && theme_get_setting('nerra_breadcrumb_homepage') && $breadcrumb): ?>
+<!-- Region Breadcrumb -->
+  <nav class="breadcrumb"><?php print $breadcrumb; ?></nav>
+<?php endif; ?>
 
 
 <section class="site">

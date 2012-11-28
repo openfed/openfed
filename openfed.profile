@@ -7,7 +7,7 @@
 require_once('includes/misc/openfed_function.inc');
 
 // Function for the setup of menu.
-//require_once('includes/form/openfed_regional_function.inc');
+require_once('includes/form/openfed_regional_function.inc');
 
 // Function for the setup of menu.
 require_once('includes/form/openfed_menu_function.inc');
@@ -22,7 +22,7 @@ require_once('includes/form/openfed_taxonomy_function.inc');
 require_once('includes/form/openfed_user_function.inc');
 
 // Function for the setup of additional function.
-require_once('includes/form/openfed_functionnalities_form.inc');
+require_once('includes/form/openfed_functionalities_form.inc');
   
 // Function for the setup of complete step.
 require_once('includes/form/openfed_complete_function.inc');
@@ -54,6 +54,8 @@ function system_form_install_settings_form_alter(&$form, &$form_state, &$install
   $form['settings']['mysql']['advanced_options']['db_prefix']['#default_value'] = 'drupal_';
   // For SQLITE.
   $form['settings']['sqlite']['advanced_options']['db_prefix']['#default_value'] = 'drupal_';
+  // For PostgreSQL.
+  $form['settings']['pgsql']['advanced_options']['db_prefix']['#default_value'] = 'drupal_';
 }
 
 /**
@@ -61,10 +63,10 @@ function system_form_install_settings_form_alter(&$form, &$form_state, &$install
  * task that can be accomplish within the installation process
  */
 function openfed_install_tasks($install_state) {
-  // load js
-  drupal_add_js('profiles/openfed/assets/scripts/openfed.js');
-  // load css
-  drupal_add_css('profiles/openfed/assets/styles/openfed.css');
+  // load js for custom layout
+  drupal_add_js('profiles/openfed/themes/maintenance/assets/scripts/script.js');
+  // load css for custom layout
+  drupal_add_css('profiles/openfed/themes/maintenance/assets/styles/design.css');
   
   //drupal_set_title('openFED7 : '.drupal_get_title());
   $menu_tools = !empty($install_state['parameters']['menu_list']) && $install_state['parameters']['menu_list'] = 'menu-tools-menu'; 
@@ -72,13 +74,22 @@ function openfed_install_tasks($install_state) {
   
   $tasks = array();
   
+  $openfed_need_batch_internalization = variable_get('openfed_need_batch_internalization', FALSE);
+  $openfed_need_batch_functionalities = variable_get('openfed_need_batch_functionalities', FALSE);
+  
   // Step to choose which language to pre-install.
-  // TODO DEBUG why it redirect to the public website
-//  $tasks['openfed_regional_form'] = array(
-//    'display_name' => st('Setup Regional'),
-//    'display' => TRUE,
-//    'type' => 'form',
-//  );
+  $tasks['openfed_regional_form'] = array(
+    'display_name' => st('Setup Regional'),
+    'display' => TRUE,
+    'type' => 'form',
+  );
+  // batch the process of language activation if a language must be pre-install
+  $tasks['openfed_batch_internalization'] = array(
+    'display_name' => st('Import internalization'),
+    'display' => $openfed_need_batch_internalization,
+    'type' => 'batch',
+    'run' => $openfed_need_batch_internalization ? INSTALL_TASK_RUN_IF_NOT_COMPLETED : INSTALL_TASK_SKIP,
+  );
   
   // Step to choose which menu to pre-install.
   $tasks['openfed_menu_form'] = array(
@@ -107,10 +118,16 @@ function openfed_install_tasks($install_state) {
   );
     
   // Step to choose which additional functionalities to add.
-  $tasks['openfed_functionnalities_form'] = array(
-    'display_name' => st('Setup functionnalities'),
+  $tasks['openfed_functionalities_form'] = array(
+    'display_name' => st('Setup functionalities'),
     'display' => TRUE,
     'type' => 'form',
+  );
+  $tasks['openfed_batch_functionalities'] = array(
+    'display_name' => st('Import functionalities'),
+    'display' => $openfed_need_batch_functionalities,
+    'type' => 'batch',
+    'run' => $openfed_need_batch_functionalities ? INSTALL_TASK_RUN_IF_NOT_COMPLETED : INSTALL_TASK_SKIP,
   );
     
   // Step to rebuild permission.
@@ -131,3 +148,5 @@ function openfed_theme() {
     ),
   );
 }
+
+

@@ -1,0 +1,8 @@
+name = Notification
+description = Add a checkbox to a content type to send notification if needed.
+package = openFED
+core = 7.x
+version = "7.x-1.0"
+
+dependencies[] = field
+dependencies[] = field_ui

@@ -39,20 +39,6 @@
         'cache' => -1,
       ),
       
-    // TODO: change to form functionnalities
-      array( // Switcher
-        'module' => 'ofed_switcher',
-        'delta' => 'ofed_switcher',
-        'theme' => $default_theme,
-        'status' => 1,
-        'weight' => 2,
-        'region' => 'tools',
-        'pages' => '',
-        'title' => '<none>',
-        'cache' => -1,
-      ),
-    //END TODO
-    //
     // HEADER
     // NAVIGATION
       array( // Main Menu
@@ -132,22 +118,7 @@
   $admin_theme = variable_get('admin_theme', 'cms_theme');
   
   $admin_values = array(
-      
-      // TODO: switch to functionalities
       // TOOLS
-        array( // Switcher
-          'module' => 'ofed_switcher',
-          'delta' => 'ofed_switcher',
-          'theme' => $admin_theme,
-          'status' => 1,
-          'weight' => 0,
-          'region' => 'tools',
-          'pages' => '',
-          'title' => '<none>',
-          'cache' => -1,
-        ),
-      // END TODO
-      
       // HEADER
       // NAVIGATION
         array( // Main Menu
