@@ -23,11 +23,11 @@ function openfed_install() {
   }
   
   
-  /*
-   * Install of text format 
+  /**
+   *  Include all custom functions.
    */
-  require_once('includes/install/openfed_text_format.inc');
-  
+  require_once('includes/misc/openfed_function.inc');
+    
   /*
    * Install of roles
    */
@@ -37,6 +37,12 @@ function openfed_install() {
    * Configuration of users
    */
   require_once('includes/install/openfed_users.inc');
+  
+  /*
+   * Install of text format 
+   */
+  require_once('includes/install/openfed_text_format.inc');
+
       
   /*
    * MENU
@@ -67,6 +73,11 @@ function openfed_install() {
    * Date
    */
   require_once('includes/install/openfed_date.inc');
+  
+  /*
+   * DisplaySuite
+   */
+  require_once('includes/install/openfed_displaysuite.inc');
   
   /*
    * External link
@@ -109,6 +120,11 @@ function openfed_install() {
   require_once('includes/install/openfed_pathauto.inc');
   
   /*
+   * Path Breadcrumbs
+   */
+  require_once('includes/install/openfed_path_breadcrumbs.inc');
+  
+  /*
    * Print
    */
   require_once('includes/install/openfed_print.inc');
@@ -119,14 +135,14 @@ function openfed_install() {
   require_once('includes/install/openfed_regional.inc');
   
   /*
-   * Search
-   */
-  require_once('includes/install/openfed_search.inc');
-  
-  /*
    * Sitemap
    */
   require_once('includes/install/openfed_sitemap.inc');
+  
+  /*
+   * Sweaver
+   */
+  require_once('includes/install/openfed_sweaver.inc');
   
   /*
    * Views

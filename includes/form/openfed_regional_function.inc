@@ -142,27 +142,79 @@ function _openfed_create_panel_node_frontpage($lang) {
       break;
     }
 
-    // Create panel
-    $node = new stdClass();
-    $node->type = 'panel';
-    node_object_prepare($node);
-    $node->uid = 1;
-    $node->language = $lang;
-    $node->title = $title;
-    $node->status = 1;
-    $node->path = array(
-      'alias' => $alias,
-      'language' => $lang,
-      'pathauto' => 0,
-    );
-    $node->panels_node = array(
-      'layout' => 'flexible',
-      'css_id' => '',
-      'pipeline' => 'standard',
-    );
-    $node->comment = 0;
+//    // Create panel
+//    $node = new stdClass();
+//    $node->type = 'panel';
+//    node_object_prepare($node);
+//    $node->uid = 1;
+//    $node->language = $lang;
+//    $node->title = $title;
+//    $node->status = 1;
+//    $node->path = array(
+//      'alias' => $alias,
+//      'language' => $lang,
+//      'pathauto' => 0,
+//    );
+//    $node->panels_node = array(
+//      'layout' => 'flexible',
+//      'css_id' => '',
+//      'pipeline' => 'standard',
+//    );
+//    $node->comment = 0;
+//    
+//    node_save($node);
     
-    node_save($node);
+    $pages = array(
+        'name' => $alias,
+        'task' => 'page',
+        'admin_title' => $title,
+        'path' => $alias,
+        'access' => array(
+          'plugins'=>array()
+        ),
+        'menu' => array(),
+        'arguments' => array(),
+        'conf' => array(
+          'admin_paths'=>array()
+        ),
+    );
+    drupal_write_record('page_manager_pages', $pages);
+    $display = array(
+        'layout' => 'onecol',
+        'layout_settings' => array(),
+        'panel_settings' => array(
+          'style_settings' => array(
+            'default' => '',
+            'middle' => '',
+          )
+        ),
+        'cache' => array(),
+        'title' => '',
+        'hide_title' => 1,
+        'title_pane' => 0,
+    );
+    drupal_write_record('panels_display', $display);
+    
+    $handlers = array(
+        'name' => 'page_'.$alias.'_panel_context',
+        'task' => 'page',
+        'subtask' => $alias,
+        'handler' => 'panel_context',
+        'weight' => 0,
+        'conf' => array(
+          'title' => $title,
+          'no_blocks' => 0,
+          'pipeline' => 'standard',
+          'body_classes_to_remove' => '',
+          'body_classes_to_add' => '',
+          'css_id' => '',
+          'css' => '',
+          'contexts' => array(),
+          'relationships' => array(),
+          'did' => $display['did']
+        )
+    );
+    drupal_write_record('page_manager_handlers', $handlers);
     
     
     // set panel to the front page
@@ -185,6 +237,7 @@ function _openfed_create_front_menu_link($menu_name) {
     'link_title' => st('Home'),
     'link_path' => '<front>',
     'menu_name' => 'menu-'.$menu_name,
+    'weight' => -50,
   );
   menu_link_save($item);
 }
@@ -198,7 +251,7 @@ function _openfed_set_block_into_navigation_region($menu_name){
   $default_theme = variable_get('theme_default', 'nerra');
   $block = array(
     'module' => 'system',
-    'delta' => 'menu-'.$menu_name,
+    'delta' => $menu_name,
     'theme' => $default_theme,
     'status' => 1,
     'weight' => 0,

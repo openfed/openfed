@@ -55,21 +55,45 @@ function ofed_feature_page_strongarm() {
         'custom_settings' => TRUE,
       ),
       'full' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => TRUE,
       ),
       'rss' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => TRUE,
       ),
       'search_index' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => TRUE,
       ),
       'search_result' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => TRUE,
       ),
       'print' => array(
         'custom_settings' => FALSE,
       ),
       'token' => array(
+        'custom_settings' => FALSE,
+      ),
+      'block_column' => array(
+        'custom_settings' => FALSE,
+      ),
+      'block_element' => array(
+        'custom_settings' => FALSE,
+      ),
+      'block_info' => array(
+        'custom_settings' => FALSE,
+      ),
+      'block_list' => array(
+        'custom_settings' => FALSE,
+      ),
+      'page_list' => array(
+        'custom_settings' => FALSE,
+      ),
+      'revision' => array(
+        'custom_settings' => FALSE,
+      ),
+      'references' => array(
+        'custom_settings' => FALSE,
+      ),
+      'diff_standard' => array(
         'custom_settings' => FALSE,
       ),
     ),
@@ -79,29 +103,45 @@ function ofed_feature_page_strongarm() {
           'weight' => '0',
         ),
         'metatags' => array(
-          'weight' => '9',
+          'weight' => '12',
         ),
         'title' => array(
           'weight' => '1',
         ),
         'path' => array(
-          'weight' => '8',
+          'weight' => '11',
         ),
         'redirect' => array(
-          'weight' => '7',
+          'weight' => '10',
         ),
         'xmlsitemap' => array(
-          'weight' => '6',
+          'weight' => '9',
         ),
       ),
       'display' => array(
         'language' => array(
           'default' => array(
-            'weight' => '4',
+            'weight' => '14',
             'visible' => FALSE,
           ),
           'teaser' => array(
-            'weight' => '1',
+            'weight' => '12',
+            'visible' => FALSE,
+          ),
+          'full' => array(
+            'weight' => '14',
+            'visible' => FALSE,
+          ),
+          'rss' => array(
+            'weight' => '13',
+            'visible' => FALSE,
+          ),
+          'search_index' => array(
+            'weight' => '13',
+            'visible' => FALSE,
+          ),
+          'search_result' => array(
+            'weight' => '15',
             'visible' => FALSE,
           ),
         ),
@@ -138,7 +178,7 @@ function ofed_feature_page_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'language_content_type_ofed_page';
-  $strongarm->value = '1';
+  $strongarm->value = '2';
   $export['language_content_type_ofed_page'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -146,7 +186,9 @@ function ofed_feature_page_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_options_ofed_page';
   $strongarm->value = array(
-    0 => 'main-menu',
+    0 => 'main-dutch-menu',
+    1 => 'main-french-menu',
+    2 => 'main-menu',
   );
   $export['menu_options_ofed_page'] = $strongarm;
 
@@ -154,23 +196,21 @@ function ofed_feature_page_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_parent_ofed_page';
-  $strongarm->value = 'main-menu:0';
+  $strongarm->value = 'main-french-menu:0';
   $export['menu_parent_ofed_page'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_options_ofed_page';
-  $strongarm->value = array(
-    0 => 'status',
-  );
+  $strongarm->value = array();
   $export['node_options_ofed_page'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_preview_ofed_page';
-  $strongarm->value = '0';
+  $strongarm->value = '1';
   $export['node_preview_ofed_page'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -183,22 +223,43 @@ function ofed_feature_page_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'pathauto_node_ofed_page_en_pattern';
+  $strongarm->name = 'page_title_type_ofed_page';
   $strongarm->value = '';
+  $export['page_title_type_ofed_page'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'page_title_type_ofed_page_showfield';
+  $strongarm->value = 1;
+  $export['page_title_type_ofed_page_showfield'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_ofed_page_en_pattern';
+  $strongarm->value = '[node:menu-link:parents:join-path]/[node:title]';
   $export['pathauto_node_ofed_page_en_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_ofed_page_fr_pattern';
-  $strongarm->value = '';
+  $strongarm->value = '[node:menu-link:parent:title]/[node:title]';
   $export['pathauto_node_ofed_page_fr_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_ofed_page_nl_pattern';
+  $strongarm->value = '[node:menu-link:parents:join-path]/[node:title]';
+  $export['pathauto_node_ofed_page_nl_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_ofed_page_pattern';
-  $strongarm->value = '[node:menu-link:parent:title]/[node:title]';
+  $strongarm->value = '[node:menu-link:parents:join-path]/[node:title]';
   $export['pathauto_node_ofed_page_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -207,6 +268,13 @@ function ofed_feature_page_strongarm() {
   $strongarm->name = 'pathauto_node_ofed_page_und_pattern';
   $strongarm->value = '';
   $export['pathauto_node_ofed_page_und_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_ofed_page_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_ofed_page_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

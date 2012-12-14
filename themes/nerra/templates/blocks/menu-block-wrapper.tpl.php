@@ -18,4 +18,6 @@
  * @see template_preprocess_menu_block_wrapper()
  */
 ?>
+<div class="<?php print $classes; ?>">
   <?php print render($content); ?>
+</div>

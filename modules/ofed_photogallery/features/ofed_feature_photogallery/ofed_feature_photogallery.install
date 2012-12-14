@@ -1,0 +1,52 @@
+<?php
+
+/**
+ * Implements hook_schema().
+ */
+function ofed_feature_photogallery_schema() {
+
+}
+
+/**
+ * Implements hook_install().
+ */
+function ofed_feature_photogallery_install() {
+  // If the related feature is not enabled.
+  if(!module_exists('ofed_photogallery')) {
+    // Enable it.
+    module_enable(array('ofed_photogallery'));
+  }
+  
+  // Install menu link(s).
+  $menus = menu_get_menus(FALSE);
+  if(!isset($menus['menu-cms-menu'])) {
+    // Create a CMS Menu if not exist.
+    $menu = array();
+    $menu['menu_name'] = "menu-cms-menu";
+    $menu['title'] = "CMS Menu";
+    $menu['description'] = "";
+    menu_save($menu);
+    // Update the menu router information.
+    menu_rebuild();
+  }
+  // Create the menu content type link(s).
+  $item = array(
+    'link_title' => t('Photos galeries'), 
+    'link_path' => 'cms/photos-galeries',
+    'router_path' => 'cms/photos-galeries',
+    'menu_name' => 'menu-cms-menu',
+    'customized' => 1,
+  );
+  menu_link_save($item);
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function ofed_feature_photogallery_uninstall() {
+  // If the related feature is enabled.
+  if(module_exists('ofed_photogallery')) {
+    // Disable it.
+    module_disable(array('ofed_photogallery'));
+  }
+}

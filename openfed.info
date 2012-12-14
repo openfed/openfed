@@ -36,6 +36,7 @@ files[] = openfed.profile
     dependencies[] = multiselect
   ; Chaos Tools
     dependencies[] = ctools
+    dependencies[] = page_manager
     dependencies[] = stylizer
     dependencies[] = views_content
   ; Date
@@ -100,9 +101,16 @@ files[] = openfed.profile
     dependencies[] = i18n_variable
   ; Multilanguage
     dependencies[] = translation_helpers
+  ; OpenFed
+    dependencies[] = ofed
+    dependencies[] = ofed_download
+    dependencies[] = ofed_page
+    dependencies[] = ofed_pagemodel
+    dependencies[] = ofed_switcher
   ; Other
     dependencies[] = navigation404
-    dependencies[] = better_formats
+    dependencies[] = backup_migrate
+    dependencies[] = diff
     dependencies[] = elements
     dependencies[] = entity
     dependencies[] = entity_token
@@ -142,8 +150,10 @@ files[] = openfed.profile
     dependencies[] = view_unpublished
   ; Print
     dependencies[] = print
-  ; Search
-    dependencies[] = search_config
+  ; Rules
+    dependencies[] = rules
+    dependencies[] = rules_scheduler
+    dependencies[] = rules_admin
   ; Security
     dependencies[] = seckit
   ; Seo
@@ -156,6 +166,7 @@ files[] = openfed.profile
     dependencies[] = ckeditor_link
     dependencies[] = extlink
     dependencies[] = jquery_plugin
+    dependencies[] = sweaver
   ; Variable
     dependencies[] = variable
     dependencies[] = variable_views
@@ -170,10 +181,3 @@ files[] = openfed.profile
   ; XML sitemap
     dependencies[] = xmlsitemap
     dependencies[] = xmlsitemap_node
-
-
-
-
-
-
-

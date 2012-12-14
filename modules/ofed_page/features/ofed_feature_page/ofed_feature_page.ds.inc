@@ -1,0 +1,365 @@
+<?php
+/**
+ * @file
+ * ofed_feature_page.ds.inc
+ */
+
+/**
+ * Implements hook_ds_field_settings_info().
+ */
+function ofed_feature_page_ds_field_settings_info() {
+  $export = array();
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'node|ofed_page|default';
+  $ds_fieldsetting->entity_type = 'node';
+  $ds_fieldsetting->bundle = 'ofed_page';
+  $ds_fieldsetting->view_mode = 'default';
+  $ds_fieldsetting->settings = array(
+    'title' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+    'field_ofed_page_summary' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'classes' => 'headline',
+        ),
+      ),
+    ),
+  );
+  $export['node|ofed_page|default'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'node|ofed_page|full';
+  $ds_fieldsetting->entity_type = 'node';
+  $ds_fieldsetting->bundle = 'ofed_page';
+  $ds_fieldsetting->view_mode = 'full';
+  $ds_fieldsetting->settings = array(
+    'title' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+    'field_ofed_page_update' => array(
+      'formatter_settings' => array(
+        'ft' => array(),
+      ),
+    ),
+    'field_ofed_page_summary' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'classes' => 'headline',
+        ),
+      ),
+    ),
+  );
+  $export['node|ofed_page|full'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'node|ofed_page|rss';
+  $ds_fieldsetting->entity_type = 'node';
+  $ds_fieldsetting->bundle = 'ofed_page';
+  $ds_fieldsetting->view_mode = 'rss';
+  $ds_fieldsetting->settings = array(
+    'title' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+    'node_link' => array(
+      'weight' => '3',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+  );
+  $export['node|ofed_page|rss'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'node|ofed_page|search_index';
+  $ds_fieldsetting->entity_type = 'node';
+  $ds_fieldsetting->bundle = 'ofed_page';
+  $ds_fieldsetting->view_mode = 'search_index';
+  $ds_fieldsetting->settings = array(
+    'title' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+  );
+  $export['node|ofed_page|search_index'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'node|ofed_page|search_result';
+  $ds_fieldsetting->entity_type = 'node';
+  $ds_fieldsetting->bundle = 'ofed_page';
+  $ds_fieldsetting->view_mode = 'search_result';
+  $ds_fieldsetting->settings = array(
+    'title' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+    'node_link' => array(
+      'weight' => '3',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+  );
+  $export['node|ofed_page|search_result'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'node|ofed_page|teaser';
+  $ds_fieldsetting->entity_type = 'node';
+  $ds_fieldsetting->bundle = 'ofed_page';
+  $ds_fieldsetting->view_mode = 'teaser';
+  $ds_fieldsetting->settings = array(
+    'title' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+    'node_link' => array(
+      'weight' => '3',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+  );
+  $export['node|ofed_page|teaser'] = $ds_fieldsetting;
+
+  return $export;
+}
+
+/**
+ * Implements hook_ds_layout_settings_info().
+ */
+function ofed_feature_page_ds_layout_settings_info() {
+  $export = array();
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|ofed_page|default';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'ofed_page';
+  $ds_layout->view_mode = 'default';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'title',
+        1 => 'field_ofed_page_update',
+        2 => 'field_ofed_page_summary',
+        3 => 'field_ofed_page_thumb',
+        4 => 'field_ofed_page_body',
+        5 => 'field_ofed_page_docs',
+      ),
+    ),
+    'fields' => array(
+      'title' => 'ds_content',
+      'field_ofed_page_update' => 'ds_content',
+      'field_ofed_page_summary' => 'ds_content',
+      'field_ofed_page_thumb' => 'ds_content',
+      'field_ofed_page_body' => 'ds_content',
+      'field_ofed_page_docs' => 'ds_content',
+    ),
+    'classes' => array(),
+    'wrappers' => array(
+      'ds_content' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => 'ds-wrapper-page ds-wrapper-page-default default',
+    'layout_attributes_merge' => 1,
+    'hide_page_title' => '0',
+    'page_option_title' => '',
+    'hide_sidebars' => 0,
+  );
+  $export['node|ofed_page|default'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|ofed_page|full';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'ofed_page';
+  $ds_layout->view_mode = 'full';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'field_ofed_page_update',
+        1 => 'field_ofed_page_summary',
+        2 => 'field_ofed_page_thumb',
+        3 => 'field_ofed_page_body',
+        4 => 'field_ofed_page_docs',
+      ),
+    ),
+    'fields' => array(
+      'field_ofed_page_update' => 'ds_content',
+      'field_ofed_page_summary' => 'ds_content',
+      'field_ofed_page_thumb' => 'ds_content',
+      'field_ofed_page_body' => 'ds_content',
+      'field_ofed_page_docs' => 'ds_content',
+    ),
+    'classes' => array(),
+    'wrappers' => array(
+      'ds_content' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => 'ds-wrapper-page ds-wrapper-page-full full',
+    'layout_attributes_merge' => 1,
+    'hide_page_title' => '0',
+    'page_option_title' => '',
+    'hide_sidebars' => 0,
+  );
+  $export['node|ofed_page|full'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|ofed_page|rss';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'ofed_page';
+  $ds_layout->view_mode = 'rss';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'title',
+        1 => 'field_ofed_page_update',
+        2 => 'field_ofed_page_summary',
+        3 => 'node_link',
+      ),
+    ),
+    'fields' => array(
+      'title' => 'ds_content',
+      'field_ofed_page_update' => 'ds_content',
+      'field_ofed_page_summary' => 'ds_content',
+      'node_link' => 'ds_content',
+    ),
+    'classes' => array(),
+    'wrappers' => array(
+      'ds_content' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => 'ds-wrapper-page ds-wrapper-page-rss rss',
+    'layout_attributes_merge' => 1,
+    'hide_page_title' => '0',
+    'page_option_title' => '',
+    'hide_sidebars' => 0,
+  );
+  $export['node|ofed_page|rss'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|ofed_page|search_index';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'ofed_page';
+  $ds_layout->view_mode = 'search_index';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'title',
+        1 => 'field_ofed_page_update',
+        2 => 'field_ofed_page_summary',
+        3 => 'field_ofed_page_body',
+        4 => 'field_ofed_page_docs',
+      ),
+    ),
+    'fields' => array(
+      'title' => 'ds_content',
+      'field_ofed_page_update' => 'ds_content',
+      'field_ofed_page_summary' => 'ds_content',
+      'field_ofed_page_body' => 'ds_content',
+      'field_ofed_page_docs' => 'ds_content',
+    ),
+    'classes' => array(),
+    'wrappers' => array(
+      'ds_content' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => 'ds-wrapper-page ds-wrapper-page-search-index search-index',
+    'layout_attributes_merge' => 1,
+    'hide_page_title' => '0',
+    'page_option_title' => '',
+    'hide_sidebars' => 0,
+  );
+  $export['node|ofed_page|search_index'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|ofed_page|search_result';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'ofed_page';
+  $ds_layout->view_mode = 'search_result';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'title',
+        1 => 'field_ofed_page_update',
+        2 => 'field_ofed_page_summary',
+        3 => 'node_link',
+      ),
+    ),
+    'fields' => array(
+      'title' => 'ds_content',
+      'field_ofed_page_update' => 'ds_content',
+      'field_ofed_page_summary' => 'ds_content',
+      'node_link' => 'ds_content',
+    ),
+    'classes' => array(),
+    'wrappers' => array(
+      'ds_content' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => 'ds-wrapper-page ds-wrapper-page-search-result search-result',
+    'layout_attributes_merge' => 1,
+    'hide_page_title' => '0',
+    'page_option_title' => '',
+    'hide_sidebars' => 0,
+  );
+  $export['node|ofed_page|search_result'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|ofed_page|teaser';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'ofed_page';
+  $ds_layout->view_mode = 'teaser';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'title',
+        1 => 'field_ofed_page_update',
+        2 => 'field_ofed_page_summary',
+        3 => 'node_link',
+      ),
+    ),
+    'fields' => array(
+      'title' => 'ds_content',
+      'field_ofed_page_update' => 'ds_content',
+      'field_ofed_page_summary' => 'ds_content',
+      'node_link' => 'ds_content',
+    ),
+    'classes' => array(),
+    'wrappers' => array(
+      'ds_content' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => 'ds-wrapper-page ds-wrapper-page-teaser teaser',
+    'layout_attributes_merge' => 1,
+    'hide_page_title' => '0',
+    'page_option_title' => '',
+    'hide_sidebars' => 0,
+  );
+  $export['node|ofed_page|teaser'] = $ds_layout;
+
+  return $export;
+}

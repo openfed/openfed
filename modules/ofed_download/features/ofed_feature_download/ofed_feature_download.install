@@ -16,19 +16,28 @@ function ofed_feature_download_install() {
     // Enable it.
     module_enable(array('ofed_download'));
   }
-  
+
   // Install menu link(s).
   $menus = menu_get_menus(FALSE);
-  if(isset($menus['menu-cms-menu'])) {
-    $item = array(
-      'link_title' => t('Downloads'), 
-      'link_path' => 'cms/downloads',
-      'router_path' => 'cms/downloads',
-      'menu_name' => 'menu-cms-menu',
-      'customized' => 1,
-    );
-    menu_link_save($item);
+  if(!isset($menus['menu-cms-menu'])) {
+    // Create a CMS Menu if not exist.
+    $menu = array();
+    $menu['menu_name'] = "menu-cms-menu";
+    $menu['title'] = "CMS Menu";
+    $menu['description'] = "";
+    menu_save($menu);
+    // Update the menu router information.
+    menu_rebuild();
   }
+  // Create the menu content type link(s).
+  $item = array(
+    'link_title' => t('Downloads'), 
+    'link_path' => 'cms/downloads',
+    'router_path' => 'cms/downloads',
+    'menu_name' => 'menu-cms-menu',
+    'customized' => 1,
+  );
+  menu_link_save($item);
 }
 
 /**

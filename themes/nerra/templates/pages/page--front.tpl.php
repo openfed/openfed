@@ -12,64 +12,58 @@
     
     <?php if( !empty($page['tools']) ): ?>
     <!-- Region Tools -->
-      <div class="tools">
-        <?php print render($page['tools']); ?>
-      </div>	
-    <?php endif; ?>
-    
-    <?php if( !empty($page['header']) ): ?>
-    <!-- Region Header -->
-      <div class="header">
-        <?php print render($page['header']); ?>
-      </div>	
-    <?php endif; ?>
-
-    
+      <div id="tools"><?php print render($page['tools']); ?></div>
+    <?php endif; ?>    
   </div>
+  <?php if( !empty($page['header']) ): ?>
+  <!-- Region Header -->
+  <section id="header">
+      <div class="container">
+	  <?php print render($page['header']); ?>
+      </div>
+  </section>	
+  <?php endif; ?>
+
 </header>
 
 
-<section class="navigation">
+<nav id="navigation">
   <div class="container">
     
 	<!-- Region Navigation -->	
-	<nav class="main-nav">
       <?php print render($page['navigation']); ?>
-	</nav>
       
   </div>
-</section>
+</nav>
 
 
 <?php if( !empty($page['top']) ): ?>
   <!-- Region top -->
-    <section class="top">
+    <section id="top">
       <div class="container">
-        <div class="top">
-          <?php print render($page['top']); ?>
-        </div>	
-      </div>
+        <?php print render($page['top']); ?>
+      </div>	
     </section>
 <?php endif; ?>
       
 
 <?php if ( theme_get_setting('nerra_breadcrumb_display') && theme_get_setting('nerra_breadcrumb_homepage') && $breadcrumb): ?>
 <!-- Region Breadcrumb -->
-  <nav class="breadcrumb"><?php print $breadcrumb; ?></nav>
+  <div class="breadcrumb container" itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><?php print $breadcrumb; ?></div>
 <?php endif; ?>
 
 
-<section class="site">
+<div id="main">
   <div class="container">
     
     <?php if ( !empty($page['sidebar_first']) ): ?>
     <!-- Region Left -->
-      <aside class="aside-left <?php echo $class_left; ?>">
+      <div id="aside-left" class="<?php echo $class_left; ?>">
         <?php echo render( $page['sidebar_first'] ); ?>
-      </aside>
+      </div>
     <?php endif; ?>
 
-    <div class="maincontent <?php echo $class_content; ?>">
+    <div id="maincontent" class="<?php echo $class_content; ?>">
       <!-- Region Content -->
       <?php if ( theme_get_setting('nerra_toggle_message') && $messages): ?>
       <!-- messages -->
@@ -78,7 +72,9 @@
 
       <?php print render($title_prefix); ?>
       <?php if ($title): ?>
-        <h1><?php print $title; ?></h1>
+        <blockquote>
+          <h1><?php print $title; ?></h1>
+        </blockquote>
       <?php endif; ?>
       <?php print render($title_suffix); ?>
 
@@ -98,24 +94,24 @@
 
     <?php if ( !empty($page['sidebar_second']) ): ?>
     <!-- Region Right -->
-      <aside class="aside-right <?php echo $class_right; ?>">
+      <aside id="aside-right" class="<?php echo $class_right; ?>">
         <?php echo render( $page['sidebar_second'] ); ?>
       </aside>
     <?php endif; ?>
     
   </div>
-</section>
+</div>
 
 
 <?php if ( !empty($page['bottom']) ): ?>
 <!-- bottom -->
-  <section class="bottom">
+  <section id="bottom">
     <div class="container"><?php echo render($page['bottom']); ?></div>
   </section>
 <?php endif; ?>
 
 
-<footer>
+<footer id="footer">
   <div class="container">
     
     <?php if ( !empty($page['footer']) ) : ?>
@@ -138,7 +134,7 @@
         <?php if ( theme_get_setting('nerra_toggle_sponsor') ): ?>
         <!-- Region Sponsor -->
           <div class="sponsor span-3">
-            <p><a href="http://www.blue4you.be" target="_blank" title="Webdesign by Blue4You">Webdesign</a> by Blue4You</p>
+            <p><a href="http://www.blue4you.be" target="_blank" title="<?php echo t('Webdesign by Blue4You'); ?>">Webdesign</a> by Blue4You</p>
           </div>
         <?php endif; ?>
         

@@ -55,7 +55,6 @@ function nerra_preprocess_html(&$variables) {
     $variables['classes_array'][] = 'no-sidebars';
   }
   
-  
   // Add conditional stylesheets for IE
   drupal_add_css(
     path_to_theme() . '/css/ie.css', 
@@ -107,11 +106,25 @@ function nerra_breadcrumb($variables) {
           $display .= '<li>'.t('You are here').'</li>';
         endif;
         
+        $counter = 1;
+        $count = count($breadcrumb);
 		foreach( $breadcrumb as $item) {
           if ( strpos($item, $first) || strpos($item, $nolink) ) {
             $item = strip_tags($item);
           }
-          $display .= '<li>'.$item.'</li>';
+          switch ( $counter ) {
+            case "1":
+              $class = 'class="first"';
+              break;
+            case $count:
+              $class = 'class="last"';
+              break;
+            default:
+              $class = '';
+              break;
+          }
+          $display .= '<li '.$class.' >'.$item.'</li>';
+          $counter++;
         }
         
       $display .= '</ul>';

@@ -19,6 +19,12 @@
 function nerra_form_system_theme_settings_alter(&$form, &$form_state) {
   $path = drupal_get_path('theme', 'nerra');
   
+  $form['nerra_information'] = array(
+    '#markup' => t('Custom Theme Settings'),
+    '#prefix' => '<h3 class="nerra-fake-title">',
+    '#suffix' => '</h3>',
+  );
+  
   $form['nerra'] = array(
     '#type' => 'vertical_tabs', 
     '#title' => t('nerra settings'), 
@@ -258,5 +264,31 @@ function nerra_form_system_theme_settings_alter(&$form, &$form_state) {
         '#type' => 'textfield',
         '#title' => t('No JS Warning label'),
         '#default_value' => theme_get_setting('nerra_browser_nojs_label'),
+      );
+      
+      
+    /**
+    * Website width
+    */
+    $form['nerra']['nerra_website'] = array(
+      '#type' => 'fieldset', 
+      '#collapsible' => TRUE,
+      '#collapsed' => TRUE,
+      '#title' => t('Website width'),
+      '#description' => t('Enable or disable element for website.'),
+    );
+      $form['nerra']['nerra_website']['nerra_website_responsive'] = array(
+        '#type' => 'checkbox',
+        '#title' => t('Responsive website'),
+        '#default_value' => theme_get_setting('nerra_website_responsive'),
+      );
+      $form['nerra']['nerra_website']['nerra_website_width'] = array(
+        '#title' => t('Content width'),
+        '#type' => 'radios',
+        '#options' => array(
+          'fluid' => 'Fluid',
+          'fixed' => 'Fixed (940 pixel)',
+        ),
+        '#default_value' => theme_get_setting('nerra_website_width'),
       );
 }

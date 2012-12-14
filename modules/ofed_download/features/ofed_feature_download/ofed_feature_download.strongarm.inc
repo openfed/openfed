@@ -42,7 +42,7 @@ function ofed_feature_download_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'additional_settings__active_tab_ofed_download';
-  $strongarm->value = 'edit-menu';
+  $strongarm->value = 'edit-scheduler';
   $export['additional_settings__active_tab_ofed_download'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -55,25 +55,49 @@ function ofed_feature_download_strongarm() {
         'custom_settings' => TRUE,
       ),
       'full' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => TRUE,
       ),
       'rss' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => TRUE,
       ),
       'search_index' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => TRUE,
       ),
       'search_result' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => TRUE,
       ),
       'print' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => TRUE,
       ),
       'token' => array(
         'custom_settings' => FALSE,
       ),
       'ofed_page_list' => array(
         'custom_settings' => TRUE,
+      ),
+      'revision' => array(
+        'custom_settings' => FALSE,
+      ),
+      'block_column' => array(
+        'custom_settings' => TRUE,
+      ),
+      'block_element' => array(
+        'custom_settings' => FALSE,
+      ),
+      'block_info' => array(
+        'custom_settings' => FALSE,
+      ),
+      'block_list' => array(
+        'custom_settings' => TRUE,
+      ),
+      'page_list' => array(
+        'custom_settings' => TRUE,
+      ),
+      'references' => array(
+        'custom_settings' => TRUE,
+      ),
+      'diff_standard' => array(
+        'custom_settings' => FALSE,
       ),
     ),
     'extra_fields' => array(
@@ -82,33 +106,73 @@ function ofed_feature_download_strongarm() {
           'weight' => '0',
         ),
         'metatags' => array(
-          'weight' => '8',
+          'weight' => '13',
         ),
         'title' => array(
           'weight' => '1',
         ),
         'path' => array(
-          'weight' => '7',
+          'weight' => '12',
         ),
         'redirect' => array(
-          'weight' => '6',
+          'weight' => '11',
         ),
         'xmlsitemap' => array(
-          'weight' => '5',
+          'weight' => '10',
         ),
       ),
       'display' => array(
         'language' => array(
           'default' => array(
-            'weight' => '0',
+            'weight' => '19',
             'visible' => FALSE,
           ),
           'teaser' => array(
-            'weight' => '0',
+            'weight' => '18',
             'visible' => FALSE,
           ),
           'ofed_page_list' => array(
             'weight' => '0',
+            'visible' => FALSE,
+          ),
+          'full' => array(
+            'weight' => '19',
+            'visible' => FALSE,
+          ),
+          'rss' => array(
+            'weight' => '20',
+            'visible' => FALSE,
+          ),
+          'search_index' => array(
+            'weight' => '20',
+            'visible' => FALSE,
+          ),
+          'search_result' => array(
+            'weight' => '22',
+            'visible' => FALSE,
+          ),
+          'print' => array(
+            'weight' => '20',
+            'visible' => FALSE,
+          ),
+          'block_column' => array(
+            'weight' => '20',
+            'visible' => FALSE,
+          ),
+          'block_info' => array(
+            'weight' => '12',
+            'visible' => FALSE,
+          ),
+          'block_list' => array(
+            'weight' => '20',
+            'visible' => FALSE,
+          ),
+          'page_list' => array(
+            'weight' => '20',
+            'visible' => FALSE,
+          ),
+          'references' => array(
+            'weight' => '20',
             'visible' => FALSE,
           ),
         ),
@@ -116,6 +180,13 @@ function ofed_feature_download_strongarm() {
     ),
   );
   $export['field_bundle_settings_node__ofed_download'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'field_bundle_settings_taxonomy_term__ofed_download';
+  $strongarm->value = array();
+  $export['field_bundle_settings_taxonomy_term__ofed_download'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -145,7 +216,7 @@ function ofed_feature_download_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'language_content_type_ofed_download';
-  $strongarm->value = '1';
+  $strongarm->value = '2';
   $export['language_content_type_ofed_download'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -166,16 +237,14 @@ function ofed_feature_download_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_options_ofed_download';
-  $strongarm->value = array(
-    0 => 'status',
-  );
+  $strongarm->value = array();
   $export['node_options_ofed_download'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_preview_ofed_download';
-  $strongarm->value = '0';
+  $strongarm->value = '1';
   $export['node_preview_ofed_download'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -188,22 +257,43 @@ function ofed_feature_download_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'pathauto_node_ofed_download_en_pattern';
+  $strongarm->name = 'page_title_type_ofed_download';
   $strongarm->value = '';
+  $export['page_title_type_ofed_download'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'page_title_type_ofed_download_showfield';
+  $strongarm->value = 1;
+  $export['page_title_type_ofed_download_showfield'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_ofed_download_en_pattern';
+  $strongarm->value = 'downloads/[node:title]';
   $export['pathauto_node_ofed_download_en_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_ofed_download_fr_pattern';
-  $strongarm->value = '';
+  $strongarm->value = 'telechargements/[node:title]';
   $export['pathauto_node_ofed_download_fr_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_ofed_download_nl_pattern';
+  $strongarm->value = 'downloads/[node:title]';
+  $export['pathauto_node_ofed_download_nl_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_ofed_download_pattern';
-  $strongarm->value = '[node:menu-link:parent:title]/[node:title]';
+  $strongarm->value = 'downloads/[node:title]';
   $export['pathauto_node_ofed_download_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -212,6 +302,13 @@ function ofed_feature_download_strongarm() {
   $strongarm->name = 'pathauto_node_ofed_download_und_pattern';
   $strongarm->value = '';
   $export['pathauto_node_ofed_download_und_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_ofed_download_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_ofed_download_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -299,6 +396,18 @@ function ofed_feature_download_strongarm() {
     'priority' => '0.5',
   );
   $export['xmlsitemap_settings_node_ofed_download'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'xmlsitemap_settings_taxonomy_term_ofed_download';
+  $strongarm->value = array(
+    'entity' => 'taxonomy_term',
+    'bundle' => 'download',
+    'status' => 0,
+    'priority' => 0.5,
+  );
+  $export['xmlsitemap_settings_taxonomy_term_ofed_download'] = $strongarm;
 
   return $export;
 }

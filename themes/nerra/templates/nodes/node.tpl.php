@@ -78,8 +78,8 @@
  * @see template_process()
  */
 ?>
-<?php /*
-<div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
+
+<div id="node-<?php print $node->nid; ?>" class="content <?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 
   <?php print render($title_prefix); ?>
   <?php if (!$page): ?>
@@ -122,24 +122,4 @@
 
   <?php print render($content['comments']); ?>
 
-</div>
-*/
-?>
-
-<div id="node-<?php print $node->nid; ?>" class="content <?php print $classes; ?> clearfix"<?php print $attributes; ?>>
-  
-  <?php
-    // We hide the comments and links now so that we can render them later.
-    hide($content['comments']);
-    hide($content['links']);
-    print render($content);
-  ?>
-      
-  <?php $links = render($content['links']); ?>
-  <?php if ($links): ?>
-    <div class="link-wrapper">
-      <?php echo $links; ?>
-    </div>
-  <?php endif; ?>
-  
 </div>

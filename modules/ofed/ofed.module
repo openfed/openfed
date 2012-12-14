@@ -1,4 +1,27 @@
 <?php
+function ofed_menu() {
+  $items = array();
+  $items['admin/openfed'] = array(
+      'title' => t('OpenFED'),
+      'description' => t('Menu openfed'),
+      'page callback' => 'ofed_homepage',
+      'page arguments' => array(''),
+      'access arguments' => array('access administration pages'),
+      'type' => MENU_NORMAL_ITEM,
+  );
+  
+  return $items;
+}
+
+
+/**
+ * Return a little description of the company.
+ * 
+ * @return string
+ */
+function ofed_homepage() {
+  return '';
+}
 
 /**
  * Implementation of hook_views_api().

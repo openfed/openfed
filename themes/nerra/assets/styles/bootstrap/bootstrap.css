@@ -41,6 +41,8 @@ body {
 }
 ol, ul {
 	list-style: none;
+	list-style-image:none;
+	list-style-type: none;
 }
 blockquote, q {
 	quotes: none;
@@ -55,10 +57,8 @@ table {
 .clearfix:before,
 .clearfix:after {
   display: table;
-  content: "";
+  content: " ";
   line-height: 0;
-}
-.clearfix:after {
   clear: both;
 }
 
@@ -98,22 +98,34 @@ sub {
 }
 img {
   /* Responsive images (ensure images don't scale beyond their parents) */
-
   max-width: 100%;
   /* Part 1: Set a maxium relative to the parent */
-
   width: auto\9;
   /* IE7-8 need help adjusting responsive images */
-
   height: auto;
   /* Part 2: Scale the height according to the width, otherwise you get stretching */
-
   vertical-align: middle;
   border: 0;
   -ms-interpolation-mode: bicubic;
 }
+em{
+	font-style:italic;
+}
+b, strong{
+	font-weight:bold;
+}
+hr{
+    border: none;
+	
+    background: #ccc;
+}
 #map_canvas img {
   max-width: none;
+}
+
+p {
+	margin-bottom:10px;
+	line-height: 1.65em;
 }
 
 .container {
@@ -378,7 +390,6 @@ table td {
   line-height: 18px;
   text-align: left;
   vertical-align: top;
-  border-top: 1px solid #dddddd;
 }
 
 table th {
@@ -447,7 +458,7 @@ h5 {
   line-height: 20px;
 }
 h6 {
-  font-size: 12px;
+  font-size: 13px;
   line-height: 20px;
 }
 h1 small {
@@ -487,8 +498,8 @@ abbr.initialism {
   text-transform: uppercase;
 }
 blockquote {
-  padding: 0 0 0 15px;
-  margin: 0 0 20px;
+  padding: 0 15px;
+  margin: 20px 0 20px;
 }
 blockquote p {
   margin-bottom: 0;
@@ -574,6 +585,45 @@ legend {
   line-height: 40px;
   border: 0;
   border-bottom: 1px solid #e5e5e5;
+}
+/* Bug ie7 overwriting property from system menu.css */
+ul li.leaf																{ 
+	list-style-type: none;
+	list-style-image: none;
+}
+
+/* Overwrite z-index of admin-menu */
+#admin-menu, #admin-menu ul                         					{
+	z-index: 1000; margin: 0px; 
+}
+/* Overwrite of drupal system-menu */
+#skip-link, .element-invisible											{ 
+	display:none;
+}
+ul li.collapsed, ul li.expanded											{
+	list-style-image: none;
+	list-style-type: none;
+	padding:0;
+	margin:0;
+}
+ul.menu li {
+	padding:0;
+	margin:0;
+}
+
+li.expanded, li.collapsed, li.leaf {
+	padding:0;
+	margin:0;
+}
+.item-list ul li {
+	margin: 0;
+	padding: 0;
+}
+ul.primary {
+	padding:0;
+}
+ul.primary li a {
+	margin-right: 0.2em;
 }
 /* --------------- That's All Folks ------------------------------------------/*
 

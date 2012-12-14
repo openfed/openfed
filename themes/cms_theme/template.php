@@ -4,7 +4,7 @@
  * Register a theme implementations.
  * @return array 
  */
-function cems_theme_theme() {
+function cms_theme_theme() {
   return array(
     
   );
@@ -17,5 +17,3 @@ require_once 'template_generic.php';
 require_once 'template_menu.php';
 require_once 'template_view.php';
 require_once 'template_module.php';
-
-

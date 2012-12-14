@@ -27,17 +27,6 @@
         'title' => '<none>',
         'cache' => -1,
       ),
-      array( // Search
-        'module' => 'search',
-        'delta' => 'form',
-        'theme' => $default_theme,
-        'status' => 1,
-        'weight' => 2,
-        'region' => 'tools',
-        'pages' => '',
-        'title' => '<none>',
-        'cache' => -1,
-      ),
       
     // HEADER
     // NAVIGATION

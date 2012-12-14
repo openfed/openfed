@@ -13,6 +13,24 @@ libraries[ckeditor][download][url] = http://download.cksource.com/CKEditor/CKEdi
 libraries[ckeditor][directory_name] = "ckeditor"
 libraries[ckeditor][destination] = libraries
 
+; Colorbox
+libraries[colorbox][download][type] = get
+libraries[colorbox][download][url] = http://www.jacklmoore.com/colorbox/colorbox.zip
+libraries[colorbox][directory_name] = "colorbox"
+libraries[colorbox][destination] = libraries
+
+; jquery.cycle
+libraries[jquery.cycle][download][type] = get
+libraries[jquery.cycle][download][url] = http://malsup.github.com/jquery.cycle.all.js
+libraries[jquery.cycle][directory_name] = "jquery.cycle"
+libraries[jquery.cycle][destination] = libraries
+
+; jquery.jcarousel
+libraries[jquery.jcarousel][download][type] = get
+libraries[jquery.jcarousel][download][url] = http://sorgalla.com/projects/download.php?jcarousel
+libraries[jquery.jcarousel][directory_name] = "jquery.jcarousel"
+libraries[jquery.jcarousel][destination] = libraries
+
 ;
 ; Modules
 ; Please fill the following out. Type may be one of get, git, bzr or svn, and url is the url of the download.
@@ -36,9 +54,6 @@ projects[backup_migrate][subdir] = contrib
 projects[beididp][version] = "0.7"
 projects[beididp][subdir] = contrib 
 
-projects[better_formats][version] = "1.0-beta1"
-projects[better_formats][subdir] = contrib 
-
 projects[calendar][version] = "3.4"
 projects[calendar][subdir] = contrib 
 
@@ -48,10 +63,13 @@ projects[ckeditor][subdir] = contrib
 projects[ckeditor_link][version] = "2.2"
 projects[ckeditor_link][subdir] = contrib 
 
+projects[colorbox][version] = "2.0"
+projects[colorbox][subdir] = contrib 
+
 projects[content_access][version] = "1.2-beta1"
 projects[content_access][subdir] = contrib 
 
-projects[countries][version] = "2.0"
+projects[countries][version] = "2.1"
 projects[countries][subdir] = contrib 
 
 projects[ctools][version] = "1.2"
@@ -63,7 +81,7 @@ projects[date][subdir] = contrib
 projects[devel][version] = "1.3"
 projects[devel][subdir] = contrib 
 
-projects[diff][version] = "2.0"
+projects[diff][version] = "3.2"
 projects[diff][subdir] = contrib 
 
 projects[draggableviews][version] = "2.0"
@@ -81,7 +99,7 @@ projects[email][subdir] = contrib
 projects[entity][version] = "1.0-rc3"
 projects[entity][subdir] = contrib 
 
-projects[entityreference][version] = "1.0-rc5"
+projects[entityreference][version] = "1.0"
 projects[entityreference][subdir] = contrib 
 
 projects[extlink][version] = "1.12"
@@ -98,6 +116,9 @@ projects[field_group][subdir] = contrib
 
 projects[field_permissions][version] = "1.0-beta2"
 projects[field_permissions][subdir] = contrib 
+
+projects[field_slideshow][version] = "1.8"
+projects[field_slideshow][subdir] = contrib 
 
 projects[flag][version] = "2.0"
 projects[flag][subdir] = contrib 
@@ -165,7 +186,7 @@ projects[menu_firstchild][subdir] = contrib
 projects[menu_position][version] = "1.1"
 projects[menu_position][subdir] = contrib
 
-projects[metatag][version] = "1.0-beta2"
+projects[metatag][version] = "1.0-beta4"
 projects[metatag][subdir] = contrib
 
 projects[module_filter][version] = "1.7"
@@ -216,6 +237,9 @@ projects[robotstxt][subdir] = contrib
 projects[role_delegation][version] = "1.1"
 projects[role_delegation][subdir] = contrib
 
+projects[rules][version] = "2.2"
+projects[rules][subdir] = contrib
+
 projects[scheduler][version] = "1.0"
 projects[scheduler][subdir] = contrib
 
@@ -242,6 +266,9 @@ projects[special_menu_items][subdir] = contrib
 
 projects[strongarm][version] = "2.0"
 projects[strongarm][subdir] = contrib
+
+projects[sweaver][version] = "1.3"
+projects[sweaver][subdir] = contrib
 
 projects[table_altrow][version] = "1.2"
 projects[table_altrow][subdir] = contrib

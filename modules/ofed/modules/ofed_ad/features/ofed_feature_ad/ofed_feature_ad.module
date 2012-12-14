@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the openFED Ads - Feature feature.
- */
-
-include_once 'ofed_feature_ad.features.inc';

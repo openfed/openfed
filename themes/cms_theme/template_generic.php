@@ -117,11 +117,25 @@ function cms_theme_breadcrumb($variables) {
           $display .= '<li>'.t('You are here').'</li>';
         endif;
         
+        $counter = 1;
+        $count = count($breadcrumb);
 		foreach( $breadcrumb as $item) {
           if ( strpos($item, $first) || strpos($item, $nolink) ) {
             $item = strip_tags($item);
           }
-          $display .= '<li>'.$item.'</li>';
+          switch ( $counter ) {
+            case "1":
+              $class = 'class="first"';
+              break;
+            case $count:
+              $class = 'class="last"';
+              break;
+            default:
+              $class = '';
+              break;
+          }
+          $display .= '<li '.$class.' >'.$item.'</li>';
+          $counter++;
         }
         
       $display .= '</ul>';

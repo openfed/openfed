@@ -9,6 +9,14 @@
  */
 function ofed_feature_page_ctools_plugin_api() {
   list($module, $api) = func_get_args();
+  if ($module == "ds" && $api == "ds") {
+    return array("version" => "1");
+  }
+  list($module, $api) = func_get_args();
+  if ($module == "path_breadcrumbs" && $api == "path_breadcrumbs") {
+    return array("version" => "1");
+  }
+  list($module, $api) = func_get_args();
   if ($module == "strongarm" && $api == "strongarm") {
     return array("version" => "1");
   }
@@ -27,9 +35,9 @@ function ofed_feature_page_views_api() {
 function ofed_feature_page_image_default_styles() {
   $styles = array();
 
-  // Exported image style: ofed_page_images.
-  $styles['ofed_page_images'] = array(
-    'name' => 'ofed_page_images',
+  // Exported image style: ofed_page_thumb.
+  $styles['ofed_page_thumb'] = array(
+    'name' => 'ofed_page_thumb',
     'effects' => array(
       6 => array(
         'label' => 'Change file format',

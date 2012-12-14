@@ -31,52 +31,75 @@ function openfed_role_form_submit($form, &$form_state) {
 
   if ( !empty($values['role_list']) ) {
     
+    
     if ( $values['role_list']['configurator'] === 'configurator' ) {
-      $conf_role = new stdClass();
-      $conf_role->name = 'Configurator';
-      $conf_role->weight = 5;
-      user_role_save($conf_role);
-      
-      $conf_role = user_role_load_by_name('Configurator');
-      $conf_role_rid = $conf_role->rid;
-      $conf_role_permissions = array(
-          'use text format full_html' => TRUE,
-          'use add another' => TRUE,
-      );
-      user_role_change_permissions($conf_role_rid, $conf_role_permissions);
+      // Manage Configurator information 
+        $conf_role = new stdClass();
+        $conf_role->name = 'Configurator';
+        $conf_role->weight = 5;
+        user_role_save($conf_role);
+      // Assign permission  
+        $conf_role = user_role_load_by_name('Configurator');
+        user_role_change_permissions($conf_role->rid, _openfed_return_permission_configurator() );
     }
     
     if ( $values['role_list']['content_manager'] === 'content_manager' ) {
-      $cm_role = new stdClass();
-      $cm_role->name = 'Content Manager';
-      $cm_role->weight = 6;
-      user_role_save($cm_role);
-      
-      $cm_role = user_role_load_by_name('Content Manager');
-      $cm_role_rid = $cm_role->rid;
-      $cm_role_permissions = array(
-          'use text format full_html' => TRUE,
-          'use add another' => TRUE,
-      );
-      user_role_change_permissions($cm_role_rid, $cm_role_permissions);
+      // Manage Content Manager information  
+        $cm_role = new stdClass();
+        $cm_role->name = 'Content Manager';
+        $cm_role->weight = 6;
+        user_role_save($cm_role);
+      // Assign permission 
+        $cm_role = user_role_load_by_name('Content Manager');
+        user_role_change_permissions($cm_role->rid, _openfed_return_permission_content_manager() );
     }
-    
     
     if ( $values['role_list']['user_manager'] === 'user_manager' ) {
-      $um_role = new stdClass();
-      $um_role->name = 'User Manager';
-      $um_role->weight = 7;
-      user_role_save($um_role);
-      
-      $um_role = user_role_load_by_name('User Manager');
-      $um_role_rid = $um_role->rid;
-      $um_role_permissions = array(
-          'use text format filtered_html' => TRUE,
-          'use add another' => TRUE,
-      );
-      user_role_change_permissions($um_role_rid, $um_role_permissions);
+      // Manage User Manager information
+        $um_role = new stdClass();
+        $um_role->name = 'User Manager';
+        $um_role->weight = 7;
+        user_role_save($um_role);
+      // Assign permission
+        $um_role = user_role_load_by_name('User Manager');
+        user_role_change_permissions($um_role->rid, _openfed_return_permission_user_manager() );
+    }
+    
+    if ( $values['role_list']['user_manager'] === 'authenticated_visitor' ) {
+      // Manage Authenticated visitor information  
+        $av_role = new stdClass();
+        $av_role->name = 'Authenticated Visitor';
+        $av_role->weight = 8;
+        user_role_save($av_role);
+      // Assign permission 
+        $av_role = user_role_load_by_name('Authenticated Visitor');
+        user_role_change_permissions($av_role->rid, _openfed_return_permission_authenticated_visitor() );
     }
   }
+  
+  // SET PERMISSION FOR ADMINISTRATOR
+    $adm_role = user_role_load_by_name('Administrator');
+    $adm_role_rid = $adm_role->rid;
+    user_role_grant_permissions($adm_role_rid, array_keys(module_invoke_all('permission')));
+  
+  // Assign permission for role Builder
+    $web_role = user_role_load_by_name('Builder');
+    $web_role_rid = $web_role->rid;
+    user_role_change_permissions($web_role_rid, _openfed_return_permission_builder());
+    
+    
+  // SET PERMISSION FOR AUTHENTICATED USER
+    $auth_role = user_role_load_by_name('authenticated user');
+    $auth_role_rid = $auth_role->rid;
+    user_role_change_permissions($auth_role_rid, _openfed_return_permission_authenticated_user());
+  
+
+  // SET PERMISSION FOR ANONYMOUS USER
+    $ano_role = user_role_load_by_name('anonymous user');
+    $ano_role_rid = $ano_role->rid;
+    user_role_change_permissions($ano_role_rid, _openfed_return_permission_anonymous_user());
+  
+    
 }
 
 ?>

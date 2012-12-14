@@ -18,9 +18,6 @@ require_once('includes/form/openfed_role_function.inc');
 // Function for the setup of taxonomy.
 require_once('includes/form/openfed_taxonomy_function.inc');
 
-// Function for the setup of Defaults user form.
-require_once('includes/form/openfed_user_function.inc');
-
 // Function for the setup of additional function.
 require_once('includes/form/openfed_functionalities_form.inc');
   
@@ -110,11 +107,6 @@ function openfed_install_tasks($install_state) {
     'display_name' => st('Setup taxonomy'),
     'display' => TRUE,
     'type' => 'form',
-  );
-
-  // Step to create Default Builder user
-  $tasks['openfed_user'] = array(
-      'display_name' => st('Setup Builder User'),
   );
     
   // Step to choose which additional functionalities to add.

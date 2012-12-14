@@ -1,7 +1,45 @@
 CHANGELOG
 =========
 
-7.x-0.2 : 21 november 2102
+7.x-0.3 : 14 december 2012
+--------------------------
+ * Issue
+  #1852770: Installation screen: translation of languages
+  #1852774: Installation screen: setup roles
+  #1852804: Missing module: references
+  #1852820: Module upgrade: entityreference
+  #1852910: Module upgrade: countries
+  #1852918: Module upgrade: diff (2.0 is unsupported)
+  #1852920: Module upgrade: metatag
+
+ * Module added:
+    - sweaver (1.3)
+    - colorbox
+    - field_slideshow
+    
+ * Module updated 
+    - countries (2.1)
+    - diff (3.2)
+    - entityreference (1.0)
+    - metatag (1.0-beta4)
+
+ * Theme:
+	- minimal layout added to nerra
+	- minimal layout added to cms_theme
+	
+ * Config added:
+    - DS
+    - IMCE
+    - Pathauto
+
+ * Config remove:
+    - Create a default Builder user
+    - search_config
+
+* Module remove: 
+    - better_formats
+
+7.x-0.2 : 21 november 2012
 --------------------------
  * Issue #1837894 : Library update: ckeditor
  * Issue #1838178 : Missing module: ckeditor

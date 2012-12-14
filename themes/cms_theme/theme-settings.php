@@ -19,6 +19,12 @@
 function cms_theme_form_system_theme_settings_alter(&$form, &$form_state) {
   $path = drupal_get_path('theme', 'cms_theme');
   
+  $form['cms_theme_information'] = array(
+    '#markup' => t('Custom Theme Settings'),
+    '#prefix' => '<h3 class="cms_theme-fake-title">',
+    '#suffix' => '</h3>',
+  );
+  
   $form['cms_theme'] = array(
     '#type' => 'vertical_tabs', 
     '#title' => t('cms_theme settings'), 

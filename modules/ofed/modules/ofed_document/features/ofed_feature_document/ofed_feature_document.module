@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the openFED Documents - Feature feature.
- */
-
-include_once 'ofed_feature_document.features.inc';

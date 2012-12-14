@@ -7,8 +7,8 @@
  */
 function _openfed_return_languages_list() {
   $languages_list = array(
-    'fr' => 'French', 
-    'nl' => 'Dutch (Nederlands)'
+    'fr' => st('French (Français)'), 
+    'nl' => st('Dutch (Nederlands)')
   );
   return $languages_list;
 }
@@ -20,13 +20,822 @@ function _openfed_return_languages_list() {
  */
 function _openfed_return_roles_list() {
   $role_list = array(
-    'configurator' => 'Configurator : ',
-    'content_manager' => 'Content Manager : ',
-    'user_manager' => 'User Manager : ',
+    'configurator' => st('Configurator: user in the final client\'s team who has advanced knowledge in Drupal, who can configure modules.'),
+    'content_manager' => st('Content Manager: has the permission to create and edit content items.'),
+    'user_manager' => st('User Manager: has the permissions to create new users and to manage their permissions.'),
+    'authenticated_visitor' => st('Authenticated Visitor: this role is required if there is possibility to log in into the website.'),
   );
   return $role_list;
 }
 
+/**
+ * Return the array for the list of builder permission
+ * 
+ * @return array 
+ */
+function _openfed_return_permission_builder() {
+  $permission = array(
+    // Add another
+      'administer add another' => TRUE,
+      'use add another' => TRUE,
+    // Administration menu
+      'access administration menu' => TRUE,
+      'flush caches' => TRUE,
+    // Administration theme
+      'access admin theme' => TRUE,
+    // Administrative pages
+      'administer admin paths' => TRUE,
+    // Aggregator
+      'administer news feeds' => TRUE,
+      'access news feeds' => TRUE,
+    // Backup and Migrate
+      'access backup and migrate' => TRUE,
+      'perform backup' => TRUE,
+      'access backup files' => TRUE,
+      'delete backup files' => TRUE,
+      'restore from backup' => TRUE,
+      'administer backup and migrate' => TRUE,
+    // Block
+      'administer blocks' => TRUE,
+    // CKEditor
+      'administer ckeditor' => TRUE,
+      'customize ckeditor' => TRUE,
+    // CKEditor Link
+      'access ckeditor link' => TRUE,
+      'administer ckeditor link' => TRUE,
+    // Content translation
+      'translate content' => TRUE,
+    // Contextual links
+      'access contextual links' => TRUE,
+    // Display Suite
+      'admin_display_suite' => TRUE,
+    // Display Suite Extras
+//      'ds_switch ofed_download' => TRUE,
+//      'ds_switch ofed_page' => TRUE,
+//      'ds_switch panel' => TRUE,
+//      'ds_switch webform' => TRUE,
+//      'view ds_flag_bookmarks on node' => TRUE,
+//      'view file_type on node' => TRUE,
+//      'view title on node' => TRUE,
+//      'view links on node' => TRUE,
+//      'view node_link on node' => TRUE,
+//      'view author on node' => TRUE,
+//      'view post_date on node' => TRUE,
+//      'view submitted_by on node' => TRUE,
+//      'view search_snippet on node' => TRUE,
+//      'view search_info on node' => TRUE,
+//      'view title on taxonomy_term' => TRUE,
+//      'view more_link on taxonomy_term' => TRUE,
+//      'view name on user' => TRUE,
+//      'view title on ds_views' => TRUE,
+//      'view header on ds_views' => TRUE,
+//      'view exposed on ds_views' => TRUE,
+//      'view attachment_before on ds_views' => TRUE,
+//      'view rows on ds_views' => TRUE,
+//      'view empty on ds_views' => TRUE,
+//      'view pager on ds_views' => TRUE,
+//      'view attachment_after on ds_views' => TRUE,
+//      'view more on ds_views' => TRUE,
+//      'view footer on ds_views' => TRUE,
+//      'view feed_icon on ds_views' => TRUE,
+    // Display Suite UI
+      'admin_view_modes' => TRUE,
+      'admin_fields' => TRUE,
+      'admin_classes' => TRUE,
+    // Features
+      'administer features' => TRUE,
+      'manage features' => TRUE,
+    // Fieldgroup
+      'administer fieldgroups' => TRUE,
+    // Filter
+      'administer filters' => TRUE,
+      'use text format filtered_html' => TRUE,
+      'use text format full_html' => TRUE,
+    // Flag
+      'administer flags' => TRUE,
+      'use flag import' => TRUE,
+    // Google Analytics
+      'administer google analytics' => TRUE,
+      'opt-in or out of tracking' => TRUE,
+    // IMCE
+      'administer imce' => TRUE,
+    // IMAGE
+      'administer image styles' => TRUE,
+    // Link Checker
+      'access broken links report' => TRUE,
+      'access own broken links report' => TRUE,
+      'administer linkchecker' => TRUE,
+      'edit link settings' => TRUE,
+    // Locale
+      'administer languages' => TRUE,
+      'translate interface' => TRUE,
+    // Media
+      'administer media' => TRUE,
+      'import media' => TRUE,
+      'view media' => TRUE,
+      'edit media' => TRUE,
+    // Media Internet Sources
+      'add media from remote sources' => TRUE,
+    // Menu
+      'administer menu' => TRUE,
+    // Menu attributes
+      'administer menu attributes' => TRUE,
+    // Menu position
+      'administer menu positions' => TRUE,
+    // Meta tags
+      'administer meta tags' => TRUE,
+      'edit meta tags' => TRUE,
+    // Mini panels
+      'create mini panels' => TRUE,
+      'administer mini panels' => TRUE,
+    // Mollom
+      'administer mollom' => TRUE,
+      'access mollom statistics' => TRUE,
+    // Multilingual content
+      'administer content translations' => TRUE,
+    // Node
+      'bypass node access' => TRUE,
+      'administer content types' => TRUE,
+      'administer nodes' => TRUE,
+      'access content overview' => TRUE,
+      'access content' => TRUE,
+      'view own unpublished content' => TRUE,
+      'view revisions' => TRUE,
+      'revert revisions' => TRUE,
+      'delete revisions' => TRUE,
+      // CT: Download
+        'create ofed_download content' => TRUE,
+        'edit own ofed_download content' => TRUE,
+        'edit any ofed_download content' => TRUE,
+        'delete own ofed_download content' => TRUE,
+        'delete any ofed_download content' => TRUE,
+      // CT: Page
+        'create ofed_page content' => TRUE,
+        'edit own ofed_page content' => TRUE,
+        'edit any ofed_page content' => TRUE,
+        'delete own ofed_page content' => TRUE,
+        'delete any ofed_page content' => TRUE,
+      // CT: Panel
+        'create panel content' => TRUE,
+        'edit own panel content' => TRUE,
+        'edit any panel content' => TRUE,
+        'delete own panel content' => TRUE,
+        'delete any panel content' => TRUE,
+      // CT: Webform
+        'create webform content' => TRUE,
+        'edit own webform content' => TRUE,
+        'edit any webform content' => TRUE,
+        'delete own webform content' => TRUE,
+        'delete any webform content' => TRUE,
+    // Override node options
+      // CT: Download
+        'override ofed_download published option' => TRUE,
+        'override ofed_download promote to front page option' => TRUE,
+        'override ofed_download sticky option' => TRUE,
+        'override ofed_download revision option' => TRUE,
+        'enter ofed_download revision log entry' => TRUE,
+        'override ofed_download authored on option' => TRUE,
+        'override ofed_download authored by option' => TRUE,
+      // CT: Page
+        'override ofed_page published option' => TRUE,
+        'override ofed_page promote to front page option' => TRUE,
+        'override ofed_page sticky option' => TRUE,
+        'override ofed_page revision option' => TRUE,
+        'enter ofed_page revision log entry' => TRUE,
+        'override ofed_page authored on option' => TRUE,
+        'override ofed_page authored by option' => TRUE,
+      // CT: Panel
+        'override panel published option' => TRUE,
+        'override panel promote to front page option' => TRUE,
+        'override panel sticky option' => TRUE,
+        'override panel revision option' => TRUE,
+        'enter panel revision log entry' => TRUE,
+        'override panel authored on option' => TRUE,
+        'override panel authored by option' => TRUE,
+      // CT: Webform
+        'override webform published option' => TRUE,
+        'override webform promote to front page option' => TRUE,
+        'override webform sticky option' => TRUE,
+        'override webform revision option' => TRUE,
+        'enter webform revision log entry' => TRUE,
+        'override webform authored on option' => TRUE,
+        'override webform authored by option' => TRUE,
+    // Page Title
+      'set page title' => TRUE,
+      'administer page titles' => TRUE,
+    // Page model
+      'administer page model module' => TRUE,
+      'use page model module' => TRUE,
+    // Panel nodes
+      'create panel-nodes' => TRUE,
+      'edit any panel-nodes' => TRUE,
+      'edit own panel-nodes' => TRUE,
+      'administer panel-nodes' => TRUE,
+      'delete any panel-nodes' => TRUE,
+      'delete own panel-nodes' => TRUE,
+    // Panels
+      'use panels dashboard' => TRUE,
+      'view pane admin links' => TRUE,
+      'administer pane access' => TRUE,
+      'administer advanced pane settings' => TRUE,
+      'administer panels layouts' => TRUE,
+      'administer panels styles' => TRUE,
+    // Path
+      'administer url aliases' => TRUE,
+      'create url aliases' => TRUE,
+    // Path breadcrubms UI
+      'administer path breadcrumbs' => TRUE,
+    // Pathauto
+      'administer pathauto' => TRUE,
+      'notify of path changes' => TRUE,
+    // Printer-friendly pages
+      'administer print' => TRUE,
+      'node-specific print configuration' => TRUE,
+      'access print' => TRUE,
+    // Redirect
+      'administer redirects' => TRUE,
+    // Rules
+      'administer rules' => TRUE,
+      'bypass rules access' => TRUE,
+      'access rules debug' => TRUE,
+    // Scheduler
+      'administer scheduler' => TRUE,
+      'schedule (un)publishing of nodes' => TRUE,
+    // Search
+      'administer search' => TRUE,
+    // Security Kit
+      'administer seckit' => TRUE,
+    // Security Review
+      'access security review list' => TRUE,
+      'run security checks' => TRUE,
+    // Site map
+      'access site map' => TRUE,
+    // Statistics
+      'administer statistics' => TRUE,
+      'access statistics' => TRUE,
+      'view post access counter' => TRUE,
+    // String translation
+      'translate user-defined strings' => TRUE,
+      'translate admin strings' => TRUE,
+    // Stylizer
+      'administer stylizer' => TRUE,
+    // Sweaver
+      'configure sweaver' => TRUE,
+      'use editor' => TRUE,
+    // System
+      'administer modules' => TRUE,
+      'administer site configuration' => TRUE,
+      'administer themes' => TRUE,
+      'administer actions' => TRUE,
+      'access administration pages' => TRUE,
+      'access site in maintenance mode' => TRUE,
+      'view the administration theme' => TRUE,
+      'access site reports' => TRUE,
+      'block IP addresses' => TRUE,
+    // Taxonomy
+      'administer taxonomy' => TRUE,
+      // Vocabulary: Category
+//      'edit terms in 1' => TRUE,
+//      'delete terms in 1' => TRUE,
+    // Translation overview
+      'view translation overview assigments' => TRUE,
+//      'manage nl translation overview priorities' => TRUE,
+//      'manage en translation overview priorities' => TRUE,
+//      'manage fr translation overview priorities' => TRUE,
+    // User
+      'administer permissions' => TRUE,
+      'administer users' => TRUE,
+      'access user profiles' => TRUE,
+    // View Unpublished
+      'view any unpublished content' => TRUE,
+    // Views
+      'administer views' => TRUE,
+      'access all views' => TRUE,
+    // Webform
+      'access all webform results' => TRUE,
+      'access own webform results' => TRUE,
+      'edit all webform submissions' => TRUE,
+      'delete all webform submissions' => TRUE,
+      'access own webform submissions' => TRUE,
+      'edit own webform submissions' => TRUE,
+      'delete own webform submissions' => TRUE,
+    // XML sitemap
+      'administer xmlsitemap' => TRUE,
+    // robots.txt
+      'administer robots.txt' => TRUE,
+  );
+  return $permission;
+}
+
+/**
+ * Return the array for the list of configurator permission
+ * 
+ * @return array 
+ */
+function _openfed_return_permission_configurator() {
+  $permission = array(
+    // Add another
+      'administer add another' => TRUE,
+      'use add another' => TRUE,
+    // Administration menu
+      'access administration menu' => TRUE,
+      'flush caches' => TRUE,
+    // Administration theme
+      'access admin theme' => TRUE,
+    // Administrative pages
+      'administer admin paths' => TRUE,
+    // Aggregator
+      'administer news feeds' => TRUE,
+      'access news feeds' => TRUE,
+    // Block
+      'administer blocks' => TRUE,
+    // CKEditor
+      'administer ckeditor' => TRUE,
+      'customize ckeditor' => TRUE,
+    // CKEditor Link
+      'access ckeditor link' => TRUE,
+      'administer ckeditor link' => TRUE,
+    // Content translation
+      'translate content' => TRUE,
+    // Contextual links
+      'access contextual links' => TRUE,
+    // Display Suite
+      'admin_display_suite' => TRUE,
+    // Display Suite Extras
+//      'ds_switch ofed_download' => TRUE,
+//      'ds_switch ofed_page' => TRUE,
+//      'ds_switch panel' => TRUE,
+//      'ds_switch webform' => TRUE,
+//      'view ds_flag_bookmarks on node' => TRUE,
+//      'view file_type on node' => TRUE,
+//      'view title on node' => TRUE,
+//      'view links on node' => TRUE,
+//      'view node_link on node' => TRUE,
+//      'view author on node' => TRUE,
+//      'view post_date on node' => TRUE,
+//      'view submitted_by on node' => TRUE,
+//      'view search_snippet on node' => TRUE,
+//      'view search_info on node' => TRUE,
+//      'view title on taxonomy_term' => TRUE,
+//      'view more_link on taxonomy_term' => TRUE,
+//      'view name on user' => TRUE,
+//      'view title on ds_views' => TRUE,
+//      'view header on ds_views' => TRUE,
+//      'view exposed on ds_views' => TRUE,
+//      'view attachment_before on ds_views' => TRUE,
+//      'view rows on ds_views' => TRUE,
+//      'view empty on ds_views' => TRUE,
+//      'view pager on ds_views' => TRUE,
+//      'view attachment_after on ds_views' => TRUE,
+//      'view more on ds_views' => TRUE,
+//      'view footer on ds_views' => TRUE,
+//      'view feed_icon on ds_views' => TRUE,
+    // Display Suite UI
+      'admin_view_modes' => TRUE,
+      'admin_fields' => TRUE,
+      'admin_classes' => TRUE,
+    // Features
+      'administer features' => TRUE,
+      'manage features' => TRUE,
+    // Fieldgroup
+      'administer fieldgroups' => TRUE,
+    // Filter
+      'administer filters' => TRUE,
+      'use text format filtered_html' => TRUE,
+      'use text format full_html' => TRUE,
+    // Flag
+      'administer flags' => TRUE,
+    // Google Analytics
+      'administer google analytics' => TRUE,
+      'opt-in or out of tracking' => TRUE,
+    // IMCE
+      'administer imce' => TRUE,
+    // IMAGE
+      'administer image styles' => TRUE,
+    // Link Checker
+      'access broken links report' => TRUE,
+      'access own broken links report' => TRUE,
+      'edit link settings' => TRUE,
+    // Locale
+      'administer languages' => TRUE,
+      'translate interface' => TRUE,
+    // Media
+      'administer media' => TRUE,
+      'import media' => TRUE,
+      'view media' => TRUE,
+      'edit media' => TRUE,
+    // Media Internet Sources
+      'add media from remote sources' => TRUE,
+    // Menu
+      'administer menu' => TRUE,
+    // Menu attributes
+      'administer menu attributes' => TRUE,
+    // Menu position
+      'administer menu positions' => TRUE,
+    // Meta tags
+      'administer meta tags' => TRUE,
+      'edit meta tags' => TRUE,
+    // Mini panels
+      'create mini panels' => TRUE,
+      'administer mini panels' => TRUE,
+    // Mollom
+      'access mollom statistics' => TRUE,
+    // Multilingual content
+      'administer content translations' => TRUE,
+    // Node
+      'bypass node access' => TRUE,
+      'administer content types' => TRUE,
+      'administer nodes' => TRUE,
+      'access content overview' => TRUE,
+      'access content' => TRUE,
+      'view own unpublished content' => TRUE,
+      'view revisions' => TRUE,
+      'revert revisions' => TRUE,
+      'delete revisions' => TRUE,
+      // CT: Download
+        'create ofed_download content' => TRUE,
+        'edit own ofed_download content' => TRUE,
+        'edit any ofed_download content' => TRUE,
+        'delete own ofed_download content' => TRUE,
+        'delete any ofed_download content' => TRUE,
+      // CT: Page
+        'create ofed_page content' => TRUE,
+        'edit own ofed_page content' => TRUE,
+        'edit any ofed_page content' => TRUE,
+        'delete own ofed_page content' => TRUE,
+        'delete any ofed_page content' => TRUE,
+      // CT: Panel
+        'create panel content' => TRUE,
+        'edit own panel content' => TRUE,
+        'edit any panel content' => TRUE,
+        'delete own panel content' => TRUE,
+        'delete any panel content' => TRUE,
+      // CT: Webform
+        'create webform content' => TRUE,
+        'edit own webform content' => TRUE,
+        'edit any webform content' => TRUE,
+        'delete own webform content' => TRUE,
+        'delete any webform content' => TRUE,
+    // Override node options
+      // CT: Download
+        'override ofed_download published option' => TRUE,
+        'override ofed_download promote to front page option' => TRUE,
+        'override ofed_download sticky option' => TRUE,
+        'override ofed_download revision option' => TRUE,
+        'enter ofed_download revision log entry' => TRUE,
+        'override ofed_download authored on option' => TRUE,
+        'override ofed_download authored by option' => TRUE,
+      // CT: Page
+        'override ofed_page published option' => TRUE,
+        'override ofed_page promote to front page option' => TRUE,
+        'override ofed_page sticky option' => TRUE,
+        'override ofed_page revision option' => TRUE,
+        'enter ofed_page revision log entry' => TRUE,
+        'override ofed_page authored on option' => TRUE,
+        'override ofed_page authored by option' => TRUE,
+      // CT: Panel
+        'override panel published option' => TRUE,
+        'override panel promote to front page option' => TRUE,
+        'override panel sticky option' => TRUE,
+        'override panel revision option' => TRUE,
+        'enter panel revision log entry' => TRUE,
+        'override panel authored on option' => TRUE,
+        'override panel authored by option' => TRUE,
+      // CT: Webform
+        'override webform published option' => TRUE,
+        'override webform promote to front page option' => TRUE,
+        'override webform sticky option' => TRUE,
+        'override webform revision option' => TRUE,
+        'enter webform revision log entry' => TRUE,
+        'override webform authored on option' => TRUE,
+        'override webform authored by option' => TRUE,
+    // Page Title
+      'set page title' => TRUE,
+      'administer page titles' => TRUE,
+    // Page model
+      'administer page model module' => TRUE,
+      'use page model module' => TRUE,
+    // Panel nodes
+      'create panel-nodes' => TRUE,
+      'edit any panel-nodes' => TRUE,
+      'edit own panel-nodes' => TRUE,
+      'administer panel-nodes' => TRUE,
+      'delete any panel-nodes' => TRUE,
+      'delete own panel-nodes' => TRUE,
+    // Panels
+      'use panels dashboard' => TRUE,
+      'view pane admin links' => TRUE,
+      'administer pane access' => TRUE,
+      'administer advanced pane settings' => TRUE,
+      'administer panels layouts' => TRUE,
+      'administer panels styles' => TRUE,
+      'use panels caching features' => TRUE,
+      'use panels locks' => TRUE,
+    // Path
+      'administer url aliases' => TRUE,
+      'create url aliases' => TRUE,
+    // Path breadcrubms UI
+      'administer path breadcrumbs' => TRUE,
+    // Pathauto
+      'administer pathauto' => TRUE,
+      'notify of path changes' => TRUE,
+    // Printer-friendly pages
+      'administer print' => TRUE,
+      'node-specific print configuration' => TRUE,
+      'access print' => TRUE,
+    // Redirect
+      'administer redirects' => TRUE,
+    // Rules
+      'administer rules' => TRUE,
+      'bypass rules access' => TRUE,
+      'access rules debug' => TRUE,
+    // Scheduler
+      'administer scheduler' => TRUE,
+      'schedule (un)publishing of nodes' => TRUE,
+    // Search
+      'administer search' => TRUE,
+      'search content' => TRUE,
+    // Security Kit
+      'administer seckit' => TRUE,
+    // Security Review
+      'access security review list' => TRUE,
+      'run security checks' => TRUE,
+    // Site map
+      'access site map' => TRUE,
+    // Statistics
+      'administer statistics' => TRUE,
+      'access statistics' => TRUE,
+      'view post access counter' => TRUE,
+    // String translation
+      'translate user-defined strings' => TRUE,
+      'translate admin strings' => TRUE,
+    // Stylizer
+      'administer stylizer' => TRUE,
+    // Sweaver
+      'configure sweaver' => TRUE,
+      'use editor' => TRUE,
+    // System
+      'administer actions' => TRUE,
+      'access administration pages' => TRUE,
+      'view the administration theme' => TRUE,
+    // Taxonomy
+      'administer taxonomy' => TRUE,
+      // Vocabulary: Category
+//      'edit terms in 1' => TRUE,
+//      'delete terms in 1' => TRUE,
+    // Translation overview
+      'view translation overview assigments' => TRUE,
+//      'manage nl translation overview priorities' => TRUE,
+//      'manage en translation overview priorities' => TRUE,
+//      'manage fr translation overview priorities' => TRUE,
+    // User
+      'administer users' => TRUE,
+      'access user profiles' => TRUE,
+    // View Unpublished
+      'view any unpublished content' => TRUE,
+    // Webform
+      'access all webform results' => TRUE,
+      'access own webform results' => TRUE,
+      'edit all webform submissions' => TRUE,
+      'delete all webform submissions' => TRUE,
+      'access own webform submissions' => TRUE,
+      'edit own webform submissions' => TRUE,
+      'delete own webform submissions' => TRUE,
+  );
+  return $permission;
+}
+
+/**
+ * Return the array for the list of content manager permission
+ * 
+ * @return array 
+ */
+function _openfed_return_permission_content_manager() {
+  $permission = array(
+    // Add another
+      'administer add another' => TRUE,
+      'use add another' => TRUE,
+    // Administration menu
+      'access administration menu' => TRUE,
+      'flush caches' => TRUE,
+    // Administration theme
+      'access admin theme' => TRUE,
+    // Aggregator
+      'access news feeds' => TRUE,
+    // CKEditor Link
+      'access ckeditor link' => TRUE,
+    // Content translation
+      'translate content' => TRUE,
+    // Contextual links
+      'access contextual links' => TRUE,
+    // Filter
+      'use text format filtered_html' => TRUE,
+      'use text format full_html' => TRUE,
+    // IMAGE
+      'administer image styles' => TRUE,
+    // Link Checker
+      'access broken links report' => TRUE,
+      'access own broken links report' => TRUE,
+    // Locale
+      'translate interface' => TRUE,
+    // Media
+      'administer media' => TRUE,
+      'import media' => TRUE,
+      'view media' => TRUE,
+      'edit media' => TRUE,
+    // Media Internet Sources
+      'add media from remote sources' => TRUE,
+    // Menu
+      'administer menu' => TRUE,
+    // Menu attributes
+      'administer menu attributes' => TRUE,
+    // Meta tags
+      'edit meta tags' => TRUE,
+    // Mini panels
+      'create mini panels' => TRUE,
+      'administer mini panels' => TRUE,
+    // Multilingual content
+      'administer content translations' => TRUE,
+    // Node
+      'access content overview' => TRUE,
+      'access content' => TRUE,
+      'view own unpublished content' => TRUE,
+      'view revisions' => TRUE,
+      'revert revisions' => TRUE,
+      // CT: Download
+        'create ofed_download content' => TRUE,
+        'edit own ofed_download content' => TRUE,
+        'edit any ofed_download content' => TRUE,
+        'delete own ofed_download content' => TRUE,
+        'delete any ofed_download content' => TRUE,
+      // CT: Page
+        'create ofed_page content' => TRUE,
+        'edit own ofed_page content' => TRUE,
+        'edit any ofed_page content' => TRUE,
+        'delete own ofed_page content' => TRUE,
+        'delete any ofed_page content' => TRUE,
+      // CT: Webform
+        'create webform content' => TRUE,
+        'edit own webform content' => TRUE,
+        'edit any webform content' => TRUE,
+        'delete own webform content' => TRUE,
+    // Override node options
+      // CT: Download
+        'override ofed_download published option' => TRUE,
+        'override ofed_download promote to front page option' => TRUE,
+        'override ofed_download sticky option' => TRUE,
+        'override ofed_download revision option' => TRUE,
+        'enter ofed_download revision log entry' => TRUE,
+        'override ofed_download authored on option' => TRUE,
+      // CT: Page
+        'override ofed_page published option' => TRUE,
+        'override ofed_page promote to front page option' => TRUE,
+        'override ofed_page sticky option' => TRUE,
+        'override ofed_page revision option' => TRUE,
+        'enter ofed_page revision log entry' => TRUE,
+        'override ofed_page authored on option' => TRUE,
+      // CT: Webform
+        'override webform published option' => TRUE,
+        'override webform promote to front page option' => TRUE,
+        'override webform sticky option' => TRUE,
+        'override webform revision option' => TRUE,
+        'enter webform revision log entry' => TRUE,
+        'override webform authored on option' => TRUE,
+    // Page Title
+      'set page title' => TRUE,
+      'administer page titles' => TRUE,
+    // Page model
+      'administer page model module' => TRUE,
+      'use page model module' => TRUE,
+    // Path
+      'administer url aliases' => TRUE,
+      'create url aliases' => TRUE,
+    // Printer-friendly pages
+      'access print' => TRUE,
+    // Scheduler
+      'schedule (un)publishing of nodes' => TRUE,
+    // Site map
+      'access site map' => TRUE,
+    // Statistics
+      'access statistics' => TRUE,
+      'view post access counter' => TRUE,
+    // System
+      'access administration pages' => TRUE,
+      'view the administration theme' => TRUE,
+    // Taxonomy
+      'administer taxonomy' => TRUE,
+      // Vocabulary: Category
+//      'edit terms in 1' => TRUE,
+//      'delete terms in 1' => TRUE,
+    // Translation overview
+      'view translation overview assigments' => TRUE,
+//      'manage nl translation overview priorities' => TRUE,
+//      'manage en translation overview priorities' => TRUE,
+//      'manage fr translation overview priorities' => TRUE,
+    // View Unpublished
+      'view any unpublished content' => TRUE,
+    // Webform
+      'access all webform results' => TRUE,
+      'access own webform results' => TRUE,
+      'access own webform submissions' => TRUE,
+      'edit own webform submissions' => TRUE,
+      'delete own webform submissions' => TRUE,
+  );
+  return $permission;
+}
+
+/**
+ * Return the array for the list of user manager permission
+ * 
+ * @return array 
+ */
+function _openfed_return_permission_user_manager() {
+  $permission = array(
+    // Add another
+      'use add another' => TRUE,
+    // Administration menu
+      'access administration menu' => TRUE,
+      'flush caches' => TRUE,
+    // Administration theme
+      'access admin theme' => TRUE,
+    // Aggregator
+      'access news feeds' => TRUE,
+    // Node
+      'access content' => TRUE,
+      'view own unpublished content' => TRUE,
+    // Printer-friendly pages
+      'access print' => TRUE,
+    // Site map
+      'access site map' => TRUE,
+    // User
+      'administer permissions' => TRUE,
+      'administer users' => TRUE,
+      'access user profiles' => TRUE,
+  );
+  return $permission;
+}
+
+/**
+ * Return the array for the list of authenticated visitor permission
+ * 
+ * @return array 
+ */
+function _openfed_return_permission_authenticated_visitor() {
+  $permission = array(
+    // Add another
+      'use add another' => TRUE,
+    // Aggregator
+      'access news feeds' => TRUE,
+    // Node
+      'access content' => TRUE,
+      'view own unpublished content' => TRUE,
+    // Printer-friendly pages
+      'access print' => TRUE,
+    // Site map
+      'access site map' => TRUE,
+  );
+  return $permission;
+}
+
+/**
+ * Return the array for the list of authenticated user permission
+ * 
+ * @return array 
+ */
+function _openfed_return_permission_authenticated_user() {
+  $permission = array(
+    // Add another
+      'use add another' => TRUE,
+    // Aggregator
+      'access news feeds' => TRUE,
+    // Node
+      'access content' => TRUE,
+      'view own unpublished content' => TRUE,
+    // Printer-friendly pages
+      'access print' => TRUE,
+    // Site map
+      'access site map' => TRUE,
+  );
+  return $permission;
+}
+/**
+ * Return the array for the list of anonymous user permission
+ * 
+ * @return array 
+ */
+function _openfed_return_permission_anonymous_user() {
+  $permission = array(
+    // Aggregator
+      'access news feeds' => TRUE,
+    // Node
+      'access content' => TRUE,
+    // Printer-friendly pages
+      'access print' => TRUE,
+    // Site map
+      'access site map' => TRUE,
+  );
+  return $permission;
+}
 
 /**
  * Return the array for the list of all functionalities.
@@ -39,123 +848,97 @@ function _openfed_return_functionalities_list() {
   
   $function_list = array(
     // Content types
-    'ofed_page' => array(
-      'title' => 'Pages',
+    'ofed_faq' => array(
+      'title' => st('FAQ'),
       'picture' => $features,
-      'description' => 'Enables the creation of content page.',
-    ),
-    'ofed_banner' => array(
-      'title' => 'Banners',
-      'picture' => $features,
-      'description' => 'Enables the creation of banner.',
+      'description' => st('Enables the creation of frequently asked questions.'),
     ),
     'ofed_new' => array(
-      'title' => 'News',
+      'title' => st('News'),
       'picture' => $features,
-      'description' => 'Enables the creation of news.',
+      'description' => st('Enables the creation of news.'),
     ),
-    'ofed_download' => array(
-      'title' => 'Downloads',
+    'ofed_press' => array(
+      'title' => st('Press'),
       'picture' => $features,
-      'description' => 'Enables the creation of download files.',
+      'description' => st('Enables the creation of press.'),
     ),
-    'webform' => array(
-      'title' => 'Webform',
+    'ofed_slideshow' => array(
+      'title' => st('Slideshow'),
       'picture' => $features,
-      'description' => 'Enables the creation of forms and questionnaires.',
+      'description' => st('Enables the creation of slideshow.'),
     ),
     'poll' => array(
-      'title' => 'Poll',
+      'title' => st('Poll'),
       'picture' => $features,
-      'description' => 'Enables the creation of poll.',
+      'description' => st('Enables the creation of poll.'),
     ),
     'blog' => array(
-      'title' => 'Blog',
+      'title' => st('Blog'),
       'picture' => $features,
-      'description' => 'Enables the creation of blog.',
+      'description' => st('Enables the creation of blog.'),
     ),
     
     // Modules
-    'ofed_switcher' => array(
-      'title' => 'Interface Switcher',
-      'picture' => $modules,
-      'description' => 'Add a block to switch between public website and administration.',
-    ),
-    'ofed' => array(
-      'title' => 'Ofed',
+    'ofed_federalheader' => array(
+      'title' => st('Federal header'),
       'picture' => $features,
-      'description' => 'extend views with Helper for openFED suite',
+      'description' => st('Provide the official Belgian Federal Authorities header.'),
     ),
-    'ofed_federal_header' => array(
-      'title' => 'Federal header',
-      'picture' => $features,
-      'description' => 'Provide the official Belgian Federal Authorities header.',
-    ),
-      
     'lexicon' => array(
-      'title' => 'Lexicon',
+      'title' => st('Lexicon'),
       'picture' => $modules,
-      'description' => 'Maintain one or more lexicons on your site and optionally mark term from one or more lexicons in the content of the website.',
-    ),
-    'backup_migrate' => array(
-      'title' => 'Backup Migrate',
-      'picture' => $modules,
-      'description' => 'Backup or migrate the Drupal Database quickly and without unnecessary data.',
+      'description' => st('Maintain one or more lexicons on your site and optionally mark term from one or more lexicons in the content of the website.'),
     ),
     'beididp' => array(
-      'title' => 'Belgian eID IDP Integration',
+      'title' => st('Belgian eID IDP Integration'),
       'picture' => $modules,
-      'description' => "Allows users to authenticate with their Belgian eID card, using Fedict's OpenID Identity provider.",
+      'description' => st('Allows users to authenticate with their Belgian eID card, using Fedict\'s OpenID Identity provider.'),
     ),
     'content_access' => array(
-      'title' => 'Content Access',
+      'title' => st('Content Access'),
       'picture' => $modules,
-      'description' => 'Provides flexible content access control.',
+      'description' => st('Provides flexible content access control.'),
     ),
     'countries' => array(
-      'title' => 'Countries',
+      'title' => st('Countries'),
       'picture' => $modules,
-      'description' => 'A module that provides a FAPI / Field country element and a simple wrapper module to store / update country data.',
-    ),
-    'diff' => array(
-      'title' => 'Diff',
-      'picture' => $modules,
-      'description' => 'Show difference between node revisions.',
+      'description' => st('A module that provides a FAPI / Field country element and a simple wrapper module to store / update country data.'),
     ),
     'field_permission' => array(
-      'title' => 'Field Permission',
+      'title' => st('Field Permission'),
       'picture' => $modules,
-      'description' => 'Set field-level permissions to create, update or view fields.',
+      'description' => st('Set field-level permissions to create, update or view fields.'),
     ),
     'l10n_client' => array(
-      'title' => 'Localization client',
+      'title' => st('Localization client'),
       'picture' => $modules,
-      'description' => 'Provides on-page localization',
+      'description' => st('Provides on-page localization'),
     ),
     'module_filter' => array(
-      'title' => 'Module filter',
+      'title' => st('Module filter'),
       'picture' => $modules,
-      'description' => 'Filter the modules list.',
+      'description' => st('Filter the modules list.'),
     ),
     'multiple_node_menu' => array(
-      'title' => 'Multiple node menu',
+      'title' => st('Multiple node menu'),
       'picture' => $modules,
-      'description' => 'Replaces the node menu form with one that can handle multiple parents.',
+      'description' => st('Replaces the node menu form with one that can handle multiple parents.'),
     ),
     'performance' => array(
-      'title' => 'Performance',
+      'title' => st('Performance'),
       'picture' => $modules,
-      'description' => 'Logs detailed and/or summary page generation time and memory consumption for page requests.',
+      'description' => st('Logs detailed and/or summary page generation time and memory consumption for page requests.'),
     ),
     'role_delegation' => array(
-      'title' => 'Role delegation',
+      'title' => st('Role delegation'),
       'picture' => $modules,
-      'description' => 'Allows site administrators to grant some roles the authority to assign selected roles to users.',
+      'description' => st('Allows site administrators to grant some roles the authority to assign selected roles to users.'),
     ),
     'securelogin' => array(
-      'title' => 'Secure login',
+      'title' => st('Secure login'),
       'picture' => $modules,
-      'description' => 'Enables secure login.',
+      'description' => st('Enables secure login.'),
     ),
   );
   return $function_list;
