@@ -98,9 +98,14 @@ function cms_theme_form_system_theme_settings_alter(&$form, &$form_state) {
       $form['cms_theme']['cms_theme_layout']['cms_theme_layout_display'] = array(
         '#type' => 'radios',
         '#options' => $options,
+        '#attributes' => array('class' => array('layout-grid-display')),
         '#default_value' => theme_get_setting('cms_theme_layout_display'),
       );
-      
+      $form['cms_theme']['cms_theme_layout']['cms_theme_layout_grid'] = array(
+        '#markup' => t('The grid system utilizes 12 columns, making for a 940px wide container. The grid serves as an armature on which a designer can organize text and images in an easy manner.'),
+        '#prefix' => '<p><strong>',
+        '#suffix' => '</strong></p>',
+      );
       $form['cms_theme']['cms_theme_layout']['cms_theme_layout_width_left'] = array(
         '#type' => 'textfield',
         '#title' => t('Width left sidebar (span-?)'),
@@ -198,8 +203,13 @@ function cms_theme_form_system_theme_settings_alter(&$form, &$form_state) {
       );
       $form['cms_theme']['cms_theme_toggle']['cms_theme_toggle_sponsor'] = array(
         '#type' => 'checkbox',
-        '#title' => t('Sponsor Blue4You'),
+        '#title' => t('Sponsor'),
         '#default_value' => theme_get_setting('cms_theme_toggle_sponsor'),
+      );
+      $form['cms_theme']['cms_theme_toggle']['cms_theme_toggle_sponsor_label'] = array(
+        '#type' => 'textfield',
+        '#title' => t('Sponsor label'),
+        '#default_value' => theme_get_setting('cms_theme_toggle_sponsor_label'),
       );
       $form['cms_theme']['cms_theme_toggle']['cms_theme_toggle_quickinfos'] = array(
         '#type' => 'checkbox',

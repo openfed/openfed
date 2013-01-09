@@ -25,7 +25,9 @@ function ofed_feature_new_ds_field_settings_info() {
         'link' => '0',
         'wrapper' => 'h3',
         'class' => '',
-        'ft' => array(),
+        'ft' => array(
+          'classes' => 'clear-block',
+        ),
       ),
     ),
     'node_link' => array(
@@ -35,8 +37,23 @@ function ofed_feature_new_ds_field_settings_info() {
       'formatter_settings' => array(
         'link text' => 'Read more',
         'wrapper' => '',
-        'class' => 'more',
-        'ft' => array(),
+        'ft' => array(
+          'classes' => 'clear-block more',
+        ),
+      ),
+    ),
+    'field_ofed_new_summary' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'classes' => 'clear-block',
+        ),
+      ),
+    ),
+    'field_ofed_new_update' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'classes' => 'float-left',
+        ),
       ),
     ),
   );
@@ -74,16 +91,32 @@ function ofed_feature_new_ds_field_settings_info() {
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
-        'link' => '0',
+        'link' => '1',
         'wrapper' => 'h3',
         'class' => '',
-        'ft' => array(),
+        'ft' => array(
+          'classes' => 'clear-block',
+        ),
       ),
     ),
     'node_link' => array(
       'weight' => '2',
       'label' => 'hidden',
       'format' => 'default',
+      'formatter_settings' => array(
+        'link text' => 'Read more',
+        'wrapper' => '',
+        'ft' => array(
+          'classes' => 'clear-block more',
+        ),
+      ),
+    ),
+    'field_ofed_new_update' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'classes' => 'float-left',
+        ),
+      ),
     ),
   );
   $export['node|ofed_new|block_list'] = $ds_fieldsetting;
@@ -99,28 +132,33 @@ function ofed_feature_new_ds_field_settings_info() {
       'weight' => '0',
       'label' => 'hidden',
       'format' => 'default',
-    ),
-    'field_ofed_new_summary' => array(
       'formatter_settings' => array(
+        'link' => '0',
+        'wrapper' => 'h3',
+        'class' => '',
         'ft' => array(
-          'classes' => 'headline',
+          'classes' => 'clear-block',
         ),
       ),
     ),
-  );
-  $export['node|ofed_new|default'] = $ds_fieldsetting;
-
-  $ds_fieldsetting = new stdClass();
-  $ds_fieldsetting->api_version = 1;
-  $ds_fieldsetting->id = 'node|ofed_new|full';
-  $ds_fieldsetting->entity_type = 'node';
-  $ds_fieldsetting->bundle = 'ofed_new';
-  $ds_fieldsetting->view_mode = 'full';
-  $ds_fieldsetting->settings = array(
     'field_ofed_new_author' => array(
       'formatter_settings' => array(
         'ft' => array(
-          'classes' => 'float-left',
+          'classes' => 'clear-block',
+        ),
+      ),
+    ),
+    'field_ofed_new_docs' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'classes' => 'clear-block',
+        ),
+      ),
+    ),
+    'field_ofed_new_links' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'classes' => 'clear-block',
         ),
       ),
     ),
@@ -134,7 +172,7 @@ function ofed_feature_new_ds_field_settings_info() {
     'field_ofed_new_summary' => array(
       'formatter_settings' => array(
         'ft' => array(
-          'classes' => 'headline',
+          'classes' => 'clear-block headline',
         ),
       ),
     ),
@@ -153,6 +191,65 @@ function ofed_feature_new_ds_field_settings_info() {
       ),
     ),
   );
+  $export['node|ofed_new|default'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'node|ofed_new|full';
+  $ds_fieldsetting->entity_type = 'node';
+  $ds_fieldsetting->bundle = 'ofed_new';
+  $ds_fieldsetting->view_mode = 'full';
+  $ds_fieldsetting->settings = array(
+    'field_ofed_new_author' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'classes' => 'clear-block',
+        ),
+      ),
+    ),
+    'field_ofed_new_docs' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'classes' => 'clear-block',
+        ),
+      ),
+    ),
+    'field_ofed_new_links' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'classes' => 'clear-block',
+        ),
+      ),
+    ),
+    'field_ofed_new_source' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'classes' => 'clear-block',
+        ),
+      ),
+    ),
+    'field_ofed_new_summary' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'classes' => 'clear-block headline',
+        ),
+      ),
+    ),
+    'field_ofed_new_thumb' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'classes' => 'float-left',
+        ),
+      ),
+    ),
+    'field_ofed_new_update' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'classes' => 'clear-block',
+        ),
+      ),
+    ),
+  );
   $export['node|ofed_new|full'] = $ds_fieldsetting;
 
   $ds_fieldsetting = new stdClass();
@@ -166,6 +263,14 @@ function ofed_feature_new_ds_field_settings_info() {
       'weight' => '0',
       'label' => 'hidden',
       'format' => 'default',
+      'formatter_settings' => array(
+        'link' => '0',
+        'wrapper' => 'h3',
+        'class' => '',
+        'ft' => array(
+          'classes' => 'clear-block',
+        ),
+      ),
     ),
     'node_link' => array(
       'weight' => '6',
@@ -174,7 +279,56 @@ function ofed_feature_new_ds_field_settings_info() {
       'formatter_settings' => array(
         'link text' => 'Read more',
         'wrapper' => '',
-        'class' => 'more',
+        'class' => '',
+        'ft' => array(
+          'classes' => 'more',
+        ),
+      ),
+    ),
+    'field_ofed_new_author' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'classes' => 'clear-block',
+        ),
+      ),
+    ),
+    'field_ofed_new_summary' => array(
+      'formatter_settings' => array(
+        'ft' => array(),
+      ),
+    ),
+    'field_ofed_new_thumb' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'classes' => 'float-left',
+        ),
+      ),
+    ),
+    'field_ofed_new_update' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'classes' => 'clear-block',
+        ),
+      ),
+    ),
+  );
+  $export['node|ofed_new|page_list'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'node|ofed_new|print';
+  $ds_fieldsetting->entity_type = 'node';
+  $ds_fieldsetting->bundle = 'ofed_new';
+  $ds_fieldsetting->view_mode = 'print';
+  $ds_fieldsetting->settings = array(
+    'title' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'link' => '0',
+        'wrapper' => 'h2',
+        'class' => '',
         'ft' => array(
           'classes' => 'clear-block',
         ),
@@ -185,6 +339,11 @@ function ofed_feature_new_ds_field_settings_info() {
         'ft' => array(
           'classes' => 'float-left',
         ),
+      ),
+    ),
+    'field_ofed_new_body' => array(
+      'formatter_settings' => array(
+        'ft' => array(),
       ),
     ),
     'field_ofed_new_source' => array(
@@ -206,20 +365,12 @@ function ofed_feature_new_ds_field_settings_info() {
         ),
       ),
     ),
-  );
-  $export['node|ofed_new|page_list'] = $ds_fieldsetting;
-
-  $ds_fieldsetting = new stdClass();
-  $ds_fieldsetting->api_version = 1;
-  $ds_fieldsetting->id = 'node|ofed_new|print';
-  $ds_fieldsetting->entity_type = 'node';
-  $ds_fieldsetting->bundle = 'ofed_new';
-  $ds_fieldsetting->view_mode = 'print';
-  $ds_fieldsetting->settings = array(
-    'title' => array(
-      'weight' => '0',
-      'label' => 'hidden',
-      'format' => 'default',
+    'field_ofed_new_update' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'classes' => 'float-left',
+        ),
+      ),
     ),
   );
   $export['node|ofed_new|print'] = $ds_fieldsetting;
@@ -240,6 +391,13 @@ function ofed_feature_new_ds_field_settings_info() {
       'weight' => '2',
       'label' => 'hidden',
       'format' => 'default',
+      'formatter_settings' => array(
+        'link text' => 'Read more',
+        'wrapper' => '',
+        'ft' => array(
+          'classes' => 'more',
+        ),
+      ),
     ),
   );
   $export['node|ofed_new|rss'] = $ds_fieldsetting;
@@ -256,11 +414,6 @@ function ofed_feature_new_ds_field_settings_info() {
       'label' => 'hidden',
       'format' => 'default',
     ),
-    'field_ofed_new_docs' => array(
-      'formatter_settings' => array(
-        'ft' => array(),
-      ),
-    ),
   );
   $export['node|ofed_new|search_index'] = $ds_fieldsetting;
 
@@ -275,11 +428,47 @@ function ofed_feature_new_ds_field_settings_info() {
       'weight' => '0',
       'label' => 'hidden',
       'format' => 'default',
+      'formatter_settings' => array(
+        'link' => '0',
+        'wrapper' => 'h3',
+        'class' => '',
+        'ft' => array(
+          'classes' => 'clear-block',
+        ),
+      ),
     ),
     'node_link' => array(
       'weight' => '4',
       'label' => 'hidden',
       'format' => 'default',
+      'formatter_settings' => array(
+        'link text' => 'Read more',
+        'wrapper' => '',
+        'ft' => array(
+          'classes' => 'clear-block more',
+        ),
+      ),
+    ),
+    'field_ofed_new_summary' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'classes' => 'clear-block',
+        ),
+      ),
+    ),
+    'field_ofed_new_thumb' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'classes' => 'float-left',
+        ),
+      ),
+    ),
+    'field_ofed_new_update' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'classes' => 'float-left',
+        ),
+      ),
     ),
   );
   $export['node|ofed_new|search_result'] = $ds_fieldsetting;
@@ -299,7 +488,9 @@ function ofed_feature_new_ds_field_settings_info() {
         'link' => '0',
         'wrapper' => 'h3',
         'class' => '',
-        'ft' => array(),
+        'ft' => array(
+          'classes' => 'clear-block',
+        ),
       ),
     ),
     'node_link' => array(
@@ -309,8 +500,23 @@ function ofed_feature_new_ds_field_settings_info() {
       'formatter_settings' => array(
         'link text' => 'Read more',
         'wrapper' => '',
-        'class' => 'more',
-        'ft' => array(),
+        'ft' => array(
+          'classes' => 'clear-block more',
+        ),
+      ),
+    ),
+    'field_ofed_new_summary' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'classes' => 'clear-block',
+        ),
+      ),
+    ),
+    'field_ofed_new_update' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'classes' => 'float-left',
+        ),
       ),
     ),
   );
@@ -338,15 +544,13 @@ function ofed_feature_new_ds_layout_settings_info() {
         0 => 'title',
         1 => 'field_ofed_new_update',
         2 => 'field_ofed_new_summary',
-        3 => 'field_ofed_new_thumb',
-        4 => 'node_link',
+        3 => 'node_link',
       ),
     ),
     'fields' => array(
       'title' => 'ds_content',
       'field_ofed_new_update' => 'ds_content',
       'field_ofed_new_summary' => 'ds_content',
-      'field_ofed_new_thumb' => 'ds_content',
       'node_link' => 'ds_content',
     ),
     'classes' => array(),
@@ -354,7 +558,7 @@ function ofed_feature_new_ds_layout_settings_info() {
       'ds_content' => 'div',
     ),
     'layout_wrapper' => 'div',
-    'layout_attributes' => 'ds-wrapper-new ds-wrapper-new-block-column block-column',
+    'layout_attributes' => '',
     'layout_attributes_merge' => 1,
     'hide_page_title' => '0',
     'page_option_title' => '',
@@ -401,7 +605,6 @@ function ofed_feature_new_ds_layout_settings_info() {
       'ds_content' => 'div',
     ),
     'layout_wrapper' => 'div',
-    'layout_attributes' => 'ds-wrapper-new ds-wrapper-new-block-info block-info',
     'layout_attributes_merge' => 1,
     'hide_page_title' => '0',
     'page_option_title' => '',
@@ -434,7 +637,7 @@ function ofed_feature_new_ds_layout_settings_info() {
       'ds_content' => 'div',
     ),
     'layout_wrapper' => 'div',
-    'layout_attributes' => 'ds-wrapper-new ds-wrapper-new-block-list block-list',
+    'layout_attributes' => '',
     'layout_attributes_merge' => 1,
     'hide_page_title' => '0',
     'page_option_title' => '',
@@ -455,10 +658,10 @@ function ofed_feature_new_ds_layout_settings_info() {
         0 => 'title',
         1 => 'field_ofed_new_update',
         2 => 'field_ofed_new_author',
-        3 => 'field_ofed_new_source',
-        4 => 'field_ofed_new_summary',
-        5 => 'field_ofed_new_thumb',
-        6 => 'field_ofed_new_body',
+        3 => 'field_ofed_new_summary',
+        4 => 'field_ofed_new_thumb',
+        5 => 'field_ofed_new_body',
+        6 => 'field_ofed_new_source',
         7 => 'field_ofed_new_docs',
         8 => 'field_ofed_new_links',
       ),
@@ -467,10 +670,10 @@ function ofed_feature_new_ds_layout_settings_info() {
       'title' => 'ds_content',
       'field_ofed_new_update' => 'ds_content',
       'field_ofed_new_author' => 'ds_content',
-      'field_ofed_new_source' => 'ds_content',
       'field_ofed_new_summary' => 'ds_content',
       'field_ofed_new_thumb' => 'ds_content',
       'field_ofed_new_body' => 'ds_content',
+      'field_ofed_new_source' => 'ds_content',
       'field_ofed_new_docs' => 'ds_content',
       'field_ofed_new_links' => 'ds_content',
     ),
@@ -479,7 +682,7 @@ function ofed_feature_new_ds_layout_settings_info() {
       'ds_content' => 'div',
     ),
     'layout_wrapper' => 'div',
-    'layout_attributes' => 'ds-wrapper-new ds-wrapper-new-default default',
+    'layout_attributes' => '',
     'layout_attributes_merge' => 1,
     'hide_page_title' => '0',
     'page_option_title' => '',
@@ -499,10 +702,10 @@ function ofed_feature_new_ds_layout_settings_info() {
       'ds_content' => array(
         0 => 'field_ofed_new_update',
         1 => 'field_ofed_new_author',
-        2 => 'field_ofed_new_source',
-        3 => 'field_ofed_new_summary',
-        4 => 'field_ofed_new_thumb',
-        5 => 'field_ofed_new_body',
+        2 => 'field_ofed_new_summary',
+        3 => 'field_ofed_new_thumb',
+        4 => 'field_ofed_new_body',
+        5 => 'field_ofed_new_source',
         6 => 'field_ofed_new_docs',
         7 => 'field_ofed_new_links',
       ),
@@ -510,10 +713,10 @@ function ofed_feature_new_ds_layout_settings_info() {
     'fields' => array(
       'field_ofed_new_update' => 'ds_content',
       'field_ofed_new_author' => 'ds_content',
-      'field_ofed_new_source' => 'ds_content',
       'field_ofed_new_summary' => 'ds_content',
       'field_ofed_new_thumb' => 'ds_content',
       'field_ofed_new_body' => 'ds_content',
+      'field_ofed_new_source' => 'ds_content',
       'field_ofed_new_docs' => 'ds_content',
       'field_ofed_new_links' => 'ds_content',
     ),
@@ -522,7 +725,7 @@ function ofed_feature_new_ds_layout_settings_info() {
       'ds_content' => 'div',
     ),
     'layout_wrapper' => 'div',
-    'layout_attributes' => 'ds-wrapper-new ds-wrapper-new-full full',
+    'layout_attributes' => '',
     'layout_attributes_merge' => 1,
     'hide_page_title' => '0',
     'page_option_title' => '',
@@ -543,17 +746,15 @@ function ofed_feature_new_ds_layout_settings_info() {
         0 => 'title',
         1 => 'field_ofed_new_update',
         2 => 'field_ofed_new_author',
-        3 => 'field_ofed_new_source',
-        4 => 'field_ofed_new_thumb',
-        5 => 'field_ofed_new_summary',
-        6 => 'node_link',
+        3 => 'field_ofed_new_thumb',
+        4 => 'field_ofed_new_summary',
+        5 => 'node_link',
       ),
     ),
     'fields' => array(
       'title' => 'ds_content',
       'field_ofed_new_update' => 'ds_content',
       'field_ofed_new_author' => 'ds_content',
-      'field_ofed_new_source' => 'ds_content',
       'field_ofed_new_thumb' => 'ds_content',
       'field_ofed_new_summary' => 'ds_content',
       'node_link' => 'ds_content',
@@ -563,7 +764,7 @@ function ofed_feature_new_ds_layout_settings_info() {
       'ds_content' => 'div',
     ),
     'layout_wrapper' => 'div',
-    'layout_attributes' => 'ds-wrapper-new ds-wrapper-new-page-list page-list',
+    'layout_attributes' => '',
     'layout_attributes_merge' => 1,
     'hide_page_title' => '0',
     'page_option_title' => '',
@@ -604,7 +805,6 @@ function ofed_feature_new_ds_layout_settings_info() {
       'ds_content' => 'div',
     ),
     'layout_wrapper' => 'div',
-    'layout_attributes' => 'ds-wrapper-new ds-wrapper-new-print print',
     'layout_attributes_merge' => 1,
     'hide_page_title' => '0',
     'page_option_title' => '',
@@ -637,7 +837,7 @@ function ofed_feature_new_ds_layout_settings_info() {
       'ds_content' => 'div',
     ),
     'layout_wrapper' => 'div',
-    'layout_attributes' => 'ds-wrapper-new ds-wrapper-new-rss rss',
+    'layout_attributes' => '',
     'layout_attributes_merge' => 1,
     'hide_page_title' => '0',
     'page_option_title' => '',
@@ -676,7 +876,7 @@ function ofed_feature_new_ds_layout_settings_info() {
       'ds_content' => 'div',
     ),
     'layout_wrapper' => 'div',
-    'layout_attributes' => 'ds-wrapper-new ds-wrapper-new-search-index search-index',
+    'layout_attributes' => '',
     'layout_attributes_merge' => 1,
     'hide_page_title' => '0',
     'page_option_title' => '',
@@ -713,7 +913,7 @@ function ofed_feature_new_ds_layout_settings_info() {
       'ds_content' => 'div',
     ),
     'layout_wrapper' => 'div',
-    'layout_attributes' => 'ds-wrapper-new ds-wrapper-new-search-result search-result',
+    'layout_attributes' => '',
     'layout_attributes_merge' => 1,
     'hide_page_title' => '0',
     'page_option_title' => '',
@@ -734,15 +934,13 @@ function ofed_feature_new_ds_layout_settings_info() {
         0 => 'title',
         1 => 'field_ofed_new_update',
         2 => 'field_ofed_new_summary',
-        3 => 'field_ofed_new_thumb',
-        4 => 'node_link',
+        3 => 'node_link',
       ),
     ),
     'fields' => array(
       'title' => 'ds_content',
       'field_ofed_new_update' => 'ds_content',
       'field_ofed_new_summary' => 'ds_content',
-      'field_ofed_new_thumb' => 'ds_content',
       'node_link' => 'ds_content',
     ),
     'classes' => array(),
@@ -750,7 +948,7 @@ function ofed_feature_new_ds_layout_settings_info() {
       'ds_content' => 'div',
     ),
     'layout_wrapper' => 'div',
-    'layout_attributes' => 'ds-wrapper-new ds-wrapper-new-teaser teaser',
+    'layout_attributes' => '',
     'layout_attributes_merge' => 1,
     'hide_page_title' => '0',
     'page_option_title' => '',

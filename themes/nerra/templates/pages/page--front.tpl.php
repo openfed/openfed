@@ -1,5 +1,9 @@
 <header>
   <div class="container">
+    <?php if( !empty($page['tools']) ): ?>
+    <!-- Region Tools -->
+      <div id="tools"><?php print render($page['tools']); ?></div>
+    <?php endif; ?>    
     
     <?php if ($logo): ?>
     <!-- Region Logo -->
@@ -10,10 +14,7 @@
       </div>
     <?php endif; ?>
     
-    <?php if( !empty($page['tools']) ): ?>
-    <!-- Region Tools -->
-      <div id="tools"><?php print render($page['tools']); ?></div>
-    <?php endif; ?>    
+    <div class="slogan"><?php echo $site_slogan; ?></div>
   </div>
   <?php if( !empty($page['header']) ): ?>
   <!-- Region Header -->
@@ -36,6 +37,7 @@
   </div>
 </nav>
 
+<div id="content-to-resize">
 
 <?php if( !empty($page['top']) ): ?>
   <!-- Region top -->
@@ -47,9 +49,9 @@
 <?php endif; ?>
       
 
-<?php if ( theme_get_setting('nerra_breadcrumb_display') && theme_get_setting('nerra_breadcrumb_homepage') && $breadcrumb): ?>
+<?php if ( theme_get_setting('nerra_breadcrumb_display') && theme_get_setting('nerra_breadcrumb_homepage')): ?>
 <!-- Region Breadcrumb -->
-  <div class="breadcrumb container" itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><?php print $breadcrumb; ?></div>
+  <div class="breadcrumb container" itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><?php print render($page['breadcrumb']); ?></div>
 <?php endif; ?>
 
 
@@ -110,6 +112,7 @@
   </section>
 <?php endif; ?>
 
+</div>
 
 <footer id="footer">
   <div class="container">
@@ -134,7 +137,7 @@
         <?php if ( theme_get_setting('nerra_toggle_sponsor') ): ?>
         <!-- Region Sponsor -->
           <div class="sponsor span-3">
-            <p><a href="http://www.blue4you.be" target="_blank" title="<?php echo t('Webdesign by Blue4You'); ?>">Webdesign</a> by Blue4You</p>
+            <?php echo theme_get_setting('nerra_sponsor_label'); ?>
           </div>
         <?php endif; ?>
         

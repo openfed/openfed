@@ -3,24 +3,14 @@ function ofed_menu() {
   $items = array();
   $items['admin/openfed'] = array(
       'title' => t('OpenFED'),
-      'description' => t('Menu openfed'),
-      'page callback' => 'ofed_homepage',
-      'page arguments' => array(''),
+      'description' => t('OpenFED settings'),
+      'page callback' => 'ofed_admin_page',
+      'page arguments' => array(),
       'access arguments' => array('access administration pages'),
       'type' => MENU_NORMAL_ITEM,
   );
   
   return $items;
-}
-
-
-/**
- * Return a little description of the company.
- * 
- * @return string
- */
-function ofed_homepage() {
-  return '';
 }
 
 /**
@@ -31,4 +21,26 @@ function ofed_views_api() {
     'api' => 3,
     'path' => drupal_get_path('module', 'ofed') . '/views'
   );
+}
+
+/**
+ * Provide a single block from the sparks administration menu as a page.
+ *
+ * This function is often a destination for these blocks.
+ * For example, 'admin/sparks/structure/types' needs to have a destination to be valid
+ * in the Drupal menu system, but too much information there might be
+ * hidden, so we supply the contents of the block.
+ *
+ * @return
+ * The output HTML.
+ */
+function ofed_admin_page() {
+  $item = menu_get_item();
+  if ($content = system_admin_menu_block($item)) {
+    $output = theme('admin_block_content', array('content' => $content));
+  }
+  else {
+    $output = t('You do not have any administrative items.');
+  }
+  return $output;
 }

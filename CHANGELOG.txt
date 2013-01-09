@@ -1,7 +1,41 @@
 CHANGELOG
 =========
 
-7.x-0.3 : 14 december 2012
+7.x-0.4 : 09 January 2013
+--------------------------
+
+ * Issue
+  #1852784: Installation screen: Setup functionalities not accessible with keyboard ?
+  #1852934: Maintenance theme: image not found
+
+ * Module updated 
+    - linkchecker (1.0)
+
+ * Module added:
+    - easy_breadcrumb
+    - field_slideshow
+    - rules
+
+ * Config added:
+    - colorbox
+    - easy_breadcrumb
+    - path_breadcrumb
+    - displaysuite
+    - sweaver
+    - text-resize
+
+ * Content type:
+  - default set of field display added
+
+ * Theme:
+    - nerra
+      - Breadcrumb region added
+      - Theming for content type
+    - cms_theme
+      - Breadcrumb region added
+      - Theming for system page
+
+7.x-0.3 : 28 november 2012
 --------------------------
  * Issue
   #1852770: Installation screen: translation of languages
@@ -26,7 +60,7 @@ CHANGELOG
  * Theme:
 	- minimal layout added to nerra
 	- minimal layout added to cms_theme
-	
+
  * Config added:
     - DS
     - IMCE

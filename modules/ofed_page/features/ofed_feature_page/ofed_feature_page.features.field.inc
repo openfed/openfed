@@ -135,9 +135,6 @@ function ofed_feature_page_field_default_fields() {
             ),
           ),
           'sort' => array(
-            'direction' => 'ASC',
-            'field' => 'field_ofed_download_body:value',
-            'property' => 'nid',
             'type' => 'none',
           ),
           'target_bundles' => array(
@@ -154,10 +151,10 @@ function ofed_feature_page_field_default_fields() {
       'bundle' => 'ofed_page',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => 'Add an additional document related to this page.',
+      'description' => 'Enter the first letters of the document that needs to be available on this content item. Make sure that your document is created as a download content item first.',
       'display' => array(
         'default' => array(
-          'label' => 'hidden',
+          'label' => 'above',
           'module' => 'entityreference',
           'settings' => array(
             'links' => 1,
@@ -167,7 +164,7 @@ function ofed_feature_page_field_default_fields() {
           'weight' => '5',
         ),
         'full' => array(
-          'label' => 'hidden',
+          'label' => 'above',
           'module' => 'entityreference',
           'settings' => array(
             'links' => 1,
@@ -183,7 +180,7 @@ function ofed_feature_page_field_default_fields() {
           'weight' => '9',
         ),
         'search_index' => array(
-          'label' => 'hidden',
+          'label' => 'above',
           'module' => 'entityreference',
           'settings' => array(
             'links' => 1,
@@ -205,9 +202,10 @@ function ofed_feature_page_field_default_fields() {
           'weight' => '8',
         ),
       ),
+      'ds_extras_field_template' => '',
       'entity_type' => 'node',
       'field_name' => 'field_ofed_page_docs',
-      'label' => 'Document(s)',
+      'label' => 'Download(s)',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -259,7 +257,7 @@ function ofed_feature_page_field_default_fields() {
     'field_instance' => array(
       'bundle' => 'ofed_page',
       'deleted' => '0',
-      'description' => 'Fill the publication date of this page.',
+      'description' => 'Define specific published date for this content item, which will be displayed as "Last published on [published_date]".',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -301,7 +299,7 @@ function ofed_feature_page_field_default_fields() {
       'ds_extras_field_template' => '',
       'entity_type' => 'node',
       'field_name' => 'field_ofed_page_pubdate',
-      'label' => 'Published date',
+      'label' => 'Last published date',
       'required' => 0,
       'settings' => array(
         'default_value' => 'now',
@@ -524,7 +522,7 @@ function ofed_feature_page_field_default_fields() {
         'active' => 1,
         'module' => 'image',
         'settings' => array(
-          'preview_image_style' => 'ofed_page_thumb',
+          'preview_image_style' => '',
           'progress_indicator' => 'throbber',
         ),
         'type' => 'image_image',
@@ -566,7 +564,7 @@ function ofed_feature_page_field_default_fields() {
     'field_instance' => array(
       'bundle' => 'ofed_page',
       'deleted' => '0',
-      'description' => 'Fill the custom update date of this page.',
+      'description' => 'Define specific updated date for this content item, which will be displayed as "Last updated on [updated_date]". This allows you to define a specific update date than the system update date.',
       'display' => array(
         'default' => array(
           'label' => 'hidden',
@@ -650,7 +648,7 @@ function ofed_feature_page_field_default_fields() {
       'ds_extras_field_template' => '',
       'entity_type' => 'node',
       'field_name' => 'field_ofed_page_update',
-      'label' => '  Custom update date',
+      'label' => 'Last updated date',
       'required' => 0,
       'settings' => array(
         'default_value' => 'now',
@@ -711,7 +709,7 @@ function ofed_feature_page_field_default_fields() {
         ),
       ),
       'deleted' => '0',
-      'description' => 'Check it if you want to override the default update date by the custom update date.',
+      'description' => 'Check the box in order to use the system date as updated date for your content item.',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -753,7 +751,7 @@ function ofed_feature_page_field_default_fields() {
       'ds_extras_field_template' => '',
       'entity_type' => 'node',
       'field_name' => 'field_ofed_page_update_force',
-      'label' => 'Force to use custom update date',
+      'label' => 'Use system update date instead of Last updated date',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -772,20 +770,20 @@ function ofed_feature_page_field_default_fields() {
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('  Custom update date');
-  t('Add an additional document related to this page.');
   t('Body');
-  t('Check it if you want to override the default update date by the custom update date.');
-  t('Document(s)');
+  t('Check the box in order to use the system date as updated date for your content item.');
+  t('Define specific published date for this content item, which will be displayed as "Last published on [published_date]".');
+  t('Define specific updated date for this content item, which will be displayed as "Last updated on [updated_date]". This allows you to define a specific update date than the system update date.');
+  t('Download(s)');
+  t('Enter the first letters of the document that needs to be available on this content item. Make sure that your document is created as a download content item first.');
   t('Fill the content of this page.');
-  t('Fill the custom update date of this page.');
   t('Fill the image of this page.');
-  t('Fill the publication date of this page.');
   t('Fill the summary of this page.');
-  t('Force to use custom update date');
-  t('Published date');
+  t('Last published date');
+  t('Last updated date');
   t('Summary');
   t('Thumb');
+  t('Use system update date instead of Last updated date');
 
   return $fields;
 }

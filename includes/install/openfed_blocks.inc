@@ -1,14 +1,13 @@
 <?php
 // Enable some standard blocks.
-
+  
 // PUBLIC THEME
-  $default_theme = variable_get('theme_default', 'nerra');
   $default_values = array(
     // TOOLS
       array( // Print
         'module' => 'print',
         'delta' => 'print-links',
-        'theme' => $default_theme,
+        'theme' => openfed_return_default_front_theme_name(),
         'status' => 1,
         'weight' => 0,
         'region' => 'tools',
@@ -19,7 +18,7 @@
       array( // Resize
         'module' => 'text_resize',
         'delta' => '0',
-        'theme' => $default_theme,
+        'theme' => openfed_return_default_front_theme_name(),
         'status' => 1,
         'weight' => 0,
         'region' => 'tools',
@@ -33,7 +32,7 @@
       array( // Main Menu
         'module' => 'system',
         'delta' => 'main-menu',
-        'theme' => $default_theme,
+        'theme' => openfed_return_default_front_theme_name(),
         'status' => 1,
         'weight' => 0,
         'region' => 'navigation',
@@ -42,13 +41,25 @@
         'cache' => -1,
       ),
     // TOP
+    // BREADCRUMB
+      array( // Breadcrumb
+        'module' => 'easy_breadcrumb',
+        'delta' => 'easy_breadcrumb',
+        'theme' => openfed_return_default_front_theme_name(),
+        'status' => 1,
+        'weight' => 0,
+        'region' => 'breadcrumb',
+        'pages' => '',
+        'title' => '<none>',
+        'cache' => -1,
+      ),
     // SIDEBAR FIRST
     // CONTENT TOP
     // CONTENT
       array( // System help 
         'module' => 'system',
         'delta' => 'help',
-        'theme' => $default_theme,
+        'theme' => openfed_return_default_front_theme_name(),
         'status' => 1,
         'weight' => 0,
         'region' => 'content',
@@ -59,7 +70,7 @@
       array( // Main page content
         'module' => 'system',
         'delta' => 'main',
-        'theme' => $default_theme,
+        'theme' => openfed_return_default_front_theme_name(),
         'status' => 1,
         'weight' => 1,
         'region' => 'content',
@@ -72,7 +83,7 @@
       array( // User login
         'module' => 'user',
         'delta' => 'login',
-        'theme' => $default_theme,
+        'theme' => openfed_return_default_front_theme_name(),
         'status' => 1,
         'weight' => 0,
         'region' => 'sidebar_second',
@@ -104,8 +115,6 @@
 
 
 // CMS THEME
-  $admin_theme = variable_get('admin_theme', 'cms_theme');
-  
   $admin_values = array(
       // TOOLS
       // HEADER
@@ -113,7 +122,7 @@
         array( // Main Menu
           'module' => 'menu',
           'delta' => 'menu-cms-menu',
-          'theme' => $admin_theme,
+          'theme' => openfed_return_default_backend_theme_name(),
           'status' => 1,
           'weight' => 0,
           'region' => 'navigation',
@@ -128,7 +137,7 @@
         array( // System help 
           'module' => 'system',
           'delta' => 'help',
-          'theme' => $admin_theme,
+          'theme' => openfed_return_default_backend_theme_name(),
           'status' => 1,
           'weight' => 0,
           'region' => 'content',
@@ -139,7 +148,7 @@
         array( // Main page content
           'module' => 'system',
           'delta' => 'main',
-          'theme' => $admin_theme,
+          'theme' => openfed_return_default_backend_theme_name(),
           'status' => 1,
           'weight' => 1,
           'region' => 'content',

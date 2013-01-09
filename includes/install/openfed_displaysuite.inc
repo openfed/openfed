@@ -56,6 +56,7 @@ headline|Headline
 highlight-heavy|Highlight Heavy
 highlight-medium|Highlight Medium
 highlight-light|Highlight Light
+more|More link
 ');
 
 variable_set('ds_classes_regions', '');
@@ -98,124 +99,34 @@ drupal_write_record('ds_view_modes', $view_mode);
 /**
  * CODE FIELD 
  */
-$field = new StdClass();
-$field->properties = array(
-    'code' => array(
-      'value' => '<?php 
-foreach($entity->field_ofed_download_file as $file) {
-  $pathinfo = pathinfo($file["0"]["filename"]);
-  echo "<span class=\"file-type-".strip_tags($pathinfo["extension"])."\">".strip_tags($pathinfo["extension"])."</span>";
-}
-?>',
-      'format' => 'ds_code'
-    ),
-    'use_token' => FALSE
-);
-$field->field = 'file_type';
-$field->label = 'File Type';
-$field->ui_limit = 'ofed_download|*';
-$field->entities = array ( 'node' => 'node' );
-$field->field_type = DS_FIELD_TYPE_CODE;
-drupal_write_record('ds_fields', $field);
+
+// Node : Top of page
+  $field = new StdClass();
+  $field->properties = array(
+      'code' => array(
+        'value' => '<a href="#" class="top-of-page"><?php echo t("Top of page"); ?></a>',
+        'format' => 'ds_code'
+      ),
+      'use_token' => FALSE
+  );
+  $field->field = 'top_of_page';
+  $field->label = 'Top of page';
+  $field->entities = array ( 'node' => 'node' );
+  $field->field_type = DS_FIELD_TYPE_CODE;
+  drupal_write_record('ds_fields', $field);
 
 
-$field = new StdClass();
-$field->properties = array(
-    'code' => array(
-      'value' => '<?php 
-foreach($entity->field_ofed_download_file as $file) {
-  echo "<span class=\"file-size\">".format_size($file["0"]["filesize"])."</span>";
-}
-?>',
-      'format' => 'ds_code'
-    ),
-    'use_token' => FALSE
-);
-$field->field = 'file_size';
-$field->label = 'File Size';
-$field->ui_limit = 'ofed_download|*';
-$field->entities = array ( 'node' => 'node' );
-$field->field_type = DS_FIELD_TYPE_CODE;
-drupal_write_record('ds_fields', $field);
-
-
-$field = new StdClass();
-$field->properties = array(
-    'code' => array(
-      'value' => '<?php 
-foreach($entity->field_ofed_download_file as $file) {
-  $pathinfo = pathinfo($file["0"]["filename"]);
-  echo "<span class=\"file-name\">".$pathinfo["filename"]."</span>";
-}
-?>',
-      'format' => 'ds_code'
-    ),
-    'use_token' => FALSE
-);
-$field->field = 'file_name';
-$field->label = 'File Name';
-$field->ui_limit = 'ofed_download|*';
-$field->entities = array ( 'node' => 'node' );
-$field->field_type = DS_FIELD_TYPE_CODE;
-drupal_write_record('ds_fields', $field);
-
-
-$field = new StdClass();
-$field->properties = array(
-    'code' => array(
-      'value' => '<?php 
-foreach($entity->field_ofed_download_file as $file) {
-  echo l( t("View file"), file_create_url($file["0"]["uri"]), array("attributes" => array("class" => "file-url-open", "target" => "_blank")) );
-}
-?>',
-      'format' => 'ds_code'
-    ),
-    'use_token' => FALSE
-);
-$field->field = 'file_url_open';
-$field->label = 'File url open';
-$field->ui_limit = 'ofed_download|*';
-$field->entities = array ( 'node' => 'node' );
-$field->field_type = DS_FIELD_TYPE_CODE;
-drupal_write_record('ds_fields', $field);
-
-
-$field = new StdClass();
-$field->properties = array(
-    'code' => array(
-      'value' => '<?php 
-foreach($entity->field_ofed_download_file as $file) {
-  echo l( t("Share file"), "download-file/".$entity->nid, array("attributes" => array("target" => "_blank")) );
-  echo "<span class=\"url-file-persistent\">".url("download-file/".$entity->nid, array("absolute" => TRUE))."</span>";
-}
-?>',
-      'format' => 'ds_code'
-    ),
-    'use_token' => FALSE
-);
-$field->field = 'file_url_persistent';
-$field->label = 'File url persistent';
-$field->ui_limit = 'ofed_download|*';
-$field->entities = array ( 'node' => 'node' );
-$field->field_type = DS_FIELD_TYPE_CODE;
-drupal_write_record('ds_fields', $field);
-
-
-$field = new StdClass();
-$field->properties = array(
-    'code' => array(
-      'value' => '<?php 
-foreach($entity->field_ofed_download_file as $file) {
-  echo l( t("Save file"), "download-file/".$entity->nid, array("attributes" => array("class" => "file-url-save")) );
-}
-?>',
-      'format' => 'ds_code'
-    ),
-    'use_token' => FALSE
-);
-$field->field = 'url_file_save';
-$field->label = 'File url save';
-$field->ui_limit = 'ofed_download|*';
-$field->entities = array ( 'node' => 'node' );
-$field->field_type = DS_FIELD_TYPE_CODE;
-drupal_write_record('ds_fields', $field);
+// Node : Anchor
+  $field = new StdClass();
+  $field->properties = array(
+      'code' => array(
+        'value' => '<span id="<?php echo $entity->nid;?>"></span>',
+        'format' => 'ds_code'
+      ),
+      'use_token' => FALSE
+  );
+  $field->field = 'anchor';
+  $field->label = 'Anchor';
+  $field->entities = array ( 'node' => 'node' );
+  $field->field_type = DS_FIELD_TYPE_CODE;
+  drupal_write_record('ds_fields', $field);

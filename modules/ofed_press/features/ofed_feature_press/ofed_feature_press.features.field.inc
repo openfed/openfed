@@ -46,7 +46,7 @@ function ofed_feature_press_field_default_fields() {
       'description' => 'Fill the author name of this press.',
       'display' => array(
         'block_column' => array(
-          'label' => 'hidden',
+          'label' => 'inline',
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
@@ -60,31 +60,29 @@ function ofed_feature_press_field_default_fields() {
           'weight' => '2',
         ),
         'block_list' => array(
-          'label' => 'hidden',
-          'module' => 'text',
+          'label' => 'inline',
           'settings' => array(),
-          'type' => 'text_default',
+          'type' => 'hidden',
           'weight' => '2',
         ),
         'default' => array(
-          'label' => 'hidden',
+          'label' => 'inline',
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '3',
+          'weight' => '1',
         ),
         'full' => array(
-          'label' => 'hidden',
+          'label' => 'inline',
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '2',
+          'weight' => '1',
         ),
         'page_list' => array(
-          'label' => 'hidden',
-          'module' => 'text',
+          'label' => 'inline',
           'settings' => array(),
-          'type' => 'text_default',
+          'type' => 'hidden',
           'weight' => '2',
         ),
         'print' => array(
@@ -92,10 +90,10 @@ function ofed_feature_press_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '3',
+          'weight' => '2',
         ),
         'rss' => array(
-          'label' => 'hidden',
+          'label' => 'inline',
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
@@ -106,7 +104,7 @@ function ofed_feature_press_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '3',
+          'weight' => '2',
         ),
         'search_result' => array(
           'label' => 'hidden',
@@ -225,27 +223,27 @@ function ofed_feature_press_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '6',
+          'weight' => '4',
         ),
         'full' => array(
           'label' => 'hidden',
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '5',
+          'weight' => '4',
         ),
         'page_list' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '11',
+          'weight' => '13',
         ),
         'print' => array(
           'label' => 'hidden',
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '6',
+          'weight' => '5',
         ),
         'rss' => array(
           'label' => 'above',
@@ -258,7 +256,7 @@ function ofed_feature_press_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '6',
+          'weight' => '4',
         ),
         'search_result' => array(
           'label' => 'above',
@@ -320,14 +318,14 @@ function ofed_feature_press_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-ofed_press-field_ofed_press_contact_person'.
-  $fields['node-ofed_press-field_ofed_press_contact_person'] = array(
+  // Exported field: 'node-ofed_press-field_ofed_press_contact'.
+  $fields['node-ofed_press-field_ofed_press_contact'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
       'deleted' => '0',
       'entity_types' => array(),
-      'field_name' => 'field_ofed_press_contact_person',
+      'field_name' => 'field_ofed_press_contact',
       'foreign keys' => array(
         'format' => array(
           'columns' => array(
@@ -343,11 +341,9 @@ function ofed_feature_press_field_default_fields() {
       ),
       'locked' => '0',
       'module' => 'text',
-      'settings' => array(
-        'max_length' => '255',
-      ),
+      'settings' => array(),
       'translatable' => '0',
-      'type' => 'text',
+      'type' => 'text_long',
     ),
     'field_instance' => array(
       'bundle' => 'ofed_press',
@@ -359,42 +355,36 @@ function ofed_feature_press_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '12',
-        ),
-        'block_info' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => '12',
+          'weight' => '0',
         ),
         'block_list' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '12',
+          'weight' => 0,
         ),
         'default' => array(
-          'label' => 'hidden',
+          'label' => 'above',
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
           'weight' => '7',
         ),
         'full' => array(
-          'label' => 'hidden',
+          'label' => 'above',
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '6',
+          'weight' => '7',
         ),
         'page_list' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '12',
+          'weight' => '0',
         ),
         'print' => array(
-          'label' => 'hidden',
+          'label' => 'above',
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
@@ -404,71 +394,45 @@ function ofed_feature_press_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '12',
+          'weight' => 0,
         ),
         'search_index' => array(
-          'label' => 'hidden',
+          'label' => 'above',
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '7',
+          'weight' => '6',
         ),
         'search_result' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '14',
+          'weight' => 0,
         ),
         'teaser' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '11',
+          'weight' => 0,
         ),
       ),
       'ds_extras_field_template' => '',
       'entity_type' => 'node',
-      'field_name' => 'field_ofed_press_contact_person',
-      'label' => 'Contact person',
+      'field_name' => 'field_ofed_press_contact',
+      'label' => 'Contact person(s)',
       'required' => 0,
       'settings' => array(
-        'better_formats' => array(
-          'allowed_formats' => array(
-            'ds_code' => 'ds_code',
-            'filtered_html' => 'filtered_html',
-            'full_html' => 'full_html',
-            'plain_text' => 'plain_text',
-          ),
-          'allowed_formats_toggle' => 0,
-          'default_order_toggle' => 0,
-          'default_order_wrapper' => array(
-            'formats' => array(
-              'ds_code' => array(
-                'weight' => '12',
-              ),
-              'filtered_html' => array(
-                'weight' => '0',
-              ),
-              'full_html' => array(
-                'weight' => '1',
-              ),
-              'plain_text' => array(
-                'weight' => '10',
-              ),
-            ),
-          ),
-        ),
-        'text_processing' => '0',
+        'text_processing' => '1',
         'user_register_form' => FALSE,
       ),
       'widget' => array(
         'active' => 1,
         'module' => 'text',
         'settings' => array(
-          'size' => '60',
+          'rows' => '5',
         ),
-        'type' => 'text_textfield',
-        'weight' => '12',
+        'type' => 'text_textarea',
+        'weight' => '13',
       ),
     ),
   );
@@ -521,7 +485,7 @@ function ofed_feature_press_field_default_fields() {
       'bundle' => 'ofed_press',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => 'Add an additional document related to this press.',
+      'description' => 'Enter the first letters of the document that needs to be available on this content item. Make sure that your document is created as a download content item first.',
       'display' => array(
         'block_column' => array(
           'label' => 'above',
@@ -542,7 +506,7 @@ function ofed_feature_press_field_default_fields() {
           'weight' => '13',
         ),
         'default' => array(
-          'label' => 'hidden',
+          'label' => 'above',
           'module' => 'entityreference',
           'settings' => array(
             'links' => 1,
@@ -552,26 +516,26 @@ function ofed_feature_press_field_default_fields() {
           'weight' => '8',
         ),
         'full' => array(
-          'label' => 'hidden',
+          'label' => 'above',
           'module' => 'entityreference',
           'settings' => array(
             'links' => 1,
             'view_mode' => 'references',
           ),
           'type' => 'entityreference_entity_view',
-          'weight' => '7',
+          'weight' => '8',
         ),
         'page_list' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '13',
+          'weight' => '15',
         ),
         'print' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '8',
+          'weight' => '16',
         ),
         'rss' => array(
           'label' => 'above',
@@ -580,14 +544,14 @@ function ofed_feature_press_field_default_fields() {
           'weight' => '13',
         ),
         'search_index' => array(
-          'label' => 'hidden',
+          'label' => 'above',
           'module' => 'entityreference',
           'settings' => array(
             'links' => 1,
             'view_mode' => 'references',
           ),
           'type' => 'entityreference_entity_view',
-          'weight' => '8',
+          'weight' => '7',
         ),
         'search_result' => array(
           'label' => 'above',
@@ -605,7 +569,7 @@ function ofed_feature_press_field_default_fields() {
       'ds_extras_field_template' => '',
       'entity_type' => 'node',
       'field_name' => 'field_ofed_press_docs',
-      'label' => 'Document(s)',
+      'label' => 'Download(s)',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -679,30 +643,30 @@ function ofed_feature_press_field_default_fields() {
           'weight' => '14',
         ),
         'default' => array(
-          'label' => 'hidden',
+          'label' => 'above',
           'module' => 'link',
           'settings' => array(),
           'type' => 'link_default',
           'weight' => '9',
         ),
         'full' => array(
-          'label' => 'hidden',
+          'label' => 'above',
           'module' => 'link',
           'settings' => array(),
           'type' => 'link_default',
-          'weight' => '8',
+          'weight' => '9',
         ),
         'page_list' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '14',
+          'weight' => '16',
         ),
         'print' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '9',
+          'weight' => '17',
         ),
         'rss' => array(
           'label' => 'above',
@@ -712,9 +676,10 @@ function ofed_feature_press_field_default_fields() {
         ),
         'search_index' => array(
           'label' => 'above',
+          'module' => 'link',
           'settings' => array(),
-          'type' => 'hidden',
-          'weight' => '9',
+          'type' => 'link_default',
+          'weight' => '8',
         ),
         'search_result' => array(
           'label' => 'above',
@@ -796,7 +761,7 @@ function ofed_feature_press_field_default_fields() {
     'field_instance' => array(
       'bundle' => 'ofed_press',
       'deleted' => '0',
-      'description' => 'Fill the publication date of this press.',
+      'description' => 'Define specific published date for this content item, which will be displayed as "Last published on [published_date]".',
       'display' => array(
         'block_column' => array(
           'label' => 'above',
@@ -820,25 +785,25 @@ function ofed_feature_press_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '1',
+          'weight' => '18',
         ),
         'full' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '14',
+          'weight' => '18',
         ),
         'page_list' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '10',
+          'weight' => '12',
         ),
         'print' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '1',
+          'weight' => '15',
         ),
         'rss' => array(
           'label' => 'above',
@@ -850,7 +815,7 @@ function ofed_feature_press_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '1',
+          'weight' => '16',
         ),
         'search_result' => array(
           'label' => 'above',
@@ -868,7 +833,7 @@ function ofed_feature_press_field_default_fields() {
       'ds_extras_field_template' => '',
       'entity_type' => 'node',
       'field_name' => 'field_ofed_press_pubdate',
-      'label' => 'Published date',
+      'label' => 'Last published date',
       'required' => 0,
       'settings' => array(
         'default_value' => 'now',
@@ -950,27 +915,29 @@ function ofed_feature_press_field_default_fields() {
         ),
         'default' => array(
           'label' => 'above',
+          'module' => 'text',
           'settings' => array(),
-          'type' => 'hidden',
-          'weight' => '10',
+          'type' => 'text_default',
+          'weight' => '5',
         ),
         'full' => array(
-          'label' => 'above',
+          'label' => 'inline',
+          'module' => 'text',
           'settings' => array(),
-          'type' => 'hidden',
-          'weight' => '16',
+          'type' => 'text_default',
+          'weight' => '5',
         ),
         'page_list' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '15',
+          'weight' => '17',
         ),
         'print' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '15',
+          'weight' => '18',
         ),
         'rss' => array(
           'label' => 'above',
@@ -982,7 +949,7 @@ function ofed_feature_press_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '15',
+          'weight' => '18',
         ),
         'search_result' => array(
           'label' => 'above',
@@ -1102,14 +1069,14 @@ function ofed_feature_press_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '5',
+          'weight' => '3',
         ),
         'full' => array(
           'label' => 'hidden',
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '4',
+          'weight' => '2',
         ),
         'page_list' => array(
           'label' => 'hidden',
@@ -1123,7 +1090,7 @@ function ofed_feature_press_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '5',
+          'weight' => '3',
         ),
         'rss' => array(
           'label' => 'above',
@@ -1136,7 +1103,7 @@ function ofed_feature_press_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '5',
+          'weight' => '3',
         ),
         'search_result' => array(
           'label' => 'hidden',
@@ -1261,7 +1228,7 @@ function ofed_feature_press_field_default_fields() {
             'image_style' => 'ofed_press_thumb',
           ),
           'type' => 'image',
-          'weight' => '4',
+          'weight' => '2',
         ),
         'full' => array(
           'label' => 'hidden',
@@ -1288,7 +1255,7 @@ function ofed_feature_press_field_default_fields() {
           'module' => 'image',
           'settings' => array(
             'image_link' => '',
-            'image_style' => 'ofed_press_thumb',
+            'image_style' => '',
           ),
           'type' => 'image',
           'weight' => '4',
@@ -1303,7 +1270,7 @@ function ofed_feature_press_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '4',
+          'weight' => '17',
         ),
         'search_result' => array(
           'label' => 'above',
@@ -1338,7 +1305,7 @@ function ofed_feature_press_field_default_fields() {
         'active' => 1,
         'module' => 'image',
         'settings' => array(
-          'preview_image_style' => 'ofed_press_thumb',
+          'preview_image_style' => '',
           'progress_indicator' => 'throbber',
         ),
         'type' => 'image_image',
@@ -1380,7 +1347,7 @@ function ofed_feature_press_field_default_fields() {
     'field_instance' => array(
       'bundle' => 'ofed_press',
       'deleted' => '0',
-      'description' => 'Fill the custom update date of this press.',
+      'description' => 'Define specific updated date for this content item, which will be displayed as "Last updated on [updated_date]". This allows you to define a specific update date than the system update date.',
       'display' => array(
         'block_column' => array(
           'label' => 'hidden',
@@ -1432,7 +1399,7 @@ function ofed_feature_press_field_default_fields() {
             'multiple_to' => '',
           ),
           'type' => 'date_default',
-          'weight' => '2',
+          'weight' => '0',
         ),
         'full' => array(
           'label' => 'hidden',
@@ -1445,7 +1412,7 @@ function ofed_feature_press_field_default_fields() {
             'multiple_to' => '',
           ),
           'type' => 'date_default',
-          'weight' => '1',
+          'weight' => '0',
         ),
         'page_list' => array(
           'label' => 'hidden',
@@ -1471,7 +1438,7 @@ function ofed_feature_press_field_default_fields() {
             'multiple_to' => '',
           ),
           'type' => 'date_default',
-          'weight' => '2',
+          'weight' => '1',
         ),
         'rss' => array(
           'label' => 'hidden',
@@ -1497,7 +1464,7 @@ function ofed_feature_press_field_default_fields() {
             'multiple_to' => '',
           ),
           'type' => 'date_default',
-          'weight' => '2',
+          'weight' => '1',
         ),
         'search_result' => array(
           'label' => 'hidden',
@@ -1529,7 +1496,7 @@ function ofed_feature_press_field_default_fields() {
       'ds_extras_field_template' => '',
       'entity_type' => 'node',
       'field_name' => 'field_ofed_press_update',
-      'label' => 'Custom update date',
+      'label' => 'Last updated date',
       'required' => 0,
       'settings' => array(
         'default_value' => 'now',
@@ -1590,7 +1557,7 @@ function ofed_feature_press_field_default_fields() {
         ),
       ),
       'deleted' => '0',
-      'description' => 'Check it if you want to override the default update date by the custom update date.',
+      'description' => 'Check the box in order to use the system date as updated date for your content item.',
       'display' => array(
         'block_column' => array(
           'label' => 'above',
@@ -1614,25 +1581,25 @@ function ofed_feature_press_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '11',
+          'weight' => '19',
         ),
         'full' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '17',
+          'weight' => '20',
         ),
         'page_list' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '16',
+          'weight' => '18',
         ),
         'print' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '16',
+          'weight' => '19',
         ),
         'rss' => array(
           'label' => 'above',
@@ -1644,7 +1611,7 @@ function ofed_feature_press_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '16',
+          'weight' => '19',
         ),
         'search_result' => array(
           'label' => 'above',
@@ -1662,7 +1629,7 @@ function ofed_feature_press_field_default_fields() {
       'ds_extras_field_template' => '',
       'entity_type' => 'node',
       'field_name' => 'field_ofed_press_update_force',
-      'label' => 'Force to use custom update date',
+      'label' => 'Use system update date instead of Last updated date',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -1681,28 +1648,28 @@ function ofed_feature_press_field_default_fields() {
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Add an additional document related to this press.');
   t('Add the source of this press.');
   t('Author');
   t('Body');
-  t('Check it if you want to override the default update date by the custom update date.');
-  t('Contact person');
-  t('Custom update date');
-  t('Document(s)');
+  t('Check the box in order to use the system date as updated date for your content item.');
+  t('Contact person(s)');
+  t('Define specific published date for this content item, which will be displayed as "Last published on [published_date]".');
+  t('Define specific updated date for this content item, which will be displayed as "Last updated on [updated_date]". This allows you to define a specific update date than the system update date.');
+  t('Download(s)');
+  t('Enter the first letters of the document that needs to be available on this content item. Make sure that your document is created as a download content item first.');
   t('Fill the author name of this press.');
   t('Fill the contact name of this press.');
   t('Fill the content of this press.');
-  t('Fill the custom update date of this press.');
   t('Fill the image of this press.');
-  t('Fill the publication date of this press.');
   t('Fill the summary of this press.');
-  t('Force to use custom update date');
+  t('Last published date');
+  t('Last updated date');
   t('Link(s)');
-  t('Published date');
   t('Source');
   t('Summary');
   t('Thumb');
   t('Upload an additional link related to this press.');
+  t('Use system update date instead of Last updated date');
 
   return $fields;
 }

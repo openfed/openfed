@@ -17,15 +17,31 @@ function ofed_feature_page_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'ofed_page';
   $ds_fieldsetting->view_mode = 'default';
   $ds_fieldsetting->settings = array(
-    'title' => array(
-      'weight' => '0',
-      'label' => 'hidden',
-      'format' => 'default',
+    'field_ofed_page_docs' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'classes' => 'clear-block',
+        ),
+      ),
     ),
     'field_ofed_page_summary' => array(
       'formatter_settings' => array(
         'ft' => array(
-          'classes' => 'headline',
+          'classes' => 'clear-block headline',
+        ),
+      ),
+    ),
+    'field_ofed_page_thumb' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'classes' => 'float-left',
+        ),
+      ),
+    ),
+    'field_ofed_page_update' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'classes' => 'float-left',
         ),
       ),
     ),
@@ -39,20 +55,31 @@ function ofed_feature_page_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'ofed_page';
   $ds_fieldsetting->view_mode = 'full';
   $ds_fieldsetting->settings = array(
-    'title' => array(
-      'weight' => '0',
-      'label' => 'hidden',
-      'format' => 'default',
-    ),
-    'field_ofed_page_update' => array(
+    'field_ofed_page_docs' => array(
       'formatter_settings' => array(
-        'ft' => array(),
+        'ft' => array(
+          'classes' => 'clear-block',
+        ),
       ),
     ),
     'field_ofed_page_summary' => array(
       'formatter_settings' => array(
         'ft' => array(
-          'classes' => 'headline',
+          'classes' => 'clear-block headline',
+        ),
+      ),
+    ),
+    'field_ofed_page_thumb' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'classes' => 'float-left',
+        ),
+      ),
+    ),
+    'field_ofed_page_update' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'classes' => 'float-left',
         ),
       ),
     ),
@@ -105,11 +132,40 @@ function ofed_feature_page_ds_field_settings_info() {
       'weight' => '0',
       'label' => 'hidden',
       'format' => 'default',
+      'formatter_settings' => array(
+        'link' => '0',
+        'wrapper' => 'h3',
+        'class' => '',
+        'ft' => array(
+          'classes' => 'clear-block',
+        ),
+      ),
     ),
     'node_link' => array(
       'weight' => '3',
       'label' => 'hidden',
       'format' => 'default',
+      'formatter_settings' => array(
+        'link text' => 'Read more',
+        'wrapper' => '',
+        'ft' => array(
+          'classes' => 'clear-block more',
+        ),
+      ),
+    ),
+    'field_ofed_page_summary' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'classes' => 'clear-block',
+        ),
+      ),
+    ),
+    'field_ofed_page_update' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'classes' => 'float-left',
+        ),
+      ),
     ),
   );
   $export['node|ofed_page|search_result'] = $ds_fieldsetting;
@@ -125,11 +181,40 @@ function ofed_feature_page_ds_field_settings_info() {
       'weight' => '0',
       'label' => 'hidden',
       'format' => 'default',
+      'formatter_settings' => array(
+        'link' => '0',
+        'wrapper' => 'h3',
+        'class' => '',
+        'ft' => array(
+          'classes' => 'clear-block',
+        ),
+      ),
     ),
     'node_link' => array(
       'weight' => '3',
       'label' => 'hidden',
       'format' => 'default',
+      'formatter_settings' => array(
+        'link text' => 'Read more',
+        'wrapper' => '',
+        'ft' => array(
+          'classes' => 'clear-block more',
+        ),
+      ),
+    ),
+    'field_ofed_page_summary' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'classes' => 'clear-block',
+        ),
+      ),
+    ),
+    'field_ofed_page_update' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'classes' => 'float-left',
+        ),
+      ),
     ),
   );
   $export['node|ofed_page|teaser'] = $ds_fieldsetting;
@@ -153,16 +238,14 @@ function ofed_feature_page_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'ds_content' => array(
-        0 => 'title',
-        1 => 'field_ofed_page_update',
-        2 => 'field_ofed_page_summary',
-        3 => 'field_ofed_page_thumb',
-        4 => 'field_ofed_page_body',
-        5 => 'field_ofed_page_docs',
+        0 => 'field_ofed_page_update',
+        1 => 'field_ofed_page_summary',
+        2 => 'field_ofed_page_thumb',
+        3 => 'field_ofed_page_body',
+        4 => 'field_ofed_page_docs',
       ),
     ),
     'fields' => array(
-      'title' => 'ds_content',
       'field_ofed_page_update' => 'ds_content',
       'field_ofed_page_summary' => 'ds_content',
       'field_ofed_page_thumb' => 'ds_content',
@@ -174,7 +257,6 @@ function ofed_feature_page_ds_layout_settings_info() {
       'ds_content' => 'div',
     ),
     'layout_wrapper' => 'div',
-    'layout_attributes' => 'ds-wrapper-page ds-wrapper-page-default default',
     'layout_attributes_merge' => 1,
     'hide_page_title' => '0',
     'page_option_title' => '',
@@ -211,7 +293,6 @@ function ofed_feature_page_ds_layout_settings_info() {
       'ds_content' => 'div',
     ),
     'layout_wrapper' => 'div',
-    'layout_attributes' => 'ds-wrapper-page ds-wrapper-page-full full',
     'layout_attributes_merge' => 1,
     'hide_page_title' => '0',
     'page_option_title' => '',
@@ -246,7 +327,6 @@ function ofed_feature_page_ds_layout_settings_info() {
       'ds_content' => 'div',
     ),
     'layout_wrapper' => 'div',
-    'layout_attributes' => 'ds-wrapper-page ds-wrapper-page-rss rss',
     'layout_attributes_merge' => 1,
     'hide_page_title' => '0',
     'page_option_title' => '',
@@ -283,7 +363,6 @@ function ofed_feature_page_ds_layout_settings_info() {
       'ds_content' => 'div',
     ),
     'layout_wrapper' => 'div',
-    'layout_attributes' => 'ds-wrapper-page ds-wrapper-page-search-index search-index',
     'layout_attributes_merge' => 1,
     'hide_page_title' => '0',
     'page_option_title' => '',
@@ -318,7 +397,6 @@ function ofed_feature_page_ds_layout_settings_info() {
       'ds_content' => 'div',
     ),
     'layout_wrapper' => 'div',
-    'layout_attributes' => 'ds-wrapper-page ds-wrapper-page-search-result search-result',
     'layout_attributes_merge' => 1,
     'hide_page_title' => '0',
     'page_option_title' => '',
@@ -353,7 +431,7 @@ function ofed_feature_page_ds_layout_settings_info() {
       'ds_content' => 'div',
     ),
     'layout_wrapper' => 'div',
-    'layout_attributes' => 'ds-wrapper-page ds-wrapper-page-teaser teaser',
+    'layout_attributes' => '',
     'layout_attributes_merge' => 1,
     'hide_page_title' => '0',
     'page_option_title' => '',

@@ -48,28 +48,28 @@ function ofed_feature_faq_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '1',
+          'weight' => '2',
         ),
         'full' => array(
           'label' => 'hidden',
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '1',
+          'weight' => '2',
         ),
         'print' => array(
           'label' => 'hidden',
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '1',
+          'weight' => '2',
         ),
         'rss' => array(
           'label' => 'hidden',
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '1',
+          'weight' => '2',
         ),
         'search_index' => array(
           'label' => 'hidden',
@@ -85,10 +85,11 @@ function ofed_feature_faq_field_default_fields() {
           'weight' => '9',
         ),
         'teaser' => array(
-          'label' => 'above',
+          'label' => 'hidden',
+          'module' => 'text',
           'settings' => array(),
-          'type' => 'hidden',
-          'weight' => '7',
+          'type' => 'text_default',
+          'weight' => '2',
         ),
       ),
       'entity_type' => 'node',
@@ -144,33 +145,19 @@ function ofed_feature_faq_field_default_fields() {
     'field_instance' => array(
       'bundle' => 'ofed_faq',
       'deleted' => '0',
-      'description' => 'Fill the custom update date of this new.',
+      'description' => 'Define specific updated date for this content item, which will be displayed as "Last updated on [updated_date]". This allows you to define a specific update date than the system update date.',
       'display' => array(
         'default' => array(
           'label' => 'hidden',
-          'module' => 'date',
-          'settings' => array(
-            'format_type' => 'short',
-            'fromto' => 'both',
-            'multiple_from' => '',
-            'multiple_number' => '',
-            'multiple_to' => '',
-          ),
-          'type' => 'date_default',
-          'weight' => '2',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '9',
         ),
         'full' => array(
           'label' => 'hidden',
-          'module' => 'date',
-          'settings' => array(
-            'format_type' => 'short',
-            'fromto' => 'both',
-            'multiple_from' => '',
-            'multiple_number' => '',
-            'multiple_to' => '',
-          ),
-          'type' => 'date_default',
-          'weight' => '2',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '4',
         ),
         'print' => array(
           'label' => 'hidden',
@@ -183,10 +170,10 @@ function ofed_feature_faq_field_default_fields() {
             'multiple_to' => '',
           ),
           'type' => 'date_default',
-          'weight' => '2',
+          'weight' => '1',
         ),
         'rss' => array(
-          'label' => 'above',
+          'label' => 'hidden',
           'module' => 'date',
           'settings' => array(
             'format_type' => 'short',
@@ -196,7 +183,7 @@ function ofed_feature_faq_field_default_fields() {
             'multiple_to' => '',
           ),
           'type' => 'date_default',
-          'weight' => '2',
+          'weight' => '1',
         ),
         'search_index' => array(
           'label' => 'hidden',
@@ -226,22 +213,15 @@ function ofed_feature_faq_field_default_fields() {
         ),
         'teaser' => array(
           'label' => 'hidden',
-          'module' => 'date',
-          'settings' => array(
-            'format_type' => 'short',
-            'fromto' => 'both',
-            'multiple_from' => '',
-            'multiple_number' => '',
-            'multiple_to' => '',
-          ),
-          'type' => 'date_default',
-          'weight' => '1',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '4',
         ),
       ),
       'ds_extras_field_template' => '',
       'entity_type' => 'node',
       'field_name' => 'field_ofed_faq_update',
-      'label' => 'Custom update date',
+      'label' => 'Last updated date',
       'required' => 0,
       'settings' => array(
         'default_value' => 'now',
@@ -302,19 +282,19 @@ function ofed_feature_faq_field_default_fields() {
         ),
       ),
       'deleted' => '0',
-      'description' => 'Check it if you want to override the default update date by the custom update date.',
+      'description' => 'Check the box in order to use the system date as updated date for your content item.',
       'display' => array(
         'default' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '8',
+          'weight' => '11',
         ),
         'full' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '8',
+          'weight' => '10',
         ),
         'print' => array(
           'label' => 'above',
@@ -344,13 +324,13 @@ function ofed_feature_faq_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '8',
+          'weight' => '10',
         ),
       ),
       'ds_extras_field_template' => '',
       'entity_type' => 'node',
       'field_name' => 'field_ofed_faq_update_force',
-      'label' => 'Force to use custom update date',
+      'label' => 'Use system update date instead of Last updated date',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -370,11 +350,11 @@ function ofed_feature_faq_field_default_fields() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Answer');
-  t('Check it if you want to override the default update date by the custom update date.');
-  t('Custom update date');
+  t('Check the box in order to use the system date as updated date for your content item.');
+  t('Define specific updated date for this content item, which will be displayed as "Last updated on [updated_date]". This allows you to define a specific update date than the system update date.');
   t('Fill the answer to this question.');
-  t('Fill the custom update date of this new.');
-  t('Force to use custom update date');
+  t('Last updated date');
+  t('Use system update date instead of Last updated date');
 
   return $fields;
 }

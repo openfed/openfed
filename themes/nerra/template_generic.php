@@ -321,8 +321,9 @@ function nerra_file($variables) {
  */
 function nerra_file_link($variables) {
   $file = $variables['file'];
-  $icon_directory = $variables['icon_directory'];
-
+//  $icon_directory = $variables['icon_directory'];
+  $icon_directory = drupal_get_path('theme', 'nerra').'/assets/icons';
+  
   $url = file_create_url($file->uri);
   $icon = theme('file_icon', array('file' => $file, 'icon_directory' => $icon_directory));
 

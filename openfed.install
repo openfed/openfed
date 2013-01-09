@@ -12,17 +12,6 @@
  * @see system_install()
  */
 function openfed_install() {
-  // activating the maintenance theme
-  $conf_path = './' . conf_path(FALSE, TRUE);
-  $settings_file = $conf_path . '/settings.php';
-  
-  $data = file_get_contents($settings_file);
-  if($data) {
-    $data = str_replace('# $conf[\'maintenance_theme\'] = \'bartik\';', '$conf[\'maintenance_theme\'] = \'maintenance\';', $data);
-    file_put_contents($settings_file, $data);
-  }
-  
-  
   /**
    *  Include all custom functions.
    */
@@ -42,8 +31,8 @@ function openfed_install() {
    * Install of text format 
    */
   require_once('includes/install/openfed_text_format.inc');
+  
 
-      
   /*
    * MENU
    */
@@ -70,6 +59,11 @@ function openfed_install() {
   require_once('includes/install/openfed_ckeditor_link.inc');
   
   /*
+   * Install of Colorbox
+   */
+  require_once('includes/install/openfed_colorbox.inc');
+  
+  /*
    * Date
    */
   require_once('includes/install/openfed_date.inc');
@@ -83,6 +77,11 @@ function openfed_install() {
    * External link
    */
   require_once('includes/install/openfed_extlink.inc');
+  
+  /*
+   * Easy breadcrumb
+   */
+  require_once('includes/install/openfed_easy_breadcrumb.inc');
   
   /*
    * Flag
@@ -143,6 +142,11 @@ function openfed_install() {
    * Sweaver
    */
   require_once('includes/install/openfed_sweaver.inc');
+  
+  /*
+   * Text Resize
+   */
+  require_once('includes/install/openfed_test_resize.inc');
   
   /*
    * Views

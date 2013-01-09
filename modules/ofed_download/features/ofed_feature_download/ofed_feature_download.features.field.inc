@@ -51,6 +51,12 @@ function ofed_feature_download_field_default_fields() {
           'type' => 'hidden',
           'weight' => '15',
         ),
+        'block_element' => array(
+          'label' => 'hidden',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '14',
+        ),
         'block_info' => array(
           'label' => 'above',
           'module' => 'text',
@@ -65,25 +71,25 @@ function ofed_feature_download_field_default_fields() {
           'weight' => '14',
         ),
         'default' => array(
-          'label' => 'hidden',
+          'label' => 'inline',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => '2',
+        ),
+        'full' => array(
+          'label' => 'inline',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => '2',
+        ),
+        'page_list' => array(
+          'label' => 'inline',
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
           'weight' => '4',
-        ),
-        'full' => array(
-          'label' => 'hidden',
-          'module' => 'text',
-          'settings' => array(),
-          'type' => 'text_default',
-          'weight' => '3',
-        ),
-        'page_list' => array(
-          'label' => 'hidden',
-          'module' => 'text',
-          'settings' => array(),
-          'type' => 'text_default',
-          'weight' => '3',
         ),
         'print' => array(
           'label' => 'hidden',
@@ -183,6 +189,12 @@ function ofed_feature_download_field_default_fields() {
           'type' => 'hidden',
           'weight' => '18',
         ),
+        'block_element' => array(
+          'label' => 'hidden',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '18',
+        ),
         'block_info' => array(
           'label' => 'above',
           'module' => 'text',
@@ -201,20 +213,20 @@ function ofed_feature_download_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '8',
+          'weight' => '6',
         ),
         'full' => array(
           'label' => 'hidden',
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '7',
+          'weight' => '6',
         ),
         'page_list' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '18',
+          'weight' => '19',
         ),
         'print' => array(
           'label' => 'hidden',
@@ -317,6 +329,12 @@ function ofed_feature_download_field_default_fields() {
           'type' => 'hidden',
           'weight' => '19',
         ),
+        'block_element' => array(
+          'label' => 'hidden',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '19',
+        ),
         'block_info' => array(
           'label' => 'above',
           'module' => 'file',
@@ -335,14 +353,14 @@ function ofed_feature_download_field_default_fields() {
           'module' => 'file',
           'settings' => array(),
           'type' => 'file_default',
-          'weight' => '9',
+          'weight' => '7',
         ),
         'full' => array(
           'label' => 'hidden',
           'module' => 'file',
           'settings' => array(),
           'type' => 'file_default',
-          'weight' => '8',
+          'weight' => '7',
         ),
         'ofed_page_list' => array(
           'label' => 'above',
@@ -355,7 +373,7 @@ function ofed_feature_download_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '19',
+          'weight' => '20',
         ),
         'print' => array(
           'label' => 'hidden',
@@ -452,13 +470,19 @@ function ofed_feature_download_field_default_fields() {
     'field_instance' => array(
       'bundle' => 'ofed_download',
       'deleted' => '0',
-      'description' => 'Fill the publication date of this download.',
+      'description' => 'Define specific published date for this content item, which will be displayed as "Last published on [published_date]".',
       'display' => array(
         'block_column' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
           'weight' => '16',
+        ),
+        'block_element' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '20',
         ),
         'block_info' => array(
           'label' => 'above',
@@ -483,19 +507,19 @@ function ofed_feature_download_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '18',
+          'weight' => '20',
         ),
         'full' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '18',
+          'weight' => '20',
         ),
         'page_list' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '17',
+          'weight' => '18',
         ),
         'print' => array(
           'label' => 'above',
@@ -534,9 +558,10 @@ function ofed_feature_download_field_default_fields() {
           'weight' => '15',
         ),
       ),
+      'ds_extras_field_template' => '',
       'entity_type' => 'node',
       'field_name' => 'field_ofed_download_pubdate',
-      'label' => 'Published date',
+      'label' => 'Last published date',
       'required' => 1,
       'settings' => array(
         'default_value' => 'now',
@@ -603,6 +628,12 @@ function ofed_feature_download_field_default_fields() {
           'type' => 'text_default',
           'weight' => '4',
         ),
+        'block_element' => array(
+          'label' => 'hidden',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '16',
+        ),
         'block_info' => array(
           'label' => 'above',
           'module' => 'text',
@@ -621,14 +652,14 @@ function ofed_feature_download_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '7',
+          'weight' => '4',
         ),
         'full' => array(
           'label' => 'hidden',
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '6',
+          'weight' => '4',
         ),
         'ofed_page_list' => array(
           'label' => 'above',
@@ -670,7 +701,7 @@ function ofed_feature_download_field_default_fields() {
           'weight' => '6',
         ),
         'search_result' => array(
-          'label' => 'inline',
+          'label' => 'hidden',
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
@@ -745,12 +776,18 @@ function ofed_feature_download_field_default_fields() {
           'type' => 'hidden',
           'weight' => '17',
         ),
+        'block_element' => array(
+          'label' => 'hidden',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '17',
+        ),
         'block_info' => array(
           'label' => 'above',
           'module' => 'image',
           'settings' => array(
             'image_link' => '',
-            'image_style' => 'ofed_download_thumb',
+            'image_style' => '',
           ),
           'type' => 'image',
           'weight' => '3',
@@ -769,7 +806,7 @@ function ofed_feature_download_field_default_fields() {
             'image_style' => 'ofed_download_thumb',
           ),
           'type' => 'image',
-          'weight' => '6',
+          'weight' => '5',
         ),
         'full' => array(
           'label' => 'hidden',
@@ -796,7 +833,7 @@ function ofed_feature_download_field_default_fields() {
           'module' => 'image',
           'settings' => array(
             'image_link' => '',
-            'image_style' => 'ofed_download_thumb',
+            'image_style' => '',
           ),
           'type' => 'image',
           'weight' => '5',
@@ -818,7 +855,7 @@ function ofed_feature_download_field_default_fields() {
           'module' => 'image',
           'settings' => array(
             'image_link' => '',
-            'image_style' => 'ofed_download_thumb',
+            'image_style' => '',
           ),
           'type' => 'image',
           'weight' => '5',
@@ -855,7 +892,7 @@ function ofed_feature_download_field_default_fields() {
         'active' => 1,
         'module' => 'image',
         'settings' => array(
-          'preview_image_style' => 'ofed_download_thumb',
+          'preview_image_style' => '',
           'progress_indicator' => 'throbber',
         ),
         'type' => 'image_image',
@@ -897,7 +934,7 @@ function ofed_feature_download_field_default_fields() {
     'field_instance' => array(
       'bundle' => 'ofed_download',
       'deleted' => '0',
-      'description' => 'Fill the custom update date of this download.',
+      'description' => 'Define specific updated date for this content item, which will be displayed as "Last updated on [updated_date]". This allows you to define a specific update date than the system update date.',
       'display' => array(
         'block_column' => array(
           'label' => 'hidden',
@@ -912,6 +949,12 @@ function ofed_feature_download_field_default_fields() {
           'type' => 'date_default',
           'weight' => '3',
         ),
+        'block_element' => array(
+          'label' => 'hidden',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '15',
+        ),
         'block_info' => array(
           'label' => 'above',
           'settings' => array(),
@@ -920,15 +963,8 @@ function ofed_feature_download_field_default_fields() {
         ),
         'block_list' => array(
           'label' => 'above',
-          'module' => 'date',
-          'settings' => array(
-            'format_type' => 'short',
-            'fromto' => 'both',
-            'multiple_from' => '',
-            'multiple_number' => '',
-            'multiple_to' => '',
-          ),
-          'type' => 'date_default',
+          'settings' => array(),
+          'type' => 'hidden',
           'weight' => '3',
         ),
         'default' => array(
@@ -942,7 +978,7 @@ function ofed_feature_download_field_default_fields() {
             'multiple_to' => '',
           ),
           'type' => 'date_default',
-          'weight' => '5',
+          'weight' => '3',
         ),
         'full' => array(
           'label' => 'hidden',
@@ -955,7 +991,7 @@ function ofed_feature_download_field_default_fields() {
             'multiple_to' => '',
           ),
           'type' => 'date_default',
-          'weight' => '4',
+          'weight' => '3',
         ),
         'page_list' => array(
           'label' => 'hidden',
@@ -968,7 +1004,7 @@ function ofed_feature_download_field_default_fields() {
             'multiple_to' => '',
           ),
           'type' => 'date_default',
-          'weight' => '4',
+          'weight' => '3',
         ),
         'print' => array(
           'label' => 'hidden',
@@ -985,16 +1021,9 @@ function ofed_feature_download_field_default_fields() {
         ),
         'references' => array(
           'label' => 'hidden',
-          'module' => 'date',
-          'settings' => array(
-            'format_type' => 'short',
-            'fromto' => 'both',
-            'multiple_from' => '',
-            'multiple_number' => '',
-            'multiple_to' => '',
-          ),
-          'type' => 'date_default',
-          'weight' => '3',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '13',
         ),
         'rss' => array(
           'label' => 'hidden',
@@ -1023,7 +1052,7 @@ function ofed_feature_download_field_default_fields() {
           'weight' => '4',
         ),
         'search_result' => array(
-          'label' => 'inline',
+          'label' => 'hidden',
           'module' => 'date',
           'settings' => array(
             'format_type' => 'short',
@@ -1037,22 +1066,15 @@ function ofed_feature_download_field_default_fields() {
         ),
         'teaser' => array(
           'label' => 'hidden',
-          'module' => 'date',
-          'settings' => array(
-            'format_type' => 'short',
-            'fromto' => 'both',
-            'multiple_from' => '',
-            'multiple_number' => '',
-            'multiple_to' => '',
-          ),
-          'type' => 'date_default',
+          'settings' => array(),
+          'type' => 'hidden',
           'weight' => '1',
         ),
       ),
       'ds_extras_field_template' => '',
       'entity_type' => 'node',
       'field_name' => 'field_ofed_download_update',
-      'label' => 'Custom update date',
+      'label' => 'Last updated date',
       'required' => 0,
       'settings' => array(
         'default_value' => 'now',
@@ -1113,9 +1135,15 @@ function ofed_feature_download_field_default_fields() {
         ),
       ),
       'deleted' => '0',
-      'description' => 'Check it if you want to override the default update date by the custom update date.',
+      'description' => 'Check the box in order to use the system date as updated date for your content item.',
       'display' => array(
         'block_column' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '21',
+        ),
+        'block_element' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
@@ -1137,19 +1165,19 @@ function ofed_feature_download_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '20',
+          'weight' => '21',
         ),
         'full' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '20',
+          'weight' => '21',
         ),
         'page_list' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '21',
+          'weight' => '22',
         ),
         'print' => array(
           'label' => 'above',
@@ -1191,7 +1219,7 @@ function ofed_feature_download_field_default_fields() {
       'ds_extras_field_template' => '',
       'entity_type' => 'node',
       'field_name' => 'field_ofed_download_update_force',
-      'label' => 'Force to use custom update date',
+      'label' => 'Use system update date instead of Last updated date',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -1212,20 +1240,20 @@ function ofed_feature_download_field_default_fields() {
   // Included for use with string extractors like potx.
   t('Author');
   t('Body');
-  t('Check it if you want to override the default update date by the custom update date.');
-  t('Custom update date');
+  t('Check the box in order to use the system date as updated date for your content item.');
+  t('Define specific published date for this content item, which will be displayed as "Last published on [published_date]".');
+  t('Define specific updated date for this content item, which will be displayed as "Last updated on [updated_date]". This allows you to define a specific update date than the system update date.');
   t('File');
   t('Fill the author name of this download.');
   t('Fill the content of this download.');
-  t('Fill the custom update date of this download.');
   t('Fill the image of this download.');
-  t('Fill the publication date of this download.');
   t('Fill the summary of this download.');
-  t('Force to use custom update date');
-  t('Published date');
+  t('Last published date');
+  t('Last updated date');
   t('Summary');
   t('Thumb');
   t('Upload a file related to this download.');
+  t('Use system update date instead of Last updated date');
 
   return $fields;
 }

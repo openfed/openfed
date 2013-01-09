@@ -13,6 +13,7 @@ version = 1.0
   regions[header] = Header
   regions[navigation] = Navigation
   regions[top] = Top
+  regions[breadcrumb] = Breadcrumb
   regions[sidebar_first] = Aside left
   regions[content_top] = Content Top
   regions[content] = Content
@@ -54,6 +55,7 @@ version = 1.0
     settings[nerra_toggle_actions] = 1
     settings[nerra_toggle_copyright] = 1
     settings[nerra_toggle_sponsor] = 1
+    settings[nerra_sponsor_label] = '<a title="Webdesign by Blue4You" target="_blank" href="http://www.blue4you.be">Webdesign</a> by Blue4You'
 
   ; Search Result
     settings[nerra_search_date] = 1

@@ -82,7 +82,7 @@ function ofed_feature_download_strongarm() {
         'custom_settings' => TRUE,
       ),
       'block_element' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => TRUE,
       ),
       'block_info' => array(
         'custom_settings' => FALSE,
@@ -124,7 +124,7 @@ function ofed_feature_download_strongarm() {
       'display' => array(
         'language' => array(
           'default' => array(
-            'weight' => '19',
+            'weight' => '22',
             'visible' => FALSE,
           ),
           'teaser' => array(
@@ -136,7 +136,7 @@ function ofed_feature_download_strongarm() {
             'visible' => FALSE,
           ),
           'full' => array(
-            'weight' => '19',
+            'weight' => '22',
             'visible' => FALSE,
           ),
           'rss' => array(
@@ -168,11 +168,15 @@ function ofed_feature_download_strongarm() {
             'visible' => FALSE,
           ),
           'page_list' => array(
-            'weight' => '20',
+            'weight' => '21',
             'visible' => FALSE,
           ),
           'references' => array(
             'weight' => '20',
+            'visible' => FALSE,
+          ),
+          'block_element' => array(
+            'weight' => '22',
             'visible' => FALSE,
           ),
         ),

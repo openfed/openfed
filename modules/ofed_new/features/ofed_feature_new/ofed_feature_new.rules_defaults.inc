@@ -20,7 +20,7 @@ function ofed_feature_new_default_rules_configuration() {
             "type" : { "value" : { "ofed_new" : "ofed_new" } }
           }
         },
-        { "AND" : [  ] },
+        { "AND" : [] },
         { "data_is" : {
             "data" : [ "node:field-ofed-new-update-force" ],
             "value" : [ "node:field-ofed-new-update-force" ]

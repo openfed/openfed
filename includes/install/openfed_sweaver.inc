@@ -75,7 +75,7 @@ variable_set('sweaver_editor_form_configuration', array(
     )
 ));
 
-variable_set('sweaver_enabled', TRUE);
+variable_set('sweaver_enabled', FALSE);
 
 variable_set('sweaver_paths', "admin*
 node/add*

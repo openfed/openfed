@@ -60,7 +60,7 @@ function ofed_feature_slideshow_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
-          'width' => '400',
+          'width' => '438',
           'height' => '',
           'upscale' => 0,
         ),
@@ -79,7 +79,7 @@ function ofed_feature_slideshow_image_default_styles() {
           'xpos' => 0,
           'ypos' => 0,
           'alpha' => '100',
-          'path' => 'module://ofed_slideshow/assets/images/transparent_400x300.png',
+          'path' => 'module://ofed_slideshow/assets/images/transparent_800x600.png',
           'dimensions' => 'background',
         ),
         'weight' => '3',
@@ -94,8 +94,8 @@ function ofed_feature_slideshow_image_default_styles() {
         'module' => 'image',
         'name' => 'image_crop',
         'data' => array(
-          'width' => '400',
-          'height' => '150',
+          'width' => '438',
+          'height' => '164',
           'anchor' => 'left-top',
         ),
         'weight' => '4',

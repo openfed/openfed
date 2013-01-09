@@ -23,3 +23,11 @@ function _ofed_page_insert_after_first_element(&$a, $element) {
     array_unshift($a, $first_element, $element);
   }
 }
+
+/**
+ * Implements hook_preprocess_node().
+ */
+function ofed_page_preprocess_node() {
+  drupal_add_js(drupal_get_path('module', 'ofed_page') . '/assets/scripts/ofed_page.js');
+  drupal_add_css(drupal_get_path('module', 'ofed_page') . '/assets/styles/ofed_page.css');
+}

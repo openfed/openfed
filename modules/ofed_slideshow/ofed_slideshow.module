@@ -40,13 +40,10 @@ function ofed_slideshow_theme($existing, $type, $theme, $path) {
 }
 
 /**
- * Implements hook_node_view().
+ * Implements hook_preprocess_node().
  */
-function ofed_slideshow_node_view($node, $view_mode, $langcode) {
-  switch ($node->type) {
-    case 'ofed_slideshow':
-      drupal_add_library('jquery_plugin', 'cycle');
-      drupal_add_js(drupal_get_path('module', 'ofed_slideshow') .'/assets/scripts/ofed_slideshow.js');
-    break;
-  }
+function ofed_slideshow_preprocess_node() {
+  drupal_add_library('jquery_plugin', 'cycle');
+  drupal_add_js(drupal_get_path('module', 'ofed_slideshow') . '/assets/scripts/ofed_slideshow.js');
+  drupal_add_css(drupal_get_path('module', 'ofed_slideshow') . '/assets/styles/ofed_slideshow.css');
 }

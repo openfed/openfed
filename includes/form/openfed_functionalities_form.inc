@@ -6,6 +6,7 @@
  * @return array 
  */
 function openfed_functionalities_form() {
+  drupal_set_title(st('Functionalities configuration'));
   $form = array();
 
   $form['intro'] = array(
@@ -38,6 +39,19 @@ function openfed_functionalities_form_submit($form, &$form_state) {
   $values = $form_state['values'];
 
   if(!empty($values['module_list'])) {
+    $enable = array(
+      'theme_default' => openfed_return_default_maintenance_theme_name(),
+      'admin_theme' => openfed_return_default_maintenance_theme_name(),
+      'maintenance_theme' => openfed_return_default_maintenance_theme_name(),
+    );
+    theme_enable($enable);
+
+    foreach ($enable as $var => $theme) {
+      if (!is_numeric($var)) {
+        variable_set($var, $theme);
+      }
+    }
+    
     $module_list = array();
     foreach($values['module_list'] as $key => $name) {
       if($key === $name) {
@@ -92,5 +106,18 @@ function _openfed_batch_finished_functionalities($success, $results, $operations
   }
   else {
     drupal_set_message('BatchError importing functionalities'); 
+  }
+  
+  $enable = array(
+    'theme_default' => 'bartik',
+    'admin_theme' => 'seven',
+    'maintenance_theme' => 'seven',
+  );
+  theme_enable($enable);
+
+  foreach ($enable as $var => $theme) {
+    if (!is_numeric($var)) {
+      variable_set($var, $theme);
+    }
   }
 }

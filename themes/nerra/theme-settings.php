@@ -53,6 +53,7 @@ function nerra_form_system_theme_settings_alter(&$form, &$form_state) {
         '#type' => 'checkbox',
         '#title' => t('Display "You are here" in front of breadcrumb'),
         '#default_value' => theme_get_setting('nerra_breadcrumb_label'),
+        '#description' => t('You must use Drupal core breadcrumb for this settings.'),
       );
       
       
@@ -103,9 +104,14 @@ function nerra_form_system_theme_settings_alter(&$form, &$form_state) {
       $form['nerra']['nerra_layout']['nerra_layout_display'] = array(
         '#type' => 'radios',
         '#options' => $options,
+        '#attributes' => array('class' => array('layout-grid-display')),
         '#default_value' => theme_get_setting('nerra_layout_display'),
       );
-      
+      $form['nerra']['nerra_layout']['nerra_layout_grid'] = array(
+        '#markup' => t('The grid system utilizes 12 columns, making for a 940px wide container. The grid serves as an armature on which a designer can organize text and images in an easy manner.'),
+        '#prefix' => '<p><strong>',
+        '#suffix' => '</strong></p>',
+      );
       $form['nerra']['nerra_layout']['nerra_layout_width_left'] = array(
         '#type' => 'textfield',
         '#title' => t('Width left sidebar (span-?)'),
@@ -203,8 +209,13 @@ function nerra_form_system_theme_settings_alter(&$form, &$form_state) {
       );
       $form['nerra']['nerra_toggle']['nerra_toggle_sponsor'] = array(
         '#type' => 'checkbox',
-        '#title' => t('Sponsor Blue4You'),
+        '#title' => t('Sponsor'),
         '#default_value' => theme_get_setting('nerra_toggle_sponsor'),
+      );
+      $form['nerra']['nerra_toggle']['nerra_sponsor_label'] = array(
+        '#type' => 'textfield',
+        '#title' => t('Sponsor label'),
+        '#default_value' => theme_get_setting('nerra_sponsor_label'),
       );
       
       
@@ -264,31 +275,5 @@ function nerra_form_system_theme_settings_alter(&$form, &$form_state) {
         '#type' => 'textfield',
         '#title' => t('No JS Warning label'),
         '#default_value' => theme_get_setting('nerra_browser_nojs_label'),
-      );
-      
-      
-    /**
-    * Website width
-    */
-    $form['nerra']['nerra_website'] = array(
-      '#type' => 'fieldset', 
-      '#collapsible' => TRUE,
-      '#collapsed' => TRUE,
-      '#title' => t('Website width'),
-      '#description' => t('Enable or disable element for website.'),
-    );
-      $form['nerra']['nerra_website']['nerra_website_responsive'] = array(
-        '#type' => 'checkbox',
-        '#title' => t('Responsive website'),
-        '#default_value' => theme_get_setting('nerra_website_responsive'),
-      );
-      $form['nerra']['nerra_website']['nerra_website_width'] = array(
-        '#title' => t('Content width'),
-        '#type' => 'radios',
-        '#options' => array(
-          'fluid' => 'Fluid',
-          'fixed' => 'Fixed (940 pixel)',
-        ),
-        '#default_value' => theme_get_setting('nerra_website_width'),
       );
 }

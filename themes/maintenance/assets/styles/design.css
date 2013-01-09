@@ -32,7 +32,20 @@ body						{
 	background: white url(../images/bg-shadow-bottom.png) no-repeat center bottom!important;
 }
 
-
+#page-title 				{
+	background: none!important;
+	padding-top: 0!important;
+}
+a,
+a:visited,
+a:link								{
+	color:#ff7300!important;
+}
+a:focus, img:focus, input:focus		{
+	box-shadow: 0 0 5px #ff7300!important;	
+	border:1px solid #ff7300!important;
+	outline:none;
+}
 /* FORMS * 
  ------------------------------------------------------------------------------------------------------------------------------------------
 *       */
@@ -249,7 +262,7 @@ fieldset#edit-update-notifications {
  	top: 10px;	
 }
 
-#openfed-functionalities-form	.form-type-checkbox div.button				{
+#openfed-functionalities-form	.form-type-checkbox a.checkbox				{
 	border: 1px solid;
 	display: inline-block;
 	*display: inline !important;
@@ -260,16 +273,17 @@ fieldset#edit-update-notifications {
  	bottom: 36px;
 	font-size: .9em;
 }	
-#openfed-functionalities-form	.form-type-checkbox div.button.enabled		{
+#openfed-functionalities-form	.form-type-checkbox a.checkbox.enabled		{
 	background: #f8fff0 url(../icons/sprites.png) no-repeat 5px 5px;
 	border-color: #bbee77;
-	color: #234600;
+	color: #234600!important;
 }	
-#openfed-functionalities-form	.form-type-checkbox div.button.disabled		{
+#openfed-functionalities-form	.form-type-checkbox a.checkbox.disabled		{
 	background: #F2DEDE url(../icons/sprites.png) no-repeat 5px -18px;
 	color: #B94A48;
-	border-color: #dda2a9;
+	border-color: #dda2a9!important;
 }	
+
 
 #openfed-functionalities-form	.form-type-checkbox .description			{
 	position: absolute;
