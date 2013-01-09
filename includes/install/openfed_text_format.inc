@@ -30,14 +30,14 @@ $filtered_html_format = array(
 );
 if (module_exists('ckeditor_link') ) {
   // HTML corrector filter.
-  $full_html_format['filters']['ckeditor_link_filter'] = array(
+  $filtered_html_format['filters']['ckeditor_link_filter'] = array(
     'weight' => 8,
     'status' => 1,
   );
 }
 if (module_exists('table_altrow') ) {
   // Add odd/even on table row
-  $full_html_format['filters']['table_altrow'] = array(
+  $filtered_html_format['filters']['table_altrow'] = array(
     'weight' => 9,
     'status' => 1,
   );
@@ -45,6 +45,18 @@ if (module_exists('table_altrow') ) {
 $filtered_html_format = (object) $filtered_html_format;
 filter_format_save($filtered_html_format);
 
+$arr = array();
+$arr['allowed_html'] = "<a> <em> <strong> <cite> <blockquote> <code> <ul> <ol> <li> <dl> <dt> <dd> <h2> <h3> <h4> <h5> <h6> <div> <p> <u>";
+$arr['filter_html_help'] = 1;
+$arr['filter_html_nofollow'] = 0;
+db_update('filter')
+          ->fields(array(
+              'settings' => serialize($arr),
+          ))
+          ->condition('format', 'filteres_html', '=')
+          ->condition('module', 'filter', '=')
+          ->condition('name', 'filter_html', '=')
+          ->execute();
 
 
 

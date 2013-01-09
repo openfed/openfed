@@ -90,6 +90,9 @@ projects[draggableviews][subdir] = contrib
 projects[ds][version] = "2.0"
 projects[ds][subdir] = contrib 
 
+projects[easy_breadcrumb][version] = "2.1"
+projects[easy_breadcrumb][subdir] = contrib 
+
 projects[elements][version] = "1.2"
 projects[elements][subdir] = contrib 
 
@@ -165,7 +168,7 @@ projects[libraries][subdir] = contrib
 projects[link][version] = "1.0"
 projects[link][subdir] = contrib
 
-projects[linkchecker][version] = "1.0-beta1"
+projects[linkchecker][version] = "1.0"
 projects[linkchecker][subdir] = contrib
 
 projects[logintoboggan][version] = "1.3"

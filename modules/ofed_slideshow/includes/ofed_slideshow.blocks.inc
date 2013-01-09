@@ -5,7 +5,7 @@
  */
 function ofed_slideshow_block_info() {
   $blocks = array();
-  $blocks['slideshow_images'] = array(
+  $blocks['slide_images'] = array(
       'info' => t('Slideshow: Slideshow block'),
       'cache' => DRUPAL_NO_CACHE,
   );
@@ -18,7 +18,7 @@ function ofed_slideshow_block_info() {
 function ofed_slideshow_block_view($delta = '') {
   $block = array();
   switch($delta) {
-    case 'slideshow_images':
+    case 'slide_images':
       $block['subject'] = t('Slideshow: Slideshow block');
       $block['content'] = _ofed_slideshow_render_content($delta);
       break;
@@ -91,6 +91,7 @@ function _ofed_slideshow_lookup($path, $delta) {
 
         $fieldname = 'field_ofed_' . $delta;
         if($nid != '' && !empty($nodeload->$fieldname)) {
+          echo 'test';
           return _ofed_slideshow_render_node($nodeload, $delta);
         }
       }
@@ -145,9 +146,9 @@ function _ofed_slideshow_menu_link_exist($path) {
  */
 function _ofed_slideshow_node_slideshow_exist($mlid) {
   $query = db_select('node', 'n');
-  $query->leftJoin('field_data_field_ofed_slideshow_menu', 'd', 'd.entity_id = n.nid');
+  $query->leftJoin('field_data_field_ofed_slide_menu', 'd', 'd.entity_id = n.nid');
   $query->condition('n.type', 'ofed_slideshow', '=');
-  $query->condition('d.field_ofed_slideshow_menu_value', $mlid, '=');
+  $query->condition('d.field_ofed_slide_menu_value', $mlid, '=');
   $query->fields('n', array('nid'));
 
   return $query->execute()->fetchField();

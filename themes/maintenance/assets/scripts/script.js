@@ -13,7 +13,11 @@
 
 (function ($) {
 	$(document).ready(function(){
-		
+		// The spacebar is disabled as a pagedown key but can still be used in a different script : http://www.webmasterworld.com/javascript/3224261.htm
+		var el = document.getElementById('openfed-functionalities-form');
+        if ( el == true  ){
+          el.addEventListener('keydown',function(e){if(e.keyCode==32){e.preventDefault();}},true);	
+        }
 		// Change the logo from themes "seven" by openFED. Can't change directly in the html
 		var path = $("#logo").attr("src");	
 		
@@ -29,14 +33,15 @@
 		// Hide selectbox and replace with div.button
 		
 		$("#edit-module-list .form-type-checkbox").find("input.form-checkbox").hide(); 
-		$("#edit-module-list .form-type-checkbox").append('<div class="button disabled">disabled</div>');
+		$("#edit-module-list .form-type-checkbox").append('<a class="checkbox disabled" href="#">disabled</a>');
 		
 		// Change class button to activate/deactivate features	
 		
-		$("#edit-module-list .form-type-checkbox div.button").click( function() {
+		$("#edit-module-list .form-type-checkbox a.checkbox").click( function(e) {
+			e.preventDefault();
 			$(this).fadeOut("fast", function () {
 				var newclass = ( $(this).hasClass('enabled')) ? "disabled" : "enabled"; // Ternary condition to change the class
-				$(this).attr("class", "button "+ newclass); 							// change class with the new one
+				$(this).attr("class", "checkbox "+ newclass); 							// change class with the new one
 				$(this).text(newclass); 												// Modifying text in this div
 							
 				var checkbox = $(this).parent().find("input.form-checkbox");
@@ -48,10 +53,29 @@
 					checkbox.removeAttr("checked");
 				}
 				$(this).fadeIn("fast");
-			});
-			
+			});	
 		});
-		
+				
+		$("#edit-module-list .form-type-checkbox a.checkbox").keyup( function(e) {
+			 if(e.keyCode == 32){// keycode = 32 correspond to the key "Space Bar"
+				$(this).fadeOut("fast", function () {
+					var newclass = ( $(this).hasClass('enabled')) ? "disabled" : "enabled"; // Ternary condition to change the class
+					$(this).attr("class", "checkbox "+ newclass); 							// change class with the new one
+					$(this).text(newclass); 												// Modifying text in this div
+								
+					var checkbox = $(this).parent().find("input.form-checkbox");
+					
+					if(newclass === "enabled"){
+						checkbox.attr("checked", "checked");	
+					}
+					else{
+						checkbox.removeAttr("checked");
+					}
+					$(this).fadeIn("fast");
+				});	
+		   	 }
+		});
+			
 		/* end button
 		 * */
 	

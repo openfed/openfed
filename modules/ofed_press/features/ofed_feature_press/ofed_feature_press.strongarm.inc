@@ -100,6 +100,9 @@ function ofed_feature_press_strongarm() {
       'references' => array(
         'custom_settings' => FALSE,
       ),
+      'diff_standard' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -107,29 +110,29 @@ function ofed_feature_press_strongarm() {
           'weight' => '0',
         ),
         'metatags' => array(
-          'weight' => '16',
+          'weight' => '17',
         ),
         'title' => array(
           'weight' => '1',
         ),
         'path' => array(
-          'weight' => '15',
+          'weight' => '16',
         ),
         'redirect' => array(
-          'weight' => '14',
+          'weight' => '15',
         ),
         'xmlsitemap' => array(
-          'weight' => '13',
+          'weight' => '14',
         ),
       ),
       'display' => array(
         'language' => array(
           'default' => array(
-            'weight' => '17',
+            'weight' => '20',
             'visible' => FALSE,
           ),
           'full' => array(
-            'weight' => '15',
+            'weight' => '19',
             'visible' => FALSE,
           ),
           'teaser' => array(
@@ -141,7 +144,7 @@ function ofed_feature_press_strongarm() {
             'visible' => FALSE,
           ),
           'search_index' => array(
-            'weight' => '18',
+            'weight' => '20',
             'visible' => FALSE,
           ),
           'search_result' => array(
@@ -149,7 +152,7 @@ function ofed_feature_press_strongarm() {
             'visible' => FALSE,
           ),
           'print' => array(
-            'weight' => '18',
+            'weight' => '20',
             'visible' => FALSE,
           ),
           'block_column' => array(
@@ -165,7 +168,7 @@ function ofed_feature_press_strongarm() {
             'visible' => FALSE,
           ),
           'page_list' => array(
-            'weight' => '17',
+            'weight' => '19',
             'visible' => FALSE,
           ),
         ),

@@ -53,14 +53,14 @@ function ofed_feature_slideshow_field_default_fields() {
             'image_style' => 'ofed_slideshow_images',
           ),
           'type' => 'image',
-          'weight' => '1',
+          'weight' => '0',
         ),
         'slideshow' => array(
           'label' => 'hidden',
           'module' => 'image',
           'settings' => array(
             'image_link' => '',
-            'image_style' => 'ofed_slideshow_images',
+            'image_style' => '',
           ),
           'type' => 'image',
           'weight' => '1',
@@ -70,7 +70,7 @@ function ofed_feature_slideshow_field_default_fields() {
           'module' => 'image',
           'settings' => array(
             'image_link' => '',
-            'image_style' => 'ofed_slideshow_images',
+            'image_style' => '',
           ),
           'type' => 'image',
           'weight' => '1',
@@ -95,7 +95,7 @@ function ofed_feature_slideshow_field_default_fields() {
         'active' => 1,
         'module' => 'image',
         'settings' => array(
-          'preview_image_style' => 'ofed_slideshow_images',
+          'preview_image_style' => '',
           'progress_indicator' => 'throbber',
         ),
         'type' => 'image_image',
@@ -142,10 +142,9 @@ function ofed_feature_slideshow_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'hidden',
-          'module' => 'link',
           'settings' => array(),
-          'type' => 'link_default',
-          'weight' => '2',
+          'type' => 'hidden',
+          'weight' => '1',
         ),
         'slideshow' => array(
           'label' => 'hidden',
@@ -225,10 +224,9 @@ function ofed_feature_slideshow_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'hidden',
-          'module' => 'i18n_field',
           'settings' => array(),
-          'type' => 'i18n_list_default',
-          'weight' => '0',
+          'type' => 'hidden',
+          'weight' => '2',
         ),
         'slideshow' => array(
           'label' => 'hidden',
@@ -294,13 +292,13 @@ function ofed_feature_slideshow_field_default_fields() {
     'field_instance' => array(
       'bundle' => 'ofed_slideshow',
       'deleted' => '0',
-      'description' => 'Fill the custom update date of this slideshow.',
+      'description' => 'Define specific updated date for this content item, which will be displayed as "Last updated on [updated_date]". This allows you to define a specific update date than the system update date.',
       'display' => array(
         'default' => array(
-          'label' => 'above',
+          'label' => 'hidden',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '4',
+          'weight' => '3',
         ),
         'slideshow' => array(
           'label' => 'above',
@@ -318,7 +316,7 @@ function ofed_feature_slideshow_field_default_fields() {
       'ds_extras_field_template' => '',
       'entity_type' => 'node',
       'field_name' => 'field_ofed_slide_update',
-      'label' => 'Custom update date',
+      'label' => 'Last updated date',
       'required' => 0,
       'settings' => array(
         'default_value' => 'now',
@@ -379,13 +377,13 @@ function ofed_feature_slideshow_field_default_fields() {
         ),
       ),
       'deleted' => '0',
-      'description' => 'Check it if you want to override the default update date by the custom update date.',
+      'description' => 'Check the box in order to use the system date as updated date for your content item.',
       'display' => array(
         'default' => array(
-          'label' => 'above',
+          'label' => 'hidden',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '5',
+          'weight' => '4',
         ),
         'slideshow' => array(
           'label' => 'above',
@@ -403,7 +401,7 @@ function ofed_feature_slideshow_field_default_fields() {
       'ds_extras_field_template' => '',
       'entity_type' => 'node',
       'field_name' => 'field_ofed_slide_update_force',
-      'label' => 'Force to use custom update date',
+      'label' => 'Use system update date instead of Last updated date',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -422,16 +420,16 @@ function ofed_feature_slideshow_field_default_fields() {
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Check it if you want to override the default update date by the custom update date.');
-  t('Custom update date');
-  t('Fill the custom update date of this slideshow.');
+  t('Check the box in order to use the system date as updated date for your content item.');
+  t('Define specific updated date for this content item, which will be displayed as "Last updated on [updated_date]". This allows you to define a specific update date than the system update date.');
   t('Fill the link to this slideshow.');
-  t('Force to use custom update date');
   t('Image(s)');
+  t('Last updated date');
   t('Link');
   t('Menu entry');
   t('Select an option from the list.');
   t('Upload an additional image related to this slideshow.');
+  t('Use system update date instead of Last updated date');
 
   return $fields;
 }

@@ -5,6 +5,7 @@
  * @return array 
  */
 function openfed_regional_form() {
+  drupal_set_title(st('Regional configuration'));
   $form = array();
   $form['intro'] = array(
     '#markup' => '<p>' . st('Select the regional languages which have to be foreseen:') . '</p>',
@@ -65,6 +66,8 @@ function openfed_batch_internalization() {
       variable_del('openfed_need_batch_internalization');
       variable_del('openfed_need_batch_internalization_lang');
       
+      _openfed_set_block_into_region('local','language', 'tools');
+      
       module_enable( array('translation_overview'), TRUE );
   }
 }
@@ -88,6 +91,11 @@ function _openfed_create_panel_node_frontpage($lang) {
         variable_store_set('language', $lang, 'menu_main_links_source', 'main-menu');
         
         _openfed_show_main_menu_for_language('system', 'main-menu', $lang);
+        
+        $query = db_update('languages')
+              ->fields(array('prefix' => 'en'))
+              ->condition('language', 'en', '=')
+              ->execute();
       break;
     
       case 'fr':
@@ -105,15 +113,15 @@ function _openfed_create_panel_node_frontpage($lang) {
         menu_save($menu);
         
         // create front link in menu
-        _openfed_create_front_menu_link('menu-'.$menu['menu_name']);
+        _openfed_create_front_menu_link($menu['menu_name']);
         
         // store main link source variable for a language
-        variable_store_set('language', $lang, 'menu_main_links_source', 'menu-'.$menu['menu_name']);
+        variable_store_set('language', $lang, 'menu_main_links_source', $menu['menu_name']);
         
         // set the menu in the navigation region for nerra
-        _openfed_set_block_into_navigation_region('menu-'.$menu['menu_name']);
+        _openfed_set_block_into_region('menu',$menu['menu_name'], 'navigation');
         
-        _openfed_show_main_menu_for_language('menu', 'menu-'.$menu['menu_name'], $lang);
+        _openfed_show_main_menu_for_language('menu', $menu['menu_name'], $lang);
       break;
       case 'nl':
         $title = st('Welkom');
@@ -130,40 +138,18 @@ function _openfed_create_panel_node_frontpage($lang) {
         menu_save($menu);
         
         // create front link
-        _openfed_create_front_menu_link('menu-'.$menu['menu_name']);
+        _openfed_create_front_menu_link($menu['menu_name']);
         
         // store variable for a language
-        variable_store_set('language', $lang, 'menu_main_links_source', 'menu-'.$menu['menu_name']);
+        variable_store_set('language', $lang, 'menu_main_links_source', $menu['menu_name']);
         
         // set the menu in the navigation region for nerra
-        _openfed_set_block_into_navigation_region('menu-'.$menu['menu_name']);
+        _openfed_set_block_into_region('menu',$menu['menu_name'], 'navigation');
         
-        _openfed_show_main_menu_for_language('menu', 'menu-'.$menu['menu_name'], $lang);
+        _openfed_show_main_menu_for_language('menu', $menu['menu_name'], $lang);
       break;
     }
 
-//    // Create panel
-//    $node = new stdClass();
-//    $node->type = 'panel';
-//    node_object_prepare($node);
-//    $node->uid = 1;
-//    $node->language = $lang;
-//    $node->title = $title;
-//    $node->status = 1;
-//    $node->path = array(
-//      'alias' => $alias,
-//      'language' => $lang,
-//      'pathauto' => 0,
-//    );
-//    $node->panels_node = array(
-//      'layout' => 'flexible',
-//      'css_id' => '',
-//      'pipeline' => 'standard',
-//    );
-//    $node->comment = 0;
-//    
-//    node_save($node);
-    
     $pages = array(
         'name' => $alias,
         'task' => 'page',
@@ -247,15 +233,14 @@ function _openfed_create_front_menu_link($menu_name) {
  * Active menu block into navigation region
  * @param string $menu_name
  */
-function _openfed_set_block_into_navigation_region($menu_name){
-  $default_theme = variable_get('theme_default', 'nerra');
+function _openfed_set_block_into_region($module_name, $delta_name, $region_name){
   $block = array(
-    'module' => 'system',
-    'delta' => $menu_name,
-    'theme' => $default_theme,
+    'module' => $module_name,
+    'delta' => $delta_name,
+    'theme' => openfed_return_default_front_theme_name(),
     'status' => 1,
     'weight' => 0,
-    'region' => 'navigation',
+    'region' => $region_name,
     'pages' => '',
     'title' => '<none>',
     'cache' => -1,

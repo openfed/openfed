@@ -70,34 +70,10 @@ function _openfed_return_permission_builder() {
     // Display Suite
       'admin_display_suite' => TRUE,
     // Display Suite Extras
-//      'ds_switch ofed_download' => TRUE,
-//      'ds_switch ofed_page' => TRUE,
-//      'ds_switch panel' => TRUE,
-//      'ds_switch webform' => TRUE,
-//      'view ds_flag_bookmarks on node' => TRUE,
-//      'view file_type on node' => TRUE,
-//      'view title on node' => TRUE,
-//      'view links on node' => TRUE,
-//      'view node_link on node' => TRUE,
-//      'view author on node' => TRUE,
-//      'view post_date on node' => TRUE,
-//      'view submitted_by on node' => TRUE,
-//      'view search_snippet on node' => TRUE,
-//      'view search_info on node' => TRUE,
-//      'view title on taxonomy_term' => TRUE,
-//      'view more_link on taxonomy_term' => TRUE,
-//      'view name on user' => TRUE,
-//      'view title on ds_views' => TRUE,
-//      'view header on ds_views' => TRUE,
-//      'view exposed on ds_views' => TRUE,
-//      'view attachment_before on ds_views' => TRUE,
-//      'view rows on ds_views' => TRUE,
-//      'view empty on ds_views' => TRUE,
-//      'view pager on ds_views' => TRUE,
-//      'view attachment_after on ds_views' => TRUE,
-//      'view more on ds_views' => TRUE,
-//      'view footer on ds_views' => TRUE,
-//      'view feed_icon on ds_views' => TRUE,
+      'ds_switch ofed_download' => TRUE,
+      'ds_switch ofed_page' => TRUE,
+      'ds_switch panel' => TRUE,
+      'ds_switch webform' => TRUE,
     // Display Suite UI
       'admin_view_modes' => TRUE,
       'admin_fields' => TRUE,
@@ -294,14 +270,8 @@ function _openfed_return_permission_builder() {
       'block IP addresses' => TRUE,
     // Taxonomy
       'administer taxonomy' => TRUE,
-      // Vocabulary: Category
-//      'edit terms in 1' => TRUE,
-//      'delete terms in 1' => TRUE,
     // Translation overview
       'view translation overview assigments' => TRUE,
-//      'manage nl translation overview priorities' => TRUE,
-//      'manage en translation overview priorities' => TRUE,
-//      'manage fr translation overview priorities' => TRUE,
     // User
       'administer permissions' => TRUE,
       'administer users' => TRUE,
@@ -362,34 +332,10 @@ function _openfed_return_permission_configurator() {
     // Display Suite
       'admin_display_suite' => TRUE,
     // Display Suite Extras
-//      'ds_switch ofed_download' => TRUE,
-//      'ds_switch ofed_page' => TRUE,
-//      'ds_switch panel' => TRUE,
-//      'ds_switch webform' => TRUE,
-//      'view ds_flag_bookmarks on node' => TRUE,
-//      'view file_type on node' => TRUE,
-//      'view title on node' => TRUE,
-//      'view links on node' => TRUE,
-//      'view node_link on node' => TRUE,
-//      'view author on node' => TRUE,
-//      'view post_date on node' => TRUE,
-//      'view submitted_by on node' => TRUE,
-//      'view search_snippet on node' => TRUE,
-//      'view search_info on node' => TRUE,
-//      'view title on taxonomy_term' => TRUE,
-//      'view more_link on taxonomy_term' => TRUE,
-//      'view name on user' => TRUE,
-//      'view title on ds_views' => TRUE,
-//      'view header on ds_views' => TRUE,
-//      'view exposed on ds_views' => TRUE,
-//      'view attachment_before on ds_views' => TRUE,
-//      'view rows on ds_views' => TRUE,
-//      'view empty on ds_views' => TRUE,
-//      'view pager on ds_views' => TRUE,
-//      'view attachment_after on ds_views' => TRUE,
-//      'view more on ds_views' => TRUE,
-//      'view footer on ds_views' => TRUE,
-//      'view feed_icon on ds_views' => TRUE,
+      'ds_switch ofed_download' => TRUE,
+      'ds_switch ofed_page' => TRUE,
+      'ds_switch panel' => TRUE,
+      'ds_switch webform' => TRUE,
     // Display Suite UI
       'admin_view_modes' => TRUE,
       'admin_fields' => TRUE,
@@ -580,14 +526,8 @@ function _openfed_return_permission_configurator() {
       'view the administration theme' => TRUE,
     // Taxonomy
       'administer taxonomy' => TRUE,
-      // Vocabulary: Category
-//      'edit terms in 1' => TRUE,
-//      'delete terms in 1' => TRUE,
     // Translation overview
       'view translation overview assigments' => TRUE,
-//      'manage nl translation overview priorities' => TRUE,
-//      'manage en translation overview priorities' => TRUE,
-//      'manage fr translation overview priorities' => TRUE,
     // User
       'administer users' => TRUE,
       'access user profiles' => TRUE,
@@ -724,14 +664,8 @@ function _openfed_return_permission_content_manager() {
       'view the administration theme' => TRUE,
     // Taxonomy
       'administer taxonomy' => TRUE,
-      // Vocabulary: Category
-//      'edit terms in 1' => TRUE,
-//      'delete terms in 1' => TRUE,
     // Translation overview
       'view translation overview assigments' => TRUE,
-//      'manage nl translation overview priorities' => TRUE,
-//      'manage en translation overview priorities' => TRUE,
-//      'manage fr translation overview priorities' => TRUE,
     // View Unpublished
       'view any unpublished content' => TRUE,
     // Webform
@@ -808,6 +742,39 @@ function _openfed_return_permission_authenticated_user() {
       'use add another' => TRUE,
     // Aggregator
       'access news feeds' => TRUE,
+    // Display Suite Extras
+      'view ds_flag_bookmarks on node' => TRUE,
+      'view anchor on node' => TRUE,
+      'view file_name on node' => TRUE,
+      'view file_reference on node' => TRUE,
+      'view file_size on node' => TRUE,
+      'view file_type on node' => TRUE,
+      'view file_url_open on node' => TRUE,
+      'view file_url_persistent on node' => TRUE,
+      'view top_of_page on node' => TRUE,
+      'view url_file_save on node' => TRUE,
+      'view title on node' => TRUE,
+      'view links on node' => TRUE,
+      'view node_link on node' => TRUE,
+      'view author on node' => TRUE,
+      'view post_date on node' => TRUE,
+      'view submitted_by on node' => TRUE,
+      'view search_snippet on node' => TRUE,
+      'view search_info on node' => TRUE,
+      'view title on taxonomy_term' => TRUE,
+      'view more_link on taxonomy_term' => TRUE,
+      'view name on user' => TRUE,
+      'view title on ds_views' => TRUE,
+      'view header on ds_views' => TRUE,
+      'view exposed on ds_views' => TRUE,
+      'view attachment_before on ds_views' => TRUE,
+      'view rows on ds_views' => TRUE,
+      'view empty on ds_views' => TRUE,
+      'view pager on ds_views' => TRUE,
+      'view attachment_after on ds_views' => TRUE,
+      'view more on ds_views' => TRUE,
+      'view footer on ds_views' => TRUE,
+      'view feed_icon on ds_views' => TRUE,
     // Node
       'access content' => TRUE,
       'view own unpublished content' => TRUE,
@@ -827,6 +794,39 @@ function _openfed_return_permission_anonymous_user() {
   $permission = array(
     // Aggregator
       'access news feeds' => TRUE,
+    // Display Suite Extras
+      'view ds_flag_bookmarks on node' => TRUE,
+      'view anchor on node' => TRUE,
+      'view file_name on node' => TRUE,
+      'view file_reference on node' => TRUE,
+      'view file_size on node' => TRUE,
+      'view file_type on node' => TRUE,
+      'view file_url_open on node' => TRUE,
+      'view file_url_persistent on node' => TRUE,
+      'view top_of_page on node' => TRUE,
+      'view url_file_save on node' => TRUE,
+      'view title on node' => TRUE,
+      'view links on node' => TRUE,
+      'view node_link on node' => TRUE,
+      'view author on node' => TRUE,
+      'view post_date on node' => TRUE,
+      'view submitted_by on node' => TRUE,
+      'view search_snippet on node' => TRUE,
+      'view search_info on node' => TRUE,
+      'view title on taxonomy_term' => TRUE,
+      'view more_link on taxonomy_term' => TRUE,
+      'view name on user' => TRUE,
+      'view title on ds_views' => TRUE,
+      'view header on ds_views' => TRUE,
+      'view exposed on ds_views' => TRUE,
+      'view attachment_before on ds_views' => TRUE,
+      'view rows on ds_views' => TRUE,
+      'view empty on ds_views' => TRUE,
+      'view pager on ds_views' => TRUE,
+      'view attachment_after on ds_views' => TRUE,
+      'view more on ds_views' => TRUE,
+      'view footer on ds_views' => TRUE,
+      'view feed_icon on ds_views' => TRUE,
     // Node
       'access content' => TRUE,
     // Printer-friendly pages
@@ -1071,3 +1071,27 @@ function theme_form_element_checkbox_list($variables) {
   return $output;
 }
 
+
+/**
+ * Return the default front theme.
+ * 
+ */
+function openfed_return_default_front_theme_name() {
+  return 'nerra';
+}
+
+/**
+ * Return the default backend theme.
+ * 
+ */
+function openfed_return_default_backend_theme_name() {
+  return 'cms_theme';
+}
+
+/**
+ * Return the default maintenance theme.
+ * 
+ */
+function openfed_return_default_maintenance_theme_name() {
+  return 'maintenance';
+}

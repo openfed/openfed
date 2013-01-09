@@ -13,12 +13,6 @@
           </ul>
         </div>
       </div>
-      
-      <div class="sponsor">
-        <div class="dashbox-content">
-          <?php echo $dashboard['sponsor']; ?>
-        </div>
-      </div>
     </div>
 
     <div class="span-8">

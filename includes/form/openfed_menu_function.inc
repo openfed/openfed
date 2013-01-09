@@ -5,6 +5,7 @@
  * @return array 
  */
 function openfed_menu_form() {
+  drupal_set_title(st('Menu configuration'));
   $form = array();
   $form['intro'] = array(
     '#markup' => '<p>' . st('Select the menu areas which have to be foreseen:') . '</p>',
@@ -34,7 +35,6 @@ function openfed_menu_form_submit($form, &$form_state) {
   $blocks = array();
   if ( !empty($values['menu_list']) ) {
     $ck_link = variable_get('ckeditor_link_autocomplete_menus');
-    
     if ( $values['menu_list']['menu-tools-menu'] === 'menu-tools-menu' ) {
       // Create a tools menu.
         $menu = array();
@@ -45,7 +45,7 @@ function openfed_menu_form_submit($form, &$form_state) {
         $block_tools = array(
           'module' => 'menu',
           'delta' => 'menu-tools-menu',
-          'theme' => variable_get('theme_default', 'nerra'),
+          'theme' => openfed_return_default_front_theme_name(),
           'status' => 1,
           'weight' => 0,
           'region' => 'tools',
@@ -66,7 +66,7 @@ function openfed_menu_form_submit($form, &$form_state) {
         $block_footer = array(
           'module' => 'menu',
           'delta' => 'menu-footer-menu',
-          'theme' => variable_get('theme_default', 'nerra'),
+          'theme' => openfed_return_default_front_theme_name(),
           'status' => 1,
           'weight' => 0,
           'region' => 'footer',

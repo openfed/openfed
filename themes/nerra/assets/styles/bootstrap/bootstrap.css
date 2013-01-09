@@ -77,10 +77,10 @@ html {
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
 }
-a:focus {
-  outline: thin dotted #333;
-  outline: 5px auto -webkit-focus-ring-color;
-  outline-offset: -2px;
+img:focus, input:focus		{
+	box-shadow: 0 0 10px #b0aea4 !important;	
+	border:1px solid #b0aea4 !important;
+	outline:none;
 }
 
 sub,
@@ -100,13 +100,13 @@ img {
   /* Responsive images (ensure images don't scale beyond their parents) */
   max-width: 100%;
   /* Part 1: Set a maxium relative to the parent */
-  width: auto\9;
+  width: auto /9;
   /* IE7-8 need help adjusting responsive images */
-  height: auto;
   /* Part 2: Scale the height according to the width, otherwise you get stretching */
   vertical-align: middle;
   border: 0;
   -ms-interpolation-mode: bicubic;
+  outline: none;
 }
 em{
 	font-style:italic;
@@ -116,7 +116,6 @@ b, strong{
 }
 hr{
     border: none;
-	
     background: #ccc;
 }
 #map_canvas img {
@@ -586,6 +585,68 @@ legend {
   border: 0;
   border-bottom: 1px solid #e5e5e5;
 }
+
+/*		MESSAGES par défaut de Drupal		*/
+
+div.messages {
+  background-position: 8px 8px; /* LTR */
+  background-repeat: no-repeat;
+  border: 1px solid;
+  margin: 6px 0;
+  padding: 10px 10px 10px 50px; /* LTR */
+}
+
+div.status {
+  background-image: url(../../icons/message-24-ok.png);
+  border-color: #be7;
+}
+div.status,
+.ok {
+  color: #234600;
+}
+div.status,
+table tr.ok {
+  background-color: #f8fff0;
+}
+
+div.warning {
+  background-image: url(../../icons/message-24-warning.png);
+  border-color: #ed5;
+}
+div.warning,
+.warning {
+  color: #840;
+}
+div.warning,
+table tr.warning {
+  background-color: #fffce5;
+}
+
+div.error {
+  background-image: url(../../icons/message-24-error.png);
+  border-color: #ed541d;
+}
+div.error,
+.error {
+  color: #8c2e0b;
+}
+div.error,
+table tr.error {
+  background-color: #fef5f1;
+}
+div.error p.error {
+  color: #333;
+}
+
+div.messages ul {
+  margin: 0 0 0 1em; /* LTR */
+  padding: 0;
+}
+div.messages ul li {
+  list-style-image: none;
+}
+
+
 /* Bug ie7 overwriting property from system menu.css */
 ul li.leaf																{ 
 	list-style-type: none;
@@ -599,6 +660,10 @@ ul li.leaf																{
 /* Overwrite of drupal system-menu */
 #skip-link, .element-invisible											{ 
 	display:none;
+}
+li a.active																{
+	color: #32312E;
+	text-decoration: none;
 }
 ul li.collapsed, ul li.expanded											{
 	list-style-image: none;
@@ -615,6 +680,10 @@ li.expanded, li.collapsed, li.leaf {
 	padding:0;
 	margin:0;
 }
+.item-list ul {
+	margin: 0;
+	padding: 0;
+}
 .item-list ul li {
 	margin: 0;
 	padding: 0;
@@ -624,6 +693,26 @@ ul.primary {
 }
 ul.primary li a {
 	margin-right: 0.2em;
+}
+#maincontent ul.contextual-links li {
+	line-height: 100%;
+	list-style: none;
+	list-style-image: none;
+	margin: 0;
+	padding: 0;
+	background: none;
+}
+#sweaver .sweaver-content {
+	background-color:#fff!important;
+}
+#sweaver .vertical-tabs,#sweaver_plugin_editor table#sweaver-font td, #sweaver .vertical-content,#sweaver .container-inner,#sweaver_plugin_editor table#sweaver-font  {
+	border: 0 !important;
+}
+
+tr.even, tr.odd {
+background-color: transparent;
+border-bottom: none;
+padding:0;
 }
 /* --------------- That's All Folks ------------------------------------------/*
 

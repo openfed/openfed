@@ -135,6 +135,9 @@ function ofed_feature_slideshow_strongarm() {
       'slideshow' => array(
         'custom_settings' => FALSE,
       ),
+      'diff_standard' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -164,7 +167,7 @@ function ofed_feature_slideshow_strongarm() {
             'visible' => FALSE,
           ),
           'default' => array(
-            'weight' => '11',
+            'weight' => '5',
             'visible' => FALSE,
           ),
           'slideshow' => array(

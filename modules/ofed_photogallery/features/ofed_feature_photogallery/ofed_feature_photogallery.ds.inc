@@ -21,11 +21,26 @@ function ofed_feature_photogallery_ds_field_settings_info() {
       'weight' => '0',
       'label' => 'hidden',
       'format' => 'default',
+      'formatter_settings' => array(
+        'link' => '0',
+        'wrapper' => 'h3',
+        'class' => '',
+        'ft' => array(
+          'classes' => 'clear-block',
+        ),
+      ),
     ),
     'node_link' => array(
       'weight' => '4',
       'label' => 'hidden',
       'format' => 'default',
+      'formatter_settings' => array(
+        'link text' => 'Read more',
+        'wrapper' => '',
+        'ft' => array(
+          'classes' => 'more',
+        ),
+      ),
     ),
   );
   $export['node|ofed_photogallery|block_column'] = $ds_fieldsetting;
@@ -41,11 +56,31 @@ function ofed_feature_photogallery_ds_field_settings_info() {
       'weight' => '0',
       'label' => 'hidden',
       'format' => 'default',
+      'formatter_settings' => array(
+        'link' => '0',
+        'wrapper' => 'h3',
+        'class' => '',
+        'ft' => array(
+          'classes' => 'clear-block',
+        ),
+      ),
     ),
     'node_link' => array(
       'weight' => '4',
       'label' => 'hidden',
       'format' => 'default',
+      'formatter_settings' => array(
+        'link text' => 'Read more',
+        'wrapper' => '',
+        'ft' => array(
+          'classes' => 'more',
+        ),
+      ),
+    ),
+    'field_ofed_photog_images' => array(
+      'formatter_settings' => array(
+        'ft' => array(),
+      ),
     ),
   );
   $export['node|ofed_photogallery|block_element'] = $ds_fieldsetting;
@@ -61,11 +96,31 @@ function ofed_feature_photogallery_ds_field_settings_info() {
       'weight' => '0',
       'label' => 'hidden',
       'format' => 'default',
+      'formatter_settings' => array(
+        'link' => '0',
+        'wrapper' => 'h3',
+        'class' => '',
+        'ft' => array(
+          'classes' => 'clear-block',
+        ),
+      ),
     ),
     'node_link' => array(
       'weight' => '3',
       'label' => 'hidden',
       'format' => 'default',
+      'formatter_settings' => array(
+        'link text' => 'Read more',
+        'wrapper' => '',
+        'ft' => array(
+          'classes' => 'more',
+        ),
+      ),
+    ),
+    'field_ofed_photog_images' => array(
+      'formatter_settings' => array(
+        'ft' => array(),
+      ),
     ),
   );
   $export['node|ofed_photogallery|block_list'] = $ds_fieldsetting;
@@ -135,6 +190,14 @@ function ofed_feature_photogallery_ds_field_settings_info() {
       'weight' => '4',
       'label' => 'hidden',
       'format' => 'default',
+      'formatter_settings' => array(
+        'link text' => 'Read more',
+        'wrapper' => '',
+        'class' => '',
+        'ft' => array(
+          'classes' => 'more',
+        ),
+      ),
     ),
   );
   $export['node|ofed_photogallery|page_list'] = $ds_fieldsetting;
@@ -170,6 +233,13 @@ function ofed_feature_photogallery_ds_field_settings_info() {
       'weight' => '2',
       'label' => 'hidden',
       'format' => 'default',
+      'formatter_settings' => array(
+        'link text' => 'Read more',
+        'wrapper' => '',
+        'ft' => array(
+          'classes' => 'more',
+        ),
+      ),
     ),
   );
   $export['node|ofed_photogallery|rss'] = $ds_fieldsetting;
@@ -205,6 +275,13 @@ function ofed_feature_photogallery_ds_field_settings_info() {
       'weight' => '4',
       'label' => 'hidden',
       'format' => 'default',
+      'formatter_settings' => array(
+        'link text' => 'Read more',
+        'wrapper' => '',
+        'ft' => array(
+          'classes' => 'more',
+        ),
+      ),
     ),
   );
   $export['node|ofed_photogallery|search_result'] = $ds_fieldsetting;
@@ -220,11 +297,31 @@ function ofed_feature_photogallery_ds_field_settings_info() {
       'weight' => '0',
       'label' => 'hidden',
       'format' => 'default',
+      'formatter_settings' => array(
+        'link' => '0',
+        'wrapper' => 'h3',
+        'class' => '',
+        'ft' => array(
+          'classes' => 'clear-block',
+        ),
+      ),
     ),
     'node_link' => array(
       'weight' => '4',
       'label' => 'hidden',
       'format' => 'default',
+      'formatter_settings' => array(
+        'link text' => 'Read more',
+        'wrapper' => '',
+        'ft' => array(
+          'classes' => 'more',
+        ),
+      ),
+    ),
+    'field_ofed_photog_images' => array(
+      'formatter_settings' => array(
+        'ft' => array(),
+      ),
     ),
   );
   $export['node|ofed_photogallery|teaser'] = $ds_fieldsetting;
@@ -251,15 +348,13 @@ function ofed_feature_photogallery_ds_layout_settings_info() {
         0 => 'title',
         1 => 'field_ofed_photog_update',
         2 => 'field_ofed_photog_summary',
-        3 => 'field_ofed_photog_images',
-        4 => 'node_link',
+        3 => 'node_link',
       ),
     ),
     'fields' => array(
       'title' => 'ds_content',
       'field_ofed_photog_update' => 'ds_content',
       'field_ofed_photog_summary' => 'ds_content',
-      'field_ofed_photog_images' => 'ds_content',
       'node_link' => 'ds_content',
     ),
     'classes' => array(),
@@ -267,7 +362,7 @@ function ofed_feature_photogallery_ds_layout_settings_info() {
       'ds_content' => 'div',
     ),
     'layout_wrapper' => 'div',
-    'layout_attributes' => 'ds-wrapper-photogallery ds-wrapper-photogallery-block-column block-column',
+    'layout_attributes' => '',
     'layout_attributes_merge' => 1,
     'hide_page_title' => '0',
     'page_option_title' => '',
@@ -304,7 +399,7 @@ function ofed_feature_photogallery_ds_layout_settings_info() {
       'ds_content' => 'div',
     ),
     'layout_wrapper' => 'div',
-    'layout_attributes' => 'ds-wrapper-photogallery ds-wrapper-photogallery-block-element block-element',
+    'layout_attributes' => '',
     'layout_attributes_merge' => 1,
     'hide_page_title' => '0',
     'page_option_title' => '',
@@ -339,7 +434,7 @@ function ofed_feature_photogallery_ds_layout_settings_info() {
       'ds_content' => 'div',
     ),
     'layout_wrapper' => 'div',
-    'layout_attributes' => 'ds-wrapper-photogallery ds-wrapper-photogallery-block-list block-list',
+    'layout_attributes' => '',
     'layout_attributes_merge' => 1,
     'hide_page_title' => '0',
     'page_option_title' => '',
@@ -376,7 +471,7 @@ function ofed_feature_photogallery_ds_layout_settings_info() {
       'ds_content' => 'div',
     ),
     'layout_wrapper' => 'div',
-    'layout_attributes' => 'ds-wrapper-photogallery ds-wrapper-photogallery-default default',
+    'layout_attributes' => '',
     'layout_attributes_merge' => 1,
     'hide_page_title' => '0',
     'page_option_title' => '',
@@ -411,7 +506,7 @@ function ofed_feature_photogallery_ds_layout_settings_info() {
       'ds_content' => 'div',
     ),
     'layout_wrapper' => 'div',
-    'layout_attributes' => 'ds-wrapper-photogallery ds-wrapper-photogallery-full full',
+    'layout_attributes' => '',
     'layout_attributes_merge' => 1,
     'hide_page_title' => '0',
     'page_option_title' => '',
@@ -448,7 +543,7 @@ function ofed_feature_photogallery_ds_layout_settings_info() {
       'ds_content' => 'div',
     ),
     'layout_wrapper' => 'div',
-    'layout_attributes' => 'ds-wrapper-photogallery ds-wrapper-photogallery-page-list page-list',
+    'layout_attributes' => '',
     'layout_attributes_merge' => 1,
     'hide_page_title' => '0',
     'page_option_title' => '',
@@ -483,7 +578,6 @@ function ofed_feature_photogallery_ds_layout_settings_info() {
       'ds_content' => 'div',
     ),
     'layout_wrapper' => 'div',
-    'layout_attributes' => 'ds-wrapper-photogallery ds-wrapper-photogallery-print print',
     'layout_attributes_merge' => 1,
     'hide_page_title' => '0',
     'page_option_title' => '',
@@ -516,7 +610,7 @@ function ofed_feature_photogallery_ds_layout_settings_info() {
       'ds_content' => 'div',
     ),
     'layout_wrapper' => 'div',
-    'layout_attributes' => 'ds-wrapper-photogallery ds-wrapper-photogallery-rss rss',
+    'layout_attributes' => '',
     'layout_attributes_merge' => 1,
     'hide_page_title' => '0',
     'page_option_title' => '',
@@ -551,7 +645,6 @@ function ofed_feature_photogallery_ds_layout_settings_info() {
       'ds_content' => 'div',
     ),
     'layout_wrapper' => 'div',
-    'layout_attributes' => 'ds-wrapper-photogallery ds-wrapper-photogallery-search-index search-index',
     'layout_attributes_merge' => 1,
     'hide_page_title' => '0',
     'page_option_title' => '',
@@ -588,7 +681,7 @@ function ofed_feature_photogallery_ds_layout_settings_info() {
       'ds_content' => 'div',
     ),
     'layout_wrapper' => 'div',
-    'layout_attributes' => 'ds-wrapper-photogallery ds-wrapper-photogallery-search-result search-result',
+    'layout_attributes' => '',
     'layout_attributes_merge' => 1,
     'hide_page_title' => '0',
     'page_option_title' => '',
@@ -625,7 +718,7 @@ function ofed_feature_photogallery_ds_layout_settings_info() {
       'ds_content' => 'div',
     ),
     'layout_wrapper' => 'div',
-    'layout_attributes' => 'ds-wrapper-photogallery ds-wrapper-photogallery-teaser teaser',
+    'layout_attributes' => '',
     'layout_attributes_merge' => 1,
     'hide_page_title' => '0',
     'page_option_title' => '',

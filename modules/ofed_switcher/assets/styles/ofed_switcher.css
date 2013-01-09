@@ -3,9 +3,9 @@
  */
 .ofed-switcher {
   position: absolute;
-  top: -40px;
-  right: -180px;
-  padding:50px 10px 10px; 
+  top: 55px;
+  right: 0px;
+  padding:10px; 
   background: #FAA732; 
   overflow:hidden; 
   color:#fff; 
@@ -78,6 +78,7 @@ header .container { position: relative; }
 .dashboard .dashbox .dashbox-content						{}
 .dashboard .dashbox .dashbox-content ul						{ margin:0; padding:0; list-style:none; list-style-image:none; border-bottom:1px solid #e4e4e4;}
 .dashboard .dashbox .dashbox-content ul li					{ position:relative; float:left; width:250px; margin:0; padding:10px 0 10px 15px; list-style:none; list-style-image:none; border-bottom:1px solid #E4E4E4;}
+.dashboard .dashbox.span-12 .dashbox-content ul li			{ width:293px;}
 .dashboard .dashbox .dashbox-content ul li label			{ display:block; font-size:14px; font-weight:bold; padding:0 0 10px;}
 .dashboard .dashbox .dashbox-content ul li:first-child		{ border-top:none;}
 .dashboard .dashbox .dashbox-content ul li:last-child		{ border-bottom:none;}

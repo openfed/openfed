@@ -801,7 +801,8 @@ div.admin-options div.form-item {
 }
 
 /* Maintenance theming */
-body.in-maintenance #sidebar-first {
+body.in-maintenance #sidebar-first,
+body.page-batch #sidebar-first {
   float: left; /* LTR */
   width: 200px;
 }
@@ -811,29 +812,35 @@ body.in-maintenance #content {
   padding-right: 20px; /* LTR */
   clear: none;
 }
-body.in-maintenance #page {
-  overflow: auto;
+body.in-maintenance #page,
+body.page-batch #page {
+
   width: 770px;
   margin: 0 auto;
   padding-top: 2em;
 }
-body.in-maintenance #branding h1 {
+body.in-maintenance #branding h1,
+body.page-batch #branding h1 {
   width: 770px;
   margin: 0 auto;
   float: none;
 }
-body.in-maintenance .form-radios .form-type-radio {
+body.in-maintenance .form-radios .form-type-radio,
+body.page-batch .form-radios .form-type-radio {
   padding: 2px 0;
 }
-body.in-maintenance div.form-item:after {
+body.in-maintenance div.form-item:after,
+body.page-batch div.form-item:after {
   content: "";
   display: none;
   clear: none;
 }
-body.in-maintenance .form-submit {
+body.in-maintenance .form-submit,
+body.page-batch .form-submit {
   display: block;
 }
-body.in-maintenance #logo {
+body.in-maintenance #logo,
+body.page-batch #logo {
   margin-bottom: 1.5em;
   max-width: 180px;
 }
@@ -921,6 +928,7 @@ div.add-or-remove-shortcuts {
 #dashboard .dashboard-region .block {
   border: #ccc 1px solid;
 }
+
 
 /* Field UI */
 

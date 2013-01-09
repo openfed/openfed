@@ -1,7 +1,11 @@
 <?php
+// Regional and language > Regional Settings at "admin/config/regional/i18n/node"
+variable_set('i18n_hide_translation_links', TRUE);
 
 // Regional and language > Regional Settings at "admin/config/regional/settings"
 variable_set('date_first_day', 1);
+
+
 
 // Regional and language > Multilingual settings > node options at "admin/config/regional/i18n/node"
 variable_set('i18n_node_default_language_none', 1);

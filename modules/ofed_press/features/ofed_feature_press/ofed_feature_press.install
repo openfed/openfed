@@ -50,3 +50,29 @@ function ofed_feature_press_uninstall() {
     module_disable(array('ofed_press'));
   }
 }
+
+/**
+ * Add new field for contact person with a wysiwyg and remove old field without wysiwyg.
+ * Reverting the OpenFED Press feature.
+ */
+function ofed_feature_press_update_7001() {
+  // Revert the feature component.
+  features_revert(
+    array('ofed_feature_press' =>
+      array(
+        'ds_layout_settings',
+        'field',
+        'variable',
+      )
+    )
+  );  
+  
+  // Delete fields.
+  $fields_to_delete = array(
+    'field_ofed_press_contact_person',
+  );
+  foreach ($fields_to_delete as $field_name) {
+    field_delete_field($field_name);
+    watchdog('ofed_feature_press', 'Update 7001: Deleted the :field_name field.', array(':field_name' => $field_name));
+  }
+}

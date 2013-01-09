@@ -64,8 +64,8 @@ function openfed_install_tasks($install_state) {
   drupal_add_js('profiles/openfed/themes/maintenance/assets/scripts/script.js');
   // load css for custom layout
   drupal_add_css('profiles/openfed/themes/maintenance/assets/styles/design.css');
-  
-  //drupal_set_title('openFED7 : '.drupal_get_title());
+
+  drupal_set_title('OpenFED : '.  drupal_get_title());
   $menu_tools = !empty($install_state['parameters']['menu_list']) && $install_state['parameters']['menu_list'] = 'menu-tools-menu'; 
   $menu_footer = !empty($install_state['parameters']['menu_list']) && $install_state['parameters']['menu_list'] = 'menu-footer-menu'; 
   
@@ -90,28 +90,28 @@ function openfed_install_tasks($install_state) {
   
   // Step to choose which menu to pre-install.
   $tasks['openfed_menu_form'] = array(
-    'display_name' => st('Setup menu'),
-    'display' => TRUE,
-    'type' => 'form',
-  );
-    
-  // Step to choose which role to pre-install.
-  $tasks['openfed_role_form'] = array(
-    'display_name' => st('Setup role'),
+    'display_name' => st('Setup Menu'),
     'display' => TRUE,
     'type' => 'form',
   );
     
   // Step to choose which taxonomy vocabulary to pre-install.
   $tasks['openfed_taxonomy_form'] = array(
-    'display_name' => st('Setup taxonomy'),
+    'display_name' => st('Setup Taxonomy'),
+    'display' => TRUE,
+    'type' => 'form',
+  );
+    
+  // Step to choose which role to pre-install.
+  $tasks['openfed_role_form'] = array(
+    'display_name' => st('Setup Role'),
     'display' => TRUE,
     'type' => 'form',
   );
     
   // Step to choose which additional functionalities to add.
   $tasks['openfed_functionalities_form'] = array(
-    'display_name' => st('Setup functionalities'),
+    'display_name' => st('Setup Functionalities'),
     'display' => TRUE,
     'type' => 'form',
   );

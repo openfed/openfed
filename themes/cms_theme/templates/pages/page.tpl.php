@@ -53,9 +53,9 @@
 <?php endif; ?>
 
 
-<?php if ( theme_get_setting('cms_theme_breadcrumb_display') && $breadcrumb): ?>
+<?php if ( theme_get_setting('cms_theme_breadcrumb_display')): ?>
 <!-- Region Breadcrumb -->
-  <nav class="breadcrumb"><?php print $breadcrumb; ?></nav>
+  <nav class="breadcrumb"><?php print render($page['breadcrumb']); ?></nav>
 <?php endif; ?>
 
   
@@ -137,7 +137,7 @@
         <?php if ( theme_get_setting('cms_theme_toggle_sponsor') ): ?>
         <!-- Region Sponsor -->
           <div class="sponsor span-3">
-            <p><a href="http://www.blue4you.be" target="_blank" title="<?php echo t('Webdesign by Blue4You'); ?>">Webdesign</a> by Blue4You</p>
+            <?php echo theme_get_setting('cms_theme_sponsor_label'); ?>
           </div>
         <?php endif; ?>
         

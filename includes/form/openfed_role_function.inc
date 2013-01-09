@@ -5,9 +5,10 @@
  * @return array 
  */
 function openfed_role_form() {
+  drupal_set_title(st('Role configuration'));
   $form = array();
   $form['intro'] = array(
-    '#markup' => '<p>' . st('Select the roles and the corresponding permission to foresee:') . '<br/>' . st('(By default "Admin" and "Builder" are automaticaly created.)') . '</p>',
+    '#markup' => '<p>' . st('Select the roles and the corresponding permission to foresee:') . '<br/>' . st('(By default "Admin" is automaticaly created.)') . '</p>',
   );
   $form['role_list'] = array(
     '#type' => 'checkboxes',
@@ -29,8 +30,20 @@ function openfed_role_form() {
 function openfed_role_form_submit($form, &$form_state) {
   $values = $form_state['values'];
 
-  if ( !empty($values['role_list']) ) {
+  /* GENERATE DYNAMIC PERMISSION */
+    $permission_language = array();
+    foreach( language_list() as $langcode => $langobject ) {
+      $permission_language["manage $langcode translation overview priorities"] = TRUE;
+    }
     
+    $permission_vocabularies = array();
+    $vocabularies = taxonomy_vocabulary_machine_name_load('categories');
+    if( $vocabularies != FALSE ) {
+      $permission_vocabularies["edit terms in ".$vocabularies->vid] = TRUE;
+      $permission_vocabularies["delete terms in ".$vocabularies->vid] = TRUE;
+    }
+  
+  if ( !empty($values['role_list']) ) {
     
     if ( $values['role_list']['configurator'] === 'configurator' ) {
       // Manage Configurator information 
@@ -40,7 +53,9 @@ function openfed_role_form_submit($form, &$form_state) {
         user_role_save($conf_role);
       // Assign permission  
         $conf_role = user_role_load_by_name('Configurator');
-        user_role_change_permissions($conf_role->rid, _openfed_return_permission_configurator() );
+        $permission = array_merge(_openfed_return_permission_configurator(), $permission_language, $permission_vocabularies);
+        user_role_change_permissions($conf_role->rid, $permission );
+//        user_role_change_permissions($conf_role->rid, _openfed_return_permission_configurator() );
     }
     
     if ( $values['role_list']['content_manager'] === 'content_manager' ) {
@@ -51,7 +66,9 @@ function openfed_role_form_submit($form, &$form_state) {
         user_role_save($cm_role);
       // Assign permission 
         $cm_role = user_role_load_by_name('Content Manager');
-        user_role_change_permissions($cm_role->rid, _openfed_return_permission_content_manager() );
+        $permission = array_merge(_openfed_return_permission_content_manager(), $permission_language, $permission_vocabularies);
+        user_role_change_permissions($cm_role->rid, $permission );
+//        user_role_change_permissions($cm_role->rid, _openfed_return_permission_content_manager() );
     }
     
     if ( $values['role_list']['user_manager'] === 'user_manager' ) {
@@ -85,7 +102,9 @@ function openfed_role_form_submit($form, &$form_state) {
   // Assign permission for role Builder
     $web_role = user_role_load_by_name('Builder');
     $web_role_rid = $web_role->rid;
-    user_role_change_permissions($web_role_rid, _openfed_return_permission_builder());
+    $permission = array_merge(_openfed_return_permission_builder(), $permission_language, $permission_vocabularies);
+    user_role_change_permissions($web_role_rid, $permission);
+//    user_role_change_permissions($web_role_rid, _openfed_return_permission_builder());
     
     
   // SET PERMISSION FOR AUTHENTICATED USER

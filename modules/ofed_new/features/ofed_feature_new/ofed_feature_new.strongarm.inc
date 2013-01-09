@@ -100,6 +100,9 @@ function ofed_feature_new_strongarm() {
       'references' => array(
         'custom_settings' => FALSE,
       ),
+      'diff_standard' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -125,11 +128,11 @@ function ofed_feature_new_strongarm() {
       'display' => array(
         'language' => array(
           'default' => array(
-            'weight' => '16',
+            'weight' => '19',
             'visible' => FALSE,
           ),
           'full' => array(
-            'weight' => '17',
+            'weight' => '19',
             'visible' => FALSE,
           ),
           'teaser' => array(
@@ -145,7 +148,7 @@ function ofed_feature_new_strongarm() {
             'visible' => FALSE,
           ),
           'search_result' => array(
-            'weight' => '19',
+            'weight' => '18',
             'visible' => FALSE,
           ),
           'print' => array(
@@ -165,7 +168,7 @@ function ofed_feature_new_strongarm() {
             'visible' => FALSE,
           ),
           'page_list' => array(
-            'weight' => '16',
+            'weight' => '17',
             'visible' => FALSE,
           ),
         ),

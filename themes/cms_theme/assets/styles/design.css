@@ -16,7 +16,7 @@ body														{ width:100%; height:100%; margin:0; padding:0; line-height:18
 a,
 a:visited,
 a:link														{ color:#ff7300;}
-body a:hover												{ color:#004C94; text-decoration:none;}
+body a:hover												{ color:#666666; text-decoration:none;}
 a span														{ cursor:pointer;}
 
 h1															{ font-size:3em; font-weight: 300;margin: 0 0 20px 0;color: #ff7300; }
@@ -44,21 +44,77 @@ input.form-submit											{ display:block; height:28px; line-height:28px !impo
 input.btn-cms-reset											{ display:block; height:28px; line-height:28px !important; margin:0; padding:0 10px; border:none; outline:none; font-weight:bold !important; font:12px Arial, Helvetica, sans-serif; cursor:pointer; color:#fff; background:#353535; filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#666666', endColorstr='#222222');  for IE  background: -webkit-gradient(linear, left top, left bottom, from(#666), to(#222));  for webkit browsers  background: -moz-linear-gradient(top, #666, #222);  for firefox 3.6+  border-radius:4px; -moz-border-radius:4px; -webkit-border-radius:4px;}
 input.error													{ border:1px solid #bb0000 !important; background:#e3e1d5;}
 div.form-buttons                                            { height:30px; }
-input#edit-submit											{ float:left; margin:0 10px 0 0;}
+.form-actions												{ overflow:hidden;}
+.container-inline div, 
+.container-inline label 									{ float:left; margin-top:0; margin-right:10px; display:inline-block;}
+input#edit-submit,
+input#edit-save,
+input#edit-next												{ float:left; margin:0 10px 0 0;}
 input#edit-preview											{ float:left; margin:0 10px 0 0; color:#555; background:#dddddd; filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eeeeee', endColorstr='#cccccc');  for IE  background: -webkit-gradient(linear, left top, left bottom, from(#eee), to(#ccc));  for webkit browsers  background: -moz-linear-gradient(top, #eee, #ccc);  for firefox 3.6+ }
 input#edit-delete											{ float:left; margin:0 10px 0 0; color:#fff; background:#bb0000; filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#bb0000', endColorstr='#7f0000');  for IE  background: -webkit-gradient(linear, left top, left bottom, from(#bb0000), to(#7f0000));  for webkit browsers  background: -moz-linear-gradient(top, #bb0000, #7f0000);  for firefox 3.6+ }
 input#edit-cancel											{ float:left; margin:0 10px 0 0; color:#fff; background:#353535; filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#666666', endColorstr='#222222');  for IE  background: -webkit-gradient(linear, left top, left bottom, from(#666), to(#222));  for webkit browsers  background: -moz-linear-gradient(top, #666, #222);  for firefox 3.6+ }
 
 form.confirmation input#edit-submit							{ margin:20px 0; float:none;}
 
-/* messages */
+/*		MESSAGES par défaut de Drupal		*/
 
-#messages													{ margin-bottom:20px;}
-#messages .error											{ padding:10px 15px !important; font-size:12px; line-height:18px; color:#fff; border:none; background:#353535; border:5px solid #bb0000; border-radius:6px; -moz-border-radius:6px; -webkit-border-radius:6px;}
-#messages .warning											{ padding:10px 15px !important; font-size:12px; line-height:18px; color:#fff; border:none; background:#353535; border:5px solid #ffcc00; border-radius:6px; -moz-border-radius:6px; -webkit-border-radius:6px;}
-#messages .status											{ padding:10px 15px !important; font-size:12px; line-height:18px; color:#fff; border:none; background:#353535; border:5px solid #00bb00; border-radius:6px; -moz-border-radius:6px; -webkit-border-radius:6px;}
-#messages ul												{ margin:0; padding:0;}
-#messages ul li												{ margin:0; padding:3px 0; list-style:none; list-style-image:none;}
+div.messages {
+  background-position: 8px 8px; /* LTR */
+  background-repeat: no-repeat;
+  border: 1px solid;
+  margin: 6px 0;
+  padding: 10px 10px 10px 50px; /* LTR */
+}
+
+div.status {
+  background-image: url(../icones/message-24-ok.png);
+  border-color: #be7;
+}
+div.status,
+.ok {
+  color: #234600;
+}
+div.status,
+table tr.ok {
+  background-color: #f8fff0;
+}
+
+div.warning {
+  background-image: url(../icones/message-24-warning.png);
+  border-color: #ed5;
+}
+div.warning,
+.warning {
+  color: #840;
+}
+div.warning,
+table tr.warning {
+  background-color: #fffce5;
+}
+
+div.error {
+  background-image: url(../icones/message-24-error.png);
+  border-color: #ed541d;
+}
+div.error,
+.error {
+  color: #8c2e0b;
+}
+div.error,
+table tr.error {
+  background-color: #fef5f1;
+}
+div.error p.error {
+  color: #333;
+}
+
+div.messages ul {
+  margin: 0 0 0 1em; /* LTR */
+  padding: 0;
+}
+div.messages ul li {
+  list-style-image: none;
+}
 
 /* admin menu */
 
@@ -67,7 +123,7 @@ form.confirmation input#edit-submit							{ margin:20px 0; float:none;}
 /* header
 -------------------------------------------------- */
 
-header														{ width:100%; padding:0; border-bottom:1px solid #619bb5; background: #fff;}
+header														{ width:100%; padding:0; border-bottom:1px solid #9b9b9b; background: #fff;}
 
 /* logo */
 
@@ -75,18 +131,17 @@ header														{ width:100%; padding:0; border-bottom:1px solid #619bb5; ba
 
 
 /* breadcrumb */
-nav.breadcrumb												{ width:940px; height:23px; padding:20px 0; margin:0 auto;}
-nav.breadcrumb ul											{}
-nav.breadcrumb ul span										{ float:left; color:#FF7300; margin-right:10px;}
-nav.breadcrumb ul li										{ float:left; margin:0 10px 0 0;}
-nav.breadcrumb ul li a										{ text-transform:uppercase; text-decoration:none;}
-nav.breadcrumb ul li.last									{}
-nav.breadcrumb ul li.last + span							{ display:none;}
-nav.breadcrumb ul li.last a									{ color:#b0aea4;}
-nav.breadcrumb .breadcrumb 									{}
+.easy-breadcrumb											{ width:940px; height:23px; padding:20px 0; margin:0 auto;}
+.easy-breadcrumb .separator									{ color:#FF7300; margin-right:10px;}
+.easy-breadcrumb .easy-breadcrumb_segment-wrapper			{ text-transform:uppercase;}
+.easy-breadcrumb .easy-breadcrumb_segment-wrapper a,
+.easy-breadcrumb_segment									{ margin:0 10px 0 0; text-transform:uppercase; text-decoration:none;}
+.separator-black											{ color:#32312E; margin-right:10px;} 
+.easy-breadcrumb .easy-breadcrumb_segment-separator 		{ margin:0 10px 0 0; color:#FF7300;}
 
-#tools														{ position:relative; margin-top: 10px; min-height: 130px;}
+#tools														{ position:relative; margin-top: 10px; min-height:130px;}
 
+.ofed-switcher 												{ background: #FF8D1B; border-radius: 4px; -moz-border-radius: 4px; -webkit-border-radius: 4px; -webkit-box-shadow: 0 0px 10px rgba(0, 0, 0, 0.25); -moz-box-shadow: 0 0px 10px rgba(0, 0, 0, 0.25);box-shadow: 0 0px 10px rgba(0, 0, 0, 0.25);}
 
 /* navigation
 -------------------------------------------------- */
@@ -95,8 +150,11 @@ section#navigation											{ position:relative; background:#B0AEA4 url('../ima
 section#navigation .container								{ position:relative;}
 section#navigation ul										{}
 section#navigation ul li									{ float:left; padding: 5px 10px 5px 0; position: relative; /*margin: -1px 0 0 0;*/ margin:0; display: block; border: 1px solid transparent;}
-section#navigation ul li:hover								{ background: #fff;}
-section#navigation ul li:hover a							{ color:#FF7300; text-shadow: 1px 1px 0px rgba(255, 255, 255, 1);}
+section#navigation ul li									{ padding: 5px 5px 5px 0\9;}
+section#navigation ul li:hover,
+section#navigation ul li.active-trail						{ background: #fff;}
+section#navigation ul li:hover a,
+section#navigation ul li.active-trail a						{ color:#FF7300; text-shadow: 1px 1px 0px rgba(255, 255, 255, 1);}
 section#navigation ul li a									{ font-size: 1.1em; color: #ffffff; text-transform: uppercase; font-weight: 600; text-shadow: 1px 1px 0px rgba(75, 74, 69, 0.75); line-height: 33px; display: block; padding-left: 15px; text-decoration: none;}
 section#navigation nav.cms-menu	ul.menu:first-child			{ padding:0; margin:0;}
 section#navigation ul li.expanded:after 		{
@@ -128,12 +186,12 @@ section#navigation ul li.expanded:hover:after 	{
 
 
 
-section#navigation nav.cms-menu .quick-info									{ cursor:pointer; margin:0; padding:0; position:absolute; top:0; right:0; background:#FF7300;}
+section#navigation nav.cms-menu .quick-info									{ cursor:pointer; margin:0; padding:0; position:absolute; top:0; right:0; background: #FF8D1B;}
 section#navigation nav.cms-menu .quick-info li								{ padding:5px 30px 5px 0;}
 section#navigation nav.cms-menu .quick-info li span.menu-item-container		{ font-size: 1.1em; color: #fff; text-transform: uppercase; font-weight: 600; text-shadow: 1px 1px 0px rgba(75, 74, 69, 0.75); line-height: 33px; display: block; padding-left: 15px; text-decoration: none;}
-section#navigation nav.cms-menu .quick-info li:hover						{ background:#FF7300;}
+section#navigation nav.cms-menu .quick-info li:hover						{ background: #FF8D1B;}
 section#navigation nav.cms-menu .quick-info li:hover span					{ color:#fff;}
-section#navigation nav.cms-menu .quick-info li ul.menu						{ z-index:999; padding:0; background:#FF7300; position:absolute; top:44px; left:0; -webkit-border-radius: 0px 0px 5px 5px; border-radius: 0px 0px 5px 5px;  border-bottom : 1px solid rgba(255, 255, 255, 0.5);}
+section#navigation nav.cms-menu .quick-info li ul.menu						{ z-index:999; padding:0; background: #FF8D1B; position:absolute; top:44px; left:0; -webkit-border-radius: 0px 0px 5px 5px; border-radius: 0px 0px 5px 5px;  border-bottom : 1px solid rgba(255, 255, 255, 0.5);}
 section#navigation nav.cms-menu .quick-info li ul.menu li					{} 
 section#navigation nav.cms-menu .quick-info li ul.menu li a					{ line-height:normal; color:#fff; text-shadow: 1px 1px 0px rgba(75, 74, 69, 0.75);}
                                                           
@@ -236,7 +294,7 @@ input.form-submit, a.button 											{
   *display: inline ;
   /* IE7 inline-block hack */
   *zoom: 1 ;
-  padding: 4px 14px ;
+  padding: 0 14px ;
   margin-bottom: 0 ;
   font-size: 14px ;
   text-align: center ;
@@ -326,7 +384,7 @@ input.form-submit:active, a.button:active{
 /* content
 -------------------------------------------------- */
 
-section.site													{ width:100%; padding: 0; background:#fff;}
+section.site													{ width:100%; padding: 0 0 15px 0; background:#fff;}
 section.site .container											{ z-index:1 !important; position:relative; min-height:600px; background:#fff;}
 .colorpicker  { z-index:2; }
 /* title */
@@ -357,7 +415,17 @@ section.site .lk-add-container a.lk-add                         {
                                                                   filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#00bc00', endColorstr='#019e01');
                                                                   background: -moz-linear-gradient(center top , #00BC00, #019E01);
                                                                   background:-webkit-gradient(linear, left top, left bottom, from(#00BC00), to(#019E01));
+
 																}
+																
+/* Filters */
+.exposed-filters														{ position:relative;}
+.exposed-filters .filters												{ width:auto; margin-bottom:15px;}
+.exposed-filters #edit-actions											{ height:28px; padding-top:37px;}
+.page-admin-config-regional-translate #translation-table-filter-filter	{ padding-top:50px;}
+.exposed-filters .filters .form-item 									{ float:left; width:202px; overflow:hidden; display:block;}
+.exposed-filters #edit-actions											{ float:left;/*position:absolute; bottom:10px; right:0;*/}
+
 
 /* result counter */
 
@@ -368,8 +436,8 @@ section.site #view-result-counter p strong						{}
 
 /* filter */
 
-section.site .view-filters															{ width:100%; margin:0 0 20px; padding:10px 0; overflow:hidden; background:#F5F3E8; border-radius:4px; -moz-border-radius:4px; -webkit-border-radius:4px;}
-section.site .view-filters .views-exposed-widget									{ float:left; width:215px; padding:0 10px 10px; margin:0; overflow:hidden;}
+section.site .view-filters																		{ width:100%; margin:0 0 20px; padding:10px 0; overflow:hidden; background:#F5F3E8; border-radius:4px; -moz-border-radius:4px; -webkit-border-radius:4px;}
+section.site .view-filters .views-exposed-widget												{ float:left; width:215px; padding:0 10px 10px; margin:0; overflow:hidden;}
 
 section.site .view-filters .views-exposed-widget input.form-text								{ width:190px!important;}
 section.site .view-filters .views-exposed-widget select											{ width:200px!important;}
@@ -379,16 +447,17 @@ section.site .view-filters .views-exposed-widget .views-widget									{ margin:
 section.site .view-filters .views-exposed-widget .views-widget .form-item						{ margin:0; padding:0;}
 section.site .view-filters .views-exposed-widget .views-widget .form-item select				{ display:block; margin:0; padding:4px; color:#444; font:12px Arial, Helvetica, sans-serif; background:#fff; border:1px solid #ccc;}
 section.site .view-filters .views-exposed-widget .views-widget .form-item select.select-single
-																							{ height:28px;}
-section.site .view-filters input.form-autocomplete									{ width:445px; background:#fff; background-position:436px 6px;}
+																								{ height:28px;}
+section.site .view-filters input.form-autocomplete												{ width:445px; background:#fff; background-position:436px 6px;}
 
 section.site .view-filters .cms-filter-btns											{ clear:both; display:block; padding:0 10px; overflow:hidden;}
 section.site .view-filters .cms-filter-btns input									{ float:left; margin:0 10px 0 0;}
 
+.filter-wrapper .form-item,
+.filter-guidelines		 															{ padding:0!important;}
+
 /* table */
-section.site table {
-    width: 100%;
-}
+section.site table 																	{ width: 100%;}
 
 section.site table,
 section.site tbody,
@@ -398,15 +467,17 @@ section.site tr,
 section.site th,
 section.site td 												{ margin:0; padding:0; border:0; font-weight:inherit; font-style:inherit; font-size:100%; font-family:inherit; vertical-align:baseline;}
 section.site table 												{ margin:0 0 20px; border-collapse:collapse; border-spacing:0;}
+section.site table.sticky-header								{ width:940px!important;}
+.fieldset-wrapper table											{ margin:0!important;}
 section.site caption,
 section.site th,
 section.site td 												{ text-align:left; font-weight:normal;}
 section.site table,
 section.site td,
 section.site th 												{ padding:8px!important; vertical-align:top; /*border:1px solid #fff;*/}
-section.site th													{ font-weight:normal; color:#fff; 
-                                                                  background:#32312e;
-                                                                }
+section.site th													{ font-weight:normal; color:#fff; background:#32312e;}
+section.site th	label											{ margin-bottom:0!important; border:none!important; }
+
 section.site th a												{ display:inline-block; color:#fff;}
 section.site tr.odd td											{ background:#CFF1FF;}
 section.site tr.even td											{ background:#EFFAFF;}
@@ -416,10 +487,86 @@ section.site tr.error td										{ background:#ffd3bd;}
 section.site tr.warning											{ border-bottom:5px solid #fff;}
 section.site tr.warning td										{ background:#fff0bd;}
 
-tr.odd td	{ background:#f4f4f3!important;}
-tr.even	td 	{ background:#e0e0e0!important;}
+tr.odd td														{ background:#f4f4f3!important;}
+tr.even	td 														{ background:#e0e0e0!important;}
 
-#field-ofed-page-docs-values										{ border:1px solid #32312e!important; border-radius:5px 5px 5px 5px;}
+section.site .tabledrag-has-colspan								{ margin:0!important;}
+
+#field-ofed-page-docs-values									{ border:1px solid #32312e!important; border-radius:5px 5px 5px 5px;}
+
+/* Exeption Land */
+
+.page-admin-config-content-hierarchical-select .tableheader-processed caption			{ margin-bottom:10px;}
+
+.page-admin-config-user-interface-sweaver table tr td .form-item .container-label-edit	{ display:block; height:26px!important; width:100%; font-weight:normal!important; font-family:'Open Sans', sans-serif; padding-bottom:5px; margin-left:0!important; font-size:16px!important;  margin-bottom:20px!important; border-bottom:1px solid #E5E5E5!important; border-top:none!important; border-left:none!important; border-right:none!important; }
+
+.page-admin-config-content-mollom form #edit-actions input								{ margin-right:15px;}
+
+.page-admin-structure-mini-panels #ctools-export-ui-list-form .ctools-export-ui-row:first-child											{ margin-bottom:15px;}
+.page-admin-structure-mini-panels #ctools-export-ui-list-form #ctools-export-ui-list-items-apply										{ margin-top:36px; margin-right:15px;}
+
+.page-admin-structure-views #ctools-export-ui-list-form #ctools-export-ui-list-items-apply												{ margin-top:42px!important;}
+
+.page-admin-config-user-interface-sweaver #sweaver-plugin-editor-config-editor table#properties tr td.tabledrag-has-colspan:first-child	{ padding:0!important;}
+
+.page-admin-structure-types #block-system-main .vertical-tabs #edit-additional-settings-add-custom-fields .fieldset-wrapper input		{ margin-right:10px;}
+.page-admin-structure-types #node-type-form .vertical-tabs .vertical-tabs-panes #edit-scheduler fieldset								{ padding:0!important; margin:0; border:none;}
+
+.page-admin-structure #panels-common-settings .vertical-tabs-panes #edit-layout-selection #edit-layouts .form-item label .caption		{ line-height:normal;}
+
+
+
+.page-admin-structure-block-list-cms-theme #block-system-main #menu-block-add-block-form .vertical-tabs #edit-languages .fieldset-wrapper .form-item:first-child label	{ border:none;}
+
+.page-admin-structure-types-manage #field-display-overview-wrapper #-add-new-group td:first-child .label-input .form-item				{ padding-top:18px;}
+
+.page-admin-structure-panels #ctools-export-ui-list-form .ctools-export-ui-row #ctools-export-ui-list-items-apply						{ margin:42px 10px 0 0;} 
+
+.page-admin-config-system #backup-migrate-crud-edit-form .container-inline a,
+.page-admin-config-search #metatag-config-add-form #edit-actions a,
+.page-admin-config-search #redirect-edit-form #edit-actions a,
+.page-admin-config-search-verifications #site-verify-edit-form #edit-actions a					{ display: inline-block ;
+																								  text-decoration:none;
+																								  font-weight:bold;
+																								  *display: inline ;
+																								  /* IE7 inline-block hack */
+																								  *zoom: 1 ;
+																								  height:26px;
+																								  *height:28px;
+																								  line-height:26px;
+																								  padding: 0 14px ;
+																								  margin-bottom: 0 ;
+																								  font-size: 14px ;
+																								  text-align: center ;
+																								  vertical-align: middle ;
+																								  cursor: pointer ;
+																								  color: #ffffff;
+																								  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+																								  background-color: #faa732 ;
+																								  background-image: none;
+																								  background-image: -moz-linear-gradient(top, #FBB450, #F89406);
+																								  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fbb450), to(#f89406));
+																								  background-image: -webkit-linear-gradient(top, #fbb450, #f89406) ;
+																								  background-image: -o-linear-gradient(top, #fbb450, #f89406) ;
+																								  background-image: linear-gradient(to bottom, #fbb450, #f89406) ;
+																								  background-repeat: repeat-x ;
+																								  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fffbb450', endColorstr='#fff89406', GradientType=0) ;
+																								  border: 1px solid #bbbbbb ;
+																								  *border: 0 ;
+																								  border-bottom-color: #a2a2a2 ;
+																								  border-color: #f89406 #f89406 #ad6704;
+																								  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25) ;
+																								  *background-color: #f89406 ;
+																								  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+																								  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false) ;
+																								  -webkit-border-radius: 4px ;
+																								  -moz-border-radius: 4px ;
+																								  border-radius: 4px ;
+																								  *margin-left: .3em ;
+																								  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05) ;
+																								  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05) ;
+																								  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05) ;
+																								}
 
 /* login page
 -------------------------------------------------- */
@@ -441,7 +588,7 @@ section.site .block-user .item-list	ul li a						{}
 /* pagination
 -------------------------------------------------------- */
 
-.news.items .item-list													{ width:200px; margin:0 auto;}
+.news.items .item-list														{ width:200px; margin:0 auto;}
 
 section.site ul.pager														{ margin:10px 0; padding:10px 0; text-align:center; overflow:hidden; background:none;}
 section.site ul.pager li													{ float:left; display:block; height:24px; line-height:24px; margin:0 5px 0 0; padding:0; list-style:none; list-style-image:none; background:#f5f5f5; cursor:pointer;}
@@ -488,10 +635,13 @@ a.views-button-rearrange:hover 								{ background-position: 0px -12px !importa
 fieldset#edit-nerra-layout																				{}
 fieldset#edit-nerra-layout .fieldset-wrapper															{}
 fieldset#edit-nerra-layout .fieldset-wrapper #edit-nerra-layout-display									{ clear:both; overflow:hidden;}
-fieldset#edit-nerra-layout .fieldset-wrapper #edit-nerra-layout-display .form-item						{ margin-bottom:20px; background:none; float:left; width:239px; height:147px; }
-fieldset#edit-nerra-layout .fieldset-wrapper #edit-nerra-layout-display .form-item input				{ margin:0 5px 0 55px;}
-fieldset#edit-nerra-layout .fieldset-wrapper #edit-nerra-layout-display .form-item label				{ position:relative; height:165px; overflow:hidden; clear:both; text-align:center;}
-fieldset#edit-nerra-layout .fieldset-wrapper #edit-nerra-layout-display .form-item label img			{ margin:0 0 0 60px;}
+
+.layout-grid-display								{ margin-bottom:15px; overflow:hidden!important;}
+*:first-child+html .layout-grid-display				{ margin-bottom:45px;}
+.layout-grid-display .form-item						{ margin-bottom:20px; background:none; float:left; width:167px; height:147px;}
+.layout-grid-display .form-item	input				{ margin:0 5px 0 15px;}
+.layout-grid-display .form-item label				{ position:relative; height:165px; overflow:hidden; clear:both; text-align:center; border:none;}
+.layout-grid-display .form-item label img			{ margin:0 0 0 15px;}
 
 /* Dashboard
 -------------------------------------------------- */
@@ -500,26 +650,101 @@ fieldset#edit-nerra-layout .fieldset-wrapper #edit-nerra-layout-display .form-it
 /* Form Wrapper
 -------------------------------------------------- */
 .field-type-datetime,
-#edit-field-ofed-page-body,
-#edit-field-ofed-page-summary											{ padding:10px; margin-bottom:10px; background: none repeat scroll 0 0 #F5F3E8; border-radius: 4px 4px 4px 4px;}
-#edit-field-ofed-page-pubdate									{ width:450px; float:left;}
+
+#edit-field-ofed-page-update-force,
+#edit-field-ofed-page-thumb,
+#edit-field-ofed-download-update-force,
+#edit-field-ofed-download-thumb,
+#edit-field-ofed-download-file,
+#edit-field-ofed-faq-update-force,
+#edit-field-ofed-new-update-force,
+#edit-field-ofed-photog-update-force,
+#edit-field-ofed-press-update-force,
+#edit-field-ofed-slide-update-force,
+#edit-field-ofed-new-thumb,
+#edit-field-ofed-press-thumb,
+#edit-field-ofed-slide-images,
+#edit-field-ofed-photog-images							{ padding:10px; margin-bottom:10px; background: none repeat scroll 0 0 #F5F3E8; border-radius: 4px 4px 4px 4px;}
+#edit-field-ofed-page-update-force,
+#edit-field-ofed-download-update-force,
+#edit-field-ofed-faq-update-force,
+#edit-field-ofed-new-update-force,
+#edit-field-ofed-photog-update-force,
+#edit-field-ofed-press-update-force,
+#edit-field-ofed-slide-update-force						{ margin-top:-10px;}
+#edit-field-ofed-page-pubdate,
+#edit-field-ofed-download-pubdate,
+#edit-field-ofed-download-thumb,
+#edit-field-ofed-download-file,
+#edit-field-ofed-press-pubdate,
+#edit-field-ofed-press-update,
+#edit-field-ofed-new-pubdate,
+#edit-field-ofed-press-update							{ width:450px; float:left; min-height:195px;}
+
+
+#edit-field-ofed-page-pubdate .form-item,
+#edit-field-ofed-download-pubdate .form-item,
+#edit-field-ofed-download-thumb .form-item,
+#edit-field-ofed-download-file .form-item,
+#edit-field-ofed-press-pubdate .form-item,
+#edit-field-ofed-press-update .form-item,
+#edit-field-ofed-new-pubdate .form-item,
+#edit-field-ofed-press-update .form-item				{ margin-bottom:0; margin-top:0;}	
+
+
+#edit-field-ofed-download-author						{ clear:both;}
 
 
 #field-ofed-page-docs-values
 
-input.form-autocomplete {
-    background-image: url("../images/throbber.gif");
-    background-position: 100% 7px;
-    background-repeat: no-repeat;
-}
+input.form-autocomplete 								{ background-image: url("../images/throbber.gif"); background-position: 100% 7px; background-repeat: no-repeat;}
 
-input.throbbing {
-    background-position: 100% -13px!important;
-}
+input.throbbing 										{ background-position: 100% -13px!important;}
 
-legend						{ font-size:16px!important;}
+legend,
+.form-item label										{ font-size:16px!important; margin-bottom:15px; line-height:40px; border-bottom:1px solid #E5E5E5;}
+.form-item label.option									{ font-size:12px!important;}
+.form-item .form-item label								{ border:none; margin-bottom:0;}
+legend													{ margin-bottom:10px;}
+.container-inline-date .date-padding					{ padding:0;}
+.form-item-field-ofed-download-update-force-und			{ clear:both;}
+
+/*.form-type-textfield label,*/
+.form-type-select label											{ border:none; line-height:normal; }
+.field-type-image .form-wrapper .fieldset-wrapper .form-item		{ padding-right:10px; padding-left:10px;}
+.field-type-image .form-wrapper .fieldset-wrapper .form-item label	{ border:none; margin:0; font-size:12px!important;}
+
+#page-manager-list-pages-form										{}
+#page-manager-list-pages-form #edit-pages-apply						{ float:left; clear:left; margin-right:15px; margin-bottom:10px;}
+#page-manager-list-pages-form #edit-pages-reset						{ float:left;}
+#page-manager-list-pages-form .form-item-sort						{ padding-right:100px;}
+
+#panels-live-preview												{ display:inline-block; margin-bottom:15px;}
+
+.action-links														{ margin-bottom:15px; overflow:hidden; width:100%;}
+.action-links li													{ float:left; margin-right:10px;}
+
+#page-manager-links													{ position:absolute; top:110px; left:200px;}
+#page-manager-links .links											{}	
+#page-manager-links .links li										{}
+#page-manager-links .links li a										{}
+
+.panel-flexible-edit-layout .flexible-title 						{ width:100%!important; text-align:left!important;}
+
+.admin-list	dd														{ margin-bottom:10px;}
+
+table.field-ui-overview tr.add-new .label-input 					{ float:none!important;}
+
 /* footer
 -------------------------------------------------- */
 
 footer														{ width:100%; background:#eee;}
 footer p													{ line-height:40px; margin:0; padding:0; font-size:10px;}
+
+
+
+#rules-filter-form 											{ margin-bottom: 1.5em!important; clear:both; display:block!important; }
+
+#rules-filter-form legend									{ display:block; overflow:hidden;}
+
+html.js fieldset.collapsed 									{ height:auto!important;}

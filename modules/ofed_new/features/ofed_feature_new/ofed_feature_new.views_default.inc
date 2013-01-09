@@ -25,6 +25,7 @@ function ofed_feature_new_views_default_views() {
   $handler->display->display_options['title'] = 'News';
   $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['link_display'] = 'ofed_new_page_list';
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['access']['perm'] = 'edit any ofed_new content';
   $handler->display->display_options['cache']['type'] = 'none';

@@ -100,6 +100,9 @@ function ofed_feature_faq_strongarm() {
       'references' => array(
         'custom_settings' => FALSE,
       ),
+      'diff_standard' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -125,15 +128,15 @@ function ofed_feature_faq_strongarm() {
       'display' => array(
         'language' => array(
           'default' => array(
-            'weight' => '9',
+            'weight' => '10',
             'visible' => FALSE,
           ),
           'teaser' => array(
-            'weight' => '9',
+            'weight' => '11',
             'visible' => FALSE,
           ),
           'full' => array(
-            'weight' => '10',
+            'weight' => '11',
             'visible' => FALSE,
           ),
           'rss' => array(
