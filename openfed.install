@@ -146,7 +146,7 @@ function openfed_install() {
   /*
    * Text Resize
    */
-  require_once('includes/install/openfed_test_resize.inc');
+  require_once('includes/install/openfed_text_resize.inc');
   
   /*
    * Views
