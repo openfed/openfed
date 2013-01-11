@@ -1,6 +1,17 @@
 CHANGELOG
 =========
 
+7.x-0.4 : 11 January 2013
+--------------------------
+
+  * Issue
+    #1885012 : Core update: Drupal 7.18
+    #1885022 : Library update: ckeditor
+    #1885124 : Error: Column 'module' cannot be null
+
+  * Bug
+    - style in ckeditor style dropdown can not be read correctly
+
 7.x-0.4 : 09 January 2013
 --------------------------
 

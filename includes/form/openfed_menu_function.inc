@@ -17,6 +17,9 @@ function openfed_menu_form() {
       'menu-tools-menu' => 'Tools Menu: placed at the very top of the screen', 
       'menu-footer-menu' => 'Footer Menu: placed at the very bottom of the screen'
     ),
+    '#description' => st('
+      Note : by checking these options, the menus will automatically be created in the menus list of the website and located in the corresponding region (either the tools or the footer region).<br>
+      If no menus are checked, they can still be created after the installation, but they will need to be created manually and located in the corresponding region.'),
   );
   $form['submit'] = array(
     '#type' => 'submit',

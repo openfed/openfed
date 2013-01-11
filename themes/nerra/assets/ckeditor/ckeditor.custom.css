@@ -352,3 +352,21 @@ div.messages ul {
 div.messages ul li {
   list-style-image: none;
 }
+
+
+
+
+/*
+* avoid style in dropdown
+*/
+
+ul.cke_panel_list li{
+  background : none !important;
+  padding: 0;
+}
+
+ul.cke_panel_list li div {
+  margin: 0;
+  padding: 2px;
+}
+

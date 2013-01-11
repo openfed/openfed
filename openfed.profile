@@ -49,9 +49,19 @@ function system_form_install_settings_form_alter(&$form, &$form_state, &$install
   // Set the default value for the database settings.
   // For MYSQL
   $form['settings']['mysql']['advanced_options']['db_prefix']['#default_value'] = 'drupal_';
+  $form['settings']['mysql']['label_advanced_options'] = array(
+    '#markup' => '<label>'.st('By default, a prefix will be set for your tables. If you wish to adapt it, please edit the Advanced Options below.').'</label>',
+    '#weight' => 5,
+  );
+  
   // For SQLITE.
   $form['settings']['sqlite']['advanced_options']['db_prefix']['#default_value'] = 'drupal_';
-  // For PostgreSQL.
+  $form['settings']['sqlite']['label_advanced_options'] = array(
+    '#markup' => '<label>'.st('By default, a prefix will be set for your tables. If you wish to adapt it, please edit the Advanced Options below.').'</label>',
+    '#weight' => 5,
+  );
+  
+// For PostgreSQL.
   $form['settings']['pgsql']['advanced_options']['db_prefix']['#default_value'] = 'drupal_';
 }
 

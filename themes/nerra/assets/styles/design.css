@@ -600,6 +600,10 @@ fieldset#edit-update-notifications 										{
 #navigation	ul li.expanded				{
 	padding-right: 30px;
 }
+#navigation	ul li.expanded:hover		{
+	background: #F4F4F4;
+}
+
 #navigation	ul li.expanded:after 		{
 	width: 0;
 	height: 0;
@@ -679,7 +683,7 @@ fieldset#edit-update-notifications 										{
 	content: " ";
 	position:absolute;
 	left: 5px;
-	top: 12px;
+	top: 27px;
 	width: 4px; 
 	height: 4px;
 	background: #32312E;

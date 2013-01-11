@@ -100,7 +100,7 @@ img {
   /* Responsive images (ensure images don't scale beyond their parents) */
   max-width: 100%;
   /* Part 1: Set a maxium relative to the parent */
-  width: auto /9;
+  width: auto\9;
   /* IE7-8 need help adjusting responsive images */
   /* Part 2: Scale the height according to the width, otherwise you get stretching */
   vertical-align: middle;
@@ -108,6 +108,7 @@ img {
   -ms-interpolation-mode: bicubic;
   outline: none;
 }
+
 em{
 	font-style:italic;
 }

@@ -25,8 +25,5 @@ function openfed_complete() {
   variable_set('admin_theme_admin_theme_batch', '0');
   variable_set( 'cron_safe_threshold', '0');
  
-  $settings['maintenance_theme']  = "maintenance";
-  drupal_rewrite_settings($settings);
-  
   node_access_rebuild(FALSE);
 }

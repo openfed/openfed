@@ -8,12 +8,18 @@ function openfed_regional_form() {
   drupal_set_title(st('Regional configuration'));
   $form = array();
   $form['intro'] = array(
-    '#markup' => '<p>' . st('Select the regional languages which have to be foreseen:') . '</p>',
+    '#markup' => '<p>' . st('Select the regional languages which have to be foreseen.') . '</p>',
   );
+  
   $form['regional_list'] = array(
     '#type' => 'checkboxes',
     '#title' => st('Regional languages list'),
     '#options' => _openfed_return_languages_list(),
+    '#description' => '<p>'.st('
+      Note : when checking a language, a main menu will automatically be created in the menus list for that language, and the menu will be located in the corresponding Navigation area.<br>
+      If no languages are checked, only the English language will be enabled. Consequently, the main menu will be created for the English language only and will be located in the Navigation area. <br>
+      Additional languages can be enabled after the installation, but the main menu will then have to be created manually for each language and located in the corresponding area.'
+    ).'</p>'
   );
   $form['submit'] = array(
     '#type' => 'submit',
@@ -92,6 +98,14 @@ function _openfed_create_panel_node_frontpage($lang) {
         
         _openfed_show_main_menu_for_language('system', 'main-menu', $lang);
         
+        $date_format = array();
+        $date_format[] = array( 'format' => 'm/d/Y', 'type' => 'date_only', 'language' => 'en' );
+        $date_format[] = array( 'format' => 'c', 'type' => 'html5_tools_iso8601', 'language' => 'en' );
+        $date_format[] = array( 'format' => 'l, F j, Y - H:i', 'type' => 'long', 'language' => 'en' );
+        $date_format[] = array( 'format' => 'D, m/d/Y - H:i', 'type' => 'medium', 'language' => 'en' );
+        $date_format[] = array( 'format' => 'm/d/Y - H:i', 'type' => 'short', 'language' => 'en' );
+        _openfed_localize_date_format($date_format);
+        
         $query = db_update('languages')
               ->fields(array('prefix' => 'en'))
               ->condition('language', 'en', '=')
@@ -122,6 +136,14 @@ function _openfed_create_panel_node_frontpage($lang) {
         _openfed_set_block_into_region('menu',$menu['menu_name'], 'navigation');
         
         _openfed_show_main_menu_for_language('menu', $menu['menu_name'], $lang);
+        
+        $date_format = array();
+        $date_format[] = array( 'format' => 'd/m/Y', 'type' => 'date_only', 'language' => 'fr' );
+        $date_format[] = array( 'format' => 'c', 'type' => 'html5_tools_iso8601', 'language' => 'fr' );
+        $date_format[] = array( 'format' => 'l, j. F Y - G:i', 'type' => 'long', 'language' => 'fr' );
+        $date_format[] = array( 'format' => 'D, d/m/Y - H:i', 'type' => 'medium', 'language' => 'fr' );
+        $date_format[] = array( 'format' => 'd/m/Y', 'type' => 'short', 'language' => 'fr' );
+        _openfed_localize_date_format($date_format);
       break;
       case 'nl':
         $title = st('Welkom');
@@ -147,6 +169,14 @@ function _openfed_create_panel_node_frontpage($lang) {
         _openfed_set_block_into_region('menu',$menu['menu_name'], 'navigation');
         
         _openfed_show_main_menu_for_language('menu', $menu['menu_name'], $lang);
+        
+        $date_format = array();
+        $date_format[] = array( 'format' => 'd/m/Y', 'type' => 'date_only', 'language' => 'nl' );
+        $date_format[] = array( 'format' => 'c', 'type' => 'html5_tools_iso8601', 'language' => 'nl' );
+        $date_format[] = array( 'format' => 'l, j. F Y - G:i', 'type' => 'long', 'language' => 'nl' );
+        $date_format[] = array( 'format' => 'D, d/m/Y - H:i', 'type' => 'medium', 'language' => 'nl' );
+        $date_format[] = array( 'format' => 'd/m/Y', 'type' => 'short', 'language' => 'nl' );
+        _openfed_localize_date_format($date_format);
       break;
     }
 
@@ -275,4 +305,12 @@ function _openfed_show_main_menu_for_language($module, $delta, $language) {
   $query = db_insert('i18n_block_language')->fields(array('language', 'module', 'delta'));
   $query->values(array('language' => $language,'module' => $module,'delta' => $delta,));
   $query->execute();
+}
+
+function _openfed_localize_date_format($date_format){
+
+  foreach( $date_format as $key => $date_format_locale ) {
+    drupal_write_record('date_format_locale', $date_format_locale);
+  }
+  
 }

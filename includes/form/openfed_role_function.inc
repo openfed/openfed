@@ -8,12 +8,15 @@ function openfed_role_form() {
   drupal_set_title(st('Role configuration'));
   $form = array();
   $form['intro'] = array(
-    '#markup' => '<p>' . st('Select the roles and the corresponding permission to foresee:') . '<br/>' . st('(By default "Admin" is automaticaly created.)') . '</p>',
+    '#markup' => '<p>' . st('Select the roles and the corresponding permission to foresee:') . '<br/>' . st('(By default "Admin" role is automatically created.)') . '</p>',
   );
   $form['role_list'] = array(
     '#type' => 'checkboxes',
     '#title' => st('Roles'),
     '#options' => _openfed_return_roles_list(),
+    '#description' => st('
+      Note : by checking the roles, the roles and their associated set of permissions will be automatically created.<br>
+      They can also be created after the installation, but the set of permissions will have to be defined manually.')
   );
   $form['submit'] = array(
     '#type' => 'submit',

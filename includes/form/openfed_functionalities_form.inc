@@ -10,7 +10,7 @@ function openfed_functionalities_form() {
   $form = array();
 
   $form['intro'] = array(
-    '#markup' => '<p>' . st('Select the specific functionalities that have to be available in the website.') . '</p>',
+    '#markup' => '<p>' . st('Select the specific functionalities that have to be available in the website.') . '</p><p>'.st('Note : each module can be enabled after the installation in the Modules list.').'</p>',
   );
 
   $form['module_list'] = array(

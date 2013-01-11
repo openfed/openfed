@@ -15,7 +15,7 @@
     <?php if ($title): ?><h1 class="page-title"><?php print $title; ?></h1><?php endif; ?>
   </div>
 
-  <div id="page">
+  <div id="page" class="clearfix">
 
     <?php if ($sidebar_first): ?>
       <div id="sidebar-first" class="sidebar">
