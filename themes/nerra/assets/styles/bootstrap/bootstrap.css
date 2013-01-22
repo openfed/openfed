@@ -595,8 +595,16 @@ div.messages {
   border: 1px solid;
   margin: 6px 0;
   padding: 10px 10px 10px 50px; /* LTR */
+  clear:both;
+  *zoom:1;
 }
-
+div.messages:before,
+div.messages:after {
+  display: table;
+  content: " ";
+  line-height: 0;
+  clear: both;
+}
 div.status {
   background-image: url(../../icons/message-24-ok.png);
   border-color: #be7;

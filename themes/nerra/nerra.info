@@ -5,8 +5,18 @@ version = 1.0
 
 
 ; Stylesheet list
-  ; see in template.php in hook_preprocess_page
+  ; see in template_generic.php in hook_preprocess_page
+  stylesheets[screen][] = assets/styles/bootstrap/bootstrap.css
+  stylesheets[screen][] = assets/styles/bootstrap/bootstrap-responsive.css
+  stylesheets[screen][] = assets/styles/design.css
+  stylesheets[print][] = assets/styles/print.css
   
+; Javascript
+  scripts[] = assets/scripts/modernizr-2.0.6.min.js
+  scripts[] = assets/scripts/script.js
+
+; PHP Version
+  php = 5.3.x
 
 ; Regions list
   regions[tools] = Tools

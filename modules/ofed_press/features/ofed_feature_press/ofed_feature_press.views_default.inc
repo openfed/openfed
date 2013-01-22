@@ -326,9 +326,9 @@ function ofed_feature_press_views_default_views() {
   $handler->display->display_options['use_more'] = TRUE;
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
-  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_always'] = TRUE;
   $handler->display->display_options['defaults']['use_more_text'] = FALSE;
-  $handler->display->display_options['use_more_text'] = 'See more press';
+  $handler->display->display_options['use_more_text'] = 'See all press';
   $handler->display->display_options['defaults']['access'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['defaults']['pager'] = FALSE;
@@ -390,9 +390,9 @@ function ofed_feature_press_views_default_views() {
   $handler->display->display_options['use_more'] = TRUE;
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
-  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_always'] = TRUE;
   $handler->display->display_options['defaults']['use_more_text'] = FALSE;
-  $handler->display->display_options['use_more_text'] = 'See more press';
+  $handler->display->display_options['use_more_text'] = 'See all press';
   $handler->display->display_options['defaults']['access'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['defaults']['pager'] = FALSE;
@@ -455,9 +455,9 @@ function ofed_feature_press_views_default_views() {
   $handler->display->display_options['use_more'] = TRUE;
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
-  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_always'] = TRUE;
   $handler->display->display_options['defaults']['use_more_text'] = FALSE;
-  $handler->display->display_options['use_more_text'] = 'See more press';
+  $handler->display->display_options['use_more_text'] = 'See all press';
   $handler->display->display_options['defaults']['access'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['defaults']['pager'] = FALSE;
@@ -537,7 +537,7 @@ function ofed_feature_press_views_default_views() {
     t('Page: List'),
     t('Block: Teaser'),
     t('Latest press'),
-    t('See more press'),
+    t('See all press'),
     t('Press: Teaser'),
     t('Block: List'),
     t('Press: List'),

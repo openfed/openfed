@@ -221,72 +221,71 @@ blockquote													{
  ol ol ol ul									{
     margin: 5px 0;
 }
- ul li											{
+ul li											{
     padding: 10px 0 0 25px;
-    background: url(../images/bullet-firstlevel.png) no-repeat 0 12px;
+    background: url(../images/bullet-secondlevel.png) no-repeat 0 12px;
 }
- ul li ul > li,
- ol li ul > li									{
-	background: url(../images/bullet-secondlevel.png) no-repeat 0 12px;
+ul li ul > li,
+ol li ul > li									{
+	background: url(../images/bullet-thirdlevel.png) no-repeat 0 12px;
 	margin: 0;
 	padding: 10px 0 0 25px;
 }
- ul li ul li ul li,
- ol li ul li ul li,
- ol li ol li ul li								{
-	background: url(../images/bullet-thirdlevel.png) no-repeat 0 12px;
+ul li ul li ul li,
+ol li ul li ul li,
+ol li ol li ul li								{
+	background: url(../images/bullet-secondlevel.png) no-repeat 0 12px;
 }
- ol li ul li:after,
- ul li ol > li 									{
+ol li ul li:after,
+ul li ol > li 									{
 	background : transparent
 }
- ol												{
+ol												{
 	color:#ff7300;
     list-style-type: decimal;
     margin: 0 0 15px 0;
 }
- ol ol,
- ol ol ol,
- ol ol ol ol									{
+ol ol,
+ol ol ol,
+ol ol ol ol									{
     margin: 5px 0;
 }
- ol > li										{
+ol > li										{
     padding: 10px 0 0 0px;
     margin: 0 0 0 25px;
 	position:relative;
 	color:#32312e;
 	counter-increment: firstlevel;/* Liste à puces ordonnées : http://www.alsacreations.com/article/lire/1210-donnez-du-style-a-vos-listes.html */
 }
- ol > li:after 									{
+ol > li:after 									{
 	display: inline-block;
 	content: counter(firstlevel) " ";
 	padding: 0px 5px;
-	color: white;
+	color: #ff7300;
 	margin: 0 0 0 0;
-	background: #ff7300;
-	-webkit-border-radius: 10px;
-	-moz-border-radius: 10px;
-	border-radius: 10px;
+	background: transparent;
 	position:absolute;
 	left: -24px;
 	font-size: 0.82em;
 	line-height: 1.5em;
 	zoom: 1;
 	top: 11px;
+	text-shadow:none;
+	font-weight: bold;
 }
- ol li ol > li									{
+ol li ol > li									{
 	counter-increment: secondlevel;/* Liste à puces ordonnées : http://www.alsacreations.com/article/lire/1210-donnez-du-style-a-vos-listes.html */
 }
- ol li ol > li:after 							{
+ol li ol > li:after 							{
 	content: counter(secondlevel) " ";
-	background: none repeat scroll 0 0 #FF7300;
+	background: none repeat scroll 0 0 transparent;
 }
- ol li ol li ol > li							{
+ol li ol li ol > li							{
 	counter-increment: thirdlevel;/* Liste à puces ordonnées : http://www.alsacreations.com/article/lire/1210-donnez-du-style-a-vos-listes.html */
 }
- ol li ol li ol > li:after 						{
+ol li ol li ol > li:after 						{
 	content: counter(thirdlevel) " ";
-	background: none repeat scroll 0 0 #FF7300;
+	background: none repeat scroll 0 0 transparent;
 }
  ol li ol li ol li ol > li						{
 	counter-increment: fourthlevel;/* Liste à puces ordonnées : http://www.alsacreations.com/article/lire/1210-donnez-du-style-a-vos-listes.html */
@@ -304,7 +303,7 @@ div.messages {
 }
 
 div.status {
-  background-image: url(../../misc/message-24-ok.png);
+  background-image: url(../icons/message-24-ok.png);
   border-color: #be7;
 }
 div.status,
@@ -317,7 +316,7 @@ table tr.ok {
 }
 
 div.warning {
-  background-image: url(../../misc/message-24-warning.png);
+  background-image: url(../icons/message-24-warning.png);
   border-color: #ed5;
 }
 div.warning,
@@ -330,7 +329,7 @@ table tr.warning {
 }
 
 div.error {
-  background-image: url(../../misc/message-24-error.png);
+  background-image: url(../icons/message-24-error.png);
   border-color: #ed541d;
 }
 div.error,
@@ -368,5 +367,6 @@ ul.cke_panel_list li{
 ul.cke_panel_list li div {
   margin: 0;
   padding: 2px;
+  background : none !important;
 }
 

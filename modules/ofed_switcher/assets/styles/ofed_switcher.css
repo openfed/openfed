@@ -70,8 +70,10 @@ header .container { position: relative; }
 .dashboard .dashbox.orange h2                               { background:url(../images/bg-dashboard-title-orange.png) no-repeat center right;}
 .dashboard .dashbox.tools .dashbox-content                  { padding:0 0 0 0px;}
 .dashboard .dashbox.tools .dashbox-content li               { float:none; width:auto; }
-.dashboard .dashbox.tools .dashbox-content li.analytics a   { display:block; background:url(../images/icon-charts.png) no-repeat center left; padding:10px 0 10px 45px; }
-.dashboard .dashbox.tools .dashbox-content li.cms a         { display:block; background:url(../images/icon-pdf.png) no-repeat center left; padding:10px 0 10px 45px; }
+.dashboard .dashbox .dashbox-content a.icon					{ display: block; height: 32px; padding: 10px 0 10px 45px; line-height: 32px;}
+.dashboard .dashbox .dashbox-content a.icon.charts			{ background: url(../images/icon-charts.png) no-repeat center left;}
+.dashboard .dashbox .dashbox-content a.icon.pdf				{ background: url(../images/icon-pdf.png) no-repeat center left;}
+.dashboard .dashbox .dashbox-content a.icon.links			{ background: url(../images/icon-links.png) no-repeat center left;}
 
 .dashboard .sponsor                                         { text-align:center; }
 

@@ -462,7 +462,7 @@ function ofed_feature_page_field_default_fields() {
           'module' => 'image',
           'settings' => array(
             'image_link' => '',
-            'image_style' => '',
+            'image_style' => 'ofed_page_thumb',
           ),
           'type' => 'image',
           'weight' => '3',

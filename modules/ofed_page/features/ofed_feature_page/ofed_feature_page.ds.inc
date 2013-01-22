@@ -257,6 +257,7 @@ function ofed_feature_page_ds_layout_settings_info() {
       'ds_content' => 'div',
     ),
     'layout_wrapper' => 'div',
+    'layout_attributes' => '',
     'layout_attributes_merge' => 1,
     'hide_page_title' => '0',
     'page_option_title' => '',

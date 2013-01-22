@@ -9,7 +9,7 @@ core = 7.x
 
 ; CK Editor
 libraries[ckeditor][download][type] = get
-libraries[ckeditor][download][url] = http://download.cksource.com/CKEditor/CKEditor/CKEditor%203.6.5/ckeditor_3.6.5.tar.gz
+libraries[ckeditor][download][url] = http://download.cksource.com/CKEditor/CKEditor/CKEditor%203.6.6/ckeditor_3.6.6.tar.gz
 libraries[ckeditor][directory_name] = "ckeditor"
 libraries[ckeditor][destination] = libraries
 
@@ -278,6 +278,7 @@ projects[table_altrow][subdir] = contrib
 
 projects[text_resize][version] = "1.7"
 projects[text_resize][subdir] = contrib
+projects[text_resize][patch][] = "http://drupal.org/files/text_resize_reset-1119994-6.patch"
 
 projects[token][version] = "1.4"
 projects[token][subdir] = contrib

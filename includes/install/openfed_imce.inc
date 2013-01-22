@@ -27,10 +27,11 @@ variable_set('imce_profiles', array(
       ),
       'thumbnails' => array(
         '0' => array( 'name' => 'Thumb(60x60)', 'dimensions' => '60x60', 'prefix' => 'thumb_', 'suffix' => '' ),
-        '1' => array( 'name' => 'Small(90x90)', 'dimensions' => '90x90', 'prefix' => 'small_', 'suffix' => '' ),
-        '2' => array( 'name' => 'Medium(120x120)', 'dimensions' => '120x120', 'prefix' => 'medium_', 'suffix' => '' ),
-        '3' => array( 'name' => 'Large(160x160)', 'dimensions' => '160x160', 'prefix' => 'large_', 'suffix' => '' ),
-        '4' => array( 'name' => 'Extra(200x200)', 'dimensions' => '200x200', 'prefix' => 'extra_', 'suffix' => '' )
+        '1' => array( 'name' => 'Small(100x100)', 'dimensions' => '100x100', 'prefix' => 'small_', 'suffix' => '' ),
+        '2' => array( 'name' => 'Medium(150x150)', 'dimensions' => '150x150', 'prefix' => 'medium_', 'suffix' => '' ),
+        '3' => array( 'name' => 'Large(200x200)', 'dimensions' => '200x200', 'prefix' => 'large_', 'suffix' => '' ),
+        '4' => array( 'name' => 'Extra(300x300)', 'dimensions' => '300x300', 'prefix' => 'extra_', 'suffix' => '' ),
+        '5' => array( 'name' => 'Full(400x400)', 'dimensions' => '400x400', 'prefix' => 'full_', 'suffix' => '' )
       ),
       'mkdirnum' => 0
     )

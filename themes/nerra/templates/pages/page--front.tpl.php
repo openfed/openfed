@@ -30,9 +30,10 @@
 
 <nav id="navigation">
   <div class="container">
-    
+    <span class="icon-menu"><?php echo("menu");?></span><!--  Hidden for devices >800px  -->
 	<!-- Region Navigation -->	
-      <?php print render($page['navigation']); ?>
+	<a name="menu"></a>
+	<?php print render($page['navigation']); ?>
       
   </div>
 </nav>

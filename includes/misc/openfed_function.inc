@@ -1,6 +1,30 @@
 <?php
 
 /**
+ * Return the default front theme.
+ * 
+ */
+function openfed_return_default_front_theme_name() {
+  return 'nerra';
+}
+
+/**
+ * Return the default backend theme.
+ * 
+ */
+function openfed_return_default_backend_theme_name() {
+  return 'cms_theme';
+}
+
+/**
+ * Return the default maintenance theme.
+ * 
+ */
+function openfed_return_default_maintenance_theme_name() {
+  return 'maintenance';
+}
+
+/**
  * Return the array for the list of potential languages.
  * 
  * @return array 
@@ -11,6 +35,19 @@ function _openfed_return_languages_list() {
     'nl' => st('Dutch (Nederlands)')
   );
   return $languages_list;
+}
+
+/**
+ * Return the array for the list of potential menu.
+ * 
+ * @return array 
+ */
+function _openfed_return_menu_list() {
+  $menu_list = array(
+    'menu-tools-menu' => st('Tools Menu: placed at the very top of the screen'),
+    'menu-footer-menu' => st('Footer Menu: placed at the very bottom of the screen')
+  );
+  return $menu_list;
 }
 
 /**
@@ -26,6 +63,125 @@ function _openfed_return_roles_list() {
     'authenticated_visitor' => st('Authenticated Visitor: this role is required if there is possibility to log in into the website.'),
   );
   return $role_list;
+}
+
+/**
+ * Return the array for the list of all taxonomy.
+ * 
+ * @return array 
+ */
+function _openfed_return_taxonomy_list() {
+  $taxonomy_list = array(
+    'categories' => st('Categories.'),
+  );
+  return $taxonomy_list;
+}
+
+/**
+ * Return the array for the list of all functionalities.
+ * 
+ * @return array 
+ */
+function _openfed_return_functionalities_list() {
+  $features = drupal_get_path('profile', 'openfed').'/assets/images/features.png';
+  $modules = drupal_get_path('profile', 'openfed').'/assets/images/modules.png';
+  
+  $function_list = array(
+    // Content types
+    'ofed_faq' => array(
+      'title' => st('FAQ'),
+      'picture' => $features,
+      'description' => st('Enables the creation of frequently asked questions.'),
+    ),
+    'ofed_new' => array(
+      'title' => st('News'),
+      'picture' => $features,
+      'description' => st('Enables the creation of news.'),
+    ),
+    'ofed_press' => array(
+      'title' => st('Press'),
+      'picture' => $features,
+      'description' => st('Enables the creation of press.'),
+    ),
+    'ofed_slideshow' => array(
+      'title' => st('Slideshow'),
+      'picture' => $features,
+      'description' => st('Enables the creation of slideshow.'),
+    ),
+    'poll' => array(
+      'title' => st('Poll'),
+      'picture' => $features,
+      'description' => st('Enables the creation of poll.'),
+    ),
+    'blog' => array(
+      'title' => st('Blog'),
+      'picture' => $features,
+      'description' => st('Enables the creation of blog.'),
+    ),
+    
+    // Modules
+    'ofed_federalheader' => array(
+      'title' => st('Federal header'),
+      'picture' => $modules,
+      'description' => st('Provide the official Belgian Federal Authorities header.'),
+    ),
+    'lexicon' => array(
+      'title' => st('Lexicon'),
+      'picture' => $modules,
+      'description' => st('Maintain one or more lexicons on your site and optionally mark term from one or more lexicons in the content of the website.'),
+    ),
+    'beididp' => array(
+      'title' => st('Belgian eID IDP Integration'),
+      'picture' => $modules,
+      'description' => st('Allows users to authenticate with their Belgian eID card, using Fedict\'s OpenID Identity provider.'),
+    ),
+    'content_access' => array(
+      'title' => st('Content Access'),
+      'picture' => $modules,
+      'description' => st('Provides flexible content access control.'),
+    ),
+    'countries' => array(
+      'title' => st('Countries'),
+      'picture' => $modules,
+      'description' => st('A module that provides a FAPI / Field country element and a simple wrapper module to store / update country data.'),
+    ),
+    'field_permission' => array(
+      'title' => st('Field Permission'),
+      'picture' => $modules,
+      'description' => st('Set field-level permissions to create, update or view fields.'),
+    ),
+    'l10n_client' => array(
+      'title' => st('Localization client'),
+      'picture' => $modules,
+      'description' => st('Provides on-page localization'),
+    ),
+    'module_filter' => array(
+      'title' => st('Module filter'),
+      'picture' => $modules,
+      'description' => st('Filter the modules list.'),
+    ),
+    'multiple_node_menu' => array(
+      'title' => st('Multiple node menu'),
+      'picture' => $modules,
+      'description' => st('Replaces the node menu form with one that can handle multiple parents.'),
+    ),
+    'performance' => array(
+      'title' => st('Performance'),
+      'picture' => $modules,
+      'description' => st('Logs detailed and/or summary page generation time and memory consumption for page requests.'),
+    ),
+    'role_delegation' => array(
+      'title' => st('Role delegation'),
+      'picture' => $modules,
+      'description' => st('Allows site administrators to grant some roles the authority to assign selected roles to users.'),
+    ),
+    'securelogin' => array(
+      'title' => st('Secure login'),
+      'picture' => $modules,
+      'description' => st('Enables secure login.'),
+    ),
+  );
+  return $function_list;
 }
 
 /**
@@ -785,6 +941,7 @@ function _openfed_return_permission_authenticated_user() {
   );
   return $permission;
 }
+
 /**
  * Return the array for the list of anonymous user permission
  * 
@@ -836,114 +993,6 @@ function _openfed_return_permission_anonymous_user() {
   );
   return $permission;
 }
-
-/**
- * Return the array for the list of all functionalities.
- * 
- * @return array 
- */
-function _openfed_return_functionalities_list() {
-  $features = drupal_get_path('profile', 'openfed').'/assets/images/features.gif';
-  $modules = drupal_get_path('profile', 'openfed').'/assets/images/modules.gif';
-  
-  $function_list = array(
-    // Content types
-    'ofed_faq' => array(
-      'title' => st('FAQ'),
-      'picture' => $features,
-      'description' => st('Enables the creation of frequently asked questions.'),
-    ),
-    'ofed_new' => array(
-      'title' => st('News'),
-      'picture' => $features,
-      'description' => st('Enables the creation of news.'),
-    ),
-    'ofed_press' => array(
-      'title' => st('Press'),
-      'picture' => $features,
-      'description' => st('Enables the creation of press.'),
-    ),
-    'ofed_slideshow' => array(
-      'title' => st('Slideshow'),
-      'picture' => $features,
-      'description' => st('Enables the creation of slideshow.'),
-    ),
-    'poll' => array(
-      'title' => st('Poll'),
-      'picture' => $features,
-      'description' => st('Enables the creation of poll.'),
-    ),
-    'blog' => array(
-      'title' => st('Blog'),
-      'picture' => $features,
-      'description' => st('Enables the creation of blog.'),
-    ),
-    
-    // Modules
-    'ofed_federalheader' => array(
-      'title' => st('Federal header'),
-      'picture' => $features,
-      'description' => st('Provide the official Belgian Federal Authorities header.'),
-    ),
-    'lexicon' => array(
-      'title' => st('Lexicon'),
-      'picture' => $modules,
-      'description' => st('Maintain one or more lexicons on your site and optionally mark term from one or more lexicons in the content of the website.'),
-    ),
-    'beididp' => array(
-      'title' => st('Belgian eID IDP Integration'),
-      'picture' => $modules,
-      'description' => st('Allows users to authenticate with their Belgian eID card, using Fedict\'s OpenID Identity provider.'),
-    ),
-    'content_access' => array(
-      'title' => st('Content Access'),
-      'picture' => $modules,
-      'description' => st('Provides flexible content access control.'),
-    ),
-    'countries' => array(
-      'title' => st('Countries'),
-      'picture' => $modules,
-      'description' => st('A module that provides a FAPI / Field country element and a simple wrapper module to store / update country data.'),
-    ),
-    'field_permission' => array(
-      'title' => st('Field Permission'),
-      'picture' => $modules,
-      'description' => st('Set field-level permissions to create, update or view fields.'),
-    ),
-    'l10n_client' => array(
-      'title' => st('Localization client'),
-      'picture' => $modules,
-      'description' => st('Provides on-page localization'),
-    ),
-    'module_filter' => array(
-      'title' => st('Module filter'),
-      'picture' => $modules,
-      'description' => st('Filter the modules list.'),
-    ),
-    'multiple_node_menu' => array(
-      'title' => st('Multiple node menu'),
-      'picture' => $modules,
-      'description' => st('Replaces the node menu form with one that can handle multiple parents.'),
-    ),
-    'performance' => array(
-      'title' => st('Performance'),
-      'picture' => $modules,
-      'description' => st('Logs detailed and/or summary page generation time and memory consumption for page requests.'),
-    ),
-    'role_delegation' => array(
-      'title' => st('Role delegation'),
-      'picture' => $modules,
-      'description' => st('Allows site administrators to grant some roles the authority to assign selected roles to users.'),
-    ),
-    'securelogin' => array(
-      'title' => st('Secure login'),
-      'picture' => $modules,
-      'description' => st('Enables secure login.'),
-    ),
-  );
-  return $function_list;
-}
-
 
 /**
  * Preprocess of the module list in functionalities install task
@@ -1069,29 +1118,4 @@ function theme_form_element_checkbox_list($variables) {
   $output .= "</div>\n";
 
   return $output;
-}
-
-
-/**
- * Return the default front theme.
- * 
- */
-function openfed_return_default_front_theme_name() {
-  return 'nerra';
-}
-
-/**
- * Return the default backend theme.
- * 
- */
-function openfed_return_default_backend_theme_name() {
-  return 'cms_theme';
-}
-
-/**
- * Return the default maintenance theme.
- * 
- */
-function openfed_return_default_maintenance_theme_name() {
-  return 'maintenance';
 }

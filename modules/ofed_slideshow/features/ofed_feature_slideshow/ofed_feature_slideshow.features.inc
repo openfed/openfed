@@ -35,21 +35,6 @@ function ofed_feature_slideshow_image_default_styles() {
   $styles['ofed_slideshow_images'] = array(
     'name' => 'ofed_slideshow_images',
     'effects' => array(
-      1 => array(
-        'label' => 'Change file format',
-        'help' => 'Choose to save the image as a different file type.',
-        'effect callback' => 'coloractions_convert_image',
-        'dimensions passthrough' => TRUE,
-        'form callback' => 'coloractions_convert_form',
-        'summary theme' => 'coloractions_convert_summary',
-        'module' => 'imagecache_coloractions',
-        'name' => 'coloractions_convert',
-        'data' => array(
-          'format' => 'image/png',
-          'quality' => '75',
-        ),
-        'weight' => '1',
-      ),
       2 => array(
         'label' => 'Scale',
         'help' => 'Scaling will maintain the aspect-ratio of the original image. If only a single dimension is specified, the other dimension will be calculated.',
@@ -61,44 +46,10 @@ function ofed_feature_slideshow_image_default_styles() {
         'name' => 'image_scale',
         'data' => array(
           'width' => '438',
-          'height' => '',
+          'height' => '164',
           'upscale' => 0,
         ),
         'weight' => '2',
-      ),
-      3 => array(
-        'label' => 'Underlay (background)',
-        'help' => 'Choose the file image you wish to use as an background, and position the processed image on it.',
-        'effect callback' => 'canvasactions_canvas2file_image',
-        'dimensions callback' => 'canvasactions_canvas2file_dimensions',
-        'form callback' => 'canvasactions_canvas2file_form',
-        'summary theme' => 'canvasactions_canvas2file_summary',
-        'module' => 'imagecache_canvasactions',
-        'name' => 'canvasactions_canvas2file',
-        'data' => array(
-          'xpos' => 0,
-          'ypos' => 0,
-          'alpha' => '100',
-          'path' => 'module://ofed_slideshow/assets/images/transparent_800x600.png',
-          'dimensions' => 'background',
-        ),
-        'weight' => '3',
-      ),
-      4 => array(
-        'label' => 'Crop',
-        'help' => 'Cropping will remove portions of an image to make it the specified dimensions.',
-        'effect callback' => 'image_crop_effect',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'image_crop_form',
-        'summary theme' => 'image_crop_summary',
-        'module' => 'image',
-        'name' => 'image_crop',
-        'data' => array(
-          'width' => '438',
-          'height' => '164',
-          'anchor' => 'left-top',
-        ),
-        'weight' => '4',
       ),
     ),
   );

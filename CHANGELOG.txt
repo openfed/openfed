@@ -1,6 +1,20 @@
 CHANGELOG
 =========
 
+7.x-0.4 : 21 January 2013
+--------------------------
+
+  * Issue
+    #1838210: Support for Postgresql in profile installation file
+    #1894530: Core update: Drupal 7.19
+
+  * Drupal updated to 7.19
+
+  * Module updated
+    - patch added for text_resize
+    
+
+
 7.x-0.4 : 11 January 2013
 --------------------------
 
@@ -9,8 +23,6 @@ CHANGELOG
     #1885022 : Library update: ckeditor
     #1885124 : Error: Column 'module' cannot be null
 
-  * Bug
-    - style in ckeditor style dropdown can not be read correctly
 
 7.x-0.4 : 09 January 2013
 --------------------------

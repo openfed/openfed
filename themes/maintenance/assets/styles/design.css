@@ -46,6 +46,17 @@ a:focus, img:focus, input:focus		{
 	border:1px solid #ff7300!important;
 	outline:none;
 }
+/* Désactiver les comportements liens dans les box de message lors de l'installation 	*/
+
+#content #console a, 
+#content #console a:hover,
+#content #console a:focus,
+#content #console a:link			{
+	color:#32324B!important;
+	text-decoration: none!important;
+	cursor: text!important;
+}
+
 /* FORMS * 
  ------------------------------------------------------------------------------------------------------------------------------------------
 *       */
@@ -299,6 +310,10 @@ fieldset#edit-update-notifications {
 	position: absolute;
  	left: 7px;
  	top: 7px;
+}
+
+.progress .filled 															{
+	background: #ff7300 url(../images/progress.gif)!important;
 }
 
 /* FEATURES ON HOVER       *

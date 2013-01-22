@@ -29,8 +29,9 @@
 
 <nav id="navigation">
   <div class="container">
-    
+    <span class="icon-menu"><?php echo("menu");?></span><!--  Hidden for devices >800px  -->
 	<!-- Region Navigation -->	
+	<a name="menu"></a>
 	<?php print render($page['navigation']); ?>
     
   </div>

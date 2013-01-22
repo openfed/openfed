@@ -1,9 +1,54 @@
 <?php
 
+function _get_menu_quick_info(){
+  $menu = array();
+  $menu['menu_name'] = "menu-quick-infos";
+  $menu['title'] = "Quick Infos";
+  $menu['description'] = "";
+  return $menu;
+}
+
 /**
  * Implements hook_install().
  */
 function ofed_switcher_install() {
+  // Create a Quick Infos Menu
+    menu_save(_get_menu_quick_info());
+  
+  // Update the menu router information.
+    menu_rebuild();
+  
+  // Create a link to google analytics
+    $item = array(
+      'link_title' => st('Google Analytics'),
+      'link_path' => 'http://www.google.com/analytics',
+      'menu_name' => 'menu-quick-infos',
+      'weight' => -50,
+      'options' => array(
+        'attributes' => array(
+          'class' => array(
+            0 => 'icon charts'
+          )
+        )
+      )
+    );
+    menu_link_save($item);
+    $item = array(
+      'link_title' => st('Download CMS Guide'),
+      'link_path' => '<front>',
+      'menu_name' => 'menu-quick-infos',
+      'weight' => -49,
+      'options' => array(
+        'attributes' => array(
+          'class' => array(
+            0 => 'icon pdf'
+          )
+        )
+      )
+    );
+    menu_link_save($item);
+  
+  
   // add switcher block to region
   $default_theme = variable_get('theme_default', 'nerra');
   $admin_theme = variable_get('admin_theme', 'cms_theme');
@@ -94,8 +139,10 @@ function ofed_switcher_install() {
 }
 
 function ofed_switcher_uninstall(){
+  menu_delete(_get_menu_quick_info());
+  
   $query = db_delete('block')
-           ->condition('module', 'ofed_switcher', '=')
-           ->condition('delta', 'ofed_switcher', '=')
-           ->execute();
+          ->condition('module', 'ofed_switcher', '=')
+          ->condition('delta', 'ofed_switcher', '=')
+          ->execute();
 }

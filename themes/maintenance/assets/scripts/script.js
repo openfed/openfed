@@ -18,14 +18,15 @@
         if ( el == true  ){
           el.addEventListener('keydown',function(e){if(e.keyCode==32){e.preventDefault();}},true);	
         }
-		// Change the logo from themes "seven" by openFED. Can't change directly in the html
-		var path = $("#logo").attr("src");	
 		
-		var reg = new RegExp("[/]+", "g");		// create a regular expression that looks for every  "/"
-		var tableau = path.split(reg); 			// split into an array the url every "/"
+		// Change the logo from themes "seven" by the actual logo "openFED" because it can't be change directly in the html
+		var path = $("#logo").attr("src");		// take the path of the image called with the id "logo"
+		
+		var reg = new RegExp("[/]+", "g");		// create a regular expression that looks for every  "/" in the variable "path"
+		var tableau = path.split(reg); 			// split into an array the url(path) every "/"
 		var newPath = tableau[0] + "//" + tableau[1] + "/profiles/openfed/assets/images/openfed_logo.gif"; // create the new url	
 		
-		$("#logo").attr("src", newPath);
+		$("#logo").attr("src", newPath);		// assign the newly created path to the image
 		
 		/* Button enabled - disabled 		 
 		 * */
@@ -38,7 +39,7 @@
 		// Change class button to activate/deactivate features	
 		
 		$("#edit-module-list .form-type-checkbox a.checkbox").click( function(e) {
-			e.preventDefault();
+			e.preventDefault(); 	// deactivate links behavior of the the tag "a href"
 			$(this).fadeOut("fast", function () {
 				var newclass = ( $(this).hasClass('enabled')) ? "disabled" : "enabled"; // Ternary condition to change the class
 				$(this).attr("class", "checkbox "+ newclass); 							// change class with the new one
@@ -78,6 +79,8 @@
 			
 		/* end button
 		 * */
-	
+		$("#content #console a").click( function(e) {
+			e.preventDefault(); 	// deactivate links behavior of the the tag "a href"
+		});
 	});
 })(jQuery)

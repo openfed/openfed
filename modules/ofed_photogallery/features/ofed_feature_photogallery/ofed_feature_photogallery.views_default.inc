@@ -25,7 +25,7 @@ function ofed_feature_photogallery_views_default_views() {
   $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['use_more'] = TRUE;
   $handler->display->display_options['use_more_always'] = FALSE;
-  $handler->display->display_options['use_more_text'] = 'See more galeries';
+  $handler->display->display_options['use_more_text'] = 'See all galeries';
   $handler->display->display_options['link_display'] = 'ofed_photogallery_page_list';
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['access']['perm'] = 'edit any ofed_photogallery content';
@@ -65,7 +65,7 @@ function ofed_feature_photogallery_views_default_views() {
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['defaults']['use_more_text'] = FALSE;
-  $handler->display->display_options['use_more_text'] = 'See more galeries';
+  $handler->display->display_options['use_more_text'] = 'See all galeries';
   $handler->display->display_options['defaults']['access'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['access']['perm'] = 'edit any ofed_photogallery content';
@@ -260,7 +260,7 @@ function ofed_feature_photogallery_views_default_views() {
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['defaults']['use_more_text'] = FALSE;
-  $handler->display->display_options['use_more_text'] = 'See more galeries';
+  $handler->display->display_options['use_more_text'] = 'See all galeries';
   $handler->display->display_options['defaults']['access'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['defaults']['pager'] = FALSE;
@@ -323,9 +323,9 @@ function ofed_feature_photogallery_views_default_views() {
   $handler->display->display_options['use_more'] = TRUE;
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
-  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_always'] = TRUE;
   $handler->display->display_options['defaults']['use_more_text'] = FALSE;
-  $handler->display->display_options['use_more_text'] = 'See more galeries';
+  $handler->display->display_options['use_more_text'] = 'See all galeries';
   $handler->display->display_options['defaults']['access'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['defaults']['pager'] = FALSE;
@@ -391,9 +391,9 @@ function ofed_feature_photogallery_views_default_views() {
   $handler->display->display_options['use_more'] = TRUE;
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
-  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_always'] = TRUE;
   $handler->display->display_options['defaults']['use_more_text'] = FALSE;
-  $handler->display->display_options['use_more_text'] = 'See more galeries';
+  $handler->display->display_options['use_more_text'] = 'See all galeries';
   $handler->display->display_options['defaults']['access'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['defaults']['pager'] = FALSE;
@@ -460,9 +460,9 @@ function ofed_feature_photogallery_views_default_views() {
   $handler->display->display_options['use_more'] = TRUE;
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
-  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_always'] = TRUE;
   $handler->display->display_options['defaults']['use_more_text'] = FALSE;
-  $handler->display->display_options['use_more_text'] = 'See more galeries';
+  $handler->display->display_options['use_more_text'] = 'See all galeries';
   $handler->display->display_options['defaults']['access'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['defaults']['pager'] = FALSE;
@@ -528,9 +528,9 @@ function ofed_feature_photogallery_views_default_views() {
   $handler->display->display_options['use_more'] = TRUE;
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
-  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_always'] = TRUE;
   $handler->display->display_options['defaults']['use_more_text'] = FALSE;
-  $handler->display->display_options['use_more_text'] = 'See more galeries';
+  $handler->display->display_options['use_more_text'] = 'See all galeries';
   $handler->display->display_options['defaults']['link_display'] = FALSE;
   $handler->display->display_options['link_display'] = 'ofed_photogallery_page_list';
   $handler->display->display_options['defaults']['access'] = FALSE;
@@ -596,9 +596,9 @@ function ofed_feature_photogallery_views_default_views() {
   $handler->display->display_options['use_more'] = TRUE;
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
-  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_always'] = TRUE;
   $handler->display->display_options['defaults']['use_more_text'] = FALSE;
-  $handler->display->display_options['use_more_text'] = 'See more galeries';
+  $handler->display->display_options['use_more_text'] = 'See all galeries';
   $handler->display->display_options['defaults']['link_display'] = FALSE;
   $handler->display->display_options['link_display'] = 'ofed_photogallery_page_list';
   $handler->display->display_options['defaults']['access'] = FALSE;
@@ -658,7 +658,7 @@ function ofed_feature_photogallery_views_default_views() {
   $handler->display->display_options['block_description'] = 'Photos galeries: Latest updated photos galery';
   $translatables['ofed_photogallery'] = array(
     t('Master'),
-    t('See more galeries'),
+    t('See all galeries'),
     t('Apply'),
     t('Reset'),
     t('Sort by'),

@@ -1,14 +1,5 @@
 <?php
 
-// Create a Home link in the main menu.
-$item = array(
-  'link_title' => st('Home'),
-  'link_path' => '<front>',
-  'menu_name' => 'main-menu',
-  'weight' => -50,
-);
-menu_link_save($item);
-
 $menus = menu_get_menus(FALSE);
 if(!isset($menus['menu-cms-menu'])) {
   // Create a CMS Menu if not exist

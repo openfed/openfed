@@ -4,13 +4,6 @@
  * Preprocess variables for page.tpl.php
  */
 function nerra_preprocess_page(&$variables) {
-  drupal_add_css(drupal_get_path('theme', 'nerra').'/assets/styles/bootstrap/bootstrap.css', array('media' => 'screen'));
-  drupal_add_css(drupal_get_path('theme', 'nerra').'/assets/styles/bootstrap/bootstrap-responsive.css', array('media' => 'screen'));
-  drupal_add_css(drupal_get_path('theme', 'nerra').'/assets/styles/design.css');
-  drupal_add_css(drupal_get_path('theme', 'nerra').'/assets/styles/print.css', array('media' => 'print'));  
-  drupal_add_js(drupal_get_path('theme', 'nerra') . '/assets/scripts/modernizr-2.0.6.min.js');
-  drupal_add_js(drupal_get_path('theme', 'nerra') . '/assets/scripts/script.js');
-  
   if (!empty($variables['page']['sidebar_first']) && !empty($variables['page']['sidebar_second'])) {
     $variables['class_left'] = theme_get_setting('nerra_layout_width_left');
     $variables['class_right'] = theme_get_setting('nerra_layout_width_right');

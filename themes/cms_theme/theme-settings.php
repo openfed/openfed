@@ -211,11 +211,6 @@ function cms_theme_form_system_theme_settings_alter(&$form, &$form_state) {
         '#title' => t('Sponsor label'),
         '#default_value' => theme_get_setting('cms_theme_toggle_sponsor_label'),
       );
-      $form['cms_theme']['cms_theme_toggle']['cms_theme_toggle_quickinfos'] = array(
-        '#type' => 'checkbox',
-        '#title' => t('Quick infos menu'),
-        '#default_value' => theme_get_setting('cms_theme_toggle_quickinfos'),
-      );
 
       
     /**

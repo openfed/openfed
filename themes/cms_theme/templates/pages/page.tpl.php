@@ -29,16 +29,6 @@
 	<!-- Region Navigation -->	
 	<nav class="cms-menu">
       <?php print render($page['navigation']); ?>
-      <?php if( theme_get_setting('cms_theme_toggle_quickinfos') && $user->uid) : ?>
-        <ul class="quick-info menu clearfix">
-          <li class="expanded"><span class="menu-item-container"><?php echo t('Quick Infos') ?></span>
-            <ul class="menu">
-              <li><?php echo '<a class="lk-quick" href="http://www.google.com/analytics" target="_blank" >Google Analytics</a>'; ?></li>
-              <li><?php echo '<a class="lk-quick" href="'.base_path().'sites/all/themes/cms_theme/cms-guide.pdf" target="_blank" >CMS Guide</a>'; ?></li>
-            </ul>
-          </li>
-        </ul>
-      <?php endif; ?>
 	</nav>
       
   </div>

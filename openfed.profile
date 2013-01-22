@@ -48,21 +48,31 @@ function openfed_form_install_configure_form_alter(&$form, $form_state) {
 function system_form_install_settings_form_alter(&$form, &$form_state, &$install_state){
   // Set the default value for the database settings.
   // For MYSQL
-  $form['settings']['mysql']['advanced_options']['db_prefix']['#default_value'] = 'drupal_';
-  $form['settings']['mysql']['label_advanced_options'] = array(
-    '#markup' => '<label>'.st('By default, a prefix will be set for your tables. If you wish to adapt it, please edit the Advanced Options below.').'</label>',
-    '#weight' => 5,
-  );
+  if ( isset($form['settings']['mysql']) ) {
+    $form['settings']['mysql']['advanced_options']['db_prefix']['#default_value'] = 'drupal_';
+    $form['settings']['mysql']['label_advanced_options'] = array(
+      '#markup' => '<label>'.st('By default, a prefix will be set for your tables. If you wish to adapt it, please edit the Advanced Options below.').'</label>',
+      '#weight' => 5,
+    );
+  }
   
   // For SQLITE.
-  $form['settings']['sqlite']['advanced_options']['db_prefix']['#default_value'] = 'drupal_';
-  $form['settings']['sqlite']['label_advanced_options'] = array(
-    '#markup' => '<label>'.st('By default, a prefix will be set for your tables. If you wish to adapt it, please edit the Advanced Options below.').'</label>',
-    '#weight' => 5,
-  );
+  if ( isset($form['settings']['sqlite']) ) {
+    $form['settings']['sqlite']['advanced_options']['db_prefix']['#default_value'] = 'drupal_';
+    $form['settings']['sqlite']['label_advanced_options'] = array(
+      '#markup' => '<label>'.st('By default, a prefix will be set for your tables. If you wish to adapt it, please edit the Advanced Options below.').'</label>',
+      '#weight' => 5,
+    );
+  }
   
 // For PostgreSQL.
-  $form['settings']['pgsql']['advanced_options']['db_prefix']['#default_value'] = 'drupal_';
+  if ( isset($form['settings']['pgsql']) ) {
+    $form['settings']['pgsql']['advanced_options']['db_prefix']['#default_value'] = 'drupal_';
+    $form['settings']['pgsql']['label_advanced_options'] = array(
+      '#markup' => '<label>'.st('By default, a prefix will be set for your tables. If you wish to adapt it, please edit the Advanced Options below.').'</label>',
+      '#weight' => 5,
+    );
+  }
 }
 
 /**

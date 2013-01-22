@@ -3,7 +3,7 @@
 variable_set('site_map_categories_depth', 'all');
 variable_set('site_map_css', true);
 variable_set('site_map_forum_threshold', '-1');
-variable_set('site_map_message', array('value' => '', 'format' => 'filtered_html'));	//a:2:{s:5:"value";s:0:"";s:6:"format";s:13:"filtered_html";}
+variable_set('site_map_message', array('value' => '', 'format' => 'filtered_html'));
 variable_set('site_map_page_title', 'Site map');
 variable_set('site_map_rss_depth', 'all');
 variable_set('site_map_rss_front', 'rss.xml');

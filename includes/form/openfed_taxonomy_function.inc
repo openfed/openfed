@@ -13,7 +13,7 @@ function openfed_taxonomy_form() {
   $form['taxonomy_list'] = array(
     '#type' => 'checkboxes',
     '#title' => st('Taxonomy'),
-    '#options' => array( 'categories' => 'Categories' ),
+    '#options' => _openfed_return_taxonomy_list(),
   );
   $form['submit'] = array(
     '#type' => 'submit',

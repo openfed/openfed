@@ -13,10 +13,7 @@ function openfed_menu_form() {
   $form['menu_list'] = array(
     '#type' => 'checkboxes',
     '#title' => st('Menu list'),
-    '#options' => array( 
-      'menu-tools-menu' => 'Tools Menu: placed at the very top of the screen', 
-      'menu-footer-menu' => 'Footer Menu: placed at the very bottom of the screen'
-    ),
+    '#options' => _openfed_return_menu_list(),
     '#description' => st('
       Note : by checking these options, the menus will automatically be created in the menus list of the website and located in the corresponding region (either the tools or the footer region).<br>
       If no menus are checked, they can still be created after the installation, but they will need to be created manually and located in the corresponding region.'),

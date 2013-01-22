@@ -131,6 +131,18 @@
           'cache' => -1,
         ),
       // TOP
+      // BREADCRUMB
+      array( // Breadcrumb
+        'module' => 'easy_breadcrumb',
+        'delta' => 'easy_breadcrumb',
+        'theme' => openfed_return_default_backend_theme_name(),
+        'status' => 1,
+        'weight' => 0,
+        'region' => 'breadcrumb',
+        'pages' => '',
+        'title' => '<none>',
+        'cache' => -1,
+      ),
       // SIDEBAR FIRST
       // CONTENT TOP
       // CONTENT

@@ -45,6 +45,7 @@ function openfed_regional_form_submit($form, &$form_state) {
     }
     variable_set('openfed_need_batch_internalization', TRUE);
     variable_set('openfed_need_batch_internalization_lang', $lang);
+    _openfed_set_block_into_region('locale', 'language', 'tools');
   }
 }
 
@@ -96,6 +97,8 @@ function _openfed_create_panel_node_frontpage($lang) {
         // store main link source variable for a language
         variable_store_set('language', $lang, 'menu_main_links_source', 'main-menu');
         
+        _openfed_create_front_menu_link('main-menu', $title);
+        
         _openfed_show_main_menu_for_language('system', 'main-menu', $lang);
         
         $date_format = array();
@@ -127,7 +130,7 @@ function _openfed_create_panel_node_frontpage($lang) {
         menu_save($menu);
         
         // create front link in menu
-        _openfed_create_front_menu_link($menu['menu_name']);
+        _openfed_create_front_menu_link($menu['menu_name'], $title);
         
         // store main link source variable for a language
         variable_store_set('language', $lang, 'menu_main_links_source', $menu['menu_name']);
@@ -160,7 +163,7 @@ function _openfed_create_panel_node_frontpage($lang) {
         menu_save($menu);
         
         // create front link
-        _openfed_create_front_menu_link($menu['menu_name']);
+        _openfed_create_front_menu_link($menu['menu_name'], $title);
         
         // store variable for a language
         variable_store_set('language', $lang, 'menu_main_links_source', $menu['menu_name']);
@@ -247,12 +250,12 @@ function _openfed_create_panel_node_frontpage($lang) {
  * Create menu entry for home
  * @param string $menu_name 
  */
-function _openfed_create_front_menu_link($menu_name) {
+function _openfed_create_front_menu_link($menu_name, $title) {
   // Create a Home link
   $item = array(
-    'link_title' => st('Home'),
+    'link_title' => $title,
     'link_path' => '<front>',
-    'menu_name' => 'menu-'.$menu_name,
+    'menu_name' => $menu_name,
     'weight' => -50,
   );
   menu_link_save($item);
