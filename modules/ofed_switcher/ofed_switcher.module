@@ -216,7 +216,7 @@ function ofed_switcher_theme_registry_alter(&$theme_registry) {
   $theme_registry += array_diff_key($theme_registry_copy, $theme_registry);
   $hooks = array('node');
   foreach ($hooks as $h) {
-    _ofed_page_insert_after_first_element($theme_registry[$h]['theme paths'], $mod_path);
+    _ofed_switcher_insert_after_first_element($theme_registry[$h]['theme paths'], $mod_path);
   }
 }
 

@@ -172,7 +172,7 @@ function ofed_feature_download_strongarm() {
             'visible' => FALSE,
           ),
           'references' => array(
-            'weight' => '20',
+            'weight' => '22',
             'visible' => FALSE,
           ),
           'block_element' => array(

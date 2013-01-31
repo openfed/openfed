@@ -48,4 +48,3 @@ variable_set('pathauto_verbose', FALSE);
 
 
 variable_set('pathauto_node_panel_pattern', '[node:title]');
-variable_set('pathauto_node_webform_pattern', '[node:menu-link:parent:title]/[node:title]');

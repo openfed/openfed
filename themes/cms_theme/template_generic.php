@@ -13,14 +13,6 @@ function cms_theme_preprocess_views_exposed_form(&$vars)
  * Preprocess variables for page.tpl.php
  */
 function cms_theme_preprocess_page(&$variables) {
-  drupal_add_css(drupal_get_path('theme', 'cms_theme').'/assets/styles/bootstrap/bootstrap.css', array('media' => 'screen'));
-  drupal_add_css(drupal_get_path('theme', 'cms_theme').'/assets/styles/bootstrap/bootstrap-responsive.css', array('media' => 'screen'));
-  drupal_add_css(drupal_get_path('theme', 'cms_theme').'/assets/styles/design.css');
-  drupal_add_css(drupal_get_path('theme', 'cms_theme').'/assets/styles/print.css', array('media' => 'print'));  
-  drupal_add_js(drupal_get_path('theme', 'cms_theme') . '/assets/scripts/modernizr-2.0.6.min.js');
-  drupal_add_js(drupal_get_path('theme', 'cms_theme') . '/assets/scripts/script.js');
-  drupal_add_js(drupal_get_path('theme', 'cms_theme') . '/assets/scripts/menus.js');
-  
   if (!empty($variables['page']['sidebar_first']) && !empty($variables['page']['sidebar_second'])) {
     $variables['class_left'] = theme_get_setting('cms_theme_layout_width_left');
     $variables['class_right'] = theme_get_setting('cms_theme_layout_width_right');

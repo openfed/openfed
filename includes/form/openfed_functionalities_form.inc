@@ -120,4 +120,8 @@ function _openfed_batch_finished_functionalities($success, $results, $operations
       variable_set($var, $theme);
     }
   }
+  
+  if (module_exists('ofed_federalheader') ) {
+    _openfed_set_block_into_region('ofed_federalheader', 'federalheader', 'tools');
+  }
 }

@@ -7,6 +7,10 @@
   background: url(../images/federalheader_bg.gif) repeat-x right bottom scroll;
   position: relative;
 }
+.ie7 #ofed-federal-header-wrapper,
+.ie8 #ofed-federal-header-wrapper{
+	padding: 10px 0 0 0;
+}
 #ofed-federal-header-wrapper #ofed-federal-header-link{
   color: #333333;
   font-family: arial, verdana, sans-serif;

@@ -79,8 +79,9 @@
 			
 		/* end button
 		 * */
+		/* deactivate links behavior of the the tag "a href"
 		$("#content #console a").click( function(e) {
-			e.preventDefault(); 	// deactivate links behavior of the the tag "a href"
-		});
+			e.preventDefault(); 	
+		});*/
 	});
 })(jQuery)

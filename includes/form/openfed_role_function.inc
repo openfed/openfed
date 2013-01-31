@@ -58,7 +58,6 @@ function openfed_role_form_submit($form, &$form_state) {
         $conf_role = user_role_load_by_name('Configurator');
         $permission = array_merge(_openfed_return_permission_configurator(), $permission_language, $permission_vocabularies);
         user_role_change_permissions($conf_role->rid, $permission );
-//        user_role_change_permissions($conf_role->rid, _openfed_return_permission_configurator() );
     }
     
     if ( $values['role_list']['content_manager'] === 'content_manager' ) {
@@ -71,7 +70,6 @@ function openfed_role_form_submit($form, &$form_state) {
         $cm_role = user_role_load_by_name('Content Manager');
         $permission = array_merge(_openfed_return_permission_content_manager(), $permission_language, $permission_vocabularies);
         user_role_change_permissions($cm_role->rid, $permission );
-//        user_role_change_permissions($cm_role->rid, _openfed_return_permission_content_manager() );
     }
     
     if ( $values['role_list']['user_manager'] === 'user_manager' ) {
@@ -107,7 +105,6 @@ function openfed_role_form_submit($form, &$form_state) {
     $web_role_rid = $web_role->rid;
     $permission = array_merge(_openfed_return_permission_builder(), $permission_language, $permission_vocabularies);
     user_role_change_permissions($web_role_rid, $permission);
-//    user_role_change_permissions($web_role_rid, _openfed_return_permission_builder());
     
     
   // SET PERMISSION FOR AUTHENTICATED USER

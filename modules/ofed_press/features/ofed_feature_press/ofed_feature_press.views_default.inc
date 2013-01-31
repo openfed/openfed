@@ -286,10 +286,11 @@ function ofed_feature_press_views_default_views() {
   $handler->display->display_options['defaults']['header'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Title */
-  $handler->display->display_options['sorts']['title']['id'] = 'title';
-  $handler->display->display_options['sorts']['title']['table'] = 'node';
-  $handler->display->display_options['sorts']['title']['field'] = 'title';
+  /* Sort criterion: Content: Last published date (field_ofed_press_pubdate) */
+  $handler->display->display_options['sorts']['field_ofed_press_pubdate_value']['id'] = 'field_ofed_press_pubdate_value';
+  $handler->display->display_options['sorts']['field_ofed_press_pubdate_value']['table'] = 'field_data_field_ofed_press_pubdate';
+  $handler->display->display_options['sorts']['field_ofed_press_pubdate_value']['field'] = 'field_ofed_press_pubdate_value';
+  $handler->display->display_options['sorts']['field_ofed_press_pubdate_value']['order'] = 'DESC';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -351,11 +352,11 @@ function ofed_feature_press_views_default_views() {
   $handler->display->display_options['defaults']['header'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Post date */
-  $handler->display->display_options['sorts']['created']['id'] = 'created';
-  $handler->display->display_options['sorts']['created']['table'] = 'node';
-  $handler->display->display_options['sorts']['created']['field'] = 'created';
-  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Sort criterion: Content: Last published date (field_ofed_press_pubdate) */
+  $handler->display->display_options['sorts']['field_ofed_press_pubdate_value']['id'] = 'field_ofed_press_pubdate_value';
+  $handler->display->display_options['sorts']['field_ofed_press_pubdate_value']['table'] = 'field_data_field_ofed_press_pubdate';
+  $handler->display->display_options['sorts']['field_ofed_press_pubdate_value']['field'] = 'field_ofed_press_pubdate_value';
+  $handler->display->display_options['sorts']['field_ofed_press_pubdate_value']['order'] = 'DESC';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -416,11 +417,11 @@ function ofed_feature_press_views_default_views() {
   $handler->display->display_options['defaults']['header'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Post date */
-  $handler->display->display_options['sorts']['created']['id'] = 'created';
-  $handler->display->display_options['sorts']['created']['table'] = 'node';
-  $handler->display->display_options['sorts']['created']['field'] = 'created';
-  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Sort criterion: Content: Last published date (field_ofed_press_pubdate) */
+  $handler->display->display_options['sorts']['field_ofed_press_pubdate_value']['id'] = 'field_ofed_press_pubdate_value';
+  $handler->display->display_options['sorts']['field_ofed_press_pubdate_value']['table'] = 'field_data_field_ofed_press_pubdate';
+  $handler->display->display_options['sorts']['field_ofed_press_pubdate_value']['field'] = 'field_ofed_press_pubdate_value';
+  $handler->display->display_options['sorts']['field_ofed_press_pubdate_value']['order'] = 'DESC';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -480,11 +481,11 @@ function ofed_feature_press_views_default_views() {
   $handler->display->display_options['defaults']['header'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Post date */
-  $handler->display->display_options['sorts']['created']['id'] = 'created';
-  $handler->display->display_options['sorts']['created']['table'] = 'node';
-  $handler->display->display_options['sorts']['created']['field'] = 'created';
-  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Sort criterion: Content: Last published date (field_ofed_press_pubdate) */
+  $handler->display->display_options['sorts']['field_ofed_press_pubdate_value']['id'] = 'field_ofed_press_pubdate_value';
+  $handler->display->display_options['sorts']['field_ofed_press_pubdate_value']['table'] = 'field_data_field_ofed_press_pubdate';
+  $handler->display->display_options['sorts']['field_ofed_press_pubdate_value']['field'] = 'field_ofed_press_pubdate_value';
+  $handler->display->display_options['sorts']['field_ofed_press_pubdate_value']['order'] = 'DESC';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */

@@ -42,12 +42,15 @@
  */
 ?>
 <!DOCTYPE html>
-<!--[if lt IE 7]> <html version="HTML+RDFa 1.1" lang="<?php print $language->language; ?>" class="no-js ie6 "<?php print $rdf_namespaces; ?>> <![endif]-->
-<!--[if IE 7]>    <html version="HTML+RDFa 1.1" lang="<?php print $language->language; ?>" class="no-js ie7 "<?php print $rdf_namespaces; ?>> <![endif]-->
-<!--[if IE 8]>    <html version="HTML+RDFa 1.1" lang="<?php print $language->language; ?>" class="no-js ie8 "<?php print $rdf_namespaces; ?>> <![endif]-->
+<!--[if lt IE 7 ]> <html version="HTML+RDFa 1.1" lang="<?php print $language->language; ?>" class="no-js ie6 "<?php print $rdf_namespaces; ?>> <![endif]-->
+<!--[if IE 7 & (!IEMobile)]>    <html version="HTML+RDFa 1.1" lang="<?php print $language->language; ?>" class="no-js ie7 "<?php print $rdf_namespaces; ?>> <![endif]-->
+<!--[if IE 8 & (!IEMobile)]>    <html version="HTML+RDFa 1.1" lang="<?php print $language->language; ?>" class="no-js ie8 "<?php print $rdf_namespaces; ?>> <![endif]-->
 <!--[if gt IE 8]><!--> <html version="HTML+RDFa 1.1" lang="<?php print $language->language; ?>" class="no-js"<?php print $rdf_namespaces; ?>> <!--<![endif]-->
 
 <head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- Equalizing density display(example : Retina display) http://darkforge.blogspot.be/2010/05/customize-android-browser-scaling-with.html and http://designbycode.tumblr.com/post/1127120282/pixel-perfect-android-web-ui-->
+
 	<?php print $head; ?>
 	<title><?php print $head_title; ?></title>
 	<?php print $styles; ?>

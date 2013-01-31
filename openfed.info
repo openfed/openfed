@@ -159,8 +159,6 @@ files[] = openfed.profile
     dependencies[] = seckit
   ; Seo
     dependencies[] = page_title
-  ; Statistics
-    dependencies[] = googleanalytics
   ; User interface
     dependencies[] = addanother
     dependencies[] = ckeditor

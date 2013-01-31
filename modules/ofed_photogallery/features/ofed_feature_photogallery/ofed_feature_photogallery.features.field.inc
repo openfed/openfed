@@ -98,7 +98,7 @@ function ofed_feature_photogallery_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '7',
+          'weight' => '10',
         ),
         'search_index' => array(
           'label' => 'hidden',
@@ -413,7 +413,7 @@ function ofed_feature_photogallery_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '8',
+          'weight' => '11',
         ),
         'search_index' => array(
           'label' => 'above',
@@ -423,39 +423,8 @@ function ofed_feature_photogallery_field_default_fields() {
         ),
         'search_result' => array(
           'label' => 'hidden',
-          'module' => 'field_slideshow',
-          'settings' => array(
-            'slideshow_caption' => 'title',
-            'slideshow_caption_link' => '',
-            'slideshow_carousel_circular' => 0,
-            'slideshow_carousel_follow' => 0,
-            'slideshow_carousel_image_style' => '',
-            'slideshow_carousel_scroll' => '1',
-            'slideshow_carousel_speed' => '500',
-            'slideshow_carousel_vertical' => 0,
-            'slideshow_carousel_visible' => '3',
-            'slideshow_colorbox_image_style' => 'ofed_photogallery_images_slideshow_medium',
-            'slideshow_colorbox_slideshow' => 'automatic',
-            'slideshow_colorbox_slideshow_speed' => '4000',
-            'slideshow_colorbox_speed' => '350',
-            'slideshow_colorbox_transition' => 'elastic',
-            'slideshow_controls' => 1,
-            'slideshow_controls_pause' => 0,
-            'slideshow_controls_position' => 'after',
-            'slideshow_field_collection_image' => '',
-            'slideshow_fx' => 'fade',
-            'slideshow_image_style' => 'ofed_photogallery_images_slideshow_small',
-            'slideshow_link' => 'content',
-            'slideshow_order' => '',
-            'slideshow_pager' => '',
-            'slideshow_pager_image_style' => '',
-            'slideshow_pager_position' => 'after',
-            'slideshow_pause' => 0,
-            'slideshow_speed' => '1000',
-            'slideshow_start_on_hover' => 0,
-            'slideshow_timeout' => '4000',
-          ),
-          'type' => 'slideshow',
+          'settings' => array(),
+          'type' => 'hidden',
           'weight' => '3',
         ),
         'teaser' => array(
@@ -608,16 +577,16 @@ function ofed_feature_photogallery_field_default_fields() {
         ),
         'print' => array(
           'label' => 'hidden',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '2',
+        ),
+        'rss' => array(
+          'label' => 'hidden',
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
           'weight' => '2',
-        ),
-        'rss' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => '11',
         ),
         'search_index' => array(
           'label' => 'hidden',
@@ -724,10 +693,10 @@ function ofed_feature_photogallery_field_default_fields() {
       'description' => 'Define specific updated date for this content item, which will be displayed as "Last updated on [updated_date]". This allows you to define a specific update date than the system update date.',
       'display' => array(
         'block_column' => array(
-          'label' => 'hidden',
+          'label' => 'inline',
           'module' => 'date',
           'settings' => array(
-            'format_type' => 'short',
+            'format_type' => 'date_only',
             'fromto' => 'both',
             'multiple_from' => '',
             'multiple_number' => '',
@@ -737,10 +706,10 @@ function ofed_feature_photogallery_field_default_fields() {
           'weight' => '1',
         ),
         'block_element' => array(
-          'label' => 'hidden',
+          'label' => 'inline',
           'module' => 'date',
           'settings' => array(
-            'format_type' => 'short',
+            'format_type' => 'date_only',
             'fromto' => 'both',
             'multiple_from' => '',
             'multiple_number' => '',
@@ -753,7 +722,7 @@ function ofed_feature_photogallery_field_default_fields() {
           'label' => 'hidden',
           'module' => 'date',
           'settings' => array(
-            'format_type' => 'short',
+            'format_type' => 'date_only',
             'fromto' => 'both',
             'multiple_from' => '',
             'multiple_number' => '',
@@ -763,10 +732,10 @@ function ofed_feature_photogallery_field_default_fields() {
           'weight' => '1',
         ),
         'block_list' => array(
-          'label' => 'hidden',
+          'label' => 'inline',
           'module' => 'date',
           'settings' => array(
-            'format_type' => 'short',
+            'format_type' => 'date_only',
             'fromto' => 'both',
             'multiple_from' => '',
             'multiple_number' => '',
@@ -776,10 +745,10 @@ function ofed_feature_photogallery_field_default_fields() {
           'weight' => '1',
         ),
         'default' => array(
-          'label' => 'hidden',
+          'label' => 'inline',
           'module' => 'date',
           'settings' => array(
-            'format_type' => 'short',
+            'format_type' => 'date_only',
             'fromto' => 'both',
             'multiple_from' => '',
             'multiple_number' => '',
@@ -789,10 +758,10 @@ function ofed_feature_photogallery_field_default_fields() {
           'weight' => '1',
         ),
         'full' => array(
-          'label' => 'hidden',
+          'label' => 'inline',
           'module' => 'date',
           'settings' => array(
-            'format_type' => 'short',
+            'format_type' => 'date_only',
             'fromto' => 'both',
             'multiple_from' => '',
             'multiple_number' => '',
@@ -802,10 +771,10 @@ function ofed_feature_photogallery_field_default_fields() {
           'weight' => '1',
         ),
         'page_list' => array(
-          'label' => 'hidden',
+          'label' => 'inline',
           'module' => 'date',
           'settings' => array(
-            'format_type' => 'short',
+            'format_type' => 'date_only',
             'fromto' => 'both',
             'multiple_from' => '',
             'multiple_number' => '',
@@ -815,10 +784,10 @@ function ofed_feature_photogallery_field_default_fields() {
           'weight' => '1',
         ),
         'print' => array(
-          'label' => 'hidden',
+          'label' => 'inline',
           'module' => 'date',
           'settings' => array(
-            'format_type' => 'short',
+            'format_type' => 'date_only',
             'fromto' => 'both',
             'multiple_from' => '',
             'multiple_number' => '',
@@ -828,10 +797,10 @@ function ofed_feature_photogallery_field_default_fields() {
           'weight' => '1',
         ),
         'rss' => array(
-          'label' => 'hidden',
+          'label' => 'inline',
           'module' => 'date',
           'settings' => array(
-            'format_type' => 'short',
+            'format_type' => 'date_only',
             'fromto' => 'both',
             'multiple_from' => '',
             'multiple_number' => '',
@@ -844,7 +813,7 @@ function ofed_feature_photogallery_field_default_fields() {
           'label' => 'hidden',
           'module' => 'date',
           'settings' => array(
-            'format_type' => 'short',
+            'format_type' => 'date_only',
             'fromto' => 'both',
             'multiple_from' => '',
             'multiple_number' => '',
@@ -854,10 +823,10 @@ function ofed_feature_photogallery_field_default_fields() {
           'weight' => '1',
         ),
         'search_result' => array(
-          'label' => 'hidden',
+          'label' => 'inline',
           'module' => 'date',
           'settings' => array(
-            'format_type' => 'short',
+            'format_type' => 'date_only',
             'fromto' => 'both',
             'multiple_from' => '',
             'multiple_number' => '',
@@ -867,10 +836,10 @@ function ofed_feature_photogallery_field_default_fields() {
           'weight' => '1',
         ),
         'teaser' => array(
-          'label' => 'hidden',
+          'label' => 'inline',
           'module' => 'date',
           'settings' => array(
-            'format_type' => 'short',
+            'format_type' => 'date_only',
             'fromto' => 'both',
             'multiple_from' => '',
             'multiple_number' => '',
@@ -998,7 +967,7 @@ function ofed_feature_photogallery_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '9',
+          'weight' => '12',
         ),
         'search_index' => array(
           'label' => 'above',

@@ -7,30 +7,6 @@ core = 7.x
 ; Please fill the following out. Type may be one of get, git, bzr or svn, and url is the url of the download.
 ;
 
-; CK Editor
-libraries[ckeditor][download][type] = get
-libraries[ckeditor][download][url] = http://download.cksource.com/CKEditor/CKEditor/CKEditor%203.6.6/ckeditor_3.6.6.tar.gz
-libraries[ckeditor][directory_name] = "ckeditor"
-libraries[ckeditor][destination] = libraries
-
-; Colorbox
-libraries[colorbox][download][type] = get
-libraries[colorbox][download][url] = http://www.jacklmoore.com/colorbox/colorbox.zip
-libraries[colorbox][directory_name] = "colorbox"
-libraries[colorbox][destination] = libraries
-
-; jquery.cycle
-libraries[jquery.cycle][download][type] = get
-libraries[jquery.cycle][download][url] = http://malsup.github.com/jquery.cycle.all.js
-libraries[jquery.cycle][directory_name] = "jquery.cycle"
-libraries[jquery.cycle][destination] = libraries
-
-; jquery.jcarousel
-libraries[jquery.jcarousel][download][type] = get
-libraries[jquery.jcarousel][download][url] = http://sorgalla.com/projects/download.php?jcarousel
-libraries[jquery.jcarousel][directory_name] = "jquery.jcarousel"
-libraries[jquery.jcarousel][destination] = libraries
-
 ;
 ; Modules
 ; Please fill the following out. Type may be one of get, git, bzr or svn, and url is the url of the download.
@@ -99,7 +75,7 @@ projects[elements][subdir] = contrib
 projects[email][version] = "1.2"
 projects[email][subdir] = contrib 
 
-projects[entity][version] = "1.0-rc3"
+projects[entity][version] = "1.0"
 projects[entity][subdir] = contrib 
 
 projects[entityreference][version] = "1.0"
@@ -138,10 +114,10 @@ projects[hierarchical_select][subdir] = contrib
 projects[html5_tools][version] = "1.2"
 projects[html5_tools][subdir] = contrib 
 
-projects[i18n][version] = "1.7"
+projects[i18n][version] = "1.8"
 projects[i18n][subdir] = contrib 
 
-projects[imagecache_actions][version] = "1.0"
+projects[imagecache_actions][version] = "1.1"
 projects[imagecache_actions][subdir] = contrib 
 
 projects[imce][version] = "1.6"
@@ -295,7 +271,7 @@ projects[translation_table][subdir] = contrib
 projects[transliteration][version] = "3.1"
 projects[transliteration][subdir] = contrib
 
-projects[variable][version] = "2.1"
+projects[variable][version] = "2.2"
 projects[variable][subdir] = contrib
 
 projects[view_unpublished][version] = "1.1"
@@ -304,7 +280,7 @@ projects[view_unpublished][subdir] = contrib
 projects[views][version] = "3.5"
 projects[views][subdir] = contrib
 
-projects[views_bulk_operations][version] = "3.0"
+projects[views_bulk_operations][version] = "3.1"
 projects[views_bulk_operations][subdir] = contrib
 
 projects[views_slideshow][version] = "3.0"
@@ -316,5 +292,5 @@ projects[webform][subdir] = contrib
 projects[weight][version] = "2.1"
 projects[weight][subdir] = contrib
 
-projects[xmlsitemap][version] = "2.0-rc1"
+projects[xmlsitemap][version] = "2.0-rc2"
 projects[xmlsitemap][subdir] = contrib

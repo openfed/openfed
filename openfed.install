@@ -37,11 +37,6 @@ function openfed_install() {
    * MENU
    */
   require_once('includes/install/openfed_menus.inc');
-      
-  /*
-   * THEME
-   */
-  require_once('includes/install/openfed_themes.inc');
   
   /*
    * BLOCK
@@ -153,6 +148,10 @@ function openfed_install() {
    */
   require_once('includes/install/openfed_views.inc');
   
+  
+  variable_set('file_public_path', conf_path() . '/files');
+  variable_set('file_private_path', conf_path() . '/private');
+  variable_set('file_temporary_path', 'tmp');
   
   variable_set('install_profile', 'openfed');
 }

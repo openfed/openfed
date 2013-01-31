@@ -1,6 +1,55 @@
 CHANGELOG
 =========
 
+7.x-0.5 : 31 January 2013
+--------------------------
+
+  * Issue
+    #1852826: Library ckeditor not found by module
+    #1885022: Library update: ckeditor
+    #1886324: Document php memory_limit
+    #1886396: Module upgrade: entity
+    #1886400: Module upgrade: imagecache_actions
+    #1886406: Module upgrade: views_bulk_operations
+    #1886410: Module upgrade: xmlsitemap
+    #1887552: Timeout when enabling all openfed modules
+    #1890012: Module upgrade: i18n
+    #1890016: Module upgrade: variable
+    #1890524: Image slideshow error
+    #1901896: Enable cron by default
+
+  * Content
+    - add default contact webform for each language if activated
+    - add default menu_block for submenu for each language if activated
+    
+  * Features
+    - add a path alias for French or Dutch if enabled
+    - change display of date field: every content type featured used date_only except news that show short date
+
+  * Config
+    - Default Webform config added
+    - Default Google analytics config removed
+    - Google analytics is no more installed by default
+    - Default config for CKEditor Global Profile added
+    - libraries path changed
+    - Features display (layout, fields,...) moved in installer to put config in database
+
+  * Libraries
+    - libraries are not downloaded anymore but included by default in the profil now.
+    - jquery.imagesloaded added
+
+  * Module updated
+    - Entity (1.0)
+    - i18n (1.8)
+    - imagecache_actions (1.1)
+    - variable (2.2)
+    - views_bulk_operations (3.1)
+    - xmlsitemap (2.0-rc2)
+
+  * Theme
+    - Change inclusion of scripts and styles
+
+
 7.x-0.4 : 21 January 2013
 --------------------------
 

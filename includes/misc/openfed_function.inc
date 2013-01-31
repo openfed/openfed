@@ -25,6 +25,57 @@ function openfed_return_default_maintenance_theme_name() {
 }
 
 /**
+ * Create menu entry for home
+ * @param string $menu_name 
+ */
+function _openfed_create_front_menu_link($menu_name, $title) {
+  // Create a Home link
+  $item = array(
+    'link_title' => $title,
+    'link_path' => '<front>',
+    'menu_name' => $menu_name,
+    'weight' => -50,
+  );
+  menu_link_save($item);
+}
+
+
+/**
+ * Active menu block into navigation region
+ * @param string $menu_name
+ */
+function _openfed_set_block_into_region($module_name, $delta_name, $region_name){
+  $block = array(
+    'module' => $module_name,
+    'delta' => $delta_name,
+    'theme' => openfed_return_default_front_theme_name(),
+    'status' => 1,
+    'weight' => 0,
+    'region' => $region_name,
+    'pages' => '',
+    'title' => '<none>',
+    'cache' => -1,
+  );
+  
+  $exist = db_query(
+        'SELECT * FROM {block} WHERE module = :module AND delta = :delta AND theme = :theme', 
+        array(':module' => $block['module'], ':delta' => $block['delta'], ':theme' => $block['theme'])
+      )
+      ->fetchObject();
+  if (empty($exist)) {
+    $query = db_insert('block')
+              ->fields($block);
+  } else {
+    $query = db_update('block')
+              ->fields($block)
+              ->condition('module', $block['module'], '=')
+              ->condition('delta', $block['delta'], '=')
+              ->condition('theme', $block['theme'], '=');
+  }
+  $query->execute();
+}
+
+/**
  * Return the array for the list of potential languages.
  * 
  * @return array 
@@ -246,9 +297,6 @@ function _openfed_return_permission_builder() {
     // Flag
       'administer flags' => TRUE,
       'use flag import' => TRUE,
-    // Google Analytics
-      'administer google analytics' => TRUE,
-      'opt-in or out of tracking' => TRUE,
     // IMCE
       'administer imce' => TRUE,
     // IMAGE
@@ -286,15 +334,11 @@ function _openfed_return_permission_builder() {
     // Multilingual content
       'administer content translations' => TRUE,
     // Node
-      'bypass node access' => TRUE,
-      'administer content types' => TRUE,
-      'administer nodes' => TRUE,
       'access content overview' => TRUE,
       'access content' => TRUE,
       'view own unpublished content' => TRUE,
       'view revisions' => TRUE,
       'revert revisions' => TRUE,
-      'delete revisions' => TRUE,
       // CT: Download
         'create ofed_download content' => TRUE,
         'edit own ofed_download content' => TRUE,
@@ -312,13 +356,11 @@ function _openfed_return_permission_builder() {
         'edit own panel content' => TRUE,
         'edit any panel content' => TRUE,
         'delete own panel content' => TRUE,
-        'delete any panel content' => TRUE,
       // CT: Webform
         'create webform content' => TRUE,
         'edit own webform content' => TRUE,
         'edit any webform content' => TRUE,
         'delete own webform content' => TRUE,
-        'delete any webform content' => TRUE,
     // Override node options
       // CT: Download
         'override ofed_download published option' => TRUE,
@@ -415,9 +457,6 @@ function _openfed_return_permission_builder() {
       'configure sweaver' => TRUE,
       'use editor' => TRUE,
     // System
-      'administer modules' => TRUE,
-      'administer site configuration' => TRUE,
-      'administer themes' => TRUE,
       'administer actions' => TRUE,
       'access administration pages' => TRUE,
       'access site in maintenance mode' => TRUE,
@@ -504,14 +543,8 @@ function _openfed_return_permission_configurator() {
     // Filter
       'administer filters' => TRUE,
       'use text format filtered_html' => TRUE,
-      'use text format full_html' => TRUE,
     // Flag
       'administer flags' => TRUE,
-    // Google Analytics
-      'administer google analytics' => TRUE,
-      'opt-in or out of tracking' => TRUE,
-    // IMCE
-      'administer imce' => TRUE,
     // IMAGE
       'administer image styles' => TRUE,
     // Link Checker
@@ -520,7 +553,6 @@ function _openfed_return_permission_configurator() {
       'edit link settings' => TRUE,
     // Locale
       'administer languages' => TRUE,
-      'translate interface' => TRUE,
     // Media
       'administer media' => TRUE,
       'import media' => TRUE,
@@ -546,14 +578,12 @@ function _openfed_return_permission_configurator() {
       'administer content translations' => TRUE,
     // Node
       'bypass node access' => TRUE,
-      'administer content types' => TRUE,
       'administer nodes' => TRUE,
       'access content overview' => TRUE,
       'access content' => TRUE,
       'view own unpublished content' => TRUE,
       'view revisions' => TRUE,
       'revert revisions' => TRUE,
-      'delete revisions' => TRUE,
       // CT: Download
         'create ofed_download content' => TRUE,
         'edit own ofed_download content' => TRUE,
@@ -571,13 +601,11 @@ function _openfed_return_permission_configurator() {
         'edit own panel content' => TRUE,
         'edit any panel content' => TRUE,
         'delete own panel content' => TRUE,
-        'delete any panel content' => TRUE,
       // CT: Webform
         'create webform content' => TRUE,
         'edit own webform content' => TRUE,
         'edit any webform content' => TRUE,
         'delete own webform content' => TRUE,
-        'delete any webform content' => TRUE,
     // Override node options
       // CT: Download
         'override ofed_download published option' => TRUE,
@@ -685,7 +713,6 @@ function _openfed_return_permission_configurator() {
     // Translation overview
       'view translation overview assigments' => TRUE,
     // User
-      'administer users' => TRUE,
       'access user profiles' => TRUE,
     // View Unpublished
       'view any unpublished content' => TRUE,
@@ -726,14 +753,11 @@ function _openfed_return_permission_content_manager() {
       'access contextual links' => TRUE,
     // Filter
       'use text format filtered_html' => TRUE,
-      'use text format full_html' => TRUE,
     // IMAGE
       'administer image styles' => TRUE,
     // Link Checker
       'access broken links report' => TRUE,
       'access own broken links report' => TRUE,
-    // Locale
-      'translate interface' => TRUE,
     // Media
       'administer media' => TRUE,
       'import media' => TRUE,
@@ -743,13 +767,8 @@ function _openfed_return_permission_content_manager() {
       'add media from remote sources' => TRUE,
     // Menu
       'administer menu' => TRUE,
-    // Menu attributes
-      'administer menu attributes' => TRUE,
     // Meta tags
       'edit meta tags' => TRUE,
-    // Mini panels
-      'create mini panels' => TRUE,
-      'administer mini panels' => TRUE,
     // Multilingual content
       'administer content translations' => TRUE,
     // Node
@@ -845,7 +864,6 @@ function _openfed_return_permission_user_manager() {
       'use add another' => TRUE,
     // Administration menu
       'access administration menu' => TRUE,
-      'flush caches' => TRUE,
     // Administration theme
       'access admin theme' => TRUE,
     // Aggregator

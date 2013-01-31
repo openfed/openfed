@@ -128,15 +128,15 @@ function ofed_feature_new_strongarm() {
       'display' => array(
         'language' => array(
           'default' => array(
-            'weight' => '19',
-            'visible' => FALSE,
+            'weight' => '18',
+            'visible' => TRUE,
           ),
           'full' => array(
             'weight' => '19',
             'visible' => FALSE,
           ),
           'teaser' => array(
-            'weight' => '15',
+            'weight' => '17',
             'visible' => FALSE,
           ),
           'rss' => array(
@@ -144,19 +144,19 @@ function ofed_feature_new_strongarm() {
             'visible' => FALSE,
           ),
           'search_index' => array(
-            'weight' => '16',
+            'weight' => '19',
             'visible' => FALSE,
           ),
           'search_result' => array(
-            'weight' => '18',
+            'weight' => '20',
             'visible' => FALSE,
           ),
           'print' => array(
-            'weight' => '16',
+            'weight' => '19',
             'visible' => FALSE,
           ),
           'block_column' => array(
-            'weight' => '17',
+            'weight' => '18',
             'visible' => FALSE,
           ),
           'block_info' => array(
@@ -164,11 +164,11 @@ function ofed_feature_new_strongarm() {
             'visible' => FALSE,
           ),
           'block_list' => array(
-            'weight' => '15',
+            'weight' => '17',
             'visible' => FALSE,
           ),
           'page_list' => array(
-            'weight' => '17',
+            'weight' => '18',
             'visible' => FALSE,
           ),
         ),

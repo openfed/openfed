@@ -180,3 +180,19 @@
                     ))
                     ->condition('name', 'Advanced', '=')
                     ->execute();
+  
+  
+  
+/**
+ * Update the CKEditor Global Profile to set libraries path
+ */
+  
+  $arr = array();
+  $arr['ckeditor_path'] = 'profiles/openfed/libraries/ckeditor'; 
+  
+  db_update('ckeditor_settings')
+                    ->fields(array(
+                        'settings' => serialize($arr),
+                    ))
+                    ->condition('name', 'CKEditor Global Profile', '=')
+                    ->execute();

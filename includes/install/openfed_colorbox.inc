@@ -27,7 +27,7 @@ variable_set( 'colorbox_scrolling', '1');
 variable_set( 'colorbox_slideshow', '0');
 variable_set( 'colorbox_slideshowauto', TRUE);
 variable_set( 'colorbox_slideshowspeed', '2500');
-variable_set( 'colorbox_style', 'sites/all/libraries/colorbox/example1');
+variable_set( 'colorbox_style', 'profiles/openfed/libraries/colorbox/example1');
 variable_set( 'colorbox_text_close', 'Close');
 variable_set( 'colorbox_text_current', '{current} of {total}');
 variable_set( 'colorbox_text_next', 'Next Â»');

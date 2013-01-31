@@ -248,7 +248,7 @@ function ofed_feature_photogallery_views_default_views() {
     6 => 0,
     7 => 0,
   );
-  $handler->display->display_options['path'] = 'cms/photos-galeries';
+  $handler->display->display_options['path'] = 'cms/photos-galleries';
 
   /* Display: Page: List */
   $handler = $view->new_display('page', 'Page: List', 'ofed_photogallery_page_list');
@@ -285,10 +285,11 @@ function ofed_feature_photogallery_views_default_views() {
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Title */
-  $handler->display->display_options['sorts']['title']['id'] = 'title';
-  $handler->display->display_options['sorts']['title']['table'] = 'node';
-  $handler->display->display_options['sorts']['title']['field'] = 'title';
+  /* Sort criterion: Content: Last updated date (field_ofed_photog_update) */
+  $handler->display->display_options['sorts']['field_ofed_photog_update_value']['id'] = 'field_ofed_photog_update_value';
+  $handler->display->display_options['sorts']['field_ofed_photog_update_value']['table'] = 'field_data_field_ofed_photog_update';
+  $handler->display->display_options['sorts']['field_ofed_photog_update_value']['field'] = 'field_ofed_photog_update_value';
+  $handler->display->display_options['sorts']['field_ofed_photog_update_value']['order'] = 'DESC';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -312,7 +313,7 @@ function ofed_feature_photogallery_views_default_views() {
   $handler->display->display_options['filters']['language']['value'] = array(
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
-  $handler->display->display_options['path'] = 'photos-galeries';
+  $handler->display->display_options['path'] = 'photos-galleries';
 
   /* Display: Block: Teaser */
   $handler = $view->new_display('block', 'Block: Teaser', 'ofed_photogallery_block_info');
@@ -346,11 +347,11 @@ function ofed_feature_photogallery_views_default_views() {
   $handler->display->display_options['row_options']['default_fieldset']['view_mode'] = 'teaser';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Post date */
-  $handler->display->display_options['sorts']['created']['id'] = 'created';
-  $handler->display->display_options['sorts']['created']['table'] = 'node';
-  $handler->display->display_options['sorts']['created']['field'] = 'created';
-  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Sort criterion: Content: Last updated date (field_ofed_photog_update) */
+  $handler->display->display_options['sorts']['field_ofed_photog_update_value']['id'] = 'field_ofed_photog_update_value';
+  $handler->display->display_options['sorts']['field_ofed_photog_update_value']['table'] = 'field_data_field_ofed_photog_update';
+  $handler->display->display_options['sorts']['field_ofed_photog_update_value']['field'] = 'field_ofed_photog_update_value';
+  $handler->display->display_options['sorts']['field_ofed_photog_update_value']['order'] = 'DESC';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -415,11 +416,11 @@ function ofed_feature_photogallery_views_default_views() {
   $handler->display->display_options['row_options']['default_fieldset']['view_mode'] = 'block_list';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Post date */
-  $handler->display->display_options['sorts']['created']['id'] = 'created';
-  $handler->display->display_options['sorts']['created']['table'] = 'node';
-  $handler->display->display_options['sorts']['created']['field'] = 'created';
-  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Sort criterion: Content: Last updated date (field_ofed_photog_update) */
+  $handler->display->display_options['sorts']['field_ofed_photog_update_value']['id'] = 'field_ofed_photog_update_value';
+  $handler->display->display_options['sorts']['field_ofed_photog_update_value']['table'] = 'field_data_field_ofed_photog_update';
+  $handler->display->display_options['sorts']['field_ofed_photog_update_value']['field'] = 'field_ofed_photog_update_value';
+  $handler->display->display_options['sorts']['field_ofed_photog_update_value']['order'] = 'DESC';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -483,11 +484,11 @@ function ofed_feature_photogallery_views_default_views() {
   $handler->display->display_options['row_options']['default_fieldset']['view_mode'] = 'block_column';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Post date */
-  $handler->display->display_options['sorts']['created']['id'] = 'created';
-  $handler->display->display_options['sorts']['created']['table'] = 'node';
-  $handler->display->display_options['sorts']['created']['field'] = 'created';
-  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Sort criterion: Content: Last updated date (field_ofed_photog_update) */
+  $handler->display->display_options['sorts']['field_ofed_photog_update_value']['id'] = 'field_ofed_photog_update_value';
+  $handler->display->display_options['sorts']['field_ofed_photog_update_value']['table'] = 'field_data_field_ofed_photog_update';
+  $handler->display->display_options['sorts']['field_ofed_photog_update_value']['field'] = 'field_ofed_photog_update_value';
+  $handler->display->display_options['sorts']['field_ofed_photog_update_value']['order'] = 'DESC';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -553,11 +554,11 @@ function ofed_feature_photogallery_views_default_views() {
   $handler->display->display_options['row_options']['default_fieldset']['view_mode'] = 'block_element';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Post date */
-  $handler->display->display_options['sorts']['created']['id'] = 'created';
-  $handler->display->display_options['sorts']['created']['table'] = 'node';
-  $handler->display->display_options['sorts']['created']['field'] = 'created';
-  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Sort criterion: Content: Last updated date (field_ofed_photog_update) */
+  $handler->display->display_options['sorts']['field_ofed_photog_update_value']['id'] = 'field_ofed_photog_update_value';
+  $handler->display->display_options['sorts']['field_ofed_photog_update_value']['table'] = 'field_data_field_ofed_photog_update';
+  $handler->display->display_options['sorts']['field_ofed_photog_update_value']['field'] = 'field_ofed_photog_update_value';
+  $handler->display->display_options['sorts']['field_ofed_photog_update_value']['order'] = 'DESC';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -621,11 +622,11 @@ function ofed_feature_photogallery_views_default_views() {
   $handler->display->display_options['row_options']['default_fieldset']['view_mode'] = 'block_element';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Updated date */
-  $handler->display->display_options['sorts']['changed']['id'] = 'changed';
-  $handler->display->display_options['sorts']['changed']['table'] = 'node';
-  $handler->display->display_options['sorts']['changed']['field'] = 'changed';
-  $handler->display->display_options['sorts']['changed']['order'] = 'DESC';
+  /* Sort criterion: Content: Last updated date (field_ofed_photog_update) */
+  $handler->display->display_options['sorts']['field_ofed_photog_update_value']['id'] = 'field_ofed_photog_update_value';
+  $handler->display->display_options['sorts']['field_ofed_photog_update_value']['table'] = 'field_data_field_ofed_photog_update';
+  $handler->display->display_options['sorts']['field_ofed_photog_update_value']['field'] = 'field_ofed_photog_update_value';
+  $handler->display->display_options['sorts']['field_ofed_photog_update_value']['order'] = 'DESC';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */

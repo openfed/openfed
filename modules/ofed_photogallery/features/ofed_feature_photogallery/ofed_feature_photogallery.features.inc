@@ -188,7 +188,7 @@ function ofed_feature_photogallery_image_default_styles() {
           'upscale' => 0,
         ),
         'weight' => '2',
-      ),      
+      ),
     ),
   );
 

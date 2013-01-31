@@ -121,27 +121,27 @@ function ofed_feature_page_strongarm() {
       'display' => array(
         'language' => array(
           'default' => array(
-            'weight' => '14',
+            'weight' => '15',
             'visible' => FALSE,
           ),
           'teaser' => array(
-            'weight' => '12',
-            'visible' => FALSE,
-          ),
-          'full' => array(
             'weight' => '14',
             'visible' => FALSE,
           ),
+          'full' => array(
+            'weight' => '16',
+            'visible' => FALSE,
+          ),
           'rss' => array(
-            'weight' => '13',
+            'weight' => '15',
             'visible' => FALSE,
           ),
           'search_index' => array(
-            'weight' => '13',
+            'weight' => '15',
             'visible' => FALSE,
           ),
           'search_result' => array(
-            'weight' => '15',
+            'weight' => '17',
             'visible' => FALSE,
           ),
         ),
@@ -189,6 +189,8 @@ function ofed_feature_page_strongarm() {
     0 => 'main-dutch-menu',
     1 => 'main-french-menu',
     2 => 'main-menu',
+    3 => 'menu-tools-menu',
+    4 => 'menu-footer-menu',
   );
   $export['menu_options_ofed_page'] = $strongarm;
 
