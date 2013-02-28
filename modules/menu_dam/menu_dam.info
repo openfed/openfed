@@ -1,0 +1,6 @@
+name = Menu default active menu
+description = "Allow the custom menus to receive a active trail.<br />
+               Alter the settings.php to add/edit the related value for key inside the $conf variable array."
+
+core = 7.x
+dependencies[] = menu

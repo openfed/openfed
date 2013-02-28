@@ -222,7 +222,7 @@ function nerra_getThemeableFormTextClass() {
  * Return class name for date input
  * @return string
  */
-function getThemeableFormDateClass() {
+function nerra_getThemeableFormDateClass() {
   return ' '.theme_get_setting('nerra_form_date');
 }
 

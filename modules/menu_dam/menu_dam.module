@@ -1,0 +1,84 @@
+<?php
+
+/**
+ * Implement hook_menu_insert().
+ */
+function menu_dam_menu_insert() {
+  _menu_dam_settings_alter();
+}
+/**
+ * Implement hook_menu_update().
+ */
+function menu_dam_menu_update() {
+  _menu_dam_settings_alter();
+}
+/**
+ * Implement hook_menu_delete().
+ */
+function menu_dam_menu_delete() {
+  _menu_dam_settings_alter();
+}
+
+/**
+ * Alter the settings.
+ * Add or edit the menu default active trail inside the settings.php
+ * @return void
+ */
+function _menu_dam_settings_alter() {
+  // Define the settings file.
+  $settings_file = conf_path(FALSE) . '/settings.php';
+  // If the file exist.
+  if(is_file($settings_file)) {
+    // Get the settings file content.
+    $settings_file_content = file_get_contents($settings_file);
+    // Set the values who are mandatory.
+    $values_mandatory = array('main-menu'); // To be sure :)
+    // Get the custom menus names from the database.
+    $values_from_db = array_keys(menu_get_menus(FALSE));
+    // Merge the database values with the mandatory values.
+    $values_merged = array_merge($values_mandatory, $values_from_db);
+    // Set the new line.
+    $newline = (!empty($values_merged)) ? "array('" . implode($values_merged, "', '") . "');" : 'array();';
+    $newline = '$conf[\'menu_default_active_menus\'] = ' . $newline;      
+    // If the conf. variable already exist.
+    if(preg_match('/\$conf\[\'menu_default_active_menus\'\]\s*=\s*array\(.*\);/is', $settings_file_content, $matches)) {
+      // Set the content.
+      $settings_file_content = str_replace($matches[0], $newline, $settings_file_content);
+    }
+    // If not...
+    else {
+      // Comment...
+      $comment = "\n" . '/**';
+      $comment.= "\n" . ' * Menu default active trail.';
+      $comment.= "\n" . ' *';
+      $comment.= "\n" . ' * Allow the custom menus to receive a active trail.';
+      $comment.= "\n" . ' * !This variable is automatically updated by the module.';
+      $comment.= "\n" . ' *';
+      $comment.= "\n" . ' * @see http://drupal.org/node/1710744';
+      $comment.= "\n" . ' */';      
+      $comment.= "\n";      
+      // Set the content.
+      $settings_file_content = $settings_file_content .  $comment . $newline;    
+    }
+    // Write the settings file.
+    // Save the initial file perms.
+    $file_initial_chmod = substr(sprintf('%o', fileperms($settings_file)), -4);
+    // Get the server os.
+    $os = strtolower(PHP_OS);
+    $os = (preg_match('#^win#', $os)) ? 'win' : $os;
+    // Set the file perms.
+    if($os == 'win') {
+      chmod($settings_file, 0644);
+    }
+    // Write the file.
+    file_put_contents($settings_file, $settings_file_content);
+    // Restore the initial file perms.
+    if($os == 'win') {
+      chmod($settings_file, $file_initial_chmod);
+    }
+  }
+  else {
+    // Error message.
+    throw new Exception(t('Unable to find %settings. Verify the file location.', array('%settings' => $settings_file)));
+  }
+}

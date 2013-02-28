@@ -1,4 +1,4 @@
-name = maintenance
+name = Maintenance
 description = A simple one-column, tableless, fluid width administration theme.
 package = Core
 version = VERSION

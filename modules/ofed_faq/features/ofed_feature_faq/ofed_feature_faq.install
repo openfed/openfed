@@ -38,68 +38,72 @@ function ofed_feature_faq_install() {
     'customized' => 1,
   );
   menu_link_save($item);
-  
+
   // Include ds settings.
-  include_once 'install/_ofed_feature_faq.ds.inc';
+  $file = drupal_get_path('module', 'ofed_feature_faq') . '/install/_ofed_feature_faq.ds.inc';
+  if(file_exists($file)) {
+    // Include it.
+    include_once 'install/_ofed_feature_faq.ds.inc';
 
-  // Install ds customs fields.
-  if(function_exists('ofed_feature_faq_ds_custom_fields_info')) {
-    $fields = ofed_feature_faq_ds_custom_fields_info();
-    foreach($fields as $id => $field) {
-      // Remove one key.
-      if(isset($field->api_version)) {
-        unset($field->api_version);
+    // Install ds customs fields.
+    if(function_exists('ofed_feature_faq_ds_custom_fields_info')) {
+      $fields = ofed_feature_faq_ds_custom_fields_info();
+      foreach($fields as $id => $field) {
+        // Remove one key.
+        if(isset($field->api_version)) {
+          unset($field->api_version);
+        }
+        // Serialize the entities.
+        $field->entities = serialize($field->entities);
+        // Serialize the ui_limit.
+        $field->ui_limit = serialize($field->ui_limit);
+        // Serialize the properties.
+        $field->properties = serialize($field->properties);
+
+        // Cast variable like an array.
+        $field = (array) $field;
+
+        // Save in database.
+        db_insert('ds_fields')->fields($field)->execute();
       }
-      // Serialize the entities.
-      $field->entities = serialize($field->entities);
-      // Serialize the ui_limit.
-      $field->ui_limit = serialize($field->ui_limit);
-      // Serialize the properties.
-      $field->properties = serialize($field->properties);
-
-      // Cast variable like an array.
-      $field = (array) $field;
-
-      // Save in database.
-      db_insert('ds_fields')->fields($field)->execute();
     }
-  }
-  
-  // Install ds fields settings.
-  if(function_exists('ofed_feature_faq_ds_field_settings_info')) {
-    $fields = ofed_feature_faq_ds_field_settings_info();
-    foreach($fields as $id => $field) {
-      // Remove one key.
-      if(isset($field->api_version)) {
-        unset($field->api_version);
+
+    // Install ds fields settings.
+    if(function_exists('ofed_feature_faq_ds_field_settings_info')) {
+      $fields = ofed_feature_faq_ds_field_settings_info();
+      foreach($fields as $id => $field) {
+        // Remove one key.
+        if(isset($field->api_version)) {
+          unset($field->api_version);
+        }
+        // Serialize the settings.
+        $field->settings = serialize($field->settings);
+
+        // Cast variable like an array.
+        $field = (array) $field;
+
+        // Save in database.
+        db_insert('ds_field_settings')->fields($field)->execute();
       }
-      // Serialize the settings.
-      $field->settings = serialize($field->settings);
-
-      // Cast variable like an array.
-      $field = (array) $field;
-
-      // Save in database.
-      db_insert('ds_field_settings')->fields($field)->execute();
     }
-  }
 
-  // Install ds layouts settings.
-  if(function_exists('ofed_feature_faq_ds_layout_settings_info')) {
-    $layouts = ofed_feature_faq_ds_layout_settings_info();
-    foreach($layouts as $id => $layout) {
-      // Remove one key.
-      if(isset($layout->api_version)) {
-        unset($layout->api_version);
+    // Install ds layouts settings.
+    if(function_exists('ofed_feature_faq_ds_layout_settings_info')) {
+      $layouts = ofed_feature_faq_ds_layout_settings_info();
+      foreach($layouts as $id => $layout) {
+        // Remove one key.
+        if(isset($layout->api_version)) {
+          unset($layout->api_version);
+        }
+        // Serialize the settings.
+        $layout->settings = serialize($layout->settings);
+
+        // Cast variable like an array.
+        $layout = (array) $layout;
+
+        // Save in database.
+        db_insert('ds_layout_settings')->fields($layout)->execute();
       }
-      // Serialize the settings.
-      $layout->settings = serialize($layout->settings);
-
-      // Cast variable like an array.
-      $layout = (array) $layout;
-
-      // Save in database.
-      db_insert('ds_layout_settings')->fields($layout)->execute();
     }
   }
   
@@ -113,7 +117,7 @@ function ofed_feature_faq_install() {
         'alias'    => 'faqs',
         'language' => 'fr',
       );
-      path_save($path);
+      db_insert('url_alias')->fields($path)->execute();
     }
     
     if(isset($language['nl'])) {
@@ -123,7 +127,7 @@ function ofed_feature_faq_install() {
         'alias'    => 'faqs',
         'language' => 'nl',
       );
-      path_save($path);
+      db_insert('url_alias')->fields($path)->execute();
     }
   }
 }

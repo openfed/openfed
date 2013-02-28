@@ -33,20 +33,20 @@ function openfed_role_form() {
 function openfed_role_form_submit($form, &$form_state) {
   $values = $form_state['values'];
 
-  /* GENERATE DYNAMIC PERMISSION */
-    $permission_language = array();
-    foreach( language_list() as $langcode => $langobject ) {
-      $permission_language["manage $langcode translation overview priorities"] = TRUE;
-    }
-    
-    $permission_vocabularies = array();
-    $vocabularies = taxonomy_vocabulary_machine_name_load('categories');
-    if( $vocabularies != FALSE ) {
-      $permission_vocabularies["edit terms in ".$vocabularies->vid] = TRUE;
-      $permission_vocabularies["delete terms in ".$vocabularies->vid] = TRUE;
-    }
   
   if ( !empty($values['role_list']) ) {
+    /* GENERATE DYNAMIC PERMISSION */
+      $permission_language = array();
+      foreach( language_list() as $langcode => $langobject ) {
+        $permission_language["manage $langcode translation overview priorities"] = TRUE;
+      }
+
+      $permission_vocabularies = array();
+      $vocabularies = taxonomy_vocabulary_machine_name_load('categories');
+      if( $vocabularies != FALSE ) {
+        $permission_vocabularies["edit terms in ".$vocabularies->vid] = TRUE;
+        $permission_vocabularies["delete terms in ".$vocabularies->vid] = TRUE;
+      }
     
     if ( $values['role_list']['configurator'] === 'configurator' ) {
       // Manage Configurator information 

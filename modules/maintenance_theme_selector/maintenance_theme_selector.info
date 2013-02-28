@@ -1,0 +1,5 @@
+name = Maintenance theme
+description = "Maintenance theme module allow to select an another theme to use with the maintenance mode."
+package = Administration
+configure = admin/config/development/maintenance
+core = 7.x

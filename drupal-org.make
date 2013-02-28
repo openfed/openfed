@@ -7,6 +7,36 @@ core = 7.x
 ; Please fill the following out. Type may be one of get, git, bzr or svn, and url is the url of the download.
 ;
 
+; CK Editor
+libraries[ckeditor][download][type] = "get"
+libraries[ckeditor][download][url] = "http://download.cksource.com/CKEditor/CKEditor/CKEditor%203.6.6.1/ckeditor_3.6.6.1.zip"
+libraries[ckeditor][directory_name] = "ckeditor"
+libraries[ckeditor][type] = "library"
+
+; Colorbox
+libraries[colorbox][download][type] = "git"
+libraries[colorbox][download][url] = "https://github.com/jackmoore/colorbox.git"
+libraries[colorbox][directory_name] = "colorbox"
+libraries[colorbox][type] = "library"
+
+; jquery.cycle
+libraries[jquery.cycle][download][type] = "git"
+libraries[jquery.cycle][download][url] = "https://github.com/malsup/cycle.git"
+libraries[jquery.cycle][directory_name] = "jquery.cycle"
+libraries[jquery.cycle][type] = "library"
+
+; jquery.imagesloaded
+libraries[jquery.imagesloaded][download][type] = "git"
+libraries[jquery.imagesloaded][download][url] = "https://github.com/desandro/imagesloaded.git"
+libraries[jquery.imagesloaded][directory_name] = "jquery.imagesloaded"
+libraries[jquery.imagesloaded][type] = "library"
+
+; jquery.jcarousel
+libraries[jquery.jcarousel][download][type] = "git"
+libraries[jquery.jcarousel][download][url] = "https://github.com/jsor/jcarousel.git"
+libraries[jquery.jcarousel][directory_name] = "jquery.jcarousel"
+libraries[jquery.jcarousel][type] = "library"
+
 ;
 ; Modules
 ; Please fill the following out. Type may be one of get, git, bzr or svn, and url is the url of the download.
@@ -15,7 +45,7 @@ core = 7.x
 projects[addanother][version] = "2.1"
 projects[addanother][subdir] = contrib 
 
-projects[admin_menu][version] = "3.0-rc3"
+projects[admin_menu][version] = "3.0-rc4"
 projects[admin_menu][subdir] = contrib 
 
 projects[admin_path][version] = "1.0"
@@ -33,13 +63,13 @@ projects[beididp][subdir] = contrib
 projects[calendar][version] = "3.4"
 projects[calendar][subdir] = contrib 
 
-projects[ckeditor][version] = "1.9"
+projects[ckeditor][version] = "1.12"
 projects[ckeditor][subdir] = contrib 
 
-projects[ckeditor_link][version] = "2.2"
+projects[ckeditor_link][version] = "2.3"
 projects[ckeditor_link][subdir] = contrib 
 
-projects[colorbox][version] = "2.0"
+projects[colorbox][version] = "2.3"
 projects[colorbox][subdir] = contrib 
 
 projects[content_access][version] = "1.2-beta1"
@@ -49,7 +79,8 @@ projects[countries][version] = "2.1"
 projects[countries][subdir] = contrib 
 
 projects[ctools][version] = "1.2"
-projects[ctools][subdir] = contrib 
+projects[ctools][subdir] = contrib
+projects[ctools][patch][] = "http://drupal.org/files/ctools-fix-warning-message-1739718-32.patch"
 
 projects[date][version] = "2.6"
 projects[date][subdir] = contrib 
@@ -85,7 +116,8 @@ projects[extlink][version] = "1.12"
 projects[extlink][subdir] = contrib 
 
 projects[features][version] = "1.0"
-projects[features][subdir] = contrib 
+projects[features][subdir] = contrib
+projects[features][patch][] = "http://drupal.org/files/features_static_caches-1063204-32.patch"
 
 projects[features_override][version] = "2.0-beta1"
 projects[features_override][subdir] = contrib 
@@ -96,7 +128,7 @@ projects[field_group][subdir] = contrib
 projects[field_permissions][version] = "1.0-beta2"
 projects[field_permissions][subdir] = contrib 
 
-projects[field_slideshow][version] = "1.8"
+projects[field_slideshow][version] = "1.81"
 projects[field_slideshow][subdir] = contrib 
 
 projects[flag][version] = "2.0"
@@ -120,7 +152,7 @@ projects[i18n][subdir] = contrib
 projects[imagecache_actions][version] = "1.1"
 projects[imagecache_actions][subdir] = contrib 
 
-projects[imce][version] = "1.6"
+projects[imce][version] = "1.7"
 projects[imce][subdir] = contrib 
 
 projects[imce_mkdir][version] = "1.0"
@@ -171,7 +203,7 @@ projects[metatag][subdir] = contrib
 projects[module_filter][version] = "1.7"
 projects[module_filter][subdir] = contrib
 
-projects[mollom][version] = "2.3"
+projects[mollom][version] = "2.4"
 projects[mollom][subdir] = contrib
 
 projects[multiple_node_menu][version] = "1.0-beta1"
@@ -221,11 +253,12 @@ projects[rules][subdir] = contrib
 
 projects[scheduler][version] = "1.0"
 projects[scheduler][subdir] = contrib
+projects[scheduler][patch][] = "http://drupal.org/files/1660192-expand-options-03.patch"
 
 projects[search_config][version] = "1.0"
 projects[search_config][subdir] = contrib
 
-projects[seckit][version] = "1.4"
+projects[seckit][version] = "1.5"
 projects[seckit][subdir] = contrib
 
 projects[securelogin][version] = "1.3"
@@ -233,6 +266,9 @@ projects[securelogin][subdir] = contrib
 
 projects[security_review][version] = "1.0"
 projects[security_review][subdir] = contrib
+
+projects[sharethis][version] = "2.5"
+projects[sharethis][subdir] = contrib
 
 projects[site_map][version] = "1.0"
 projects[site_map][subdir] = contrib

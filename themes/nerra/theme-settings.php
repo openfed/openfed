@@ -217,38 +217,6 @@ function nerra_form_system_theme_settings_alter(&$form, &$form_state) {
         '#title' => t('Sponsor label'),
         '#default_value' => theme_get_setting('nerra_sponsor_label'),
       );
-      
-      
-    /**
-    * Manage of Search Result
-    */
-    $form['nerra']['nerra_search'] = array(
-      '#type' => 'fieldset', 
-      '#collapsible' => TRUE,
-      '#collapsed' => TRUE,
-      '#title' => t('Toggle Search Result'),
-      '#description' => t('Enable or disable the display of certain elements.'),
-    );
-      $form['nerra']['nerra_search']['nerra_search_date'] = array(
-        '#type' => 'checkbox',
-        '#title' => t('Date'),
-        '#default_value' => theme_get_setting('nerra_search_date'),
-      );
-      $form['nerra']['nerra_search']['nerra_search_user'] = array(
-        '#type' => 'checkbox',
-        '#title' => t('User'),
-        '#default_value' => theme_get_setting('nerra_search_user'),
-      );
-      $form['nerra']['nerra_search']['nerra_search_type'] = array(
-        '#type' => 'checkbox',
-        '#title' => t('Type'),
-        '#default_value' => theme_get_setting('nerra_search_type'),
-      );
-      $form['nerra']['nerra_search']['nerra_search_url'] = array(
-        '#type' => 'checkbox',
-        '#title' => t('Url'),
-        '#default_value' => theme_get_setting('nerra_search_url'),
-      );
 
       
     /**

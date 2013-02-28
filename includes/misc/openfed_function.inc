@@ -24,6 +24,21 @@ function openfed_return_default_maintenance_theme_name() {
   return 'maintenance';
 }
 
+
+
+/**
+ * show a block for a language
+ * @param string $module
+ * @param string $delta
+ * @param string $language 
+ */
+function _openfed_show_block_for_language($module, $delta, $language) {
+  $query = db_insert('i18n_block_language')->fields(array('language', 'module', 'delta'));
+  $query->values(array('language' => $language,'module' => $module,'delta' => $delta,));
+  $query->execute();
+}
+
+
 /**
  * Create menu entry for home
  * @param string $menu_name 
@@ -39,6 +54,19 @@ function _openfed_create_front_menu_link($menu_name, $title) {
   menu_link_save($item);
 }
 
+/**
+ * 
+ */
+function _openfed_create_custom_menu($menu_name, $title, $description = '', $i18n_mode = '2', $language = 'en') {
+  // create the french menu
+    $menu = array();
+    $menu['menu_name'] = $menu_name;
+    $menu['title'] = $title;
+    $menu['description'] = $description;
+    $menu['i18n_mode'] = $i18n_mode;
+    $menu['language'] = $language;
+    menu_save($menu);
+}
 
 /**
  * Active menu block into navigation region
@@ -144,7 +172,7 @@ function _openfed_return_functionalities_list() {
       'picture' => $features,
       'description' => st('Enables the creation of frequently asked questions.'),
     ),
-    'ofed_new' => array(
+    'ofed_news' => array(
       'title' => st('News'),
       'picture' => $features,
       'description' => st('Enables the creation of news.'),
@@ -159,32 +187,37 @@ function _openfed_return_functionalities_list() {
       'picture' => $features,
       'description' => st('Enables the creation of slideshow.'),
     ),
+    'ofed_photogallery' => array(
+      'title' => st('Photos galeries'),
+      'picture' => $features,
+      'description' => st('Enables the creation of photos galeries.'),
+    ),
+      
+    // Modules
     'poll' => array(
       'title' => st('Poll'),
-      'picture' => $features,
+      'picture' => $modules,
       'description' => st('Enables the creation of poll.'),
     ),
     'blog' => array(
       'title' => st('Blog'),
-      'picture' => $features,
+      'picture' => $modules,
       'description' => st('Enables the creation of blog.'),
     ),
-    
-    // Modules
-    'ofed_federalheader' => array(
-      'title' => st('Federal header'),
+    'forum' => array(
+      'title' => st('Forum'),
       'picture' => $modules,
-      'description' => st('Provide the official Belgian Federal Authorities header.'),
+      'description' => st('Enables the creation of forum.'),
     ),
     'lexicon' => array(
       'title' => st('Lexicon'),
       'picture' => $modules,
       'description' => st('Maintain one or more lexicons on your site and optionally mark term from one or more lexicons in the content of the website.'),
     ),
-    'beididp' => array(
-      'title' => st('Belgian eID IDP Integration'),
+    'ofed_federalheader' => array(
+      'title' => st('Federal header'),
       'picture' => $modules,
-      'description' => st('Allows users to authenticate with their Belgian eID card, using Fedict\'s OpenID Identity provider.'),
+      'description' => st('Provide the official Belgian Federal Authorities header.'),
     ),
     'content_access' => array(
       'title' => st('Content Access'),

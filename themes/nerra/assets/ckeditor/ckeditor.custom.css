@@ -250,14 +250,14 @@ ol ol ol,
 ol ol ol ol									{
     margin: 5px 0;
 }
-ol > li										{
+#maincontent ol > li										{
     padding: 10px 0 0 0px;
     margin: 0 0 0 25px;
 	position:relative;
 	color:#32312e;
 	counter-increment: firstlevel;/* Liste à puces ordonnées : http://www.alsacreations.com/article/lire/1210-donnez-du-style-a-vos-listes.html */
 }
-ol > li:after 									{
+#maincontent ol > li:after 									{
 	display: inline-block;
 	content: counter(firstlevel) " ";
 	padding: 0px 5px;
@@ -266,31 +266,29 @@ ol > li:after 									{
 	background: transparent;
 	position:absolute;
 	left: -24px;
-	font-size: 0.82em;
 	line-height: 1.5em;
 	zoom: 1;
 	top: 11px;
-	text-shadow:none;
 	font-weight: bold;
 }
-ol li ol > li									{
+#maincontent ol li ol > li									{
 	counter-increment: secondlevel;/* Liste à puces ordonnées : http://www.alsacreations.com/article/lire/1210-donnez-du-style-a-vos-listes.html */
 }
-ol li ol > li:after 							{
+#maincontent ol li ol > li:after 							{
 	content: counter(secondlevel) " ";
 	background: none repeat scroll 0 0 transparent;
 }
-ol li ol li ol > li							{
+#maincontent ol li ol li ol > li							{
 	counter-increment: thirdlevel;/* Liste à puces ordonnées : http://www.alsacreations.com/article/lire/1210-donnez-du-style-a-vos-listes.html */
 }
-ol li ol li ol > li:after 						{
+#maincontent ol li ol li ol > li:after 						{
 	content: counter(thirdlevel) " ";
 	background: none repeat scroll 0 0 transparent;
 }
- ol li ol li ol li ol > li						{
+#maincontent ol li ol li ol li ol > li						{
 	counter-increment: fourthlevel;/* Liste à puces ordonnées : http://www.alsacreations.com/article/lire/1210-donnez-du-style-a-vos-listes.html */
 }
- ol li ol li ol li ol > li:after 				{
+#maincontent ol li ol li ol li ol > li:after 				{
 	content: counter(fourthlevel) " ";
 }
 

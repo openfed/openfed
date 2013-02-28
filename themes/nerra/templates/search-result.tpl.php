@@ -74,21 +74,13 @@
     <?php endif; ?>
       
     <?php if ($info): ?>
-      <?php if ( theme_get_setting('nerra_search_type') ): ?>
         <p class="search-type"><?php print $info_split['type']; ?></p>
-      <?php endif; ?>
       
-      <?php if ( theme_get_setting('nerra_search_user') ): ?>
         <p class="search-user"><?php print $info_split['user']; ?></p>
-      <?php endif; ?>
       
-      <?php if ( theme_get_setting('nerra_search_date') ): ?>
         <p class="search-date"><?php print $info_split['date']; ?></p>
-      <?php endif; ?>
         
-      <?php if ( theme_get_setting('nerra_search_url') ): ?>
         <p class="search-url"><?php print $url; ?></p>
-      <?php endif; ?>
       
     <?php endif; ?>
   </div>

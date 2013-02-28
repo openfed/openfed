@@ -3,9 +3,13 @@ description = Select this profile to install OpenFED distribution
 core = 7.x
 version = 0.4
 
-files[] = openfed.profile
+; System Requirements.
+  php_memory_limit = 256M
 
-; core
+; Files to include
+  files[] = openfed.profile
+
+; Core
   dependencies[] = aggregator
   dependencies[] = block
   dependencies[] = color
@@ -26,7 +30,8 @@ files[] = openfed.profile
   dependencies[] = taxonomy
   dependencies[] = text
   dependencies[] = translation
-; custom
+
+; Contrib
   ; Administration
     dependencies[] = admin_menu
     dependencies[] = admin_menu_toolbar
@@ -101,12 +106,6 @@ files[] = openfed.profile
     dependencies[] = i18n_variable
   ; Multilanguage
     dependencies[] = translation_helpers
-  ; OpenFed
-    dependencies[] = ofed
-    dependencies[] = ofed_download
-    dependencies[] = ofed_page
-    dependencies[] = ofed_pagemodel
-    dependencies[] = ofed_switcher
   ; Other
     dependencies[] = navigation404
     dependencies[] = backup_migrate
@@ -159,6 +158,8 @@ files[] = openfed.profile
     dependencies[] = seckit
   ; Seo
     dependencies[] = page_title
+  ; Sharing
+    dependencies[] = sharethis
   ; User interface
     dependencies[] = addanother
     dependencies[] = ckeditor
@@ -183,3 +184,10 @@ files[] = openfed.profile
     dependencies[] = xmlsitemap_i18n
     dependencies[] = xmlsitemap_menu
     dependencies[] = xmlsitemap_node
+
+; OpenFed
+  dependencies[] = ofed
+  dependencies[] = ofed_download
+  dependencies[] = ofed_page
+  dependencies[] = ofed_pagemodel
+  dependencies[] = ofed_switcher

@@ -48,6 +48,7 @@ function cms_theme_form_system_theme_settings_alter(&$form, &$form_state) {
         '#type' => 'checkbox',
         '#title' => t('Display "You are here" in front of breadcrumb'),
         '#default_value' => theme_get_setting('cms_theme_breadcrumb_label'),
+        '#description' => t('You must use Drupal core breadcrumb for this settings.'),
       );
       
       

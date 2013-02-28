@@ -14,6 +14,7 @@
  * @see theme_forums()
  */
 ?>
+
 <?php if ($forums_defined): ?>
     <?php print $forums; ?>
     <?php print $topics; ?>

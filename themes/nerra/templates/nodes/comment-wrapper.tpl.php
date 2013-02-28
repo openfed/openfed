@@ -35,18 +35,32 @@
  * @see theme_comment_wrapper()
  */
 ?>
+
 <div id="comments" class="<?php print $classes; ?>"<?php print $attributes; ?>>
-  <h2><?php print t('Comments'); ?></h2>
-  <?php if ($content['comments'] && $node->type != 'forum'): ?>
-    <?php print render($title_prefix); ?>
-    <h2 class="title"><?php print t('Comments'); ?></h2>
-    <?php print render($title_suffix); ?>
+<!--  <h2><?php print t('Comments'); ?></h2> -->
+  <?php if ($content['comments'] ): ?>
+  	<div class="contains-comments"> <?php print render($title_prefix); ?>
+        <h3 class="title"><?php print t('Comments'); ?></h3>
+        <?php print render($title_suffix); ?>
+        <?php 
+          $path = isset($_GET['q']) ? $_GET['q'] : '<front>';
+          echo l( 
+            t('Add new comment'), 
+            $path, 
+            array(
+                'fragment' => 'new-comment',
+                'html' => 'true',
+                'attributes' => array( 'class' => array('button') )
+            )
+          );
+        ?>
+        <?php print render($content['comments']); ?>
+    </div>
   <?php endif; ?>
-
-  <?php print render($content['comments']); ?>
-
   <?php if ($content['comment_form']): ?>
-    <h2 class="title"><?php print t('Add new comment'); ?></h2>
-    <?php print render($content['comment_form']); ?>
+  <div class="contains-new-comment">
+  	<a name="new-comment"></a>
+    <h4 class="title"><?php print t('Add new comment'); ?></h4>
+    <?php print render($content['comment_form']); ?> </div>
   <?php endif; ?>
 </div>

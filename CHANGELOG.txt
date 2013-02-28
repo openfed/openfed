@@ -1,5 +1,50 @@
-CHANGELOG
-=========
+ CHANGELOG
+===========
+
+
+7.x-0.6 : 28 February 2013
+---------------------------
+
+  * Issue
+    #1905492: jquery and colorbox libraries in repo
+    #1852826: Library ckeditor not found by module
+    #1905108: transparent png assets
+
+  * Features updated
+    - rename the feature ofed_new to ofed_news
+    - manage sticky in all content types views
+    
+  * Config added:
+    - sharethis
+    - force the openfed install profile to check php_memory_limit to have at least 256M
+
+  * Modules added
+      Contrib
+        - ShareThis	(2.5)
+      Custom
+        - menu_dam : Allow all custom menus to receive an active trail
+        - maintenance_theme_selector : Maintenance theme module allow to select an another theme to use with the maintenance mode
+
+  * Module updated
+    - colorbox (2.3)
+    - seckit (1.5)
+    - mollom (2.4)
+    - imce (1.7)
+    - field_slideshow (1.81)
+    - ckeditor_link (2.3)
+    - ckeditor (1.12)
+    - admin_menu (3.0-rc4)
+
+  * Patch
+      Drupal Core
+        - Allow install profiles to change the system requirements
+        - Tests for: $info['fields'] not always set?
+        - Registry rebuild should not parse the same file twice in the same request
+      Contrib
+        - Ctools : ctools fix warning message
+        - Features : features static caches
+        - Scheduler : more integration options
+
 
 7.x-0.5 : 31 January 2013
 --------------------------

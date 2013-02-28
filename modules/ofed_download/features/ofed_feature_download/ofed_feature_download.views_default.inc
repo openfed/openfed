@@ -27,7 +27,7 @@ function ofed_feature_download_views_default_views() {
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['link_display'] = 'ofed_download_page_list';
   $handler->display->display_options['access']['type'] = 'perm';
-  $handler->display->display_options['access']['perm'] = 'edit any ofed_download content';
+  $handler->display->display_options['access']['perm'] = 'access content';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
@@ -246,6 +246,7 @@ function ofed_feature_download_views_default_views() {
     '***DEFAULT_LANGUAGE***' => '***DEFAULT_LANGUAGE***',
     'und' => 'und',
     'en' => 'en',
+    'nl' => 'nl',
     'fr' => 'fr',
   );
   $handler->display->display_options['filters']['language']['group'] = 1;
@@ -357,7 +358,92 @@ function ofed_feature_download_views_default_views() {
   $handler->display->display_options['filters']['flagged']['field'] = 'flagged';
   $handler->display->display_options['filters']['flagged']['relationship'] = 'flag_content_rel';
   $handler->display->display_options['filters']['flagged']['value'] = '0';
+  /* Filter criterion: Content: Sticky */
+  $handler->display->display_options['filters']['sticky']['id'] = 'sticky';
+  $handler->display->display_options['filters']['sticky']['table'] = 'node';
+  $handler->display->display_options['filters']['sticky']['field'] = 'sticky';
+  $handler->display->display_options['filters']['sticky']['value'] = '0';
   $handler->display->display_options['path'] = 'downloads';
+
+  /* Display: Page: Sticky */
+  $handler = $view->new_display('attachment', 'Page: Sticky', 'ofed_download_page_list_sticky');
+  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'list';
+  $handler->display->display_options['style_options']['wrapper_class'] = 'download-view page-list item-list sticky';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'ds';
+  $handler->display->display_options['row_options']['view_mode'] = 'page_list';
+  $handler->display->display_options['row_options']['alternating'] = 0;
+  $handler->display->display_options['row_options']['grouping'] = 0;
+  $handler->display->display_options['row_options']['advanced'] = 0;
+  $handler->display->display_options['row_options']['delta_fieldset']['delta_fields'] = array();
+  $handler->display->display_options['row_options']['grouping_fieldset']['group_field'] = 'field_data_field_ofed_download_pubdate|field_ofed_download_pubdate_value';
+  $handler->display->display_options['row_options']['default_fieldset']['view_mode'] = 'page_list';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Flags: download_hide */
+  $handler->display->display_options['relationships']['flag_content_rel']['id'] = 'flag_content_rel';
+  $handler->display->display_options['relationships']['flag_content_rel']['table'] = 'node';
+  $handler->display->display_options['relationships']['flag_content_rel']['field'] = 'flag_content_rel';
+  $handler->display->display_options['relationships']['flag_content_rel']['label'] = 'Hide item';
+  $handler->display->display_options['relationships']['flag_content_rel']['required'] = 0;
+  $handler->display->display_options['relationships']['flag_content_rel']['flag'] = 'download_hide';
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Title */
+  $handler->display->display_options['sorts']['title']['id'] = 'title';
+  $handler->display->display_options['sorts']['title']['table'] = 'node';
+  $handler->display->display_options['sorts']['title']['field'] = 'title';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'ofed_download' => 'ofed_download',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Language */
+  $handler->display->display_options['filters']['language']['id'] = 'language';
+  $handler->display->display_options['filters']['language']['table'] = 'node';
+  $handler->display->display_options['filters']['language']['field'] = 'language';
+  $handler->display->display_options['filters']['language']['value'] = array(
+    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+  );
+  $handler->display->display_options['filters']['language']['group'] = 1;
+  /* Filter criterion: Flags: Flagged */
+  $handler->display->display_options['filters']['flagged']['id'] = 'flagged';
+  $handler->display->display_options['filters']['flagged']['table'] = 'flag_content';
+  $handler->display->display_options['filters']['flagged']['field'] = 'flagged';
+  $handler->display->display_options['filters']['flagged']['relationship'] = 'flag_content_rel';
+  $handler->display->display_options['filters']['flagged']['value'] = '0';
+  $handler->display->display_options['filters']['flagged']['group'] = 1;
+  /* Filter criterion: Content: Sticky */
+  $handler->display->display_options['filters']['sticky']['id'] = 'sticky';
+  $handler->display->display_options['filters']['sticky']['table'] = 'node';
+  $handler->display->display_options['filters']['sticky']['field'] = 'sticky';
+  $handler->display->display_options['filters']['sticky']['value'] = '1';
+  $handler->display->display_options['filters']['sticky']['group'] = 1;
+  $handler->display->display_options['displays'] = array(
+    'ofed_download_page_list' => 'ofed_download_page_list',
+    'default' => 0,
+    'ofed_download_cms' => 0,
+    'ofed_download_block_teaser' => 0,
+    'ofed_download_block_list' => 0,
+    'ofed_download_block_column' => 0,
+    'ofed_download_block_latest_one' => 0,
+  );
 
   /* Display: Block: Teaser */
   $handler = $view->new_display('block', 'Block: Teaser', 'ofed_download_block_teaser');
@@ -684,6 +770,7 @@ function ofed_feature_download_views_default_views() {
     t('Published'),
     t('Page: List'),
     t('Hide item'),
+    t('Page: Sticky'),
     t('Block: Teaser'),
     t('Latest downloads'),
     t('See all downloads'),

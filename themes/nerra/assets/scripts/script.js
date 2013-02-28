@@ -19,19 +19,10 @@
 			});
 		  });
 		});
-		 
-	// When under 768 px, menu changed in a vertical way with click event enable	
-	if ( $(window).width() < 768 ){
-		// Call a function that hide/show the active/inactive categories
-		menuSmartphone();
 		
-		//Add a span tag after each "a" tag to will expand sub-categories
-		$('nav#navigation ul.menu li.expanded a').each(function() {
-			$(this).after('<span></span>');
-		});
-		// click event enable on the icon-menu
+			// click event enable on the icon-menu
 		$("nav#navigation span.icon-menu").click( function (){
-			$nav = $("nav#navigation .container").children("ul.menu");// cached this element
+			$nav = $("nav#navigation .block-menu").children("ul.menu");// cached this element
 			// border of the icon when active/inactive
 			if($nav.css("display") == "none"){
 				$(this).css({'border-radius' : '5px 5px 0 0','z-index' : '1001','border-bottom' : '1px solid transparent'});
@@ -43,7 +34,7 @@
 			$nav.slideToggle();
 		});
 		//expand - collapse the menu second level only
-		$("nav#navigation .container").children("ul.menu").children("li.expanded").children("span").click( function (){
+		$("nav#navigation .block-menu").children("ul.menu").children("li.expanded").children("span").click( function (){
 			$(this).parent().children("ul.menu").slideToggle();
 			console.log("test");
 		});
@@ -58,6 +49,17 @@
 		//expand - collapse the menu fifth level only
  		$("nav#navigation ul.menu li ul.menu li ul.menu li").children("ul.menu").children("li.expanded").children("span").click( function (){
 			$(this).parent().children("ul.menu").slideToggle();
+		});
+
+		 
+	// When under 768 px, menu changed in a vertical way with click event enable	
+	if ( $(window).width() < 768 ){
+		// Call a function that hide/show the active/inactive categories
+		menuSmartphone();
+		
+		//Add a span tag after each "a" tag to will expand sub-categories
+		$('nav#navigation ul.menu li.expanded a').each(function() {
+			$(this).after('<span></span>');
 		});
 	  }
 	  else{

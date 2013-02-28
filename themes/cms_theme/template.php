@@ -1,6 +1,21 @@
 <?php
 
 /**
+ * Force language to be English in this theme 
+ */
+  // Get the list of languages
+  $languages = language_list();
+  // Set up the new language code
+  $lang_code = 'en';
+  // Make sure the required language object is actually set
+  if (isset($languages[$lang_code])) {
+    // Overwrite the global language object
+    global $language;
+    $language = $languages[$lang_code];
+  }
+
+
+/**
  * Register a theme implementations.
  * @return array 
  */

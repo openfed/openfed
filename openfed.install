@@ -129,6 +129,11 @@ function openfed_install() {
   require_once('includes/install/openfed_regional.inc');
   
   /*
+   * Sharethis
+   */
+  require_once('includes/install/openfed_sharethis.inc');
+  
+  /*
    * Sitemap
    */
   require_once('includes/install/openfed_sitemap.inc');

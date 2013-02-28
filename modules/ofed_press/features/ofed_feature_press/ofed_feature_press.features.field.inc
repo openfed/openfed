@@ -622,7 +622,7 @@ function ofed_feature_press_field_default_fields() {
       'bundle' => 'ofed_press',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => 'Upload an additional link related to this press.',
+      'description' => 'Add an additional link related to this press.',
       'display' => array(
         'block_column' => array(
           'label' => 'above',
@@ -1738,7 +1738,7 @@ function ofed_feature_press_field_default_fields() {
   t('Source');
   t('Summary');
   t('Thumb');
-  t('Upload an additional link related to this press.');
+  t('Add an additional link related to this press.');
   t('Use system update date instead of Last updated date');
 
   return $fields;

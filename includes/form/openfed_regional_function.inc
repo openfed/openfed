@@ -89,6 +89,7 @@ function _openfed_create_content_type($lang) {
   // check if variable $lang is known in languages_list
   if ( array_key_exists($lang, _openfed_return_languages_list()) || $lang == 'en' ){
     
+    $ck_link = variable_get('ckeditor_link_autocomplete_menus');
     
     switch($lang){
       case 'en':
@@ -130,24 +131,22 @@ function _openfed_create_content_type($lang) {
         // set title & alias string
         $title = st('Accueil');
         $alias = st('accueil');
+        $menu_name = 'main-french-menu';
         
         // create the french menu
-        $menu = array();
-        $menu['menu_name'] = "main-french-menu";
-        $menu['title'] = "Main French Menu";
-        $menu['description'] = "";
-        $menu['i18n_mode'] = "2";
-        $menu['language'] = "fr";
-        menu_save($menu);
+        _openfed_create_custom_menu($menu_name, "Main French Menu", '', '2', 'fr');
+        
+        // add custom menu into ckeditor link for autocomplete menu
+        $ck_link[$menu_name] = $menu_name;
         
         // store main link source variable for a language
-        variable_store_set('language', $lang, 'menu_main_links_source', $menu['menu_name']);
+        variable_store_set('language', $lang, 'menu_main_links_source', $menu_name);
         
         // create front link in menu
-        _openfed_create_front_menu_link($menu['menu_name'], $title);
+        _openfed_create_front_menu_link($menu_name, $title);
         
         // show block for french language only
-        _openfed_show_block_for_language('menu', $menu['menu_name'], $lang);
+        _openfed_show_block_for_language('menu', $menu_name, $lang);
         
         // add date format
         $date_format = array();
@@ -159,35 +158,33 @@ function _openfed_create_content_type($lang) {
         _openfed_localize_date_format($date_format);
         
         // create webform contact page
-        _openfed_create_webform_contact($lang, $menu['menu_name']);
+        _openfed_create_webform_contact($lang, $menu_name);
         
         // create a menu block for submenu
-        _openfed_create_submenu($lang, $menu['menu_name']);
+        _openfed_create_submenu($lang, $menu_name);
 
         // set the menu in the navigation region for nerra
-        _openfed_set_block_into_region('menu',$menu['menu_name'], 'navigation');
+        _openfed_set_block_into_region('menu',$menu_name, 'navigation');
       break;
       case 'nl':
         $title = st('Welkom');
         $alias = st('welcom');
+        $menu_name = "main-dutch-menu";
         
         // create the Dutch menu
-        $menu = array();
-        $menu['menu_name'] = "main-dutch-menu";
-        $menu['title'] = "Main Dutch Menu";
-        $menu['description'] = "";
-        $menu['i18n_mode'] = "2";
-        $menu['language'] = "nl";
-        menu_save($menu);
+        _openfed_create_custom_menu($menu_name, "Main Dutch Menu", '', '2', 'nl');
+        
+        // add custom menu into ckeditor link for autocomplete menu
+        $ck_link[$menu_name] = $menu_name;
         
         // store variable for a language
-        variable_store_set('language', $lang, 'menu_main_links_source', $menu['menu_name']);
+        variable_store_set('language', $lang, 'menu_main_links_source', $menu_name);
         
         // create front link
-        _openfed_create_front_menu_link($menu['menu_name'], $title);
+        _openfed_create_front_menu_link($menu_name, $title);
         
         // show block for dutch language only
-        _openfed_show_block_for_language('menu', $menu['menu_name'], $lang);
+        _openfed_show_block_for_language('menu', $menu_name, $lang);
         
         // add date format
         $date_format = array();
@@ -199,16 +196,16 @@ function _openfed_create_content_type($lang) {
         _openfed_localize_date_format($date_format);
         
         // create webform contact page
-        _openfed_create_webform_contact($lang, $menu['menu_name']);
+        _openfed_create_webform_contact($lang, $menu_name);
         
         // create a menu block for submenu
-        _openfed_create_submenu($lang, $menu['menu_name']);
+        _openfed_create_submenu($lang, $menu_name);
 
         // set the menu in the navigation region for nerra
-        _openfed_set_block_into_region('menu',$menu['menu_name'], 'navigation');
+        _openfed_set_block_into_region('menu',$menu_name, 'navigation');
       break;
     }
-
+    variable_set('ckeditor_link_autocomplete_menus', $ck_link);
     $pages = array(
         'name' => $alias,
         'task' => 'page',
@@ -540,32 +537,10 @@ function _openfed_create_webform_contact($lang, $menu_name = 'main-menu') {
     $node->webform['components'][] = $component;
     webform_component_insert($component);
   }
-  $emails = array(
-    'nid' => $node->nid,
-    'email' => 'f.gigot@blue4you.be',
-    'subject' => 'default',
-    'from_name' => 'default',
-    'from_address' => 'default',
-    'template' => 'default',
-    'excluded_components' => array(),
-  );
-  webform_email_insert($emails);
+  
 }
 
 
-
-
-/**
- * show a block for a language
- * @param string $module
- * @param string $delta
- * @param string $language 
- */
-function _openfed_show_block_for_language($module, $delta, $language) {
-  $query = db_insert('i18n_block_language')->fields(array('language', 'module', 'delta'));
-  $query->values(array('language' => $language,'module' => $module,'delta' => $delta,));
-  $query->execute();
-}
 
 /**
  * add a date format in database

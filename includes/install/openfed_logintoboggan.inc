@@ -11,3 +11,5 @@ variable_set('logintoboggan_purge_unvalidated_user_interval', 0);
 variable_set('logintoboggan_redirect_on_confirm', '<front>');
 variable_set('logintoboggan_redirect_on_register', '<front>');
 variable_set('logintoboggan_unified_login', TRUE);
+
+variable_set('logintoboggan_site_403', TRUE);

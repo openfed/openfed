@@ -69,10 +69,10 @@
   <?php print $picture ?>
 
   <?php print render($title_prefix); ?>
-  <h3<?php print $title_attributes; ?>>
+  <h4<?php print $title_attributes; ?>>
       <?php print $comment->subject; ?>
       <em class="submitted">by <?php print $author; ?> on <?php print $created ?> <?php print $permalink; ?></em>
-  </h3>
+  </h4>
   <?php print render($title_suffix); ?>
 	
 	

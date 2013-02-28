@@ -35,59 +35,48 @@ function openfed_menu_form_submit($form, &$form_state) {
   $blocks = array();
   if ( !empty($values['menu_list']) ) {
     $ck_link = variable_get('ckeditor_link_autocomplete_menus');
-    if ( $values['menu_list']['menu-tools-menu'] === 'menu-tools-menu' ) {
-      // Create a tools menu.
-        $menu = array();
-        $menu['menu_name'] = "menu-tools-menu";
-        $menu['title'] = "Tools Menu";
-        $menu['description'] = "";
-        menu_save($menu);
-        $block_tools = array(
-          'module' => 'menu',
-          'delta' => 'menu-tools-menu',
-          'theme' => openfed_return_default_front_theme_name(),
-          'status' => 1,
-          'weight' => 0,
-          'region' => 'tools',
-          'pages' => '',
-          'title' => '<none>',
-          'cache' => -1,
-        );
-        $blocks[] = $block_tools;
-        $ck_link['menu-tools-menu'] = 'menu-tools-menu';
-    }
-    if ( $values['menu_list']['menu-footer-menu'] === 'menu-footer-menu' ) {
-      // Create a footer menu.
-        $menu = array();
-        $menu['menu_name'] = "menu-footer-menu";
-        $menu['title'] = "Footer Menu";
-        $menu['description'] = "";
-        menu_save($menu);
-        $block_footer = array(
-          'module' => 'menu',
-          'delta' => 'menu-footer-menu',
-          'theme' => openfed_return_default_front_theme_name(),
-          'status' => 1,
-          'weight' => 0,
-          'region' => 'footer',
-          'pages' => '',
-          'title' => '<none>',
-          'cache' => -1,
-        );
-        $blocks[] = $block_footer;
-        $ck_link['menu-footer-menu'] = 'menu-footer-menu';
-    }
-    menu_rebuild();
-    if (!empty($blocks)) {
-      $query = db_insert('block')->fields(array('module', 'delta', 'theme', 'status', 'weight', 'region', 'pages', 'title', 'cache'));
-      foreach ($blocks as $record) {
-        $query->values($record);
-      }
-      $query->execute();
-      variable_set('ckeditor_link_autocomplete_menus', $ck_link);
-    }
+    foreach( $values['menu_list'] as $menu_key => $menu_identity ) {
+      
+      if ( $menu_key === $menu_identity ) {
+        foreach( language_list() as $lang ) {
+          $menu_name = substr($menu_identity, 0, strlen($menu_identity)-4);
+          $menu_name.= $lang->name;
+          
+          $menu_title = str_replace('-', ' ', $menu_name);
+          
+          $menu_name.= '-menu';
+          $menu_name = strtolower($menu_name);
 
+          // create the tools menu
+            _openfed_create_custom_menu($menu_name, ucwords($menu_title), '', '2', $lang->language);
+
+          // set block in region
+            switch( $menu_identity ){
+              case 'menu-tools-menu':
+              case 'menu-tools-'.$lang->name.'-menu':
+                _openfed_set_block_into_region('menu', $menu_name, 'tools');
+              break;
+              case 'menu-footer-menu':
+              case 'menu-footer-'.$lang->name.'-menu':
+                _openfed_set_block_into_region('menu', $menu_name, 'footer');
+              break;
+            }
+
+          // show block for language only
+            _openfed_show_block_for_language('menu', $menu_name, $lang->language);
+            
+          // add custom menu into ckeditor link for autocomplete menu
+            $ck_link[$menu_name] = $menu_name;
+        }
+      }
+    }
+    
+    variable_set('ckeditor_link_autocomplete_menus', $ck_link);
+    menu_rebuild();
   }
 }
+
+
+
 
 ?>

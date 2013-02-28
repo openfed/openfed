@@ -188,7 +188,7 @@
  */
   
   $arr = array();
-  $arr['ckeditor_path'] = 'profiles/openfed/libraries/ckeditor'; 
+  $arr['ckeditor_path'] = '%b/profiles/openfed/libraries/ckeditor'; 
   
   db_update('ckeditor_settings')
                     ->fields(array(
