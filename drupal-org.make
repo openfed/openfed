@@ -129,8 +129,8 @@ projects[field_group][subdir] = contrib
 projects[field_permissions][version] = "1.0-beta2"
 projects[field_permissions][subdir] = contrib 
 
-projects[field_field_collection][version] = "1.0-beta5"
-projects[field_field_collection][subdir] = contrib 
+projects[field_collection][version] = "1.0-beta5"
+projects[field_collection][subdir] = contrib 
 
 projects[flag][version] = "2.0"
 projects[flag][subdir] = contrib 
