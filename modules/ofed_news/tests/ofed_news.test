@@ -1,0 +1,88 @@
+<?php
+
+/**
+ * @file
+ * Unit tests for OpenFED news module.
+ */
+class OfedNewsTestCase extends DrupalWebTestCase {
+  
+  /**
+   * Profile.
+   * @var string 
+   */
+  public $profile = 'openfed';
+  
+  /**
+   * User.
+   * @var object 
+   */
+  protected $_admin_user;
+
+  /**
+   * User.
+   * @var object 
+   */
+  protected $_public_files_directory;
+
+  /**
+   * Set test info.
+   * @access public
+   * @param  none
+   * @return void
+   */
+  public static function getInfo() {
+    return array(
+      'name' => 'News',
+      'description' => 'Create a node in every language, edit it and delete it.',
+      'group' => '-OpenFED',
+    );
+  }
+
+  /**
+   * Set up test.
+   * @access public
+   * @param  none
+   * @return void
+   */
+  public function setUp() {
+    // Call parent method.
+    parent::setUp( array('ofed_news') );
+
+    // Create and set permission to user.
+    $this->_admin_user = $this->drupalCreateUser(
+      array_keys(module_invoke_all('permission'))
+    );
+    
+    // Login user
+    $this->drupalLogin($this->_admin_user);
+  }
+
+  
+  function testNodeCreation() {
+    
+    $this->assertText( t('user => @title', array('@title' => $this->_admin_user->uid)) );
+    
+    $node = array();
+    $node['title'] = $this->randomName(8);
+//    $node['language'] = 'en';
+//    $node["field_ofed_news_body[und][0][value]"] = $this->randomName(16);
+    $this->drupalPost('node/add/ofed-news', $node, t('Save'));
+    
+//    $this->assertText(t('Ofed News Type @title has been created.', array('@title' => $edit['title'])));
+    
+//    $this->assertText(print_r(module_list(), TRUE));
+    
+    
+    
+    /*
+    // Get all languages.
+    $languages = language_list();
+    // Create node for each enabled language.
+    foreach($languages as $language) {
+      if($language->enabled) {
+          $this->verbose($language);
+      }
+    }
+    */
+  }
+}

@@ -136,7 +136,7 @@ function ofed_feature_download_strongarm() {
             'visible' => FALSE,
           ),
           'full' => array(
-            'weight' => '22',
+            'weight' => '24',
             'visible' => FALSE,
           ),
           'rss' => array(
@@ -168,7 +168,7 @@ function ofed_feature_download_strongarm() {
             'visible' => FALSE,
           ),
           'page_list' => array(
-            'weight' => '21',
+            'weight' => '22',
             'visible' => FALSE,
           ),
           'references' => array(

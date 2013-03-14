@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Team feature.
+ */
+
+include_once 'ofed_feature_team.features.inc';

@@ -28,7 +28,7 @@ $arr = array(
     'anonymous',
     'site_frontpage',
     'site_403',
-                //'site_404', // => give error on submit in site information
+    'site_404',
     'maintenance_mode_message',
   // Feed settings
     'feed_description',

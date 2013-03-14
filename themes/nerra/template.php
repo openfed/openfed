@@ -21,7 +21,7 @@ require_once 'template_module.php';
 
 
 
-function nerra_links__locale_block(&$variables){
+function nerra_links__locale_block(&$variables) {
   $links = $variables['links'];
   $attributes = $variables['attributes'];
   $heading = $variables['heading'];
@@ -81,7 +81,8 @@ function nerra_links__locale_block(&$variables){
         $class_string = implode('|', $attributes['class']);
         if (preg_match('#(language-switcher)#', $class_string) ) {
           $output .= l($key, $link['href'], $link);
-        } else {
+        }
+        else {
           $output .= l($link['title'], $link['href'], $link);
         }
       }
@@ -100,9 +101,9 @@ function nerra_links__locale_block(&$variables){
          */
           $class_string = implode('|', $attributes['class']);
           if (preg_match('#(language-switcher)#', $class_string) ) {
-  //          $output .= l($link['title'], '', $link);
             $output .= l($key, '', $link);
-          } else {
+          }
+          else {
             $output .= '<span' . $span_attributes . '>' . $link['title'] . '</span>';
           }
       }

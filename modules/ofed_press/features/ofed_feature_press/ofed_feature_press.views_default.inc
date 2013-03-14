@@ -607,7 +607,7 @@ function ofed_feature_press_views_default_views() {
     t('Delete'),
     t('Published'),
     t('Page: List'),
-    t('Page: Sticky '),
+    t('Page: Sticky'),
     t('Block: Teaser'),
     t('Latest press'),
     t('See all press'),

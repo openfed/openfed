@@ -825,7 +825,7 @@ color: #f00;
   	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fcfcfc', endColorstr='#f2f2f2', GradientType=0);
 	margin: -20px 0 25px 0;
 	position: relative;
-	padding: 10px 0 20px 0;
+	padding: 10px 0;
 
 }
 
@@ -1341,8 +1341,25 @@ footer															{
 time															{
 	font-style: italic;
 }
+.field-name-field-ofed-press-pubdate,
+.field-name-field-ofed-press-update,
+.field-name-field-ofed-news-pubdate,
+.field-name-field-ofed-news-update,
+.field-name-field-ofed-download-pubdate,
+.field-name-field-ofed-download-update,
+.field-name-field-ofed-page-pubdate,
+.field-name-field-ofed-page-update,
+.field-name-field-ofed-team-pubdate,
+.field-name-field-ofed-team-update,
+.field-name-field-ofed-event-pubdate,
+.field-name-field-ofed-event-update,
+.field-name-field-ofed-meeting-pubdate,
+.field-name-field-ofed-meeting-update							{
+	font-size: 0.85em;
+	color: #B0AEA4;
+}
 
-/*		Generic Fields : Author	*/
+/*		Generic Fields : Author & Source	*/
 
 .field-name-field-ofed-press-author,
 .field-name-field-ofed-news-author,
@@ -1363,7 +1380,8 @@ time															{
 .field-name-field-ofed-press-source								{
 	margin-bottom:10px;
 }
-/*		Generic Fields : Thumb	*/
+
+/*		Generic Fields : Thumb			*/
 
 .field-name-field-ofed-news-thumb,
 .field-name-field-ofed-download-thumb,
@@ -1378,7 +1396,8 @@ time															{
 .field-name-field-ofed-download-thumb img,
 .field-name-field-ofed-press-thumb img,
 .field-name-field-ofed-page-thumb img,
-.field-name-field-ofed-event-thumb img							{
+.field-name-field-ofed-event-thumb img,
+.field-name-field-ofed-team-thumb img							{
 	border: 3px solid white;
 	box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
 }
@@ -1386,6 +1405,11 @@ time															{
 	margin: 10px auto 0 auto;
 	width:400px;
 }
+.field-name-field-ofed-team-picture .label-above				{
+	display: none;
+}
+
+/*		Generic Fields : docs & Links & Adress			*/
 .field-name-field-ofed-page-docs,
 .field-name-field-ofed-news-docs,
 .field-name-field-ofed-news-links,
@@ -1397,11 +1421,29 @@ time															{
 .field-name-field-ofed-event-docs,
 .field-name-field-ofed-event-address,
 .field-name-field-ofed-meeting-address,
-.field-name-field-ofed-meeting-docs							{
+.field-name-field-ofed-meeting-docs,
+.field-name-field-ofed-team-contact,
+.field-name-field-ofed-team-social								{
 	border: 1px solid #E1DED7;
 	background: #F4F4F3;
 	padding: 10px 10px 10px 10px;
 	margin-bottom:10px;
+}
+.field-name-field-ofed-page-docs .label-above,
+.field-name-field-ofed-news-docs .label-above,
+.field-name-field-ofed-news-links .label-above,
+.field-name-field-ofed-press-docs .label-above,
+.field-name-field-ofed-press-contact-person .label-above,
+.field-name-field-ofed-press-contact .label-above,
+.field-name-field-ofed-press-links .label-above,
+.field-name-field-ofed-event-links .label-above,
+.field-name-field-ofed-event-docs .label-above,
+.field-name-field-ofed-event-address .label-above,
+.field-name-field-ofed-meeting-address .label-above,
+.field-name-field-ofed-meeting-docs .label-above,
+.field-name-field-ofed-team-contact .label-above,
+.field-name-field-ofed-team-social .label-above					{
+	text-decoration: underline;
 }
 
 .field-name-field-ofed-page-docs,
@@ -1431,7 +1473,19 @@ time															{
 	display:block;
 }
 .field-name-field-ofed-page-docs .view-mode-references	a		{
-    line-height: 25px;
+    padding-bottom: 5px;
+}
+.field-name-field-ofed-team-social-name							{
+	font-weight: 600;
+	font-size: 1.1em;
+	color: #ff7300;
+	padding-top: 10px;
+}
+#maincontent .field-collection-view ul.field-collection-view-links{
+	margin-top: -40px;
+}
+#maincontent .field-collection-container ul.action-links-field-collection-add{
+	margin-top: -30px;
 }
 
 /*		Generic Fields : Downloads	*/
@@ -1543,6 +1597,9 @@ time															{
     line-height: 1.5em;
     padding: 10px 0;
 }
+.view-mode-block_column h3									{
+	padding: 0 0 10px 0;
+}
 .view-mode-teaser p, 
 .block-list p, 
 .view-mode-block_element p, 
@@ -1550,6 +1607,10 @@ time															{
     border-top: 1px solid #E1DED7;
     padding: 5px 0 0 0;
     position: relative;
+	margin-bottom: 5px;
+}
+.page-list p												{
+	margin-bottom: 5px;
 }
 .view-ofed-faq .view-mode-teaser p							{
 	border-top: none;
@@ -1598,6 +1659,10 @@ time															{
     margin: 0;
     font-weight: 600;
 }
+.page-list	ul li h3										{
+	margin: 0;
+}
+
 #maincontent .page-list > ul li:after						{
 	content: " ";
 	position:absolute;
@@ -1615,7 +1680,10 @@ time															{
 .view-display-id-ofed_news_block_column .views-row,
 .view-display-id-ofed_download_block_column .views-row,
 .view-display-id-ofed_press_block_column .views-row,
-.view-display-id-ofed_photogallery_block_column .views-row	{
+.view-display-id-ofed_photogallery_block_column .views-row,
+.view-display-id-ofed_event_block_column .views-row,
+.view-display-id-ofed_meeting_block_column .views-row,
+.view-display-id-ofed_team_block_column .views-row		{
 	float:left;    
 	width:33%;
 }
@@ -1635,7 +1703,13 @@ time															{
 .view-display-id-ofed_download_block_column:before,
 .view-display-id-ofed_download_block_column:after,
 .view-display-id-ofed_page_block_column:before,
-.view-display-id-ofed_page_block_column:after				{
+.view-display-id-ofed_page_block_column:after,
+.view-display-id-ofed_event_block_column:before,
+.view-display-id-ofed_event_block_column:after,
+.view-display-id-ofed_meeting_block_column:before,
+.view-display-id-ofed_meeting_block_column:after,
+.view-display-id-ofed_team_block_column:before,
+.view-display-id-ofed_team_block_column:after				{
   display: table;
   content: " ";
   line-height: 0;
@@ -1648,7 +1722,10 @@ time															{
 	padding : 0 0 10px 0;
 }
 .field-name-field-ofed-event-docs .view-mode-references,
-.field-name-field-ofed-meeting-docs .view-mode-references 	{
+.field-name-field-ofed-meeting-docs .view-mode-references,
+.field-name-field-ofed-event-address .view-mode-references,
+.field-name-field-ofed-meeting-address .view-mode-references,
+.field-name-field-ofed-team-contact .view-mode-references	{
 	padding: 0;
 }
 
@@ -2336,6 +2413,7 @@ a.back:hover												{
 .field-name-field-ofed-meeting-date span.date-display-single	{
 	color:#ff7300;
 	font-style:normal;
+	font-size: 1em;
 }
 .field-name-field-ofed-event-organizer,
 .field-name-field-ofed-meeting-organizer 						{
@@ -2351,7 +2429,7 @@ a.back:hover												{
 .view-mode-block_column	.field-name-field-ofed-event-date,
 .page-list .field-name-field-ofed-meeting-date,
 .view-mode-block_column	.field-name-field-ofed-meeting-date	{
-	font-size: 1.25em;
+	font-size: 1em;
 }
 .view-mode-block_column	.field-name-field-ofed-event-date,
 .view-mode-block_column	.field-name-field-ofed-meeting-date	{
@@ -2370,10 +2448,13 @@ a.back:hover												{
 */
 
 .field-name-field-ofed-address-name							{
-	font-size: 1.25em;
+	font-size: 1.1em;
 	margin: 5px 0;
-	font-weight: 600;
+	font-weight: 700;
 	color: #ff7300;
+}
+.field-name-address											{
+	font-weight: 600;
 }
 .field-name-address,
 .field-name-field-ofed-address-phone,
@@ -2385,6 +2466,85 @@ a.back:hover												{
 	box-shadow: inset 0px 0px 6px rgba(0, 0, 0, 0.1);
 	margin: 0 auto 30px auto;
 	padding: 5px;
+}
+
+/*		
+		TEAM Member		
+*/
+.field-name-field-ofed-team-first-name,
+.field-name-field-ofed-team-last-name							{
+	font-size: 1.5em;
+	font-weight: 600;
+	color: #ff7300;
+	line-height:1.8em;
+	padding-right: 5px;
+}
+.field-name-field-ofed-team-function							{
+	padding-bottom: 5px;
+	font-weight: 700;
+}
+.field-name-field-ofed-team-civility,
+.field-name-field-ofed-team-gender								{
+	padding-bottom: 5px;
+}
+.field-name-field-ofed-team-civility .label-inline,
+.field-name-field-ofed-team-gender .label-inline				{
+	font-size: 0.85em;
+	color: #b0aea4;
+	width: 50px;
+	display: inline-block;
+}
+.block-list .field-name-field-ofed-team-first-name,
+.block-list .field-name-field-ofed-team-last-name				{
+    border-top: 1px solid #E1DED7;
+    padding: 5px 0 0 0;
+}
+.view-mode-teaser .field-name-field-ofed-team-picture			{
+	padding: 10px 0 0 0;
+    border-top: 1px solid #E1DED7;
+}
+.view-mode-teaser .field-name-field-ofed-team-body p,
+.view-mode-teaser .field-name-field-ofed-team-body p:after		{
+	border-top: none;
+}
+.page-list .field-name-field-ofed-team-picture					{
+	padding-top: 10px;
+}
+span.social-button												{
+	padding-right: 10px;
+	width: 32px;
+	height: 32px;
+	display:inline-block;
+	font-size:0;
+	line-height:0;
+}
+
+span.social-button a											{
+	width: 32px;
+	height: 32px;
+	display:inline-block;
+	font-size:0;
+	line-height:0;
+	text-shadow:none;
+	color: transparent;
+}
+span.social-button.facebook	a									{
+	background:url(../icons/icon-facebook-32.png) no-repeat 0 0;
+}
+span.social-button.twitter a									{
+	background:url(../icons/icon-twitter-32.png) no-repeat 0 0;
+}
+span.social-button.linkedin a									{
+	background:url(../icons/icon-linkedin-32.png) no-repeat 0 0;
+}
+span.social-button.googlep a									{
+	background:url(../icons/icon-googlep-32.png) no-repeat 0 0;
+}
+span.social-button span.ext										{
+	background: none;
+}
+.field-name-anchor												{
+	margin-bottom: 20px;
 }
 /*		
 		MAINTENANCE PAGE		

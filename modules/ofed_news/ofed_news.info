@@ -4,5 +4,9 @@ package = openFED
 core = 7.x
 version = "7.x-1.0"
 
+files[] = ofed_news.module
+files[] = ofed_news.install
+files[] = tests/ofed_news.test
+
 dependencies[] = ofed_download
 dependencies[] = ofed_feature_news

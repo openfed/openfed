@@ -12,15 +12,15 @@
 function nerra_text_resize_block() {
   if (_get_text_resize_reset_button() == TRUE) {
     $output = '<ul class="text-resize">';
-    $output .= '<li><a href="javascript:;" class="changer" id="text_resize_decrease" title="'.t('Decrease text size').'">A -</a></li>';
-    $output .= '<li><a href="javascript:;" class="changer" id="text_resize_reset" title="'.t('Reset text size').'">A</a></li>';
-    $output .= '<li><a href="javascript:;" class="changer" id="text_resize_increase" title="'.t('Increase text size').'">A +</a></li>';
+    $output .= '<li><a href="javascript:;" class="changer" id="text_resize_decrease" title="' . t('Decrease text size') . '">A -</a></li>';
+    $output .= '<li><a href="javascript:;" class="changer" id="text_resize_reset" title="' . t('Reset text size') . '">A</a></li>';
+    $output .= '<li><a href="javascript:;" class="changer" id="text_resize_increase" title="' . t('Increase text size') . '">A +</a></li>';
     $output .= '</ul>';
   }
   else {
     $output = '<ul class="text-resize">';
-    $output .= '<li><a href="javascript:;" class="changer" id="text_resize_decrease" title="'.t('Decrease text size').'">A -</a></li>';
-    $output .= '<li><a href="javascript:;" class="changer" id="text_resize_increase" title="'.t('Increase text size').'">A +</a></li>';
+    $output .= '<li><a href="javascript:;" class="changer" id="text_resize_decrease" title="' . t('Decrease text size') . '">A -</a></li>';
+    $output .= '<li><a href="javascript:;" class="changer" id="text_resize_increase" title="' . t('Increase text size') . '">A +</a></li>';
     $output .= '</ul>';
   }
   return $output;
@@ -47,7 +47,8 @@ function nerra_preprocess_search_block_form(&$variables) {
     else {
       if ( $key == 'actions' ) {
         $variables['search'][$key] = render($variables['form'][$key]['submit']);
-      } else {
+      }
+      else {
         $variables['search'][$key] = render($variables['form'][$key]);
       }
     }

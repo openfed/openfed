@@ -211,7 +211,7 @@ function ofed_feature_photogallery_views_default_views() {
     '***DEFAULT_LANGUAGE***' => '***DEFAULT_LANGUAGE***',
     'und' => 'und',
     'en' => 'en',
-    'nl' => 'nl',    
+    'nl' => 'nl',
     'fr' => 'fr',
   );
   $handler->display->display_options['filters']['language']['group'] = 1;
@@ -693,7 +693,7 @@ function ofed_feature_photogallery_views_default_views() {
     t('Block: Column'),
     t('Photos galeries: Column'),
     t('Block: Latest one'),
-    t('Latest one photos galery '),
+    t('Latest one photos galery'),
     t('Photos galeries: Latest one photos galery'),
     t('Block: Latest one updated'),
     t('Latest updated photos galery'),

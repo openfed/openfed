@@ -1,10 +1,9 @@
 name = OpenFED
 description = Select this profile to install OpenFED distribution
 core = 7.x
-version = 0.4
 
 ; System Requirements.
-  php_memory_limit = 256M
+  php_memory_limit = 224M
 
 ; Files to include
   files[] = openfed.profile
@@ -90,7 +89,6 @@ version = 0.4
     dependencies[] = metatag
   ; Multilingual - i18n
     dependencies[] = i18n_block
-    dependencies[] = countries_i18n
     dependencies[] = i18n_field
     dependencies[] = i18n
     dependencies[] = i18n_menu
@@ -120,6 +118,7 @@ version = 0.4
     dependencies[] = logintoboggan_variable
     dependencies[] = menu_attributes
     dependencies[] = menu_block
+    dependencies[] = menu_dam
     dependencies[] = menu_firstchild
     dependencies[] = menu_position
     dependencies[] = mollom
@@ -137,6 +136,7 @@ version = 0.4
     dependencies[] = text_resize
     dependencies[] = token
     dependencies[] = transliteration
+    dependencies[] = waia_integration
   ; Panels
     dependencies[] = panels_mini
     dependencies[] = panels_node

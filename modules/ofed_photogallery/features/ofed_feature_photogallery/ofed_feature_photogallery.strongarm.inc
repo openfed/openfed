@@ -125,7 +125,7 @@ function ofed_feature_photogallery_strongarm() {
             'visible' => FALSE,
           ),
           'teaser' => array(
-            'weight' => '10',
+            'weight' => '12',
             'visible' => FALSE,
           ),
           'full' => array(
@@ -149,7 +149,7 @@ function ofed_feature_photogallery_strongarm() {
             'visible' => FALSE,
           ),
           'block_column' => array(
-            'weight' => '12',
+            'weight' => '13',
             'visible' => FALSE,
           ),
           'block_element' => array(
@@ -161,11 +161,11 @@ function ofed_feature_photogallery_strongarm() {
             'visible' => FALSE,
           ),
           'block_list' => array(
-            'weight' => '10',
+            'weight' => '12',
             'visible' => FALSE,
           ),
           'page_list' => array(
-            'weight' => '12',
+            'weight' => '13',
             'visible' => FALSE,
           ),
         ),

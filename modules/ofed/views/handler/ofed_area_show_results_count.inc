@@ -20,8 +20,8 @@ class ofed_area_show_results_count extends views_handler_area {
     // Initialize.
     $output = '';
 
-    if(isset( $this->view->filter['type'])) {
-      foreach($this->view->filter['type']->value as $key => $value) {
+    if (isset( $this->view->filter['type'])) {
+      foreach ($this->view->filter['type']->value as $key => $value) {
         // Get the current view.
         $view = views_get_current_view();
         
@@ -29,7 +29,7 @@ class ofed_area_show_results_count extends views_handler_area {
         $count_t = (isset($view->total_rows)) ? $view->total_rows : count($view->result);
         
         // Set the current position.
-        if($count_t >= 1){
+        if ($count_t >= 1) {
           $count_x = ($view->query->pager->current_page * $view->query->pager->options['items_per_page']) + 1;
           // Set the number of the displayed results.
           $count_y = $count_x + count($view->result) - 1;

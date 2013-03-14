@@ -7,7 +7,7 @@ function ofed_download_menu() {
   $items = array();
 
   $items['download-file/%'] = array(
-    'title' => t('Download file'),
+    'title' => 'Download file',
     'page callback' => array('_ofed_download_force_download'),
     'page arguments' => array(1),
     'access callback' => 'user_access',
@@ -37,7 +37,7 @@ function ofed_download_theme_registry_alter(&$theme_registry) {
  * Helper function for re-ordering arrays (needed by theme_registry_alter).
  */
 function _ofed_download_insert_after_first_element(&$a, $element) {
-  if(is_array($a)) {
+  if (is_array($a)) {
     $first_element = array_shift($a);
     array_unshift($a, $first_element, $element);
   }

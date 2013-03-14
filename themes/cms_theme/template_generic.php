@@ -4,9 +4,8 @@
  * Add a js to the exposed form
  * @param type $vars 
  */
-function cms_theme_preprocess_views_exposed_form(&$vars)
-{
-	drupal_add_js(drupal_get_path('theme', $GLOBALS['theme_key'])."/assets/scripts/cms-views.js", "theme");
+function cms_theme_preprocess_views_exposed_form(&$vars) {
+  drupal_add_js(drupal_get_path('theme', $GLOBALS['theme_key']) . "/assets/scripts/cms-views.js", "theme");
 }
 
 /**
@@ -21,11 +20,11 @@ function cms_theme_preprocess_page(&$variables) {
   }
   elseif (!empty($variables['page']['sidebar_first'])) {
     $variables['class_left'] = theme_get_setting('cms_theme_layout_width_left');
-    $variables['class_content'] = 'span-'.( 12 - substr($variables['class_left'], 5,strlen($variables['class_left'])) );
+    $variables['class_content'] = 'span-' . ( 12 - substr($variables['class_left'], 5, strlen($variables['class_left'])) );
   }
   elseif (!empty($variables['page']['sidebar_second'])) {
     $variables['class_right'] = theme_get_setting('cms_theme_layout_width_right');
-    $variables['class_content'] = 'span-'.( 12 - substr($variables['class_right'], 5,strlen($variables['class_right'])) );
+    $variables['class_content'] = 'span-' . ( 12 - substr($variables['class_right'], 5, strlen($variables['class_right'])) );
   }
   else {
     $variables['class_content'] = 'span-12';
@@ -38,8 +37,8 @@ function cms_theme_preprocess_page(&$variables) {
  * Add body classes if certain regions have content.
  */
 function cms_theme_preprocess_html(&$variables) {
-  foreach($variables['classes_array'] as $key => $class) {
-    if($class == 'no-sidebars') {
+  foreach ($variables['classes_array'] as $key => $class) {
+    if ($class == 'no-sidebars') {
       unset($variables['classes_array'][$key]);
     }
   }
@@ -81,7 +80,7 @@ function cms_theme_css_alter(&$css) {
   unset($css[drupal_get_path('module', 'text_resize') . '/text_resize.css']);
   unset($css[drupal_get_path('module', 'locale') . '/locale.css']);
   // Turn off some styles from the system module
-  if( !user_is_logged_in() ){
+  if ( !user_is_logged_in() ) {
     unset($css[drupal_get_path('module', 'system') . '/system.base.css']);
     unset($css[drupal_get_path('module', 'system') . '/system.menus.css']);
     unset($css[drupal_get_path('module', 'system') . '/system.theme.css']);
@@ -100,37 +99,37 @@ function cms_theme_breadcrumb($variables) {
   $breadcrumb = $variables['breadcrumb'];
 
   if (!empty($breadcrumb)) {
-      $first = urlencode('<firstchild>');
-	  $nolink = urlencode('<nolink>');
+    $first = urlencode('<firstchild>');
+    $nolink = urlencode('<nolink>');
       
-      $display = '<ul>';
+    $display = '<ul>';
         
-        if (theme_get_setting('cms_theme_breadcrumb_label')):
-          $display .= '<li>'.t('You are here').'</li>';
-        endif;
+    if (theme_get_setting('cms_theme_breadcrumb_label')):
+      $display .= '<li>' . t('You are here') . '</li>';
+    endif;
         
-        $counter = 1;
-        $count = count($breadcrumb);
-		foreach( $breadcrumb as $item) {
-          if ( strpos($item, $first) || strpos($item, $nolink) ) {
-            $item = strip_tags($item);
-          }
-          switch ( $counter ) {
-            case "1":
-              $class = 'class="first"';
-              break;
-            case $count:
-              $class = 'class="last"';
-              break;
-            default:
-              $class = '';
-              break;
-          }
-          $display .= '<li '.$class.' >'.$item.'</li>';
-          $counter++;
-        }
-        
-      $display .= '</ul>';
+    $counter = 1;
+    $count = count($breadcrumb);
+    foreach ( $breadcrumb as $item) {
+      if ( strpos($item, $first) || strpos($item, $nolink) ) {
+        $item = strip_tags($item);
+      }
+      switch ( $counter ) {
+        case "1":
+          $class = 'class="first"';
+          break;
+        case $count:
+          $class = 'class="last"';
+          break;
+        default:
+          $class = '';
+          break;
+      }
+      $display .= '<li ' . $class . ' >' . $item . '</li>';
+      $counter++;
+    }
+
+    $display .= '</ul>';
     return $display;
   }
 }
@@ -145,16 +144,19 @@ function cms_theme_breadcrumb($variables) {
  * @return string
  */
 function cms_theme_cut_string($string, $length = 150, $more_link = '') {
-  ( $more_link != '') ? $more = '<br>'.l( t('Read more'), $more_link ).'' : $more = '';
+  ( $more_link != '') ? $more = '<br>' . l( t('Read more'), $more_link ) . '' : $more = '';
 
   if (empty ($string)) {
     return "";
-  } elseif (strlen ($string) < $length) {
+  }
+  elseif (strlen ($string) < $length) {
     return $string;
-  } elseif (preg_match ("/(.{1,$length})\s./ms", $string, $match)) {
-  return $match [1] .' ...'. $more;
-  } else {
-    return substr ($string, 0, $length) .' ...'. $more;
+  }
+  elseif (preg_match ("/(.{1,$length})\s./ms", $string, $match)) {
+    return $match [1] . ' ...' . $more;
+  }
+  else {
+    return substr($string, 0, $length) . ' ...' . $more;
   }
 }
 
@@ -168,14 +170,13 @@ function cms_theme_preprocess_node(&$variables) {
     $variables['node']->which_display = '';
   }
     
-  if( isset($variables['node']->view->current_display) )
-  {
-    $which_display = $variables['node']->view->name.'-'.$variables['node']->view->current_display;
+  if ( isset($variables['node']->view->current_display) ) {
+    $which_display = $variables['node']->view->name . '-' . $variables['node']->view->current_display;
     $variables['node']->which_display = $which_display;
   } 
   
   if ( module_exists('metatag') ) {
-	render( $variables['content']['metatags'] );
+    render( $variables['content']['metatags'] );
   }
 }
 
@@ -185,56 +186,56 @@ function cms_theme_preprocess_node(&$variables) {
  * @return string
  */
 function cms_theme_getThemeableFormCheckboxClass() {
-  return ' '.theme_get_setting('cms_theme_form_checkbox');
+  return ' ' . theme_get_setting('cms_theme_form_checkbox');
 }
 /**
  * Return class name for file input
  * @return string
  */
 function cms_theme_getThemeableFormFileClass() {
-  return ' '.theme_get_setting('cms_theme_form_file');
+  return ' ' . theme_get_setting('cms_theme_form_file');
 }
 /**
  * Return class name for password input
  * @return string
  */
 function cms_theme_getThemeableFormPasswordClass() {
-  return ' '.theme_get_setting('cms_theme_form_password');
+  return ' ' . theme_get_setting('cms_theme_form_password');
 }
 /**
  * Return class name for radio input
  * @return string
  */
 function cms_theme_getThemeableFormRadioClass() {
-  return ' '.theme_get_setting('cms_theme_form_radio');
+  return ' ' . theme_get_setting('cms_theme_form_radio');
 }
 /**
  * Return class name for select input
  * @return string
  */
 function cms_theme_getThemeableFormSelectSingleClass() {
-  return ' '.theme_get_setting('cms_theme_form_select_single');
+  return ' ' . theme_get_setting('cms_theme_form_select_single');
 }
 /**
  * Return class name for multi select input
  * @return string
  */
 function cms_theme_getThemeableFormSelectMultipleClass() {
-  return ' '.theme_get_setting('cms_theme_form_select_multiple');
+  return ' ' . theme_get_setting('cms_theme_form_select_multiple');
 }
 /**
  * Return class name for textarea input
  * @return string
  */
 function cms_theme_getThemeableFormTextClass() {
-  return ' '.theme_get_setting('cms_theme_form_text');
+  return ' ' . theme_get_setting('cms_theme_form_text');
 }
 /**
  * Return class name for date input
  * @return string
  */
 function cms_theme_getThemeableFormDateClass() {
-  return ' '.theme_get_setting('cms_theme_form_date');
+  return ' ' . theme_get_setting('cms_theme_form_date');
 }
 
 /**
@@ -421,7 +422,8 @@ function cms_theme_select($variables) {
   
   if ( $element['#multiple'] == 1 ) {
     _form_set_class($element, array('form-select', cms_theme_getThemeableFormSelectMultipleClass()));
-  } else {
+  }
+  else {
     _form_set_class($element, array('form-select', cms_theme_getThemeableFormSelectSingleClass()));
   }
 
@@ -604,8 +606,7 @@ function cms_theme_item_list($variables) {
  */
 function cms_theme_feed_icon($variables) {
   $text = t('Subscribe to @feed-title', array('@feed-title' => $variables['title']));
-  //if ($image = theme('image', array('path' => 'misc/feed.png', 'width' => 16, 'height' => 16, 'alt' => $text))) {
-  if ($image = theme('image', array('path' => drupal_get_path('theme', 'cms_theme').'/assets/icons/icon-rss.png', 'width' => 16, 'height' => 16, 'alt' => $text))) {
+  if ($image = theme('image', array('path' => drupal_get_path('theme', 'cms_theme') . '/assets/icons/icon-rss.png', 'width' => 16, 'height' => 16, 'alt' => $text))) {
     return l($image, $variables['url'], array('html' => TRUE, 'attributes' => array('class' => array('feed-icon'), 'title' => $text)));
   }
 }

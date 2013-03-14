@@ -8,7 +8,7 @@
  * @return void
  */
 function maintenance_theme_selector_form_alter(&$form, $form_state, $form_id) {
-  if($form_id == 'system_site_maintenance_mode') {
+  if ($form_id == 'system_site_maintenance_mode') {
     // Add callback to the form submit action.
     $form['#submit'][] = '_maintenance_theme_selector_maintenance_page_form_submit';
     // Add the input select to choose the maintenance theme.
@@ -40,7 +40,7 @@ function maintenance_theme_selector_form_alter(&$form, $form_state, $form_id) {
  */
 function _maintenance_theme_selector_maintenance_page_form_submit($form, &$form_state) {
   // If maintenance mode is enabled ...
-  if(!empty($form_state['values']['maintenance_mode'])) {
+  if (!empty($form_state['values']['maintenance_mode'])) {
     // Save the new settings.
     _maintenance_theme_selector_save_maintenance_theme_value($form_state['values']['maintenance_theme_custom']);
   }
@@ -54,11 +54,11 @@ function _maintenance_theme_selector_maintenance_page_form_submit($form, &$form_
 /**
  * 
  */
-function _maintenance_theme_selector_save_maintenance_theme_value($maintenance_theme){
+function _maintenance_theme_selector_save_maintenance_theme_value($maintenance_theme) {
   // Set the maintenance theme backup variable.
   $default_theme_backup = variable_get('theme_default_backup', '');
   $maintenance_theme_backup = variable_get('maintenance_theme_backup', '');
-  if(empty($default_theme_backup) || empty($maintenance_theme_backup)) {
+  if (empty($default_theme_backup) || empty($maintenance_theme_backup)) {
     // Make a backup of the default theme.
     variable_set('theme_default_backup', variable_get('theme_default', 'bartik'));
     // Make a backup of the maitenance theme.
@@ -75,10 +75,10 @@ function _maintenance_theme_selector_save_maintenance_theme_value($maintenance_t
 /**
  *  
  */
-function _maintenance_theme_selector_restore_maintenance_theme_value(){
+function _maintenance_theme_selector_restore_maintenance_theme_value() {
   $default_theme_backup = variable_get('theme_default_backup', '');
   $maintenance_theme_backup = variable_get('maintenance_theme_backup', '');
-  if(!empty($default_theme_backup) || !empty($maintenance_theme_backup)) {
+  if (!empty($default_theme_backup) || !empty($maintenance_theme_backup)) {
     // Restore the default theme variable.
     variable_set('theme_default', $default_theme_backup);   
     // Restore the default theme backup.
@@ -102,7 +102,7 @@ function _maintenance_theme_selector_settings_alter($maintenance_theme) {
   // Define the settings file.
   $settings_file = conf_path(FALSE) . '/settings.php';
   // If the file exist.
-  if(is_file($settings_file)) {
+  if (is_file($settings_file)) {
     // Get the settings file content.
     $settings_file_content = file_get_contents($settings_file);
     // Prepare regex.
@@ -117,13 +117,13 @@ function _maintenance_theme_selector_settings_alter($maintenance_theme) {
     $os = strtolower(PHP_OS);
     $os = (preg_match('#^win#', $os)) ? 'win' : $os;
     // Set the file perms.
-    if($os == 'win') {
+    if ($os == 'win') {
       chmod($settings_file, 0644);
     }
     // Write the file.
     file_put_contents($settings_file, $settings_file_content);
     // Restore the initial file perms.
-    if($os == 'win') {
+    if ($os == 'win') {
       chmod($settings_file, $file_initial_chmod);
     }
   }

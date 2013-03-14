@@ -17,7 +17,7 @@ function ofed_slideshow_block_info() {
  */
 function ofed_slideshow_block_view($delta = '') {
   $block = array();
-  switch($delta) {
+  switch ($delta) {
     case 'slide_images':
       $block['subject'] = t('Slideshow: Slideshow block');
       $block['content'] = _ofed_slideshow_render_content($delta);
@@ -32,21 +32,21 @@ function ofed_slideshow_block_view($delta = '') {
  * @return type 
  */
 function _ofed_slideshow_render_content($delta) {
-  if(drupal_is_front_page()) {
+  if (drupal_is_front_page()) {
     $path = '<front>';
   }
   else {
     $path = $_GET['q'];
   }
 
-  if(_ofed_slideshow_menu_link_exist($path)) {
+  if (_ofed_slideshow_menu_link_exist($path)) {
     $mlid = _ofed_slideshow_menu_link_exist($path);
     $nid = _ofed_slideshow_node_slideshow_exist($mlid);
-    if($nid) {
-      $nodeload = node_load($nid, null, true);
+    if ($nid) {
+      $nodeload = node_load($nid, NULL, TRUE);
 
       $fieldname = 'field_ofed_' . $delta;
-      if($nid != '' && !empty($nodeload->$fieldname)) {
+      if ($nid != '' && !empty($nodeload->$fieldname)) {
         return _ofed_slideshow_render_node($nodeload, $delta);
       }
       else {
@@ -70,13 +70,13 @@ function _ofed_slideshow_lookup($path, $delta) {
   $lookup = drupal_lookup_path('alias', $path);
   $split = explode('/', $lookup);
   $counts = count($split);
-  if($counts > 1) {
+  if ($counts > 1) {
     $checksplit = $split;
 
-    for($i = 0, $count = count($split) - 1; $i < $counts; $i++) {
+    for ($i = 0, $count = count($split) - 1; $i < $counts; $i++) {
       $id = $count - $i;
       $link_path = '';
-      foreach($checksplit as $key) {
+      foreach ($checksplit as $key) {
         $link_path .= $key . '/';
       }
       $link_path = substr($link_path, 0, -1);
@@ -86,12 +86,11 @@ function _ofed_slideshow_lookup($path, $delta) {
       $mlid = _ofed_slideshow_menu_link_exist($node_path);
       $nid = _ofed_slideshow_node_slideshow_exist($mlid);
 
-      if($nid) {
-        $nodeload = node_load($nid, null, true);
+      if ($nid) {
+        $nodeload = node_load($nid, NULL, TRUE);
 
         $fieldname = 'field_ofed_' . $delta;
-        if($nid != '' && !empty($nodeload->$fieldname)) {
-          echo 'test';
+        if ($nid != '' && !empty($nodeload->$fieldname)) {
           return _ofed_slideshow_render_node($nodeload, $delta);
         }
       }
@@ -99,10 +98,10 @@ function _ofed_slideshow_lookup($path, $delta) {
   }
 
   $nid = _ofed_slideshow_node_slideshow_exist('-1');
-  if($nid) {
-    $nodeload = node_load($nid, null, true);
+  if ($nid) {
+    $nodeload = node_load($nid, NULL, TRUE);
     $fieldname = 'field_ofed_' . $delta;
-    if($nid != '' && !empty($nodeload->$fieldname)) {
+    if ($nid != '' && !empty($nodeload->$fieldname)) {
       return _ofed_slideshow_render_node($nodeload, $delta);
     }
   }
@@ -126,7 +125,7 @@ function _ofed_slideshow_render_node($nodeload, $delta) {
 function _ofed_slideshow_menu_link_exist($path) {
   $in_menu = array();
   $option_menu = _ofed_slideshow_list_options_menu();
-  foreach($option_menu as $k => $v) {
+  foreach ($option_menu as $k => $v) {
     $in_menu[] = $k;
   }
 

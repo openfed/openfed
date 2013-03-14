@@ -16,17 +16,17 @@ function ofed_pagemodel_misc_view_display_save() {
   $query_string = drupal_get_query_array($_SERVER['QUERY_STRING']);
   // Check if a parameter is missing.
   // If a parameter is missing.
-  if(empty($query_string) 
+  if (empty($query_string) 
     || empty($query_string['view']) 
     || empty($query_string['display']) 
     || empty($query_string['path']) 
     || empty($query_string['redirect'])
     || empty($query_string['number'])
-  ){
+  ) {
     // Set error message.
     drupal_set_message(t('Missing parameter(s) to set the display of this views.'), 'error');
     // If the redirect is present.
-    if(!empty($query_string['redirect'])) {
+    if (!empty($query_string['redirect'])) {
       // Redirect to target.
       drupal_goto($query_string['redirect']);
     }
@@ -40,15 +40,16 @@ function ofed_pagemodel_misc_view_display_save() {
     // Check if the number of column is correct.    
     $colums = variable_get('ofed_pagemodel_allowed_choices_columns', '1, 2, 3');
     $colums = explode(',', $colums);
-    if(!is_array($colums)){
+    if (!is_array($colums)) {
       // Set error message.
       drupal_set_message(t('Allowed columns choices not correclty formatted'));
       // Redirect to target.
       drupal_goto($query_string['redirect']);
     }
-    if(!in_array($query_string['number'], $colums)) {
+    if (!in_array($query_string['number'], $colums)) {
       // Set error message.
-      drupal_set_message(t('Allowed columns choices not valid. Only "!values" are allowed.', array('!values' => implode(',', $colums))), 'error');
+      $message = t('Allowed columns choices not valid. Only "!values" are allowed.', array('!values' => implode( ',', $colums)));
+      drupal_set_message(check_plain($message), 'error');
       // Redirect to target.
       drupal_goto($query_string['redirect']);
     }

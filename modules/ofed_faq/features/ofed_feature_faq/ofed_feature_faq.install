@@ -12,14 +12,14 @@ function ofed_feature_faq_schema() {
  */
 function ofed_feature_faq_install() {
   // If the related feature is not enabled.
-  if(!module_exists('ofed_faq')) {
+  if (!module_exists('ofed_faq')) {
     // Enable it.
     module_enable(array('ofed_faq'));
   }
   
   // Install menu link(s).
   $menus = menu_get_menus(FALSE);
-  if(!isset($menus['menu-cms-menu'])) {
+  if (!isset($menus['menu-cms-menu'])) {
     // Create a CMS Menu if not exist.
     $menu = array();
     $menu['menu_name'] = "menu-cms-menu";
@@ -31,7 +31,7 @@ function ofed_feature_faq_install() {
   }
   // Create the menu content type link(s).
   $item = array(
-    'link_title' => t('FAQ\'s'), 
+    'link_title' => 'FAQ\'s', 
     'link_path' => 'cms/faqs',
     'router_path' => 'cms/faqs',
     'menu_name' => 'menu-cms-menu',
@@ -41,16 +41,16 @@ function ofed_feature_faq_install() {
 
   // Include ds settings.
   $file = drupal_get_path('module', 'ofed_feature_faq') . '/install/_ofed_feature_faq.ds.inc';
-  if(file_exists($file)) {
+  if (file_exists($file)) {
     // Include it.
     include_once 'install/_ofed_feature_faq.ds.inc';
 
     // Install ds customs fields.
-    if(function_exists('ofed_feature_faq_ds_custom_fields_info')) {
+    if (function_exists('ofed_feature_faq_ds_custom_fields_info')) {
       $fields = ofed_feature_faq_ds_custom_fields_info();
-      foreach($fields as $id => $field) {
+      foreach ($fields as $id => $field) {
         // Remove one key.
-        if(isset($field->api_version)) {
+        if (isset($field->api_version)) {
           unset($field->api_version);
         }
         // Serialize the entities.
@@ -69,11 +69,11 @@ function ofed_feature_faq_install() {
     }
 
     // Install ds fields settings.
-    if(function_exists('ofed_feature_faq_ds_field_settings_info')) {
+    if (function_exists('ofed_feature_faq_ds_field_settings_info')) {
       $fields = ofed_feature_faq_ds_field_settings_info();
-      foreach($fields as $id => $field) {
+      foreach ($fields as $id => $field) {
         // Remove one key.
-        if(isset($field->api_version)) {
+        if (isset($field->api_version)) {
           unset($field->api_version);
         }
         // Serialize the settings.
@@ -88,11 +88,11 @@ function ofed_feature_faq_install() {
     }
 
     // Install ds layouts settings.
-    if(function_exists('ofed_feature_faq_ds_layout_settings_info')) {
+    if (function_exists('ofed_feature_faq_ds_layout_settings_info')) {
       $layouts = ofed_feature_faq_ds_layout_settings_info();
-      foreach($layouts as $id => $layout) {
+      foreach ($layouts as $id => $layout) {
         // Remove one key.
-        if(isset($layout->api_version)) {
+        if (isset($layout->api_version)) {
           unset($layout->api_version);
         }
         // Serialize the settings.
@@ -109,9 +109,9 @@ function ofed_feature_faq_install() {
   
   // Create path alias for each languages.
   $languages = language_list('enabled');
-  foreach($languages as $language) {
+  foreach ($languages as $language) {
     // FR.
-    if(isset($language['fr'])) {
+    if (isset($language['fr'])) {
       $path = array(
         'source'   => 'faqs',
         'alias'    => 'faqs',
@@ -120,7 +120,7 @@ function ofed_feature_faq_install() {
       db_insert('url_alias')->fields($path)->execute();
     }
     
-    if(isset($language['nl'])) {
+    if (isset($language['nl'])) {
       // NL.
       $path = array(
         'source'   => 'faqs',
@@ -137,7 +137,7 @@ function ofed_feature_faq_install() {
  */
 function ofed_feature_faq_uninstall() {
   // If the related feature is enabled.
-  if(module_exists('ofed_faq')) {
+  if (module_exists('ofed_faq')) {
     // Disable it.
     module_disable(array('ofed_faq'));
   }

@@ -10,7 +10,7 @@ function openfed_functionalities_form() {
   $form = array();
 
   $form['intro'] = array(
-    '#markup' => '<p>' . st('Select the specific functionalities that have to be available in the website.') . '</p><p>'.st('Note : each module can be enabled after the installation in the Modules list.').'</p>',
+    '#markup' => '<p>' . st('Select the specific functionalities that have to be available in the website.') . '</p><p>' . st('Note : each module can be enabled after the installation in the Modules list.') . '</p>',
   );
 
   $form['module_list'] = array(
@@ -38,7 +38,7 @@ function openfed_functionalities_form() {
 function openfed_functionalities_form_submit($form, &$form_state) {
   $values = $form_state['values'];
 
-  if(!empty($values['module_list'])) {
+  if (!empty($values['module_list'])) {
     $enable = array(
       'theme_default' => openfed_return_default_maintenance_theme_name(),
       'admin_theme' => openfed_return_default_maintenance_theme_name(),
@@ -53,8 +53,8 @@ function openfed_functionalities_form_submit($form, &$form_state) {
     }
     
     $module_list = array();
-    foreach($values['module_list'] as $key => $name) {
-      if($key === $name) {
+    foreach ($values['module_list'] as $key => $name) {
+      if ($key === $name) {
         $module_list[] = $name;
       }
     }
@@ -81,8 +81,9 @@ function openfed_batch_functionalities() {
         'error_message' => st('Error importing functionalities'),
       );
     batch_set($batch);
-    batch_process('http://'.$_SERVER['HTTP_HOST'].'/install.php?profile=openfed&locale=en');
-  } else {
+    batch_process('http://' . $_SERVER['HTTP_HOST'] . '/install.php?profile=openfed&locale=en');
+  }
+  else {
     variable_del('openfed_need_batch_functionalities');
     variable_del('openfed_need_batch_functionalities_functions');
   }
@@ -102,10 +103,10 @@ function _openfed_batch_finished_functionalities($success, $results, $operations
   if ($success) {
     variable_del('openfed_need_batch_functionalities');
     variable_del('openfed_need_batch_functionalities_functions');
-    drupal_set_message('Success importing functionalities'); 
+    drupal_set_message(t('Success importing functionalities')); 
   }
   else {
-    drupal_set_message('BatchError importing functionalities'); 
+    drupal_set_message(t('BatchError importing functionalities')); 
   }
   
   $enable = array(

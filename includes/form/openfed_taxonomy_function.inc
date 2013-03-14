@@ -44,5 +44,3 @@ function openfed_taxonomy_form_submit($form, &$form_state) {
     }
   }
 }
-
-?>

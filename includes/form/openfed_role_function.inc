@@ -14,8 +14,7 @@ function openfed_role_form() {
     '#type' => 'checkboxes',
     '#title' => st('Roles'),
     '#options' => _openfed_return_roles_list(),
-    '#description' => st('
-      Note : by checking the roles, the roles and their associated set of permissions will be automatically created.<br>
+    '#description' => st('Note : by checking the roles, the roles and their associated set of permissions will be automatically created.<br>
       They can also be created after the installation, but the set of permissions will have to be defined manually.')
   );
   $form['submit'] = array(
@@ -37,15 +36,15 @@ function openfed_role_form_submit($form, &$form_state) {
   if ( !empty($values['role_list']) ) {
     /* GENERATE DYNAMIC PERMISSION */
       $permission_language = array();
-      foreach( language_list() as $langcode => $langobject ) {
+      foreach ( language_list() as $langcode => $langobject ) {
         $permission_language["manage $langcode translation overview priorities"] = TRUE;
       }
 
       $permission_vocabularies = array();
       $vocabularies = taxonomy_vocabulary_machine_name_load('categories');
-      if( $vocabularies != FALSE ) {
-        $permission_vocabularies["edit terms in ".$vocabularies->vid] = TRUE;
-        $permission_vocabularies["delete terms in ".$vocabularies->vid] = TRUE;
+      if ( $vocabularies != FALSE ) {
+        $permission_vocabularies["edit terms in " . $vocabularies->vid] = TRUE;
+        $permission_vocabularies["delete terms in " . $vocabularies->vid] = TRUE;
       }
     
     if ( $values['role_list']['configurator'] === 'configurator' ) {
@@ -120,5 +119,3 @@ function openfed_role_form_submit($form, &$form_state) {
   
     
 }
-
-?>

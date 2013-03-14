@@ -72,4 +72,4 @@
   <p><?php echo t('There is currently no topic in this Forum.'); ?></p>
 <?php endif; ?>
 
-<?php echo l( '<span class="left"></span><span class="right"></span>'.t('Back to Forum list'), 'forum', array( 'html' => 'true', 'attributes' => array( 'class' => 'back' ) ) ); ?>
+<?php echo l( t('<span class="left"></span><span class="right"></span>Back to Forum list'), 'forum', array( 'html' => 'true', 'attributes' => array( 'class' => 'back' ) ) ); ?>

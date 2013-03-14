@@ -103,7 +103,8 @@
     if (empty($exist)) {
       $query = db_insert('block')
                 ->fields($block);
-    } else {
+    }
+    else {
       $query = db_update('block')
                 ->fields($block)
                 ->condition('module', $block['module'], '=')
@@ -183,7 +184,8 @@
     if (empty($exist)) {
       $query = db_insert('block')
                 ->fields($block);
-    } else {
+    }
+    else {
       $query = db_update('block')
                 ->fields($block)
                 ->condition('module', $block['module'], '=')

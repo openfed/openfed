@@ -34,7 +34,7 @@ function openfed_return_default_maintenance_theme_name() {
  */
 function _openfed_show_block_for_language($module, $delta, $language) {
   $query = db_insert('i18n_block_language')->fields(array('language', 'module', 'delta'));
-  $query->values(array('language' => $language,'module' => $module,'delta' => $delta,));
+  $query->values(array('language' => $language, 'module' => $module, 'delta' => $delta));
   $query->execute();
 }
 
@@ -72,7 +72,7 @@ function _openfed_create_custom_menu($menu_name, $title, $description = '', $i18
  * Active menu block into navigation region
  * @param string $menu_name
  */
-function _openfed_set_block_into_region($module_name, $delta_name, $region_name){
+function _openfed_set_block_into_region($module_name, $delta_name, $region_name) {
   $block = array(
     'module' => $module_name,
     'delta' => $delta_name,
@@ -93,7 +93,8 @@ function _openfed_set_block_into_region($module_name, $delta_name, $region_name)
   if (empty($exist)) {
     $query = db_insert('block')
               ->fields($block);
-  } else {
+  }
+  else {
     $query = db_update('block')
               ->fields($block)
               ->condition('module', $block['module'], '=')
@@ -162,8 +163,8 @@ function _openfed_return_taxonomy_list() {
  * @return array 
  */
 function _openfed_return_functionalities_list() {
-  $features = drupal_get_path('profile', 'openfed').'/assets/images/features.png';
-  $modules = drupal_get_path('profile', 'openfed').'/assets/images/modules.png';
+  $features = drupal_get_path('profile', 'openfed') . '/assets/images/features.png';
+  $modules = drupal_get_path('profile', 'openfed') . '/assets/images/modules.png';
   
   $function_list = array(
     // Content types
@@ -1055,17 +1056,17 @@ function _openfed_return_permission_anonymous_user() {
 function form_process_checkboxes_at_install($element) {
   $value = is_array($element['#value']) ? $element['#value'] : array();
   $element['#tree'] = TRUE;
-  if(count($element['#options']) > 0) {
-    if(!isset($element['#default_value']) || $element['#default_value'] == 0) {
+  if (count($element['#options']) > 0) {
+    if (!isset($element['#default_value']) || $element['#default_value'] == 0) {
       $element['#default_value'] = array();
     }
     $weight = 0;
-    foreach($element['#options'] as $key => $choice) {
+    foreach ($element['#options'] as $key => $choice) {
       // Integer 0 is not a valid #return_value, so use '0' instead.
       // @see form_type_checkbox_value().
       // @todo For Drupal 8, cast all integer keys to strings for consistency
       //   with form_process_radios().
-      if($key === 0) {
+      if ($key === 0) {
         $key = '0';
       }
       // Maintain order of options as defined in #options, in case the element
@@ -1112,31 +1113,31 @@ function theme_form_element_checkbox_list($variables) {
   );
 
   // Add element #id for #type 'item'.
-  if(isset($element['#markup']) && !empty($element['#id'])) {
+  if (isset($element['#markup']) && !empty($element['#id'])) {
     $attributes['id'] = $element['#id'];
   }
   // Add element's #type and #name as class to aid with JS/CSS selectors.
   $attributes['class'] = array('form-item');
-  if(!empty($element['#type'])) {
+  if (!empty($element['#type'])) {
     $attributes['class'][] = 'form-type-' . strtr($element['#type'], '_', '-');
   }
-  if(!empty($element['#name'])) {
+  if (!empty($element['#name'])) {
     $attributes['class'][] = 'form-item-' . strtr($element['#name'], array(' ' => '-', '_' => '-', '[' => '-', ']' => ''));
   }
   // Add a class for disabled elements to facilitate cross-browser styling.
-  if(!empty($element['#attributes']['disabled'])) {
+  if (!empty($element['#attributes']['disabled'])) {
     $attributes['class'][] = 'form-disabled';
   }
   $output = '<div' . drupal_attributes($attributes) . '>' . "\n";
 
   // If #title is not set, we don't display any label or required marker.
-  if(!isset($element['#title'])) {
+  if (!isset($element['#title'])) {
     $element['#title_display'] = 'none';
   }
   $prefix = isset($element['#field_prefix']) ? '<span class="field-prefix">' . $element['#field_prefix'] . '</span> ' : '';
   $suffix = isset($element['#field_suffix']) ? ' <span class="field-suffix">' . $element['#field_suffix'] . '</span>' : '';
 
-  switch($element['#title_display']) {
+  switch ($element['#title_display']) {
     case 'before':
     case 'invisible':
       $output .= ' ' . theme('form_element_label', $variables);
@@ -1155,14 +1156,14 @@ function theme_form_element_checkbox_list($variables) {
       break;
   }
 
-  if(!empty($element['#description'])) {
+  if (!empty($element['#description'])) {
     $output .= '<div class="description">' . $element['#description'] . "</div>\n";
   }
   // Manage the new variable
-  if(!empty($element['#full_description'])) {
+  if (!empty($element['#full_description'])) {
     $output .= '<div class="full-description">' . $element['#full_description'] . "</div>\n";
   }
-  if(!empty($element['#picture'])) {
+  if (!empty($element['#picture'])) {
     $output .= '<div class="picture">' . theme('image', array( 'path' => $element['#picture'] )) . "</div>\n";
   }
 

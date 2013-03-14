@@ -37,14 +37,14 @@ function openfed_complete() {
   // add menu list where menu can be attach to content
   $menus     = menu_get_menus(FALSE);
   $menu_list = _openfed_return_menu_list();
-  foreach( $menu_list as $key => $desc ) {
+  foreach ( $menu_list as $key => $desc ) {
     if (array_key_exists($key, $menus) ) {
       if (!in_array($key, $menu_options_ofed_page) ) $menu_options_ofed_page[] = $key;
       if (!in_array($key, $menu_options_webform) ) $menu_options_webform[] = $key;
     }
   }
-  foreach( language_list() as $lang ) {
-    $name = strtolower('main-'.$lang->name.'-menu');
+  foreach ( language_list() as $lang ) {
+    $name = strtolower('main-' . $lang->name . '-menu');
     if (array_key_exists( $name, $menus) ) {
       if (!in_array($key, $menu_options_ofed_page) ) $menu_options_ofed_page[] = $name;
       if (!in_array($key, $menu_options_webform) ) $menu_options_webform[] = $name;
@@ -55,4 +55,9 @@ function openfed_complete() {
   
   // rebuild access to node
   node_access_rebuild(FALSE);
+  
+  variable_set( 'cache', TRUE );
+  variable_set( 'preprocess_css', TRUE );
+  variable_set( 'preprocess_js', TRUE );
+
 }

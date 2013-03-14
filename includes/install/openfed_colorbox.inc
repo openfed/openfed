@@ -37,5 +37,3 @@ variable_set( 'colorbox_text_stop', 'stop slideshow');
 variable_set( 'colorbox_transition_speed', '350');
 variable_set( 'colorbox_transition_type', 'elastic');
 variable_set( 'colorbox_visibility', '0');
-
-?>

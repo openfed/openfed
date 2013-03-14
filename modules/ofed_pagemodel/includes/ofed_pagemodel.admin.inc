@@ -9,7 +9,7 @@
  * Return the admin form to allow to configure the module.
  * @return void
  */
-function ofed_pagemodel_admin_settings_form(){
+function ofed_pagemodel_admin_settings_form() {
   // Initialize.
   $form = array();
   
@@ -37,15 +37,15 @@ function ofed_pagemodel_admin_settings_form(){
   // Get all views.
   $views = views_get_all_views();
   // For each views.
-  foreach($views as $view) {
+  foreach ($views as $view) {
     // If the view is active.
-    if(!$view->disabled) {
+    if (!$view->disabled) {
       // If displays exist.
-      if(!empty($view->display)) {
+      if (!empty($view->display)) {
         // For each displays.
-        foreach($view->display as $display) {
+        foreach ($view->display as $display) {
           // If the display is not the default display.
-          if($display->id != 'default' && $display->id != $view->name . '_cms') {
+          if ($display->id != 'default' && $display->id != $view->name . '_cms') {
             $human_name = (!empty($view->human_name)) ? $view->human_name : $view->name;
             $options[$view->name . '_' . $display->id] = $human_name . ' - ' . $display->display_title;
           }
@@ -54,7 +54,7 @@ function ofed_pagemodel_admin_settings_form(){
     }
   }
   
-  if(!empty($options)) {
+  if (!empty($options)) {
     $form['ofed_pagemodel_associed_displays']['ofed_pagemodel_associed_displays'] = array(
       '#title' => '',
       '#description' => t('Select the displays where it\'s allowed to select the render of the output.'), 

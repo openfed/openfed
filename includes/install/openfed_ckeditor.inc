@@ -55,7 +55,7 @@
   $arr['theme_config_js'] = "f";
   $arr['js_conf'] = "";
   
-  $loadPlugins = array(
+  $loadplugins = array(
 //    'autogrow' => 0,
 //    'counter' => 0,
 //    'drupalbreaks' => 'drupalbreaks',
@@ -63,21 +63,21 @@
 //    'stylesheetparser' => 0,
   );
   if (module_exists('ckeditor_link') ) {
-    $loadPlugins['ckeditor_link'] = 'ckeditor_link';
+    $loadplugins['ckeditor_link'] = 'ckeditor_link';
   }
   if (module_exists('imce') ) {
-    $loadPlugins['imce'] = 'imce';
+    $loadplugins['imce'] = 'imce';
   }
   if (module_exists('tableresize') ) {
-    $loadPlugins['tableresize'] = 'tableresize';
+    $loadplugins['tableresize'] = 'tableresize';
   }
   
   module_load_include('inc', 'ckeditor', 'includes/ckeditor.lib');
   $plugin_list = ckeditor_load_plugins();
   $arr['loadPlugins'] = array();
-  if (!empty($loadPlugins)) {
-      foreach (array_keys($loadPlugins) as $plugin) {
-          if ($loadPlugins[$plugin] != '0') {
+  if (!empty($loadplugins)) {
+      foreach (array_keys($loadplugins) as $plugin) {
+          if ($loadplugins[$plugin] != '0') {
               $arr['loadPlugins'][$plugin] = $plugin_list[$plugin];
           }
       }
@@ -149,7 +149,7 @@
   $arr['theme_config_js'] = "f";
   $arr['js_conf'] = "";
   
-  $loadPlugins = array(
+  $loadplugins = array(
 //    'autogrow' => 0,
 //    'counter' => 0,
 //    'drupalbreaks' => 'drupalbreaks',
@@ -157,18 +157,18 @@
 //    'stylesheetparser' => 0,
   );
   if (module_exists('ckeditor_link') ) {
-    $loadPlugins['ckeditor_link'] = 'ckeditor_link';
+    $loadplugins['ckeditor_link'] = 'ckeditor_link';
   }
   if (module_exists('tableresize') ) {
-    $loadPlugins['tableresize'] = 'tableresize';
+    $loadplugins['tableresize'] = 'tableresize';
   }
   
   module_load_include('inc', 'ckeditor', 'includes/ckeditor.lib');
   $plugin_list = ckeditor_load_plugins();
   $arr['loadPlugins'] = array();
-  if (!empty($loadPlugins)) {
-      foreach (array_keys($loadPlugins) as $plugin) {
-          if ($loadPlugins[$plugin] != '0') {
+  if (!empty($loadplugins)) {
+      foreach (array_keys($loadplugins) as $plugin) {
+          if ($loadplugins[$plugin] != '0') {
               $arr['loadPlugins'][$plugin] = $plugin_list[$plugin];
           }
       }

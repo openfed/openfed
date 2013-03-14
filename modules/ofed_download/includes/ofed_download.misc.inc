@@ -7,16 +7,16 @@
  */
 function _ofed_download_force_download($nid) {
   // Get the node.
-  if($nid) {
+  if ($nid) {
     $node = node_load($nid);
-    if(!$node) {
+    if (!$node) {
       // Redirect to the 404 page.
       drupal_goto('404');
     }
     
     // Force download...
     // Disable output compression (required for ie).
-    if(ini_get('zlib.output_compression')) {
+    if (ini_get('zlib.output_compression')) {
       ini_set('zlib.output_compression', FALSE);
     }
 

@@ -32,9 +32,10 @@ libraries[jquery.imagesloaded][directory_name] = "jquery.imagesloaded"
 libraries[jquery.imagesloaded][type] = "library"
 
 ; jquery.jcarousel
-libraries[jquery.jcarousel][download][type] = "git"
-libraries[jquery.jcarousel][download][url] = "https://github.com/jsor/jcarousel.git"
-libraries[jquery.jcarousel][directory_name] = "jquery.jcarousel"
+libraries[jquery.jcarousel][download][type] = "get"
+libraries[jquery.jcarousel][download][url] = "https://github.com/jsor/jcarousel/tree/0.3.0-beta.2/dist"
+libraries[jquery.jcarousel][destination] = "libraries/jquery.jcarousel"
+libraries[jquery.jcarousel][directory_name] = "lib"
 libraries[jquery.jcarousel][type] = "library"
 
 ;
@@ -128,8 +129,8 @@ projects[field_group][subdir] = contrib
 projects[field_permissions][version] = "1.0-beta2"
 projects[field_permissions][subdir] = contrib 
 
-projects[field_slideshow][version] = "1.81"
-projects[field_slideshow][subdir] = contrib 
+projects[field_field_collection][version] = "1.0-beta5"
+projects[field_field_collection][subdir] = contrib 
 
 projects[flag][version] = "2.0"
 projects[flag][subdir] = contrib 
@@ -199,6 +200,7 @@ projects[menu_position][subdir] = contrib
 
 projects[metatag][version] = "1.0-beta4"
 projects[metatag][subdir] = contrib
+projects[metatag][patch][] = "http://drupal.org/files/metatag-fix_theme_hook_mismatch-1846978-0.patch"
 
 projects[module_filter][version] = "1.7"
 projects[module_filter][subdir] = contrib
@@ -214,12 +216,14 @@ projects[multiselect][subdir] = contrib
 
 projects[navigation404][version] = "1.0"
 projects[navigation404][subdir] = contrib
+projects[navigation404][patch][] = "http://drupal.org/files/navigation404-undefined_index_site_404-1844830-0.patch"
 
 projects[override_node_options][version] = "1.12"
 projects[override_node_options][subdir] = contrib
 
 projects[page_title][version] = "2.7"
 projects[page_title][subdir] = contrib
+projects[page_title][patch][] = "http://drupal.org/files/1024624-11-include_once.patch"
 
 projects[panels][version] = "3.3"
 projects[panels][subdir] = contrib
@@ -269,6 +273,9 @@ projects[security_review][subdir] = contrib
 
 projects[sharethis][version] = "2.5"
 projects[sharethis][subdir] = contrib
+
+projects[simple_gmap][version] = "1.0"
+projects[simple_gmap][subdir] = contrib
 
 projects[site_map][version] = "1.0"
 projects[site_map][subdir] = contrib

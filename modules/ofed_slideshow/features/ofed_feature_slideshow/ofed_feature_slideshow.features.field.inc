@@ -220,7 +220,7 @@ function ofed_feature_slideshow_field_default_fields() {
       'bundle' => 'ofed_slideshow',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => 'Select an option from the list.',
+      'description' => 'Choose an option from the list.',
       'display' => array(
         'default' => array(
           'label' => 'hidden',

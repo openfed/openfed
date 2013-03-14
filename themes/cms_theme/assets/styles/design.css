@@ -51,10 +51,10 @@ div.form-buttons                                            { height:30px; }
 input#edit-submit,
 input#edit-save,
 input#edit-next,
-input#edit-undo												{ float:left; margin:0 10px 0 0;}
-input#edit-preview											{ float:left; margin:0 10px 0 0; color:#555; background:#dddddd; filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eeeeee', endColorstr='#cccccc'); background: -webkit-gradient(linear, left top, left bottom, from(#eee), to(#ccc)); background: -moz-linear-gradient(top, #eee, #ccc); text-shadow: 0px -1px 0 white}
-input#edit-delete											{ float:left; margin:0 10px 0 0; color:#fff; background:#bb0000; filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#bb0000', endColorstr='#7f0000'); background: -webkit-gradient(linear, left top, left bottom, from(#bb0000), to(#7f0000)); background: -moz-linear-gradient(top, #bb0000, #7f0000); }
-input#edit-cancel											{ float:left; margin:0 10px 0 0; color:#fff; background:#353535; filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#666666', endColorstr='#222222'); background: -webkit-gradient(linear, left top, left bottom, from(#666), to(#222)); background: -moz-linear-gradient(top, #666, #222);}
+input#edit-undo												{ /*float:left;*/ margin:0 10px 0 0;}
+input#edit-preview											{ /*float:left;*/ margin:0 10px 0 0; color:#555; background:#dddddd; filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eeeeee', endColorstr='#cccccc'); background: -webkit-gradient(linear, left top, left bottom, from(#eee), to(#ccc)); background: -moz-linear-gradient(top, #eee, #ccc); text-shadow: 0px -1px 0 white}
+input#edit-delete											{ /*float:left;*/ margin:0 10px 0 0; color:#fff; background:#bb0000; filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#bb0000', endColorstr='#7f0000'); background: -webkit-gradient(linear, left top, left bottom, from(#bb0000), to(#7f0000)); background: -moz-linear-gradient(top, #bb0000, #7f0000); }
+input#edit-cancel											{ /*float:left;*/ margin:0 10px 0 0; color:#fff; background:#353535; filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#666666', endColorstr='#222222'); background: -webkit-gradient(linear, left top, left bottom, from(#666), to(#222)); background: -moz-linear-gradient(top, #666, #222);}
 
 .page-node-delete input#edit-sbmit							{ margin-left:10px;}
 
@@ -442,7 +442,7 @@ section.site .lk-add-container a.lk-add                         {
 /* Filters */
 .exposed-filters														{ position:relative;}
 .exposed-filters .filters												{ width:auto; margin:0 0 15px 0;}
-.exposed-filters #edit-actions											{ height:28px; padding-top:37px;}
+.exposed-filters #edit-actions											{ height:28px; padding-top:37px; clear:none;}
 .page-admin-config-regional-translate #translation-table-filter-filter	{ padding-top:50px;}
 .exposed-filters .filters .form-item 									{ float:left; width:202px; overflow:hidden; display:block;}
 .exposed-filters #edit-actions											{ float:left;/*position:absolute; bottom:10px; right:0;*/}
@@ -514,6 +514,7 @@ tr.even	td 														{ background:#e0e0e0!important;}
 section.site .tabledrag-has-colspan								{ margin:0!important;}
 
 #field-ofed-page-docs-values									{ border:1px solid #32312e!important; border-radius:5px 5px 5px 5px;}
+html.js input.form-autocomplete 								{ background-position: 100% 7px;}
 
 /* Exeption Land */
 
@@ -776,6 +777,15 @@ table.field-ui-overview tr.add-new .label-input 					{ float:none!important;}
 
 /* CK Editor tweaks */
 .cke_browser_gecko table											{ margin:0!important;}
+
+/*		Manage Display		*/
+.ft-group 															{ border: 1px dotted #aaa; padding: 5px 10px ; margin-bottom: 10px;}
+.ft-group:before, .ft-group:after									{ display: table; content: ""; line-height: 0; clear:both;}
+.ft-group div.form-item 											{ width: 50%;}
+.ft-group div.form-item label										{ margin-bottom: 0; border: none;}
+.ft-group div.form-item:first-child									{ float: none;}
+.ft-group.lb div.form-item:first-child								{ float: left;}
+.field-classes select												{ margin-bottom: 10px;}
 
 /* footer
 -------------------------------------------------- */

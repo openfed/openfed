@@ -82,14 +82,14 @@ function ofed_feature_download_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '2',
+          'weight' => '10',
         ),
         'page_list' => array(
           'label' => 'inline',
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '5',
+          'weight' => '7',
         ),
         'print' => array(
           'label' => 'hidden',
@@ -187,7 +187,7 @@ function ofed_feature_download_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '20',
+          'weight' => '21',
         ),
         'block_element' => array(
           'label' => 'hidden',
@@ -220,7 +220,7 @@ function ofed_feature_download_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '7',
+          'weight' => '4',
         ),
         'page_list' => array(
           'label' => 'above',
@@ -327,7 +327,7 @@ function ofed_feature_download_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '21',
+          'weight' => '22',
         ),
         'block_element' => array(
           'label' => 'hidden',
@@ -360,7 +360,7 @@ function ofed_feature_download_field_default_fields() {
           'module' => 'file',
           'settings' => array(),
           'type' => 'file_default',
-          'weight' => '8',
+          'weight' => '5',
         ),
         'ofed_page_list' => array(
           'label' => 'above',
@@ -474,16 +474,9 @@ function ofed_feature_download_field_default_fields() {
       'display' => array(
         'block_column' => array(
           'label' => 'inline',
-          'module' => 'date',
-          'settings' => array(
-            'format_type' => 'date_only',
-            'fromto' => 'both',
-            'multiple_from' => '',
-            'multiple_number' => '',
-            'multiple_to' => '',
-          ),
-          'type' => 'date_default',
-          'weight' => '3',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '6',
         ),
         'block_element' => array(
           'label' => 'above',
@@ -534,20 +527,13 @@ function ofed_feature_download_field_default_fields() {
             'multiple_to' => '',
           ),
           'type' => 'date_default',
-          'weight' => '3',
+          'weight' => '11',
         ),
         'page_list' => array(
           'label' => 'inline',
-          'module' => 'date',
-          'settings' => array(
-            'format_type' => 'date_only',
-            'fromto' => 'both',
-            'multiple_from' => '',
-            'multiple_number' => '',
-            'multiple_to' => '',
-          ),
-          'type' => 'date_default',
-          'weight' => '3',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '19',
         ),
         'print' => array(
           'label' => 'inline',
@@ -682,7 +668,7 @@ function ofed_feature_download_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '5',
+          'weight' => '4',
         ),
         'block_element' => array(
           'label' => 'hidden',
@@ -715,7 +701,7 @@ function ofed_feature_download_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '5',
+          'weight' => '2',
         ),
         'ofed_page_list' => array(
           'label' => 'above',
@@ -728,7 +714,7 @@ function ofed_feature_download_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '7',
+          'weight' => '5',
         ),
         'print' => array(
           'label' => 'hidden',
@@ -872,7 +858,7 @@ function ofed_feature_download_field_default_fields() {
             'image_style' => 'ofed_download_thumb',
           ),
           'type' => 'image',
-          'weight' => '6',
+          'weight' => '3',
         ),
         'page_list' => array(
           'label' => 'hidden',
@@ -882,7 +868,7 @@ function ofed_feature_download_field_default_fields() {
             'image_style' => 'ofed_download_thumb_page_list',
           ),
           'type' => 'image',
-          'weight' => '6',
+          'weight' => '4',
         ),
         'print' => array(
           'label' => 'hidden',
@@ -1003,7 +989,7 @@ function ofed_feature_download_field_default_fields() {
             'multiple_to' => '',
           ),
           'type' => 'date_default',
-          'weight' => '4',
+          'weight' => '3',
         ),
         'block_element' => array(
           'label' => 'hidden',
@@ -1047,7 +1033,7 @@ function ofed_feature_download_field_default_fields() {
             'multiple_to' => '',
           ),
           'type' => 'date_default',
-          'weight' => '4',
+          'weight' => '12',
         ),
         'page_list' => array(
           'label' => 'inline',
@@ -1060,7 +1046,7 @@ function ofed_feature_download_field_default_fields() {
             'multiple_to' => '',
           ),
           'type' => 'date_default',
-          'weight' => '4',
+          'weight' => '3',
         ),
         'print' => array(
           'label' => 'inline',
@@ -1227,7 +1213,7 @@ function ofed_feature_download_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '22',
+          'weight' => '23',
         ),
         'page_list' => array(
           'label' => 'above',

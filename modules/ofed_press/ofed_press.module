@@ -18,7 +18,7 @@ function ofed_press_theme_registry_alter(&$theme_registry) {
  * Helper function for re-ordering arrays (needed by theme_registry_alter).
  */
 function _ofed_press_insert_after_first_element(&$a, $element) {
-  if(is_array($a)) {
+  if (is_array($a)) {
     $first_element = array_shift($a);
     array_unshift($a, $first_element, $element);
   }

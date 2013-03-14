@@ -2,8 +2,8 @@
 function ofed_menu() {
   $items = array();
   $items['admin/openfed'] = array(
-      'title' => t('OpenFED'),
-      'description' => t('OpenFED settings'),
+      'title' => 'OpenFED',
+      'description' => 'OpenFED settings',
       'page callback' => 'ofed_admin_page',
       'page arguments' => array(),
       'access arguments' => array('access administration pages'),

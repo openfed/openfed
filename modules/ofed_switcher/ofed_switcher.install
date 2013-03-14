@@ -1,6 +1,6 @@
 <?php
 
-function _get_menu_quick_info(){
+function _get_menu_quick_info() {
   $menu = array();
   $menu['menu_name'] = "menu-quick-infos";
   $menu['title'] = "Quick Infos";
@@ -113,7 +113,8 @@ function ofed_switcher_install() {
     if (empty($exist)) {
       $query = db_insert('block')
                 ->fields($block);
-    } else {
+    }
+    else {
       $query = db_update('block')
                 ->fields($block)
                 ->condition('module', $block['module'], '=')
@@ -125,20 +126,20 @@ function ofed_switcher_install() {
   
   
   // Create a redirection from cms to cms/dashboard
-  if(module_exists('redirect')) {
+  if (module_exists('redirect')) {
     $redirect = new stdClass();
     redirect_object_prepare($redirect);
     $redirect->source = 'cms';
     $redirect->redirect = 'cms/dashboard';
     // Check if the redirect exists before saving.
     $hash = redirect_hash($redirect);
-    if(!redirect_load_by_hash($hash)) {
+    if (!redirect_load_by_hash($hash)) {
       redirect_save($redirect);
     }
   }
 }
 
-function ofed_switcher_uninstall(){
+function ofed_switcher_uninstall() {
   menu_delete(_get_menu_quick_info());
   
   $query = db_delete('block')

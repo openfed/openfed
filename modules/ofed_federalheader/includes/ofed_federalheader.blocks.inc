@@ -17,7 +17,7 @@ function ofed_federalheader_block_info() {
  */
 function ofed_federalheader_block_view($delta = '') {
   $block = array();
-  switch($delta) {
+  switch ($delta) {
     case 'federalheader':
       $block['subject'] = t('Belgian Federal header');
       $block['content'] = _ofed_federalheader_render_content();

@@ -1,13 +1,13 @@
 <?php
 
 variable_set('imce_roles_profiles', array(
-    '3' => array('weight' => 0,'module_pid' => 1,'public_pid' => 1),
-    '4' => array('weight' => 1,'module_pid' => 1,'public_pid' => 1),
-    '5' => array('weight' => 2,'module_pid' => 1,'public_pid' => 1),
-    '6' => array('weight' => 3,'module_pid' => 1,'public_pid' => 1),
-    '7' => array('weight' => 4,'module_pid' => 0,'public_pid' => 0),
-    '2' => array('weight' => 11,'module_pid' => 0,'public_pid' => 0),
-    '1' => array('weight' => 12,'module_pid' => 0,'public_pid' => 0),
+    '3' => array('weight' => 0, 'module_pid' => 1, 'public_pid' => 1),
+    '4' => array('weight' => 1, 'module_pid' => 1, 'public_pid' => 1),
+    '5' => array('weight' => 2, 'module_pid' => 1, 'public_pid' => 1),
+    '6' => array('weight' => 3, 'module_pid' => 1, 'public_pid' => 1),
+    '7' => array('weight' => 4, 'module_pid' => 0, 'public_pid' => 0),
+    '2' => array('weight' => 11, 'module_pid' => 0, 'public_pid' => 0),
+    '1' => array('weight' => 12, 'module_pid' => 0, 'public_pid' => 0),
   )
 );
 

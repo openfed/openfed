@@ -65,34 +65,34 @@ variable_set('ds_classes_regions', '');
  * VIEW MODES 
  */
 
-$view_mode = new StdClass();
+$view_mode = new stdClass();
 $view_mode->view_mode = 'page_list';
 $view_mode->label = 'Page list';
-$view_mode->entities = array ( 'node' => 'node' );
+$view_mode->entities = array( 'node' => 'node' );
 drupal_write_record('ds_view_modes', $view_mode);
 
-$view_mode = new StdClass();
+$view_mode = new stdClass();
 $view_mode->view_mode = 'block_list';
 $view_mode->label = 'Block list';
-$view_mode->entities = array ( 'node' => 'node' );
+$view_mode->entities = array( 'node' => 'node' );
 drupal_write_record('ds_view_modes', $view_mode);
 
-$view_mode = new StdClass();
+$view_mode = new stdClass();
 $view_mode->view_mode = 'block_column';
 $view_mode->label = 'Block column';
-$view_mode->entities = array ( 'node' => 'node' );
+$view_mode->entities = array( 'node' => 'node' );
 drupal_write_record('ds_view_modes', $view_mode);
 
-$view_mode = new StdClass();
+$view_mode = new stdClass();
 $view_mode->view_mode = 'block_element';
 $view_mode->label = 'Block element';
-$view_mode->entities = array ( 'node' => 'node' );
+$view_mode->entities = array( 'node' => 'node' );
 drupal_write_record('ds_view_modes', $view_mode);
 
-$view_mode = new StdClass();
+$view_mode = new stdClass();
 $view_mode->view_mode = 'references';
 $view_mode->label = 'References';
-$view_mode->entities = array ( 'node' => 'node' );
+$view_mode->entities = array( 'node' => 'node' );
 drupal_write_record('ds_view_modes', $view_mode);
 
 
@@ -101,7 +101,7 @@ drupal_write_record('ds_view_modes', $view_mode);
  */
 
 // Node : Top of page
-  $field = new StdClass();
+  $field = new stdClass();
   $field->properties = array(
       'code' => array(
         'value' => '<a href="#" class="top-of-page"><?php echo t("Top of page"); ?></a>',
@@ -111,13 +111,13 @@ drupal_write_record('ds_view_modes', $view_mode);
   );
   $field->field = 'top_of_page';
   $field->label = 'Top of page';
-  $field->entities = array ( 'node' => 'node' );
+  $field->entities = array( 'node' => 'node' );
   $field->field_type = DS_FIELD_TYPE_CODE;
   drupal_write_record('ds_fields', $field);
 
 
 // Node : Anchor
-  $field = new StdClass();
+  $field = new stdClass();
   $field->properties = array(
       'code' => array(
         'value' => '<span id="<?php echo $entity->nid;?>"></span>',
@@ -127,6 +127,6 @@ drupal_write_record('ds_view_modes', $view_mode);
   );
   $field->field = 'anchor';
   $field->label = 'Anchor';
-  $field->entities = array ( 'node' => 'node' );
+  $field->entities = array( 'node' => 'node' );
   $field->field_type = DS_FIELD_TYPE_CODE;
   drupal_write_record('ds_fields', $field);

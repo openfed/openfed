@@ -1,7 +1,7 @@
 <?php
 
 variable_set( 'sharethis_button_option', 'stbc_hcount' );
-variable_set( 'sharethis_comments',	'b:0' );
+variable_set( 'sharethis_comments', 'b:0' );
 variable_set( 'sharethis_late_load', FALSE );
 variable_set( 'sharethis_location', 'block' );
 variable_set( 'sharethis_node_option', 'ofed_download,ofed_page');

@@ -2,8 +2,64 @@
 ===========
 
 
-7.x-0.6 : 28 February 2013
----------------------------
+14 March 2013
+-------------
+
+  * Drupal updated to 7.21
+
+  * Issue
+    #1930914: Drupal core update
+    #1930916: Module upgrade: ds
+    #1930920: Module upgrade: token
+    #1930924: Module upgrade: linkchecker
+    #1930926: Module upgrade: link
+    #1933894: Module upgrade: media
+    #1934354: Module upgrade: features
+    #1935968: Module upgrade: weight
+    #1935972: Module upgrade: robotstxt
+    #1934062: JCarousel plugin not found
+    #1887540: Theme key "metatag_twitter_cards" not found
+    #1935966: Multilingual: make 404 variable translatable
+    #1933902: Performance: aggregate CSS and javascript
+    #1933898: Performance: enable cache for anonymous users
+    #1844836: Undefined index: site_404
+
+  * Features
+    - ofed_address added
+    - ofed_event added
+    - ofed_meeting added
+
+  * Theme
+    - cms_theme : force the theme to be used in English with a code in template.php beacause "admin_language" module is not stable
+
+  * Module updated
+      Contrib
+        - ds (2.2)
+        - token (1.5)
+        - link (1.1)
+        - linkchecker (1.1)
+        - media (1.3)  
+        - features (2.0-beta1)
+        - weight (2.2)
+        - robotstxt (1.1)
+
+  * Modules added
+      Contrib
+        - simple_gmap (1.0)
+      Custom
+        - ofed_address
+        - ofed_event
+        - ofed_meeting
+        - ofed_team
+        - waia_integration
+
+  * Patch
+      Contrib
+        - metatag : patch added to avoid : Theme key "metatag_twitter_cards" not found.
+    
+
+28 February 2013
+----------------
 
   * Issue
     #1905492: jquery and colorbox libraries in repo
@@ -46,8 +102,8 @@
         - Scheduler : more integration options
 
 
-7.x-0.5 : 31 January 2013
---------------------------
+31 January 2013
+---------------
 
   * Issue
     #1852826: Library ckeditor not found by module
@@ -95,8 +151,8 @@
     - Change inclusion of scripts and styles
 
 
-7.x-0.4 : 21 January 2013
---------------------------
+21 January 2013
+---------------
 
   * Issue
     #1838210: Support for Postgresql in profile installation file
@@ -109,8 +165,8 @@
     
 
 
-7.x-0.4 : 11 January 2013
---------------------------
+11 January 2013
+---------------
 
   * Issue
     #1885012 : Core update: Drupal 7.18
@@ -118,8 +174,8 @@
     #1885124 : Error: Column 'module' cannot be null
 
 
-7.x-0.4 : 09 January 2013
---------------------------
+09 January 2013
+---------------
 
  * Issue
   #1852784: Installation screen: Setup functionalities not accessible with keyboard ?
@@ -152,8 +208,8 @@
       - Breadcrumb region added
       - Theming for system page
 
-7.x-0.3 : 28 november 2012
---------------------------
+28 november 2012
+----------------
  * Issue
   #1852770: Installation screen: translation of languages
   #1852774: Installation screen: setup roles
@@ -190,8 +246,8 @@
 * Module remove: 
     - better_formats
 
-7.x-0.2 : 21 november 2012
---------------------------
+21 november 2012
+----------------
  * Issue #1837894 : Library update: ckeditor
  * Issue #1838178 : Missing module: ckeditor
 
@@ -243,7 +299,7 @@
     - site_map
     - views
 
-7.x-0.1 : 9 november 2012
--------------------------
+9 november 2012
+---------------
  * Issue #1836414 : workaround for building distro in sandbox
  * First Release

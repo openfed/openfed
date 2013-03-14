@@ -205,7 +205,7 @@ function ofed_feature_faq_views_default_views() {
     '***DEFAULT_LANGUAGE***' => '***DEFAULT_LANGUAGE***',
     'und' => 'und',
     'en' => 'en',
-    'nl' => 'nl',    
+    'nl' => 'nl',
     'fr' => 'fr',
   );
   $handler->display->display_options['filters']['language']['group'] = 1;

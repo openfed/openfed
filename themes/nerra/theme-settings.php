@@ -90,16 +90,16 @@ function nerra_form_system_theme_settings_alter(&$form, &$form_state) {
       $layouts = array(
         'no_sidebar' => 'No sidebars',
         'left_sidebar' => 'Left sidebar',
-        'right_sidebar' =>'Right sidebar',
+        'right_sidebar' => 'Right sidebar',
         'two_sidebar' => 'Sidebars left and right',
       );
       $options = array();
       foreach ($layouts as $key => $layout) {
         $image = theme('image', array(
-          'path' => $path . '/assets/images/layouts/'. $key .'.png',
+          'path' => $path . '/assets/images/layouts/' . $key . '.png',
           'attributes' => array('class' => 'nerra-layout-img')
         ));
-        $options[$key] = $layout .''. $image;
+        $options[$key] = $layout . '' . $image;
       }  
       $form['nerra']['nerra_layout']['nerra_layout_display'] = array(
         '#type' => 'radios',

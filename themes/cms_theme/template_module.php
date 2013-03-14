@@ -10,8 +10,8 @@ function cms_theme_text_resize_block() {
   }
   else {
     $output = '<ul class="text-resize">';
-    $output .= '<li><a href="javascript:;" class="changer" id="text_resize_decrease" title="'.t('Decrease text size').'">A -</a></li>';
-    $output .= '<li><a href="javascript:;" class="changer" id="text_resize_increase" title="'.t('Increase text size').'">A +</a></li>';
+    $output .= '<li><a href="javascript:;" class="changer" id="text_resize_decrease" title="' . t('Decrease text size') . '">A -</a></li>';
+    $output .= '<li><a href="javascript:;" class="changer" id="text_resize_increase" title="' . t('Increase text size') . '">A +</a></li>';
     $output .= '</ul>';
   }
   return $output;
@@ -38,7 +38,8 @@ function cms_theme_preprocess_search_block_form(&$variables) {
     else {
       if ( $key == 'actions' ) {
         $variables['search'][$key] = render($variables['form'][$key]['submit']);
-      } else {
+      }
+      else {
         $variables['search'][$key] = render($variables['form'][$key]);
       }
     }

@@ -16,7 +16,7 @@ function ofed_switcher_block_info() {
  */
 function ofed_switcher_block_view($delta = '') {
   $block = array();
-  switch($delta) {
+  switch ($delta) {
     case 'ofed_switcher':
       $block['subject'] = t('Site/CMS Switcher');
       $block['content'] = _ofed_switcher_contents();
@@ -36,30 +36,30 @@ function _ofed_switcher_contents() {
   $user_info = '';
   $tool_links = array();
 
-  if($user->uid != 0) {
+  if ($user->uid != 0) {
     $role_found = FALSE;
-    foreach(variable_get('ofed_switcher_roles', array(2)) as $value) {
-      if(key_exists($value, $user->roles)) {
+    foreach (variable_get('ofed_switcher_roles', array(2)) as $value) {
+      if (key_exists($value, $user->roles)) {
         $role_found = TRUE;
       }
     }
 
-    if($role_found || $user->uid == 1) {
-      if(variable_get('ofed_switcher_welcome', TRUE)) {
+    if ($role_found || $user->uid == 1) {
+      if (variable_get('ofed_switcher_welcome', TRUE)) {
         $user_info = t("Welcome <strong>@user</strong>", array('@user' => $user->name));
       }
-      if(variable_get('ofed_switcher_goto', TRUE)) {
-        if(arg(0) == 'admin' || arg(0) == 'cms' || path_is_admin(current_path()) ) {
+      if (variable_get('ofed_switcher_goto', TRUE)) {
+        if (arg(0) == 'admin' || arg(0) == 'cms' || path_is_admin(current_path()) ) {
           $tool_links[] = l(t("Go to Front"), '<front>');
         }
         else {
           $tool_links[] = l(t("Go to CMS"), 'cms/dashboard');
         }
       }
-      if(variable_get('ofed_switcher_profile', FALSE)) {
+      if (variable_get('ofed_switcher_profile', FALSE)) {
         $tool_links[] = l(t("My Profile"), 'users/' . $user->name);
       }
-      if(variable_get('ofed_switcher_logout', TRUE)) {
+      if (variable_get('ofed_switcher_logout', TRUE)) {
         $tool_links[] = l(t("Logout"), 'user/logout');
       }
       return theme('ofed_switcher_block', array(
@@ -79,11 +79,11 @@ function _ofed_switcher_contents() {
 function ofed_switcher_theme($existing, $type, $theme, $path) {
   return array(
       'ofed_switcher_block' => array(
-          'variables' => array('user_info' => null, 'user_links' => null),
+          'variables' => array('user_info' => NULL, 'user_links' => NULL),
           'template' => 'templates/blocks/ofed_switcher_block_switcher'
       ),
       'ofed_dashboard_page' => array(
-          'variables' => array('dashboard' => null),
+          'variables' => array('dashboard' => NULL),
           'template' => 'templates/pages/ofed_switcher_page_dashboard'
       )
   );
@@ -94,8 +94,8 @@ function ofed_switcher_theme($existing, $type, $theme, $path) {
  */
 function ofed_switcher_menu() {
   $items['admin/openfed/ofed_switcher'] = array(
-      'title' => t('Site/CMS Switcher'),
-      'description' => t('Configure CMS Switcher settings.'),
+      'title' => 'Site/CMS Switcher',
+      'description' => 'Configure CMS Switcher settings.',
       'page callback' => 'drupal_get_form',
       'page arguments' => array('ofed_switcher_admin'),
       'access arguments' => array('access ofed_switcher content'),
@@ -103,7 +103,7 @@ function ofed_switcher_menu() {
   );
 
   $items['cms/dashboard'] = array(
-      'title' => t('Dashboard'),
+      'title' => 'Dashboard',
       'page callback' => 'ofed_switcher_dashboard',
       'page arguments' => array(''),
       'access arguments' => array('access administration pages'),
@@ -173,26 +173,26 @@ function ofed_switcher_dashboard() {
   
   // MANAGE CONTENT
   $dashboard['content'] = array();
-  foreach(node_type_get_names() as $content_key => $content_name):
-    if(user_access('create ' . $content_key . ' content')) :
+  foreach (node_type_get_names() as $content_key => $content_name):
+    if (user_access('create ' . $content_key . ' content')) :
       $dashboard['content'][$content_name] = array(t("Add !name", array('!name' => $content_name)) => 'node/add/' . str_replace('_', '-', $content_key) );
     endif;
   endforeach;
 
   // MANAGE USER
-  if(user_access('administer users') || user_access('administer permissions')) :
+  if (user_access('administer users') || user_access('administer permissions')) :
     $dashboard['user'] = array();
-    if(user_access('administer users')) {
+    if (user_access('administer users')) {
       $dashboard['user'][t('Users')] = array(t('Add user') => 'admin/people/create');
     }
-    if(user_access('administer permissions') ) {
+    if (user_access('administer permissions') ) {
       $dashboard['user'][t('Roles')] = array(t('Add role') => 'admin/people/roles');
       $dashboard['user'][t('Permissions')] = array(t('Configure permissions') => 'admin/people/permissions');
     }
   endif;
 
   // MANAGE BLOCK
-  if(user_access('administer blocks')):
+  if (user_access('administer blocks')):
     $dashboard['block'] = array();
     $dashboard['block'][t('Blocks')] = array(t('Add Block') => 'admin/structure/block/add');
     if (module_exists('menu_block') ) {
@@ -224,7 +224,7 @@ function ofed_switcher_theme_registry_alter(&$theme_registry) {
  * Helper function for re-ordering arrays (needed by theme_registry_alter).
  */
 function _ofed_switcher_insert_after_first_element(&$a, $element) {
-  if(is_array($a)) {
+  if (is_array($a)) {
     $first_element = array_shift($a);
     array_unshift($a, $first_element, $element);
   }
