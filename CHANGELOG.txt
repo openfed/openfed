@@ -29,9 +29,6 @@
     - ofed_event added
     - ofed_meeting added
 
-  * Theme
-    - cms_theme : force the theme to be used in English with a code in template.php beacause "admin_language" module is not stable
-
   * Module updated
       Contrib
         - ds (2.2)
@@ -46,7 +43,9 @@
   * Modules added
       Contrib
         - simple_gmap (1.0)
+        - quiz (4.0-alpha12)
       Custom
+        - addemar_subscription : Display a form in a page or in a block to subscribe to addemar
         - ofed_address
         - ofed_event
         - ofed_meeting
@@ -55,6 +54,7 @@
 
   * Patch
       Contrib
+        - quiz : patch added to avoid : warning: preg_match(): no ending delimiter '.' found in file_scan_directory()
         - metatag : patch added to avoid : Theme key "metatag_twitter_cards" not found.
     
 

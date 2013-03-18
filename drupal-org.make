@@ -33,7 +33,7 @@ libraries[jquery.imagesloaded][type] = "library"
 
 ; jquery.jcarousel
 libraries[jquery.jcarousel][download][type] = "get"
-libraries[jquery.jcarousel][download][url] = "https://github.com/jsor/jcarousel/tree/0.3.0-beta.2/dist"
+libraries[jquery.jcarousel][download][url] = "https://github.com/jsor/jcarousel/blob/0.3.0-beta.2/dist/jquery.jcarousel.min.js"
 libraries[jquery.jcarousel][destination] = "libraries/jquery.jcarousel"
 libraries[jquery.jcarousel][directory_name] = "lib"
 libraries[jquery.jcarousel][type] = "library"
@@ -95,13 +95,13 @@ projects[diff][subdir] = contrib
 projects[draggableviews][version] = "2.0"
 projects[draggableviews][subdir] = contrib 
 
-projects[ds][version] = "2.0"
+projects[ds][version] = "2.2"
 projects[ds][subdir] = contrib 
 
 projects[easy_breadcrumb][version] = "2.1"
 projects[easy_breadcrumb][subdir] = contrib 
 
-projects[elements][version] = "1.2"
+projects[elements][version] = "1.3"
 projects[elements][subdir] = contrib 
 
 projects[email][version] = "1.2"
@@ -116,12 +116,15 @@ projects[entityreference][subdir] = contrib
 projects[extlink][version] = "1.12"
 projects[extlink][subdir] = contrib 
 
-projects[features][version] = "1.0"
+projects[features][version] = "2.0-beta1"
 projects[features][subdir] = contrib
 projects[features][patch][] = "http://drupal.org/files/features_static_caches-1063204-32.patch"
 
-projects[features_override][version] = "2.0-beta1"
+projects[features_override][version] = "2.0-beta2"
 projects[features_override][subdir] = contrib 
+
+projects[field_collection][version] = "1.0-beta5"
+projects[field_collection][subdir] = contrib 
 
 projects[field_group][version] = "1.1"
 projects[field_group][subdir] = contrib 
@@ -129,8 +132,8 @@ projects[field_group][subdir] = contrib
 projects[field_permissions][version] = "1.0-beta2"
 projects[field_permissions][subdir] = contrib 
 
-projects[field_collection][version] = "1.0-beta5"
-projects[field_collection][subdir] = contrib 
+projects[field_slideshow][version] = "1.82"
+projects[field_slideshow][subdir] = contrib 
 
 projects[flag][version] = "2.0"
 projects[flag][subdir] = contrib 
@@ -174,16 +177,16 @@ projects[lexicon][subdir] = contrib
 projects[libraries][version] = "2.0"
 projects[libraries][subdir] = contrib
 
-projects[link][version] = "1.0"
+projects[link][version] = "1.1"
 projects[link][subdir] = contrib
 
-projects[linkchecker][version] = "1.0"
+projects[linkchecker][version] = "1.1"
 projects[linkchecker][subdir] = contrib
 
 projects[logintoboggan][version] = "1.3"
 projects[logintoboggan][subdir] = contrib
 
-projects[media][version] = "1.2"
+projects[media][version] = "1.3"
 projects[media][subdir] = contrib 
 
 projects[menu_attributes][version] = "1.0-rc2"
@@ -246,7 +249,7 @@ projects[print][subdir] = contrib
 projects[redirect][version] = "1.0-rc1"
 projects[redirect][subdir] = contrib
 
-projects[robotstxt][version] = "1.0"
+projects[robotstxt][version] = "1.1"
 projects[robotstxt][subdir] = contrib
 
 projects[role_delegation][version] = "1.1"
@@ -299,7 +302,7 @@ projects[text_resize][version] = "1.7"
 projects[text_resize][subdir] = contrib
 projects[text_resize][patch][] = "http://drupal.org/files/text_resize_reset-1119994-6.patch"
 
-projects[token][version] = "1.4"
+projects[token][version] = "1.5"
 projects[token][subdir] = contrib
 
 projects[translation_helpers][version] = "1.0"
@@ -332,7 +335,7 @@ projects[views_slideshow][subdir] = contrib
 projects[webform][version] = "3.18"
 projects[webform][subdir] = contrib
 
-projects[weight][version] = "2.1"
+projects[weight][version] = "2.2"
 projects[weight][subdir] = contrib
 
 projects[xmlsitemap][version] = "2.0-rc2"
