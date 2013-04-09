@@ -9,7 +9,7 @@ function ofed_menu() {
       'access arguments' => array('access administration pages'),
       'type' => MENU_NORMAL_ITEM,
   );
-  
+
   return $items;
 }
 
@@ -43,4 +43,71 @@ function ofed_admin_page() {
     $output = t('You do not have any administrative items.');
   }
   return $output;
+}
+
+/**
+ * This module should be required by the profile as the lines below are here to fix
+ * some strange behavior or add features that can't be written anywhere else.
+ */
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function ofed_form_user_profile_form_alter(&$form, &$form_state, $form_id) {
+
+  if (empty($_GET['destination'])) {
+    // Can't make use of $form_state['redirect'] at this state as the recirect module uses this variable name
+    $form['#submit'][] = 'ofed_profile_form_custom_submit';
+  }
+}
+
+function ofed_profile_form_custom_submit(&$form, &$form_state) {
+  $form_state['redirect'] = '<front>';//'user/' . $form['#user']->uid;
+}
+
+/**
+ * Implements hook_element_info_alter().
+ */
+function ofed_element_info_alter(&$type) {
+
+  if (module_exists('logintoboggan')) {
+    // Allow ofed to alter the minimum password length message
+    $type['password_confirm']['#process'][] = 'ofed_form_process_password_confirm';
+  }
+}
+
+function ofed_form_process_password_confirm($element) {
+
+  foreach ($element['#attached']['js'] as $key => &$js) {
+
+    if (!empty($js['data']['password'])) {
+      $js['data']['password']['tooShort'] = t('Make it at least !length characters', array('!length' => variable_get('logintoboggan_minimum_password_length', 6)));
+    }
+  }
+
+  return $element;
+}
+
+/**
+ * Implements hook_mail_alter().
+ */
+function ofed_mail_alter(&$message) {
+
+  if (strpos($message['id'], 'register_pending_approval_admin') !== FALSE) {
+    $roles = user_roles(TRUE, 'administer users');
+    $user_manager = array_search('User Manager', $roles);
+
+    if ($user_manager !== FALSE){
+      // TODO : fetch mail(s) from user(s) with role USER MANAGER and send the mail to them instead of site admin
+      $query = db_select('users', 'u');
+      $query->join('users_roles', 'r','u.uid = r.uid');
+      $query->condition('r.rid', $user_manager, '=');
+      $query->fields('u', array('mail'));
+      $mails = $query->execute()->fetchCol();
+
+      if (!empty($mails)) {
+        $message['to'] = $message['to'] . ',' . implode(',', $mails);
+      }
+    }
+  }
 }

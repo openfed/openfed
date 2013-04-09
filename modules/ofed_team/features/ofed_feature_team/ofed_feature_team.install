@@ -16,7 +16,7 @@ function ofed_feature_team_install() {
     // Enable it.
     module_enable(array('ofed_team'));
   }
-  
+
   // Install menu link(s).
   $menus = menu_get_menus(FALSE);
   if (!isset($menus['menu-cms-menu'])) {
@@ -31,14 +31,14 @@ function ofed_feature_team_install() {
   }
   // Create the menu content type link(s).
   $item = array(
-    'link_title' => 'Team', 
+    'link_title' => 'Team',
     'link_path' => 'cms/team-members',
     'router_path' => 'cms/team-members',
     'menu_name' => 'menu-cms-menu',
     'customized' => 1,
   );
   menu_link_save($item);
-  
+
   // Include ds settings.
   $file = drupal_get_path('module', 'ofed_feature_team') . '/install/_ofed_feature_team.ds.inc';
   if (file_exists($file)) {
@@ -106,7 +106,7 @@ function ofed_feature_team_install() {
       }
     }
   }
-  
+
   // Create path alias for each languages.
   $languages = language_list('enabled');
   foreach ($languages as $language) {
@@ -119,7 +119,7 @@ function ofed_feature_team_install() {
       );
       db_insert('url_alias')->fields($path)->execute();
     }
-    
+
     if (isset($language['nl'])) {
       // NL.
       $path = array(
@@ -130,41 +130,17 @@ function ofed_feature_team_install() {
       db_insert('url_alias')->fields($path)->execute();
     }
   }
-  
-//  // Install taxonomy terms...
-//  $vid_ofed_team_civility = db_query("SELECT vid FROM {taxonomy_vocabulary} WHERE machine_name = 'ofed_team_civility'")->fetchField();
-//  taxonomy_term_save((object) array(
-//    'name' => 'Mr.',
-//    'vid' => $vid_ofed_team_civility,
-//  ));
-//  taxonomy_term_save((object) array(
-//    'name' => 'Mrs.',
-//    'vid' => $vid_ofed_team_civility,
-//  ));
-//  taxonomy_term_save((object) array(
-//    'name' => 'Ms.',
-//    'vid' => $vid_ofed_team_civility,
-//  ));
-//  
-//  $vid_ofed_team_gender = db_query("SELECT vid FROM {taxonomy_vocabulary} WHERE machine_name = 'ofed_team_gender'")->fetchField();
-//  taxonomy_term_save((object) array(
-//    'name' => 'Male',
-//    'vid' => $vid_ofed_team_gender,
-//  ));
-//  taxonomy_term_save((object) array(
-//    'name' => 'Female',
-//    'vid' => $vid_ofed_team_gender,
-//  ));
-//  
+
+//
 //  foreach($languages as $language) {
 //    // FR.
 //    if(isset($language['fr'])) {
 //
 //    }
-//    
+//
 //    // NL.
 //    if(isset($language['nl'])) {
-//      
+//
 //    }
 //  }
 }

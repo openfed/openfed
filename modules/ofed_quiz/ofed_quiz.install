@@ -1,0 +1,23 @@
+<?php
+
+
+/**
+ * Implements hook_schema().
+ */
+function ofed_quiz_schema() {
+
+}
+
+/**
+ * Implements hook_install().
+ */
+function ofed_quiz_install() {
+//   module_enable(array('quiz', 'quiz_question', 'multiplechoice', 'truefalse'));
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function ofed_quiz_uninstall() {
+//   watchdog('status', 'quiz module uninstall');
+}

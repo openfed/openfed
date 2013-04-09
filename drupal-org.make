@@ -79,7 +79,7 @@ projects[content_access][subdir] = contrib
 projects[countries][version] = "2.1"
 projects[countries][subdir] = contrib 
 
-projects[ctools][version] = "1.2"
+projects[ctools][version] = "1.3"
 projects[ctools][subdir] = contrib
 projects[ctools][patch][] = "http://drupal.org/files/ctools-fix-warning-message-1739718-32.patch"
 
@@ -246,6 +246,10 @@ projects[performance][subdir] = contrib
 projects[print][version] = "1.2"
 projects[print][subdir] = contrib
 
+projects[quiz][version] = "4.0-alpha12"
+projects[quiz][subdir] = contrib
+projects[quiz][patch][] = "http://drupal.org/files/removing_file_scan_directory_error-1856962.patch"
+
 projects[redirect][version] = "1.0-rc1"
 projects[redirect][subdir] = contrib
 
@@ -255,7 +259,7 @@ projects[robotstxt][subdir] = contrib
 projects[role_delegation][version] = "1.1"
 projects[role_delegation][subdir] = contrib
 
-projects[rules][version] = "2.2"
+projects[rules][version] = "2.3"
 projects[rules][subdir] = contrib
 
 projects[scheduler][version] = "1.0"
@@ -323,7 +327,7 @@ projects[variable][subdir] = contrib
 projects[view_unpublished][version] = "1.1"
 projects[view_unpublished][subdir] = contrib
 
-projects[views][version] = "3.5"
+projects[views][version] = "3.6"
 projects[views][subdir] = contrib
 
 projects[views_bulk_operations][version] = "3.1"

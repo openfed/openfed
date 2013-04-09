@@ -14,10 +14,10 @@ function _get_menu_quick_info() {
 function ofed_switcher_install() {
   // Create a Quick Infos Menu
     menu_save(_get_menu_quick_info());
-  
+
   // Update the menu router information.
     menu_rebuild();
-  
+
   // Create a link to google analytics
     $item = array(
       'link_title' => st('Google Analytics'),
@@ -47,12 +47,12 @@ function ofed_switcher_install() {
       )
     );
     menu_link_save($item);
-  
-  
+
+
   // add switcher block to region
   $default_theme = variable_get('theme_default', 'nerra');
   $admin_theme = variable_get('admin_theme', 'cms_theme');
-  
+
   $default_values = array();
   if ($default_theme != 'nerra') {
     $default_values[] = array(
@@ -80,7 +80,7 @@ function ofed_switcher_install() {
       'cache' => -1,
     );
   }
-  
+
   $default_values[] = array(
     'module' => 'ofed_switcher',
     'delta' => 'ofed_switcher',
@@ -103,10 +103,10 @@ function ofed_switcher_install() {
     'title' => '<none>',
     'cache' => -1,
   );
-  
+
   foreach ($default_values as $block) {
     $exist = db_query(
-              'SELECT * FROM {block} WHERE module = :module AND delta = :delta AND theme = :theme', 
+              'SELECT * FROM {block} WHERE module = :module AND delta = :delta AND theme = :theme',
               array(':module' => $block['module'], ':delta' => $block['delta'], ':theme' => $block['theme'])
             )
             ->fetchObject();
@@ -123,14 +123,14 @@ function ofed_switcher_install() {
     }
     $query->execute();
   }
-  
-  
-  // Create a redirection from cms to cms/dashboard
+
+
+  // Create a redirection from cms to cms/startpage
   if (module_exists('redirect')) {
     $redirect = new stdClass();
     redirect_object_prepare($redirect);
     $redirect->source = 'cms';
-    $redirect->redirect = 'cms/dashboard';
+    $redirect->redirect = 'cms/startpage';
     // Check if the redirect exists before saving.
     $hash = redirect_hash($redirect);
     if (!redirect_load_by_hash($hash)) {
@@ -141,9 +141,27 @@ function ofed_switcher_install() {
 
 function ofed_switcher_uninstall() {
   menu_delete(_get_menu_quick_info());
-  
+
   $query = db_delete('block')
           ->condition('module', 'ofed_switcher', '=')
           ->condition('delta', 'ofed_switcher', '=')
           ->execute();
+}
+
+/**
+ * UPDATES
+ */
+
+/**
+ * Update menu link/router path as the Dashboard is now called Start Page
+ */
+function ofed_switcher_update_7001() {
+  $query = db_update('menu_links')
+          ->fields(array(
+            'link_path' => 'cms/startpage',
+            'router_path' => 'cms/startpage',
+          ))
+          ->condition('menu_name', 'menu-cms-menu', '=')
+          ->condition('link_path', 'cms/dashboard', '=');
+  menu_cache_clear('menu-cms-menu');
 }

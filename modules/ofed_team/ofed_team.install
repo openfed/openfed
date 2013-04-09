@@ -11,12 +11,82 @@ function ofed_team_schema() {
  * Implements hook_install().
  */
 function ofed_team_install() {
+// Install Taxonomy vocabulary
+  $vocabularies = array(
+  'ofed_team_civility' => array(
+      'name' => 'Team members civility',
+      'machine_name' => 'ofed_team_civility',
+      'description' => '',
+      'hierarchy' => '0',
+      'module' => 'taxonomy',
+      'weight' => '0',
+      'language' => 'und',
+      'i18n_mode' => '4',
+    ),
+    'ofed_team_gender' => array(
+      'name' => 'Team members gender',
+      'machine_name' => 'ofed_team_gender',
+      'description' => '',
+      'hierarchy' => '0',
+      'module' => 'taxonomy',
+      'weight' => '0',
+      'language' => 'und',
+      'i18n_mode' => '4',
+    ),
+  );
 
+ // Install taxonomy terms...
+  $existing = taxonomy_get_vocabularies();
+
+  foreach ($vocabularies as $vocabulary) {
+    $vocabulary = (object) $vocabulary;
+
+    foreach ($existing as $existing_vocab) {
+
+      if ($existing_vocab->machine_name === $vocabulary->machine_name) {
+        $vocabulary->vid = $existing_vocab->vid;
+      }
+    }
+    taxonomy_vocabulary_save($vocabulary);
+  }
+  // build terms array
+  $civilities = array(
+    'en' => array('single', 'married', 'divorced', 'widow/widower'),
+    'fr' => array('célibataire.', 'marrié', 'divorcé', 'veuve/veuf'),
+    'nl' => array('single', 'getrouwd', 'gescheiden', 'weduwe/weduwenaar'),
+    );
+  $genders = array(
+    'en' => array('female', 'male'),
+    'fr' => array('féminin', 'masculin'),
+    'nl' => array('mevrouw', 'mannelijk'),
+    );
+
+  $civility_vocabulary = taxonomy_vocabulary_machine_name_load('ofed_team_civility');
+  $gender_vocabulary = taxonomy_vocabulary_machine_name_load('ofed_team_gender');
+
+  // get enabled languages
+  $languages = language_list();
+
+  foreach ($languages as $language) {
+    $lang = $language->prefix;
+    _ofed_team_taxonomy_term_save($civilities[$lang], $civility_vocabulary->vid, $lang);
+    _ofed_team_taxonomy_term_save($genders[$lang], $gender_vocabulary->vid, $lang);
+  }
+}
+
+function _ofed_team_taxonomy_term_save($terms, $vid, $lang) {
+  foreach ($terms as $term) {
+      $new_term = new stdClass();
+      $new_term->name = $term;
+      $new_term->vid = $vid;
+      $new_term->language = $lang;
+      taxonomy_term_save($new_term);
+    }
 }
 
 /**
  * Implements hook_uninstall().
  */
 function ofed_team_uninstall() {
-  
+
 }

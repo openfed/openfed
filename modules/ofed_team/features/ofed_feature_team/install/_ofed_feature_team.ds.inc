@@ -677,20 +677,24 @@ function ofed_feature_team_ds_custom_fields_info() {
       'value' => '
 		<?php
 		$social_array = array();
-		foreach($entity->field_ofed_team_social["und"] as $social) {
-		  $social_array[] = $social[""value"];
-		}
-		
-		$field_collection_items = entity_load("field_collection_item", $social_array);
-		foreach($field_collection_items as $item) {
-           $url = $item->field_ofed_team_social_link["und"][0]["url"];
-           $name = $item->field_ofed_team_social_name["und"][0]["value"];
-           echo \'
-           <span class="social-button \' . strtolower($name) . \'">  
-           <a href="\' . $url . \'" title="">\' . ucfirst($name) . \'</a>
-           </span>
-           \';
-        }
+
+      if (!empty($entity->field_ofed_team_social["und"])) {
+
+  		foreach($entity->field_ofed_team_social["und"] as $social) {
+  		  $social_array[] = $social["value"];
+  		}
+
+  		$field_collection_items = entity_load("field_collection_item", $social_array);
+  		foreach($field_collection_items as $item) {
+             $url = $item->field_ofed_team_social_link["und"][0]["url"];
+             $name = $item->field_ofed_team_social_name["und"][0]["value"];
+             echo \'
+             <span class="social-button \' . strtolower($name) . \'">
+             <a href="\' . $url . \'" title="">\' . ucfirst($name) . \'</a>
+             </span>
+             \';
+          }
+    }
 		?>
 ',
       'format' => 'ds_code',

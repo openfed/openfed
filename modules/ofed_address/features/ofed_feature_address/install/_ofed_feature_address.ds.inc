@@ -22,6 +22,19 @@ function ofed_feature_address_ds_field_settings_info() {
       'label' => 'hidden',
       'format' => 'default',
     ),
+    'field_ofed_address_phone' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'fi' => TRUE,
+          'fi-el' => 'div',
+          'fi-cl' => 'field-ofed-address-phone',
+          'fi-at' => '',
+          'fi-def-at' => FALSE,
+          'fi-odd-even' => TRUE,
+        ),
+      ),
+    ),
   );
   $export['node|ofed_address|default'] = $ds_fieldsetting;
 
@@ -36,6 +49,19 @@ function ofed_feature_address_ds_field_settings_info() {
       'weight' => '2',
       'label' => 'hidden',
       'format' => 'default',
+    ),
+    'field_ofed_address_phone' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'fi' => TRUE,
+          'fi-el' => 'div',
+          'fi-cl' => 'field-ofed-address-phone',
+          'fi-at' => '',
+          'fi-def-at' => FALSE,
+          'fi-odd-even' => TRUE,
+        ),
+      ),
     ),
   );
   $export['node|ofed_address|references'] = $ds_fieldsetting;
@@ -60,7 +86,7 @@ function ofed_feature_address_ds_custom_fields_info() {
   $ds_field->ui_limit = 'ofed_address|*';
   $ds_field->properties = array(
     'code' => array(
-      'value' => '<?php 
+      'value' => '<?php
 $street = (!empty($entity->field_ofed_address_street[\'und\'][0][\'safe_value\'])) ? $entity->field_ofed_address_street[\'und\'][0][\'safe_value\'] : FALSE;
 $number = (!empty($entity->field_ofed_address_number[\'und\'][0][\'safe_value\'])) ? $entity->field_ofed_address_number[\'und\'][0][\'safe_value\'] : FALSE;
 $bus = (!empty($entity->field_ofed_address_bus[\'und\'][0][\'safe_value\'])) ? $entity->field_ofed_address_bus[\'und\'][0][\'safe_value\'] : FALSE;

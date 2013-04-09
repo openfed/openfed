@@ -1,6 +1,6 @@
 <?php
 
-variable_set('logintoboggan_confirm_email_at_registration', 1);
+variable_set('logintoboggan_confirm_email_at_registration', 0);
 variable_set('logintoboggan_immediate_login_on_register', FALSE);
 variable_set('logintoboggan_login_successful_message', 1);
 variable_set('logintoboggan_login_with_email', 1);

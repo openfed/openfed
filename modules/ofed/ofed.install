@@ -4,19 +4,40 @@
  * Implements hook_schema().
  */
 function ofed_schema() {
-  
+
 }
 
 /**
  * Implements hook_install().
  */
 function ofed_install() {
-  
+
 }
 
 /**
  * Implements hook_uninstall().
  */
 function ofed_uninstall() {
-  
+
+}
+
+/**
+ * Fixed typo in /profiles/openfed/includes/install/openfed_text_format.inc
+ * but still has to reproduce the code here as it's used during the installation
+ * process
+ */
+function ofed_update_7001() {
+  $arr = array();
+$arr['allowed_html'] = "<a> <em> <strong> <cite> <blockquote> <code> <ul> <ol> <li> <dl> <dt> <dd> <h2> <h3> <h4> <h5> <h6> <div> <p> <u>";
+$arr['filter_html_help'] = 1;
+$arr['filter_html_nofollow'] = 0;
+db_update('filter')
+          ->fields(array(
+              'settings' => serialize($arr),
+          ))
+          ->condition('format', 'filtered_html', '=')
+          ->condition('module', 'filter', '=')
+          ->condition('name', 'filter_html', '=')
+          ->execute();
+  cache_clear_all();
 }

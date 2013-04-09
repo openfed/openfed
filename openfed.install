@@ -156,7 +156,7 @@ function openfed_install() {
   
   variable_set('file_public_path', conf_path() . '/files');
   variable_set('file_private_path', conf_path() . '/private');
-  variable_set('file_temporary_path', 'tmp');
+  variable_set('file_temporary_path', '/tmp');
   
   variable_set('install_profile', 'openfed');
 }

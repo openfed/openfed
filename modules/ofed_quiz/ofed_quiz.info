@@ -1,0 +1,7 @@
+name = Quiz - Module
+description = Manage Quiz
+package = openFED
+core = 7.x
+version = "7.x-1.0"
+
+depedencies[] = ofed_feature_quiz

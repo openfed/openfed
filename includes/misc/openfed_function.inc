@@ -2,7 +2,7 @@
 
 /**
  * Return the default front theme.
- * 
+ *
  */
 function openfed_return_default_front_theme_name() {
   return 'nerra';
@@ -10,7 +10,7 @@ function openfed_return_default_front_theme_name() {
 
 /**
  * Return the default backend theme.
- * 
+ *
  */
 function openfed_return_default_backend_theme_name() {
   return 'cms_theme';
@@ -18,7 +18,7 @@ function openfed_return_default_backend_theme_name() {
 
 /**
  * Return the default maintenance theme.
- * 
+ *
  */
 function openfed_return_default_maintenance_theme_name() {
   return 'maintenance';
@@ -30,7 +30,7 @@ function openfed_return_default_maintenance_theme_name() {
  * show a block for a language
  * @param string $module
  * @param string $delta
- * @param string $language 
+ * @param string $language
  */
 function _openfed_show_block_for_language($module, $delta, $language) {
   $query = db_insert('i18n_block_language')->fields(array('language', 'module', 'delta'));
@@ -41,7 +41,7 @@ function _openfed_show_block_for_language($module, $delta, $language) {
 
 /**
  * Create menu entry for home
- * @param string $menu_name 
+ * @param string $menu_name
  */
 function _openfed_create_front_menu_link($menu_name, $title) {
   // Create a Home link
@@ -55,7 +55,7 @@ function _openfed_create_front_menu_link($menu_name, $title) {
 }
 
 /**
- * 
+ *
  */
 function _openfed_create_custom_menu($menu_name, $title, $description = '', $i18n_mode = '2', $language = 'en') {
   // create the french menu
@@ -84,9 +84,9 @@ function _openfed_set_block_into_region($module_name, $delta_name, $region_name)
     'title' => '<none>',
     'cache' => -1,
   );
-  
+
   $exist = db_query(
-        'SELECT * FROM {block} WHERE module = :module AND delta = :delta AND theme = :theme', 
+        'SELECT * FROM {block} WHERE module = :module AND delta = :delta AND theme = :theme',
         array(':module' => $block['module'], ':delta' => $block['delta'], ':theme' => $block['theme'])
       )
       ->fetchObject();
@@ -106,12 +106,12 @@ function _openfed_set_block_into_region($module_name, $delta_name, $region_name)
 
 /**
  * Return the array for the list of potential languages.
- * 
- * @return array 
+ *
+ * @return array
  */
 function _openfed_return_languages_list() {
   $languages_list = array(
-    'fr' => st('French (Français)'), 
+    'fr' => st('French (Français)'),
     'nl' => st('Dutch (Nederlands)')
   );
   return $languages_list;
@@ -119,8 +119,8 @@ function _openfed_return_languages_list() {
 
 /**
  * Return the array for the list of potential menu.
- * 
- * @return array 
+ *
+ * @return array
  */
 function _openfed_return_menu_list() {
   $menu_list = array(
@@ -132,8 +132,8 @@ function _openfed_return_menu_list() {
 
 /**
  * Return the array for the list of all roles.
- * 
- * @return array 
+ *
+ * @return array
  */
 function _openfed_return_roles_list() {
   $role_list = array(
@@ -147,8 +147,8 @@ function _openfed_return_roles_list() {
 
 /**
  * Return the array for the list of all taxonomy.
- * 
- * @return array 
+ *
+ * @return array
  */
 function _openfed_return_taxonomy_list() {
   $taxonomy_list = array(
@@ -159,13 +159,13 @@ function _openfed_return_taxonomy_list() {
 
 /**
  * Return the array for the list of all functionalities.
- * 
- * @return array 
+ *
+ * @return array
  */
 function _openfed_return_functionalities_list() {
   $features = drupal_get_path('profile', 'openfed') . '/assets/images/features.png';
   $modules = drupal_get_path('profile', 'openfed') . '/assets/images/modules.png';
-  
+
   $function_list = array(
     // Content types
     'ofed_faq' => array(
@@ -193,7 +193,7 @@ function _openfed_return_functionalities_list() {
       'picture' => $features,
       'description' => st('Enables the creation of photos galeries.'),
     ),
-      
+
     // Modules
     'poll' => array(
       'title' => st('Poll'),
@@ -271,8 +271,8 @@ function _openfed_return_functionalities_list() {
 
 /**
  * Return the array for the list of builder permission
- * 
- * @return array 
+ *
+ * @return array
  */
 function _openfed_return_permission_builder() {
   $permission = array(
@@ -528,8 +528,8 @@ function _openfed_return_permission_builder() {
 
 /**
  * Return the array for the list of configurator permission
- * 
- * @return array 
+ *
+ * @return array
  */
 function _openfed_return_permission_configurator() {
   $permission = array(
@@ -764,8 +764,8 @@ function _openfed_return_permission_configurator() {
 
 /**
  * Return the array for the list of content manager permission
- * 
- * @return array 
+ *
+ * @return array
  */
 function _openfed_return_permission_content_manager() {
   $permission = array(
@@ -889,8 +889,8 @@ function _openfed_return_permission_content_manager() {
 
 /**
  * Return the array for the list of user manager permission
- * 
- * @return array 
+ *
+ * @return array
  */
 function _openfed_return_permission_user_manager() {
   $permission = array(
@@ -909,6 +909,8 @@ function _openfed_return_permission_user_manager() {
       'access print' => TRUE,
     // Site map
       'access site map' => TRUE,
+    // System
+      'access administration pages' => TRUE,
     // User
       'administer permissions' => TRUE,
       'administer users' => TRUE,
@@ -919,8 +921,8 @@ function _openfed_return_permission_user_manager() {
 
 /**
  * Return the array for the list of authenticated visitor permission
- * 
- * @return array 
+ *
+ * @return array
  */
 function _openfed_return_permission_authenticated_visitor() {
   $permission = array(
@@ -941,8 +943,8 @@ function _openfed_return_permission_authenticated_visitor() {
 
 /**
  * Return the array for the list of authenticated user permission
- * 
- * @return array 
+ *
+ * @return array
  */
 function _openfed_return_permission_authenticated_user() {
   $permission = array(
@@ -996,8 +998,8 @@ function _openfed_return_permission_authenticated_user() {
 
 /**
  * Return the array for the list of anonymous user permission
- * 
- * @return array 
+ *
+ * @return array
  */
 function _openfed_return_permission_anonymous_user() {
   $permission = array(
@@ -1049,9 +1051,9 @@ function _openfed_return_permission_anonymous_user() {
 /**
  * Preprocess of the module list in functionalities install task
  * use this if you want to have a description and full description on checkboxes list.
- * 
+ *
  * @param array $element
- * @return array 
+ * @return array
  */
 function form_process_checkboxes_at_install($element) {
   $value = is_array($element['#value']) ? $element['#value'] : array();
@@ -1097,9 +1099,9 @@ function form_process_checkboxes_at_install($element) {
 
 /**
  * Return the template for a checkbox item with description and full description possibilities.
- * 
+ *
  * @param array $variables
- * @return string 
+ * @return string
  */
 function theme_form_element_checkbox_list($variables) {
   $element = &$variables['element'];

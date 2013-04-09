@@ -53,7 +53,7 @@ db_update('filter')
           ->fields(array(
               'settings' => serialize($arr),
           ))
-          ->condition('format', 'filteres_html', '=')
+          ->condition('format', 'filtered_html', '=')
           ->condition('module', 'filter', '=')
           ->condition('name', 'filter_html', '=')
           ->execute();

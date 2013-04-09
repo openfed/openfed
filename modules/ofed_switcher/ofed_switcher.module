@@ -48,13 +48,14 @@ function _ofed_switcher_contents() {
       if (variable_get('ofed_switcher_welcome', TRUE)) {
         $user_info = t("Welcome <strong>@user</strong>", array('@user' => $user->name));
       }
-      if (variable_get('ofed_switcher_goto', TRUE)) {
-        if (arg(0) == 'admin' || arg(0) == 'cms' || path_is_admin(current_path()) ) {
-          $tool_links[] = l(t("Go to Front"), '<front>');
-        }
-        else {
-          $tool_links[] = l(t("Go to CMS"), 'cms/dashboard');
-        }
+      if (user_access('access admin theme') && variable_get('ofed_switcher_goto', TRUE)) {
+
+          if (arg(0) == 'admin' || arg(0) == 'cms' || path_is_admin(current_path()) ) {
+            $tool_links[] = l(t("Go to Front"), '<front>');
+          }
+          else {
+            $tool_links[] = l(t("Go to CMS"), 'cms/startpage');
+          }
       }
       if (variable_get('ofed_switcher_profile', FALSE)) {
         $tool_links[] = l(t("My Profile"), 'users/' . $user->name);
@@ -102,8 +103,8 @@ function ofed_switcher_menu() {
       'type' => MENU_NORMAL_ITEM,
   );
 
-  $items['cms/dashboard'] = array(
-      'title' => 'Dashboard',
+  $items['cms/startpage'] = array(
+      'title' => 'Start Page',
       'page callback' => 'ofed_switcher_dashboard',
       'page arguments' => array(''),
       'access arguments' => array('access administration pages'),
@@ -130,7 +131,7 @@ function ofed_switcher_admin() {
   );
   $form['ofed_switcher_goto'] = array(
       '#type' => 'checkbox',
-      '#title' => t('Show go to CMS/Front link'),
+      '#title' => t('Show go to CMS/Front link (note that only user with <em>Access administration theme</em> permission can view the "go to CMS/Front" link)'),
       '#default_value' => variable_get('ofed_switcher_goto', TRUE),
       '#description' => t('')
   );
@@ -155,7 +156,7 @@ function ofed_switcher_admin() {
       '#default_value' => variable_get('ofed_switcher_roles', array(2)),
       '#options' => $roles,
       '#required' => TRUE,
-      '#description' => t('Choose which role can see this block.<br>Note that only user with <em>Access administration theme</em> permission can view the the CMS dashboard'),
+      '#description' => t('Choose which role can see this block.<br>Note that only user with <em>Access administration theme</em> permission can view the CMS dashboard'),
   );
 
   return system_settings_form($form);
@@ -170,7 +171,7 @@ function ofed_switcher_dashboard() {
 
   // MANAGE QUICK INFO
   $dashboard['quick-info'] = theme('links__menu_quick_infos', array('links' => menu_navigation_links('menu-quick-infos')));
-  
+
   // MANAGE CONTENT
   $dashboard['content'] = array();
   foreach (node_type_get_names() as $content_key => $content_name):

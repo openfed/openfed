@@ -426,7 +426,7 @@ function ofed_feature_address_field_default_fields() {
       'bundle' => 'ofed_address',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => 'Fill the address used to display the Google map.',
+      'description' => 'Copy paste the address search field from Google Maps here.',
       'display' => array(
         'default' => array(
           'label' => 'hidden',
@@ -1110,7 +1110,7 @@ function ofed_feature_address_field_default_fields() {
   t('Fill one or more email address of this address.');
   t('Fill one or more phone number of this address.');
   t('Fill one the opening hours of this address.');
-  t('Fill the address used to display the Google map.');
+  t('Copy paste the address search field from Google Maps here.');
   t('Fill the bus of this address.');
   t('Fill the city of thos address.');
   t('Fill the coutry of this address.');
