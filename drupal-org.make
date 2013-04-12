@@ -81,7 +81,7 @@ projects[countries][subdir] = contrib
 
 projects[ctools][version] = "1.3"
 projects[ctools][subdir] = contrib
-projects[ctools][patch][] = "http://drupal.org/files/ctools-fix-warning-message-1739718-32.patch"
+;projects[ctools][patch][] = "http://drupal.org/files/ctools-fix-warning-message-1739718-32.patch"
 
 projects[date][version] = "2.6"
 projects[date][subdir] = contrib 
@@ -246,9 +246,9 @@ projects[performance][subdir] = contrib
 projects[print][version] = "1.2"
 projects[print][subdir] = contrib
 
-projects[quiz][version] = "4.0-alpha12"
+projects[quiz][version] = "4.0-beta1"
 projects[quiz][subdir] = contrib
-projects[quiz][patch][] = "http://drupal.org/files/removing_file_scan_directory_error-1856962.patch"
+;projects[quiz][patch][] = "http://drupal.org/files/removing_file_scan_directory_error-1856962.patch"
 
 projects[redirect][version] = "1.0-rc1"
 projects[redirect][subdir] = contrib
