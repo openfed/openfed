@@ -703,6 +703,34 @@ function ofed_feature_team_ds_custom_fields_info() {
   );
   $export['social_button'] = $ds_field;
 
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
+  $ds_field->field = 'full_name_with_link';
+  $ds_field->label = 'Full Name with link';
+  $ds_field->field_type = 5;
+  $ds_field->entities = array(
+    'node' => 'node',
+  );
+  $ds_field->ui_limit = 'ofed_team|*';
+  $ds_field->properties = array(
+    'code' => array(
+      'value' => '<?php
+if (!empty($entity->field_ofed_team_last_name[\'und\']) || !empty($entity->field_ofed_team_first_name[\'und\'])) {
+  $firstname = $entity->field_ofed_team_first_name[\'und\'][0][\'value\'];
+  $lastname = $entity->field_ofed_team_last_name[\'und\'][0][\'value\'];
+  $url = drupal_get_path_alias(\'node/\' . $entity->nid);
+
+  echo \'<h2>
+  <a href="\' . $url . \'" title=""><span class="field field-name-field-ofed-team-full-name float-left">\' . ucfirst($firstname) . \' \' . ucfirst($lastname) . \'</span></a></h2>
+  \';
+}
+?>',
+      'format' => 'ds_code',
+    ),
+    'use_token' => 0,
+  );
+  $export['full_name_with_link'] = $ds_field;
+
   return $export;
 }
 
@@ -892,18 +920,16 @@ function ofed_feature_team_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'ds_content' => array(
-        0 => 'field_ofed_team_picture',
-        1 => 'field_ofed_team_first_name',
-        2 => 'field_ofed_team_last_name',
-        3 => 'field_ofed_team_function',
-        4 => 'field_ofed_team_body',
-        5 => 'node_link',
+        0 => 'full_name_with_link',
+        1 => 'field_ofed_team_picture',
+        2 => 'field_ofed_team_function',
+        3 => 'field_ofed_team_body',
+        4 => 'node_link',
       ),
     ),
     'fields' => array(
+      'full_name_with_link' => 'ds_content',
       'field_ofed_team_picture' => 'ds_content',
-      'field_ofed_team_first_name' => 'ds_content',
-      'field_ofed_team_last_name' => 'ds_content',
       'field_ofed_team_function' => 'ds_content',
       'field_ofed_team_body' => 'ds_content',
       'node_link' => 'ds_content',
@@ -932,7 +958,7 @@ function ofed_feature_team_ds_layout_settings_info() {
     'regions' => array(
       'ds_content' => array(
         0 => 'field_ofed_team_picture',
-        1 => 'field_ofed_team_first_name',
+        1 => 'full_name_with_link',
         2 => 'field_ofed_team_last_name',
         3 => 'field_ofed_team_function',
         4 => 'field_ofed_team_civility',

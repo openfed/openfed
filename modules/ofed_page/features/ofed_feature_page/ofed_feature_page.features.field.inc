@@ -55,7 +55,7 @@ function ofed_feature_page_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '4',
+          'weight' => '2',
         ),
         'rss' => array(
           'label' => 'above',
@@ -171,7 +171,7 @@ function ofed_feature_page_field_default_fields() {
             'view_mode' => 'references',
           ),
           'type' => 'entityreference_entity_view',
-          'weight' => '5',
+          'weight' => '3',
         ),
         'rss' => array(
           'label' => 'above',
@@ -283,7 +283,7 @@ function ofed_feature_page_field_default_fields() {
             'multiple_to' => '',
           ),
           'type' => 'date_default',
-          'weight' => '0',
+          'weight' => '4',
         ),
         'rss' => array(
           'label' => 'inline',
@@ -413,7 +413,7 @@ function ofed_feature_page_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '2',
+          'weight' => '0',
         ),
         'rss' => array(
           'label' => 'hidden',
@@ -517,7 +517,7 @@ function ofed_feature_page_field_default_fields() {
             'image_style' => 'ofed_page_thumb',
           ),
           'type' => 'image',
-          'weight' => '3',
+          'weight' => '1',
         ),
         'rss' => array(
           'label' => 'above',
@@ -632,7 +632,7 @@ function ofed_feature_page_field_default_fields() {
             'multiple_to' => '',
           ),
           'type' => 'date_default',
-          'weight' => '1',
+          'weight' => '5',
         ),
         'rss' => array(
           'label' => 'inline',
@@ -763,7 +763,7 @@ function ofed_feature_page_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '14',
+          'weight' => '15',
         ),
         'rss' => array(
           'label' => 'above',

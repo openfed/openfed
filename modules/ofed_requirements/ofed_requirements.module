@@ -1,0 +1,36 @@
+<?php
+
+/**
+ * Implements hook_menu().
+ */
+function ofed_requirements_menu() {
+  $items = array();
+
+
+
+  $items['admin/reports/requirements'] = array(
+    'title' => 'Fedict requirements check',
+    'description' => t('Check if the system fulfill the Fedict requirements'),
+    'page callback' => 'ofed_requirements_check_page',
+    'access callback' => 'user_access',
+    'access arguments' => array('access requirements check'),
+    'type' => MENU_NORMAL_ITEM,
+    'file' => 'includes/ofed_requirements.admin.inc',
+  );
+
+  return $items;
+}
+
+/**
+ * Implements hook_permission().
+ */
+function ofed_requirements_permission() {
+   return array(
+    'access requirements check' => array(
+      'title' => t('Access requirements check'),
+    ),
+    'test requirements' => array(
+      'title' => t('test  requirements'),
+    ),
+  );
+}

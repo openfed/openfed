@@ -1444,12 +1444,9 @@ function ofed_feature_team_field_default_fields() {
         ),
         'full' => array(
           'label' => 'above',
-          'module' => 'field_collection',
-          'settings' => array(
-            'view_mode' => 'full',
-          ),
-          'type' => 'field_collection_fields',
-          'weight' => '7',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '19',
         ),
         'page_list' => array(
           'label' => 'above',

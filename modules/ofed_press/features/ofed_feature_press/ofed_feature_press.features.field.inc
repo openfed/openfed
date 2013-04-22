@@ -77,7 +77,7 @@ function ofed_feature_press_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '2',
+          'weight' => '0',
         ),
         'page_list' => array(
           'label' => 'inline',
@@ -230,7 +230,7 @@ function ofed_feature_press_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '5',
+          'weight' => '3',
         ),
         'page_list' => array(
           'label' => 'above',
@@ -375,7 +375,7 @@ function ofed_feature_press_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '7',
+          'weight' => '5',
         ),
         'page_list' => array(
           'label' => 'above',
@@ -523,7 +523,7 @@ function ofed_feature_press_field_default_fields() {
             'view_mode' => 'references',
           ),
           'type' => 'entityreference_entity_view',
-          'weight' => '8',
+          'weight' => '6',
         ),
         'page_list' => array(
           'label' => 'above',
@@ -654,7 +654,7 @@ function ofed_feature_press_field_default_fields() {
           'module' => 'link',
           'settings' => array(),
           'type' => 'link_default',
-          'weight' => '9',
+          'weight' => '7',
         ),
         'page_list' => array(
           'label' => 'above',
@@ -819,7 +819,7 @@ function ofed_feature_press_field_default_fields() {
             'multiple_to' => '',
           ),
           'type' => 'date_default',
-          'weight' => '0',
+          'weight' => '8',
         ),
         'page_list' => array(
           'label' => 'inline',
@@ -995,7 +995,7 @@ function ofed_feature_press_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '6',
+          'weight' => '4',
         ),
         'page_list' => array(
           'label' => 'above',
@@ -1146,7 +1146,7 @@ function ofed_feature_press_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '3',
+          'weight' => '1',
         ),
         'page_list' => array(
           'label' => 'hidden',
@@ -1308,7 +1308,7 @@ function ofed_feature_press_field_default_fields() {
             'image_style' => 'ofed_press_thumb',
           ),
           'type' => 'image',
-          'weight' => '4',
+          'weight' => '2',
         ),
         'page_list' => array(
           'label' => 'hidden',
@@ -1482,7 +1482,7 @@ function ofed_feature_press_field_default_fields() {
             'multiple_to' => '',
           ),
           'type' => 'date_default',
-          'weight' => '1',
+          'weight' => '9',
         ),
         'page_list' => array(
           'label' => 'inline',
@@ -1657,7 +1657,7 @@ function ofed_feature_press_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '19',
+          'weight' => '20',
         ),
         'page_list' => array(
           'label' => 'above',
@@ -1718,6 +1718,7 @@ function ofed_feature_press_field_default_fields() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Add an additional link related to this press.');
   t('Add the source of this press.');
   t('Author');
   t('Body');
@@ -1738,7 +1739,6 @@ function ofed_feature_press_field_default_fields() {
   t('Source');
   t('Summary');
   t('Thumb');
-  t('Add an additional link related to this press.');
   t('Use system update date instead of Last updated date');
 
   return $fields;

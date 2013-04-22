@@ -129,7 +129,7 @@ function ofed_feature_photogallery_strongarm() {
             'visible' => FALSE,
           ),
           'full' => array(
-            'weight' => '11',
+            'weight' => '15',
             'visible' => FALSE,
           ),
           'rss' => array(

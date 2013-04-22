@@ -79,7 +79,7 @@ function ofed_feature_photogallery_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '3',
+          'weight' => '1',
         ),
         'page_list' => array(
           'label' => 'above',
@@ -400,7 +400,7 @@ function ofed_feature_photogallery_field_default_fields() {
             'slideshow_timeout' => '4000',
           ),
           'type' => 'slideshow',
-          'weight' => '4',
+          'weight' => '2',
         ),
         'page_list' => array(
           'label' => 'hidden',
@@ -603,7 +603,7 @@ function ofed_feature_photogallery_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '2',
+          'weight' => '0',
         ),
         'page_list' => array(
           'label' => 'hidden',
@@ -791,7 +791,7 @@ function ofed_feature_photogallery_field_default_fields() {
             'multiple_to' => '',
           ),
           'type' => 'date_default',
-          'weight' => '1',
+          'weight' => '3',
         ),
         'page_list' => array(
           'label' => 'inline',
@@ -958,7 +958,7 @@ function ofed_feature_photogallery_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '5',
+          'weight' => '13',
         ),
         'page_list' => array(
           'label' => 'above',

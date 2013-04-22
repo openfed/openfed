@@ -74,14 +74,28 @@ function ofed_team_install() {
   }
 }
 
-function _ofed_team_taxonomy_term_save($terms, $vid, $lang) {
+function _ofed_team_taxonomy_term_save($terms, $vid, $lang, $update = FALSE) {
+  $existing_terms = array();
+
+  if ($update) {
+    $existing_terms = taxonomy_get_tree($vid);
+    $existing_terms = array_map('_ofed_team_get_existing_term_names', $existing_terms);
+  }
+
   foreach ($terms as $term) {
+
+    if (!$update || !in_array($term, $existing_terms)) {
       $new_term = new stdClass();
       $new_term->name = $term;
       $new_term->vid = $vid;
       $new_term->language = $lang;
       taxonomy_term_save($new_term);
     }
+  }
+}
+
+function _ofed_team_get_existing_term_names($term) {
+  return $term->name;
 }
 
 /**
@@ -89,4 +103,36 @@ function _ofed_team_taxonomy_term_save($terms, $vid, $lang) {
  */
 function ofed_team_uninstall() {
 
+}
+
+
+/**
+ * Add Civility and Gender taxonomy terms in their respective vocabulary
+ */
+function ofed_team_update_7001() {
+  // Install taxonomy terms...
+  // build terms array
+  $civilities = array(
+    'en' => array('single', 'married', 'divorced', 'widow/widower'),
+    'fr' => array('célibataire', 'marrié', 'divorcé', 'veuve/veuf'),
+    'nl' => array('single', 'getrouwd', 'gescheiden', 'weduwe/weduwenaar'),
+    );
+  $genders = array(
+    'en' => array('female', 'male', 'machin'),
+    'fr' => array('féminin', 'masculin'),
+    'nl' => array('mevrouw', 'mannelijk'),
+    );
+
+  $civility_vocabulary = taxonomy_vocabulary_machine_name_load('ofed_team_civility');
+  $gender_vocabulary = taxonomy_vocabulary_machine_name_load('ofed_team_gender');
+
+  // get enabled languages
+  $languages = language_list();
+
+  foreach ($languages as $language) {
+    $lang = $language->prefix;
+    $update = TRUE;
+    _ofed_team_taxonomy_term_save($civilities[$lang], $civility_vocabulary->vid, $lang, $update);
+    _ofed_team_taxonomy_term_save($genders[$lang], $gender_vocabulary->vid, $lang, $update);
+  }
 }

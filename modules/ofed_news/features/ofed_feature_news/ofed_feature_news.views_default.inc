@@ -69,7 +69,7 @@ function ofed_feature_news_views_default_views() {
   $handler->display->display_options['access']['perm'] = 'edit any ofed_news content';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'full';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '25';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '4';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['quantity'] = '9';
@@ -266,7 +266,7 @@ function ofed_feature_news_views_default_views() {
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'full';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '25';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '4';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['quantity'] = '9';
@@ -600,7 +600,7 @@ function ofed_feature_news_views_default_views() {
     t('Delete'),
     t('Published'),
     t('Page: List'),
-    t('Page: Sticky'),
+    t('Page: Sticky '),
     t('Block: Teaser'),
     t('Latest news'),
     t('See all news'),

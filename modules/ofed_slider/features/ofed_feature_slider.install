@@ -3,51 +3,29 @@
 /**
  * Implements hook_schema().
  */
-function ofed_feature_faq_schema() {
+function ofed_feature_slider_schema() {
 
 }
 
 /**
  * Implements hook_install().
  */
-function ofed_feature_faq_install() {
+function ofed_feature_slider_install() {
   // If the related feature is not enabled.
-  if (!module_exists('ofed_faq')) {
+  if (!module_exists('ofed_slider')) {
     // Enable it.
-    module_enable(array('ofed_faq'));
+    module_enable(array('ofed_slider'));
   }
-
-  // Install menu link(s).
-  $menus = menu_get_menus(FALSE);
-  if (!isset($menus['menu-cms-menu'])) {
-    // Create a CMS Menu if not exist.
-    $menu = array();
-    $menu['menu_name'] = "menu-cms-menu";
-    $menu['title'] = "CMS Menu";
-    $menu['description'] = "";
-    menu_save($menu);
-    // Update the menu router information.
-    menu_rebuild();
-  }
-  // Create the menu content type link(s).
-  $item = array(
-    'link_title' => 'FAQ\'s',
-    'link_path' => 'cms/faqs',
-    'router_path' => 'cms/faqs',
-    'menu_name' => 'menu-cms-menu',
-    'customized' => 1,
-  );
-  menu_link_save($item);
 
   // Include ds settings.
-  $file = drupal_get_path('module', 'ofed_feature_faq') . '/install/_ofed_feature_faq.ds.inc';
+  $file = drupal_get_path('module', 'ofed_feature_slider') . '/install/_ofed_feature_slider.ds.inc';
   if (file_exists($file)) {
     // Include it.
-    include_once 'install/_ofed_feature_faq.ds.inc';
+    include_once 'install/_ofed_feature_slider.ds.inc';
 
     // Install ds customs fields.
-    if (function_exists('ofed_feature_faq_ds_custom_fields_info')) {
-      $fields = ofed_feature_faq_ds_custom_fields_info();
+    if (function_exists('ofed_feature_slider_ds_custom_fields_info')) {
+      $fields = ofed_feature_slider_ds_custom_fields_info();
       foreach ($fields as $id => $field) {
         // Remove one key.
         if (isset($field->api_version)) {
@@ -69,8 +47,8 @@ function ofed_feature_faq_install() {
     }
 
     // Install ds fields settings.
-    if (function_exists('ofed_feature_faq_ds_field_settings_info')) {
-      $fields = ofed_feature_faq_ds_field_settings_info();
+    if (function_exists('ofed_feature_slider_ds_field_settings_info')) {
+      $fields = ofed_feature_slider_ds_field_settings_info();
       foreach ($fields as $id => $field) {
         // Remove one key.
         if (isset($field->api_version)) {
@@ -88,8 +66,8 @@ function ofed_feature_faq_install() {
     }
 
     // Install ds layouts settings.
-    if (function_exists('ofed_feature_faq_ds_layout_settings_info')) {
-      $layouts = ofed_feature_faq_ds_layout_settings_info();
+    if (function_exists('ofed_feature_slider_ds_layout_settings_info')) {
+      $layouts = ofed_feature_slider_ds_layout_settings_info();
       foreach ($layouts as $id => $layout) {
         // Remove one key.
         if (isset($layout->api_version)) {
@@ -107,35 +85,11 @@ function ofed_feature_faq_install() {
     }
   }
 
-  // Create path alias for each languages.
-  $languages = language_list('enabled');
-  foreach ($languages as $language) {
-    // FR.
-    if (isset($language['fr'])) {
-      $path = array(
-        'source'   => 'faqs',
-        'alias'    => 'faqs',
-        'language' => 'fr',
-      );
-      db_insert('url_alias')->fields($path)->execute();
-    }
-
-    if (isset($language['nl'])) {
-      // NL.
-      $path = array(
-        'source'   => 'faqs',
-        'alias'    => 'faqs',
-        'language' => 'nl',
-      );
-      db_insert('url_alias')->fields($path)->execute();
-    }
-  }
-
   // Add permissions to Content Manager
   $cm_role = user_role_load_by_name('Content Manager');
 
   if (!empty($cm_role->rid)) {
-    $content_type = 'ofed_faq';
+    $content_type = 'ofed_slider';
     $permissions = array(
       'create ' . $content_type . ' content' => TRUE,
       'edit own ' . $content_type . ' content' => TRUE,
@@ -157,10 +111,10 @@ function ofed_feature_faq_install() {
 /**
  * Implements hook_uninstall().
  */
-function ofed_feature_faq_uninstall() {
+function ofed_feature_slider_uninstall() {
   // If the related feature is enabled.
-  if (module_exists('ofed_faq')) {
+  if (module_exists('ofed_slider')) {
     // Disable it.
-    module_disable(array('ofed_faq'));
+    module_disable(array('ofed_slider'));
   }
 }

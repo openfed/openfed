@@ -16,7 +16,7 @@ function ofed_feature_slideshow_install() {
     // Enable it.
     module_enable(array('ofed_slideshow'));
   }
-  
+
   // Install menu link(s).
   $menus = menu_get_menus(FALSE);
   if (!isset($menus['menu-cms-menu'])) {
@@ -31,7 +31,7 @@ function ofed_feature_slideshow_install() {
   }
   // Create the menu content type link(s).
   $item = array(
-    'link_title' => 'Slideshows', 
+    'link_title' => 'Slideshows',
     'link_path' => 'cms/slideshows',
     'router_path' => 'cms/slideshows',
     'menu_name' => 'menu-cms-menu',
@@ -44,7 +44,7 @@ function ofed_feature_slideshow_install() {
   if (file_exists($file)) {
     // Include it.
     include_once 'install/_ofed_feature_slideshow.ds.inc';
-    
+
     // Install ds customs fields.
     if (function_exists('ofed_feature_slideshow_ds_custom_fields_info')) {
       $fields = ofed_feature_slideshow_ds_custom_fields_info();
@@ -104,8 +104,30 @@ function ofed_feature_slideshow_install() {
         // Save in database.
         db_insert('ds_layout_settings')->fields($layout)->execute();
       }
-    }  
-  }  
+    }
+  }
+
+  // Add permissions to Content Manager
+  $cm_role = user_role_load_by_name('Content Manager');
+
+  if (!empty($cm_role->rid)) {
+    $content_type = 'ofed_slideshow';
+    $permissions = array(
+      'create ' . $content_type . ' content' => TRUE,
+      'edit own ' . $content_type . ' content' => TRUE,
+      'edit any ' . $content_type . ' content' => TRUE,
+      'delete own ' . $content_type . ' content' => TRUE,
+      'delete any ' . $content_type . ' content' => TRUE,
+      'override ' . $content_type . ' published option' => TRUE,
+      'override ' . $content_type . ' promote to front page option' => TRUE,
+      'override ' . $content_type . ' sticky option' => TRUE,
+      'override ' . $content_type . ' revision option' => TRUE,
+      'enter ' . $content_type . ' revision log entry' => TRUE,
+      'override ' . $content_type . ' authored on option' => TRUE,
+      'override ' . $content_type . ' authored by option' => TRUE,
+    );
+    user_role_change_permissions($cm_role->rid, $permissions);
+  }
 }
 
 /**

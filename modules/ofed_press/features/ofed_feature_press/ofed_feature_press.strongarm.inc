@@ -132,7 +132,7 @@ function ofed_feature_press_strongarm() {
             'visible' => FALSE,
           ),
           'full' => array(
-            'weight' => '18',
+            'weight' => '19',
             'visible' => FALSE,
           ),
           'teaser' => array(

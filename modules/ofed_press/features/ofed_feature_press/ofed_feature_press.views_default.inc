@@ -27,7 +27,6 @@ function ofed_feature_press_views_default_views() {
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['link_display'] = 'ofed_press_page_list';
   $handler->display->display_options['access']['type'] = 'perm';
-  $handler->display->display_options['access']['perm'] = 'access content';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
@@ -220,7 +219,7 @@ function ofed_feature_press_views_default_views() {
     '***DEFAULT_LANGUAGE***' => '***DEFAULT_LANGUAGE***',
     'und' => 'und',
     'en' => 'en',
-    'nl' => 'nl',    
+    'nl' => 'nl',
     'fr' => 'fr',
   );
   $handler->display->display_options['filters']['language']['group'] = 1;
@@ -607,7 +606,7 @@ function ofed_feature_press_views_default_views() {
     t('Delete'),
     t('Published'),
     t('Page: List'),
-    t('Page: Sticky'),
+    t('Page: Sticky '),
     t('Block: Teaser'),
     t('Latest press'),
     t('See all press'),

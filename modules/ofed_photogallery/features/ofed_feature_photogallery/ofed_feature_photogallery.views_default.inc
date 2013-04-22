@@ -693,7 +693,7 @@ function ofed_feature_photogallery_views_default_views() {
     t('Block: Column'),
     t('Photos galeries: Column'),
     t('Block: Latest one'),
-    t('Latest one photos galery'),
+    t('Latest one photos galery '),
     t('Photos galeries: Latest one photos galery'),
     t('Block: Latest one updated'),
     t('Latest updated photos galery'),

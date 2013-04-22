@@ -315,7 +315,7 @@ function ofed_feature_download_ds_field_settings_info() {
       ),
     ),
     'file_url_open' => array(
-      'weight' => '9',
+      'weight' => '6',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -325,7 +325,7 @@ function ofed_feature_download_ds_field_settings_info() {
       ),
     ),
     'file_url_persistent' => array(
-      'weight' => '11',
+      'weight' => '7',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -335,7 +335,7 @@ function ofed_feature_download_ds_field_settings_info() {
       ),
     ),
     'url_file_save' => array(
-      'weight' => '10',
+      'weight' => '8',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -428,7 +428,7 @@ function ofed_feature_download_ds_field_settings_info() {
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
-        'link' => '0',
+        'link' => '1',
         'wrapper' => 'h3',
         'class' => '',
         'ft' => array(
@@ -892,7 +892,7 @@ function ofed_feature_download_ds_custom_fields_info() {
   $ds_field->ui_limit = 'ofed_download|*';
   $ds_field->properties = array(
     'code' => array(
-      'value' => '<?php 
+      'value' => '<?php
   foreach($entity->field_ofed_download_file as $file) {
     $pathinfo = pathinfo($file["0"]["filename"]);
     echo "<span class=\\"file-name\\">".$pathinfo["filename"]."</span>";
@@ -915,7 +915,7 @@ function ofed_feature_download_ds_custom_fields_info() {
   $ds_field->ui_limit = 'ofed_download|*';
   $ds_field->properties = array(
     'code' => array(
-      'value' => '<?php 
+      'value' => '<?php
   foreach($entity->field_ofed_download_file as $file) {
     echo "<span class=\\"file-size\\">".format_size($file["0"]["filesize"])."</span>";
   }
@@ -937,7 +937,7 @@ function ofed_feature_download_ds_custom_fields_info() {
   $ds_field->ui_limit = 'ofed_download|*';
   $ds_field->properties = array(
     'code' => array(
-      'value' => '<?php 
+      'value' => '<?php
   foreach($entity->field_ofed_download_file as $file) {
     $pathinfo = pathinfo($file["0"]["filename"]);
     echo "<span class=\\"file-type-".strip_tags($pathinfo["extension"])."\\">".strip_tags($pathinfo["extension"])."</span>";
@@ -960,7 +960,7 @@ function ofed_feature_download_ds_custom_fields_info() {
   $ds_field->ui_limit = 'ofed_download|*';
   $ds_field->properties = array(
     'code' => array(
-      'value' => '<?php 
+      'value' => '<?php
 foreach($entity->field_ofed_download_file as $file) {
   echo l( t("View file"), file_create_url($file["0"]["uri"]), array("attributes" => array("class" => "file-url-open", "target" => "_blank", "title" => t("View file"))) );
 }
@@ -982,7 +982,7 @@ foreach($entity->field_ofed_download_file as $file) {
   $ds_field->ui_limit = 'ofed_download|*';
   $ds_field->properties = array(
     'code' => array(
-      'value' => '<?php 
+      'value' => '<?php
 foreach($entity->field_ofed_download_file as $file) {
   echo l( t("Share file"), "download-file/".$entity->nid, array("attributes" => array("target" => "_blank", "title" => t("Share file"))) );
   echo "<span class=\\"url-file-persistent\\">".url("download-file/".$entity->nid, array("absolute" => TRUE))."</span>";
@@ -1005,7 +1005,7 @@ foreach($entity->field_ofed_download_file as $file) {
   $ds_field->ui_limit = 'ofed_download|*';
   $ds_field->properties = array(
     'code' => array(
-      'value' => '<?php 
+      'value' => '<?php
 foreach($entity->field_ofed_download_file as $file) {
   echo l( t("Save file"), "download-file/".$entity->nid, array("attributes" => array("class" => "file-url-save", "title" => t("Save file"))) );
 }

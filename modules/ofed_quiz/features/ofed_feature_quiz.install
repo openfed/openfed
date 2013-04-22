@@ -1,0 +1,30 @@
+<?php
+
+/**
+ * Implementation of hook_install().
+ */
+function ofed_feature_quiz_install() {
+  // Add permissions to Content Manager
+  $cm_role = user_role_load_by_name('Content Manager');
+
+  if (!empty($cm_role->rid)) {
+    $content_types = array('quiz', 'multichoice', 'truefalse');
+    $actions = array('create ', 'edit own ', 'edit any ', 'delete own ', 'delete any ');
+    $permissions = array();
+
+    foreach($content_types as $content_type) {
+
+      foreach($actions as $action) {
+        $permission[$action . $content_type . ' content'] = TRUE;
+      }
+    }
+    user_role_change_permissions($cm_role->rid, $permissions);
+  }
+}
+
+/**
+ * Implementation of hook_install().
+ */
+function ofed_feature_quiz_uinstall() {
+
+}

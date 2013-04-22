@@ -76,7 +76,7 @@ function ofed_feature_news_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '8',
+          'weight' => '6',
         ),
         'page_list' => array(
           'label' => 'inline',
@@ -228,7 +228,7 @@ function ofed_feature_news_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '3',
+          'weight' => '2',
         ),
         'page_list' => array(
           'label' => 'above',
@@ -406,7 +406,7 @@ function ofed_feature_news_field_default_fields() {
             'view_mode' => 'references',
           ),
           'type' => 'entityreference_entity_view',
-          'weight' => '5',
+          'weight' => '4',
         ),
         'page_list' => array(
           'label' => 'above',
@@ -538,7 +538,7 @@ function ofed_feature_news_field_default_fields() {
           'module' => 'link',
           'settings' => array(),
           'type' => 'link_default',
-          'weight' => '6',
+          'weight' => '5',
         ),
         'page_list' => array(
           'label' => 'above',
@@ -885,7 +885,7 @@ function ofed_feature_news_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '4',
+          'weight' => '3',
         ),
         'page_list' => array(
           'label' => 'hidden',
@@ -1010,7 +1010,7 @@ function ofed_feature_news_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '1',
+          'weight' => '0',
         ),
         'page_list' => array(
           'label' => 'hidden',
@@ -1149,7 +1149,7 @@ function ofed_feature_news_field_default_fields() {
             'image_style' => 'ofed_news_thumb',
           ),
           'type' => 'image',
-          'weight' => '2',
+          'weight' => '1',
         ),
         'page_list' => array(
           'label' => 'hidden',
@@ -1327,7 +1327,7 @@ function ofed_feature_news_field_default_fields() {
             'multiple_to' => '',
           ),
           'type' => 'date_default',
-          'weight' => '0',
+          'weight' => '8',
         ),
         'page_list' => array(
           'label' => 'inline',
