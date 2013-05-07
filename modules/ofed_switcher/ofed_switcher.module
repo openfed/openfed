@@ -108,7 +108,6 @@ function ofed_switcher_menu() {
       'page callback' => 'ofed_switcher_dashboard',
       'page arguments' => array(''),
       'access arguments' => array('access administration pages'),
-      'menu_name' => 'menu-cms-menu',
       'type' => MENU_NORMAL_ITEM,
       'weight' => -50
   );
@@ -174,14 +173,20 @@ function ofed_switcher_dashboard() {
 
   // MANAGE CONTENT
   $dashboard['content'] = array();
-  foreach (node_type_get_names() as $content_key => $content_name):
-    if (user_access('create ' . $content_key . ' content')) :
-      $dashboard['content'][$content_name] = array(t("Add !name", array('!name' => $content_name)) => 'node/add/' . str_replace('_', '-', $content_key) );
-    endif;
-  endforeach;
+  foreach (node_type_get_names() as $content_key => $content_name){
+    if (user_access('create ' . $content_key . ' content')) {
+      $dashboard['content'][$content_name]['label'] = $content_name;
+      $dashboard['content'][$content_name]['add'] = l(t('Add'), 'node/add/' . str_replace('_', '-', $content_key), array('html' => TRUE));
+      $dashboard['content'][$content_name]['show'] = '';
+
+      if (strpos($content_key, 'ofed') !== FALSE) {
+        $dashboard['content'][$content_name]['show'] = ' / ' . l(t('Show'), 'cms/' . str_replace('_', '-', $content_key), array('html' => TRUE));
+      }
+    }
+  }
 
   // MANAGE USER
-  if (user_access('administer users') || user_access('administer permissions')) :
+  if (user_access('administer users') || user_access('administer permissions')) {
     $dashboard['user'] = array();
     if (user_access('administer users')) {
       $dashboard['user'][t('Users')] = array(t('Add user') => 'admin/people/create');
@@ -190,17 +195,18 @@ function ofed_switcher_dashboard() {
       $dashboard['user'][t('Roles')] = array(t('Add role') => 'admin/people/roles');
       $dashboard['user'][t('Permissions')] = array(t('Configure permissions') => 'admin/people/permissions');
     }
-  endif;
+  }
 
   // MANAGE BLOCK
-  if (user_access('administer blocks')):
+  if (user_access('administer blocks')){
     $dashboard['block'] = array();
     $dashboard['block'][t('Blocks')] = array(t('Add Block') => 'admin/structure/block/add');
+
     if (module_exists('menu_block') ) {
       $dashboard['block'][t('Menu Blocks')] = array(t('Add Menu Block') => 'admin/structure/block/add-menu-block');
     }
     $dashboard['block'][t('Configuration')] = array(t('Configure block') => 'admin/structure/block');
-  endif;
+  }
 
   return theme('ofed_dashboard_page', array('dashboard' => $dashboard));
 }

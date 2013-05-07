@@ -2,7 +2,7 @@
 
 /**
  * Add a js to the exposed form
- * @param type $vars 
+ * @param type $vars
  */
 function cms_theme_preprocess_views_exposed_form(&$vars) {
   drupal_add_js(drupal_get_path('theme', $GLOBALS['theme_key']) . "/assets/scripts/cms-views.js", "theme");
@@ -16,7 +16,7 @@ function cms_theme_preprocess_page(&$variables) {
     $variables['class_left'] = theme_get_setting('cms_theme_layout_width_left');
     $variables['class_right'] = theme_get_setting('cms_theme_layout_width_right');
     $variables['class_content'] = theme_get_setting('cms_theme_layout_width_center');
-    
+
   }
   elseif (!empty($variables['page']['sidebar_first'])) {
     $variables['class_left'] = theme_get_setting('cms_theme_layout_width_left');
@@ -29,7 +29,14 @@ function cms_theme_preprocess_page(&$variables) {
   else {
     $variables['class_content'] = 'span-12';
   }
-  
+
+  $variables['logo_url'] = '<front>';
+  $variables['site_name'] .= '';
+
+  if (module_exists('ofed_switcher')) {
+    $variables['logo_url'] = 'cms/startpage';
+    $variables['site_name'] .= ' : ' . t('Start page');
+  }
 }
 
 
@@ -55,11 +62,11 @@ function cms_theme_preprocess_html(&$variables) {
   else {
     $variables['classes_array'][] = 'no-sidebars';
   }
-  
-  
+
+
   // Add conditional stylesheets for IE
   drupal_add_css(
-    path_to_theme() . '/css/ie.css', 
+    path_to_theme() . '/css/ie.css',
     array('group' => CSS_THEME, 'browsers' => array('IE' => 'lte IE 7', '!IE' => FALSE), 'preprocess' => FALSE)
   );
 }
@@ -90,7 +97,7 @@ function cms_theme_css_alter(&$css) {
 
 /**
  * Returns HTML for a breadcrumb trail.
- * 
+ *
  * @param $variables
  *   An associative array containing:
  *   - breadcrumb: An array containing the breadcrumb links.
@@ -101,13 +108,13 @@ function cms_theme_breadcrumb($variables) {
   if (!empty($breadcrumb)) {
     $first = urlencode('<firstchild>');
     $nolink = urlencode('<nolink>');
-      
+
     $display = '<ul>';
-        
+
     if (theme_get_setting('cms_theme_breadcrumb_label')):
       $display .= '<li>' . t('You are here') . '</li>';
     endif;
-        
+
     $counter = 1;
     $count = count($breadcrumb);
     foreach ( $breadcrumb as $item) {
@@ -134,6 +141,24 @@ function cms_theme_breadcrumb($variables) {
   }
 }
 
+function cms_theme_block_view_easy_breadcrumb_easy_breadcrumb_alter(&$data, $block) {
+
+  if (arg(0) == 'admin' || arg(0) == 'cms' || path_is_admin(current_path()) ) {
+    $breadcrumb = $data['content']['easy_breadcrumb']['#breadcrumb'];
+    $start = array_shift($breadcrumb);
+
+    if (arg(0) == 'cms') {
+      array_shift($breadcrumb); // remove CMS from the breadcrumb, it has no use
+    }
+    // replace HOME by START PAGE
+    $pattern = '/href="([^"]+)"([^\>]+\>)([^\<\/a\>]+)/';
+    $replacement = 'href="$1/startpage"$2Start Page</a>';
+    $start = preg_replace($pattern, $replacement, $start);
+    array_unshift($breadcrumb, $start);
+    $data['content']['easy_breadcrumb']['#breadcrumb'] = $breadcrumb;
+    $data['content']['easy_breadcrumb']['#segments_quantity'] = count($breadcrumb);
+  }
+}
 
 /**
  * Return a string limit by number of word and add a "read more" if necessary
@@ -169,12 +194,12 @@ function cms_theme_preprocess_node(&$variables) {
     $variables['classes_array'][] = 'node-full';
     $variables['node']->which_display = '';
   }
-    
+
   if ( isset($variables['node']->view->current_display) ) {
     $which_display = $variables['node']->view->name . '-' . $variables['node']->view->current_display;
     $variables['node']->which_display = $which_display;
-  } 
-  
+  }
+
   if ( module_exists('metatag') ) {
     render( $variables['content']['metatags'] );
   }
@@ -419,7 +444,7 @@ function cms_theme_radio($variables) {
 function cms_theme_select($variables) {
   $element = $variables['element'];
   element_set_attributes($element, array('id', 'name', 'size'));
-  
+
   if ( $element['#multiple'] == 1 ) {
     _form_set_class($element, array('form-select', cms_theme_getThemeableFormSelectMultipleClass()));
   }
@@ -593,7 +618,7 @@ function cms_theme_item_list($variables) {
   $output .= '';
   return $output;
 }
-  
+
 
 /**
  * Returns HTML for a feed icon.

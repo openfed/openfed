@@ -4,7 +4,7 @@ $filtered_html_format = array(
   'format' => 'filtered_html',
   'name' => 'Filtered HTML',
   'status' => 1,
-  'weight' => 0,
+  'weight' => -8,
   'filters' => array(
     // URL filter.
     'filter_url' => array(
@@ -64,7 +64,7 @@ $full_html_format = array(
   'format' => 'full_html',
   'name' => 'Full HTML',
   'status' => 1,
-  'weight' => 1,
+  'weight' => -10,
   'filters' => array(
     // URL filter.
     'filter_url' => array(

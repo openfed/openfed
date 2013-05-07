@@ -2,7 +2,7 @@
 
 /**
  * Return the form for regional set up
- * @return array 
+ * @return array
  */
 function openfed_regional_form() {
   drupal_set_title(st('Regional configuration'));
@@ -10,7 +10,7 @@ function openfed_regional_form() {
   $form['intro'] = array(
     '#markup' => '<p>' . st('Select the regional languages which have to be foreseen.') . '</p>',
   );
-  
+
   $form['regional_list'] = array(
     '#type' => 'checkboxes',
     '#title' => st('Regional languages list'),
@@ -30,7 +30,7 @@ function openfed_regional_form() {
 /**
  * manage the submit of the form
  * @param array $form
- * @param array $form_state 
+ * @param array $form_state
  */
 function openfed_regional_form_submit($form, &$form_state) {
   $values = $form_state['values'];
@@ -48,7 +48,7 @@ function openfed_regional_form_submit($form, &$form_state) {
 }
 
 /**
- * batch function to activate language 
+ * batch function to activate language
  */
 function openfed_batch_internalization() {
   $values = variable_get( 'openfed_need_batch_internalization_lang', array() );
@@ -57,22 +57,22 @@ function openfed_batch_internalization() {
   if ( !empty($values) ) {
     include_once DRUPAL_ROOT . '/includes/iso.inc';
     $predefined = _locale_get_predefined_list();
-    
+
     foreach ( $values as $key => $value ) {
       if ( $value != 'en' ) {
         locale_add_language($value);
         drupal_set_message(t('The language %language has been created and can now be used.', array('%language' => t($predefined[$value][0]))));
       }
-      
+
       // create basic content in each language
       _openfed_create_content_type($value);
 
     }
       variable_del('openfed_need_batch_internalization');
       variable_del('openfed_need_batch_internalization_lang');
-      
+
       _openfed_set_block_into_region('locale', 'language', 'tools');
-      
+
       module_enable( array('translation_overview'), TRUE );
   }
 }
@@ -80,73 +80,73 @@ function openfed_batch_internalization() {
 /**
  * create a list of content type for a language
  * * panel for homepage
- * * webform for contact 
+ * * webform for contact
  * @param string $lang the language code
  */
 function _openfed_create_content_type($lang) {
-  
+
   // check if variable $lang is known in languages_list
   if ( array_key_exists($lang, _openfed_return_languages_list()) || $lang == 'en' ) {
-    
+
     $ck_link = variable_get('ckeditor_link_autocomplete_menus');
-    
+
     switch ($lang) {
       case 'en':
         $title = st('Home');
         $alias = st('home');
-        
+
         // store main link source variable for a language
         variable_store_set('language', $lang, 'menu_main_links_source', 'main-menu');
-        
+
         // create a link to the front in the main menu
         _openfed_create_front_menu_link('main-menu', $title);
-        
+
         // show block for english language only
         _openfed_show_block_for_language('system', 'main-menu', $lang);
-        
+
         // add date format
         $date_format = array();
-        $date_format[] = array( 'format' => 'm/d/Y', 'type' => 'date_only', 'language' => 'en' );
+        $date_format[] = array( 'format' => 'd/m/Y', 'type' => 'date_only', 'language' => 'en' );
         $date_format[] = array( 'format' => 'c', 'type' => 'html5_tools_iso8601', 'language' => 'en' );
         $date_format[] = array( 'format' => 'l, F j, Y - H:i', 'type' => 'long', 'language' => 'en' );
-        $date_format[] = array( 'format' => 'D, m/d/Y - H:i', 'type' => 'medium', 'language' => 'en' );
-        $date_format[] = array( 'format' => 'm/d/Y - H:i', 'type' => 'short', 'language' => 'en' );
+        $date_format[] = array( 'format' => 'D, d/m/Y - H:i', 'type' => 'medium', 'language' => 'en' );
+        $date_format[] = array( 'format' => 'd/m/Y - H:i', 'type' => 'short', 'language' => 'en' );
         _openfed_localize_date_format($date_format);
-        
+
         // adda prefix for english language
         $query = db_update('languages')
               ->fields(array('prefix' => 'en'))
               ->condition('language', 'en', '=')
               ->execute();
-        
+
         // create webform contact page
         _openfed_create_webform_contact($lang, 'main-menu');
-        
+
         // create a menu block for submenu
         _openfed_create_submenu($lang, 'main-menu');
       break;
-    
+
       case 'fr':
         // set title & alias string
         $title = st('Accueil');
         $alias = st('accueil');
         $menu_name = 'main-french-menu';
-        
+
         // create the french menu
         _openfed_create_custom_menu($menu_name, "Main French Menu", '', '2', 'fr');
-        
+
         // add custom menu into ckeditor link for autocomplete menu
         $ck_link[$menu_name] = $menu_name;
-        
+
         // store main link source variable for a language
         variable_store_set('language', $lang, 'menu_main_links_source', $menu_name);
-        
+
         // create front link in menu
         _openfed_create_front_menu_link($menu_name, $title);
-        
+
         // show block for french language only
         _openfed_show_block_for_language('menu', $menu_name, $lang);
-        
+
         // add date format
         $date_format = array();
         $date_format[] = array( 'format' => 'd/m/Y', 'type' => 'date_only', 'language' => 'fr' );
@@ -155,10 +155,10 @@ function _openfed_create_content_type($lang) {
         $date_format[] = array( 'format' => 'D, d/m/Y - H:i', 'type' => 'medium', 'language' => 'fr' );
         $date_format[] = array( 'format' => 'd/m/Y - H:i', 'type' => 'short', 'language' => 'fr' );
         _openfed_localize_date_format($date_format);
-        
+
         // create webform contact page
         _openfed_create_webform_contact($lang, $menu_name);
-        
+
         // create a menu block for submenu
         _openfed_create_submenu($lang, $menu_name);
 
@@ -169,22 +169,22 @@ function _openfed_create_content_type($lang) {
         $title = st('Welkom');
         $alias = st('welcom');
         $menu_name = "main-dutch-menu";
-        
+
         // create the Dutch menu
         _openfed_create_custom_menu($menu_name, "Main Dutch Menu", '', '2', 'nl');
-        
+
         // add custom menu into ckeditor link for autocomplete menu
         $ck_link[$menu_name] = $menu_name;
-        
+
         // store variable for a language
         variable_store_set('language', $lang, 'menu_main_links_source', $menu_name);
-        
+
         // create front link
         _openfed_create_front_menu_link($menu_name, $title);
-        
+
         // show block for dutch language only
         _openfed_show_block_for_language('menu', $menu_name, $lang);
-        
+
         // add date format
         $date_format = array();
         $date_format[] = array( 'format' => 'd/m/Y', 'type' => 'date_only', 'language' => 'nl' );
@@ -193,10 +193,10 @@ function _openfed_create_content_type($lang) {
         $date_format[] = array( 'format' => 'D, d/m/Y - H:i', 'type' => 'medium', 'language' => 'nl' );
         $date_format[] = array( 'format' => 'd/m/Y - H:i', 'type' => 'short', 'language' => 'nl' );
         _openfed_localize_date_format($date_format);
-        
+
         // create webform contact page
         _openfed_create_webform_contact($lang, $menu_name);
-        
+
         // create a menu block for submenu
         _openfed_create_submenu($lang, $menu_name);
 
@@ -220,7 +220,7 @@ function _openfed_create_content_type($lang) {
         ),
     );
     drupal_write_record('page_manager_pages', $pages);
-    
+
     $display = array(
         'layout' => 'onecol',
         'layout_settings' => array(),
@@ -236,7 +236,7 @@ function _openfed_create_content_type($lang) {
         'title_pane' => 0,
     );
     drupal_write_record('panels_display', $display);
-    
+
     $handlers = array(
         'name' => 'page_' . $alias . '_panel_context',
         'task' => 'page',
@@ -257,20 +257,20 @@ function _openfed_create_content_type($lang) {
         )
     );
     drupal_write_record('page_manager_handlers', $handlers);
-    
-    
+
+
     // set panel to the front page
     if ( $lang == 'en' ) variable_set('site_frontpage', $alias);
-    
+
     variable_store_set('language', $lang, 'site_frontpage', $alias);
   }
-  
-  
+
+
 }
 
 
 function _openfed_create_submenu($lang, $menu_name = 'main-menu') {
-  
+
   switch ($lang) {
     case 'en':
       // EN
@@ -432,17 +432,17 @@ function _openfed_create_submenu($lang, $menu_name = 'main-menu') {
       $query->execute();
     break;
   }
-  
-  
-  
-  
-  
-  
+
+
+
+
+
+
 }
 
 /**
  * Create a webform
- * @param string $lang 
+ * @param string $lang
  */
 function _openfed_create_webform_contact($lang, $menu_name = 'main-menu') {
   switch ($lang) {
@@ -465,8 +465,8 @@ function _openfed_create_webform_contact($lang, $menu_name = 'main-menu') {
       $message = st('Bericht');
     break;
   }
-  
-  // Creating webform node 
+
+  // Creating webform node
   $node = new stdClass();
   $node->type = 'webform';
   $node->title = "Contact";
@@ -474,7 +474,7 @@ function _openfed_create_webform_contact($lang, $menu_name = 'main-menu') {
   $node->status = 1;
   $node->tnid = 1;
   node_object_prepare($node);
-  
+
   $node->menu = array(
     'enabled' => 1,
     'mlid' => 0,
@@ -529,25 +529,24 @@ function _openfed_create_webform_contact($lang, $menu_name = 'main-menu') {
       'pid' => 0
     ),
   );
-  
+
   foreach ($components as $component) {
     $component['nid'] = $node->nid;
     $component['extra']['title_display'] = 'inline';
     $node->webform['components'][] = $component;
     webform_component_insert($component);
   }
-  
+
 }
 
 
 
 /**
  * add a date format in database
- * @param array $date_format 
+ * @param array $date_format
  */
 function _openfed_localize_date_format($date_format) {
   foreach ( $date_format as $key => $date_format_locale ) {
     drupal_write_record('date_format_locale', $date_format_locale);
   }
-  
 }

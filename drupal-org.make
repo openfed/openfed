@@ -9,7 +9,7 @@ core = 7.x
 
 ; CK Editor
 libraries[ckeditor][download][type] = "get"
-libraries[ckeditor][download][url] = "http://download.cksource.com/CKEditor/CKEditor/CKEditor%203.6.6.1/ckeditor_3.6.6.1.zip"
+libraries[ckeditor][download][url] = "http://download.cksource.com/CKEditor/CKEditor/CKEditor%204.1/ckeditor_4.1_standard.zip"
 libraries[ckeditor][directory_name] = "ckeditor"
 libraries[ckeditor][type] = "library"
 
@@ -73,7 +73,7 @@ projects[ckeditor_link][subdir] = contrib
 projects[colorbox][version] = "2.3"
 projects[colorbox][subdir] = contrib 
 
-projects[content_access][version] = "1.2-beta1"
+projects[content_access][version] = "1.2-beta2"
 projects[content_access][subdir] = contrib 
 
 projects[countries][version] = "2.1"
@@ -185,6 +185,7 @@ projects[linkchecker][subdir] = contrib
 
 projects[logintoboggan][version] = "1.3"
 projects[logintoboggan][subdir] = contrib
+projects[logintoboggan][patch][] = "http://drupal.org/files/logintoboggan-minpasswordlength-1142808-9.patch"
 
 projects[media][version] = "1.3"
 projects[media][subdir] = contrib 
@@ -208,7 +209,7 @@ projects[metatag][patch][] = "http://drupal.org/files/metatag-fix_theme_hook_mis
 projects[module_filter][version] = "1.7"
 projects[module_filter][subdir] = contrib
 
-projects[mollom][version] = "2.4"
+projects[mollom][version] = "2.6"
 projects[mollom][subdir] = contrib
 
 projects[multiple_node_menu][version] = "1.0-beta1"
@@ -248,7 +249,6 @@ projects[print][subdir] = contrib
 
 projects[quiz][version] = "4.0-beta1"
 projects[quiz][subdir] = contrib
-;projects[quiz][patch][] = "http://drupal.org/files/removing_file_scan_directory_error-1856962.patch"
 
 projects[redirect][version] = "1.0-rc1"
 projects[redirect][subdir] = contrib

@@ -11,13 +11,13 @@
     <div class="span-8">
       <?php if ( !empty($dashboard['content']) ): ?>
         <div class="dashbox span-12">
-          <h2><?php echo t('Create Content') ?></h2>
+          <h2><?php echo t('Manage Content') ?></h2>
           <div class="dashbox-content">
             <ul>
-              <?php foreach($dashboard['content'] as $label => $links): ?>
+              <?php foreach($dashboard['content'] as $ct): ?>
                 <li>
-                  <label><?php echo $label; ?></label>
-                  <?php echo l(key($links), $links[key($links)], array('html' => TRUE)); ?>
+                  <label><?php echo $ct['label'] ?></label>
+                  <?php echo $ct['add'] . $ct['show']; ?>
                 </li>
               <?php endforeach; ?>
             </ul>

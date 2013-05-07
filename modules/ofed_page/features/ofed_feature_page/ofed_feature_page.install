@@ -17,28 +17,6 @@ function ofed_feature_page_install() {
     module_enable(array('ofed_page'));
   }
 
-  // Install menu link(s).
-  $menus = menu_get_menus(FALSE);
-  if (!isset($menus['menu-cms-menu'])) {
-    // Create a CMS Menu if not exist.
-    $menu = array();
-    $menu['menu_name'] = "menu-cms-menu";
-    $menu['title'] = "CMS Menu";
-    $menu['description'] = "";
-    menu_save($menu);
-    // Update the menu router information.
-    menu_rebuild();
-  }
-  // Create the menu content type link(s).
-  $item = array(
-    'link_title' => 'Pages',
-    'link_path' => 'cms/pages',
-    'router_path' => 'cms/pages',
-    'menu_name' => 'menu-cms-menu',
-    'customized' => 1,
-  );
-  menu_link_save($item);
-
   // Include ds settings.
   $file = drupal_get_path('module', 'ofed_feature_page') . '/install/_ofed_feature_page.ds.inc';
   if (file_exists($file)) {
@@ -105,28 +83,6 @@ function ofed_feature_page_install() {
         db_insert('ds_layout_settings')->fields($layout)->execute();
       }
     }
-  }
-
-  // Add permissions to Content Manager
-  $cm_role = user_role_load_by_name('Content Manager');
-
-  if (!empty($cm_role->rid)) {
-    $content_type = 'ofed_page';
-    $permissions = array(
-      'create ' . $content_type . ' content' => TRUE,
-      'edit own ' . $content_type . ' content' => TRUE,
-      'edit any ' . $content_type . ' content' => TRUE,
-      'delete own ' . $content_type . ' content' => TRUE,
-      'delete any ' . $content_type . ' content' => TRUE,
-      'override ' . $content_type . ' published option' => TRUE,
-      'override ' . $content_type . ' promote to front page option' => TRUE,
-      'override ' . $content_type . ' sticky option' => TRUE,
-      'override ' . $content_type . ' revision option' => TRUE,
-      'enter ' . $content_type . ' revision log entry' => TRUE,
-      'override ' . $content_type . ' authored on option' => TRUE,
-      'override ' . $content_type . ' authored by option' => TRUE,
-    );
-    user_role_change_permissions($cm_role->rid, $permissions);
   }
 }
 

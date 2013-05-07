@@ -76,7 +76,7 @@ function ofed_feature_slider_field_default_fields() {
         'active' => 1,
         'module' => 'image',
         'settings' => array(
-          'preview_image_style' => '',
+          'preview_image_style' => 'thumbnail',
           'progress_indicator' => 'throbber',
         ),
         'type' => 'image_image',
@@ -276,7 +276,7 @@ function ofed_feature_slider_field_default_fields() {
             'slideshow_controls_position' => 'after',
             'slideshow_field_collection_image' => 'field_ofed_slider_image',
             'slideshow_fx' => 'fade',
-            'slideshow_image_style' => 'ofed_slider_full',
+            'slideshow_image_style' => 'ofed_slider_default',
             'slideshow_link' => 'field_ofed_slider_link',
             'slideshow_order' => '',
             'slideshow_pager' => 'number',

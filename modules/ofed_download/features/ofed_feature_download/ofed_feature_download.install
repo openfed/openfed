@@ -17,28 +17,6 @@ function ofed_feature_download_install() {
     module_enable(array('ofed_download'));
   }
 
-  // Install menu link(s).
-  $menus = menu_get_menus(FALSE);
-  if (!isset($menus['menu-cms-menu'])) {
-    // Create a CMS Menu if not exist.
-    $menu = array();
-    $menu['menu_name'] = "menu-cms-menu";
-    $menu['title'] = "CMS Menu";
-    $menu['description'] = "";
-    menu_save($menu);
-    // Update the menu router information.
-    menu_rebuild();
-  }
-  // Create the menu content type link(s).
-  $item = array(
-    'link_title' => 'Downloads',
-    'link_path' => 'cms/downloads',
-    'router_path' => 'cms/downloads',
-    'menu_name' => 'menu-cms-menu',
-    'customized' => 1,
-  );
-  menu_link_save($item);
-
   // Include ds settings.
   $file = drupal_get_path('module', 'ofed_feature_download') . '/install/_ofed_feature_download.ds.inc';
   if (file_exists($file)) {
@@ -129,28 +107,6 @@ function ofed_feature_download_install() {
       );
       db_insert('url_alias')->fields($path)->execute();
     }
-  }
-
-  // Add permissions to Content Manager
-  $cm_role = user_role_load_by_name('Content Manager');
-
-  if (!empty($cm_role->rid)) {
-    $content_type = 'ofed_download';
-    $permissions = array(
-      'create ' . $content_type . ' content' => TRUE,
-      'edit own ' . $content_type . ' content' => TRUE,
-      'edit any ' . $content_type . ' content' => TRUE,
-      'delete own ' . $content_type . ' content' => TRUE,
-      'delete any ' . $content_type . ' content' => TRUE,
-      'override ' . $content_type . ' published option' => TRUE,
-      'override ' . $content_type . ' promote to front page option' => TRUE,
-      'override ' . $content_type . ' sticky option' => TRUE,
-      'override ' . $content_type . ' revision option' => TRUE,
-      'enter ' . $content_type . ' revision log entry' => TRUE,
-      'override ' . $content_type . ' authored on option' => TRUE,
-      'override ' . $content_type . ' authored by option' => TRUE,
-    );
-    user_role_change_permissions($cm_role->rid, $permissions);
   }
 }
 

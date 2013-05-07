@@ -6,8 +6,8 @@
 function ofed_slider_block_info() {
   $blocks = array();
   $blocks['slide_images'] = array(
-      'info' => t('slider: slider block'),
-      'cache' => DRUPAL_NO_CACHE,
+    'info' => t('Slider: slider'),
+    'cache' => DRUPAL_NO_CACHE,
   );
   return $blocks;
 }
@@ -19,7 +19,7 @@ function ofed_slider_block_view($delta = '') {
   $block = array();
   switch ($delta) {
     case 'slide_images':
-      $block['subject'] = t('slider: slider block');
+      $block['subject'] = t('Slider: slider');
       $block['content'] = _ofed_slider_render_content($delta);
       break;
   }
@@ -45,9 +45,7 @@ function _ofed_slider_render_content($delta) {
 
     if ($nid) {
       $nodeload = node_load($nid, NULL, TRUE);
-//       $fieldname = 'field_ofed_' . $delta;
-
-      if ($nid != ''/* && !empty($nodeload->$fieldname)*/) {
+      if ($nid != '') {
         return _ofed_slider_render_node($nodeload, $delta);
       }
       else {
@@ -89,7 +87,6 @@ function _ofed_slider_lookup($path, $delta) {
 
       if ($nid) {
         $nodeload = node_load($nid, NULL, TRUE);
-
         $fieldname = 'field_ofed_' . $delta;
         if ($nid != '' && !empty($nodeload->$fieldname)) {
           return _ofed_slider_render_node($nodeload, $delta);

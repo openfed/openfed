@@ -388,7 +388,7 @@ function ofed_feature_address_field_default_fields() {
           'size' => 60,
         ),
         'type' => 'email_textfield',
-        'weight' => '11',
+        'weight' => '12',
       ),
     ),
   );
@@ -426,7 +426,7 @@ function ofed_feature_address_field_default_fields() {
       'bundle' => 'ofed_address',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => 'Copy paste the address search field from Google Maps here.',
+      'description' => 'Copy paste the address search field from Google Maps here (Eg: "Rue de la loi 16, 1000 Bruxelles").',
       'display' => array(
         'default' => array(
           'label' => 'hidden',
@@ -481,7 +481,7 @@ function ofed_feature_address_field_default_fields() {
           'size' => '120',
         ),
         'type' => 'text_textfield',
-        'weight' => '14',
+        'weight' => '11',
       ),
     ),
   );
@@ -706,7 +706,7 @@ function ofed_feature_address_field_default_fields() {
           'rows' => '5',
         ),
         'type' => 'text_textarea',
-        'weight' => '13',
+        'weight' => '14',
       ),
     ),
   );
@@ -783,7 +783,7 @@ function ofed_feature_address_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '12',
+        'weight' => '13',
       ),
     ),
   );
@@ -1110,7 +1110,7 @@ function ofed_feature_address_field_default_fields() {
   t('Fill one or more email address of this address.');
   t('Fill one or more phone number of this address.');
   t('Fill one the opening hours of this address.');
-  t('Copy paste the address search field from Google Maps here.');
+  t('Copy paste the address search field from Google Maps here (Eg: "Rue de la loi 16, 1000 Bruxelles").');
   t('Fill the bus of this address.');
   t('Fill the city of thos address.');
   t('Fill the coutry of this address.');

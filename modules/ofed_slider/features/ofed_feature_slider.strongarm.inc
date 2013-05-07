@@ -206,7 +206,7 @@ function ofed_feature_slider_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_preview_ofed_slider';
-  $strongarm->value = '2';
+  $strongarm->value = '1';
   $export['node_preview_ofed_slider'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -264,6 +264,13 @@ function ofed_feature_slider_strongarm() {
   $strongarm->name = 'scheduler_publish_enable_ofed_slider';
   $strongarm->value = 1;
   $export['scheduler_publish_enable_ofed_slider'] = $strongarm;
+  
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_publish_touch_ofed_slider';
+  $strongarm->value = 1;
+  $export['scheduler_publish_touch_ofed_slider'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -285,6 +292,13 @@ function ofed_feature_slider_strongarm() {
   $strongarm->name = 'scheduler_unpublish_enable_ofed_slider';
   $strongarm->value = 1;
   $export['scheduler_unpublish_enable_ofed_slider'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_unpublish_touch_ofed_slider';
+  $strongarm->value = 0;
+  $export['scheduler_unpublish_touch_ofed_slider'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

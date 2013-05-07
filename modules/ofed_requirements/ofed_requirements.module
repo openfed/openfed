@@ -6,8 +6,6 @@
 function ofed_requirements_menu() {
   $items = array();
 
-
-
   $items['admin/reports/requirements'] = array(
     'title' => 'Fedict requirements check',
     'description' => t('Check if the system fulfill the Fedict requirements'),

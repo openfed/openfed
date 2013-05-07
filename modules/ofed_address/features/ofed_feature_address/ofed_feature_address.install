@@ -4,7 +4,7 @@
  * Implements hook_schema().
  */
 function ofed_feature_address_schema() {
-
+  
 }
 
 /**
@@ -16,28 +16,6 @@ function ofed_feature_address_install() {
     // Enable it.
     module_enable(array('ofed_address'));
   }
-
-  // Install menu link(s).
-  $menus = menu_get_menus(FALSE);
-  if (!isset($menus['menu-cms-menu'])) {
-    // Create a CMS Menu if not exist.
-    $menu = array();
-    $menu['menu_name'] = "menu-cms-menu";
-    $menu['title'] = "CMS Menu";
-    $menu['description'] = "";
-    menu_save($menu);
-    // Update the menu router information.
-    menu_rebuild();
-  }
-  // Create the menu content type link(s).
-  $item = array(
-    'link_title' => 'Addresses',
-    'link_path' => 'cms/addresses',
-    'router_path' => 'cms/addresses',
-    'menu_name' => 'menu-cms-menu',
-    'customized' => 1,
-  );
-  menu_link_save($item);
 
   // Include ds settings.
   $file = drupal_get_path('module', 'ofed_feature_address') . '/install/_ofed_feature_address.ds.inc';
@@ -62,7 +40,10 @@ function ofed_feature_address_install() {
 
         // Cast variable like an array.
         $field = (array) $field;
-
+        
+        // Delete from database as they might not be updated.
+        db_delete('ds_fields')->condition('field', $field['field'], '=')->execute();
+        
         // Save in database.
         db_insert('ds_fields')->fields($field)->execute();
       }
@@ -81,7 +62,7 @@ function ofed_feature_address_install() {
 
         // Cast variable like an array.
         $field = (array) $field;
-
+        
         // Save in database.
         db_insert('ds_field_settings')->fields($field)->execute();
       }
@@ -100,33 +81,11 @@ function ofed_feature_address_install() {
 
         // Cast variable like an array.
         $layout = (array) $layout;
-
+        
         // Save in database.
         db_insert('ds_layout_settings')->fields($layout)->execute();
       }
     }
-  }
-
-  // Add permissions to Content Manager
-  $cm_role = user_role_load_by_name('Content Manager');
-
-  if (!empty($cm_role->rid)) {
-    $content_type = 'ofed_address';
-    $permissions = array(
-      'create ' . $content_type . ' content' => TRUE,
-      'edit own ' . $content_type . ' content' => TRUE,
-      'edit any ' . $content_type . ' content' => TRUE,
-      'delete own ' . $content_type . ' content' => TRUE,
-      'delete any ' . $content_type . ' content' => TRUE,
-      'override ' . $content_type . ' published option' => TRUE,
-      'override ' . $content_type . ' promote to front page option' => TRUE,
-      'override ' . $content_type . ' sticky option' => TRUE,
-      'override ' . $content_type . ' revision option' => TRUE,
-      'enter ' . $content_type . ' revision log entry' => TRUE,
-      'override ' . $content_type . ' authored on option' => TRUE,
-      'override ' . $content_type . ' authored by option' => TRUE,
-    );
-    user_role_change_permissions($cm_role->rid, $permissions);
   }
 }
 
@@ -142,7 +101,8 @@ function ofed_feature_address_uninstall() {
 }
 
 /**
- * Change display suite settings to display to phones numbers on multiple line
+ * Reinstall custom fields.
+ * Used to change the display suite settings to display to phones numbers on multiple line.
  */
 function ofed_feature_address_update_7001() {
   // Include ds settings.
@@ -167,12 +127,10 @@ function ofed_feature_address_update_7001() {
         // Cast variable like an array.
         $field = (array) $field;
 
-        // delete from database as they might not be updated
-        db_delete('ds_field_settings')
-          ->condition('id', $field['id'], '=')
-          ->execute();
+        // Delete from database as they might not be updated.
+        db_delete('ds_fields')->condition('field', $field['field'], '=')->execute();
 
-          // Save in database.
+        // Save in database.
         db_insert('ds_field_settings')->fields($field)->execute();
       }
     }
@@ -182,7 +140,7 @@ function ofed_feature_address_update_7001() {
 }
 
 /**
- * Add the display suite custom field Address for the Address CT display
+ * Add the display suite custom field Address for the Address CT display.
  */
 function ofed_feature_address_update_7002() {
   // Include ds settings.
@@ -211,10 +169,52 @@ function ofed_feature_address_update_7002() {
         // Cast variable like an array.
         $field = (array) $field;
 
-        // delete from database as they might not be updated
-        db_delete('ds_fields')
-          ->condition('field', $field['field'], '=')
-          ->execute();
+        // Delete from database as they might not be updated.
+        db_delete('ds_fields')->condition('field', $field['field'], '=')->execute();
+
+        // Save in database.
+        db_insert('ds_fields')->fields($field)->execute();
+      }
+    }
+
+    cache_clear_all();
+  }
+}
+
+/**
+ * Reinstall custom fields.
+ * Used to change the content of the custom field.
+ * Used to 
+ */
+function ofed_feature_address_update_7003() {
+  // Include ds settings.
+  $file = drupal_get_path('module', 'ofed_feature_address') . '/install/_ofed_feature_address.ds.inc';
+
+  if (file_exists($file)) {
+    // Include it.
+    include_once 'install/_ofed_feature_address.ds.inc';
+
+    // Install ds customs fields.
+    if (function_exists('ofed_feature_address_ds_custom_fields_info')) {
+      $fields = ofed_feature_address_ds_custom_fields_info();
+
+      foreach ($fields as $id => $field) {
+        // Remove one key.
+        if (isset($field->api_version)) {
+          unset($field->api_version);
+        }
+        // Serialize the entities.
+        $field->entities = serialize($field->entities);
+        // Serialize the ui_limit.
+        $field->ui_limit = serialize($field->ui_limit);
+        // Serialize the properties.
+        $field->properties = serialize($field->properties);
+
+        // Cast variable like an array.
+        $field = (array) $field;
+
+        // Delete from database as they might not be updated.
+        db_delete('ds_fields')->condition('field', $field['field'], '=')->execute();
 
         // Save in database.
         db_insert('ds_fields')->fields($field)->execute();

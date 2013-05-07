@@ -22,10 +22,12 @@ function ofed_feature_meeting_ds_field_settings_info() {
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
-        'link' => '0',
+        'link' => '1',
         'wrapper' => 'h3',
         'class' => '',
-        'ft' => array(),
+        'ft' => array(
+          'classes' => 'clear-block',
+        ),
       ),
     ),
     'node_link' => array(

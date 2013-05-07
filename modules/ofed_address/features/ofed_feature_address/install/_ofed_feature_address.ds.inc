@@ -69,7 +69,7 @@ $number = (!empty($entity->field_ofed_address_number[\'und\'][0][\'safe_value\']
 $bus = (!empty($entity->field_ofed_address_bus[\'und\'][0][\'safe_value\'])) ? $entity->field_ofed_address_bus[\'und\'][0][\'safe_value\'] : FALSE;
 $zip = (!empty($entity->field_ofed_address_zip[\'und\'][0][\'safe_value\'])) ? $entity->field_ofed_address_zip[\'und\'][0][\'safe_value\'] : FALSE;
 $city = (!empty($entity->field_ofed_address_city[\'und\'][0][\'safe_value\'])) ? $entity->field_ofed_address_city[\'und\'][0][\'safe_value\'] : FALSE;
-$country = (!empty($entity->field_ofed_address_country[\'und\'][0][\'safe_value\'])) ? $entity->field_ofed_address_country[\'und\'][0][\'safe_value\'] : FALSE;
+$country = (!empty($entity->field_ofed_address_country[\'und\'][0][\'iso2\'])) ? country_load($entity->field_ofed_address_country[\'und\'][0][\'iso2\']) : FALSE;
 if($number) {
   if($bus) {
     $number = $number . \'/\' . $bus;
@@ -78,7 +78,9 @@ if($number) {
 $line = array();
 $lines[0] = trim($street . \' \' . $number);
 $lines[1] = trim($zip . \' \' . $city);
-$lines[2] = trim($country);
+if($country) {
+  $lines[2] = trim(countries_t($country));
+}
 foreach($lines as $key => $value) {
 if(empty($value)) {
 unset($lines[$key]);

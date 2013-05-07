@@ -2,11 +2,10 @@
 
 /**
  * Return the list of custom menu + main menu.
- * @return array 
+ * @return array
  */
 function _ofed_slideshow_list_options_menu() {
   $menus = menu_get_menus(FALSE);
-  unset($menus['menu-cms-menu']);
   unset($menus['devel']);
   $menus['main-menu'] = 'Main menu';
   asort($menus);

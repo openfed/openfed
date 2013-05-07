@@ -308,7 +308,7 @@ function ofed_feature_team_field_default_fields() {
       'bundle' => 'ofed_team',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => 'Fill the civility of this team member.',
+      'description' => 'Fill the civility title of this team member.',
       'display' => array(
         'block_column' => array(
           'label' => 'hidden',
@@ -379,7 +379,7 @@ function ofed_feature_team_field_default_fields() {
       'ds_extras_field_template' => '',
       'entity_type' => 'node',
       'field_name' => 'field_ofed_team_civility',
-      'label' => 'Civility',
+      'label' => 'Civility title',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -1187,7 +1187,7 @@ function ofed_feature_team_field_default_fields() {
         'active' => 1,
         'module' => 'image',
         'settings' => array(
-          'preview_image_style' => '',
+          'preview_image_style' => 'thumbnail',
           'progress_indicator' => 'throbber',
         ),
         'type' => 'image_image',
@@ -1853,7 +1853,7 @@ function ofed_feature_team_field_default_fields() {
   t('Define specific updated date for this content item, which will be displayed as "Last updated on [updated_date]". This allows you to define a specific update date than the system update date.');
   t('Fill the URL of the social media site.');
   t('Fill the address of this team member.');
-  t('Fill the civility of this team member.');
+  t('Fill the civility title of this team member.');
   t('Fill the content of this team member.');
   t('Fill the first name of this team member.');
   t('Fill the function of this team member.');

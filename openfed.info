@@ -126,6 +126,7 @@ core = 7.x
     dependencies[] = pathauto
     dependencies[] = redirect
     dependencies[] = robotstxt
+    dependencies[] = role_delegation
     dependencies[] = scheduler
     dependencies[] = security_review
     dependencies[] = site_map

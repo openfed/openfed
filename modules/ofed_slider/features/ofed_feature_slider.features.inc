@@ -31,9 +31,9 @@ function ofed_feature_slider_views_api() {
 function ofed_feature_slider_image_default_styles() {
   $styles = array();
 
-  // Exported image style: ofed_slider_full.
-  $styles['ofed_slider_full'] = array(
-    'name' => 'ofed_slider_full',
+  // Exported image style: ofed_slider_default.
+  $styles['ofed_slider_default'] = array(
+    'name' => 'ofed_slider_default',
     'effects' => array(
       1 => array(
         'label' => 'Scale and crop',

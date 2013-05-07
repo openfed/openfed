@@ -1,8 +1,10 @@
 <?php
+
 /**
- * @file
- * add administration page, add every js link into head.
+ * @file Add administration page, add every js link into head.
  */
+// Include file(s).
+include 'includes/waia_integration.misc.inc';
 
 /**
  * Implements hook_help().
@@ -20,7 +22,7 @@ function waia_integration_help($path, $arg) {
  */
 function waia_integration_permission() {
   return array(
-    'access waia_integration configuration' => array(
+    'administer waia integration' => array(
       'title' => t('Configure subscription form'),
     ),
   );
@@ -31,68 +33,57 @@ function waia_integration_permission() {
  */
 function waia_integration_menu() {
   $items['admin/config/services/waia_integration'] = array(
-    'title'             => 'WAIA Integration',
-    'description'       => 'Include WAIA Javascript.',
-    'page callback'     => 'drupal_get_form',
-    'page arguments'    => array('waia_integration_admin'),
-    'access arguments'  => array('access waia_integration configuration'),
-    'type'              => MENU_NORMAL_ITEM,
-    'file'              => 'includes/waia_integration.admin.inc',
+    'title' => 'WAIA Integration',
+    'description' => 'Include WAIA Javascript.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('waia_integration_admin_form'),
+    'access arguments' => array('administer waia integration'),
+    'type' => MENU_NORMAL_ITEM,
+    'file' => 'includes/waia_integration.admin.inc',
   );
 
   return $items;
 }
 
-/** 
+/**
  * Implements hook_preprocess_html().
  */
 function waia_integration_preprocess_html(&$variables) {
-  $fields = variable_get('waia_integration_url', '');
-
-  if (!empty($fields)) {
-    if (!empty($field) && _waia_integration_url_exists($field)) {
-      drupal_add_js(
-        $field,
-        array(
-          'type' => 'external',
-          'scope' => 'header',
-          'cache' => FALSE,
-          'preprocess' => FALSE,
-          'every_page' => TRUE,
-        )
-      );
-    }
-  }
-
-  if (drupal_get_http_header("status") == '404 Not Found') {
-    $variables['attributes_array']['waia:error'] = 'errorpage';
-    $variables['attributes_array']['waia:errorcode'] = '404';
-    $variables['attributes_array']['waia:targetpage'] = url($_GET['destination']);
-  }
-  
   global $language;
-  $variables['attributes_array']['waia:lang'] = $language->language;
+
+  // Add the WAIA script.
+  $url = variable_get('waia_script_url', '');
+  if (!empty($url) && variable_get('waia_script_url_validated', FALSE)) {
+    // Add js.
+    drupal_add_js(
+      $url, array(
+      'type' => 'external',
+      'scope' => 'header',
+      'cache' => FALSE,
+      'preprocess' => FALSE,
+      'every_page' => TRUE,
+      )
+    );
+
+    // Add the waia attributes.
+    if (drupal_get_http_header("status") == '404 Not Found') {
+      $variables['attributes_array']['waia:error'] = 'errorpage';
+      $variables['attributes_array']['waia:errorcode'] = '404';
+      if (!empty($_GET['destination'])) {
+        $variables['attributes_array']['waia:targetpage'] = url($_GET['destination']);
+      }
+    }
+    $variables['attributes_array']['waia:lang'] = $language->language;
+  }
 }
 
 /**
- * Check if url exist.
+ * Implement hook_cron().
  */
-function _waia_integration_url_exists($url) {
-  $curl = curl_init();
-
-  curl_setopt($curl, CURLOPT_URL, $url);
-  curl_setopt($curl, CURLOPT_FAILONERROR, 1);
-
-  curl_exec($curl);
-
-  $return_code = curl_getinfo($curl, CURLINFO_HTTP_CODE);
-
-  curl_close($curl);
-
-  if ($return_code != 200 && $return_code != 302 && $return_code != 304) {
-    return FALSE;
-  }
-  else {
-    return TRUE;
+function waia_integration_cron() {
+  // Check WAIA script URL.
+  $url = variable_get('waia_script_url', '');
+  if (!empty($url)) {
+    _waia_integration_check_script_url($url);
   }
 }

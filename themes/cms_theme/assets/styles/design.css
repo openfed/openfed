@@ -22,13 +22,13 @@ a span														{ cursor:pointer;}
 h1															{ font-size:3em; font-weight: 300;margin: 0 0 20px 0;color: #ff7300; }
 
 /* common */
-.tabs														{ clear:both; width:100%; margin:0; padding:0 0 20px; overflow:hidden;}
+.tabs														{ clear:both; width:100%; margin:0; padding:0 0 20px; }
 
-.tabs ul.primary											{ height:29px; margin:0; padding:0; border-bottom:1px solid #ddd; overflow:hidden;}
+.tabs ul.primary											{ height:29px; margin:0; padding:0; border-bottom:1px solid #ddd; }
 .tabs ul.primary li											{ float:left; margin:0; padding:0 0 0 10px;}
-.tabs ul.primary li a										{ display:block; height:28px; line-height:28px; margin:0; padding:0 10px; border:0; color:#999; background:#eee; border:1px solid #ddd; -moz-border-radius:4px 4px 0 0;}
+.tabs ul.primary li a										{ display:block; height:28px; line-height:28px; margin:0; padding:0 10px; color:#999; background:#eee; border:1px solid #ddd; -moz-border-radius:4px 4px 0 0;}
 .tabs ul.primary li.active a,
-.tabs ul.primary li a:hover									{ color:#000; background:#fff;}
+.tabs ul.primary li a:hover									{ color:#000; background:#fff; border-bottom-color: white; margin-bottom: -1px;}
 
 .tabs ul.secondary											{ margin:0; padding:0; border-bottom:1px solid #ddd; overflow:hidden;}
 .tabs ul.secondary li										{ float:left; margin:0; padding:0 0 0 20px; border:none;}
@@ -41,7 +41,7 @@ h1															{ font-size:3em; font-weight: 300;margin: 0 0 20px 0;color: #ff
 
 /* form */
 input.form-text												{ display:block; height:26px; height:21px\9; line-height:26px; margin:0; padding:0 4px; padding:5px 4px 0\9; color:#555; font:12px Arial, Helvetica, sans-serif; background:#fff; border:1px solid #c4bea8; border-radius:4px; -moz-border-radius:4px; -webkit-border-radius:4px;}
-input.form-submit											{ display:block; height:28px; line-height:28px !important; margin:0; padding:0 10px; border:none; outline:none; font-weight:bold !important; font:12px Arial, Helvetica, sans-serif; cursor:pointer; color:#555; background:#e3e1d5; filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e3e1d5', endColorstr='#c4bea8'); /* for IE */ background: -webkit-gradient(linear, left top, left bottom, from(#e3e1d5), to(#c4bea8)); /* for webkit browsers */ background: -moz-linear-gradient(top, #e3e1d5, #c4bea8); /* for firefox 3.6+ */ border-radius:4px; -moz-border-radius:4px; -webkit-border-radius:4px;}
+input.form-submit											{ display:block; height:28px; line-height:28px !important; margin:0!important; padding:0 10px; border:none; outline:none; font-weight:bold !important; font:12px Arial, Helvetica, sans-serif; cursor:pointer; color:#555; background:#e3e1d5; filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e3e1d5', endColorstr='#c4bea8'); /* for IE */ background: -webkit-gradient(linear, left top, left bottom, from(#e3e1d5), to(#c4bea8)); /* for webkit browsers */ background: -moz-linear-gradient(top, #e3e1d5, #c4bea8); /* for firefox 3.6+ */ border-radius:4px; -moz-border-radius:4px; -webkit-border-radius:4px;}
 input.btn-cms-reset											{ display:block; height:28px; line-height:28px !important; margin:0; padding:0 10px; border:none; outline:none; font-weight:bold !important; font:12px Arial, Helvetica, sans-serif; cursor:pointer; color:#fff; background:#353535; filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#666666', endColorstr='#222222'); background: -webkit-gradient(linear, left top, left bottom, from(#666), to(#222)); background: -moz-linear-gradient(top, #666, #222); border-radius:4px; -moz-border-radius:4px; -webkit-border-radius:4px;}
 input.error													{ border:1px solid #bb0000 !important; background:#e3e1d5;}
 div.form-buttons                                            { height:30px; }
@@ -60,6 +60,11 @@ input#edit-cancel											{ /*float:left;*/ margin:0 10px 0 0; color:#fff; bac
 
 form.confirmation input#edit-submit							{ float:none;}
 fieldset fieldset											{ margin-left:20px;}
+
+/* media thumbnail */
+.media-thumbnails-select									{ margin-right:15px;}
+
+
 /* MESSAGES par défaut de Drupal */
 
 div.messages {
@@ -477,6 +482,8 @@ section.site .view-filters .cms-filter-btns input									{ float:left; margin:0
 .filter-wrapper .form-item,
 .filter-guidelines		 															{ padding:0!important;}
 
+tr.draggable td #edit-field-ofed-slider-image-collec-und-0-remove-button			{ margin-top:10px!important;}
+
 /* table */
 section.site table 																	{ width: 100%;}
 
@@ -487,6 +494,7 @@ section.site thead,
 section.site tr,
 section.site th,
 section.site td 												{ margin:0; padding:0; border:0; font-weight:inherit; font-style:inherit; font-size:100%; font-family:inherit; vertical-align:baseline;}
+section.site th span.features-storage							{ color: black;}
 section.site table 												{ margin:0 0 20px; border-collapse:collapse; border-spacing:0;}
 section.site table.sticky-header								{ width:940px!important;}
 .fieldset-wrapper table											{ margin:0!important;}
@@ -533,7 +541,7 @@ html.js input.form-autocomplete 								{ background-position: 100% 7px;}
 .page-admin-structure-mini-panels #ctools-export-ui-list-form .ctools-export-ui-row:first-child											{ margin-bottom:15px;}
 .page-admin-structure-mini-panels #ctools-export-ui-list-form #ctools-export-ui-list-items-apply										{ margin-top:36px; margin-right:15px;}
 
-.page-admin-structure-views #ctools-export-ui-list-form #ctools-export-ui-list-items-apply												{ margin-top:42px!important;}
+.page-admin-structure-views #ctools-export-ui-list-form #ctools-export-ui-list-items-apply												{ margin-top:55px!important;}
 
 .page-admin-config-user-interface-sweaver #sweaver-plugin-editor-config-editor table#properties tr td.tabledrag-has-colspan:first-child	{ padding:0!important;}
 
@@ -550,6 +558,9 @@ html.js input.form-autocomplete 								{ background-position: 100% 7px;}
 .page-admin-structure-types-manage #field-display-overview-wrapper #-add-new-group td:first-child .label-input .form-item				{ padding-top:18px;}
 
 .page-admin-structure-panels #ctools-export-ui-list-form .ctools-export-ui-row #ctools-export-ui-list-items-apply						{ margin:42px 10px 0 0;} 
+
+.ctools-export-ui-row label { width:100%!important;}
+.form-item-tag label					{ display:inline!important; width:auto!important;}
 
 .page-admin-config-system #backup-migrate-crud-edit-form .container-inline a,
 .page-admin-config-search #metatag-config-add-form #edit-actions a,
@@ -770,10 +781,14 @@ table.field-ui-overview tr.add-new .label-input 					{ float:none!important;}
 .views-displays .secondary .action-list input.form-submit 			{ color: #666; text-shadow:none; font-size: 1em;}
 .views-display-top .ctools-button-processed 						{ position: relative; float: right; margin-bottom: 10px;}
 .progress .filled 													{ background: #ff7300 url(../images/progress.gif) !important;}
+
 /* Specific form tweaks */
 #edit-field-ofed-download-body fieldset.filter-wrapper				{ padding-bottom:0;} 
 #edit-field-ofed-download-body .description							{ padding-bottom:20px;}
 
+.form-item, 
+.form-actions														{ margin-bottom:1em; margin-top:1em;}
+.fieldset-wrapper													{ padding:10px 0;}
 
 /* CK Editor tweaks */
 .cke_browser_gecko table											{ margin:0!important;}

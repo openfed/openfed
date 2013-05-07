@@ -1,39 +1,38 @@
 <header>
   <div class="container">
-    
+
     <?php if ($logo): ?>
     <!-- Region Logo -->
       <div class="logo">
-        <a href="<?php echo url('<front>'); ?>" title="">
-          <img src="<?php print $logo ?>" alt="<?php print $site_name ?>" title="<?php print $site_name ?>" id="logo" />
+        <a href="<?php echo url($logo_url); ?>" title="">
+          <img src="<?php print $logo ?>" alt="<?php print $site_name?>" title="<?php print $site_name ?>" id="logo" />
         </a>
       </div>
     <?php endif; ?>
-    
+
     <?php if( !empty($page['tools']) ): ?>
     <!-- Region Tools -->
       <div id="tools"><?php print render($page['tools']); ?></div>
     <?php endif; ?>
-    
+
     <?php if( !empty($page['header']) ): ?>
     <!-- Region Header -->
       <div id="header"><?php print render($page['header']); ?></div>
     <?php endif; ?>
-    
+
   </div>
 </header>
 
 <section id="navigation">
   <div class="container">
-    
-	<!-- Region Navigation -->	
+
+	<!-- Region Navigation -->
 	<nav class="cms-menu">
       <?php print render($page['navigation']); ?>
 	</nav>
-      
+
   </div>
 </section>
-
 
 <?php if( !empty($page['top']) ): ?>
 <!-- Region top -->
@@ -48,17 +47,17 @@
   <nav class="breadcrumb"><?php print render($page['breadcrumb']); ?></nav>
 <?php endif; ?>
 
-  
+
 <section class="site">
   <div class="container">
-    
+
     <?php if ( !empty($page['sidebar_first']) ): ?>
     <!-- Region Left -->
       <aside id="aside-left <?php echo $class_left; ?>">
         <?php echo render( $page['sidebar_first'] ); ?>
       </aside>
     <?php endif; ?>
-    
+
     <div id="maincontent <?php echo $class_content; ?>">
       <!-- Region Content -->
       <?php if ( theme_get_setting('cms_theme_toggle_message') && $messages): ?>
@@ -84,18 +83,18 @@
       <?php echo render($page['content']); ?>
       <?php echo render($page['content_bottom']); ?>
     </div>
-    
+
     <?php if ( !empty($page['sidebar_second']) ): ?>
     <!-- Region Right -->
       <aside id="aside-right <?php echo $class_right; ?>">
         <?php echo render( $page['sidebar_second'] ); ?>
       </aside>
     <?php endif; ?>
-    
+
   </div>
 </section>
 
-  
+
 <?php if ( !empty($page['bottom']) ): ?>
 <!-- bottom -->
   <section id="bottom">
@@ -106,7 +105,7 @@
 
 <footer id="footer">
   <div class="container">
-    
+
     <?php if ( !empty($page['footer']) ) : ?>
     <!-- Region Footer -->
       <div class="row">
@@ -116,23 +115,23 @@
 
     <?php if ( theme_get_setting('cms_theme_copyright_display') || theme_get_setting('cms_theme_toggle_sponsor') ): ?>
       <div class="row">
-        
+
         <?php if ( theme_get_setting('cms_theme_copyright_display') && theme_get_setting('cms_theme_copyright_label') != '' ): ?>
         <!-- Region Copyright -->
           <div class="copyright span-9">
             <p><?php echo theme_get_setting('cms_theme_copyright_label'); ?> - <?php print $site_name ?></p>
           </div>
         <?php endif; ?>
-        
+
         <?php if ( theme_get_setting('cms_theme_toggle_sponsor') ): ?>
         <!-- Region Sponsor -->
           <div class="sponsor span-3">
             <?php echo theme_get_setting('cms_theme_sponsor_label'); ?>
           </div>
         <?php endif; ?>
-        
+
       </div>
     <?php endif; ?>
-    
+
   </div>
 </footer>

@@ -6,7 +6,6 @@
  */
 function _ofed_slider_list_options_menu() {
   $menus = menu_get_menus(FALSE);
-  unset($menus['menu-cms-menu']);
   unset($menus['devel']);
   $menus['main-menu'] = 'Main menu';
   asort($menus);
