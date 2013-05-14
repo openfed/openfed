@@ -193,7 +193,6 @@ function addemar_subscription_subscribe_form_submit($form, &$form_state) {
   $rest_profile  = variable_get('addemar_subscription_rest_profile', ADDEMAR_SUBSCRIPTION_REST_PROFILE);
   $rest_method   = variable_get('addemar_subscription_rest_method', ADDEMAR_SUBSCRIPTION_REST_METHOD);
   $rest_message  = variable_get('addemar_subscription_rest_message', ADDEMAR_SUBSCRIPTION_REST_MESSAGE);
-  $group         = variable_get('addemar_subscription_contact_group_id', ADDEMAR_SUBSCRIPTION_CONTACT_GROUP_ID);
   $source        = variable_get('addemar_subscription_source_message', ADDEMAR_SUBSCRIPTION_SOURCE_MESSAGE);
   $type          = variable_get('addemar_subscription_subscription_type', ADDEMAR_SUBSCRIPTION_SUBSCRIPTION_TYPE);
 
@@ -213,7 +212,7 @@ function addemar_subscription_subscribe_form_submit($form, &$form_state) {
       ),
     )
   );
-  $data = 'id=' . $group . '&source=' . $source . '&type=' . $type . '&status=0';
+  $data = 'id=!group_id&source=' . $source . '&type=' . $type . '&status=0';
   $email_exist = FALSE;
 
   if (!empty($fields)) {
@@ -235,33 +234,25 @@ function addemar_subscription_subscribe_form_submit($form, &$form_state) {
     $data .= '&email=' . $form_state['values']['addemar_subscription_email'];
   }
 
-  $options = array(
-    'method'  => 'POST',
-    'data'    => $data,
-    'timeout' => 15,
-    'headers' => array('Content-Type' => 'application/x-www-form-urlencoded'),
-  );
+  $groups_ids = array_values(array_filter($form_state['values']['newsletters']));
 
-  $result  = drupal_http_request($url, $options);
+  foreach ($groups_ids as $group_id) {
+    $d = str_replace('!group_id', $group_id, $data);
+    $options = array(
+      'method'  => 'POST',
+      'data'    => $d,
+      'timeout' => 15,
+      'headers' => array('Content-Type' => 'application/x-www-form-urlencoded'),
+    );
+    $result  = drupal_http_request($url, $options);
 
-  /**
-   * SOAP APPROACH
-   */
-//   $sClient = new SoapClient('http://ws-mailing.presscenter.org/soap/wsdl/?token=a33ff2db61810d24fb46a4eda767df86&version=1.3');
-//   $fields = $sClient->getCampaigns();
-//   dsm($fields);
-//   $fields = $sClient->getContactgroupLabels();
-//   dsm($fields);
-  /**
-   * END
-   */
-
-  // Check return.
-  if ($result->code == 200 && preg_match('/\<rsp stat="succ">\d\<\/rsp\>/', $result->data)) {
-    drupal_set_message(variable_get('addemar_subscription_message_success', ADDEMAR_SUBSCRIPTION_MESSAGE_SUCCESS), 'status');
-  }
-  else {
-    drupal_set_message(variable_get('addemar_subscription_message_error', ADDEMAR_SUBSCRIPTION_MESSAGE_ERROR), 'error');
+    // Check return.
+    if ($result->code == 200 && preg_match('/\<rsp stat="succ">\d\<\/rsp\>/', $result->data)) {
+      drupal_set_message(variable_get('addemar_subscription_message_success', ADDEMAR_SUBSCRIPTION_MESSAGE_SUCCESS), 'status');
+    }
+    else {
+      drupal_set_message(variable_get('addemar_subscription_message_error', ADDEMAR_SUBSCRIPTION_MESSAGE_ERROR), 'error');
+    }
   }
 }
 

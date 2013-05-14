@@ -1,3 +1,13 @@
+/* Addemar Subscription   */
 
+#addemar-groups .newsletter_wrapper                 { padding: 10px; border: 1px solid #ddd; margin-bottom: 10px; background: #fafafa;}
 
-/*#addemar-subscription-admin, #addemar-subscription-subscribe-form {background-color: red;}*/
+#addemar-subscription-subscribe-form .form-item-newsletters { 
+  padding: 10px; 
+  border: 1px solid #ddd; 
+  margin-bottom: 10px; 
+  background: #f6f6f6;
+}
+#addemar-subscription-subscribe-form .form-item-newsletters > label{
+  text-decoration: underline;
+}

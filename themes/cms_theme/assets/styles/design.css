@@ -392,7 +392,7 @@ input.form-submit:active, a.button:active{
   background-color: #c67605 \9 ;
 }
 input.form-submit.custom-btn											{
-	margin-right: 5px;
+	margin-right: 5px !important;
 }
 input.form-submit.custom-btn-reset										{
   background-image: -moz-linear-gradient(top, #B0AEA4, #c2c0b6);

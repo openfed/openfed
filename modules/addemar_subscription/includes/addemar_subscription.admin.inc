@@ -108,8 +108,12 @@ function addemar_subscription_admin($form, &$form_state) {
 
   // display initial group (empty) or add a new one (delta)
   if (empty($groups) || $delta) {
-    $key = 'addemar_subscription_group:' . $i;
-    $form['addemar_subscription_settings']['groups_wrapper']['addemar_subscription_groups'][$key] = _addemar_subscription_add_more_newsletter_form($key, $i);
+
+    for ($delta; $delta > 0; $delta--) {
+      $key = 'addemar_subscription_group:' . $i;
+      $form['addemar_subscription_settings']['groups_wrapper']['addemar_subscription_groups'][$key] = _addemar_subscription_add_more_newsletter_form($key, $i);
+      $i++;
+    }
   }
 
   $form['addemar_subscription_settings']['groups_wrapper']['addemar_subscription_add_more'] = array(
@@ -201,7 +205,19 @@ function addemar_subscription_admin($form, &$form_state) {
     '#required'         => TRUE,
   );
 
+  $form['#submit'][] = 'addemar_subscription_admin_submit';
+
   return system_settings_form($form);
+}
+
+function addemar_subscription_admin_submit($form, &$form_state) {
+
+  foreach ($form_state['values']['addemar_subscription_groups'] as $key => $values) {
+
+    if (empty($values['group_id']) || empty($values['description'])) {
+      unset($form_state['values']['addemar_subscription_groups'][$key]);
+    }
+  }
 }
 
 function addemar_subscription_add_more_submit($form, &$form_state) {

@@ -152,7 +152,7 @@ function cms_theme_block_view_easy_breadcrumb_easy_breadcrumb_alter(&$data, $blo
     }
     // replace HOME by START PAGE
     $pattern = '/href="([^"]+)"([^\>]+\>)([^\<\/a\>]+)/';
-    $replacement = 'href="$1/startpage"$2Start Page</a>';
+    $replacement = 'href="$1/cms/startpage"$2Start Page</a>';
     $start = preg_replace($pattern, $replacement, $start);
     array_unshift($breadcrumb, $start);
     $data['content']['easy_breadcrumb']['#breadcrumb'] = $breadcrumb;

@@ -1,4 +1,4 @@
-name = Event
+name = Events
 description = Feature needed to manage events.
 core = 7.x
 package = openFED
