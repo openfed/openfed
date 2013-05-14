@@ -1,6 +1,11 @@
 <?php
 
 /**
+ * @file
+ * Module needed to manage download with the Openfed distribution.
+ */
+
+/**
  * Implements hook_menu().
  */
 function ofed_download_menu() {

@@ -1,6 +1,11 @@
 <?php
 
 /**
+ * @file
+ * Module needed to manage news with the Openfed distribution.
+ */
+
+/**
  * Implements hook_theme_registry_alter().
  */
 function ofed_news_theme_registry_alter(&$theme_registry) {

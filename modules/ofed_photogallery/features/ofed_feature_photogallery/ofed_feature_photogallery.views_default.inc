@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * ofed_feature_photogallery.views_default.inc

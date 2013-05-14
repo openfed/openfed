@@ -1,6 +1,11 @@
 <?php
 
 /**
+ * @file
+ * Module needed to manage events with the Openfed distribution.
+ */
+
+/**
  * Implements hook_theme_registry_alter().
  */
 function ofed_event_theme_registry_alter(&$theme_registry) {

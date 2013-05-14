@@ -1,8 +1,10 @@
 <?php
 
 /**
- * @file Add administration page, add every js link into head.
+ * @file
+ * Module needed to manage WAIA script file with the Openfed distribution.
  */
+
 // Include file(s).
 include 'includes/waia_integration.misc.inc';
 

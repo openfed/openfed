@@ -1,0 +1,4 @@
+name = Addemar Subscription
+description = Add a subscription form to addemar contact list.
+package = Addemar
+core = 7.x

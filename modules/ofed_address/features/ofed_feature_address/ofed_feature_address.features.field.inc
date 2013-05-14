@@ -51,6 +51,12 @@ function ofed_feature_address_field_default_fields() {
           'type' => 'hidden',
           'weight' => '19',
         ),
+        'page_list' => array(
+          'label' => 'hidden',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '18',
+        ),
         'references' => array(
           'label' => 'hidden',
           'settings' => array(),
@@ -126,6 +132,12 @@ function ofed_feature_address_field_default_fields() {
           'type' => 'hidden',
           'weight' => '21',
         ),
+        'page_list' => array(
+          'label' => 'hidden',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '20',
+        ),
         'references' => array(
           'label' => 'above',
           'settings' => array(),
@@ -200,6 +212,12 @@ function ofed_feature_address_field_default_fields() {
           'settings' => array(),
           'type' => 'hidden',
           'weight' => '22',
+        ),
+        'page_list' => array(
+          'label' => 'hidden',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '21',
         ),
         'references' => array(
           'label' => 'hidden',
@@ -291,6 +309,12 @@ function ofed_feature_address_field_default_fields() {
           'type' => 'entityreference_entity_view',
           'weight' => '6',
         ),
+        'page_list' => array(
+          'label' => 'hidden',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '14',
+        ),
         'references' => array(
           'label' => 'hidden',
           'module' => 'entityreference',
@@ -299,7 +323,7 @@ function ofed_feature_address_field_default_fields() {
             'view_mode' => 'references',
           ),
           'type' => 'entityreference_entity_view',
-          'weight' => '7',
+          'weight' => '6',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -359,12 +383,18 @@ function ofed_feature_address_field_default_fields() {
           'type' => 'email_default',
           'weight' => '2',
         ),
+        'page_list' => array(
+          'label' => 'hidden',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '10',
+        ),
         'references' => array(
           'label' => 'hidden',
           'module' => 'email',
           'settings' => array(),
           'type' => 'email_default',
-          'weight' => '3',
+          'weight' => '2',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -446,6 +476,12 @@ function ofed_feature_address_field_default_fields() {
           'type' => 'simple_gmap',
           'weight' => '5',
         ),
+        'page_list' => array(
+          'label' => 'hidden',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '13',
+        ),
         'references' => array(
           'label' => 'hidden',
           'module' => 'simple_gmap',
@@ -462,7 +498,7 @@ function ofed_feature_address_field_default_fields() {
             'zoom_level' => '14',
           ),
           'type' => 'simple_gmap',
-          'weight' => '6',
+          'weight' => '5',
         ),
       ),
       'ds_extras_field_template' => '',
@@ -520,6 +556,13 @@ function ofed_feature_address_field_default_fields() {
       'description' => 'Fill the location name of this address.',
       'display' => array(
         'default' => array(
+          'label' => 'hidden',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => '0',
+        ),
+        'page_list' => array(
           'label' => 'hidden',
           'module' => 'text',
           'settings' => array(),
@@ -602,6 +645,12 @@ function ofed_feature_address_field_default_fields() {
           'type' => 'hidden',
           'weight' => '18',
         ),
+        'page_list' => array(
+          'label' => 'hidden',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '17',
+        ),
         'references' => array(
           'label' => 'hidden',
           'settings' => array(),
@@ -676,12 +725,18 @@ function ofed_feature_address_field_default_fields() {
           'type' => 'text_default',
           'weight' => '4',
         ),
+        'page_list' => array(
+          'label' => 'hidden',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '12',
+        ),
         'references' => array(
           'label' => 'hidden',
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '5',
+          'weight' => '4',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -753,12 +808,18 @@ function ofed_feature_address_field_default_fields() {
           'type' => 'text_default',
           'weight' => '3',
         ),
+        'page_list' => array(
+          'label' => 'hidden',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '11',
+        ),
         'references' => array(
           'label' => 'hidden',
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '4',
+          'weight' => '3',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -828,6 +889,12 @@ function ofed_feature_address_field_default_fields() {
           'settings' => array(),
           'type' => 'hidden',
           'weight' => '17',
+        ),
+        'page_list' => array(
+          'label' => 'hidden',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '16',
         ),
         'references' => array(
           'label' => 'above',
@@ -904,11 +971,17 @@ function ofed_feature_address_field_default_fields() {
           'type' => 'hidden',
           'weight' => '8',
         ),
+        'page_list' => array(
+          'label' => 'inline',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '15',
+        ),
         'references' => array(
           'label' => 'inline',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '1',
+          'weight' => '15',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -989,6 +1062,12 @@ function ofed_feature_address_field_default_fields() {
           'type' => 'hidden',
           'weight' => '23',
         ),
+        'page_list' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '22',
+        ),
         'references' => array(
           'label' => 'above',
           'settings' => array(),
@@ -1063,6 +1142,12 @@ function ofed_feature_address_field_default_fields() {
           'type' => 'hidden',
           'weight' => '20',
         ),
+        'page_list' => array(
+          'label' => 'hidden',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '19',
+        ),
         'references' => array(
           'label' => 'hidden',
           'settings' => array(),
@@ -1102,6 +1187,7 @@ function ofed_feature_address_field_default_fields() {
   t('Bus');
   t('Check the box in order to use the system date as updated date for your content item.');
   t('City');
+  t('Copy paste the address search field from Google Maps here (Eg: "Rue de la loi 16, 1000 Bruxelles").');
   t('Country');
   t('Define specific updated date for this content item, which will be displayed as "Last updated on [updated_date]". This allows you to define a specific update date than the system update date.');
   t('Directions');
@@ -1110,7 +1196,6 @@ function ofed_feature_address_field_default_fields() {
   t('Fill one or more email address of this address.');
   t('Fill one or more phone number of this address.');
   t('Fill one the opening hours of this address.');
-  t('Copy paste the address search field from Google Maps here (Eg: "Rue de la loi 16, 1000 Bruxelles").');
   t('Fill the bus of this address.');
   t('Fill the city of thos address.');
   t('Fill the coutry of this address.');

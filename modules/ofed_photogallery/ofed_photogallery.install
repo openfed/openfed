@@ -4,14 +4,14 @@
  * Implements hook_schema().
  */
 function ofed_photogallery_schema() {
-
+  
 }
 
 /**
  * Implements hook_install().
  */
 function ofed_photogallery_install() {
-
+  
 }
 
 /**

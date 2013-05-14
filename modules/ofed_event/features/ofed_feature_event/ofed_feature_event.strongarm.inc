@@ -303,6 +303,34 @@ function ofed_feature_event_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_ofed_event_pattern';
+  $strongarm->value = '[term:vocabulary:i18n-name]/[term:name]';
+  $export['pathauto_taxonomy_term_ofed_event_pattern'] = $strongarm;
+  
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_ofed_event_en_pattern';
+  $strongarm->value = 'events/[term:name]';
+  $export['pathauto_taxonomy_term_ofed_event_en_pattern'] = $strongarm;
+  
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_ofed_event_nl_pattern';
+  $strongarm->value = 'evenement/[term:name]';
+  $export['pathauto_taxonomy_term_ofed_event_nl_pattern'] = $strongarm;
+  
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_ofed_event_fr_pattern';
+  $strongarm->value = 'evenements/[term:name]';
+  $export['pathauto_taxonomy_term_ofed_event_fr_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'print_display_comment_ofed_event';
   $strongarm->value = 0;
   $export['print_display_comment_ofed_event'] = $strongarm;

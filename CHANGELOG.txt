@@ -1,6 +1,21 @@
  CHANGELOG
 ===========
 
+14 April 2013
+-------------
+  * Issue
+    Fixing minor issues related to the content type's features
+    
+  * Module updated
+    Custom
+      - addemar_subscription : Multiple newsletters now available (not stable yet)
+      - ofed_address : Adding page list view
+      
+  * Patch
+      Contrib
+        - pathauto : patches to fix issues with multilingual taxonomy paths
+    
+
 07 April 2013
 -------------
   

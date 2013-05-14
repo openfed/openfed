@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * ofed_feature_photogallery.rules_defaults.inc

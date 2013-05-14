@@ -295,6 +295,34 @@ function ofed_feature_news_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_ofed_news_pattern';
+  $strongarm->value = '[term:vocabulary:i18n-name]/[term:name]';
+  $export['pathauto_taxonomy_term_ofed_news_pattern'] = $strongarm;
+  
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_ofed_news_en_pattern';
+  $strongarm->value = 'news/[term:name]';
+  $export['pathauto_taxonomy_term_ofed_news_en_pattern'] = $strongarm;
+  
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_ofed_news_nl_pattern';
+  $strongarm->value = 'nieuws/[term:name]';
+  $export['pathauto_taxonomy_term_ofed_news_nl_pattern'] = $strongarm;
+  
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_ofed_news_fr_pattern';
+  $strongarm->value = 'actualites/[term:name]';
+  $export['pathauto_taxonomy_term_ofed_news_fr_pattern'] = $strongarm;
+  
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'print_display_comment_ofed_news';
   $strongarm->value = 0;
   $export['print_display_comment_ofed_news'] = $strongarm;

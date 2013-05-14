@@ -4,7 +4,7 @@
  * Implements hook_schema().
  */
 function ofed_feature_photogallery_schema() {
-
+  
 }
 
 /**
@@ -91,8 +91,8 @@ function ofed_feature_photogallery_install() {
     // FR.
     if (isset($language['fr'])) {
       $path = array(
-        'source'   => 'photos-galleries',
-        'alias'    => 'galeries-photos',
+        'source' => 'photos-galleries',
+        'alias' => 'galeries-photos',
         'language' => 'fr',
       );
       db_insert('url_alias')->fields($path)->execute();
@@ -101,8 +101,8 @@ function ofed_feature_photogallery_install() {
     if (isset($language['nl'])) {
       // NL.
       $path = array(
-        'source'   => 'photos-galleries',
-        'alias'    => 'fotos-galerijs',
+        'source' => 'photos-galleries',
+        'alias' => 'fotos-galerijs',
         'language' => 'nl',
       );
       db_insert('url_alias')->fields($path)->execute();
@@ -118,5 +118,28 @@ function ofed_feature_photogallery_uninstall() {
   if (module_exists('ofed_photogallery')) {
     // Disable it.
     module_disable(array('ofed_photogallery'));
+  }
+}
+
+/**
+ * Add patterns for taxonomy paths.
+ */
+function ofed_feature_photogallery_update_7001() {
+  // Add the new variables for path alias patterns.
+  $pattern_default = variable_get('pathauto_taxonomy_term_ofed_photogallery_pattern', '');
+  if (empty($pattern_default)) {
+    variable_set('pathauto_taxonomy_term_ofed_photogallery_pattern', '[term:vocabulary:i18n-name]/[term:name]');
+  }
+  $pattern_en = variable_get('pathauto_taxonomy_term_ofed_photogallery_en_pattern', '');
+  if (empty($pattern_en)) {
+    variable_set('pathauto_taxonomy_term_ofed_photogallery_en_pattern', 'photos-galleries/[term:name]');
+  }
+  $pattern_nl = variable_get('pathauto_taxonomy_term_ofed_photogallery_nl_pattern', '');
+  if (empty($pattern_nl)) {
+    variable_set('pathauto_taxonomy_term_ofed_photogallery_nl_pattern', 'fotos-galerijs/[term:name]');
+  }
+  $pattern_fr = variable_get('pathauto_taxonomy_term_ofed_photogallery_fr_pattern', '');
+  if (empty($pattern_fr)) {
+    variable_set('pathauto_taxonomy_term_ofed_photogallery_fr_pattern', 'galeries-photos/[term:name]');
   }
 }

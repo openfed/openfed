@@ -240,6 +240,8 @@ projects[path_breadcrumbs][subdir] = contrib
 
 projects[pathauto][version] = "1.2"
 projects[pathauto][subdir] = contrib
+projects[pathauto][patch][] = "http://drupal.org/files/290421-pathauto-DRUPAL-7--1-x.patch"
+projects[pathauto][patch][] = "http://drupal.org/files/pathauto-path_alias_for_taxonomy_terms_always_created_in_default_language-1993462-0.patch"
 
 projects[performance][version] = "1.6"
 projects[performance][subdir] = contrib
