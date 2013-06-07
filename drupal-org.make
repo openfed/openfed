@@ -9,7 +9,7 @@ core = 7.x
 
 ; CK Editor
 libraries[ckeditor][download][type] = "get"
-libraries[ckeditor][download][url] = "http://download.cksource.com/CKEditor/CKEditor/CKEditor%204.1/ckeditor_4.1_standard.zip"
+libraries[ckeditor][download][url] = "http://download.cksource.com/CKEditor/CKEditor/CKEditor%204.1.1/ckeditor_4.1.1_standard.zip"
 libraries[ckeditor][directory_name] = "ckeditor"
 libraries[ckeditor][type] = "library"
 
@@ -55,7 +55,7 @@ projects[admin_path][subdir] = contrib
 projects[admin_theme][version] = "1.0"
 projects[admin_theme][subdir] = contrib 
 
-projects[backup_migrate][version] = "2.4"
+projects[backup_migrate][version] = "2.7"
 projects[backup_migrate][subdir] = contrib 
 
 projects[beididp][version] = "0.7"
@@ -64,13 +64,13 @@ projects[beididp][subdir] = contrib
 projects[calendar][version] = "3.4"
 projects[calendar][subdir] = contrib 
 
-projects[ckeditor][version] = "1.12"
+projects[ckeditor][version] = "1.13"
 projects[ckeditor][subdir] = contrib 
 
 projects[ckeditor_link][version] = "2.3"
 projects[ckeditor_link][subdir] = contrib 
 
-projects[colorbox][version] = "2.3"
+projects[colorbox][version] = "2.4"
 projects[colorbox][subdir] = contrib 
 
 projects[content_access][version] = "1.2-beta2"
@@ -81,7 +81,6 @@ projects[countries][subdir] = contrib
 
 projects[ctools][version] = "1.3"
 projects[ctools][subdir] = contrib
-;projects[ctools][patch][] = "http://drupal.org/files/ctools-fix-warning-message-1739718-32.patch"
 
 projects[date][version] = "2.6"
 projects[date][subdir] = contrib 
@@ -95,7 +94,7 @@ projects[diff][subdir] = contrib
 projects[draggableviews][version] = "2.0"
 projects[draggableviews][subdir] = contrib 
 
-projects[ds][version] = "2.2"
+projects[ds][version] = "2.3"
 projects[ds][subdir] = contrib 
 
 projects[easy_breadcrumb][version] = "2.1"
@@ -107,16 +106,29 @@ projects[elements][subdir] = contrib
 projects[email][version] = "1.2"
 projects[email][subdir] = contrib 
 
+projects[emfield][version] = "1.0-alpha2"
+projects[emfield][subdir] = contrib 
+
 projects[entity][version] = "1.0"
 projects[entity][subdir] = contrib 
 
 projects[entityreference][version] = "1.0"
 projects[entityreference][subdir] = contrib 
+projects[entityreference][patch][] = "http://drupal.org/files/entityreference-devel-generate-fix.diff"
+
+projects[entity_translation][version] = "1.0-beta2"
+projects[entity_translation][subdir] = contrib 
 
 projects[extlink][version] = "1.12"
 projects[extlink][subdir] = contrib 
 
-projects[features][version] = "2.0-beta1"
+projects[facetapi][version] = "1.3"
+projects[facetapi][subdir] = contrib 
+
+projects[facetapi_i18n][version] = "1.0-beta2"
+projects[facetapi_i18n][subdir] = contrib 
+
+projects[features][version] = "2.0-rc1"
 projects[features][subdir] = contrib
 projects[features][patch][] = "http://drupal.org/files/features_static_caches-1063204-32.patch"
 
@@ -125,6 +137,10 @@ projects[features_override][subdir] = contrib
 
 projects[field_collection][version] = "1.0-beta5"
 projects[field_collection][subdir] = contrib 
+
+projects[field-conditional-state][version] = "1.0"
+projects[field-conditional-state][subdir] = contrib
+projects[field-conditional-state][patch][] = "https://drupal.org/files/field-conditional-state-notice_undefined_property_stdclas_content-1721924-2.patch"
 
 projects[field_group][version] = "1.1"
 projects[field_group][subdir] = contrib 
@@ -135,7 +151,7 @@ projects[field_permissions][subdir] = contrib
 projects[field_slideshow][version] = "1.82"
 projects[field_slideshow][subdir] = contrib 
 
-projects[flag][version] = "2.0"
+projects[flag][version] = "2.1"
 projects[flag][subdir] = contrib 
 
 projects[globalredirect][version] = "1.5"
@@ -165,7 +181,7 @@ projects[imce_mkdir][subdir] = contrib
 projects[jquery_plugin][version] = "1.0"
 projects[jquery_plugin][subdir] = contrib 
 
-projects[jquery_update][version] = "2.2"
+projects[jquery_update][version] = "2.3"
 projects[jquery_update][subdir] = contrib 
 
 projects[l10n_client][version] = "1.1"
@@ -179,6 +195,7 @@ projects[libraries][subdir] = contrib
 
 projects[link][version] = "1.1"
 projects[link][subdir] = contrib
+projects[link][patch][] = "http://drupal.org/files/Fixed_title_value_in_link_field_update_instance_undefined-1914286-3.patch"
 
 projects[linkchecker][version] = "1.1"
 projects[linkchecker][subdir] = contrib
@@ -189,6 +206,15 @@ projects[logintoboggan][patch][] = "http://drupal.org/files/logintoboggan-minpas
 
 projects[media][version] = "1.3"
 projects[media][subdir] = contrib 
+
+projects[media_dailymotion][version] = "1.0"
+projects[media_dailymotion][subdir] = contrib 
+
+projects[media_vimeo][version] = "1.0-beta5"
+projects[media_vimeo][subdir] = contrib 
+
+projects[media_youtube][version] = "2.0-rc3"
+projects[media_youtube][subdir] = contrib 
 
 projects[menu_attributes][version] = "1.0-rc2"
 projects[menu_attributes][subdir] = contrib
@@ -202,9 +228,8 @@ projects[menu_firstchild][subdir] = contrib
 projects[menu_position][version] = "1.1"
 projects[menu_position][subdir] = contrib
 
-projects[metatag][version] = "1.0-beta4"
+projects[metatag][version] = "1.0-beta7"
 projects[metatag][subdir] = contrib
-projects[metatag][patch][] = "http://drupal.org/files/metatag-fix_theme_hook_mismatch-1846978-0.patch"
 
 projects[module_filter][version] = "1.7"
 projects[module_filter][subdir] = contrib
@@ -243,7 +268,7 @@ projects[pathauto][subdir] = contrib
 projects[pathauto][patch][] = "http://drupal.org/files/290421-pathauto-DRUPAL-7--1-x.patch"
 projects[pathauto][patch][] = "http://drupal.org/files/pathauto-path_alias_for_taxonomy_terms_always_created_in_default_language-1993462-0.patch"
 
-projects[performance][version] = "1.6"
+projects[performance][version] = "2.0-beta1"
 projects[performance][subdir] = contrib
 
 projects[print][version] = "1.2"
@@ -251,9 +276,15 @@ projects[print][subdir] = contrib
 
 projects[quiz][version] = "4.0-beta1"
 projects[quiz][subdir] = contrib
+projects[quiz][patch][] = "https://drupal.org/files/quiz-Incorrect_permission_name-1842962-1.patch"
+projects[quiz][patch][] = "https://drupal.org/files/quiz-cant_view_long_answer_questions-1899654-1.patch"
+projects[quiz][patch][] = "https://drupal.org/files/undefined_index_group_by-1827880-7.patch"
 
 projects[redirect][version] = "1.0-rc1"
 projects[redirect][subdir] = contrib
+
+projects[registration][version] = "1.1"
+projects[registration][subdir] = contrib
 
 projects[robotstxt][version] = "1.1"
 projects[robotstxt][subdir] = contrib
@@ -264,9 +295,8 @@ projects[role_delegation][subdir] = contrib
 projects[rules][version] = "2.3"
 projects[rules][subdir] = contrib
 
-projects[scheduler][version] = "1.0"
+projects[scheduler][version] = "1.1"
 projects[scheduler][subdir] = contrib
-projects[scheduler][patch][] = "http://drupal.org/files/1660192-expand-options-03.patch"
 
 projects[search_config][version] = "1.0"
 projects[search_config][subdir] = contrib
@@ -274,7 +304,7 @@ projects[search_config][subdir] = contrib
 projects[seckit][version] = "1.5"
 projects[seckit][subdir] = contrib
 
-projects[securelogin][version] = "1.3"
+projects[securelogin][version] = "1.4"
 projects[securelogin][subdir] = contrib
 
 projects[security_review][version] = "1.0"
@@ -304,7 +334,7 @@ projects[sweaver][subdir] = contrib
 projects[table_altrow][version] = "1.2"
 projects[table_altrow][subdir] = contrib
 
-projects[text_resize][version] = "1.7"
+projects[text_resize][version] = "1.8"
 projects[text_resize][subdir] = contrib
 projects[text_resize][patch][] = "http://drupal.org/files/text_resize_reset-1119994-6.patch"
 
@@ -329,8 +359,11 @@ projects[variable][subdir] = contrib
 projects[view_unpublished][version] = "1.1"
 projects[view_unpublished][subdir] = contrib
 
-projects[views][version] = "3.6"
+projects[views][version] = "3.7"
 projects[views][subdir] = contrib
+
+projects[views_data_export][version] = "3.0-beta6"
+projects[views_data_export][subdir] = contrib
 
 projects[views_bulk_operations][version] = "3.1"
 projects[views_bulk_operations][subdir] = contrib
@@ -340,6 +373,9 @@ projects[views_slideshow][subdir] = contrib
 
 projects[webform][version] = "3.18"
 projects[webform][subdir] = contrib
+
+projects[webform_rules][version] = "1.6"
+projects[webform_rules][subdir] = contrib
 
 projects[weight][version] = "2.2"
 projects[weight][subdir] = contrib

@@ -70,26 +70,6 @@ function ofed_feature_news_ds_field_settings_info() {
 
   $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
-  $ds_fieldsetting->id = 'node|ofed_news|block_info';
-  $ds_fieldsetting->entity_type = 'node';
-  $ds_fieldsetting->bundle = 'ofed_news';
-  $ds_fieldsetting->view_mode = 'block_info';
-  $ds_fieldsetting->settings = array(
-    'title' => array(
-      'weight' => '0',
-      'label' => 'hidden',
-      'format' => 'default',
-    ),
-    'field_ofed_news_update' => array(
-      'formatter_settings' => array(
-        'ft' => array(),
-      ),
-    ),
-  );
-  $export['node|ofed_news|block_info'] = $ds_fieldsetting;
-
-  $ds_fieldsetting = new stdClass();
-  $ds_fieldsetting->api_version = 1;
   $ds_fieldsetting->id = 'node|ofed_news|block_list';
   $ds_fieldsetting->entity_type = 'node';
   $ds_fieldsetting->bundle = 'ofed_news';
@@ -300,7 +280,7 @@ function ofed_feature_news_ds_field_settings_info() {
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
-        'link' => '0',
+        'link' => '1',
         'wrapper' => 'h3',
         'class' => '',
         'ft' => array(
@@ -640,52 +620,6 @@ function ofed_feature_news_ds_layout_settings_info() {
     'hide_sidebars' => 0,
   );
   $export['node|ofed_news|block_column'] = $ds_layout;
-
-  $ds_layout = new stdClass();
-  $ds_layout->api_version = 1;
-  $ds_layout->id = 'node|ofed_news|block_info';
-  $ds_layout->entity_type = 'node';
-  $ds_layout->bundle = 'ofed_news';
-  $ds_layout->view_mode = 'block_info';
-  $ds_layout->layout = 'ds_1col';
-  $ds_layout->settings = array(
-    'regions' => array(
-      'ds_content' => array(
-        0 => 'title',
-        1 => 'field_ofed_news_thumb',
-        2 => 'field_ofed_news_pubdate',
-        3 => 'field_ofed_news_body',
-        4 => 'field_ofed_news_docs',
-        5 => 'field_ofed_news_links',
-        6 => 'field_ofed_news_source',
-        7 => 'field_ofed_news_author',
-        8 => 'field_ofed_news_update',
-        9 => 'field_ofed_news_update_force',
-      ),
-    ),
-    'fields' => array(
-      'title' => 'ds_content',
-      'field_ofed_news_thumb' => 'ds_content',
-      'field_ofed_news_pubdate' => 'ds_content',
-      'field_ofed_news_body' => 'ds_content',
-      'field_ofed_news_docs' => 'ds_content',
-      'field_ofed_news_links' => 'ds_content',
-      'field_ofed_news_source' => 'ds_content',
-      'field_ofed_news_author' => 'ds_content',
-      'field_ofed_news_update' => 'ds_content',
-      'field_ofed_news_update_force' => 'ds_content',
-    ),
-    'classes' => array(),
-    'wrappers' => array(
-      'ds_content' => 'div',
-    ),
-    'layout_wrapper' => 'div',
-    'layout_attributes_merge' => 1,
-    'hide_page_title' => '0',
-    'page_option_title' => '',
-    'hide_sidebars' => 0,
-  );
-  $export['node|ofed_news|block_info'] = $ds_layout;
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;

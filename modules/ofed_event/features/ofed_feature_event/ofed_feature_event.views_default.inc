@@ -288,7 +288,7 @@ function ofed_feature_event_views_default_views() {
   $handler->display->display_options['defaults']['header'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Last published date (field_ofed_download_pubdate) */
+  /* Sort criterion: Content: Publication date (field_ofed_download_pubdate) */
   $handler->display->display_options['sorts']['field_ofed_download_pubdate_value']['id'] = 'field_ofed_download_pubdate_value';
   $handler->display->display_options['sorts']['field_ofed_download_pubdate_value']['table'] = 'field_data_field_ofed_download_pubdate';
   $handler->display->display_options['sorts']['field_ofed_download_pubdate_value']['field'] = 'field_ofed_download_pubdate_value';
@@ -342,7 +342,7 @@ function ofed_feature_event_views_default_views() {
   $handler->display->display_options['row_options']['default_fieldset']['view_mode'] = 'page_list';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Last published date (field_ofed_event_pubdate) */
+  /* Sort criterion: Content: Publication date (field_ofed_event_pubdate) */
   $handler->display->display_options['sorts']['field_ofed_event_pubdate_value']['id'] = 'field_ofed_event_pubdate_value';
   $handler->display->display_options['sorts']['field_ofed_event_pubdate_value']['table'] = 'field_data_field_ofed_event_pubdate';
   $handler->display->display_options['sorts']['field_ofed_event_pubdate_value']['field'] = 'field_ofed_event_pubdate_value';
@@ -418,7 +418,7 @@ function ofed_feature_event_views_default_views() {
   $handler->display->display_options['defaults']['header'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Last published date (field_ofed_event_pubdate) */
+  /* Sort criterion: Content: Publication date (field_ofed_event_pubdate) */
   $handler->display->display_options['sorts']['field_ofed_event_pubdate_value']['id'] = 'field_ofed_event_pubdate_value';
   $handler->display->display_options['sorts']['field_ofed_event_pubdate_value']['table'] = 'field_data_field_ofed_event_pubdate';
   $handler->display->display_options['sorts']['field_ofed_event_pubdate_value']['field'] = 'field_ofed_event_pubdate_value';
@@ -483,7 +483,7 @@ function ofed_feature_event_views_default_views() {
   $handler->display->display_options['defaults']['header'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Last published date (field_ofed_event_pubdate) */
+  /* Sort criterion: Content: Publication date (field_ofed_event_pubdate) */
   $handler->display->display_options['sorts']['field_ofed_event_pubdate_value']['id'] = 'field_ofed_event_pubdate_value';
   $handler->display->display_options['sorts']['field_ofed_event_pubdate_value']['table'] = 'field_data_field_ofed_event_pubdate';
   $handler->display->display_options['sorts']['field_ofed_event_pubdate_value']['field'] = 'field_ofed_event_pubdate_value';
@@ -547,7 +547,7 @@ function ofed_feature_event_views_default_views() {
   $handler->display->display_options['defaults']['header'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Last published date (field_ofed_event_pubdate) */
+  /* Sort criterion: Content: Publication date (field_ofed_event_pubdate) */
   $handler->display->display_options['sorts']['field_ofed_event_pubdate_value']['id'] = 'field_ofed_event_pubdate_value';
   $handler->display->display_options['sorts']['field_ofed_event_pubdate_value']['table'] = 'field_data_field_ofed_event_pubdate';
   $handler->display->display_options['sorts']['field_ofed_event_pubdate_value']['field'] = 'field_ofed_event_pubdate_value';
@@ -611,7 +611,7 @@ function ofed_feature_event_views_default_views() {
   $handler->display->display_options['defaults']['header'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Last published date (field_ofed_event_pubdate) */
+  /* Sort criterion: Content: Publication date (field_ofed_event_pubdate) */
   $handler->display->display_options['sorts']['field_ofed_event_pubdate_value']['id'] = 'field_ofed_event_pubdate_value';
   $handler->display->display_options['sorts']['field_ofed_event_pubdate_value']['table'] = 'field_data_field_ofed_event_pubdate';
   $handler->display->display_options['sorts']['field_ofed_event_pubdate_value']['field'] = 'field_ofed_event_pubdate_value';
@@ -639,7 +639,7 @@ function ofed_feature_event_views_default_views() {
   $handler->display->display_options['filters']['language']['value'] = array(
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
-  $handler->display->display_options['block_description'] = 'Events: Column';
+  $handler->display->display_options['block_description'] = 'Events: Latest one';
   $translatables['ofed_event'] = array(
     t('Master'),
     t('Events'),
@@ -666,7 +666,7 @@ function ofed_feature_event_views_default_views() {
     t('Delete'),
     t('Published'),
     t('Page: List'),
-    t('Page: Sticky'),
+    t('Page: Sticky '),
     t('Block: Teaser'),
     t('Latest events'),
     t('See all events'),
@@ -677,6 +677,7 @@ function ofed_feature_event_views_default_views() {
     t('Events: Column'),
     t('Block: Latest one'),
     t('Latest one event'),
+    t('Events: Latest one'),
   );
   $export['ofed_event'] = $view;
 

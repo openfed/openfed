@@ -9,6 +9,10 @@
  */
 function ofed_feature_download_ctools_plugin_api() {
   list($module, $api) = func_get_args();
+  if ($module == "ds" && $api == "ds") {
+    return array("version" => "1");
+  }
+  list($module, $api) = func_get_args();
   if ($module == "strongarm" && $api == "strongarm") {
     return array("version" => "1");
   }
@@ -18,7 +22,7 @@ function ofed_feature_download_ctools_plugin_api() {
  * Implements hook_views_api().
  */
 function ofed_feature_download_views_api() {
-  return array("version" => "3.0");
+  return array("api" => "3.0");
 }
 
 /**
@@ -30,7 +34,7 @@ function ofed_feature_download_flag_default_flags() {
   $flags['download_hide'] = array(
     'content_type' => 'node',
     'title' => 'Download: Hide item from lists and blocks',
-    'global' => '0',
+    'global' => 0,
     'types' => array(
       0 => 'ofed_download',
     ),
@@ -44,18 +48,18 @@ function ofed_feature_download_flag_default_flags() {
     'link_type' => 'toggle',
     'roles' => array(
       'flag' => array(
-        0 => '2',
-        1 => '3',
-        2 => '4',
-        3 => '5',
-        4 => '6',
+        0 => 2,
+        1 => 3,
+        2 => 4,
+        3 => 5,
+        4 => 6,
       ),
       'unflag' => array(
-        0 => '2',
-        1 => '3',
-        2 => '4',
-        3 => '5',
-        4 => '6',
+        0 => 2,
+        1 => 3,
+        2 => 4,
+        3 => 5,
+        4 => 6,
       ),
     ),
     'weight' => 0,
@@ -64,7 +68,7 @@ function ofed_feature_download_flag_default_flags() {
     'show_on_page' => 0,
     'show_on_teaser' => 0,
     'show_contextual_link' => 0,
-    'i18n' => '0',
+    'i18n' => 0,
     'module' => 'ofed_feature_download',
     'locked' => array(
       0 => 'name',
@@ -95,11 +99,11 @@ function ofed_feature_download_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
-          'width' => '150',
-          'height' => '150',
+          'width' => 150,
+          'height' => 150,
           'upscale' => 0,
         ),
-        'weight' => '-8',
+        'weight' => -8,
       ),
     ),
   );
@@ -118,11 +122,11 @@ function ofed_feature_download_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
-          'width' => '150',
-          'height' => '150',
+          'width' => 150,
+          'height' => 150,
           'upscale' => 0,
         ),
-        'weight' => '-8',
+        'weight' => -8,
       ),
     ),
   );
@@ -141,11 +145,11 @@ function ofed_feature_download_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
-          'width' => '150',
-          'height' => '150',
+          'width' => 150,
+          'height' => 150,
           'upscale' => 0,
         ),
-        'weight' => '-8',
+        'weight' => -8,
       ),
     ),
   );
@@ -164,11 +168,11 @@ function ofed_feature_download_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
-          'width' => '150',
-          'height' => '150',
+          'width' => 150,
+          'height' => 150,
           'upscale' => 0,
         ),
-        'weight' => '-8',
+        'weight' => -8,
       ),
     ),
   );
@@ -187,11 +191,11 @@ function ofed_feature_download_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
-          'width' => '150',
-          'height' => '150',
+          'width' => 150,
+          'height' => 150,
           'upscale' => 0,
         ),
-        'weight' => '-8',
+        'weight' => -8,
       ),
     ),
   );

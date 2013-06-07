@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Install, update and uninstall functions for the openfed install profile.
@@ -12,152 +13,100 @@
  * @see system_install()
  */
 function openfed_install() {
-  /**
-   *  Include all custom functions.
-   */
+  
+  // Include all custom functions.
   require_once('includes/misc/openfed_function.inc');
 
-  /*
-   * Install of roles
-   */
+  // Install of roles.
   require_once('includes/install/openfed_roles.inc');
 
-  /*
-   * Configuration of users
-   */
+  // Configuration of users
   require_once('includes/install/openfed_users.inc');
 
-  /*
-   * Install of text format
-   */
+  // Install of text format.
   require_once('includes/install/openfed_text_format.inc');
 
-
-  /*
-   * MENU
-   */
+  // Menus.
   require_once('includes/install/openfed_menus.inc');
-
-  /*
-   * BLOCK
-   */
+  
+  // Blocks.
   require_once('includes/install/openfed_blocks.inc');
 
-  /*
-   * CKeditor
-   */
+  // CKeditor.
   require_once('includes/install/openfed_ckeditor.inc');
 
-  /*
-   * CKeditor Link
-   */
+  // CKeditor Link.
   require_once('includes/install/openfed_ckeditor_link.inc');
 
-  /*
-   * Install of Colorbox
-   */
+  // Install of Colorbox.
   require_once('includes/install/openfed_colorbox.inc');
 
-  /*
-   * Date
-   */
+  // Date.
   require_once('includes/install/openfed_date.inc');
 
-  /*
-   * DisplaySuite
-   */
+  // DisplaySuite.
   require_once('includes/install/openfed_displaysuite.inc');
 
-  /*
-   * External link
-   */
+  // External link.
   require_once('includes/install/openfed_extlink.inc');
 
-  /*
-   * Easy breadcrumb
-   */
+  // Easy breadcrumb.
   require_once('includes/install/openfed_easy_breadcrumb.inc');
 
-  /*
-   * Flag
-   */
+  // Flag.
   require_once('includes/install/openfed_flag.inc');
 
-  /*
-   * Globalredirect
-   */
+  // Globalredirect.
   require_once('includes/install/openfed_globalredirect.inc');
 
-  /*
-   * HTML5 Tools
-   */
+  // HTML5 Tools.
   require_once('includes/install/openfed_html5_tools.inc');
 
-  /*
-   * IMCE
-   */
+  // IMCE.
   require_once('includes/install/openfed_imce.inc');
 
-  /*
-   * Linkchecker
-   */
+  // Linkchecker.
   require_once('includes/install/openfed_linkchecker.inc');
 
-  /*
-   * Logintoboggan
-   */
+  // Logintoboggan.
   require_once('includes/install/openfed_logintoboggan.inc');
 
-  /*
-   * Pathauto
-   */
+  // Panels.
+  require_once('includes/install/openfed_panels.inc');
+  
+  // Pathauto.
   require_once('includes/install/openfed_pathauto.inc');
 
-  /*
-   * Path Breadcrumbs
-   */
+  // Path Breadcrumbs.
   require_once('includes/install/openfed_path_breadcrumbs.inc');
 
-  /*
-   * Print
-   */
+  // Print.
   require_once('includes/install/openfed_print.inc');
 
-  /*
-   * Regional
-   */
+  // Regional.
   require_once('includes/install/openfed_regional.inc');
 
-  /*
-   * Sharethis
-   */
+  // Sharethis.
   require_once('includes/install/openfed_sharethis.inc');
 
-  /*
-   * Sitemap
-   */
+  // Sitemap
   require_once('includes/install/openfed_sitemap.inc');
-
-  /*
-   * Sweaver
-   */
+  
+  // Sweaver
   require_once('includes/install/openfed_sweaver.inc');
 
-  /*
-   * Text Resize
-   */
+  // Text Resize.
   require_once('includes/install/openfed_text_resize.inc');
 
-  /*
-   * Views
-   */
+  // Views.
   require_once('includes/install/openfed_views.inc');
-
+  
+  // Webform.
+  require_once('includes/install/openfed_webform.inc');
 
   variable_set('file_public_path', conf_path() . '/files');
   variable_set('file_private_path', conf_path() . '/private');
   variable_set('file_temporary_path', '/tmp');
-
   variable_set('install_profile', 'openfed');
 }
 
@@ -177,7 +126,7 @@ function openfed_update_7001(&$sandbox = NULL) {
 
     $updated_roles = array('Builder', 'Configurator', 'User Manager');
 
-    foreach($updated_roles as $role) {
+    foreach ($updated_roles as $role) {
       $web_role = user_role_load_by_name($role);
 
       if ($role !== 'User Manager') {
@@ -194,7 +143,6 @@ function openfed_update_7001(&$sandbox = NULL) {
   return $ret;
 }
 
-
 /**
  * Fixed typo in /profiles/openfed/includes/install/openfed_text_format.inc
  * but still has to reproduce the code here as it's used during the installation
@@ -207,7 +155,7 @@ function openfed_update_7002() {
   $arr['filter_html_nofollow'] = 0;
   db_update('filter')
     ->fields(array(
-        'settings' => serialize($arr),
+      'settings' => serialize($arr),
     ))
     ->condition('format', 'filtered_html', '=')
     ->condition('module', 'filter', '=')
@@ -216,7 +164,6 @@ function openfed_update_7002() {
 
   cache_clear_all();
 }
-
 
 /**
  * Set Full HTML as default input format
@@ -250,7 +197,6 @@ function openfed_update_7004() {
  * Add rule to warn User Manager of new user creation
  */
 function openfed_update_7005() {
-
   if (module_exists('rules')) {
     $um_role = user_role_load_by_name('User Manager');
 
@@ -304,23 +250,26 @@ function openfed_update_7006(&$sandbox = NULL) {
   return $ret;
 }
 
-
-
 /**
  * Add permission to Content Manager for all the enabled content type
  */
 function openfed_update_7007() {
   // Add permissions to Content Manager
-  $cm_role = user_role_load_by_name('Content Manager');
+  // NOTE : it was a request during the dev, now it's "too dangerous" to give all perms to the CM
+  /* $cm_role = user_role_load_by_name('Content Manager');
 
-  if (!empty($cm_role->rid)) {
-    // retrive node permissions
+    if (!empty($cm_role->rid)) {
+    // retreive node permissions
     $permissions = module_invoke('node', 'permission');
     $permissions = array_keys($permissions);
     $unwanted_permissions = array(
-      'bypass node access',
-      'administer content types',
-      'administer nodes',
+    'bypass node access',
+    'administer content types',
+    'administer nodes',
+    'create panel content',
+    'edit own panel content',
+    'edit any panel content',
+    'delete own panel content',
     );
     // remove unwanted permissions
     $permissions = array_diff($permissions, $unwanted_permissions);
@@ -328,11 +277,9 @@ function openfed_update_7007() {
     $override_permissions = array_keys($override_permissions);
     $permissions = array_merge($permissions, $override_permissions);
 
-    $permissions = array_fill_keys($permissions, TRUE);
-
-    user_role_change_permissions($cm_role->rid, $permissions);
+    user_role_grant_permissions($cm_role->rid, $permissions);
     cache_clear_all();
-  }
+    } */
 }
 
 /**
@@ -341,19 +288,18 @@ function openfed_update_7007() {
 function openfed_update_7008() {
   // add date format
   $date_format = array();
-  $date_format[] = array( 'format' => 'd/m/Y', 'type' => 'date_only', 'language' => 'en' );
-  $date_format[] = array( 'format' => 'c', 'type' => 'html5_tools_iso8601', 'language' => 'en' );
-  $date_format[] = array( 'format' => 'l, F j, Y - H:i', 'type' => 'long', 'language' => 'en' );
-  $date_format[] = array( 'format' => 'D, d/m/Y - H:i', 'type' => 'medium', 'language' => 'en' );
-  $date_format[] = array( 'format' => 'd/m/Y - H:i', 'type' => 'short', 'language' => 'en' );
+  $date_format[] = array('format' => 'd/m/Y', 'type' => 'date_only', 'language' => 'en');
+  $date_format[] = array('format' => 'c', 'type' => 'html5_tools_iso8601', 'language' => 'en');
+  $date_format[] = array('format' => 'l, F j, Y - H:i', 'type' => 'long', 'language' => 'en');
+  $date_format[] = array('format' => 'D, d/m/Y - H:i', 'type' => 'medium', 'language' => 'en');
+  $date_format[] = array('format' => 'd/m/Y - H:i', 'type' => 'short', 'language' => 'en');
 
-  foreach($date_format as $key => $date_format_locale) {
+  foreach ($date_format as $key => $date_format_locale) {
     drupal_write_record('date_format_locale', $date_format_locale, array('type', 'language'));
   }
 
   cache_clear_all();
 }
-
 
 /**
  * Adding the permission 'access administration theme' to the User Manager to avoid
@@ -371,7 +317,6 @@ function openfed_update_7009() {
   return $ret;
 }
 
-
 /**
  * Remove CMS' menu
  */
@@ -385,4 +330,72 @@ function openfed_update_7010() {
   menu_delete($menu);
 }
 
+/**
+ * Revoke the panel permissions from Content Manager
+ */
+function openfed_update_7011() {
+  // Add permissions to Content Manager
+  $cm_role = user_role_load_by_name('Content Manager');
 
+  if (!empty($cm_role->rid)) {
+    $unwanted_permissions = array(
+      'create panel content',
+      'edit own panel content',
+      'edit any panel content',
+      'delete own panel content',
+    );
+    user_role_revoke_permissions($cm_role->rid, $unwanted_permissions);
+    cache_clear_all();
+  }
+}
+
+/**
+ * Grant administer content type permissions to builder and configurator
+ */
+function openfed_update_7012() {
+  // Add permissions to Content Manager
+  $permissions = array(
+    'administer content types',
+  );
+  $b_role = user_role_load_by_name('Builder');
+
+  if (!empty($b_role->rid)) {
+    user_role_grant_permissions($b_role->rid, $permissions);
+  }
+  $c_role = user_role_load_by_name('Configurator');
+
+  if (!empty($c_role->rid)) {
+    user_role_grant_permissions($c_role->rid, $permissions);
+  }
+  cache_clear_all();
+}
+
+/**
+ * Adding the permission 'view the administration theme' to the User Manager
+ */
+function openfed_update_7013() {
+  $permissions = array(
+    'view the administration theme',
+  );
+  $um_role = user_role_load_by_name('User Manager');
+  user_role_grant_permissions($um_role->rid, $permissions);
+
+  cache_clear_all();
+
+  return $ret;
+}
+
+/**
+ * revoke the permission 'administer views multi-column display' to the Content Manager
+ */
+function openfed_update_7014() {
+  $permissions = array(
+    'administer views multi-column display',
+  );
+  $cm_role = user_role_load_by_name('Content Manager');
+  user_role_revoke_permissions($um_role->rid, $permissions);
+
+  cache_clear_all();
+
+  return $ret;
+}

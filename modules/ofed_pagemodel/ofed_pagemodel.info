@@ -1,8 +1,0 @@
-name = Page model
-description = Allows the user to define the number of columns used to display the content of a view without having an access to the views interface.
-package = openFED
-core = 7.x
-version = "7.x-1.0"
-
-dependencies[] = views
-dependencies[] = contextual

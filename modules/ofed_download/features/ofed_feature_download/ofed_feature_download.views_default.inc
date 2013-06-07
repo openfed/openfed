@@ -76,7 +76,7 @@ function ofed_feature_download_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Sort criterion: Content: Last published date (field_ofed_download_pubdate) */
+  /* Sort criterion: Content: Publication date (field_ofed_download_pubdate) */
   $handler->display->display_options['sorts']['field_ofed_download_pubdate_value']['id'] = 'field_ofed_download_pubdate_value';
   $handler->display->display_options['sorts']['field_ofed_download_pubdate_value']['table'] = 'field_data_field_ofed_download_pubdate';
   $handler->display->display_options['sorts']['field_ofed_download_pubdate_value']['field'] = 'field_ofed_download_pubdate_value';
@@ -486,7 +486,7 @@ function ofed_feature_download_views_default_views() {
   $handler->display->display_options['relationships']['flag_content_rel']['flag'] = 'download_hide';
   $handler->display->display_options['relationships']['flag_content_rel']['user_scope'] = 'any';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Last published date (field_ofed_download_pubdate) */
+  /* Sort criterion: Content: Publication date (field_ofed_download_pubdate) */
   $handler->display->display_options['sorts']['field_ofed_download_pubdate_value']['id'] = 'field_ofed_download_pubdate_value';
   $handler->display->display_options['sorts']['field_ofed_download_pubdate_value']['table'] = 'field_data_field_ofed_download_pubdate';
   $handler->display->display_options['sorts']['field_ofed_download_pubdate_value']['field'] = 'field_ofed_download_pubdate_value';
@@ -739,7 +739,7 @@ function ofed_feature_download_views_default_views() {
   $handler->display->display_options['filters']['flagged']['field'] = 'flagged';
   $handler->display->display_options['filters']['flagged']['relationship'] = 'flag_content_rel';
   $handler->display->display_options['filters']['flagged']['value'] = '0';
-  $handler->display->display_options['block_description'] = 'Downloads: Latest one download';
+  $handler->display->display_options['block_description'] = 'Downloads: Latest one';
   $translatables['ofed_download'] = array(
     t('Master'),
     t('Download'),
@@ -780,7 +780,7 @@ function ofed_feature_download_views_default_views() {
     t('Downloads: Column'),
     t('Block: Latest one'),
     t('Latest one download'),
-    t('Downloads: Latest one download'),
+    t('Downloads: Latest one'),
   );
   $export['ofed_download'] = $view;
 

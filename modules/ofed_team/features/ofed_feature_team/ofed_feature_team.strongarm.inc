@@ -161,41 +161,41 @@ function ofed_feature_team_strongarm() {
           'weight' => '0',
         ),
         'metatags' => array(
-          'weight' => '17',
+          'weight' => '19',
         ),
         'title' => array(
           'weight' => '1',
         ),
         'path' => array(
-          'weight' => '16',
+          'weight' => '18',
         ),
         'redirect' => array(
-          'weight' => '15',
+          'weight' => '17',
         ),
         'xmlsitemap' => array(
-          'weight' => '14',
+          'weight' => '16',
         ),
       ),
       'display' => array(
         'language' => array(
           'default' => array(
-            'weight' => '21',
+            'weight' => '24',
             'visible' => FALSE,
           ),
           'full' => array(
-            'weight' => '21',
+            'weight' => '24',
             'visible' => FALSE,
           ),
           'teaser' => array(
-            'weight' => '20',
+            'weight' => '24',
             'visible' => FALSE,
           ),
           'rss' => array(
-            'weight' => '15',
+            'weight' => '23',
             'visible' => FALSE,
           ),
           'search_index' => array(
-            'weight' => '20',
+            'weight' => '24',
             'visible' => FALSE,
           ),
           'search_result' => array(
@@ -203,11 +203,11 @@ function ofed_feature_team_strongarm() {
             'visible' => FALSE,
           ),
           'print' => array(
-            'weight' => '20',
+            'weight' => '24',
             'visible' => FALSE,
           ),
           'block_column' => array(
-            'weight' => '20',
+            'weight' => '24',
             'visible' => FALSE,
           ),
           'block_info' => array(
@@ -215,7 +215,7 @@ function ofed_feature_team_strongarm() {
             'visible' => FALSE,
           ),
           'block_list' => array(
-            'weight' => '20',
+            'weight' => '24',
             'visible' => FALSE,
           ),
           'page_list' => array(
@@ -361,9 +361,86 @@ function ofed_feature_team_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_ofed_team_civility_en_pattern';
+  $strongarm->value = 'civility/[term:name]';
+  $export['pathauto_taxonomy_term_ofed_team_civility_en_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_ofed_team_civility_fr_pattern';
+  $strongarm->value = 'civilite/[term:name]';
+  $export['pathauto_taxonomy_term_ofed_team_civility_fr_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_ofed_team_civility_nl_pattern';
+  $strongarm->value = 'aanspreking/[term:name]';
+  $export['pathauto_taxonomy_term_ofed_team_civility_nl_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_taxonomy_term_ofed_team_civility_pattern';
-  $strongarm->value = '';
+  $strongarm->value = '[term:vocabulary:i18n-name]/[term:name]';
   $export['pathauto_taxonomy_term_ofed_team_civility_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_ofed_team_en_pattern';
+  $strongarm->value = 'team-members/[term:name]';
+  $export['pathauto_taxonomy_term_ofed_team_en_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_ofed_team_fr_pattern';
+  $strongarm->value = 'collegues/[term:name]';
+  $export['pathauto_taxonomy_term_ofed_team_fr_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_ofed_team_gender_en_pattern';
+  $strongarm->value = 'gender/[term:name]';
+  $export['pathauto_taxonomy_term_ofed_team_gender_en_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_ofed_team_gender_fr_pattern';
+  $strongarm->value = 'genre/[term:name]';
+  $export['pathauto_taxonomy_term_ofed_team_gender_fr_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_ofed_team_gender_nl_pattern';
+  $strongarm->value = 'geslacht/[term:name]';
+  $export['pathauto_taxonomy_term_ofed_team_gender_nl_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_ofed_team_gender_pattern';
+  $strongarm->value = '[term:vocabulary:i18n-name]/[term:name]';
+  $export['pathauto_taxonomy_term_ofed_team_gender_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_ofed_team_nl_pattern';
+  $strongarm->value = 'collegas/[term:name]';
+  $export['pathauto_taxonomy_term_ofed_team_nl_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_ofed_team_pattern';
+  $strongarm->value = '[term:vocabulary:i18n-name]/[term:name]';
+  $export['pathauto_taxonomy_term_ofed_team_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

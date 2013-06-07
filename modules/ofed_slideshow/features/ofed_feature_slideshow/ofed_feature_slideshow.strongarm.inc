@@ -264,21 +264,28 @@ function ofed_feature_slideshow_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_ofed_slideshow_en_pattern';
-  $strongarm->value = '';
+  $strongarm->value = 'slideshows/[node:title]';
   $export['pathauto_node_ofed_slideshow_en_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_ofed_slideshow_fr_pattern';
-  $strongarm->value = '';
+  $strongarm->value = 'diaporamas/[node:title]';
   $export['pathauto_node_ofed_slideshow_fr_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_ofed_slideshow_nl_pattern';
+  $strongarm->value = 'slideshows/[node:title]';
+  $export['pathauto_node_ofed_slideshow_nl_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_ofed_slideshow_pattern';
-  $strongarm->value = '[node:menu-link:parent:title]/[node:title]';
+  $strongarm->value = '[node:menu-link:parents:join-path]/[node:title]';
   $export['pathauto_node_ofed_slideshow_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -287,6 +294,34 @@ function ofed_feature_slideshow_strongarm() {
   $strongarm->name = 'pathauto_node_ofed_slideshow_und_pattern';
   $strongarm->value = '';
   $export['pathauto_node_ofed_slideshow_und_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_ofed_slideshow_en_pattern';
+  $strongarm->value = 'slideshows/[term:name]';
+  $export['pathauto_taxonomy_term_ofed_slideshow_en_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_ofed_slideshow_fr_pattern';
+  $strongarm->value = 'diaporamas/[term:name]';
+  $export['pathauto_taxonomy_term_ofed_slideshow_fr_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_ofed_slideshow_nl_pattern';
+  $strongarm->value = 'slideshows/[term:name]';
+  $export['pathauto_taxonomy_term_ofed_slideshow_nl_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_ofed_slideshow_pattern';
+  $strongarm->value = '[term:vocabulary:i18n-name]/[term:name]';
+  $export['pathauto_taxonomy_term_ofed_slideshow_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

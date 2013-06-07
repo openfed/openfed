@@ -613,6 +613,7 @@ fieldset#edit-update-notifications 										{
 .marker, .form-required 												{
 color: #f00;
 }
+
 /*
 		HEADER REGION
 */
@@ -627,7 +628,7 @@ color: #f00;
 	border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 #header .container														{
-	padding-bottom: 20px;
+	padding: 20px 0;
 	background: url(../images/bg-separator-bottom.png) top center no-repeat;
 }
 /*
@@ -1125,9 +1126,14 @@ color: #f00;
     margin: 5px 0;
 }
 #maincontent ul li											{
-    padding: 10px 0 0 25px;
-    background: url(../images/bullet-secondlevel.png) no-repeat 0 15px;
+  padding: 10px 0 0 25px;
+  background: url(../images/bullet-secondlevel.png) no-repeat 0 15px;
+	display: inline;
 }
+#maincontent .view-ofed-faq ul li{
+  display: block;	
+}
+
 #maincontent ul li ul > li,
 #maincontent ol li ul > li									{
 	background: url(../images/bullet-thirdlevel.png) no-repeat 0 15px;
@@ -1258,7 +1264,12 @@ box-shadow: 0 0 4px rgba(255, 255, 255, 0.75);
 .pane-rules-scheduler,
 .pane-list-node-page-titles									{
 	background: #f4f4f3;
-    border-top: 3px solid #ff7300;
+  border-top: 3px solid #ff7300;
+}
+#aside-right .block-ofed-banner,
+#aside-left .block-ofed-banner								{
+	background: transparent;
+    border-top: none;
 }
 
 #aside-right h2, #aside-left h2								{
@@ -1402,7 +1413,11 @@ time															{
 .field-name-field-ofed-meeting-pubdate,
 .field-name-field-ofed-meeting-update,
 .field-name-field-ofed-photog-pubdate,
-.field-name-field-ofed-photog-update							{
+.field-name-field-ofed-photog-update,
+.field-name-field-ofed-job-pubdate,
+.field-name-field-ofed-job-update,
+.field-name-field-ofed-video-pubdate,
+.field-name-field-ofed-video-update							{
 	font-size: 0.85em;
 	color: #B0AEA4;
 }
@@ -1435,7 +1450,9 @@ time															{
 .field-name-field-ofed-download-thumb,
 .field-name-field-ofed-press-thumb,
 .field-name-field-ofed-page-thumb,
-.field-name-field-ofed-event-thumb								{
+.field-name-field-ofed-event-thumb,
+.field-name-field-ofed-job-thumb,
+.field-name-field-ofed-video-embed								{
 	padding: 5px 10px 5px 0;
 	color: white; /*  Bug sous chrome  - le border de l'image est orange 	*/
 }
@@ -1445,7 +1462,9 @@ time															{
 .field-name-field-ofed-press-thumb img,
 .field-name-field-ofed-page-thumb img,
 .field-name-field-ofed-event-thumb img,
-.field-name-field-ofed-team-thumb img							{
+.field-name-field-ofed-team-thumb img,
+.field-name-field-ofed-job-thumb img,
+.field-name-field-ofed-video-embed img							{
 	border: 3px solid white;
 	box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
 }
@@ -1471,7 +1490,20 @@ time															{
 .field-name-field-ofed-meeting-address,
 .field-name-field-ofed-meeting-docs,
 .field-name-field-ofed-team-contact,
-.field-name-field-ofed-team-social								{
+.field-name-field-ofed-team-social,
+.field-name-field-ofed-job-profile,
+.field-name-field-ofed-job-process,
+.field-name-field-ofed-job-description,
+.field-name-field-ofed-job-work-location,
+.field-name-field-ofed-job-docs,
+.field-name-field-ofed-video-link,
+.field-name-field-ofed-page-video,
+.field-name-field-ofed-news-video,
+.field-name-field-ofed-press-video,
+.field-name-field-ofed-event-video,
+.field-name-field-ofed-meeting-video,
+.field-name-field-ofed-team-video,
+.field-name-field-ofed-job-video								{
 	border: 1px solid #E1DED7;
 	background: #F4F4F3;
 	padding: 10px 10px 10px 10px;
@@ -1490,7 +1522,20 @@ time															{
 .field-name-field-ofed-meeting-address .label-above,
 .field-name-field-ofed-meeting-docs .label-above,
 .field-name-field-ofed-team-contact .label-above,
-.field-name-field-ofed-team-social .label-above					{
+.field-name-field-ofed-team-social .label-above,
+.field-name-field-ofed-job-profile .label-above,
+.field-name-field-ofed-job-process .label-above,
+.field-name-field-ofed-job-description .label-above,
+.field-name-field-ofed-job-work-location .label-above,
+.field-name-field-ofed-job-docs	.label-above,
+.field-name-field-ofed-video-link .label-above,
+.field-name-field-ofed-page-video .label-above,
+.field-name-field-ofed-news-video .label-above,
+.field-name-field-ofed-press-video .label-above,
+.field-name-field-ofed-event-video .label-above,
+.field-name-field-ofed-meeting-video .label-above,
+.field-name-field-ofed-team-video .label-above,
+.field-name-field-ofed-job-video .label-above					{
 	text-decoration: underline;
 }
 
@@ -1514,7 +1559,20 @@ time															{
 .field-name-field-ofed-news-links .label-above,
 .field-name-field-ofed-press-docs .label-above,
 .field-name-field-ofed-press-contact .label-above,
-.field-name-field-ofed-press-links .label-above					{
+.field-name-field-ofed-press-links .label-above,
+.field-name-field-ofed-job-profile .label-above,
+.field-name-field-ofed-job-process .label-above,
+.field-name-field-ofed-job-description .label-above,
+.field-name-field-ofed-job-work-location .label-above,
+.field-name-field-ofed-job-docs	.label-above,
+.field-name-field-ofed-video-link .label-above,
+.field-name-field-ofed-page-video .label-above,
+.field-name-field-ofed-news-video .label-above,
+.field-name-field-ofed-press-video .label-above,
+.field-name-field-ofed-event-video .label-above,
+.field-name-field-ofed-meeting-video .label-above,
+.field-name-field-ofed-team-video .label-above,
+.field-name-field-ofed-job-video .label-above					{
 	font-weight: 600;
 	font-size: 1.1em;
 	padding-bottom: 10px;
@@ -1700,6 +1758,7 @@ time															{
 	padding: 10px 0 20px 0;
 	border-bottom: 1px solid #E0E0E0;
     position: relative;
+	display: block;
 }
 .page-list	ul li h2										{
     font-size: 1.8em;
@@ -1732,7 +1791,9 @@ time															{
 .view-display-id-ofed_photogallery_block_column .views-row,
 .view-display-id-ofed_event_block_column .views-row,
 .view-display-id-ofed_meeting_block_column .views-row,
-.view-display-id-ofed_team_block_column .views-row		{
+.view-display-id-ofed_team_block_column .views-row,
+.view-display-id-ofed_job_block_column .views-row,
+.view-display-id-ofed_video_block_column .views-row			{
 	float:left;    
 	width:33%;
 }
@@ -1758,7 +1819,11 @@ time															{
 .view-display-id-ofed_meeting_block_column:before,
 .view-display-id-ofed_meeting_block_column:after,
 .view-display-id-ofed_team_block_column:before,
-.view-display-id-ofed_team_block_column:after				{
+.view-display-id-ofed_team_block_column:after,
+.view-display-id-ofed_job_block_column:before,
+.view-display-id-ofed_job_block_column:after
+.view-display-id-ofed_video_block_column:before,
+.view-display-id-ofed_video_block_column:after				{
   display: table;
   content: " ";
   line-height: 0;
@@ -1774,7 +1839,8 @@ time															{
 .field-name-field-ofed-meeting-docs .view-mode-references,
 .field-name-field-ofed-event-address .view-mode-references,
 .field-name-field-ofed-meeting-address .view-mode-references,
-.field-name-field-ofed-team-contact .view-mode-references	{
+.field-name-field-ofed-team-contact .view-mode-references,
+.field-name-field-ofed-job-contact .view-mode-references	{
 	padding: 0;
 }
 
@@ -2380,6 +2446,8 @@ dl.quiz-report dt div.quiz-report-score-container			{
 	height: 1px;
 	border-bottom: 1px solid #fff;
 }
+
+
 /*		COLORBOX		*/
 #colorbox #cboxLoadedContent 								{
     margin-top: 28px;
@@ -2885,6 +2953,56 @@ span.social-button span.ext										{
 .field-name-anchor												{
 	margin-bottom: 20px;
 }
+
+/*		
+		JOB						
+*/
+
+.field-name-field-ofed-job-reference,
+.field-name-field-ofed-job-sector,
+.field-name-field-ofed-job-languages,
+.field-name-field-ofed-job-experience,
+.field-name-field-ofed-job-study-level 						{
+	padding : 5px 0;
+}
+.field-name-field-ofed-job-reference .label-inline,
+.field-name-field-ofed-job-sector .label-inline,
+.field-name-field-ofed-job-languages .label-inline,
+.field-name-field-ofed-job-experience .label-inline,
+.field-name-field-ofed-job-study-level .label-inline		{
+	text-decoration : underline;
+	font-weight: bold;
+}
+
+/*		
+		BANNER
+*/
+.banner														{
+	margin: 0 auto;
+	text-align: center;
+	border: 1px solid #E1DED7;
+	background: #F4F4F3;
+	padding: 10px;
+	margin: 10px 0;
+}
+header .banner,
+top .banner,
+bottom .banner,
+footer .banner												{
+	background : transparent;
+	border: none;
+}
+.banner.banner-button 										{
+	float: left;
+	margin: 0 10px;
+	padding: 10px 1.2em;
+}
+.aside-right .banner.banner-button ,
+.aside-left .banner.banner-button 							{
+	float: none;
+}
+
+
 /*		
 		MAINTENANCE PAGE		
 */

@@ -4,10 +4,10 @@ variable_set('print_display_sys_urllist', FALSE);
 variable_set('print_html_book_link', 1);
 variable_set('print_html_link_class', 'print-page');
 variable_set('print_html_link_pos', array(
-    'link' => 'link',
-    'block' => 'block',
-    'help' => 'help',
-    'corner' => 0
+  'link' => 'link',
+  'block' => 'block',
+  'help' => 'help',
+  'corner' => 0
 ));
 variable_set('print_html_link_teaser', FALSE);
 variable_set('print_html_link_use_alias', TRUE);

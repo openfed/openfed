@@ -1,6 +1,11 @@
 <?php
 
 /**
+ * @file
+ * Module needed to manage team members with the Openfed distribution.
+ */
+
+/**
  * Implements hook_theme_registry_alter().
  */
 function ofed_team_theme_registry_alter(&$theme_registry) {

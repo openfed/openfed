@@ -220,7 +220,7 @@ function ofed_feature_slideshow_views_default_views() {
     'und' => 'und',
     'en' => 'en',
     'fr' => 'fr',
-    'nl' => 'nl',    
+    'nl' => 'nl',
   );
   $handler->display->display_options['filters']['language']['group'] = 1;
   $handler->display->display_options['filters']['language']['exposed'] = TRUE;

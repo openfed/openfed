@@ -1,0 +1,8 @@
+name = Jobs - Module
+description = Manage jobs
+package = openFED
+core = 7.x
+version = "7.x-1.0"
+
+dependencies[] = ofed_download
+dependencies[] = ofed_feature_job

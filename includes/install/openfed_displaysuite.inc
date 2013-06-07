@@ -34,8 +34,8 @@ variable_set('ds_search_group_by_type', FALSE);
 variable_set('ds_search_group_by_type_other', 'Other');
 variable_set('ds_search_group_by_type_other_wrapper', 'markup');
 variable_set('ds_search_group_by_type_settings', array(
-    'panel' => array( 'status' => 1, 'label' => 'Results for panel', 'wrapper' => 'markup', 'weight' => 0 ),
-    'webform' => array( 'status' => 1, 'label' => 'Results for webform', 'wrapper' => 'markup', 'weight' => 0 )
+  'panel' => array('status' => 1, 'label' => 'Results for panel', 'wrapper' => 'markup', 'weight' => 0),
+  'webform' => array('status' => 1, 'label' => 'Results for webform', 'wrapper' => 'markup', 'weight' => 0)
   )
 );
 variable_set('ds_search_node_form_alter', FALSE);
@@ -64,69 +64,67 @@ variable_set('ds_classes_regions', '');
 /**
  * VIEW MODES 
  */
-
 $view_mode = new stdClass();
 $view_mode->view_mode = 'page_list';
 $view_mode->label = 'Page list';
-$view_mode->entities = array( 'node' => 'node' );
+$view_mode->entities = array('node' => 'node');
 drupal_write_record('ds_view_modes', $view_mode);
 
 $view_mode = new stdClass();
 $view_mode->view_mode = 'block_list';
 $view_mode->label = 'Block list';
-$view_mode->entities = array( 'node' => 'node' );
+$view_mode->entities = array('node' => 'node');
 drupal_write_record('ds_view_modes', $view_mode);
 
 $view_mode = new stdClass();
 $view_mode->view_mode = 'block_column';
 $view_mode->label = 'Block column';
-$view_mode->entities = array( 'node' => 'node' );
+$view_mode->entities = array('node' => 'node');
 drupal_write_record('ds_view_modes', $view_mode);
 
 $view_mode = new stdClass();
 $view_mode->view_mode = 'block_element';
 $view_mode->label = 'Block element';
-$view_mode->entities = array( 'node' => 'node' );
+$view_mode->entities = array('node' => 'node');
 drupal_write_record('ds_view_modes', $view_mode);
 
 $view_mode = new stdClass();
 $view_mode->view_mode = 'references';
 $view_mode->label = 'References';
-$view_mode->entities = array( 'node' => 'node' );
+$view_mode->entities = array('node' => 'node');
 drupal_write_record('ds_view_modes', $view_mode);
 
 
 /**
  * CODE FIELD 
  */
-
 // Node : Top of page
-  $field = new stdClass();
-  $field->properties = array(
-      'code' => array(
-        'value' => '<a href="#" class="top-of-page"><?php echo t("Top of page"); ?></a>',
-        'format' => 'ds_code'
-      ),
-      'use_token' => FALSE
-  );
-  $field->field = 'top_of_page';
-  $field->label = 'Top of page';
-  $field->entities = array( 'node' => 'node' );
-  $field->field_type = DS_FIELD_TYPE_CODE;
-  drupal_write_record('ds_fields', $field);
+$field = new stdClass();
+$field->properties = array(
+  'code' => array(
+    'value' => '<a href="#" class="top-of-page"><?php echo t("Top of page"); ?></a>',
+    'format' => 'ds_code'
+  ),
+  'use_token' => FALSE
+);
+$field->field = 'top_of_page';
+$field->label = 'Top of page';
+$field->entities = array('node' => 'node');
+$field->field_type = DS_FIELD_TYPE_CODE;
+drupal_write_record('ds_fields', $field);
 
 
 // Node : Anchor
-  $field = new stdClass();
-  $field->properties = array(
-      'code' => array(
-        'value' => '<span id="<?php echo $entity->nid;?>"></span>',
-        'format' => 'ds_code'
-      ),
-      'use_token' => FALSE
-  );
-  $field->field = 'anchor';
-  $field->label = 'Anchor';
-  $field->entities = array( 'node' => 'node' );
-  $field->field_type = DS_FIELD_TYPE_CODE;
-  drupal_write_record('ds_fields', $field);
+$field = new stdClass();
+$field->properties = array(
+  'code' => array(
+    'value' => '<span id="<?php echo $entity->nid;?>"></span>',
+    'format' => 'ds_code'
+  ),
+  'use_token' => FALSE
+);
+$field->field = 'anchor';
+$field->label = 'Anchor';
+$field->entities = array('node' => 'node');
+$field->field_type = DS_FIELD_TYPE_CODE;
+drupal_write_record('ds_fields', $field);

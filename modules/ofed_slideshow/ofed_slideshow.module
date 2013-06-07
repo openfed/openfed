@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * @file
+ * Module needed to manage slideshows with the Openfed distribution.
+ */
 require_once 'includes/ofed_slideshow.misc.inc';
 require_once 'includes/ofed_slideshow.blocks.inc';
 
@@ -28,22 +32,106 @@ function _ofed_slideshow_insert_after_first_element(&$a, $element) {
 }
 
 /**
- * Implements hook_theme().
- */
-function ofed_slideshow_theme($existing, $type, $theme, $path) {
-  return array(
-    'ofed_slideshow_block' => array(
-      'variables' => array('slideshows' => null),
-      'template' => 'templates/blocks/ofed_slideshow_block_content',
-    ),
-  );
-}
-
-/**
  * Implements hook_preprocess_node().
  */
 function ofed_slideshow_preprocess_node() {
   drupal_add_library('jquery_plugin', 'cycle');
   drupal_add_js(drupal_get_path('module', 'ofed_slideshow') . '/assets/scripts/ofed_slideshow.js');
   drupal_add_css(drupal_get_path('module', 'ofed_slideshow') . '/assets/styles/ofed_slideshow.css');
+}
+
+/**
+ * Implements hook_theme().
+ */
+//function ofed_slideshow_theme($existing, $type, $theme, $path) {
+//  return array(
+//    'ofed_slideshow_block' => array(
+//      'variables' => array('slideshows' => NULL),
+//      'template' => 'templates/blocks/ofed_slideshow_block_content',
+//    ),
+//  );
+//}
+
+/**
+ * Implements hook_node_update().
+ * @param type $node
+ */
+function ofed_slideshow_node_insert($node) {
+  if ($node->type == 'ofed_slideshow') {
+    // Set the language for the related block.
+    db_insert('i18n_block_language')
+    ->fields(array(
+      'module' => 'ofed_slideshow',
+      'delta' => 'ofed_slideshow' . $node->nid,
+      'language' => $node->language,
+    ))->execute();
+  }
+}
+
+/**
+ * Implements hook_node_update().
+ * @param type $node
+ */
+function ofed_slideshow_node_update($node) {
+  if ($node->type == 'ofed_slideshow' && $node->status  == FALSE) {
+    // Disable block.
+    db_query("UPDATE {block} SET status = 0 WHERE delta = 'ofed_slideshow_" . $node->nid . "'");
+  }
+}
+
+/**
+ * Implements hook_node_update().
+ * @param type $node
+ */
+function ofed_slideshow_node_delete($node) {
+  if ($node->type == 'ofed_slideshow') {
+    // Delete block.
+    db_query("DELETE FROM {block} WHERE delta = 'ofed_slideshow_" . $node->nid . "' AND module = 'ofed_slideshow" . $node->type . "'");
+    // Delete block language.
+    db_query("DELETE FROM {i18n_block_language} WHERE delta = 'ofed_slideshow_" . $node->nid . "' AND module = 'ofed_slideshow" . $node->type . "'");
+  }
+}
+
+/**
+ * Implements hook_block_info().
+ */
+function ofed_slideshow_block_info() {
+  // Initialize.
+  $blocks = array();
+
+  // Get all nodes if type is ofed_slideshow and published.
+  $result = db_query("SELECT nid, title, language FROM {node} WHERE type = 'ofed_slideshow' AND status = 1");
+  if ($result->rowCount() > 0) {
+    while ($record = $result->fetchAssoc()) {
+      // Create block.
+      $node = node_load($record['nid']);
+      $blocks['ofed_slideshow_' . $node->nid] = array(
+        'info' => t('Slideshow (!language): !title', array('!title' => $record['title'], '!language' => strtoupper($record['language']))),
+        'cache' => DRUPAL_NO_CACHE,
+      );
+    }
+  }
+
+  // Return.
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function ofed_slideshow_block_view($delta = '') {
+  // Initialize.
+  $block = array();
+  
+  if (preg_match('#^ofed_slideshow#', $delta)) {
+    $nid = str_replace('ofed_slideshow_', '', $delta); 
+    if ($nid && is_numeric($nid)) {
+      // Define the block properties.
+      $block['subject'] = '';
+      $block['content'] = _ofed_slideshow_block_render_slider($nid);
+    }
+  }
+
+  // Return.
+  return $block;
 }

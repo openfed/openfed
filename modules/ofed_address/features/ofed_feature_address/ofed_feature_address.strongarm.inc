@@ -209,9 +209,7 @@ function ofed_feature_address_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_options_ofed_address';
-  $strongarm->value = array(
-    0 => 'status',
-  );
+  $strongarm->value = array();
   $export['node_options_ofed_address'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -280,30 +278,30 @@ function ofed_feature_address_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'pathauto_taxonomy_term_ofed_address_pattern';
-  $strongarm->value = '[term:vocabulary:i18n-name]/[term:name]';
-  $export['pathauto_taxonomy_term_ofed_address_pattern'] = $strongarm;
-  
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_taxonomy_term_ofed_address_en_pattern';
   $strongarm->value = 'addresses/[term:name]';
   $export['pathauto_taxonomy_term_ofed_address_en_pattern'] = $strongarm;
-  
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'pathauto_taxonomy_term_ofed_address_nl_pattern';
-  $strongarm->value = 'adressen/[term:name]';
-  $export['pathauto_taxonomy_term_ofed_address_nl_pattern'] = $strongarm;
-  
+
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_taxonomy_term_ofed_address_fr_pattern';
   $strongarm->value = 'adresses/[term:name]';
   $export['pathauto_taxonomy_term_ofed_address_fr_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_ofed_address_nl_pattern';
+  $strongarm->value = 'adressen/[term:name]';
+  $export['pathauto_taxonomy_term_ofed_address_nl_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_ofed_address_pattern';
+  $strongarm->value = '[term:vocabulary:i18n-name]/[term:name]';
+  $export['pathauto_taxonomy_term_ofed_address_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

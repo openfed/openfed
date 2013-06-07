@@ -32,56 +32,55 @@ function openfed_role_form() {
 function openfed_role_form_submit($form, &$form_state) {
   $values = $form_state['values'];
 
-
-  if ( !empty($values['role_list']) ) {
+  if (!empty($values['role_list'])) {
     /* GENERATE DYNAMIC PERMISSION */
     $permission_language = array();
 
-    foreach ( language_list() as $langcode => $langobject ) {
+    foreach (language_list() as $langcode => $langobject) {
       $permission_language["manage $langcode translation overview priorities"] = TRUE;
     }
 
     $permission_vocabularies = array();
     $vocabularies = taxonomy_vocabulary_machine_name_load('categories');
 
-    if ( $vocabularies != FALSE ) {
+    if ($vocabularies != FALSE) {
       $permission_vocabularies["edit terms in " . $vocabularies->vid] = TRUE;
       $permission_vocabularies["delete terms in " . $vocabularies->vid] = TRUE;
     }
 
-    if ( $values['role_list']['configurator'] === 'configurator' ) {
+    if ($values['role_list']['configurator'] === 'configurator') {
       // Manage Configurator information
-        $conf_role = new stdClass();
-        $conf_role->name = 'Configurator';
-        $conf_role->weight = 5;
-        user_role_save($conf_role);
+      $conf_role = new stdClass();
+      $conf_role->name = 'Configurator';
+      $conf_role->weight = 5;
+      user_role_save($conf_role);
       // Assign permission
-        $conf_role = user_role_load_by_name('Configurator');
-        $permission = array_merge(_openfed_return_permission_configurator(), $permission_language, $permission_vocabularies);
-        user_role_change_permissions($conf_role->rid, $permission );
+      $conf_role = user_role_load_by_name('Configurator');
+      $permission = array_merge(_openfed_return_permission_configurator(), $permission_language, $permission_vocabularies);
+      user_role_change_permissions($conf_role->rid, $permission);
     }
 
-    if ( $values['role_list']['content_manager'] === 'content_manager' ) {
+    if ($values['role_list']['content_manager'] === 'content_manager') {
       // Manage Content Manager information
-        $cm_role = new stdClass();
-        $cm_role->name = 'Content Manager';
-        $cm_role->weight = 6;
-        user_role_save($cm_role);
+      $cm_role = new stdClass();
+      $cm_role->name = 'Content Manager';
+      $cm_role->weight = 6;
+      user_role_save($cm_role);
       // Assign permission
-        $cm_role = user_role_load_by_name('Content Manager');
-        $permission = array_merge(_openfed_return_permission_content_manager(), $permission_language, $permission_vocabularies);
-        user_role_change_permissions($cm_role->rid, $permission );
+      $cm_role = user_role_load_by_name('Content Manager');
+      $permission = array_merge(_openfed_return_permission_content_manager(), $permission_language, $permission_vocabularies);
+      user_role_change_permissions($cm_role->rid, $permission);
     }
 
-    if ( $values['role_list']['user_manager'] === 'user_manager' ) {
+    if ($values['role_list']['user_manager'] === 'user_manager') {
       // Manage User Manager information
-        $um_role = new stdClass();
-        $um_role->name = 'User Manager';
-        $um_role->weight = 7;
-        user_role_save($um_role);
+      $um_role = new stdClass();
+      $um_role->name = 'User Manager';
+      $um_role->weight = 7;
+      user_role_save($um_role);
       // Assign permission
-        $um_role = user_role_load_by_name('User Manager');
-        user_role_change_permissions($um_role->rid, _openfed_return_permission_user_manager() );
+      $um_role = user_role_load_by_name('User Manager');
+      user_role_change_permissions($um_role->rid, _openfed_return_permission_user_manager());
 
       // Create rule to warn User Manager when ther is a new user account created
       if (module_exists('rules')) {
@@ -118,15 +117,15 @@ function openfed_role_form_submit($form, &$form_state) {
       }
     }
 
-    if ( $values['role_list']['user_manager'] === 'authenticated_visitor' ) {
+    if ($values['role_list']['user_manager'] === 'authenticated_visitor') {
       // Manage Authenticated visitor information
-        $av_role = new stdClass();
-        $av_role->name = 'Authenticated Visitor';
-        $av_role->weight = 8;
-        user_role_save($av_role);
+      $av_role = new stdClass();
+      $av_role->name = 'Authenticated Visitor';
+      $av_role->weight = 8;
+      user_role_save($av_role);
       // Assign permission
-        $av_role = user_role_load_by_name('Authenticated Visitor');
-        user_role_change_permissions($av_role->rid, _openfed_return_permission_authenticated_visitor() );
+      $av_role = user_role_load_by_name('Authenticated Visitor');
+      user_role_change_permissions($av_role->rid, _openfed_return_permission_authenticated_visitor());
     }
   }
 
@@ -164,7 +163,7 @@ function openfed_role_form_submit($form, &$form_state) {
 
     $updated_roles = array('Builder', 'Configurator', 'User Manager');
 
-    foreach($updated_roles as $role) {
+    foreach ($updated_roles as $role) {
       $web_role = user_role_load_by_name($role);
 
       if ($role !== 'User Manager') {

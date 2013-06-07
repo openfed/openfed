@@ -13,11 +13,11 @@ function ofed_feature_meeting_taxonomy_default_vocabularies() {
       'name' => 'Meeting',
       'machine_name' => 'ofed_meeting',
       'description' => '',
-      'hierarchy' => '0',
+      'hierarchy' => 0,
       'module' => 'taxonomy',
-      'weight' => '0',
+      'weight' => 0,
       'language' => 'und',
-      'i18n_mode' => '4',
+      'i18n_mode' => 4,
     ),
   );
 }

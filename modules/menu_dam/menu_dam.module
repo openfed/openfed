@@ -1,6 +1,11 @@
 <?php
 
 /**
+ * @file
+ * Module needed to update the menu active default.
+ */
+
+/**
  * Implement hook_menu_insert().
  */
 function menu_dam_menu_insert() {

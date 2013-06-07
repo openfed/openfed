@@ -2,8 +2,8 @@
 
 /**
  * Return the form for functionalities set up.
- * 
- * @return array 
+ *
+ * @return array
  */
 function openfed_functionalities_form() {
   drupal_set_title(st('Functionalities configuration'));
@@ -31,9 +31,9 @@ function openfed_functionalities_form() {
 
 /**
  * Manage the submit of the form.
- * 
+ *
  * @param array $form
- * @param array $form_state 
+ * @param array $form_state
  */
 function openfed_functionalities_form_submit($form, &$form_state) {
   $values = $form_state['values'];
@@ -51,35 +51,37 @@ function openfed_functionalities_form_submit($form, &$form_state) {
         variable_set($var, $theme);
       }
     }
-    
+
     $module_list = array();
     foreach ($values['module_list'] as $key => $name) {
       if ($key === $name) {
         $module_list[] = $name;
       }
     }
-    
+
     variable_set('openfed_need_batch_functionalities', TRUE);
     variable_set('openfed_need_batch_functionalities_functions', $module_list);
   }
+
+  _openfed_functionalities_grant_permissions();
 }
 
 /**
  * batch function to enable functionalities
  */
 function openfed_batch_functionalities() {
-  $values = variable_get( 'openfed_need_batch_functionalities_functions' );
+  $values = variable_get('openfed_need_batch_functionalities_functions');
 
-  if ( !empty($values) ) {
+  if (!empty($values)) {
     $batch = array(
-        'title'         => st('Importing functionalities'),
-        'operations' => array(
-          array('_openfed_batch_enabling_functionalities', array($values, TRUE)),
-        ),
-        'finished' => '_openfed_batch_finished_functionalities',
-        'init_message'  => st('Starting import functionalities'),
-        'error_message' => st('Error importing functionalities'),
-      );
+      'title' => st('Importing functionalities'),
+      'operations' => array(
+        array('_openfed_batch_enabling_functionalities', array($values, TRUE)),
+      ),
+      'finished' => '_openfed_batch_finished_functionalities',
+      'init_message' => st('Starting import functionalities'),
+      'error_message' => st('Error importing functionalities'),
+    );
     batch_set($batch);
     batch_process('http://' . $_SERVER['HTTP_HOST'] . '/install.php?profile=openfed&locale=en');
   }
@@ -93,22 +95,22 @@ function openfed_batch_functionalities() {
  * declaration of batch operation to enable functionalities
  */
 function _openfed_batch_enabling_functionalities($module_list, $enable_dependencies, &$context) {
-  module_enable( $module_list, $enable_dependencies );
+  module_enable($module_list, $enable_dependencies);
 }
 
 /**
- * declaration of batch finished function 
+ * declaration of batch finished function
  */
 function _openfed_batch_finished_functionalities($success, $results, $operations) {
   if ($success) {
     variable_del('openfed_need_batch_functionalities');
     variable_del('openfed_need_batch_functionalities_functions');
-    drupal_set_message(t('Success importing functionalities')); 
+    drupal_set_message(t('Success importing functionalities'));
   }
   else {
-    drupal_set_message(t('BatchError importing functionalities')); 
+    drupal_set_message(t('BatchError importing functionalities'));
   }
-  
+
   $enable = array(
     'theme_default' => 'bartik',
     'admin_theme' => 'seven',
@@ -121,8 +123,72 @@ function _openfed_batch_finished_functionalities($success, $results, $operations
       variable_set($var, $theme);
     }
   }
-  
-  if (module_exists('ofed_federalheader') ) {
+
+  if (module_exists('ofed_federalheader')) {
     _openfed_set_block_into_region('ofed_federalheader', 'federalheader', 'tools');
+  }
+}
+
+function _openfed_functionalities_grant_permissions() {
+  // content related roles
+  $roles = array(
+    'Administrator',
+    'Builder',
+    'Configurator',
+    'Content Manager',
+  );
+  // retreive node permissions
+  $permissions = module_invoke('node', 'permission');
+  $permissions = array_keys($permissions);
+  $override_permissions = module_invoke('override_node_options', 'permission');
+  $override_permissions = array_keys($override_permissions);
+  $perms = array_merge($permissions, $override_permissions);
+  $revoke = array();
+
+  $revoke['Content Manager'] = array(
+    'bypass node access',
+    'administer content types',
+    'administer nodes',
+    'create ofed_banner content',
+    'create ofed_slider content',
+    'create ofed_slideshow content',
+    'create panel content',
+    'edit own panel content',
+    'edit any panel content',
+    'delete own panel content',
+    'delete any panel content',
+    'delete any webform content',
+    'override panel published option',
+    'override panel promote to front page option',
+    'override panel sticky option',
+    'override panel revision option',
+    'enter panel revision log entry',
+    'override panel authored on option',
+    'override panel authored by option',
+    'override webform authored by option',
+  );
+  $revoke['Builder'] = array(
+    'bypass node access',
+    'administer nodes',
+    'delete revisions',
+    'delete any webform content',
+    'delete any panel content',
+  );
+  $revoke['Configurator'] = array(
+    'delete revisions',
+    'delete any webform content',
+    'delete any panel content',
+  );
+
+  foreach ($roles as $role_name) {
+    $role = user_role_load_by_name($role_name);
+
+    if (!empty($role->rid)) {
+      user_role_grant_permissions($role->rid, $perms);
+
+      if (!empty($revoke[$role_name])) {
+        user_role_revoke_permissions($role->rid, $revoke[$role_name]);
+      }
+    }
   }
 }

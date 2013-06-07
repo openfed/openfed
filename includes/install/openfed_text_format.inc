@@ -28,14 +28,14 @@ $filtered_html_format = array(
     ),
   ),
 );
-if (module_exists('ckeditor_link') ) {
+if (module_exists('ckeditor_link')) {
   // HTML corrector filter.
   $filtered_html_format['filters']['ckeditor_link_filter'] = array(
     'weight' => 8,
     'status' => 1,
   );
 }
-if (module_exists('table_altrow') ) {
+if (module_exists('table_altrow')) {
   // Add odd/even on table row
   $filtered_html_format['filters']['table_altrow'] = array(
     'weight' => 9,
@@ -50,13 +50,13 @@ $arr['allowed_html'] = "<a> <em> <strong> <cite> <blockquote> <code> <ul> <ol> <
 $arr['filter_html_help'] = 1;
 $arr['filter_html_nofollow'] = 0;
 db_update('filter')
-          ->fields(array(
-              'settings' => serialize($arr),
-          ))
-          ->condition('format', 'filtered_html', '=')
-          ->condition('module', 'filter', '=')
-          ->condition('name', 'filter_html', '=')
-          ->execute();
+  ->fields(array(
+    'settings' => serialize($arr),
+  ))
+  ->condition('format', 'filtered_html', '=')
+  ->condition('module', 'filter', '=')
+  ->condition('name', 'filter_html', '=')
+  ->execute();
 
 
 
@@ -83,14 +83,14 @@ $full_html_format = array(
     ),
   ),
 );
-if (module_exists('ckeditor_link') ) {
+if (module_exists('ckeditor_link')) {
   // HTML corrector filter.
   $full_html_format['filters']['ckeditor_link_filter'] = array(
     'weight' => 8,
     'status' => 1,
   );
 }
-if (module_exists('table_altrow') ) {
+if (module_exists('table_altrow')) {
   // Add odd/even on table row
   $full_html_format['filters']['table_altrow'] = array(
     'weight' => 9,

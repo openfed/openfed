@@ -1,86 +1,149 @@
- CHANGELOG
+CHANGELOG
 ===========
 
-14 April 2013
--------------
-  * Issue
-    Fixing minor issues related to the content type's features
-    
-  * Module updated
-    Custom
-      - addemar_subscription : Multiple newsletters now available (not stable yet)
-      - ofed_address : Adding page list view
-      
-  * Patch
+07 June 2013
+------------
+
+  * Issues:
+    # 2002578: New modules: facetapi etc
+    # 2000554: New module: views_data_export
+    # 2000544: New module: webform_rules
+    # 1999268: New module: calendar
+    # 1996582: New module: registration
+    # 2005132: New module: entity_translation
+    # 1968974: Module upgrade: views
+    # 1968966: Module upgrade: features
+    # 2006716: Module upgrade: securelogin
+    # 2002588: Module upgrade: backup_migrate
+    # 1999278: Module upgrade: performance
+    # 1999276: Module upgrade: ds
+    # 1968972: Module upgrade: jquery_update
+    # 1968978: Module upgrade: text_resize
+    # 1994938: Module upgrade: metatag
+    # 1994940: Module upgrade: scheduler
+    # 1994926: Module upgrade: flag
+    # 1999272: Module upgrade: colorbox
+    # 1994936: Module upgrade: ckeditor
+    # 1994918: Library upgrade: ckeditor
+    # 1968954: Colorbox plugin missing
+    Fixing issues relative to an internal document and bug tracking.
+
+  * Modules added:
       Contrib
-        - pathauto : patches to fix issues with multilingual taxonomy paths
-    
+        - facetapi (1.3)
+        - facetapi_i18n (1.0-beta2)
+        - views_data_export (3.0-beta6)
+        - webform_rules (1.6)
+        - calendar (3.4)
+        - registration (1.1)
+        - entity_translation (1.0-beta2)
+      Custom
+        - ofed_vmcd (1.0), replace ofed_pagemodel
+
+  * Modules updated:
+      Contrib
+        - views (3.7)
+        - features (2.0-rc1) 
+        - securelogin (2.5)
+        - backup_migrate (2.7)
+        - performance (2.0-beta1)
+        - ds (2.3)
+        - jquery_update (2.3)
+        - text_resize (1.8)
+        - metatag (1.0-beta7)
+        - scheduler (1.1)
+        - flag (2.1)
+        - colorbox (2.4)
+        - ckeditor (1.13)
+
+  * Modules removed: 
+      Custom
+        - ofed (1.0)
+        - ofed_pagemodel (1.0), renamed by ofed_vmcd
+
+  * Themes updated:
+      Custom 
+        - nerra: update the nerra_button function to generate the buttons class correctly.
+
+  * Patches:
+    Contrib
+      - entityreference: Fix issue related to devel_generate
+      - field-conditional-state: Fix issue with undifined property in stdclass
+      - link: Fix title value in link field update
+      - quiz: - Fix issue with permission name
+              - Fix issue with long answer
+              - Fix issue with undefined index
+
+
+13 April 2013
+-------------
+  * Modules updated:
+    Custom
+      - addemar_subscription: Multiple newsletters now available 
 
 07 April 2013
 -------------
   
-  * Issue
+  * Issues:
     #1977862: Module upgrade: content_access
     #1977858: Module upgrade: mollom
     #1960628: Librabry upgrade: ckeditor
-    #1965920: Patch : logintoboggan
+    #1965920: Patch: logintoboggan
     #1970480: Remove content type bar
     #1943270: Installation warning: file_put_contents permission denied
     Fixing issues relative to an internal document.
     
-  * Module updated
+  * Modules updated:
       Contrib
         - content_access (1.2-beta2)
         - mollom (2.6)
 
-  * Patch
+  * Patches:
       Contrib
-        - logintoboggan : patch added to fix the password length issue
-
-        
+        - logintoboggan: patch added to fix the password length issue
 
 22 April 2013
 -------------
   
-  * Issue
+  * Issues:
     Fixing issues relative to an internal document.
 
 09 April 2013
 -------------
   
-  * Issue
+  * Issues:
     #1958960: Module upgrade: rules
     #1958962: Module upgrade: views
     #1960586: Module upgrade: ctools
 
-  * Features 
+  * Features:
     - ofed_slider added
     - ofed_quiz added
     
-  * Module updated
+  * Modules updated:
       Contrib
         - rules (2.3)
         - views (3.6)
         - ctool (1.3)
 
-  * Modules added
+  * Modules added:
       Contrib
         - quiz (4.0-alpha12)
       Custom
-        - addemar_subscription : Display a form in a page or in a block to subscribe to addemar
+        - addemar_subscription: Display a form in a page or in a block to subscribe to addemar
         - ofed_slider
         - ofed_quiz
 
-  * Patch
+  * Patches:
       Contrib
-        - quiz : patch added to avoid : warning: preg_match(): no ending delimiter '.' found in file_scan_directory()
+        - quiz: patch added to avoid: warning: preg_match(): no ending delimiter '.' found in file_scan_directory()
 
 13 March 2013
 -------------
 
   * Drupal updated to 7.21
 
-  * Issue
+  * Issues:
     #1930914: Drupal core update
     #1930916: Module upgrade: ds
     #1930920: Module upgrade: token
@@ -97,15 +160,15 @@
     #1933898: Performance: enable cache for anonymous users
     #1844836: Undefined index: site_404
 
-  * Features
+  * Features:
     - ofed_address added
     - ofed_event added
     - ofed_meeting added
 
-  * Theme
-    - cms_theme : force the theme to be used in English with a code in template.php beacause "admin_language" module is not stable
+  * Themes:
+    - cms_theme: force the theme to be used in English with a code in template.php beacause "admin_language" module is not stable
 
-  * Module updated
+  * Modules updated:
       Contrib
         - ds (2.2)
         - token (1.5)
@@ -116,33 +179,32 @@
         - weight (2.2)
         - robotstxt (1.1)
 
-  * Modules added
+  * Modules added:
       Contrib
         - simple_gmap (1.0)
         - quiz (4.0-alpha12)
       Custom
-        - addemar_subscription : Display a form in a page or in a block to subscribe to addemar
+        - addemar_subscription: Display a form in a page or in a block to subscribe to addemar
         - ofed_address
         - ofed_event
         - ofed_meeting
         - ofed_team
         - waia_integration
 
-  * Patch
+  * Patches:
       Contrib
-        - quiz : patch added to avoid : warning: preg_match(): no ending delimiter '.' found in file_scan_directory()
-        - metatag : patch added to avoid : Theme key "metatag_twitter_cards" not found.
-    
+        - quiz: patch added to avoid: warning: preg_match(): no ending delimiter '.' found in file_scan_directory()
+        - metatag: patch added to avoid: Theme key "metatag_twitter_cards" not found.  
 
 28 February 2013
 ----------------
 
-  * Issue
+  * Issues:
     #1905492: jquery and colorbox libraries in repo
     #1852826: Library ckeditor not found by module
     #1905108: transparent png assets
 
-  * Features updated
+  * Features updated:
     - rename the feature ofed_new to ofed_news
     - manage sticky in all content types views
     
@@ -150,14 +212,14 @@
     - sharethis
     - force the openfed install profile to check php_memory_limit to have at least 256M
 
-  * Modules added
+  * Modules added:
       Contrib
         - ShareThis	(2.5)
       Custom
-        - menu_dam : Allow all custom menus to receive an active trail
-        - maintenance_theme_selector : Maintenance theme module allow to select an another theme to use with the maintenance mode
+        - menu_dam: Allow all custom menus to receive an active trail
+        - maintenance_theme_selector: Maintenance theme module allow to select an another theme to use with the maintenance mode
 
-  * Module updated
+  * Modules updated:
     - colorbox (2.3)
     - seckit (1.5)
     - mollom (2.4)
@@ -167,21 +229,20 @@
     - ckeditor (1.12)
     - admin_menu (3.0-rc4)
 
-  * Patch
+  * Patch:
       Drupal Core
         - Allow install profiles to change the system requirements
         - Tests for: $info['fields'] not always set?
         - Registry rebuild should not parse the same file twice in the same request
       Contrib
-        - Ctools : ctools fix warning message
-        - Features : features static caches
-        - Scheduler : more integration options
-
+        - Ctools: ctools fix warning message
+        - Features: features static caches
+        - Scheduler: more integration options
 
 31 January 2013
 ---------------
 
-  * Issue
+  * Issues:
     #1852826: Library ckeditor not found by module
     #1885022: Library update: ckeditor
     #1886324: Document php memory_limit
@@ -195,15 +256,15 @@
     #1890524: Image slideshow error
     #1901896: Enable cron by default
 
-  * Content
+  * Content:
     - add default contact webform for each language if activated
     - add default menu_block for submenu for each language if activated
     
-  * Features
+  * Features:
     - add a path alias for French or Dutch if enabled
     - change display of date field: every content type featured used date_only except news that show short date
 
-  * Config
+  * Config:
     - Default Webform config added
     - Default Google analytics config removed
     - Google analytics is no more installed by default
@@ -211,11 +272,11 @@
     - libraries path changed
     - Features display (layout, fields,...) moved in installer to put config in database
 
-  * Libraries
+  * Libraries:
     - libraries are not downloaded anymore but included by default in the profil now.
     - jquery.imagesloaded added
 
-  * Module updated
+  * Modules updated:
     - Entity (1.0)
     - i18n (1.8)
     - imagecache_actions (1.1)
@@ -223,44 +284,40 @@
     - views_bulk_operations (3.1)
     - xmlsitemap (2.0-rc2)
 
-  * Theme
+  * Themes:
     - Change inclusion of scripts and styles
-
 
 21 January 2013
 ---------------
 
-  * Issue
+  * Issues:
     #1838210: Support for Postgresql in profile installation file
     #1894530: Core update: Drupal 7.19
 
   * Drupal updated to 7.19
 
-  * Module updated
+  * Modules updated:
     - patch added for text_resize
-    
-
 
 11 January 2013
 ---------------
 
-  * Issue
-    #1885012 : Core update: Drupal 7.18
-    #1885022 : Library update: ckeditor
-    #1885124 : Error: Column 'module' cannot be null
-
+  * Issues:
+    #1885012: Core update: Drupal 7.18
+    #1885022: Library update: ckeditor
+    #1885124: Error: Column 'module' cannot be null
 
 09 January 2013
 ---------------
 
- * Issue
+ * Issues:
   #1852784: Installation screen: Setup functionalities not accessible with keyboard ?
   #1852934: Maintenance theme: image not found
 
- * Module updated 
+ * Modules updated: 
     - linkchecker (1.0)
 
- * Module added:
+ * Modules added:
     - easy_breadcrumb
     - field_slideshow
     - rules
@@ -276,7 +333,7 @@
  * Content type:
   - default set of field display added
 
- * Theme:
+ * Themes:
     - nerra
       - Breadcrumb region added
       - Theming for content type
@@ -286,27 +343,27 @@
 
 28 november 2012
 ----------------
- * Issue
-  #1852770: Installation screen: translation of languages
-  #1852774: Installation screen: setup roles
-  #1852804: Missing module: references
-  #1852820: Module upgrade: entityreference
-  #1852910: Module upgrade: countries
-  #1852918: Module upgrade: diff (2.0 is unsupported)
-  #1852920: Module upgrade: metatag
+ * Issues:
+    #1852770: Installation screen: translation of languages
+    #1852774: Installation screen: setup roles
+    #1852804: Missing module: references
+    #1852820: Module upgrade: entityreference
+    #1852910: Module upgrade: countries
+    #1852918: Module upgrade: diff (2.0 is unsupported)
+    #1852920: Module upgrade: metatag
 
- * Module added:
+ * Modules added:
     - sweaver (1.3)
     - colorbox
     - field_slideshow
     
- * Module updated 
+ * Modules updated:
     - countries (2.1)
     - diff (3.2)
     - entityreference (1.0)
     - metatag (1.0-beta4)
 
- * Theme:
+ * Themes:
 	- minimal layout added to nerra
 	- minimal layout added to cms_theme
 
@@ -319,16 +376,17 @@
     - Create a default Builder user
     - search_config
 
-* Module remove: 
+* Modules remove: 
     - better_formats
 
 21 november 2012
 ----------------
- * Issue #1837894 : Library update: ckeditor
- * Issue #1838178 : Missing module: ckeditor
+ * Issues: 
+    #1837894: Library update: ckeditor
+    #1838178: Missing module: ckeditor
 
  * Drupal updated to 7.17
- * Module updated 
+ * Modules updated: 
     - ds (2.0)
     - email (1.2)
     - flag (2.0)
@@ -340,7 +398,7 @@
     - token (1.4)
     - views (3.5)
 
- * Module added: 
+ * Modules added: 
     - better_formats
     - draggableviews
     - lexicon
@@ -351,8 +409,8 @@
     - translation_table
     - weight
 
- * Theme added:
-    - maintenance : manage a maintenance theme for the install profile and batching process
+ * Themes added:
+    - maintenance: manage a maintenance theme for the install profile and batching process
 
  * Tasks added:
     - install task about language selection
@@ -377,5 +435,7 @@
 
 9 november 2012
 ---------------
- * Issue #1836414 : workaround for building distro in sandbox
+ * Issues:
+    #1836414: workaround for building distro in sandbox
+
  * First Release

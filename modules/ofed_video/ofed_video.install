@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * Implements hook_schema().
+ */
+function ofed_video_schema() {
+  
+}
+
+/**
+ * Implements hook_install().
+ */
+function ofed_video_install() {
+  
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function ofed_video_uninstall() {
+  
+}

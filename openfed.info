@@ -24,7 +24,6 @@ core = 7.x
   dependencies[] = options
   dependencies[] = path
   dependencies[] = search
-  dependencies[] = statistics
   dependencies[] = syslog
   dependencies[] = taxonomy
   dependencies[] = text
@@ -187,8 +186,7 @@ core = 7.x
     dependencies[] = xmlsitemap_node
 
 ; OpenFed
-  dependencies[] = ofed
   dependencies[] = ofed_download
   dependencies[] = ofed_page
-  dependencies[] = ofed_pagemodel
+  dependencies[] = ofed_vmcd
   dependencies[] = ofed_switcher

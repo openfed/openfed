@@ -1,0 +1,131 @@
+<?php
+
+/**
+ * Implements hook_schema().
+ */
+function ofed_job_schema() {
+  
+}
+
+/**
+ * Implements hook_install().
+ */
+function ofed_job_install() {
+  // Install Taxonomy vocabulary
+  $vocabularies = array(
+    'ofed_job_experience' => array(
+      'name' => 'Job experience',
+      'machine_name' => 'ofed_job_experience',
+      'description' => '',
+      'hierarchy' => '0',
+      'module' => 'taxonomy',
+      'weight' => '0',
+      'language' => 'und',
+      'i18n_mode' => '4',
+    ),
+    'ofed_job_occupation' => array(
+      'name' => 'Job occupation',
+      'machine_name' => 'ofed_job_occupation',
+      'description' => '',
+      'hierarchy' => '0',
+      'module' => 'taxonomy',
+      'weight' => '0',
+      'language' => 'und',
+      'i18n_mode' => '4',
+    ),
+    'ofed_job_study_level' => array(
+      'name' => 'Job study level',
+      'machine_name' => 'ofed_job_study_level',
+      'description' => '',
+      'hierarchy' => '0',
+      'module' => 'taxonomy',
+      'weight' => '0',
+      'language' => 'und',
+      'i18n_mode' => '4',
+    ),
+  );
+
+  // Install taxonomy terms...
+  $existing = taxonomy_get_vocabularies();
+  foreach ($vocabularies as $vocabulary) {
+    $vocabulary = (object) $vocabulary;
+    foreach ($existing as $existing_vocab) {
+      if ($existing_vocab->machine_name === $vocabulary->machine_name) {
+        $vocabulary->vid = $existing_vocab->vid;
+      }
+    }
+    taxonomy_vocabulary_save($vocabulary);
+  }
+  // Build terms array.
+  $experiences = array(
+    'en' => array('First job', '< 6 months', '6 months - 2 years', '2 years - 5 years', '5 years - 10 years', '> 10 years'),
+    'fr' => array('Premier emploi', '< 6 mois', '6 mois - 2 ans', '2 ans - 5 ans', '5 ans - 10 ans', '> 10 ans'),
+    'nl' => array('Eerste job', '< 6 maanden', '6 maanden - 2 jaar', '2 jaar - 5 jaar', '5 jaar - 10 jaar', '> 10 jaar'),
+  );
+  $occupations = array(
+    'en' => array('IT and Telecommunications', 'Sales & Purchasing', 'Banking, Finance Services & Insurance', 'Human Resources', 'Media & Information', 'Transport & Logistics', 'R&D, Science & Scientific Research', 'Land, Sea, Environment & Veterinary', 'Law', 'Education & Training', 'Police, Security and Protective', 'Engineering & Technical Jobs', 'Finance Administration & Auditing', 'Administrative Support & Secretarial', 'Marketing & Advertising', 'General Management', 'Manufacturing, Building and Manual Work', 'Health, Medicine, Social & Fitness', 'Accommodation, Catering & Tourism', 'Design & Architecture', 'Culture & Fine Arts', 'Public Services'),
+    'fr' => array('IT et Telecommunication', 'Vente et Achat', 'Banques, Services financiers & Assurance', 'Ressources Humaines', 'Media & Information', 'Transport & Logistique', 'R&D, Science & Recherche Scientifique', 'Terre, Mer, Environnement & Santé animalière', 'Droit', 'Formation & Training', 'Police, Sécurité et Protection', 'Engineering & Technique', 'Administration, Finance & Audit', 'Secrétariat et Support administratif', 'Marketing & Publicité', 'Direction Générale', 'Production, Construction, Artisanat', 'Santé, Médecine, Social', 'Horeca, Tourisme', 'Conception et architecture', 'Culture et art', 'Services publics'),
+    'nl' => array('IT en Telecommunicatie', 'Verkoop en inkoop', 'Banken, financiële diensten en verzekeringen', 'HR', 'Media en informatie', 'Transport en logistiek', 'R&D, wetenschap en wetenschappelijk onderzoek', 'Land, zee, milieu en natuurbehoud', 'Juridisch', 'Opleiding en training', 'Politie, Veiligheid en Beveiliging', 'Engineering & techniek', 'Financiën, administratie & accounting', 'Administratieve ondersteuning & secretariaat', 'Marketing, reclame & communicatie', 'General Management', 'Productie, constructie en handvaardigheid', 'Gezondheidszorg, sociale- en medische diensten', 'Horeca, toerisme', 'Ontwerp en architectuur', 'Cultuur en kunst', 'Overheidsdiensten'),
+  );
+  $studies = array(
+    'en' => array('Primary School', 'Secondary Education (Vocational)', 'Secondary Education (Artistic)', 'Secondary Education (Technical)', 'Secondary Education (General)', 'Specialisation', 'Profession-oriented bachelor (3y) (old: Higher Education Short Type - Graduate)', 'Academic bachelor (3y) + Master (1 or 2y) (old: Higher Education Long Type)', 'Academic bachelor (3y) + Master (1 or 2y) (old: university, licence)', 'Subsequent Bachelor', 'Subsequent Master', 'Doctorate', 'Professional Degree', 'Other'),
+    'fr' => array('Enseignement Primaire', 'Enseignement Secondaire (Professionnel)', 'Enseignement Secondaire (Artistique)', 'Enseignement Secondaire (Technique)', 'Enseignement Secondaire (Général)', 'Année de Spécialisation', 'Bachelier à orientation professionnelle (3 ans) (Enseignement Supérieur de Type Court – Graduat)', 'Bachelier académique (3 ans) + Master (1 ou 2 ans) (Enseignement Supérieur de Type Long)', 'Bachelier académique (3 ans) + Master (1 ou 2 ans) (université, licence)', 'Bachelier aprés bachelier', 'Doctorat', 'Accès à la Profession', 'Autres'),
+    'nl' => array('Lager onderwijs', 'Secundair Onderwijs (Beroeps)', 'Secundair Onderwijs (Kunst)', 'Secundair Onderwijs (Technisch)', 'Secundair Onderwijs (Algemeen)', 'Specialisatiejaar', 'Professionele bachelor (3j) (vroegere Hoger Onderwijs Korte Type – Graduaat)', 'Academische bachelor (3j) + Master (1 of 2j) (vroegere Hoger Onderwijs Lange Type)', 'Academische bachelor (3j) + Master (1 of 2j) (vroegere universitair, licentiaat)', 'Bachelor na bachelor', 'Master na master', 'Doctoraat', 'Professionele Graad', 'Ander'),
+  );
+
+  $experience_vocabulary = taxonomy_vocabulary_machine_name_load('ofed_job_experience');
+  $occupation_vocabulary = taxonomy_vocabulary_machine_name_load('ofed_job_occupation');
+  $study_vocabulary = taxonomy_vocabulary_machine_name_load('ofed_job_study_level');
+
+  // Get enabled languages.
+  $languages = language_list();
+  foreach ($languages as $language) {
+    $lang = $language->prefix;
+    _ofed_job_taxonomy_term_save($experiences[$lang], $experience_vocabulary->vid, $lang);
+    _ofed_job_taxonomy_term_save($occupations[$lang], $occupation_vocabulary->vid, $lang);
+    _ofed_job_taxonomy_term_save($studies[$lang], $study_vocabulary->vid, $lang);
+  }
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function ofed_job_uninstall() {
+  
+}
+
+/**
+ * Taxonomy terms save multiple value at once.
+ * @param type $terms
+ * @param type $vid
+ * @param type $lang
+ * @param type $update
+ */
+function _ofed_job_taxonomy_term_save($terms, $vid, $lang, $update = FALSE) {
+  $existing_terms = array();
+
+  if ($update) {
+    $existing_terms = taxonomy_get_tree($vid);
+    $existing_terms = array_map('_ofed_team_get_existing_term_names', $existing_terms);
+  }
+
+  $weight = 0;
+  foreach ($terms as $term) {
+    if (!$update || !in_array($term, $existing_terms)) {
+      $new_term = new stdClass();
+      $new_term->name = $term;
+      $new_term->vid = $vid;
+      $new_term->language = $lang;
+      $new_term->weight = $weight;
+      taxonomy_term_save($new_term);
+      $weight++;
+    }
+  }
+}
+
+
+  
+
+  
+  
+  

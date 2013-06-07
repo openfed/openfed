@@ -1,4 +1,5 @@
-<?php 
+<?php
+
 variable_set('pathauto_blog_pattern', 'blogs/[user:name]');
 variable_set('pathauto_case', 1);
 variable_set('pathauto_forum_pattern', '[term:vocabulary]/[term:name]');

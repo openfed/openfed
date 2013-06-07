@@ -4,14 +4,14 @@
  * Implements hook_schema().
  */
 function ofed_slideshow_schema() {
-
+  
 }
 
 /**
  * Implements hook_install().
  */
 function ofed_slideshow_install() {
-
+  
 }
 
 /**

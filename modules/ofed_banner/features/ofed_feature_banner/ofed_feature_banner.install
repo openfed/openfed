@@ -1,0 +1,286 @@
+<?php
+
+/**
+ * Implements hook_schema().
+ */
+function ofed_feature_banner_schema() {
+  
+}
+
+/**
+ * Implements hook_install().
+ */
+function ofed_feature_banner_install() {
+  // If the related feature is not enabled.
+  if (!module_exists('ofed_banner')) {
+    // Enable it.
+    module_enable(array('ofed_banner'));
+  }
+
+  // Install menu link(s).
+  $menus = menu_get_menus(FALSE);
+  if (!isset($menus['menu-cms-menu'])) {
+    // Create a CMS Menu if not exist.
+    $menu = array();
+    $menu['menu_name'] = "menu-cms-menu";
+    $menu['title'] = "CMS Menu";
+    $menu['description'] = "";
+    menu_save($menu);
+    // Update the menu router information.
+    menu_rebuild();
+  }
+  // Create the menu content type link(s).
+  $item = array(
+    'link_title' => t('Banner'),
+    'link_path' => 'cms/banner',
+    'router_path' => 'cms/banner',
+    'menu_name' => 'menu-cms-menu',
+    'customized' => 1,
+  );
+  menu_link_save($item);
+
+  // Include ds settings.
+  $file = drupal_get_path('module', 'ofed_feature_banner') . '/install/_ofed_feature_banner.ds.inc';
+  if (file_exists($file)) {
+    // Include it.
+    include_once 'install/_ofed_feature_banner.ds.inc';
+
+    // Install ds customs fields.
+    if (function_exists('ofed_feature_banner_ds_custom_fields_info')) {
+      $fields = ofed_feature_banner_ds_custom_fields_info();
+      foreach ($fields as $id => $field) {
+        // Remove one key.
+        if (isset($field->api_version)) {
+          unset($field->api_version);
+        }
+        // Serialize the entities.
+        $field->entities = serialize($field->entities);
+        // Serialize the ui_limit.
+        $field->ui_limit = serialize($field->ui_limit);
+        // Serialize the properties.
+        $field->properties = serialize($field->properties);
+
+        // Cast variable like an array.
+        $field = (array) $field;
+
+        // Save in database.
+        db_insert('ds_fields')->fields($field)->execute();
+      }
+    }
+
+    // Install ds fields settings.
+    if (function_exists('ofed_feature_banner_ds_field_settings_info')) {
+      $fields = ofed_feature_banner_ds_field_settings_info();
+      foreach ($fields as $id => $field) {
+        // Remove one key.
+        if (isset($field->api_version)) {
+          unset($field->api_version);
+        }
+        // Serialize the settings.
+        $field->settings = serialize($field->settings);
+
+        // Cast variable like an array.
+        $field = (array) $field;
+
+        // Save in database.
+        db_insert('ds_field_settings')->fields($field)->execute();
+      }
+    }
+
+    // Install ds layouts settings.
+    if (function_exists('ofed_feature_banner_ds_layout_settings_info')) {
+      $layouts = ofed_feature_banner_ds_layout_settings_info();
+      foreach ($layouts as $id => $layout) {
+        // Remove one key.
+        if (isset($layout->api_version)) {
+          unset($layout->api_version);
+        }
+        // Serialize the settings.
+        $layout->settings = serialize($layout->settings);
+
+        // Cast variable like an array.
+        $layout = (array) $layout;
+
+        // Save in database.
+        db_insert('ds_layout_settings')->fields($layout)->execute();
+      }
+    }
+  }
+
+  // Create path alias for each languages.
+  $languages = language_list('enabled');
+  foreach ($languages as $language) {
+    // FR.
+    if (isset($language['fr'])) {
+      $path = array(
+        'source' => 'banner',
+        'alias' => 'banner',
+        'language' => 'fr',
+      );
+      db_insert('url_alias')->fields($path)->execute();
+    }
+
+    if (isset($language['nl'])) {
+      // NL.
+      $path = array(
+        'source' => 'banner',
+        'alias' => 'banner',
+        'language' => 'nl',
+      );
+      db_insert('url_alias')->fields($path)->execute();
+    }
+  }
+  
+  // Add the settings to set the conditionnal fields.
+  _ofed_feature_banner_install_conditionnal_fields();
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function ofed_feature_banner_uninstall() {
+  // If the related feature is enabled.
+  if (module_exists('ofed_banner')) {
+    // Disable it.
+    module_disable(array('ofed_banner'));
+  }
+}
+
+/**
+ * Install the conditional fields settings.
+ */
+function _ofed_feature_banner_install_conditionnal_fields() {
+  if(module_exists('field_conditional_state')) {
+    // Insert for field leaderboard.
+    db_insert('field_conditional_state')
+    ->fields(array(
+      'field_name' => 'field_ofed_banner_img_leadboard',
+      'control_field' => 'field_ofed_banner_type',
+      'state' => 'visible',
+      'bundle' => 'ofed_banner',
+      'trigger_values' => serialize(array('leadboard' => 'leadboard')),
+      'condition_type' => 'or',
+    ))
+    ->execute();
+    db_insert('field_conditional_state')
+    ->fields(array(
+      'field_name' => 'field_ofed_banner_img_leadboard',
+      'control_field' => 'field_ofed_banner_type',
+      'state' => 'required',
+      'bundle' => 'ofed_banner',
+      'trigger_values' => serialize(array('leadboard' => 'leadboard')),
+      'condition_type' => 'or',
+    ))
+    ->execute();
+    
+    // Insert for field full.
+    db_insert('field_conditional_state')
+    ->fields(array(
+      'field_name' => 'field_ofed_banner_img_full',
+      'control_field' => 'field_ofed_banner_type',
+      'state' => 'visible',
+      'bundle' => 'ofed_banner',
+      'trigger_values' => serialize(array('full' => 'full')),
+      'condition_type' => 'or',
+    ))
+    ->execute();
+    db_insert('field_conditional_state')
+    ->fields(array(
+      'field_name' => 'field_ofed_banner_img_full',
+      'control_field' => 'field_ofed_banner_type',
+      'state' => 'required',
+      'bundle' => 'ofed_banner',
+      'trigger_values' => serialize(array('full' => 'full')),
+      'condition_type' => 'or',
+    ))
+    ->execute();
+    
+    // Insert for field skyscraper.
+    db_insert('field_conditional_state')
+    ->fields(array(
+      'field_name' => 'field_ofed_banner_img_skyscraper',
+      'control_field' => 'field_ofed_banner_type',
+      'state' => 'visible',
+      'bundle' => 'ofed_banner',
+      'trigger_values' => serialize(array('skyscraper' => 'skyscraper')),
+      'condition_type' => 'or',
+    ))
+    ->execute();
+    db_insert('field_conditional_state')
+    ->fields(array(
+      'field_name' => 'field_ofed_banner_img_skyscraper',
+      'control_field' => 'field_ofed_banner_type',
+      'state' => 'required',
+      'bundle' => 'ofed_banner',
+      'trigger_values' => serialize(array('skyscraper' => 'skyscraper')),
+      'condition_type' => 'or',
+    ))
+    ->execute();
+    
+    // Insert for field medium rectangle.
+    db_insert('field_conditional_state')
+    ->fields(array(
+      'field_name' => 'field_ofed_banner_img_mrectangle',
+      'control_field' => 'field_ofed_banner_type',
+      'state' => 'visible',
+      'bundle' => 'ofed_banner',
+      'trigger_values' => serialize(array('mrectangle' => 'mrectangle')),
+      'condition_type' => 'or',
+    ))
+    ->execute();
+    db_insert('field_conditional_state')
+    ->fields(array(
+      'field_name' => 'field_ofed_banner_img_mrectangle',
+      'control_field' => 'field_ofed_banner_type',
+      'state' => 'required',
+      'bundle' => 'ofed_banner',
+      'trigger_values' => serialize(array('mrectangle' => 'mrectangle')),
+      'condition_type' => 'or',
+    ))
+    ->execute();
+
+    // Insert for field square rectangle.
+    db_insert('field_conditional_state')
+    ->fields(array(
+      'field_name' => 'field_ofed_banner_img_srectangle',
+      'control_field' => 'field_ofed_banner_type',
+      'state' => 'visible',
+      'bundle' => 'ofed_banner',
+      'trigger_values' => serialize(array('srectangle' => 'srectangle')),
+      'condition_type' => 'or',
+    ))
+    ->execute();
+    db_insert('field_conditional_state')
+    ->fields(array(
+      'field_name' => 'field_ofed_banner_img_srectangle',
+      'control_field' => 'field_ofed_banner_type',
+      'state' => 'required',
+      'bundle' => 'ofed_banner',
+      'trigger_values' => serialize(array('srectangle' => 'srectangle')),
+      'condition_type' => 'or',
+    ))
+    ->execute();
+
+    // Insert for field button.
+    db_insert('field_conditional_state')
+    ->fields(array(
+      'field_name' => 'field_ofed_banner_img_button',
+      'control_field' => 'field_ofed_banner_type',
+      'state' => 'visible',
+      'bundle' => 'ofed_banner',
+      'trigger_values' => serialize(array('button' => 'button')),
+      'condition_type' => 'or',
+    ))
+    ->execute();
+    db_insert('field_conditional_state')
+    ->fields(array(
+      'field_name' => 'field_ofed_banner_img_button',
+      'control_field' => 'field_ofed_banner_type',
+      'state' => 'required',
+      'bundle' => 'ofed_banner',
+      'trigger_values' => serialize(array('button' => 'button')),
+      'condition_type' => 'or',
+    ))
+    ->execute();
+  }
+}

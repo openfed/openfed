@@ -169,3 +169,10 @@ function ofed_feature_press_update_7002() {
     variable_set('pathauto_taxonomy_term_ofed_press_fr_pattern', 'presse/[term:name]');
   }
 }
+
+/**
+ * Delete old block info record.
+ */
+function ofed_feature_press_update_7003() {
+  db_delete('ds_layout_settings')->condition('view_mode', 'block_info')->condition('bundle', 'ofed_news')->execute();
+}

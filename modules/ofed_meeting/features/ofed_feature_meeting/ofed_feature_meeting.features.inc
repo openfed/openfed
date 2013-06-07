@@ -22,7 +22,7 @@ function ofed_feature_meeting_ctools_plugin_api() {
  * Implements hook_views_api().
  */
 function ofed_feature_meeting_views_api() {
-  return array("version" => "3.0");
+  return array("api" => "3.0");
 }
 
 /**
@@ -45,11 +45,11 @@ function ofed_feature_meeting_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
-          'width' => '150',
-          'height' => '150',
+          'width' => 150,
+          'height' => 150,
           'upscale' => 0,
         ),
-        'weight' => '-8',
+        'weight' => -8,
       ),
     ),
   );
@@ -68,11 +68,11 @@ function ofed_feature_meeting_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
-          'width' => '150',
-          'height' => '150',
+          'width' => 150,
+          'height' => 150,
           'upscale' => 0,
         ),
-        'weight' => '-8',
+        'weight' => -8,
       ),
     ),
   );
@@ -91,11 +91,11 @@ function ofed_feature_meeting_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
-          'width' => '150',
-          'height' => '150',
+          'width' => 150,
+          'height' => 150,
           'upscale' => 0,
         ),
-        'weight' => '2',
+        'weight' => 2,
       ),
     ),
   );
@@ -114,11 +114,11 @@ function ofed_feature_meeting_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
-          'width' => '150',
-          'height' => '150',
+          'width' => 150,
+          'height' => 150,
           'upscale' => 0,
         ),
-        'weight' => '-8',
+        'weight' => -8,
       ),
     ),
   );
@@ -137,11 +137,11 @@ function ofed_feature_meeting_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
-          'width' => '150',
-          'height' => '150',
+          'width' => 150,
+          'height' => 150,
           'upscale' => 0,
         ),
-        'weight' => '-8',
+        'weight' => -8,
       ),
     ),
   );
@@ -160,11 +160,11 @@ function ofed_feature_meeting_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
-          'width' => '150',
-          'height' => '150',
+          'width' => 150,
+          'height' => 150,
           'upscale' => 0,
         ),
-        'weight' => '-8',
+        'weight' => -8,
       ),
     ),
   );

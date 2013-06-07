@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * ofed_feature_photogallery.features.inc
@@ -9,6 +8,10 @@
  * Implements hook_ctools_plugin_api().
  */
 function ofed_feature_photogallery_ctools_plugin_api() {
+  list($module, $api) = func_get_args();
+  if ($module == "ds" && $api == "ds") {
+    return array("version" => "1");
+  }
   list($module, $api) = func_get_args();
   if ($module == "strongarm" && $api == "strongarm") {
     return array("version" => "1");
@@ -42,11 +45,11 @@ function ofed_feature_photogallery_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
-          'width' => '150',
-          'height' => '150',
+          'width' => 150,
+          'height' => 150,
           'upscale' => 0,
         ),
-        'weight' => '2',
+        'weight' => 2,
       ),
     ),
   );
@@ -65,11 +68,11 @@ function ofed_feature_photogallery_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
-          'width' => '800',
-          'height' => '600',
+          'width' => 800,
+          'height' => 600,
           'upscale' => 0,
         ),
-        'weight' => '2',
+        'weight' => 2,
       ),
     ),
   );
@@ -88,11 +91,11 @@ function ofed_feature_photogallery_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
-          'width' => '400',
-          'height' => '300',
+          'width' => 400,
+          'height' => 300,
           'upscale' => 0,
         ),
-        'weight' => '2',
+        'weight' => 2,
       ),
     ),
   );
@@ -111,11 +114,11 @@ function ofed_feature_photogallery_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
-          'width' => '150',
-          'height' => '150',
+          'width' => 150,
+          'height' => 150,
           'upscale' => 0,
         ),
-        'weight' => '2',
+        'weight' => 2,
       ),
     ),
   );
@@ -134,11 +137,11 @@ function ofed_feature_photogallery_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
-          'width' => '800',
-          'height' => '600',
+          'width' => 800,
+          'height' => 600,
           'upscale' => 0,
         ),
-        'weight' => '2',
+        'weight' => 2,
       ),
     ),
   );
@@ -157,11 +160,11 @@ function ofed_feature_photogallery_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
-          'width' => '400',
-          'height' => '300',
+          'width' => 400,
+          'height' => 300,
           'upscale' => 0,
         ),
-        'weight' => '2',
+        'weight' => 2,
       ),
     ),
   );
@@ -180,11 +183,11 @@ function ofed_feature_photogallery_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
-          'width' => '92',
-          'height' => '69',
+          'width' => 92,
+          'height' => 69,
           'upscale' => 0,
         ),
-        'weight' => '2',
+        'weight' => 2,
       ),
     ),
   );
@@ -203,11 +206,11 @@ function ofed_feature_photogallery_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
-          'width' => '284',
-          'height' => '213',
+          'width' => 284,
+          'height' => 213,
           'upscale' => 0,
         ),
-        'weight' => '2',
+        'weight' => 2,
       ),
     ),
   );
@@ -226,11 +229,11 @@ function ofed_feature_photogallery_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
-          'width' => '192',
-          'height' => '147',
+          'width' => 192,
+          'height' => 147,
           'upscale' => 0,
         ),
-        'weight' => '2',
+        'weight' => 2,
       ),
     ),
   );
@@ -249,11 +252,11 @@ function ofed_feature_photogallery_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
-          'width' => '192',
-          'height' => '147',
+          'width' => 192,
+          'height' => 147,
           'upscale' => 0,
         ),
-        'weight' => '2',
+        'weight' => 2,
       ),
     ),
   );
@@ -272,11 +275,11 @@ function ofed_feature_photogallery_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
-          'width' => '192',
-          'height' => '147',
+          'width' => 192,
+          'height' => 147,
           'upscale' => 0,
         ),
-        'weight' => '2',
+        'weight' => 2,
       ),
     ),
   );
@@ -295,11 +298,11 @@ function ofed_feature_photogallery_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
-          'width' => '400',
-          'height' => '300',
+          'width' => 400,
+          'height' => 300,
           'upscale' => 0,
         ),
-        'weight' => '2',
+        'weight' => 2,
       ),
     ),
   );

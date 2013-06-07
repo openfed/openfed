@@ -30,17 +30,16 @@ function openfed_taxonomy_form() {
 function openfed_taxonomy_form_submit($form, &$form_state) {
   $values = $form_state['values'];
   $blocks = array();
-  if ( !empty($values['taxonomy_list']) ) {
-    if ( $values['taxonomy_list']['categories'] === 'categories' ) {
+  if (!empty($values['taxonomy_list'])) {
+    if ($values['taxonomy_list']['categories'] === 'categories') {
       // Create a default vocabulary named "Category".
-        $vocabulary = (object) array(
+      $vocabulary = (object) array(
           'name' => st('Categories'),
           'description' => st('Use tags to group content into categories.'),
           'machine_name' => 'categories',
           'help' => st('Enter a comma-separated list of words to categorise your content.'),
-
-        );
-        taxonomy_vocabulary_save($vocabulary);
+      );
+      taxonomy_vocabulary_save($vocabulary);
     }
   }
 }

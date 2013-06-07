@@ -8,7 +8,7 @@
  * Clean the variable and return an array of fields.
  */
 function _addemar_subscription_addemar_fields() {
-  $fields = variable_get('addemar_subscription_addemar_fields', ADDEMAR_SUBSCRIPTION_ADDEMAR_FIELDS);
+  $fields = variable_get('addemar_subscription_addemar_fields', '');
 
   if (!empty($fields)) {
     $fields = explode("\n", $fields);
@@ -62,4 +62,36 @@ function _addemar_subscription_add_more_newsletter_form($key, $weight, $group = 
   );
 
   return $form;
+}
+
+function _addemar_subscription_get_soap_client($wsdl) {
+  $sClient = FALSE;
+
+  if (extension_loaded('soap')) {
+    // If the wsdl is wrong or unreachable, there is an uncatchable Fatal Error.
+    // So we will use a custom error handler to catch any issue related to the wsdl
+    // and throw a SoapFault.
+    $old_error_handler = set_error_handler('_addemar_subscription_error_handler');
+
+    try{
+      // Make use of @ to avoid the display of the fatal error
+      $sClient = @new SoapClient($wsdl, array('exceptions' => 1));
+    }
+    catch(SoapFault $E) {
+      $msg = t('The Addemar subscription WSDL is not properly configured. If you are using https, check that php_openssl is enabled.');
+      drupal_set_message($msg, 'error');
+      watchdog('error', $msg);
+      $sClient = FALSE;
+    }
+    set_error_handler($old_error_handler);
+  }
+
+  return $sClient;
+}
+
+function _addemar_subscription_error_handler($errno, $errstr, $errfile, $errline) {
+  // If we enter here, there is something wrong with the wsdl,
+  // it can be a notice or a warning or anything else. It all ends up in
+  // a fatal error, so we throw a SoapFault
+  throw new SoapFault($errstr, null);
 }

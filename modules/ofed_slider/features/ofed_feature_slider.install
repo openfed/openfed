@@ -4,7 +4,7 @@
  * Implements hook_schema().
  */
 function ofed_feature_slider_schema() {
-
+  
 }
 
 /**

@@ -34,46 +34,44 @@ function openfed_regional_form() {
  */
 function openfed_regional_form_submit($form, &$form_state) {
   $values = $form_state['values'];
-  if ( !empty($values['regional_list']) ) {
+  if (!empty($values['regional_list'])) {
     $lang = array();
-    foreach ( $values['regional_list'] as $key => $value ) {
-      if ( $key === $value ) {
+    foreach ($values['regional_list'] as $key => $value) {
+      if ($key === $value) {
         $lang[] = $key;
       }
     }
     variable_set('openfed_need_batch_internalization', TRUE);
     variable_set('openfed_need_batch_internalization_lang', $lang);
   }
-  require 'openfed_webform.inc';
 }
 
 /**
  * batch function to activate language
  */
 function openfed_batch_internalization() {
-  $values = variable_get( 'openfed_need_batch_internalization_lang', array() );
+  $values = variable_get('openfed_need_batch_internalization_lang', array());
   $values[] = 'en';
 
-  if ( !empty($values) ) {
+  if (!empty($values)) {
     include_once DRUPAL_ROOT . '/includes/iso.inc';
     $predefined = _locale_get_predefined_list();
 
-    foreach ( $values as $key => $value ) {
-      if ( $value != 'en' ) {
+    foreach ($values as $key => $value) {
+      if ($value != 'en') {
         locale_add_language($value);
         drupal_set_message(t('The language %language has been created and can now be used.', array('%language' => t($predefined[$value][0]))));
       }
 
       // create basic content in each language
       _openfed_create_content_type($value);
-
     }
-      variable_del('openfed_need_batch_internalization');
-      variable_del('openfed_need_batch_internalization_lang');
+    variable_del('openfed_need_batch_internalization');
+    variable_del('openfed_need_batch_internalization_lang');
 
-      _openfed_set_block_into_region('locale', 'language', 'tools');
+    _openfed_set_block_into_region('locale', 'language', 'tools');
 
-      module_enable( array('translation_overview'), TRUE );
+    module_enable(array('translation_overview'), TRUE);
   }
 }
 
@@ -86,7 +84,7 @@ function openfed_batch_internalization() {
 function _openfed_create_content_type($lang) {
 
   // check if variable $lang is known in languages_list
-  if ( array_key_exists($lang, _openfed_return_languages_list()) || $lang == 'en' ) {
+  if (array_key_exists($lang, _openfed_return_languages_list()) || $lang == 'en') {
 
     $ck_link = variable_get('ckeditor_link_autocomplete_menus');
 
@@ -106,25 +104,25 @@ function _openfed_create_content_type($lang) {
 
         // add date format
         $date_format = array();
-        $date_format[] = array( 'format' => 'd/m/Y', 'type' => 'date_only', 'language' => 'en' );
-        $date_format[] = array( 'format' => 'c', 'type' => 'html5_tools_iso8601', 'language' => 'en' );
-        $date_format[] = array( 'format' => 'l, F j, Y - H:i', 'type' => 'long', 'language' => 'en' );
-        $date_format[] = array( 'format' => 'D, d/m/Y - H:i', 'type' => 'medium', 'language' => 'en' );
-        $date_format[] = array( 'format' => 'd/m/Y - H:i', 'type' => 'short', 'language' => 'en' );
+        $date_format[] = array('format' => 'd/m/Y', 'type' => 'date_only', 'language' => 'en');
+        $date_format[] = array('format' => 'c', 'type' => 'html5_tools_iso8601', 'language' => 'en');
+        $date_format[] = array('format' => 'l, F j, Y - H:i', 'type' => 'long', 'language' => 'en');
+        $date_format[] = array('format' => 'D, d/m/Y - H:i', 'type' => 'medium', 'language' => 'en');
+        $date_format[] = array('format' => 'd/m/Y - H:i', 'type' => 'short', 'language' => 'en');
         _openfed_localize_date_format($date_format);
 
         // adda prefix for english language
         $query = db_update('languages')
-              ->fields(array('prefix' => 'en'))
-              ->condition('language', 'en', '=')
-              ->execute();
+          ->fields(array('prefix' => 'en'))
+          ->condition('language', 'en', '=')
+          ->execute();
 
         // create webform contact page
         _openfed_create_webform_contact($lang, 'main-menu');
 
         // create a menu block for submenu
         _openfed_create_submenu($lang, 'main-menu');
-      break;
+        break;
 
       case 'fr':
         // set title & alias string
@@ -149,11 +147,11 @@ function _openfed_create_content_type($lang) {
 
         // add date format
         $date_format = array();
-        $date_format[] = array( 'format' => 'd/m/Y', 'type' => 'date_only', 'language' => 'fr' );
-        $date_format[] = array( 'format' => 'c', 'type' => 'html5_tools_iso8601', 'language' => 'fr' );
-        $date_format[] = array( 'format' => 'l, j. F Y - G:i', 'type' => 'long', 'language' => 'fr' );
-        $date_format[] = array( 'format' => 'D, d/m/Y - H:i', 'type' => 'medium', 'language' => 'fr' );
-        $date_format[] = array( 'format' => 'd/m/Y - H:i', 'type' => 'short', 'language' => 'fr' );
+        $date_format[] = array('format' => 'd/m/Y', 'type' => 'date_only', 'language' => 'fr');
+        $date_format[] = array('format' => 'c', 'type' => 'html5_tools_iso8601', 'language' => 'fr');
+        $date_format[] = array('format' => 'l, j. F Y - G:i', 'type' => 'long', 'language' => 'fr');
+        $date_format[] = array('format' => 'D, d/m/Y - H:i', 'type' => 'medium', 'language' => 'fr');
+        $date_format[] = array('format' => 'd/m/Y - H:i', 'type' => 'short', 'language' => 'fr');
         _openfed_localize_date_format($date_format);
 
         // create webform contact page
@@ -164,7 +162,7 @@ function _openfed_create_content_type($lang) {
 
         // set the menu in the navigation region for nerra
         _openfed_set_block_into_region('menu', $menu_name, 'navigation');
-      break;
+        break;
       case 'nl':
         $title = st('Welkom');
         $alias = st('welcom');
@@ -187,11 +185,11 @@ function _openfed_create_content_type($lang) {
 
         // add date format
         $date_format = array();
-        $date_format[] = array( 'format' => 'd/m/Y', 'type' => 'date_only', 'language' => 'nl' );
-        $date_format[] = array( 'format' => 'c', 'type' => 'html5_tools_iso8601', 'language' => 'nl' );
-        $date_format[] = array( 'format' => 'l, j. F Y - G:i', 'type' => 'long', 'language' => 'nl' );
-        $date_format[] = array( 'format' => 'D, d/m/Y - H:i', 'type' => 'medium', 'language' => 'nl' );
-        $date_format[] = array( 'format' => 'd/m/Y - H:i', 'type' => 'short', 'language' => 'nl' );
+        $date_format[] = array('format' => 'd/m/Y', 'type' => 'date_only', 'language' => 'nl');
+        $date_format[] = array('format' => 'c', 'type' => 'html5_tools_iso8601', 'language' => 'nl');
+        $date_format[] = array('format' => 'l, j. F Y - G:i', 'type' => 'long', 'language' => 'nl');
+        $date_format[] = array('format' => 'D, d/m/Y - H:i', 'type' => 'medium', 'language' => 'nl');
+        $date_format[] = array('format' => 'd/m/Y - H:i', 'type' => 'short', 'language' => 'nl');
         _openfed_localize_date_format($date_format);
 
         // create webform contact page
@@ -202,72 +200,69 @@ function _openfed_create_content_type($lang) {
 
         // set the menu in the navigation region for nerra
         _openfed_set_block_into_region('menu', $menu_name, 'navigation');
-      break;
+        break;
     }
     variable_set('ckeditor_link_autocomplete_menus', $ck_link);
     $pages = array(
-        'name' => $alias,
-        'task' => 'page',
-        'admin_title' => $title,
-        'path' => $alias,
-        'access' => array(
-          'plugins' => array()
-        ),
-        'menu' => array(),
-        'arguments' => array(),
-        'conf' => array(
-          'admin_paths' => array()
-        ),
+      'name' => $alias,
+      'task' => 'page',
+      'admin_title' => $title,
+      'path' => $alias,
+      'access' => array(
+        'plugins' => array()
+      ),
+      'menu' => array(),
+      'arguments' => array(),
+      'conf' => array(
+        'admin_paths' => array()
+      ),
     );
     drupal_write_record('page_manager_pages', $pages);
 
     $display = array(
-        'layout' => 'onecol',
-        'layout_settings' => array(),
-        'panel_settings' => array(
-          'style_settings' => array(
-            'default' => '',
-            'middle' => '',
-          )
-        ),
-        'cache' => array(),
-        'title' => '',
-        'hide_title' => 1,
-        'title_pane' => 0,
+      'layout' => 'onecol',
+      'layout_settings' => array(),
+      'panel_settings' => array(
+        'style_settings' => array(
+          'default' => '',
+          'middle' => '',
+        )
+      ),
+      'cache' => array(),
+      'title' => '',
+      'hide_title' => 1,
+      'title_pane' => 0,
     );
     drupal_write_record('panels_display', $display);
 
     $handlers = array(
-        'name' => 'page_' . $alias . '_panel_context',
-        'task' => 'page',
-        'subtask' => $alias,
-        'handler' => 'panel_context',
-        'weight' => 0,
-        'conf' => array(
-          'title' => $title,
-          'no_blocks' => 0,
-          'pipeline' => 'standard',
-          'body_classes_to_remove' => '',
-          'body_classes_to_add' => '',
-          'css_id' => '',
-          'css' => '',
-          'contexts' => array(),
-          'relationships' => array(),
-          'did' => $display['did']
-        )
+      'name' => 'page_' . $alias . '_panel_context',
+      'task' => 'page',
+      'subtask' => $alias,
+      'handler' => 'panel_context',
+      'weight' => 0,
+      'conf' => array(
+        'title' => $title,
+        'no_blocks' => 0,
+        'pipeline' => 'standard',
+        'body_classes_to_remove' => '',
+        'body_classes_to_add' => '',
+        'css_id' => '',
+        'css' => '',
+        'contexts' => array(),
+        'relationships' => array(),
+        'did' => $display['did']
+      )
     );
     drupal_write_record('page_manager_handlers', $handlers);
 
 
     // set panel to the front page
-    if ( $lang == 'en' ) variable_set('site_frontpage', $alias);
+    if ($lang == 'en') variable_set('site_frontpage', $alias);
 
     variable_store_set('language', $lang, 'site_frontpage', $alias);
   }
-
-
 }
-
 
 function _openfed_create_submenu($lang, $menu_name = 'main-menu') {
 
@@ -324,7 +319,7 @@ function _openfed_create_submenu($lang, $menu_name = 'main-menu') {
         'cache' => DRUPAL_NO_CACHE,
       ));
       $query->execute();
-    break;
+      break;
     case 'fr':
       // FR
       variable_set("menu_block_2_title_link", FALSE);
@@ -377,7 +372,7 @@ function _openfed_create_submenu($lang, $menu_name = 'main-menu') {
         'cache' => DRUPAL_NO_CACHE,
       ));
       $query->execute();
-    break;
+      break;
     case 'nl':
       // NL
       variable_set("menu_block_3_title_link", FALSE);
@@ -430,14 +425,8 @@ function _openfed_create_submenu($lang, $menu_name = 'main-menu') {
         'cache' => DRUPAL_NO_CACHE,
       ));
       $query->execute();
-    break;
+      break;
   }
-
-
-
-
-
-
 }
 
 /**
@@ -451,19 +440,19 @@ function _openfed_create_webform_contact($lang, $menu_name = 'main-menu') {
       $subject = st('Sujet');
       $email = st('Email');
       $message = st('Message');
-    break;
+      break;
     case 'en':
       $name = st('Name');
       $subject = st('Subject');
       $email = st('Email');
       $message = st('Message');
-    break;
+      break;
     case'nl':
       $name = st('Naam');
       $subject = st('Onderwerp');
       $email = st('Email');
       $message = st('Bericht');
-    break;
+      break;
   }
 
   // Creating webform node
@@ -536,17 +525,14 @@ function _openfed_create_webform_contact($lang, $menu_name = 'main-menu') {
     $node->webform['components'][] = $component;
     webform_component_insert($component);
   }
-
 }
-
-
 
 /**
  * add a date format in database
  * @param array $date_format
  */
 function _openfed_localize_date_format($date_format) {
-  foreach ( $date_format as $key => $date_format_locale ) {
+  foreach ($date_format as $key => $date_format_locale) {
     drupal_write_record('date_format_locale', $date_format_locale);
   }
 }

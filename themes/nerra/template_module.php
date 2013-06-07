@@ -10,7 +10,8 @@
  * @return string 
  */
 function nerra_text_resize_block() {
-  if (_get_text_resize_reset_button() == TRUE) {
+  $reset_button = variable_get('text_resize_reset_button', FALSE);
+  if ($reset_button) {
     $output = '<ul class="text-resize">';
     $output .= '<li><a href="javascript:;" class="changer" id="text_resize_decrease" title="' . t('Decrease text size') . '">A -</a></li>';
     $output .= '<li><a href="javascript:;" class="changer" id="text_resize_reset" title="' . t('Reset text size') . '">A</a></li>';

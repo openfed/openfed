@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * ofed_feature_press.features.taxonomy.inc
@@ -14,11 +13,11 @@ function ofed_feature_press_taxonomy_default_vocabularies() {
       'name' => 'Press',
       'machine_name' => 'ofed_press',
       'description' => '',
-      'hierarchy' => '0',
+      'hierarchy' => 0,
       'module' => 'taxonomy',
-      'weight' => '0',
+      'weight' => 0,
       'language' => 'und',
-      'i18n_mode' => '4',
+      'i18n_mode' => 4,
     ),
   );
 }

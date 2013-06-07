@@ -3,7 +3,7 @@
 variable_set('views_devel_output', FALSE);
 variable_set('views_devel_region', 'watchdog');
 variable_set('views_exposed_filter_any_label', 'new_any');
-variable_set('views_field_rewrite_elements', array( '' => '- Use default -', '0' => '- None -', 'div' => 'DIV', 'span' => 'SPAN', 'h1' => 'H1', 'h2' => 'H2', 'h3' => 'H3', 'h4' => 'H4', 'h5' => 'H5', 'h6' => 'H6', 'p' => 'P', 'strong' => 'STRONG', 'em' => 'EM', 'article' => 'Article', 'aside' => 'Aside', 'footer' => 'Footer', 'header' => 'Header', 'menu' => 'Menu', 'nav' => 'Nav' ) );
+variable_set('views_field_rewrite_elements', array('' => '- Use default -', '0' => '- None -', 'div' => 'DIV', 'span' => 'SPAN', 'h1' => 'H1', 'h2' => 'H2', 'h3' => 'H3', 'h4' => 'H4', 'h5' => 'H5', 'h6' => 'H6', 'p' => 'P', 'strong' => 'STRONG', 'em' => 'EM', 'article' => 'Article', 'aside' => 'Aside', 'footer' => 'Footer', 'header' => 'Header', 'menu' => 'Menu', 'nav' => 'Nav'));
 variable_set('views_localization_plugin', 'core');
 variable_set('views_no_javascript', FALSE);
 variable_set('views_show_additional_queries', FALSE);

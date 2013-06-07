@@ -176,6 +176,19 @@ function ofed_feature_faq_ds_field_settings_info() {
       'label' => 'hidden',
       'format' => 'default',
     ),
+    'title' => array(
+      'weight' => '1',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+    'field_ofed_faq_answer' => array(
+      'weight' => '2',
+      'formatter_settings' => array(
+        'ft' => array(
+          'classes' => 'clear-block',
+        ),
+      ),
+    ),
     'top_of_page' => array(
       'weight' => '3',
       'label' => 'hidden',
@@ -183,18 +196,6 @@ function ofed_feature_faq_ds_field_settings_info() {
       'formatter_settings' => array(
         'ft' => array(
           'classes' => 'align-right',
-        ),
-      ),
-    ),
-    'title' => array(
-      'weight' => '1',
-      'label' => 'hidden',
-      'format' => 'default',
-    ),
-    'field_ofed_faq_answer' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'classes' => 'clear-block',
         ),
       ),
     ),

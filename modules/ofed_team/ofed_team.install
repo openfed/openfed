@@ -4,7 +4,7 @@
  * Implements hook_schema().
  */
 function ofed_team_schema() {
-
+  
 }
 
 /**
@@ -13,7 +13,7 @@ function ofed_team_schema() {
 function ofed_team_install() {
 // Install Taxonomy vocabulary
   $vocabularies = array(
-  'ofed_team_civility' => array(
+    'ofed_team_civility' => array(
       'name' => 'Team members civility',
       'machine_name' => 'ofed_team_civility',
       'description' => '',
@@ -35,7 +35,7 @@ function ofed_team_install() {
     ),
   );
 
- // Install taxonomy terms...
+  // Install taxonomy terms...
   $existing = taxonomy_get_vocabularies();
 
   foreach ($vocabularies as $vocabulary) {
@@ -54,12 +54,12 @@ function ofed_team_install() {
     'en' => array('Mrs.', 'Ms.', 'Mr.'),
     'fr' => array('Madame', 'Mademoiselle', 'Monsieur'),
     'nl' => array('Mevrouw', 'Jufrouw', 'Meneer'),
-    );
+  );
   $genders = array(
     'en' => array('Women', 'Men'),
     'fr' => array('Femme', 'Homme'),
-    'nl' => array('Mevrouw', 'Mannelijk'),
-    );
+    'nl' => array('Vrouw', 'Man'),
+  );
 
   $civility_vocabulary = taxonomy_vocabulary_machine_name_load('ofed_team_civility');
   $gender_vocabulary = taxonomy_vocabulary_machine_name_load('ofed_team_gender');
@@ -74,6 +74,13 @@ function ofed_team_install() {
   }
 }
 
+/**
+ * Taxonomy terms save multiple value at once.
+ * @param type $terms
+ * @param type $vid
+ * @param type $lang
+ * @param type $update
+ */
 function _ofed_team_taxonomy_term_save($terms, $vid, $lang, $update = FALSE) {
   $existing_terms = array();
 
@@ -82,29 +89,26 @@ function _ofed_team_taxonomy_term_save($terms, $vid, $lang, $update = FALSE) {
     $existing_terms = array_map('_ofed_team_get_existing_term_names', $existing_terms);
   }
 
+  $weight = 0;
   foreach ($terms as $term) {
-
     if (!$update || !in_array($term, $existing_terms)) {
       $new_term = new stdClass();
       $new_term->name = $term;
       $new_term->vid = $vid;
       $new_term->language = $lang;
+      $new_term->weight = $weight;
       taxonomy_term_save($new_term);
+      $weight++;
     }
   }
-}
-
-function _ofed_team_get_existing_term_names($term) {
-  return $term->name;
 }
 
 /**
  * Implements hook_uninstall().
  */
 function ofed_team_uninstall() {
-
+  
 }
-
 
 /**
  * Add Civility and Gender taxonomy terms in their respective vocabulary
@@ -116,12 +120,12 @@ function ofed_team_update_7001() {
     'en' => array('Mrs.', 'Ms.', 'Mr.'),
     'fr' => array('Madame', 'Mademoiselle', 'Monsieur'),
     'nl' => array('Mevrouw', 'Jufrouw', 'Meneer'),
-    );
+  );
   $genders = array(
     'en' => array('Women', 'Men'),
     'fr' => array('Femme', 'Homme'),
-    'nl' => array('Mevrouw', 'Mannelijk'),
-    );
+    'nl' => array('Vrouw', 'Man'),
+  );
 
   $civility_vocabulary = taxonomy_vocabulary_machine_name_load('ofed_team_civility');
   $gender_vocabulary = taxonomy_vocabulary_machine_name_load('ofed_team_gender');
@@ -136,7 +140,6 @@ function ofed_team_update_7001() {
     _ofed_team_taxonomy_term_save($genders[$lang], $gender_vocabulary->vid, $lang, $update);
   }
 }
-
 
 /**
  * Replace Civility and Gender taxonomy terms in their respective vocabulary.
@@ -176,8 +179,6 @@ function ofed_team_update_7002() {
   db_query("UPDATE {taxonomy_term_data} SET name = 'Men' WHERE name = 'male' AND vid = $vocabulary->vid AND language = 'en'")->execute();
   db_query("UPDATE {taxonomy_term_data} SET name = 'Femme' WHERE name = 'féminin' AND vid = $vocabulary->vid AND language = 'fr'")->execute();
   db_query("UPDATE {taxonomy_term_data} SET name = 'Homme' WHERE name = 'masculin' AND vid = $vocabulary->vid AND language = 'fr'")->execute();
-  db_query("UPDATE {taxonomy_term_data} SET name = 'Mevrouw' WHERE name = 'mevrouw' AND vid = $vocabulary->vid AND language = 'nl'")->execute();
-  db_query("UPDATE {taxonomy_term_data} SET name = 'Mannelijk' WHERE name = 'mannelijk' AND vid = $vocabulary->vid AND language = 'nl'")->execute();
+  db_query("UPDATE {taxonomy_term_data} SET name = 'Vrouw' WHERE name = 'vrouw' AND vid = $vocabulary->vid AND language = 'nl'")->execute();
+  db_query("UPDATE {taxonomy_term_data} SET name = 'Man' WHERE name = 'man' AND vid = $vocabulary->vid AND language = 'nl'")->execute();
 }
-
-  

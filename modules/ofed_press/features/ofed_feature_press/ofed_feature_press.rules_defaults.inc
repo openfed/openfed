@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * ofed_feature_press.rules_defaults.inc

@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * ofed_feature_press.features.inc
@@ -9,6 +8,10 @@
  * Implements hook_ctools_plugin_api().
  */
 function ofed_feature_press_ctools_plugin_api() {
+  list($module, $api) = func_get_args();
+  if ($module == "ds" && $api == "ds") {
+    return array("version" => "1");
+  }
   list($module, $api) = func_get_args();
   if ($module == "strongarm" && $api == "strongarm") {
     return array("version" => "1");
@@ -42,11 +45,11 @@ function ofed_feature_press_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
-          'width' => '150',
-          'height' => '150',
+          'width' => 150,
+          'height' => 150,
           'upscale' => 0,
         ),
-        'weight' => '-8',
+        'weight' => -8,
       ),
     ),
   );
@@ -65,11 +68,11 @@ function ofed_feature_press_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
-          'width' => '150',
-          'height' => '150',
+          'width' => 150,
+          'height' => 150,
           'upscale' => 0,
         ),
-        'weight' => '-8',
+        'weight' => -8,
       ),
     ),
   );
@@ -88,11 +91,11 @@ function ofed_feature_press_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
-          'width' => '150',
-          'height' => '150',
+          'width' => 150,
+          'height' => 150,
           'upscale' => 0,
         ),
-        'weight' => '-8',
+        'weight' => -8,
       ),
     ),
   );
@@ -111,11 +114,11 @@ function ofed_feature_press_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
-          'width' => '150',
-          'height' => '150',
+          'width' => 150,
+          'height' => 150,
           'upscale' => 0,
         ),
-        'weight' => '-8',
+        'weight' => -8,
       ),
     ),
   );
@@ -134,11 +137,11 @@ function ofed_feature_press_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
-          'width' => '150',
-          'height' => '150',
+          'width' => 150,
+          'height' => 150,
           'upscale' => 0,
         ),
-        'weight' => '-8',
+        'weight' => -8,
       ),
     ),
   );

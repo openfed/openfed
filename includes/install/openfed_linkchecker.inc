@@ -20,16 +20,16 @@ variable_set('linkchecker_extract_from_object', TRUE);
 variable_set('linkchecker_extract_from_video', TRUE);
 
 variable_set('linkchecker_filter_blacklist', array(
-    'ckeditor_link_filter' => 'ckeditor_link_filter',
-    'filter_url' => 'filter_url',
-    'filter_autop' => 'filter_autop',
-    'filter_htmlcorrector' => 'filter_htmlcorrector',
-    'table_altrow' => 0,
-    'media_filter' => 0,
-    'transliteration' => 0,
-    'ds_code' => 0,
-    'filter_html_escape' => 0,
-    'filter_html' => 0,
+  'ckeditor_link_filter' => 'ckeditor_link_filter',
+  'filter_url' => 'filter_url',
+  'filter_autop' => 'filter_autop',
+  'filter_htmlcorrector' => 'filter_htmlcorrector',
+  'table_altrow' => 0,
+  'media_filter' => 0,
+  'transliteration' => 0,
+  'ds_code' => 0,
+  'filter_html_escape' => 0,
+  'filter_html' => 0,
 ));
 
 variable_set('linkchecker_ignore_response_codes', "200

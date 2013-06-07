@@ -9,6 +9,7 @@ function _ofed_slideshow_list_options_menu() {
   unset($menus['devel']);
   $menus['main-menu'] = 'Main menu';
   asort($menus);
+  
   return $menus;
 }
 
@@ -21,12 +22,14 @@ function _ofed_slideshow_options_list() {
   $menu_array = menu_parent_options($menu_list, 0);
   $array_menu = array();
   $array_menu['-1'] = t('Generic Image');
+  
   foreach ($menu_array as $key => $value) {
     $pos = strpos($key, ':');
     $id = substr($key, $pos + 1, strlen($key));
     $name = substr($key, 0, $pos);
     $menu_name = str_replace('<', '', $value);
     $menu_name = str_replace('>', '', $menu_name);
+    
     if ($id == 0) {
       $array_menu[$name] = $menu_name;
     }
@@ -34,5 +37,6 @@ function _ofed_slideshow_options_list() {
       $array_menu[$id] = $value;
     }
   }
+  
   return $array_menu;
 }

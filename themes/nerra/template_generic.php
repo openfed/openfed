@@ -504,15 +504,18 @@ function nerra_button($variables) {
 
   $element['#attributes']['class'][] = 'form-' . $element['#button_type'];
   $element['#attributes']['class'][] = 'custom-btn';
-  $class = str_replace(' ', '_', $element['#value']);
-  $element['#attributes']['class'][] = 'custom-btn-' . strtolower($class);
+  if (isset($element['#parents']['0'])) {
+    $class = str_replace(' ', '_', $element['#parents']['0']);
+    $element['#attributes']['class'][] = 'custom-btn-parents-' . strtolower($class);
+  }
+  $class = str_replace(' ', '_', $element['#name']);
+  $element['#attributes']['class'][] = 'custom-btn-name-' . strtolower($class);
   if (!empty($element['#attributes']['disabled'])) {
     $element['#attributes']['class'][] = 'form-button-disabled';
   }
 
   return '<input' . drupal_attributes($element['#attributes']) . ' />';
 }
-
 
 /**
  * Returns HTML for a list or nested list of items.

@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * @file
+ * Module needed to add the federal header with the Openfed distribution.
+ */
+
 require_once 'includes/ofed_federalheader.blocks.inc';
 
 /**

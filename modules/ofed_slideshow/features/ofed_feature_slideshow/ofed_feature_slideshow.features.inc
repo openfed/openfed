@@ -22,7 +22,7 @@ function ofed_feature_slideshow_ctools_plugin_api() {
  * Implements hook_views_api().
  */
 function ofed_feature_slideshow_views_api() {
-  return array("version" => "3.0");
+  return array("api" => "3.0");
 }
 
 /**
@@ -45,11 +45,11 @@ function ofed_feature_slideshow_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
-          'width' => '438',
-          'height' => '164',
+          'width' => 438,
+          'height' => 164,
           'upscale' => 0,
         ),
-        'weight' => '2',
+        'weight' => 2,
       ),
     ),
   );

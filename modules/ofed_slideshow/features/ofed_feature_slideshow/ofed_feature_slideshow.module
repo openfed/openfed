@@ -1,7 +1,7 @@
 <?php
+
 /**
  * @file
  * Code for the Slideshow - Feature feature.
  */
-
 include_once 'ofed_feature_slideshow.features.inc';

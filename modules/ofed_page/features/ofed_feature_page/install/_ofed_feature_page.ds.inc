@@ -86,13 +86,6 @@ function ofed_feature_page_ds_field_settings_info() {
         ),
       ),
     ),
-    'field_ofed_page_thumb' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'classes' => 'float-left',
-        ),
-      ),
-    ),
     'field_ofed_page_update' => array(
       'formatter_settings' => array(
         'ft' => array(
@@ -332,16 +325,14 @@ function ofed_feature_page_ds_layout_settings_info() {
         0 => 'field_ofed_page_pubdate',
         1 => 'field_ofed_page_update',
         2 => 'field_ofed_page_summary',
-        3 => 'field_ofed_page_thumb',
-        4 => 'field_ofed_page_body',
-        5 => 'field_ofed_page_docs',
+        3 => 'field_ofed_page_body',
+        4 => 'field_ofed_page_docs',
       ),
     ),
     'fields' => array(
       'field_ofed_page_pubdate' => 'ds_content',
       'field_ofed_page_update' => 'ds_content',
       'field_ofed_page_summary' => 'ds_content',
-      'field_ofed_page_thumb' => 'ds_content',
       'field_ofed_page_body' => 'ds_content',
       'field_ofed_page_docs' => 'ds_content',
     ),

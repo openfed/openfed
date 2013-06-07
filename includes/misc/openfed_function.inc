@@ -24,8 +24,6 @@ function openfed_return_default_maintenance_theme_name() {
   return 'maintenance';
 }
 
-
-
 /**
  * show a block for a language
  * @param string $module
@@ -37,7 +35,6 @@ function _openfed_show_block_for_language($module, $delta, $language) {
   $query->values(array('language' => $language, 'module' => $module, 'delta' => $delta));
   $query->execute();
 }
-
 
 /**
  * Create menu entry for home
@@ -59,13 +56,13 @@ function _openfed_create_front_menu_link($menu_name, $title) {
  */
 function _openfed_create_custom_menu($menu_name, $title, $description = '', $i18n_mode = '2', $language = 'en') {
   // create the french menu
-    $menu = array();
-    $menu['menu_name'] = $menu_name;
-    $menu['title'] = $title;
-    $menu['description'] = $description;
-    $menu['i18n_mode'] = $i18n_mode;
-    $menu['language'] = $language;
-    menu_save($menu);
+  $menu = array();
+  $menu['menu_name'] = $menu_name;
+  $menu['title'] = $title;
+  $menu['description'] = $description;
+  $menu['i18n_mode'] = $i18n_mode;
+  $menu['language'] = $language;
+  menu_save($menu);
 }
 
 /**
@@ -86,20 +83,19 @@ function _openfed_set_block_into_region($module_name, $delta_name, $region_name)
   );
 
   $exist = db_query(
-        'SELECT * FROM {block} WHERE module = :module AND delta = :delta AND theme = :theme',
-        array(':module' => $block['module'], ':delta' => $block['delta'], ':theme' => $block['theme'])
-      )
-      ->fetchObject();
+    'SELECT * FROM {block} WHERE module = :module AND delta = :delta AND theme = :theme', array(':module' => $block['module'], ':delta' => $block['delta'], ':theme' => $block['theme'])
+    )
+    ->fetchObject();
   if (empty($exist)) {
     $query = db_insert('block')
-              ->fields($block);
+      ->fields($block);
   }
   else {
     $query = db_update('block')
-              ->fields($block)
-              ->condition('module', $block['module'], '=')
-              ->condition('delta', $block['delta'], '=')
-              ->condition('theme', $block['theme'], '=');
+      ->fields($block)
+      ->condition('module', $block['module'], '=')
+      ->condition('delta', $block['delta'], '=')
+      ->condition('theme', $block['theme'], '=');
   }
   $query->execute();
 }
@@ -146,6 +142,25 @@ function _openfed_return_roles_list() {
 }
 
 /**
+ * Return the name of all roles availables or created by dafault.
+ * Used to be called after install and bypass the error with the st() function, not recognized after install.
+ * @return array
+ */
+function _openfed_return_roles_list_available_by_default() {
+  $role_key = array(
+    'Administrator',
+    'Builder',
+    'Configurator',
+    'Content Manager',
+    'User Manager',
+    'Authenticated Visitor',
+    'authenticated user',
+    'anonymous user',
+  );
+  return $role_key;
+}
+
+/**
  * Return the array for the list of all taxonomy.
  *
  * @return array
@@ -168,31 +183,67 @@ function _openfed_return_functionalities_list() {
 
   $function_list = array(
     // Content types
+    'ofed_address' => array(
+      'title' => st('Address'),
+      'picture' => $features,
+      'description' => st('Enables the creation of addresses.'),
+    ),
+    'ofed_banner' => array(
+      'title' => st('Banner'),
+      'picture' => $features,
+      'description' => st('Enables the creation of banners.'),
+    ),
+    'ofed_event' => array(
+      'title' => st('Event'),
+      'picture' => $features,
+      'description' => st('Enables the creation of events.'),
+    ),
     'ofed_faq' => array(
       'title' => st('FAQ'),
       'picture' => $features,
       'description' => st('Enables the creation of frequently asked questions.'),
+    ),
+    'ofed_job' => array(
+      'title' => st('Job'),
+      'picture' => $features,
+      'description' => st('Enables the creation of jobs.'),
+    ),
+    'ofed_meeting' => array(
+      'title' => st('Meeting'),
+      'picture' => $features,
+      'description' => st('Enables the creation of meetings.'),
     ),
     'ofed_news' => array(
       'title' => st('News'),
       'picture' => $features,
       'description' => st('Enables the creation of news.'),
     ),
-    'ofed_press' => array(
-      'title' => st('Press'),
-      'picture' => $features,
-      'description' => st('Enables the creation of press.'),
-    ),
-    'ofed_slideshow' => array(
-      'title' => st('Slideshow'),
-      'picture' => $features,
-      'description' => st('Enables the creation of slideshow.'),
-    ),
     'ofed_photogallery' => array(
       'title' => st('Photos galeries'),
       'picture' => $features,
       'description' => st('Enables the creation of photos galeries.'),
     ),
+    'ofed_press' => array(
+      'title' => st('Press'),
+      'picture' => $features,
+      'description' => st('Enables the creation of press.'),
+    ),
+    'ofed_slider' => array(
+      'title' => st('Slider'),
+      'picture' => $features,
+      'description' => st('Enables the creation of sliders.'),
+    ),
+    'ofed_slideshow' => array(
+      'title' => st('Slideshow'),
+      'picture' => $features,
+      'description' => st('Enables the creation of slideshows.'),
+    ),
+    'ofed_team' => array(
+      'title' => st('Team member'),
+      'picture' => $features,
+      'description' => st('Enables the creation of team members.'),
+    ),
+
 
     // Modules
     'poll' => array(
@@ -277,251 +328,248 @@ function _openfed_return_functionalities_list() {
 function _openfed_return_permission_builder() {
   $permission = array(
     // Add another
-      'administer add another' => TRUE,
-      'use add another' => TRUE,
+    'administer add another' => TRUE,
+    'use add another' => TRUE,
     // Administration menu
-      'access administration menu' => TRUE,
-      'flush caches' => TRUE,
+    'access administration menu' => TRUE,
+    'flush caches' => TRUE,
     // Administration theme
-      'access admin theme' => TRUE,
+    'access admin theme' => TRUE,
     // Administrative pages
-      'administer admin paths' => TRUE,
+    'administer admin paths' => TRUE,
     // Aggregator
-      'administer news feeds' => TRUE,
-      'access news feeds' => TRUE,
+    'administer news feeds' => TRUE,
+    'access news feeds' => TRUE,
     // Backup and Migrate
-      'access backup and migrate' => TRUE,
-      'perform backup' => TRUE,
-      'access backup files' => TRUE,
-      'delete backup files' => TRUE,
-      'restore from backup' => TRUE,
-      'administer backup and migrate' => TRUE,
+    'access backup and migrate' => TRUE,
+    'perform backup' => TRUE,
+    'access backup files' => TRUE,
+    'delete backup files' => TRUE,
+    'restore from backup' => TRUE,
+    'administer backup and migrate' => TRUE,
     // Block
-      'administer blocks' => TRUE,
+    'administer blocks' => TRUE,
     // CKEditor
-      'administer ckeditor' => TRUE,
-      'customize ckeditor' => TRUE,
+    'administer ckeditor' => TRUE,
+    'customize ckeditor' => TRUE,
     // CKEditor Link
-      'access ckeditor link' => TRUE,
-      'administer ckeditor link' => TRUE,
+    'access ckeditor link' => TRUE,
+    'administer ckeditor link' => TRUE,
     // Content translation
-      'translate content' => TRUE,
+    'translate content' => TRUE,
     // Contextual links
-      'access contextual links' => TRUE,
+    'access contextual links' => TRUE,
     // Display Suite
-      'admin_display_suite' => TRUE,
+    'admin_display_suite' => TRUE,
     // Display Suite Extras
-      'ds_switch ofed_download' => TRUE,
-      'ds_switch ofed_page' => TRUE,
-      'ds_switch panel' => TRUE,
-      'ds_switch webform' => TRUE,
+    'ds_switch ofed_download' => TRUE,
+    'ds_switch ofed_page' => TRUE,
+    'ds_switch panel' => TRUE,
+    'ds_switch webform' => TRUE,
     // Display Suite UI
-      'admin_view_modes' => TRUE,
-      'admin_fields' => TRUE,
-      'admin_classes' => TRUE,
+    'admin_view_modes' => TRUE,
+    'admin_fields' => TRUE,
+    'admin_classes' => TRUE,
     // Features
-      'administer features' => TRUE,
-      'manage features' => TRUE,
+    'administer features' => TRUE,
+    'manage features' => TRUE,
     // Fieldgroup
-      'administer fieldgroups' => TRUE,
+    'administer fieldgroups' => TRUE,
     // Filter
-      'administer filters' => TRUE,
-      'use text format filtered_html' => TRUE,
-      'use text format full_html' => TRUE,
+    'administer filters' => TRUE,
+    'use text format filtered_html' => TRUE,
+    'use text format full_html' => TRUE,
     // Flag
-      'administer flags' => TRUE,
-      'use flag import' => TRUE,
+    'administer flags' => TRUE,
+    'use flag import' => TRUE,
     // IMCE
-      'administer imce' => TRUE,
+    'administer imce' => TRUE,
     // IMAGE
-      'administer image styles' => TRUE,
+    'administer image styles' => TRUE,
     // Link Checker
-      'access broken links report' => TRUE,
-      'access own broken links report' => TRUE,
-      'administer linkchecker' => TRUE,
-      'edit link settings' => TRUE,
+    'access broken links report' => TRUE,
+    'access own broken links report' => TRUE,
+    'administer linkchecker' => TRUE,
+    'edit link settings' => TRUE,
     // Locale
-      'administer languages' => TRUE,
-      'translate interface' => TRUE,
+    'administer languages' => TRUE,
+    'translate interface' => TRUE,
     // Media
-      'administer media' => TRUE,
-      'import media' => TRUE,
-      'view media' => TRUE,
-      'edit media' => TRUE,
+    'administer media' => TRUE,
+    'import media' => TRUE,
+    'view media' => TRUE,
+    'edit media' => TRUE,
     // Media Internet Sources
-      'add media from remote sources' => TRUE,
+    'add media from remote sources' => TRUE,
     // Menu
-      'administer menu' => TRUE,
+    'administer menu' => TRUE,
     // Menu attributes
-      'administer menu attributes' => TRUE,
+    'administer menu attributes' => TRUE,
     // Menu position
-      'administer menu positions' => TRUE,
+    'administer menu positions' => TRUE,
     // Meta tags
-      'administer meta tags' => TRUE,
-      'edit meta tags' => TRUE,
+    'administer meta tags' => TRUE,
+    'edit meta tags' => TRUE,
     // Mini panels
-      'create mini panels' => TRUE,
-      'administer mini panels' => TRUE,
+    'create mini panels' => TRUE,
+    'administer mini panels' => TRUE,
     // Mollom
-      'administer mollom' => TRUE,
-      'access mollom statistics' => TRUE,
+    'administer mollom' => TRUE,
+    'access mollom statistics' => TRUE,
     // Multilingual content
-      'administer content translations' => TRUE,
+    'administer content translations' => TRUE,
     // Node
-      'access content overview' => TRUE,
-      'access content' => TRUE,
-      'view own unpublished content' => TRUE,
-      'view revisions' => TRUE,
-      'revert revisions' => TRUE,
-      // CT: Download
-        'create ofed_download content' => TRUE,
-        'edit own ofed_download content' => TRUE,
-        'edit any ofed_download content' => TRUE,
-        'delete own ofed_download content' => TRUE,
-        'delete any ofed_download content' => TRUE,
-      // CT: Page
-        'create ofed_page content' => TRUE,
-        'edit own ofed_page content' => TRUE,
-        'edit any ofed_page content' => TRUE,
-        'delete own ofed_page content' => TRUE,
-        'delete any ofed_page content' => TRUE,
-      // CT: Panel
-        'create panel content' => TRUE,
-        'edit own panel content' => TRUE,
-        'edit any panel content' => TRUE,
-        'delete own panel content' => TRUE,
-      // CT: Webform
-        'create webform content' => TRUE,
-        'edit own webform content' => TRUE,
-        'edit any webform content' => TRUE,
-        'delete own webform content' => TRUE,
+    'administer content types' => TRUE,
+    'access content overview' => TRUE,
+    'access content' => TRUE,
+    'view own unpublished content' => TRUE,
+    'view revisions' => TRUE,
+    'revert revisions' => TRUE,
+    // CT: Download
+    'create ofed_download content' => TRUE,
+    'edit own ofed_download content' => TRUE,
+    'edit any ofed_download content' => TRUE,
+    'delete own ofed_download content' => TRUE,
+    'delete any ofed_download content' => TRUE,
+    // CT: Page
+    'create ofed_page content' => TRUE,
+    'edit own ofed_page content' => TRUE,
+    'edit any ofed_page content' => TRUE,
+    'delete own ofed_page content' => TRUE,
+    'delete any ofed_page content' => TRUE,
+    // CT: Panel
+    'create panel content' => TRUE,
+    'edit own panel content' => TRUE,
+    'edit any panel content' => TRUE,
+    'delete own panel content' => TRUE,
+    // CT: Webform
+    'create webform content' => TRUE,
+    'edit own webform content' => TRUE,
+    'edit any webform content' => TRUE,
+    'delete own webform content' => TRUE,
     // Override node options
-      // CT: Download
-        'override ofed_download published option' => TRUE,
-        'override ofed_download promote to front page option' => TRUE,
-        'override ofed_download sticky option' => TRUE,
-        'override ofed_download revision option' => TRUE,
-        'enter ofed_download revision log entry' => TRUE,
-        'override ofed_download authored on option' => TRUE,
-        'override ofed_download authored by option' => TRUE,
-      // CT: Page
-        'override ofed_page published option' => TRUE,
-        'override ofed_page promote to front page option' => TRUE,
-        'override ofed_page sticky option' => TRUE,
-        'override ofed_page revision option' => TRUE,
-        'enter ofed_page revision log entry' => TRUE,
-        'override ofed_page authored on option' => TRUE,
-        'override ofed_page authored by option' => TRUE,
-      // CT: Panel
-        'override panel published option' => TRUE,
-        'override panel promote to front page option' => TRUE,
-        'override panel sticky option' => TRUE,
-        'override panel revision option' => TRUE,
-        'enter panel revision log entry' => TRUE,
-        'override panel authored on option' => TRUE,
-        'override panel authored by option' => TRUE,
-      // CT: Webform
-        'override webform published option' => TRUE,
-        'override webform promote to front page option' => TRUE,
-        'override webform sticky option' => TRUE,
-        'override webform revision option' => TRUE,
-        'enter webform revision log entry' => TRUE,
-        'override webform authored on option' => TRUE,
-        'override webform authored by option' => TRUE,
+    // CT: Download
+    'override ofed_download published option' => TRUE,
+    'override ofed_download promote to front page option' => TRUE,
+    'override ofed_download sticky option' => TRUE,
+    'override ofed_download revision option' => TRUE,
+    'enter ofed_download revision log entry' => TRUE,
+    'override ofed_download authored on option' => TRUE,
+    'override ofed_download authored by option' => TRUE,
+    // CT: Page
+    'override ofed_page published option' => TRUE,
+    'override ofed_page promote to front page option' => TRUE,
+    'override ofed_page sticky option' => TRUE,
+    'override ofed_page revision option' => TRUE,
+    'enter ofed_page revision log entry' => TRUE,
+    'override ofed_page authored on option' => TRUE,
+    'override ofed_page authored by option' => TRUE,
+    // CT: Panel
+    'override panel published option' => TRUE,
+    'override panel promote to front page option' => TRUE,
+    'override panel sticky option' => TRUE,
+    'override panel revision option' => TRUE,
+    'enter panel revision log entry' => TRUE,
+    'override panel authored on option' => TRUE,
+    'override panel authored by option' => TRUE,
+    // CT: Webform
+    'override webform published option' => TRUE,
+    'override webform promote to front page option' => TRUE,
+    'override webform sticky option' => TRUE,
+    'override webform revision option' => TRUE,
+    'enter webform revision log entry' => TRUE,
+    'override webform authored on option' => TRUE,
+    'override webform authored by option' => TRUE,
     // Page Title
-      'set page title' => TRUE,
-      'administer page titles' => TRUE,
-    // Page model
-      'administer page model module' => TRUE,
-      'use page model module' => TRUE,
+    'set page title' => TRUE,
+    'administer page titles' => TRUE,
+    // Views multi-column display
+    'administer views multi-column display' => TRUE,
+    'use views multi-column display' => TRUE,
     // Panel nodes
-      'create panel-nodes' => TRUE,
-      'edit any panel-nodes' => TRUE,
-      'edit own panel-nodes' => TRUE,
-      'administer panel-nodes' => TRUE,
-      'delete any panel-nodes' => TRUE,
-      'delete own panel-nodes' => TRUE,
+    'create panel-nodes' => TRUE,
+    'edit any panel-nodes' => TRUE,
+    'edit own panel-nodes' => TRUE,
+    'administer panel-nodes' => TRUE,
+    'delete any panel-nodes' => TRUE,
+    'delete own panel-nodes' => TRUE,
     // Panels
-      'use panels dashboard' => TRUE,
-      'view pane admin links' => TRUE,
-      'administer pane access' => TRUE,
-      'administer advanced pane settings' => TRUE,
-      'administer panels layouts' => TRUE,
-      'administer panels styles' => TRUE,
+    'use panels dashboard' => TRUE,
+    'view pane admin links' => TRUE,
+    'administer pane access' => TRUE,
+    'administer advanced pane settings' => TRUE,
+    'administer panels layouts' => TRUE,
+    'administer panels styles' => TRUE,
     // Path
-      'administer url aliases' => TRUE,
-      'create url aliases' => TRUE,
+    'administer url aliases' => TRUE,
+    'create url aliases' => TRUE,
     // Path breadcrubms UI
-      'administer path breadcrumbs' => TRUE,
+    'administer path breadcrumbs' => TRUE,
     // Pathauto
-      'administer pathauto' => TRUE,
-      'notify of path changes' => TRUE,
+    'administer pathauto' => TRUE,
+    'notify of path changes' => TRUE,
     // Printer-friendly pages
-      'administer print' => TRUE,
-      'node-specific print configuration' => TRUE,
-      'access print' => TRUE,
+    'administer print' => TRUE,
+    'node-specific print configuration' => TRUE,
+    'access print' => TRUE,
     // Redirect
-      'administer redirects' => TRUE,
+    'administer redirects' => TRUE,
     // Rules
-      'administer rules' => TRUE,
-      'bypass rules access' => TRUE,
-      'access rules debug' => TRUE,
+    'administer rules' => TRUE,
+    'bypass rules access' => TRUE,
+    'access rules debug' => TRUE,
     // Scheduler
-      'administer scheduler' => TRUE,
-      'schedule (un)publishing of nodes' => TRUE,
+    'administer scheduler' => TRUE,
+    'schedule (un)publishing of nodes' => TRUE,
     // Search
-      'administer search' => TRUE,
+    'administer search' => TRUE,
     // Security Kit
-      'administer seckit' => TRUE,
+    'administer seckit' => TRUE,
     // Security Review
-      'access security review list' => TRUE,
-      'run security checks' => TRUE,
+    'access security review list' => TRUE,
+    'run security checks' => TRUE,
     // Site map
-      'access site map' => TRUE,
-    // Statistics
-      'administer statistics' => TRUE,
-      'access statistics' => TRUE,
-      'view post access counter' => TRUE,
+    'access site map' => TRUE,
     // String translation
-      'translate user-defined strings' => TRUE,
-      'translate admin strings' => TRUE,
+    'translate user-defined strings' => TRUE,
+    'translate admin strings' => TRUE,
     // Stylizer
-      'administer stylizer' => TRUE,
+    'administer stylizer' => TRUE,
     // Sweaver
-      'configure sweaver' => TRUE,
-      'use editor' => TRUE,
+    'configure sweaver' => TRUE,
+    'use editor' => TRUE,
     // System
-      'administer actions' => TRUE,
-      'access administration pages' => TRUE,
-      'access site in maintenance mode' => TRUE,
-      'view the administration theme' => TRUE,
-      'access site reports' => TRUE,
-      'block IP addresses' => TRUE,
+    'administer actions' => TRUE,
+    'access administration pages' => TRUE,
+    'access site in maintenance mode' => TRUE,
+    'view the administration theme' => TRUE,
+    'access site reports' => TRUE,
+    'block IP addresses' => TRUE,
     // Taxonomy
-      'administer taxonomy' => TRUE,
+    'administer taxonomy' => TRUE,
     // Translation overview
-      'view translation overview assigments' => TRUE,
+    'view translation overview assigments' => TRUE,
     // User
-      'administer permissions' => TRUE,
-      'administer users' => TRUE,
-      'access user profiles' => TRUE,
+    'administer permissions' => TRUE,
+    'administer users' => TRUE,
+    'access user profiles' => TRUE,
     // View Unpublished
-      'view any unpublished content' => TRUE,
+    'view any unpublished content' => TRUE,
     // Views
-      'administer views' => TRUE,
-      'access all views' => TRUE,
+    'administer views' => TRUE,
+    'access all views' => TRUE,
     // Webform
-      'access all webform results' => TRUE,
-      'access own webform results' => TRUE,
-      'edit all webform submissions' => TRUE,
-      'delete all webform submissions' => TRUE,
-      'access own webform submissions' => TRUE,
-      'edit own webform submissions' => TRUE,
-      'delete own webform submissions' => TRUE,
+    'access all webform results' => TRUE,
+    'access own webform results' => TRUE,
+    'edit all webform submissions' => TRUE,
+    'delete all webform submissions' => TRUE,
+    'access own webform submissions' => TRUE,
+    'edit own webform submissions' => TRUE,
+    'delete own webform submissions' => TRUE,
     // XML sitemap
-      'administer xmlsitemap' => TRUE,
+    'administer xmlsitemap' => TRUE,
     // robots.txt
-      'administer robots.txt' => TRUE,
+    'administer robots.txt' => TRUE,
   );
   return $permission;
 }
@@ -534,230 +582,227 @@ function _openfed_return_permission_builder() {
 function _openfed_return_permission_configurator() {
   $permission = array(
     // Add another
-      'administer add another' => TRUE,
-      'use add another' => TRUE,
+    'administer add another' => TRUE,
+    'use add another' => TRUE,
     // Administration menu
-      'access administration menu' => TRUE,
-      'flush caches' => TRUE,
+    'access administration menu' => TRUE,
+    'flush caches' => TRUE,
     // Administration theme
-      'access admin theme' => TRUE,
+    'access admin theme' => TRUE,
     // Administrative pages
-      'administer admin paths' => TRUE,
+    'administer admin paths' => TRUE,
     // Aggregator
-      'administer news feeds' => TRUE,
-      'access news feeds' => TRUE,
+    'administer news feeds' => TRUE,
+    'access news feeds' => TRUE,
     // Block
-      'administer blocks' => TRUE,
+    'administer blocks' => TRUE,
     // CKEditor
-      'administer ckeditor' => TRUE,
-      'customize ckeditor' => TRUE,
+    'administer ckeditor' => TRUE,
+    'customize ckeditor' => TRUE,
     // CKEditor Link
-      'access ckeditor link' => TRUE,
-      'administer ckeditor link' => TRUE,
+    'access ckeditor link' => TRUE,
+    'administer ckeditor link' => TRUE,
     // Content translation
-      'translate content' => TRUE,
+    'translate content' => TRUE,
     // Contextual links
-      'access contextual links' => TRUE,
+    'access contextual links' => TRUE,
     // Display Suite
-      'admin_display_suite' => TRUE,
+    'admin_display_suite' => TRUE,
     // Display Suite Extras
-      'ds_switch ofed_download' => TRUE,
-      'ds_switch ofed_page' => TRUE,
-      'ds_switch panel' => TRUE,
-      'ds_switch webform' => TRUE,
+    'ds_switch ofed_download' => TRUE,
+    'ds_switch ofed_page' => TRUE,
+    'ds_switch panel' => TRUE,
+    'ds_switch webform' => TRUE,
     // Display Suite UI
-      'admin_view_modes' => TRUE,
-      'admin_fields' => TRUE,
-      'admin_classes' => TRUE,
+    'admin_view_modes' => TRUE,
+    'admin_fields' => TRUE,
+    'admin_classes' => TRUE,
     // Features
-      'administer features' => TRUE,
-      'manage features' => TRUE,
+    'administer features' => TRUE,
+    'manage features' => TRUE,
     // Fieldgroup
-      'administer fieldgroups' => TRUE,
+    'administer fieldgroups' => TRUE,
     // Filter
-      'administer filters' => TRUE,
-      'use text format filtered_html' => TRUE,
+    'administer filters' => TRUE,
+    'use text format filtered_html' => TRUE,
+    'use text format full_html' => TRUE,
     // Flag
-      'administer flags' => TRUE,
+    'administer flags' => TRUE,
     // IMAGE
-      'administer image styles' => TRUE,
+    'administer image styles' => TRUE,
     // Link Checker
-      'access broken links report' => TRUE,
-      'access own broken links report' => TRUE,
-      'edit link settings' => TRUE,
+    'access broken links report' => TRUE,
+    'access own broken links report' => TRUE,
+    'edit link settings' => TRUE,
     // Locale
-      'administer languages' => TRUE,
+    'administer languages' => TRUE,
     // Media
-      'administer media' => TRUE,
-      'import media' => TRUE,
-      'view media' => TRUE,
-      'edit media' => TRUE,
+    'administer media' => TRUE,
+    'import media' => TRUE,
+    'view media' => TRUE,
+    'edit media' => TRUE,
     // Media Internet Sources
-      'add media from remote sources' => TRUE,
+    'add media from remote sources' => TRUE,
     // Menu
-      'administer menu' => TRUE,
+    'administer menu' => TRUE,
     // Menu attributes
-      'administer menu attributes' => TRUE,
+    'administer menu attributes' => TRUE,
     // Menu position
-      'administer menu positions' => TRUE,
+    'administer menu positions' => TRUE,
     // Meta tags
-      'administer meta tags' => TRUE,
-      'edit meta tags' => TRUE,
+    'administer meta tags' => TRUE,
+    'edit meta tags' => TRUE,
     // Mini panels
-      'create mini panels' => TRUE,
-      'administer mini panels' => TRUE,
+    'create mini panels' => TRUE,
+    'administer mini panels' => TRUE,
     // Mollom
-      'access mollom statistics' => TRUE,
+    'access mollom statistics' => TRUE,
     // Multilingual content
-      'administer content translations' => TRUE,
+    'administer content translations' => TRUE,
     // Node
-      'bypass node access' => TRUE,
-      'administer nodes' => TRUE,
-      'access content overview' => TRUE,
-      'access content' => TRUE,
-      'view own unpublished content' => TRUE,
-      'view revisions' => TRUE,
-      'revert revisions' => TRUE,
-      // CT: Download
-        'create ofed_download content' => TRUE,
-        'edit own ofed_download content' => TRUE,
-        'edit any ofed_download content' => TRUE,
-        'delete own ofed_download content' => TRUE,
-        'delete any ofed_download content' => TRUE,
-      // CT: Page
-        'create ofed_page content' => TRUE,
-        'edit own ofed_page content' => TRUE,
-        'edit any ofed_page content' => TRUE,
-        'delete own ofed_page content' => TRUE,
-        'delete any ofed_page content' => TRUE,
-      // CT: Panel
-        'create panel content' => TRUE,
-        'edit own panel content' => TRUE,
-        'edit any panel content' => TRUE,
-        'delete own panel content' => TRUE,
-      // CT: Webform
-        'create webform content' => TRUE,
-        'edit own webform content' => TRUE,
-        'edit any webform content' => TRUE,
-        'delete own webform content' => TRUE,
+    'bypass node access' => TRUE,
+    'administer nodes' => TRUE,
+    'access content overview' => TRUE,
+    'access content' => TRUE,
+    'view own unpublished content' => TRUE,
+    'view revisions' => TRUE,
+    'revert revisions' => TRUE,
+    // CT: Download
+    'create ofed_download content' => TRUE,
+    'edit own ofed_download content' => TRUE,
+    'edit any ofed_download content' => TRUE,
+    'delete own ofed_download content' => TRUE,
+    'delete any ofed_download content' => TRUE,
+    // CT: Page
+    'create ofed_page content' => TRUE,
+    'edit own ofed_page content' => TRUE,
+    'edit any ofed_page content' => TRUE,
+    'delete own ofed_page content' => TRUE,
+    'delete any ofed_page content' => TRUE,
+    // CT: Panel
+    'create panel content' => TRUE,
+    'edit own panel content' => TRUE,
+    'edit any panel content' => TRUE,
+    'delete own panel content' => TRUE,
+    // CT: Webform
+    'create webform content' => TRUE,
+    'edit own webform content' => TRUE,
+    'edit any webform content' => TRUE,
+    'delete own webform content' => TRUE,
     // Override node options
-      // CT: Download
-        'override ofed_download published option' => TRUE,
-        'override ofed_download promote to front page option' => TRUE,
-        'override ofed_download sticky option' => TRUE,
-        'override ofed_download revision option' => TRUE,
-        'enter ofed_download revision log entry' => TRUE,
-        'override ofed_download authored on option' => TRUE,
-        'override ofed_download authored by option' => TRUE,
-      // CT: Page
-        'override ofed_page published option' => TRUE,
-        'override ofed_page promote to front page option' => TRUE,
-        'override ofed_page sticky option' => TRUE,
-        'override ofed_page revision option' => TRUE,
-        'enter ofed_page revision log entry' => TRUE,
-        'override ofed_page authored on option' => TRUE,
-        'override ofed_page authored by option' => TRUE,
-      // CT: Panel
-        'override panel published option' => TRUE,
-        'override panel promote to front page option' => TRUE,
-        'override panel sticky option' => TRUE,
-        'override panel revision option' => TRUE,
-        'enter panel revision log entry' => TRUE,
-        'override panel authored on option' => TRUE,
-        'override panel authored by option' => TRUE,
-      // CT: Webform
-        'override webform published option' => TRUE,
-        'override webform promote to front page option' => TRUE,
-        'override webform sticky option' => TRUE,
-        'override webform revision option' => TRUE,
-        'enter webform revision log entry' => TRUE,
-        'override webform authored on option' => TRUE,
-        'override webform authored by option' => TRUE,
+    // CT: Download
+    'override ofed_download published option' => TRUE,
+    'override ofed_download promote to front page option' => TRUE,
+    'override ofed_download sticky option' => TRUE,
+    'override ofed_download revision option' => TRUE,
+    'enter ofed_download revision log entry' => TRUE,
+    'override ofed_download authored on option' => TRUE,
+    'override ofed_download authored by option' => TRUE,
+    // CT: Page
+    'override ofed_page published option' => TRUE,
+    'override ofed_page promote to front page option' => TRUE,
+    'override ofed_page sticky option' => TRUE,
+    'override ofed_page revision option' => TRUE,
+    'enter ofed_page revision log entry' => TRUE,
+    'override ofed_page authored on option' => TRUE,
+    'override ofed_page authored by option' => TRUE,
+    // CT: Panel
+    'override panel published option' => TRUE,
+    'override panel promote to front page option' => TRUE,
+    'override panel sticky option' => TRUE,
+    'override panel revision option' => TRUE,
+    'enter panel revision log entry' => TRUE,
+    'override panel authored on option' => TRUE,
+    'override panel authored by option' => TRUE,
+    // CT: Webform
+    'override webform published option' => TRUE,
+    'override webform promote to front page option' => TRUE,
+    'override webform sticky option' => TRUE,
+    'override webform revision option' => TRUE,
+    'enter webform revision log entry' => TRUE,
+    'override webform authored on option' => TRUE,
+    'override webform authored by option' => TRUE,
     // Page Title
-      'set page title' => TRUE,
-      'administer page titles' => TRUE,
-    // Page model
-      'administer page model module' => TRUE,
-      'use page model module' => TRUE,
+    'set page title' => TRUE,
+    'administer page titles' => TRUE,
+    // Views multi-column display
+    'administer views multi-column display' => TRUE,
+    'use views multi-column display' => TRUE,
     // Panel nodes
-      'create panel-nodes' => TRUE,
-      'edit any panel-nodes' => TRUE,
-      'edit own panel-nodes' => TRUE,
-      'administer panel-nodes' => TRUE,
-      'delete any panel-nodes' => TRUE,
-      'delete own panel-nodes' => TRUE,
+    'create panel-nodes' => TRUE,
+    'edit any panel-nodes' => TRUE,
+    'edit own panel-nodes' => TRUE,
+    'administer panel-nodes' => TRUE,
+    'delete any panel-nodes' => TRUE,
+    'delete own panel-nodes' => TRUE,
     // Panels
-      'use panels dashboard' => TRUE,
-      'view pane admin links' => TRUE,
-      'administer pane access' => TRUE,
-      'administer advanced pane settings' => TRUE,
-      'administer panels layouts' => TRUE,
-      'administer panels styles' => TRUE,
-      'use panels caching features' => TRUE,
-      'use panels locks' => TRUE,
+    'use panels dashboard' => TRUE,
+    'view pane admin links' => TRUE,
+    'administer pane access' => TRUE,
+    'administer advanced pane settings' => TRUE,
+    'administer panels layouts' => TRUE,
+    'administer panels styles' => TRUE,
+    'use panels caching features' => TRUE,
+    'use panels locks' => TRUE,
     // Path
-      'administer url aliases' => TRUE,
-      'create url aliases' => TRUE,
+    'administer url aliases' => TRUE,
+    'create url aliases' => TRUE,
     // Path breadcrubms UI
-      'administer path breadcrumbs' => TRUE,
+    'administer path breadcrumbs' => TRUE,
     // Pathauto
-      'administer pathauto' => TRUE,
-      'notify of path changes' => TRUE,
+    'administer pathauto' => TRUE,
+    'notify of path changes' => TRUE,
     // Printer-friendly pages
-      'administer print' => TRUE,
-      'node-specific print configuration' => TRUE,
-      'access print' => TRUE,
+    'administer print' => TRUE,
+    'node-specific print configuration' => TRUE,
+    'access print' => TRUE,
     // Redirect
-      'administer redirects' => TRUE,
+    'administer redirects' => TRUE,
     // Rules
-      'administer rules' => TRUE,
-      'bypass rules access' => TRUE,
-      'access rules debug' => TRUE,
+    'administer rules' => TRUE,
+    'bypass rules access' => TRUE,
+    'access rules debug' => TRUE,
     // Scheduler
-      'administer scheduler' => TRUE,
-      'schedule (un)publishing of nodes' => TRUE,
+    'administer scheduler' => TRUE,
+    'schedule (un)publishing of nodes' => TRUE,
     // Search
-      'administer search' => TRUE,
-      'search content' => TRUE,
+    'administer search' => TRUE,
+    'search content' => TRUE,
     // Security Kit
-      'administer seckit' => TRUE,
+    'administer seckit' => TRUE,
     // Security Review
-      'access security review list' => TRUE,
-      'run security checks' => TRUE,
+    'access security review list' => TRUE,
+    'run security checks' => TRUE,
     // Site map
-      'access site map' => TRUE,
-    // Statistics
-      'administer statistics' => TRUE,
-      'access statistics' => TRUE,
-      'view post access counter' => TRUE,
+    'access site map' => TRUE,
     // String translation
-      'translate user-defined strings' => TRUE,
-      'translate admin strings' => TRUE,
+    'translate user-defined strings' => TRUE,
+    'translate admin strings' => TRUE,
     // Stylizer
-      'administer stylizer' => TRUE,
+    'administer stylizer' => TRUE,
     // Sweaver
-      'configure sweaver' => TRUE,
-      'use editor' => TRUE,
+    'configure sweaver' => TRUE,
+    'use editor' => TRUE,
     // System
-      'administer actions' => TRUE,
-      'access administration pages' => TRUE,
-      'view the administration theme' => TRUE,
+    'administer actions' => TRUE,
+    'access administration pages' => TRUE,
+    'view the administration theme' => TRUE,
     // Taxonomy
-      'administer taxonomy' => TRUE,
+    'administer taxonomy' => TRUE,
     // Translation overview
-      'view translation overview assigments' => TRUE,
+    'view translation overview assigments' => TRUE,
     // User
-      'access user profiles' => TRUE,
+    'access user profiles' => TRUE,
     // View Unpublished
-      'view any unpublished content' => TRUE,
+    'view any unpublished content' => TRUE,
     // Webform
-      'access all webform results' => TRUE,
-      'access own webform results' => TRUE,
-      'edit all webform submissions' => TRUE,
-      'delete all webform submissions' => TRUE,
-      'access own webform submissions' => TRUE,
-      'edit own webform submissions' => TRUE,
-      'delete own webform submissions' => TRUE,
+    'access all webform results' => TRUE,
+    'access own webform results' => TRUE,
+    'edit all webform submissions' => TRUE,
+    'delete all webform submissions' => TRUE,
+    'access own webform submissions' => TRUE,
+    'edit own webform submissions' => TRUE,
+    'delete own webform submissions' => TRUE,
   );
   return $permission;
 }
@@ -770,119 +815,116 @@ function _openfed_return_permission_configurator() {
 function _openfed_return_permission_content_manager() {
   $permission = array(
     // Add another
-      'administer add another' => TRUE,
-      'use add another' => TRUE,
+    'administer add another' => TRUE,
+    'use add another' => TRUE,
     // Administration menu
-      'access administration menu' => TRUE,
-      'flush caches' => TRUE,
+    'access administration menu' => TRUE,
+    'flush caches' => TRUE,
     // Administration theme
-      'access admin theme' => TRUE,
+    'access admin theme' => TRUE,
     // Aggregator
-      'access news feeds' => TRUE,
+    'access news feeds' => TRUE,
     // CKEditor Link
-      'access ckeditor link' => TRUE,
+    'access ckeditor link' => TRUE,
     // Content translation
-      'translate content' => TRUE,
+    'translate content' => TRUE,
     // Contextual links
-      'access contextual links' => TRUE,
+    'access contextual links' => TRUE,
     // Filter
-      'use text format filtered_html' => TRUE,
+    'use text format filtered_html' => TRUE,
+    'use text format full_html' => TRUE,
     // IMAGE
-      'administer image styles' => TRUE,
+    'administer image styles' => TRUE,
     // Link Checker
-      'access broken links report' => TRUE,
-      'access own broken links report' => TRUE,
+    'access broken links report' => TRUE,
+    'access own broken links report' => TRUE,
     // Media
-      'administer media' => TRUE,
-      'import media' => TRUE,
-      'view media' => TRUE,
-      'edit media' => TRUE,
+    'administer media' => TRUE,
+    'import media' => TRUE,
+    'view media' => TRUE,
+    'edit media' => TRUE,
     // Media Internet Sources
-      'add media from remote sources' => TRUE,
+    'add media from remote sources' => TRUE,
     // Menu
-      'administer menu' => TRUE,
+    'administer menu' => TRUE,
     // Meta tags
-      'edit meta tags' => TRUE,
+    'edit meta tags' => TRUE,
     // Multilingual content
-      'administer content translations' => TRUE,
+    'administer content translations' => TRUE,
     // Node
-      'access content overview' => TRUE,
-      'access content' => TRUE,
-      'view own unpublished content' => TRUE,
-      'view revisions' => TRUE,
-      'revert revisions' => TRUE,
-      // CT: Download
-        'create ofed_download content' => TRUE,
-        'edit own ofed_download content' => TRUE,
-        'edit any ofed_download content' => TRUE,
-        'delete own ofed_download content' => TRUE,
-        'delete any ofed_download content' => TRUE,
-      // CT: Page
-        'create ofed_page content' => TRUE,
-        'edit own ofed_page content' => TRUE,
-        'edit any ofed_page content' => TRUE,
-        'delete own ofed_page content' => TRUE,
-        'delete any ofed_page content' => TRUE,
-      // CT: Webform
-        'create webform content' => TRUE,
-        'edit own webform content' => TRUE,
-        'edit any webform content' => TRUE,
-        'delete own webform content' => TRUE,
+    'access content overview' => TRUE,
+    'access content' => TRUE,
+    'view own unpublished content' => TRUE,
+    'view revisions' => TRUE,
+    'revert revisions' => TRUE,
+    // CT: Download
+    'create ofed_download content' => TRUE,
+    'edit own ofed_download content' => TRUE,
+    'edit any ofed_download content' => TRUE,
+    'delete own ofed_download content' => TRUE,
+    'delete any ofed_download content' => TRUE,
+    // CT: Page
+    'create ofed_page content' => TRUE,
+    'edit own ofed_page content' => TRUE,
+    'edit any ofed_page content' => TRUE,
+    'delete own ofed_page content' => TRUE,
+    'delete any ofed_page content' => TRUE,
+    // CT: Webform
+    'create webform content' => TRUE,
+    'edit own webform content' => TRUE,
+    'edit any webform content' => TRUE,
+    'delete own webform content' => TRUE,
     // Override node options
-      // CT: Download
-        'override ofed_download published option' => TRUE,
-        'override ofed_download promote to front page option' => TRUE,
-        'override ofed_download sticky option' => TRUE,
-        'override ofed_download revision option' => TRUE,
-        'enter ofed_download revision log entry' => TRUE,
-        'override ofed_download authored on option' => TRUE,
-      // CT: Page
-        'override ofed_page published option' => TRUE,
-        'override ofed_page promote to front page option' => TRUE,
-        'override ofed_page sticky option' => TRUE,
-        'override ofed_page revision option' => TRUE,
-        'enter ofed_page revision log entry' => TRUE,
-        'override ofed_page authored on option' => TRUE,
-      // CT: Webform
-        'override webform published option' => TRUE,
-        'override webform promote to front page option' => TRUE,
-        'override webform sticky option' => TRUE,
-        'override webform revision option' => TRUE,
-        'enter webform revision log entry' => TRUE,
-        'override webform authored on option' => TRUE,
+    // CT: Download
+    'override ofed_download published option' => TRUE,
+    'override ofed_download promote to front page option' => TRUE,
+    'override ofed_download sticky option' => TRUE,
+    'override ofed_download revision option' => TRUE,
+    'enter ofed_download revision log entry' => TRUE,
+    'override ofed_download authored on option' => TRUE,
+    // CT: Page
+    'override ofed_page published option' => TRUE,
+    'override ofed_page promote to front page option' => TRUE,
+    'override ofed_page sticky option' => TRUE,
+    'override ofed_page revision option' => TRUE,
+    'enter ofed_page revision log entry' => TRUE,
+    'override ofed_page authored on option' => TRUE,
+    // CT: Webform
+    'override webform published option' => TRUE,
+    'override webform promote to front page option' => TRUE,
+    'override webform sticky option' => TRUE,
+    'override webform revision option' => TRUE,
+    'enter webform revision log entry' => TRUE,
+    'override webform authored on option' => TRUE,
     // Page Title
-      'set page title' => TRUE,
-      'administer page titles' => TRUE,
+    'set page title' => TRUE,
+    'administer page titles' => TRUE,
     // Page model
-      'administer page model module' => TRUE,
-      'use page model module' => TRUE,
+    'use views multi-column display' => TRUE,
     // Path
-      'administer url aliases' => TRUE,
-      'create url aliases' => TRUE,
+    'administer url aliases' => TRUE,
+    'create url aliases' => TRUE,
     // Printer-friendly pages
-      'access print' => TRUE,
+    'access print' => TRUE,
     // Scheduler
-      'schedule (un)publishing of nodes' => TRUE,
+    'schedule (un)publishing of nodes' => TRUE,
     // Site map
-      'access site map' => TRUE,
-    // Statistics
-      'access statistics' => TRUE,
-      'view post access counter' => TRUE,
+    'access site map' => TRUE,
     // System
-      'access administration pages' => TRUE,
-      'view the administration theme' => TRUE,
+    'access administration pages' => TRUE,
+    'view the administration theme' => TRUE,
     // Taxonomy
-      'administer taxonomy' => TRUE,
+    'administer taxonomy' => TRUE,
     // Translation overview
-      'view translation overview assigments' => TRUE,
+    'view translation overview assigments' => TRUE,
     // View Unpublished
-      'view any unpublished content' => TRUE,
+    'view any unpublished content' => TRUE,
     // Webform
-      'access all webform results' => TRUE,
-      'access own webform results' => TRUE,
-      'access own webform submissions' => TRUE,
-      'edit own webform submissions' => TRUE,
-      'delete own webform submissions' => TRUE,
+    'access all webform results' => TRUE,
+    'access own webform results' => TRUE,
+    'access own webform submissions' => TRUE,
+    'edit own webform submissions' => TRUE,
+    'delete own webform submissions' => TRUE,
   );
   return $permission;
 }
@@ -895,26 +937,29 @@ function _openfed_return_permission_content_manager() {
 function _openfed_return_permission_user_manager() {
   $permission = array(
     // Add another
-      'use add another' => TRUE,
+    'use add another' => TRUE,
     // Administration menu
-      'access administration menu' => TRUE,
+    'access administration menu' => TRUE,
     // Administration theme
-      'access admin theme' => TRUE,
+    'access admin theme' => TRUE,
     // Aggregator
-      'access news feeds' => TRUE,
+    'access news feeds' => TRUE,
+    // Contextual links
+    'access contextual links' => TRUE,
     // Node
-      'access content' => TRUE,
-      'view own unpublished content' => TRUE,
+    'access content' => TRUE,
+    'view own unpublished content' => TRUE,
     // Printer-friendly pages
-      'access print' => TRUE,
+    'access print' => TRUE,
     // Site map
-      'access site map' => TRUE,
+    'access site map' => TRUE,
     // System
-      'access administration pages' => TRUE,
+    'access administration pages' => TRUE,
+    'view the administration theme' => TRUE,
     // User
-      'administer permissions' => TRUE,
-      'administer users' => TRUE,
-      'access user profiles' => TRUE,
+    'administer permissions' => TRUE,
+    'administer users' => TRUE,
+    'access user profiles' => TRUE,
   );
   return $permission;
 }
@@ -927,16 +972,16 @@ function _openfed_return_permission_user_manager() {
 function _openfed_return_permission_authenticated_visitor() {
   $permission = array(
     // Add another
-      'use add another' => TRUE,
+    'use add another' => TRUE,
     // Aggregator
-      'access news feeds' => TRUE,
+    'access news feeds' => TRUE,
     // Node
-      'access content' => TRUE,
-      'view own unpublished content' => TRUE,
+    'access content' => TRUE,
+    'view own unpublished content' => TRUE,
     // Printer-friendly pages
-      'access print' => TRUE,
+    'access print' => TRUE,
     // Site map
-      'access site map' => TRUE,
+    'access site map' => TRUE,
   );
   return $permission;
 }
@@ -949,49 +994,49 @@ function _openfed_return_permission_authenticated_visitor() {
 function _openfed_return_permission_authenticated_user() {
   $permission = array(
     // Add another
-      'use add another' => TRUE,
+    'use add another' => TRUE,
     // Aggregator
-      'access news feeds' => TRUE,
+    'access news feeds' => TRUE,
     // Display Suite Extras
-      'view ds_flag_bookmarks on node' => TRUE,
-      'view anchor on node' => TRUE,
-      'view file_name on node' => TRUE,
+    'view ds_flag_bookmarks on node' => TRUE,
+    'view anchor on node' => TRUE,
+    'view file_name on node' => TRUE,
 //      'view file_reference on node' => TRUE,
-      'view file_size on node' => TRUE,
-      'view file_type on node' => TRUE,
-      'view file_url_open on node' => TRUE,
-      'view file_url_persistent on node' => TRUE,
-      'view top_of_page on node' => TRUE,
-      'view url_file_save on node' => TRUE,
-      'view title on node' => TRUE,
-      'view links on node' => TRUE,
-      'view node_link on node' => TRUE,
-      'view author on node' => TRUE,
-      'view post_date on node' => TRUE,
-      'view submitted_by on node' => TRUE,
-      'view search_snippet on node' => TRUE,
-      'view search_info on node' => TRUE,
-      'view title on taxonomy_term' => TRUE,
-      'view more_link on taxonomy_term' => TRUE,
-      'view name on user' => TRUE,
-      'view title on ds_views' => TRUE,
-      'view header on ds_views' => TRUE,
-      'view exposed on ds_views' => TRUE,
-      'view attachment_before on ds_views' => TRUE,
-      'view rows on ds_views' => TRUE,
-      'view empty on ds_views' => TRUE,
-      'view pager on ds_views' => TRUE,
-      'view attachment_after on ds_views' => TRUE,
-      'view more on ds_views' => TRUE,
-      'view footer on ds_views' => TRUE,
-      'view feed_icon on ds_views' => TRUE,
+    'view file_size on node' => TRUE,
+    'view file_type on node' => TRUE,
+    'view file_url_open on node' => TRUE,
+    'view file_url_persistent on node' => TRUE,
+    'view top_of_page on node' => TRUE,
+    'view url_file_save on node' => TRUE,
+    'view title on node' => TRUE,
+    'view links on node' => TRUE,
+    'view node_link on node' => TRUE,
+    'view author on node' => TRUE,
+    'view post_date on node' => TRUE,
+    'view submitted_by on node' => TRUE,
+    'view search_snippet on node' => TRUE,
+    'view search_info on node' => TRUE,
+    'view title on taxonomy_term' => TRUE,
+    'view more_link on taxonomy_term' => TRUE,
+    'view name on user' => TRUE,
+    'view title on ds_views' => TRUE,
+    'view header on ds_views' => TRUE,
+    'view exposed on ds_views' => TRUE,
+    'view attachment_before on ds_views' => TRUE,
+    'view rows on ds_views' => TRUE,
+    'view empty on ds_views' => TRUE,
+    'view pager on ds_views' => TRUE,
+    'view attachment_after on ds_views' => TRUE,
+    'view more on ds_views' => TRUE,
+    'view footer on ds_views' => TRUE,
+    'view feed_icon on ds_views' => TRUE,
     // Node
-      'access content' => TRUE,
-      'view own unpublished content' => TRUE,
+    'access content' => TRUE,
+    'view own unpublished content' => TRUE,
     // Printer-friendly pages
-      'access print' => TRUE,
+    'access print' => TRUE,
     // Site map
-      'access site map' => TRUE,
+    'access site map' => TRUE,
   );
   return $permission;
 }
@@ -1004,46 +1049,46 @@ function _openfed_return_permission_authenticated_user() {
 function _openfed_return_permission_anonymous_user() {
   $permission = array(
     // Aggregator
-      'access news feeds' => TRUE,
+    'access news feeds' => TRUE,
     // Display Suite Extras
-      'view ds_flag_bookmarks on node' => TRUE,
-      'view anchor on node' => TRUE,
-      'view file_name on node' => TRUE,
+    'view ds_flag_bookmarks on node' => TRUE,
+    'view anchor on node' => TRUE,
+    'view file_name on node' => TRUE,
 //      'view file_reference on node' => TRUE,
-      'view file_size on node' => TRUE,
-      'view file_type on node' => TRUE,
-      'view file_url_open on node' => TRUE,
-      'view file_url_persistent on node' => TRUE,
-      'view top_of_page on node' => TRUE,
-      'view url_file_save on node' => TRUE,
-      'view title on node' => TRUE,
-      'view links on node' => TRUE,
-      'view node_link on node' => TRUE,
-      'view author on node' => TRUE,
-      'view post_date on node' => TRUE,
-      'view submitted_by on node' => TRUE,
-      'view search_snippet on node' => TRUE,
-      'view search_info on node' => TRUE,
-      'view title on taxonomy_term' => TRUE,
-      'view more_link on taxonomy_term' => TRUE,
-      'view name on user' => TRUE,
-      'view title on ds_views' => TRUE,
-      'view header on ds_views' => TRUE,
-      'view exposed on ds_views' => TRUE,
-      'view attachment_before on ds_views' => TRUE,
-      'view rows on ds_views' => TRUE,
-      'view empty on ds_views' => TRUE,
-      'view pager on ds_views' => TRUE,
-      'view attachment_after on ds_views' => TRUE,
-      'view more on ds_views' => TRUE,
-      'view footer on ds_views' => TRUE,
-      'view feed_icon on ds_views' => TRUE,
+    'view file_size on node' => TRUE,
+    'view file_type on node' => TRUE,
+    'view file_url_open on node' => TRUE,
+    'view file_url_persistent on node' => TRUE,
+    'view top_of_page on node' => TRUE,
+    'view url_file_save on node' => TRUE,
+    'view title on node' => TRUE,
+    'view links on node' => TRUE,
+    'view node_link on node' => TRUE,
+    'view author on node' => TRUE,
+    'view post_date on node' => TRUE,
+    'view submitted_by on node' => TRUE,
+    'view search_snippet on node' => TRUE,
+    'view search_info on node' => TRUE,
+    'view title on taxonomy_term' => TRUE,
+    'view more_link on taxonomy_term' => TRUE,
+    'view name on user' => TRUE,
+    'view title on ds_views' => TRUE,
+    'view header on ds_views' => TRUE,
+    'view exposed on ds_views' => TRUE,
+    'view attachment_before on ds_views' => TRUE,
+    'view rows on ds_views' => TRUE,
+    'view empty on ds_views' => TRUE,
+    'view pager on ds_views' => TRUE,
+    'view attachment_after on ds_views' => TRUE,
+    'view more on ds_views' => TRUE,
+    'view footer on ds_views' => TRUE,
+    'view feed_icon on ds_views' => TRUE,
     // Node
-      'access content' => TRUE,
+    'access content' => TRUE,
     // Printer-friendly pages
-      'access print' => TRUE,
+    'access print' => TRUE,
     // Site map
-      'access site map' => TRUE,
+    'access site map' => TRUE,
   );
   return $permission;
 }
@@ -1095,7 +1140,6 @@ function form_process_checkboxes_at_install($element) {
   }
   return $element;
 }
-
 
 /**
  * Return the template for a checkbox item with description and full description possibilities.
@@ -1166,7 +1210,7 @@ function theme_form_element_checkbox_list($variables) {
     $output .= '<div class="full-description">' . $element['#full_description'] . "</div>\n";
   }
   if (!empty($element['#picture'])) {
-    $output .= '<div class="picture">' . theme('image', array( 'path' => $element['#picture'] )) . "</div>\n";
+    $output .= '<div class="picture">' . theme('image', array('path' => $element['#picture'])) . "</div>\n";
   }
 
   $output .= "</div>\n";
