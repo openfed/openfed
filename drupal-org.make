@@ -140,7 +140,7 @@ projects[field_collection][subdir] = contrib
 
 projects[field-conditional-state][version] = "1.0"
 projects[field-conditional-state][subdir] = contrib
-projects[field-conditional-state][patch][] = "https://drupal.org/files/field-conditional-state-notice_undefined_property_stdclas_content-1721924-2.patch"
+projects[field-conditional-state][patch][] = "http://drupal.org/files/field-conditional-state-notice_undefined_property_stdclas_content-1721924-2.patch"
 
 projects[field_group][version] = "1.1"
 projects[field_group][subdir] = contrib 
@@ -276,9 +276,8 @@ projects[print][subdir] = contrib
 
 projects[quiz][version] = "4.0-beta1"
 projects[quiz][subdir] = contrib
-projects[quiz][patch][] = "http://drupal.org/files/quiz-Incorrect_permission_name-1842962-1.patch"
-projects[quiz][patch][] = "https://drupal.org/files/quiz-cant_view_long_answer_questions-1899654-1.patch"
-projects[quiz][patch][] = "https://drupal.org/files/undefined_index_group_by-1827880-7.patch"
+projects[quiz][patch][] = "http://drupal.org/files/quiz-cant_view_long_answer_questions-1899654-1.patch"
+projects[quiz][patch][] = "http://drupal.org/files/undefined_index_group_by-1827880-7.patch"
 
 projects[redirect][version] = "1.0-rc1"
 projects[redirect][subdir] = contrib
