@@ -276,7 +276,7 @@ projects[print][subdir] = contrib
 
 projects[quiz][version] = "4.0-beta1"
 projects[quiz][subdir] = contrib
-projects[quiz][patch][] = "https://drupal.org/files/quiz-Incorrect_permission_name-1842962-1.patch"
+projects[quiz][patch][] = "http://drupal.org/files/quiz-Incorrect_permission_name-1842962-1.patch"
 projects[quiz][patch][] = "https://drupal.org/files/quiz-cant_view_long_answer_questions-1899654-1.patch"
 projects[quiz][patch][] = "https://drupal.org/files/undefined_index_group_by-1827880-7.patch"
 
@@ -336,7 +336,6 @@ projects[table_altrow][subdir] = contrib
 
 projects[text_resize][version] = "1.8"
 projects[text_resize][subdir] = contrib
-projects[text_resize][patch][] = "http://drupal.org/files/text_resize_reset-1119994-6.patch"
 
 projects[token][version] = "1.5"
 projects[token][subdir] = contrib
