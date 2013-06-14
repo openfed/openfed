@@ -4,7 +4,7 @@
  * Implements hook_schema().
  */
 function ofed_feature_slideshow_schema() {
-  
+
 }
 
 /**
@@ -94,40 +94,5 @@ function ofed_feature_slideshow_uninstall() {
   if (module_exists('ofed_slideshow')) {
     // Disable it.
     module_disable(array('ofed_slideshow'));
-  }
-}
-
-/**
- * Update missing or wrong paths patterns.
- */
-function ofed_feature_slideshow_update_7001() {
-  variable_set('pathauto_node_ofed_slideshow_pattern', '[node:menu-link:parents:join-path]/[node:title]');
-
-  $pattern_nl = variable_get('pathauto_node_ofed_slideshow_nl_pattern', '');
-  if (empty($pattern_nl)) {
-    variable_set('pathauto_node_ofed_slideshow_nl_pattern', 'slideshows/[node:title]');
-  }
-}
-
-/**
- * Add patterns for taxonomy paths.
- */
-function ofed_feature_slideshow_update_7002() {
-  // Add the new variables for path alias patterns.
-  $pattern_default = variable_get('pathauto_taxonomy_term_ofed_slideshow_pattern', '');
-  if (empty($pattern_default)) {
-    variable_set('pathauto_taxonomy_term_ofed_slideshow_pattern', '[term:vocabulary:i18n-name]/[term:name]');
-  }
-  $pattern_en = variable_get('pathauto_taxonomy_term_ofed_slideshow_en_pattern', '');
-  if (empty($pattern_en)) {
-    variable_set('pathauto_taxonomy_term_ofed_slideshow_en_pattern', 'slideshows/[term:name]');
-  }
-  $pattern_nl = variable_get('pathauto_taxonomy_term_ofed_slideshow_nl_pattern', '');
-  if (empty($pattern_nl)) {
-    variable_set('pathauto_taxonomy_term_ofed_slideshow_nl_pattern', 'slideshows/[term:name]');
-  }
-  $pattern_fr = variable_get('pathauto_taxonomy_term_ofed_slideshow_fr_pattern', '');
-  if (empty($pattern_fr)) {
-    variable_set('pathauto_taxonomy_term_ofed_slideshow_fr_pattern', 'diaporamas/[term:name]');
   }
 }

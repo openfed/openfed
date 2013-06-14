@@ -385,7 +385,7 @@ function ofed_feature_team_views_default_views() {
   /* Display: Block: Teaser */
   $handler = $view->new_display('block', 'Block: Teaser', 'ofed_team_block_teaser');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Latest team members';
+  $handler->display->display_options['title'] = 'Latest Team Members';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['use_more'] = FALSE;
   $handler->display->display_options['use_more'] = TRUE;
@@ -393,7 +393,7 @@ function ofed_feature_team_views_default_views() {
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
   $handler->display->display_options['use_more_always'] = TRUE;
   $handler->display->display_options['defaults']['use_more_text'] = FALSE;
-  $handler->display->display_options['use_more_text'] = 'See all team';
+  $handler->display->display_options['use_more_text'] = 'See all Team Members';
   $handler->display->display_options['defaults']['access'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['defaults']['pager'] = FALSE;
@@ -444,12 +444,12 @@ function ofed_feature_team_views_default_views() {
   $handler->display->display_options['filters']['language']['value'] = array(
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
-  $handler->display->display_options['block_description'] = 'team: Teaser';
+  $handler->display->display_options['block_description'] = 'Team Member: Teaser';
 
   /* Display: Block: List */
   $handler = $view->new_display('block', 'Block: List', 'ofed_team_block_list');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Latest team members';
+  $handler->display->display_options['title'] = 'Latest Team Members';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['use_more'] = FALSE;
   $handler->display->display_options['use_more'] = TRUE;
@@ -457,7 +457,7 @@ function ofed_feature_team_views_default_views() {
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
   $handler->display->display_options['use_more_always'] = TRUE;
   $handler->display->display_options['defaults']['use_more_text'] = FALSE;
-  $handler->display->display_options['use_more_text'] = 'See all team';
+  $handler->display->display_options['use_more_text'] = 'See all Team Members';
   $handler->display->display_options['defaults']['access'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['defaults']['pager'] = FALSE;
@@ -509,12 +509,12 @@ function ofed_feature_team_views_default_views() {
   $handler->display->display_options['filters']['language']['value'] = array(
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
-  $handler->display->display_options['block_description'] = 'team: List';
+  $handler->display->display_options['block_description'] = 'Team Member: List';
 
   /* Display: Block: Column */
   $handler = $view->new_display('block', 'Block: Column', 'ofed_team_block_column');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Latest team members';
+  $handler->display->display_options['title'] = 'Latest Team Members';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['use_more'] = FALSE;
   $handler->display->display_options['use_more'] = TRUE;
@@ -522,7 +522,7 @@ function ofed_feature_team_views_default_views() {
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
   $handler->display->display_options['use_more_always'] = TRUE;
   $handler->display->display_options['defaults']['use_more_text'] = FALSE;
-  $handler->display->display_options['use_more_text'] = 'See all team';
+  $handler->display->display_options['use_more_text'] = 'See all Team Members';
   $handler->display->display_options['defaults']['access'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['defaults']['pager'] = FALSE;
@@ -573,7 +573,7 @@ function ofed_feature_team_views_default_views() {
   $handler->display->display_options['filters']['language']['value'] = array(
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
-  $handler->display->display_options['block_description'] = 'team: Column';
+  $handler->display->display_options['block_description'] = 'Team Member: Column';
   $translatables['ofed_team'] = array(
     t('Master'),
     t('Team members'),
@@ -602,13 +602,13 @@ function ofed_feature_team_views_default_views() {
     t('Page: List'),
     t('Page: Sticky '),
     t('Block: Teaser'),
-    t('Latest team members'),
-    t('See all team'),
-    t('team: Teaser'),
+    t('Latest Team Members'),
+    t('See all Team Members'),
+    t('Team Member: Teaser'),
     t('Block: List'),
-    t('team: List'),
+    t('Team Member: List'),
     t('Block: Column'),
-    t('team: Column'),
+    t('Team Member: Column'),
   );
   $export['ofed_team'] = $view;
 

@@ -1,0 +1,113 @@
+
+/*		
+		SLIDER	
+*/
+.node-ofed-slider																					{
+	padding: 15px 0;
+}
+.field-name-field-ofed-slider-image-collec .field-slideshow											{
+	overflow:visible;
+}
+.view-mode-full .field-name-field-ofed-slider-image-collec .field-slideshow-wrapper					{
+	position: relative;
+	border: 1px solid #E1DED7;
+	background: #F4F4F3;
+	height: 240px;
+}
+.view-mode-full  .field-name-field-ofed-slider-image-collec .field-slideshow						{
+	height: 240px !important;
+	width: 100% !important;
+	padding : 0;
+	margin:auto;
+}
+.view-mode-full  .field-name-field-ofed-slider-image-collec .field-slideshow-slide					{
+	padding: 0;
+}
+.field-name-field-ofed-slider-image-collec .field-slideshow-caption									{
+	padding: 0;
+	margin-top: 0px;
+	z-index: 10000;
+	position: absolute;
+	color: #32324B;
+	top: 0;
+	right: -75%;
+	width: 70%;
+	height: auto;
+	background: none;
+	font-size: 2em;
+	line-height: 1.5em;
+	font-weight: 600;
+}
+
+.field-name-field-ofed-slider-image-collec .field-slideshow-caption	a,								
+.field-name-field-ofed-slider-image-collec .field-slideshow-caption	a:focus,
+.field-name-field-ofed-slider-image-collec .field-slideshow-caption	a:visited,
+.field-name-field-ofed-slider-image-collec .field-slideshow-caption	a:link,
+.field-name-field-ofed-slider-image-collec .field-slideshow-caption	a:active						{
+	color: #32324B;
+	text-decoration: none;
+}
+
+/* 		PAGER  de SLIDER		*/
+.field-name-field-ofed-slider-image-collec .field-slideshow-wrapper									{
+	position:relative;
+}
+.view-mode-full .field-name-field-ofed-slider-image-collec .field-slideshow-controls,
+.page-list .field-name-field-ofed-slider-image-collec .field-slideshow-controls						{
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	margin: 0;
+	width: 10% !important;
+	height: auto !important;
+}
+
+.view-mode-full .field-name-field-ofed-slider-image-collec .field-slideshow-controls a	
+.page-list .field-name-field-ofed-slider-image-collec .field-slideshow-controls a					{
+	display:inline-block;
+	width: 29px;
+	height: 19px;
+	position:absolute;
+	top: 10px;
+	z-index: 9000;
+	font-size:0;
+	line-height:0;
+	text-shadow:0;
+}
+
+.field-name-field-ofed-slider-image-collec .field-slideshow-pager									{
+	position: absolute;
+	bottom: 10px;
+	right: 32.6%;
+}
+.field-name-field-ofed-slider-image-collec .field-slideshow-pager a									{
+	background: #32324B;
+	color: #32324B;
+	margin: 0 3px;
+	text-decoration:none;
+	padding: 2px 9px 3px 9px;
+	font-size: 0;
+	line-height: 0;
+	opacity: 0.5;
+}
+.field-name-field-ofed-slider-image-collec .field-slideshow-pager a.activeSlide,
+.field-name-field-ofed-slider-image-collec .field-slideshow-pager a:hover							{
+	background: #ff7300;
+	opacity: 1;
+}
+
+.field-name-field-ofed-slider-image-collec .field-slideshow-controls .prev							{
+	background: url(../images/arrow-carrousel-left.png) no-repeat 3px 0px;
+	float: none;
+}
+.field-name-field-ofed-slider-image-collec .field-slideshow-controls .prev:hover					{
+	background: url(../images/arrow-carrousel-left-active.png) no-repeat 3px 0px;
+}
+.field-name-field-ofed-slider-image-collec .field-slideshow-controls .next							{
+	background: url(../images/arrow-carrousel-right.png) no-repeat 3px 0px;
+	float: none;
+}
+
+.field-name-field-ofed-slider-image-collec .field-slideshow-controls .next:hover					{
+	background: url(../images/arrow-carrousel-right-active.png) no-repeat 3px 0px;
+}

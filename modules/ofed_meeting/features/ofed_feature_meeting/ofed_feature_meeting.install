@@ -120,26 +120,3 @@ function ofed_feature_meeting_uninstall() {
     module_disable(array('ofed_meeting'));
   }
 }
-
-/**
- * Add patterns for taxonomy paths.
- */
-function ofed_feature_meeting_update_7001() {
-  // Add the new variables for path alias patterns.
-  $pattern_default = variable_get('pathauto_taxonomy_term_ofed_meeting_pattern', '');
-  if (empty($pattern_default)) {
-    variable_set('pathauto_taxonomy_term_ofed_meeting_pattern', '[term:vocabulary:i18n-name]/[term:name]');
-  }
-  $pattern_en = variable_get('pathauto_taxonomy_term_ofed_meeting_en_pattern', '');
-  if (empty($pattern_en)) {
-    variable_set('pathauto_taxonomy_term_ofed_meeting_en_pattern', 'meetings/[term:name]');
-  }
-  $pattern_nl = variable_get('pathauto_taxonomy_term_ofed_meeting_nl_pattern', '');
-  if (empty($pattern_nl)) {
-    variable_set('pathauto_taxonomy_term_ofed_meeting_nl_pattern', 'vergaderingen/[term:name]');
-  }
-  $pattern_fr = variable_get('pathauto_taxonomy_term_ofed_meeting_fr_pattern', '');
-  if (empty($pattern_fr)) {
-    variable_set('pathauto_taxonomy_term_ofed_meeting_fr_pattern', 'reunions/[term:name]');
-  }
-}

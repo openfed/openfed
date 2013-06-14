@@ -179,35 +179,35 @@ function ofed_feature_team_strongarm() {
       'display' => array(
         'language' => array(
           'default' => array(
-            'weight' => '24',
-            'visible' => FALSE,
-          ),
-          'full' => array(
-            'weight' => '24',
-            'visible' => FALSE,
-          ),
-          'teaser' => array(
-            'weight' => '24',
-            'visible' => FALSE,
-          ),
-          'rss' => array(
-            'weight' => '23',
-            'visible' => FALSE,
-          ),
-          'search_index' => array(
-            'weight' => '24',
-            'visible' => FALSE,
-          ),
-          'search_result' => array(
             'weight' => '22',
             'visible' => FALSE,
           ),
-          'print' => array(
+          'full' => array(
+            'weight' => '22',
+            'visible' => FALSE,
+          ),
+          'teaser' => array(
+            'weight' => '22',
+            'visible' => FALSE,
+          ),
+          'rss' => array(
+            'weight' => '21',
+            'visible' => FALSE,
+          ),
+          'search_index' => array(
+            'weight' => '22',
+            'visible' => FALSE,
+          ),
+          'search_result' => array(
             'weight' => '24',
             'visible' => FALSE,
           ),
+          'print' => array(
+            'weight' => '22',
+            'visible' => FALSE,
+          ),
           'block_column' => array(
-            'weight' => '24',
+            'weight' => '22',
             'visible' => FALSE,
           ),
           'block_info' => array(
@@ -215,11 +215,11 @@ function ofed_feature_team_strongarm() {
             'visible' => FALSE,
           ),
           'block_list' => array(
-            'weight' => '24',
+            'weight' => '22',
             'visible' => FALSE,
           ),
           'page_list' => array(
-            'weight' => '20',
+            'weight' => '22',
             'visible' => FALSE,
           ),
           'block_element' => array(

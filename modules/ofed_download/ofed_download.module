@@ -6,25 +6,6 @@
  */
 
 /**
- * Implements hook_menu().
- */
-function ofed_download_menu() {
-  $items = array();
-
-  $items['download-file/%'] = array(
-    'title' => 'Download file',
-    'page callback' => array('_ofed_download_force_download'),
-    'page arguments' => array(1),
-    'access callback' => 'user_access',
-    'access arguments' => array('access content'),
-    'file' => 'includes/ofed_download.misc.inc',
-    'type' => MENU_CALLBACK,
-  );
-
-  return $items;
-}
-
-/**
  * Implements hook_theme_registry_alter().
  */
 function ofed_download_theme_registry_alter(&$theme_registry) {

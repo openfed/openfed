@@ -17,11 +17,6 @@ function ofed_feature_address_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'ofed_address';
   $ds_fieldsetting->view_mode = 'default';
   $ds_fieldsetting->settings = array(
-    'address' => array(
-      'weight' => '1',
-      'label' => 'hidden',
-      'format' => 'default',
-    ),
     'field_ofed_address_phone' => array(
       'formatter_settings' => array(
         'ft' => array(
@@ -40,6 +35,14 @@ function ofed_feature_address_ds_field_settings_info() {
         ),
       ),
     ),
+    'field_ofed_address_update' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'classes' => 'clear-block',
+          'lb' => 'Updated date',
+        ),
+      ),
+    ),
   );
   $export['node|ofed_address|default'] = $ds_fieldsetting;
 
@@ -50,84 +53,21 @@ function ofed_feature_address_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'ofed_address';
   $ds_fieldsetting->view_mode = 'page_list';
   $ds_fieldsetting->settings = array(
-    'address' => array(
-      'weight' => '1',
+    'node_link' => array(
+      'weight' => '8',
       'label' => 'hidden',
       'format' => 'default',
     ),
-    'node_link' => array(
-      'weight' => '2',
-      'label' => 'hidden',
-      'format' => 'default',
+    'field_ofed_address_update' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'classes' => 'clear-block',
+          'lb' => 'Updated date',
+        ),
+      ),
     ),
   );
   $export['node|ofed_address|page_list'] = $ds_fieldsetting;
-
-  $ds_fieldsetting = new stdClass();
-  $ds_fieldsetting->api_version = 1;
-  $ds_fieldsetting->id = 'node|ofed_address|references';
-  $ds_fieldsetting->entity_type = 'node';
-  $ds_fieldsetting->bundle = 'ofed_address';
-  $ds_fieldsetting->view_mode = 'references';
-  $ds_fieldsetting->settings = array(
-    'address' => array(
-      'weight' => '1',
-      'label' => 'hidden',
-      'format' => 'default',
-    ),
-  );
-  $export['node|ofed_address|references'] = $ds_fieldsetting;
-
-  return $export;
-}
-
-/**
- * Implements hook_ds_custom_fields_info().
- */
-function ofed_feature_address_ds_custom_fields_info() {
-  $export = array();
-
-  $ds_field = new stdClass();
-  $ds_field->api_version = 1;
-  $ds_field->field = 'address';
-  $ds_field->label = 'Address';
-  $ds_field->field_type = 5;
-  $ds_field->entities = array(
-    'node' => 'node',
-  );
-  $ds_field->ui_limit = 'ofed_address|*';
-  $ds_field->properties = array(
-    'code' => array(
-      'value' => '<?php
-$street = (!empty($entity->field_ofed_address_street[\'und\'][0][\'safe_value\'])) ? $entity->field_ofed_address_street[\'und\'][0][\'safe_value\'] : FALSE;
-$number = (!empty($entity->field_ofed_address_number[\'und\'][0][\'safe_value\'])) ? $entity->field_ofed_address_number[\'und\'][0][\'safe_value\'] : FALSE;
-$bus = (!empty($entity->field_ofed_address_bus[\'und\'][0][\'safe_value\'])) ? $entity->field_ofed_address_bus[\'und\'][0][\'safe_value\'] : FALSE;
-$zip = (!empty($entity->field_ofed_address_zip[\'und\'][0][\'safe_value\'])) ? $entity->field_ofed_address_zip[\'und\'][0][\'safe_value\'] : FALSE;
-$city = (!empty($entity->field_ofed_address_city[\'und\'][0][\'safe_value\'])) ? $entity->field_ofed_address_city[\'und\'][0][\'safe_value\'] : FALSE;
-$country = (!empty($entity->field_ofed_address_country[\'und\'][0][\'iso2\'])) ? country_load($entity->field_ofed_address_country[\'und\'][0][\'iso2\']) : FALSE;
-if($number) {
-  if($bus) {
-    $number = $number . \'/\' . $bus;
-  }
-}
-$line = array();
-$lines[0] = trim($street . \' \' . $number);
-$lines[1] = trim($zip . \' \' . $city);
-if($country) {
-  $lines[2] = trim(countries_t($country));
-}
-foreach($lines as $key => $value) {
-if(empty($value)) {
-unset($lines[$key]);
-}
-}
-print \'<address>\' . implode(\'<br>\', $lines)  . \'</address>\';
-?>',
-      'format' => 'ds_code',
-    ),
-    'use_token' => 0,
-  );
-  $export['address'] = $ds_field;
 
   return $export;
 }
@@ -149,22 +89,34 @@ function ofed_feature_address_ds_layout_settings_info() {
     'regions' => array(
       'ds_content' => array(
         0 => 'field_ofed_address_name',
-        1 => 'address',
-        2 => 'field_ofed_address_email',
-        3 => 'field_ofed_address_phone',
-        4 => 'field_ofed_address_opening_hours',
-        5 => 'field_ofed_address_map',
-        6 => 'field_ofed_address_directions',
+        1 => 'field_ofed_address_street',
+        2 => 'field_ofed_address_number',
+        3 => 'field_ofed_address_bus',
+        4 => 'field_ofed_address_zip',
+        5 => 'field_ofed_address_city',
+        6 => 'field_ofed_address_country',
+        7 => 'field_ofed_address_email',
+        8 => 'field_ofed_address_phone',
+        9 => 'field_ofed_address_opening_hours',
+        10 => 'field_ofed_address_map',
+        11 => 'field_ofed_address_directions',
+        12 => 'field_ofed_address_update',
       ),
     ),
     'fields' => array(
       'field_ofed_address_name' => 'ds_content',
-      'address' => 'ds_content',
+      'field_ofed_address_street' => 'ds_content',
+      'field_ofed_address_number' => 'ds_content',
+      'field_ofed_address_bus' => 'ds_content',
+      'field_ofed_address_zip' => 'ds_content',
+      'field_ofed_address_city' => 'ds_content',
+      'field_ofed_address_country' => 'ds_content',
       'field_ofed_address_email' => 'ds_content',
       'field_ofed_address_phone' => 'ds_content',
       'field_ofed_address_opening_hours' => 'ds_content',
       'field_ofed_address_map' => 'ds_content',
       'field_ofed_address_directions' => 'ds_content',
+      'field_ofed_address_update' => 'ds_content',
     ),
     'classes' => array(),
     'wrappers' => array(
@@ -190,13 +142,25 @@ function ofed_feature_address_ds_layout_settings_info() {
     'regions' => array(
       'ds_content' => array(
         0 => 'field_ofed_address_name',
-        1 => 'address',
-        2 => 'node_link',
+        1 => 'field_ofed_address_street',
+        2 => 'field_ofed_address_number',
+        3 => 'field_ofed_address_bus',
+        4 => 'field_ofed_address_zip',
+        5 => 'field_ofed_address_city',
+        6 => 'field_ofed_address_country',
+        7 => 'field_ofed_address_update',
+        8 => 'node_link',
       ),
     ),
     'fields' => array(
       'field_ofed_address_name' => 'ds_content',
-      'address' => 'ds_content',
+      'field_ofed_address_street' => 'ds_content',
+      'field_ofed_address_number' => 'ds_content',
+      'field_ofed_address_bus' => 'ds_content',
+      'field_ofed_address_zip' => 'ds_content',
+      'field_ofed_address_city' => 'ds_content',
+      'field_ofed_address_country' => 'ds_content',
+      'field_ofed_address_update' => 'ds_content',
       'node_link' => 'ds_content',
     ),
     'classes' => array(),
@@ -223,17 +187,27 @@ function ofed_feature_address_ds_layout_settings_info() {
     'regions' => array(
       'ds_content' => array(
         0 => 'field_ofed_address_name',
-        1 => 'address',
-        2 => 'field_ofed_address_email',
-        3 => 'field_ofed_address_phone',
-        4 => 'field_ofed_address_opening_hours',
-        5 => 'field_ofed_address_map',
-        6 => 'field_ofed_address_directions',
+        1 => 'field_ofed_address_street',
+        2 => 'field_ofed_address_number',
+        3 => 'field_ofed_address_bus',
+        4 => 'field_ofed_address_zip',
+        5 => 'field_ofed_address_city',
+        6 => 'field_ofed_address_country',
+        7 => 'field_ofed_address_email',
+        8 => 'field_ofed_address_phone',
+        9 => 'field_ofed_address_opening_hours',
+        10 => 'field_ofed_address_map',
+        11 => 'field_ofed_address_directions',
       ),
     ),
     'fields' => array(
       'field_ofed_address_name' => 'ds_content',
-      'address' => 'ds_content',
+      'field_ofed_address_street' => 'ds_content',
+      'field_ofed_address_number' => 'ds_content',
+      'field_ofed_address_bus' => 'ds_content',
+      'field_ofed_address_zip' => 'ds_content',
+      'field_ofed_address_city' => 'ds_content',
+      'field_ofed_address_country' => 'ds_content',
       'field_ofed_address_email' => 'ds_content',
       'field_ofed_address_phone' => 'ds_content',
       'field_ofed_address_opening_hours' => 'ds_content',

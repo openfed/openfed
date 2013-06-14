@@ -121,11 +121,11 @@ function ofed_feature_page_strongarm() {
       'display' => array(
         'language' => array(
           'default' => array(
-            'weight' => '15',
+            'weight' => '14',
             'visible' => FALSE,
           ),
           'teaser' => array(
-            'weight' => '14',
+            'weight' => '13',
             'visible' => FALSE,
           ),
           'full' => array(
@@ -133,15 +133,15 @@ function ofed_feature_page_strongarm() {
             'visible' => FALSE,
           ),
           'rss' => array(
-            'weight' => '15',
+            'weight' => '14',
             'visible' => FALSE,
           ),
           'search_index' => array(
-            'weight' => '15',
+            'weight' => '14',
             'visible' => FALSE,
           ),
           'search_result' => array(
-            'weight' => '17',
+            'weight' => '16',
             'visible' => FALSE,
           ),
         ),

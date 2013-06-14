@@ -4,7 +4,7 @@
  * Implements hook_schema().
  */
 function ofed_team_schema() {
-  
+
 }
 
 /**
@@ -68,9 +68,15 @@ function ofed_team_install() {
   $languages = language_list();
 
   foreach ($languages as $language) {
-    $lang = $language->prefix;
-    _ofed_team_taxonomy_term_save($civilities[$lang], $civility_vocabulary->vid, $lang);
-    _ofed_team_taxonomy_term_save($genders[$lang], $gender_vocabulary->vid, $lang);
+    $lang = empty($language->prefix) ? $language->language : $language->prefix;
+
+    if (!empty($civilities[$lang])) {
+      _ofed_team_taxonomy_term_save($civilities[$lang], $civility_vocabulary->vid, $lang);
+    }
+
+    if (!empty($gender[$lang])) {
+      _ofed_team_taxonomy_term_save($genders[$lang], $gender_vocabulary->vid, $lang);
+    }
   }
 }
 
@@ -107,78 +113,5 @@ function _ofed_team_taxonomy_term_save($terms, $vid, $lang, $update = FALSE) {
  * Implements hook_uninstall().
  */
 function ofed_team_uninstall() {
-  
-}
 
-/**
- * Add Civility and Gender taxonomy terms in their respective vocabulary
- */
-function ofed_team_update_7001() {
-  // Install taxonomy terms...
-  // build terms array
-  $civilities = array(
-    'en' => array('Mrs.', 'Ms.', 'Mr.'),
-    'fr' => array('Madame', 'Mademoiselle', 'Monsieur'),
-    'nl' => array('Mevrouw', 'Jufrouw', 'Meneer'),
-  );
-  $genders = array(
-    'en' => array('Women', 'Men'),
-    'fr' => array('Femme', 'Homme'),
-    'nl' => array('Vrouw', 'Man'),
-  );
-
-  $civility_vocabulary = taxonomy_vocabulary_machine_name_load('ofed_team_civility');
-  $gender_vocabulary = taxonomy_vocabulary_machine_name_load('ofed_team_gender');
-
-  // get enabled languages
-  $languages = language_list();
-
-  foreach ($languages as $language) {
-    $lang = $language->prefix;
-    $update = TRUE;
-    _ofed_team_taxonomy_term_save($civilities[$lang], $civility_vocabulary->vid, $lang, $update);
-    _ofed_team_taxonomy_term_save($genders[$lang], $gender_vocabulary->vid, $lang, $update);
-  }
-}
-
-/**
- * Replace Civility and Gender taxonomy terms in their respective vocabulary.
- */
-function ofed_team_update_7002() {
-  // Replace vocabulary terms for ofed_team_civility vocabulary.
-  $vocabulary = taxonomy_vocabulary_machine_name_load('ofed_team_civility');
-  db_query("UPDATE {taxonomy_term_data} SET name = 'Mrs.' WHERE name = 'single' AND vid = $vocabulary->vid AND language = 'en'")->execute();
-  db_query("UPDATE {taxonomy_term_data} SET name = 'Ms.' WHERE name = 'married' AND vid = $vocabulary->vid AND language = 'en'")->execute();
-  db_query("UPDATE {taxonomy_term_data} SET name = 'Mr.' WHERE name = 'divorced' AND vid = $vocabulary->vid AND language = 'en'")->execute();
-  db_query("UPDATE {taxonomy_term_data} SET name = 'Madame' WHERE name = 'célibataire.' AND vid = $vocabulary->vid AND language = 'fr'")->execute();
-  db_query("UPDATE {taxonomy_term_data} SET name = 'Mademoiselle' WHERE name = 'marrié' AND vid = $vocabulary->vid AND language = 'fr'")->execute();
-  db_query("UPDATE {taxonomy_term_data} SET name = 'Monsieur' WHERE name = 'divorcé' AND vid = $vocabulary->vid AND language = 'fr'")->execute();
-  db_query("UPDATE {taxonomy_term_data} SET name = 'Mevrouw' WHERE name = 'single' AND vid = $vocabulary->vid AND language = 'nl'")->execute();
-  db_query("UPDATE {taxonomy_term_data} SET name = 'Jufrouw' WHERE name = 'getrouwd' AND vid = $vocabulary->vid AND language = 'nl'")->execute();
-  db_query("UPDATE {taxonomy_term_data} SET name = 'Meneer' WHERE name = 'gescheiden' AND vid = $vocabulary->vid AND language = 'nl'")->execute();
-
-  // Delete vocabulary terms for ofed_team_civility vocabulary.
-  $term = db_query("SELECT * FROM {taxonomy_term_data} WHERE name = 'widow/widower' AND vid = $vocabulary->vid AND language = 'en'")->fetchObject();
-  if (!empty($term)) {
-    taxonomy_term_delete($term->tid);
-  }
-
-  $term = db_query("SELECT * FROM {taxonomy_term_data} WHERE name = 'veuve/veuf' AND vid = $vocabulary->vid AND language = 'fr'")->fetchObject();
-  if (!empty($term)) {
-    taxonomy_term_delete($term->tid);
-  }
-
-  $term = db_query("SELECT * FROM {taxonomy_term_data} WHERE name = 'weduwe/weduwenaar' AND vid = $vocabulary->vid AND language = 'nl'")->fetchObject();
-  if (!empty($term)) {
-    taxonomy_term_delete($term->tid);
-  }
-
-  // Replace vocabulary terms for ofed_team_gender vocabulary.
-  $vocabulary = taxonomy_vocabulary_machine_name_load('ofed_team_gender');
-  db_query("UPDATE {taxonomy_term_data} SET name = 'Women' WHERE name = 'female' AND vid = $vocabulary->vid AND language = 'en'")->execute();
-  db_query("UPDATE {taxonomy_term_data} SET name = 'Men' WHERE name = 'male' AND vid = $vocabulary->vid AND language = 'en'")->execute();
-  db_query("UPDATE {taxonomy_term_data} SET name = 'Femme' WHERE name = 'féminin' AND vid = $vocabulary->vid AND language = 'fr'")->execute();
-  db_query("UPDATE {taxonomy_term_data} SET name = 'Homme' WHERE name = 'masculin' AND vid = $vocabulary->vid AND language = 'fr'")->execute();
-  db_query("UPDATE {taxonomy_term_data} SET name = 'Vrouw' WHERE name = 'vrouw' AND vid = $vocabulary->vid AND language = 'nl'")->execute();
-  db_query("UPDATE {taxonomy_term_data} SET name = 'Man' WHERE name = 'man' AND vid = $vocabulary->vid AND language = 'nl'")->execute();
 }

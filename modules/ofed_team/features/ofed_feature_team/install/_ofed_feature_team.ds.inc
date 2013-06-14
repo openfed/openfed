@@ -18,7 +18,7 @@ function ofed_feature_team_ds_field_settings_info() {
   $ds_fieldsetting->view_mode = 'block_column';
   $ds_fieldsetting->settings = array(
     'node_link' => array(
-      'weight' => '9',
+      'weight' => '7',
       'label' => 'hidden',
       'format' => 'default',
     ),
@@ -47,6 +47,13 @@ function ofed_feature_team_ds_field_settings_info() {
       'formatter_settings' => array(
         'ft' => array(
           'classes' => 'float-left',
+        ),
+      ),
+    ),
+    'field_ofed_team_picture' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'classes' => 'clear-block',
         ),
       ),
     ),
@@ -143,17 +150,6 @@ function ofed_feature_team_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'ofed_team';
   $ds_fieldsetting->view_mode = 'default';
   $ds_fieldsetting->settings = array(
-    'social_button' => array(
-      'weight' => '12',
-      'label' => 'above',
-      'format' => 'default',
-      'formatter_settings' => array(
-        'ft' => array(
-          'classes' => 'clear-block',
-          'lb' => 'Social medias',
-        ),
-      ),
-    ),
     'field_ofed_team_body' => array(
       'formatter_settings' => array(
         'ft' => array(
@@ -169,6 +165,13 @@ function ofed_feature_team_ds_field_settings_info() {
       ),
     ),
     'field_ofed_team_contact' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'classes' => 'clear-block',
+        ),
+      ),
+    ),
+    'field_ofed_team_email' => array(
       'formatter_settings' => array(
         'ft' => array(
           'classes' => 'clear-block',
@@ -203,6 +206,13 @@ function ofed_feature_team_ds_field_settings_info() {
         ),
       ),
     ),
+    'field_ofed_team_phone' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'classes' => 'clear-block',
+        ),
+      ),
+    ),
     'field_ofed_team_picture' => array(
       'formatter_settings' => array(
         'ft' => array(
@@ -223,20 +233,6 @@ function ofed_feature_team_ds_field_settings_info() {
         'ft' => array(
           'classes' => 'clear-block',
           'lb' => 'Updated date',
-        ),
-      ),
-    ),
-    'field_ofed_team_phone' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'classes' => 'clear-block',
-        ),
-      ),
-    ),
-    'field_ofed_team_email' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'classes' => 'clear-block',
         ),
       ),
     ),
@@ -250,17 +246,6 @@ function ofed_feature_team_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'ofed_team';
   $ds_fieldsetting->view_mode = 'full';
   $ds_fieldsetting->settings = array(
-    'social_button' => array(
-      'weight' => '12',
-      'label' => 'above',
-      'format' => 'default',
-      'formatter_settings' => array(
-        'ft' => array(
-          'classes' => 'clear-block',
-          'lb' => 'Social medias',
-        ),
-      ),
-    ),
     'field_ofed_team_body' => array(
       'formatter_settings' => array(
         'ft' => array(
@@ -276,6 +261,13 @@ function ofed_feature_team_ds_field_settings_info() {
       ),
     ),
     'field_ofed_team_contact' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'classes' => 'clear-block',
+        ),
+      ),
+    ),
+    'field_ofed_team_email' => array(
       'formatter_settings' => array(
         'ft' => array(
           'classes' => 'clear-block',
@@ -310,6 +302,13 @@ function ofed_feature_team_ds_field_settings_info() {
         ),
       ),
     ),
+    'field_ofed_team_phone' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'classes' => 'clear-block',
+        ),
+      ),
+    ),
     'field_ofed_team_picture' => array(
       'formatter_settings' => array(
         'ft' => array(
@@ -333,20 +332,6 @@ function ofed_feature_team_ds_field_settings_info() {
         ),
       ),
     ),
-    'field_ofed_team_phone' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'classes' => 'clear-block',
-        ),
-      ),
-    ),
-    'field_ofed_team_email' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'classes' => 'clear-block',
-        ),
-      ),
-    ),
   );
   $export['node|ofed_team|full'] = $ds_fieldsetting;
 
@@ -357,20 +342,22 @@ function ofed_feature_team_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'ofed_team';
   $ds_fieldsetting->view_mode = 'page_list';
   $ds_fieldsetting->settings = array(
-    'full_name_with_link' => array(
-      'weight' => '0',
-      'label' => 'hidden',
-      'format' => 'default',
-    ),
     'node_link' => array(
-      'weight' => '10',
+      'weight' => '8',
       'label' => 'hidden',
       'format' => 'default',
     ),
-    'field_ofed_team_body' => array(
+    'field_ofed_team_civility' => array(
       'formatter_settings' => array(
         'ft' => array(
-          'classes' => 'clear-block',
+          'classes' => 'float-left',
+        ),
+      ),
+    ),
+    'field_ofed_team_first_name' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'classes' => 'float-left',
         ),
       ),
     ),
@@ -381,10 +368,33 @@ function ofed_feature_team_ds_field_settings_info() {
         ),
       ),
     ),
+    'field_ofed_team_last_name' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'classes' => 'float-left',
+        ),
+      ),
+    ),
     'field_ofed_team_picture' => array(
       'formatter_settings' => array(
         'ft' => array(
           'classes' => 'clear-block',
+        ),
+      ),
+    ),
+    'field_ofed_team_pubdate' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'classes' => 'clear-block',
+          'lb' => 'Published date',
+        ),
+      ),
+    ),
+    'field_ofed_team_update' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'classes' => 'clear-block',
+          'lb' => 'Updated date',
         ),
       ),
     ),
@@ -419,6 +429,13 @@ function ofed_feature_team_ds_field_settings_info() {
         ),
       ),
     ),
+    'field_ofed_team_email' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'classes' => 'clear-block',
+        ),
+      ),
+    ),
     'field_ofed_team_first_name' => array(
       'formatter_settings' => array(
         'ft' => array(
@@ -447,6 +464,13 @@ function ofed_feature_team_ds_field_settings_info() {
         ),
       ),
     ),
+    'field_ofed_team_phone' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'classes' => 'clear-block',
+        ),
+      ),
+    ),
     'field_ofed_team_picture' => array(
       'formatter_settings' => array(
         'ft' => array(
@@ -465,20 +489,6 @@ function ofed_feature_team_ds_field_settings_info() {
       'formatter_settings' => array(
         'ft' => array(
           'lb' => 'Updated date',
-        ),
-      ),
-    ),
-    'field_ofed_team_phone' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'classes' => 'clear-block',
-        ),
-      ),
-    ),
-    'field_ofed_team_email' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'classes' => 'clear-block',
         ),
       ),
     ),
@@ -716,6 +726,13 @@ function ofed_feature_team_ds_field_settings_info() {
         ),
       ),
     ),
+    'field_ofed_team_picture' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'classes' => 'clear-block',
+        ),
+      ),
+    ),
     'field_ofed_team_pubdate' => array(
       'formatter_settings' => array(
         'ft' => array(
@@ -754,24 +771,24 @@ function ofed_feature_team_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'ds_content' => array(
-        0 => 'field_ofed_team_pubdate',
-        1 => 'field_ofed_team_update',
-        2 => 'field_ofed_team_picture',
-        3 => 'field_ofed_team_civility',
-        4 => 'field_ofed_team_first_name',
-        5 => 'field_ofed_team_last_name',
-        6 => 'field_ofed_team_function',
+        0 => 'field_ofed_team_civility',
+        1 => 'field_ofed_team_first_name',
+        2 => 'field_ofed_team_last_name',
+        3 => 'field_ofed_team_function',
+        4 => 'field_ofed_team_picture',
+        5 => 'field_ofed_team_pubdate',
+        6 => 'field_ofed_team_update',
         7 => 'node_link',
       ),
     ),
     'fields' => array(
-      'field_ofed_team_pubdate' => 'ds_content',
-      'field_ofed_team_update' => 'ds_content',
-      'field_ofed_team_picture' => 'ds_content',
       'field_ofed_team_civility' => 'ds_content',
       'field_ofed_team_first_name' => 'ds_content',
       'field_ofed_team_last_name' => 'ds_content',
       'field_ofed_team_function' => 'ds_content',
+      'field_ofed_team_picture' => 'ds_content',
+      'field_ofed_team_pubdate' => 'ds_content',
+      'field_ofed_team_update' => 'ds_content',
       'node_link' => 'ds_content',
     ),
     'classes' => array(),
@@ -797,22 +814,22 @@ function ofed_feature_team_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'ds_content' => array(
-        0 => 'field_ofed_team_pubdate',
-        1 => 'field_ofed_team_update',
-        2 => 'field_ofed_team_civility',
-        3 => 'field_ofed_team_first_name',
-        4 => 'field_ofed_team_last_name',
-        5 => 'field_ofed_team_function',
+        0 => 'field_ofed_team_civility',
+        1 => 'field_ofed_team_first_name',
+        2 => 'field_ofed_team_last_name',
+        3 => 'field_ofed_team_function',
+        4 => 'field_ofed_team_pubdate',
+        5 => 'field_ofed_team_update',
         6 => 'node_link',
       ),
     ),
     'fields' => array(
-      'field_ofed_team_pubdate' => 'ds_content',
-      'field_ofed_team_update' => 'ds_content',
       'field_ofed_team_civility' => 'ds_content',
       'field_ofed_team_first_name' => 'ds_content',
       'field_ofed_team_last_name' => 'ds_content',
       'field_ofed_team_function' => 'ds_content',
+      'field_ofed_team_pubdate' => 'ds_content',
+      'field_ofed_team_update' => 'ds_content',
       'node_link' => 'ds_content',
     ),
     'classes' => array(),
@@ -838,35 +855,35 @@ function ofed_feature_team_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'ds_content' => array(
-        0 => 'field_ofed_team_pubdate',
-        1 => 'field_ofed_team_update',
-        2 => 'field_ofed_team_picture',
-        3 => 'field_ofed_team_gender',
-        4 => 'field_ofed_team_civility',
-        5 => 'field_ofed_team_first_name',
-        6 => 'field_ofed_team_last_name',
-        7 => 'field_ofed_team_phone',
-        8 => 'field_ofed_team_email',
-        9 => 'field_ofed_team_function',
-        10 => 'field_ofed_team_body',
-        11 => 'field_ofed_team_contact',
-        12 => 'social_button',
+        0 => 'field_ofed_team_civility',
+        1 => 'field_ofed_team_first_name',
+        2 => 'field_ofed_team_last_name',
+        3 => 'field_ofed_team_function',
+        4 => 'field_ofed_team_picture',
+        5 => 'field_ofed_team_gender',
+        6 => 'field_ofed_team_phone',
+        7 => 'field_ofed_team_email',
+        8 => 'field_ofed_team_body',
+        9 => 'field_ofed_team_social',
+        10 => 'field_ofed_team_contact',
+        11 => 'field_ofed_team_pubdate',
+        12 => 'field_ofed_team_update',
       ),
     ),
     'fields' => array(
-      'field_ofed_team_pubdate' => 'ds_content',
-      'field_ofed_team_update' => 'ds_content',
-      'field_ofed_team_picture' => 'ds_content',
-      'field_ofed_team_gender' => 'ds_content',
       'field_ofed_team_civility' => 'ds_content',
       'field_ofed_team_first_name' => 'ds_content',
       'field_ofed_team_last_name' => 'ds_content',
+      'field_ofed_team_function' => 'ds_content',
+      'field_ofed_team_picture' => 'ds_content',
+      'field_ofed_team_gender' => 'ds_content',
       'field_ofed_team_phone' => 'ds_content',
       'field_ofed_team_email' => 'ds_content',
-      'field_ofed_team_function' => 'ds_content',
       'field_ofed_team_body' => 'ds_content',
+      'field_ofed_team_social' => 'ds_content',
       'field_ofed_team_contact' => 'ds_content',
-      'social_button' => 'ds_content',
+      'field_ofed_team_pubdate' => 'ds_content',
+      'field_ofed_team_update' => 'ds_content',
     ),
     'classes' => array(),
     'wrappers' => array(
@@ -891,35 +908,35 @@ function ofed_feature_team_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'ds_content' => array(
-        0 => 'field_ofed_team_update',
-        1 => 'field_ofed_team_pubdate',
-        2 => 'field_ofed_team_picture',
-        3 => 'field_ofed_team_gender',
-        4 => 'field_ofed_team_civility',
-        5 => 'field_ofed_team_first_name',
-        6 => 'field_ofed_team_last_name',
-        7 => 'field_ofed_team_phone',
-        8 => 'field_ofed_team_email',
-        9 => 'field_ofed_team_function',
-        10 => 'field_ofed_team_body',
-        11 => 'field_ofed_team_contact',
-        12 => 'social_button',
+        0 => 'field_ofed_team_civility',
+        1 => 'field_ofed_team_first_name',
+        2 => 'field_ofed_team_last_name',
+        3 => 'field_ofed_team_function',
+        4 => 'field_ofed_team_picture',
+        5 => 'field_ofed_team_gender',
+        6 => 'field_ofed_team_phone',
+        7 => 'field_ofed_team_email',
+        8 => 'field_ofed_team_body',
+        9 => 'field_ofed_team_social',
+        10 => 'field_ofed_team_contact',
+        11 => 'field_ofed_team_update',
+        12 => 'field_ofed_team_pubdate',
       ),
     ),
     'fields' => array(
-      'field_ofed_team_update' => 'ds_content',
-      'field_ofed_team_pubdate' => 'ds_content',
-      'field_ofed_team_picture' => 'ds_content',
-      'field_ofed_team_gender' => 'ds_content',
       'field_ofed_team_civility' => 'ds_content',
       'field_ofed_team_first_name' => 'ds_content',
       'field_ofed_team_last_name' => 'ds_content',
+      'field_ofed_team_function' => 'ds_content',
+      'field_ofed_team_picture' => 'ds_content',
+      'field_ofed_team_gender' => 'ds_content',
       'field_ofed_team_phone' => 'ds_content',
       'field_ofed_team_email' => 'ds_content',
-      'field_ofed_team_function' => 'ds_content',
       'field_ofed_team_body' => 'ds_content',
+      'field_ofed_team_social' => 'ds_content',
       'field_ofed_team_contact' => 'ds_content',
-      'social_button' => 'ds_content',
+      'field_ofed_team_update' => 'ds_content',
+      'field_ofed_team_pubdate' => 'ds_content',
     ),
     'classes' => array(),
     'wrappers' => array(
@@ -944,18 +961,24 @@ function ofed_feature_team_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'ds_content' => array(
-        0 => 'full_name_with_link',
-        1 => 'field_ofed_team_picture',
-        2 => 'field_ofed_team_function',
-        3 => 'field_ofed_team_body',
-        4 => 'node_link',
+        0 => 'field_ofed_team_civility',
+        1 => 'field_ofed_team_first_name',
+        2 => 'field_ofed_team_last_name',
+        3 => 'field_ofed_team_function',
+        4 => 'field_ofed_team_picture',
+        5 => 'field_ofed_team_pubdate',
+        6 => 'field_ofed_team_update',
+        7 => 'node_link',
       ),
     ),
     'fields' => array(
-      'full_name_with_link' => 'ds_content',
-      'field_ofed_team_picture' => 'ds_content',
+      'field_ofed_team_civility' => 'ds_content',
+      'field_ofed_team_first_name' => 'ds_content',
+      'field_ofed_team_last_name' => 'ds_content',
       'field_ofed_team_function' => 'ds_content',
-      'field_ofed_team_body' => 'ds_content',
+      'field_ofed_team_picture' => 'ds_content',
+      'field_ofed_team_pubdate' => 'ds_content',
+      'field_ofed_team_update' => 'ds_content',
       'node_link' => 'ds_content',
     ),
     'classes' => array(),
@@ -981,24 +1004,22 @@ function ofed_feature_team_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'ds_content' => array(
-        0 => 'field_ofed_team_pubdate',
-        1 => 'field_ofed_team_update',
-        2 => 'field_ofed_team_picture',
-        3 => 'field_ofed_team_civility',
-        4 => 'field_ofed_team_first_name',
-        5 => 'field_ofed_team_last_name',
-        6 => 'field_ofed_team_phone',
-        7 => 'field_ofed_team_email',
-        8 => 'field_ofed_team_function',
-        9 => 'field_ofed_team_gender',
-        10 => 'field_ofed_team_body',
-        11 => 'field_ofed_team_social',
-        12 => 'field_ofed_team_contact',
+        0 => 'field_ofed_team_picture',
+        1 => 'field_ofed_team_civility',
+        2 => 'field_ofed_team_first_name',
+        3 => 'field_ofed_team_last_name',
+        4 => 'field_ofed_team_phone',
+        5 => 'field_ofed_team_email',
+        6 => 'field_ofed_team_function',
+        7 => 'field_ofed_team_gender',
+        8 => 'field_ofed_team_body',
+        9 => 'field_ofed_team_social',
+        10 => 'field_ofed_team_contact',
+        11 => 'field_ofed_team_pubdate',
+        12 => 'field_ofed_team_update',
       ),
     ),
     'fields' => array(
-      'field_ofed_team_pubdate' => 'ds_content',
-      'field_ofed_team_update' => 'ds_content',
       'field_ofed_team_picture' => 'ds_content',
       'field_ofed_team_civility' => 'ds_content',
       'field_ofed_team_first_name' => 'ds_content',
@@ -1010,6 +1031,8 @@ function ofed_feature_team_ds_layout_settings_info() {
       'field_ofed_team_body' => 'ds_content',
       'field_ofed_team_social' => 'ds_content',
       'field_ofed_team_contact' => 'ds_content',
+      'field_ofed_team_pubdate' => 'ds_content',
+      'field_ofed_team_update' => 'ds_content',
     ),
     'classes' => array(),
     'wrappers' => array(
@@ -1034,20 +1057,20 @@ function ofed_feature_team_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'ds_content' => array(
-        0 => 'field_ofed_team_pubdate',
-        1 => 'field_ofed_team_update',
-        2 => 'field_ofed_team_civility',
-        3 => 'field_ofed_team_first_name',
-        4 => 'field_ofed_team_last_name',
+        0 => 'field_ofed_team_civility',
+        1 => 'field_ofed_team_first_name',
+        2 => 'field_ofed_team_last_name',
+        3 => 'field_ofed_team_pubdate',
+        4 => 'field_ofed_team_update',
         5 => 'node_link',
       ),
     ),
     'fields' => array(
-      'field_ofed_team_pubdate' => 'ds_content',
-      'field_ofed_team_update' => 'ds_content',
       'field_ofed_team_civility' => 'ds_content',
       'field_ofed_team_first_name' => 'ds_content',
       'field_ofed_team_last_name' => 'ds_content',
+      'field_ofed_team_pubdate' => 'ds_content',
+      'field_ofed_team_update' => 'ds_content',
       'node_link' => 'ds_content',
     ),
     'classes' => array(),
@@ -1074,24 +1097,22 @@ function ofed_feature_team_ds_layout_settings_info() {
     'regions' => array(
       'ds_content' => array(
         0 => 'title',
-        1 => 'field_ofed_team_pubdate',
-        2 => 'field_ofed_team_update',
-        3 => 'field_ofed_team_picture',
-        4 => 'field_ofed_team_civility',
-        5 => 'field_ofed_team_first_name',
-        6 => 'field_ofed_team_last_name',
-        7 => 'field_ofed_team_phone',
-        8 => 'field_ofed_team_email',
-        9 => 'field_ofed_team_function',
-        10 => 'field_ofed_team_gender',
-        11 => 'field_ofed_team_body',
-        12 => 'field_ofed_team_contact',
+        1 => 'field_ofed_team_picture',
+        2 => 'field_ofed_team_civility',
+        3 => 'field_ofed_team_first_name',
+        4 => 'field_ofed_team_last_name',
+        5 => 'field_ofed_team_phone',
+        6 => 'field_ofed_team_email',
+        7 => 'field_ofed_team_function',
+        8 => 'field_ofed_team_gender',
+        9 => 'field_ofed_team_body',
+        10 => 'field_ofed_team_contact',
+        11 => 'field_ofed_team_pubdate',
+        12 => 'field_ofed_team_update',
       ),
     ),
     'fields' => array(
       'title' => 'ds_content',
-      'field_ofed_team_pubdate' => 'ds_content',
-      'field_ofed_team_update' => 'ds_content',
       'field_ofed_team_picture' => 'ds_content',
       'field_ofed_team_civility' => 'ds_content',
       'field_ofed_team_first_name' => 'ds_content',
@@ -1102,6 +1123,8 @@ function ofed_feature_team_ds_layout_settings_info() {
       'field_ofed_team_gender' => 'ds_content',
       'field_ofed_team_body' => 'ds_content',
       'field_ofed_team_contact' => 'ds_content',
+      'field_ofed_team_pubdate' => 'ds_content',
+      'field_ofed_team_update' => 'ds_content',
     ),
     'classes' => array(),
     'wrappers' => array(
@@ -1126,21 +1149,21 @@ function ofed_feature_team_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'ds_content' => array(
-        0 => 'field_ofed_team_pubdate',
-        1 => 'field_ofed_team_update',
-        2 => 'field_ofed_team_civility',
-        3 => 'field_ofed_team_first_name',
-        4 => 'field_ofed_team_last_name',
-        5 => 'field_ofed_team_function',
+        0 => 'field_ofed_team_civility',
+        1 => 'field_ofed_team_first_name',
+        2 => 'field_ofed_team_last_name',
+        3 => 'field_ofed_team_function',
+        4 => 'field_ofed_team_pubdate',
+        5 => 'field_ofed_team_update',
       ),
     ),
     'fields' => array(
-      'field_ofed_team_pubdate' => 'ds_content',
-      'field_ofed_team_update' => 'ds_content',
       'field_ofed_team_civility' => 'ds_content',
       'field_ofed_team_first_name' => 'ds_content',
       'field_ofed_team_last_name' => 'ds_content',
       'field_ofed_team_function' => 'ds_content',
+      'field_ofed_team_pubdate' => 'ds_content',
+      'field_ofed_team_update' => 'ds_content',
     ),
     'classes' => array(),
     'wrappers' => array(
@@ -1165,26 +1188,26 @@ function ofed_feature_team_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'ds_content' => array(
-        0 => 'field_ofed_team_pubdate',
-        1 => 'field_ofed_team_update',
-        2 => 'field_ofed_team_picture',
-        3 => 'field_ofed_team_civility',
-        4 => 'field_ofed_team_first_name',
-        5 => 'field_ofed_team_last_name',
-        6 => 'field_ofed_team_function',
-        7 => 'field_ofed_team_body',
+        0 => 'field_ofed_team_civility',
+        1 => 'field_ofed_team_first_name',
+        2 => 'field_ofed_team_last_name',
+        3 => 'field_ofed_team_function',
+        4 => 'field_ofed_team_picture',
+        5 => 'field_ofed_team_body',
+        6 => 'field_ofed_team_pubdate',
+        7 => 'field_ofed_team_update',
         8 => 'node_link',
       ),
     ),
     'fields' => array(
-      'field_ofed_team_pubdate' => 'ds_content',
-      'field_ofed_team_update' => 'ds_content',
-      'field_ofed_team_picture' => 'ds_content',
       'field_ofed_team_civility' => 'ds_content',
       'field_ofed_team_first_name' => 'ds_content',
       'field_ofed_team_last_name' => 'ds_content',
       'field_ofed_team_function' => 'ds_content',
+      'field_ofed_team_picture' => 'ds_content',
       'field_ofed_team_body' => 'ds_content',
+      'field_ofed_team_pubdate' => 'ds_content',
+      'field_ofed_team_update' => 'ds_content',
       'node_link' => 'ds_content',
     ),
     'classes' => array(),

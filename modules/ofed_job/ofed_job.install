@@ -4,7 +4,7 @@
  * Implements hook_schema().
  */
 function ofed_job_schema() {
-  
+
 }
 
 /**
@@ -80,10 +80,19 @@ function ofed_job_install() {
   // Get enabled languages.
   $languages = language_list();
   foreach ($languages as $language) {
-    $lang = $language->prefix;
-    _ofed_job_taxonomy_term_save($experiences[$lang], $experience_vocabulary->vid, $lang);
-    _ofed_job_taxonomy_term_save($occupations[$lang], $occupation_vocabulary->vid, $lang);
-    _ofed_job_taxonomy_term_save($studies[$lang], $study_vocabulary->vid, $lang);
+    $lang = empty($language->prefix) ? $language->language : $language->prefix;
+
+    if (!empty($experiences[$lang])) {
+      _ofed_job_taxonomy_term_save($experiences[$lang], $experience_vocabulary->vid, $lang);
+    }
+
+    if (!empty($occupations[$lang])) {
+      _ofed_job_taxonomy_term_save($occupations[$lang], $occupation_vocabulary->vid, $lang);
+    }
+
+    if (!empty($studies[$lang])) {
+      _ofed_job_taxonomy_term_save($studies[$lang], $study_vocabulary->vid, $lang);
+    }
   }
 }
 
@@ -91,7 +100,7 @@ function ofed_job_install() {
  * Implements hook_uninstall().
  */
 function ofed_job_uninstall() {
-  
+
 }
 
 /**
@@ -124,8 +133,8 @@ function _ofed_job_taxonomy_term_save($terms, $vid, $lang, $update = FALSE) {
 }
 
 
-  
 
-  
-  
-  
+
+
+
+

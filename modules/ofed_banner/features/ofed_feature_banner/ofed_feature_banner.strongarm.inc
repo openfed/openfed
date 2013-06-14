@@ -128,7 +128,7 @@ function ofed_feature_banner_strongarm() {
       'display' => array(
         'language' => array(
           'default' => array(
-            'weight' => '11',
+            'weight' => '19',
             'visible' => FALSE,
           ),
           'full' => array(

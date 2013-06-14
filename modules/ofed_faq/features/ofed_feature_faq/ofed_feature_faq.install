@@ -120,26 +120,3 @@ function ofed_feature_faq_uninstall() {
     module_disable(array('ofed_faq'));
   }
 }
-
-/**
- * Add patterns for taxonomy paths.
- */
-function ofed_feature_faq_update_7001() {
-  // Add the new variables for path alias patterns.
-  $pattern_default = variable_get('pathauto_taxonomy_term_ofed_faq_pattern', '');
-  if (empty($pattern_default)) {
-    variable_set('pathauto_taxonomy_term_ofed_faq_pattern', '[term:vocabulary:i18n-name]/[term:name]');
-  }
-  $pattern_en = variable_get('pathauto_taxonomy_term_ofed_faq_en_pattern', '');
-  if (empty($pattern_en)) {
-    variable_set('pathauto_taxonomy_term_ofed_faq_en_pattern', 'faqs/[term:name]');
-  }
-  $pattern_nl = variable_get('pathauto_taxonomy_term_ofed_faq_nl_pattern', '');
-  if (empty($pattern_nl)) {
-    variable_set('pathauto_taxonomy_term_ofed_faq_nl_pattern', 'faqs/[term:name]');
-  }
-  $pattern_fr = variable_get('pathauto_taxonomy_term_ofed_faq_fr_pattern', '');
-  if (empty($pattern_fr)) {
-    variable_set('pathauto_taxonomy_term_ofed_faq_fr_pattern', 'faqs/[term:name]');
-  }
-}

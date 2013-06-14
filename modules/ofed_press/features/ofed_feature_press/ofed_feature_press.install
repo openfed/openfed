@@ -4,7 +4,7 @@
  * Implements hook_schema().
  */
 function ofed_feature_press_schema() {
-  
+
 }
 
 /**
@@ -119,60 +119,4 @@ function ofed_feature_press_uninstall() {
     // Disable it.
     module_disable(array('ofed_press'));
   }
-}
-
-/**
- * Add new field for contact person with a wysiwyg and remove old field without wysiwyg.
- * Reverting the OpenFED Press feature.
- */
-function ofed_feature_press_update_7001() {
-  // Revert the feature component.
-  features_revert(
-    array('ofed_feature_press' =>
-      array(
-        'ds_layout_settings',
-        'field',
-        'variable',
-      )
-    )
-  );
-
-  // Delete fields.
-  $fields_to_delete = array(
-    'field_ofed_press_contact_person',
-  );
-  foreach ($fields_to_delete as $field_name) {
-    field_delete_field($field_name);
-    watchdog('ofed_feature_press', 'Update 7001: Deleted the :field_name field.', array(':field_name' => $field_name));
-  }
-}
-
-/**
- * Add patterns for taxonomy paths.
- */
-function ofed_feature_press_update_7002() {
-  // Add the new variables for path alias patterns.
-  $pattern_default = variable_get('pathauto_taxonomy_term_ofed_press_pattern', '');
-  if (empty($pattern_default)) {
-    variable_set('pathauto_taxonomy_term_ofed_press_pattern', '[term:vocabulary:i18n-name]/[term:name]');
-  }
-  $pattern_en = variable_get('pathauto_taxonomy_term_ofed_press_en_pattern', '');
-  if (empty($pattern_en)) {
-    variable_set('pathauto_taxonomy_term_ofed_press_en_pattern', 'press/[term:name]');
-  }
-  $pattern_nl = variable_get('pathauto_taxonomy_term_ofed_press_nl_pattern', '');
-  if (empty($pattern_nl)) {
-    variable_set('pathauto_taxonomy_term_ofed_press_nl_pattern', 'pers/[term:name]');
-  }
-  $pattern_fr = variable_get('pathauto_taxonomy_term_ofed_press_fr_pattern', '');
-  if (empty($pattern_fr)) {
-    variable_set('pathauto_taxonomy_term_ofed_press_fr_pattern', 'presse/[term:name]');
-  }
-}
-
-/**
- * Delete old block info record.
- */
-function ofed_feature_press_update_7003() {
-  db_delete('ds_layout_settings')->condition('view_mode', 'block_info')->condition('bundle', 'ofed_news')->execute();
 }

@@ -4,7 +4,7 @@
  * Implements hook_schema().
  */
 function ofed_feature_address_schema() {
-  
+
 }
 
 /**
@@ -40,10 +40,10 @@ function ofed_feature_address_install() {
 
         // Cast variable like an array.
         $field = (array) $field;
-        
+
         // Delete from database as they might not be updated.
         db_delete('ds_fields')->condition('field', $field['field'], '=')->execute();
-        
+
         // Save in database.
         db_insert('ds_fields')->fields($field)->execute();
       }
@@ -62,7 +62,7 @@ function ofed_feature_address_install() {
 
         // Cast variable like an array.
         $field = (array) $field;
-        
+
         // Save in database.
         db_insert('ds_field_settings')->fields($field)->execute();
       }
@@ -81,7 +81,7 @@ function ofed_feature_address_install() {
 
         // Cast variable like an array.
         $layout = (array) $layout;
-        
+
         // Save in database.
         db_insert('ds_layout_settings')->fields($layout)->execute();
       }
@@ -97,152 +97,5 @@ function ofed_feature_address_uninstall() {
   if (module_exists('ofed_address')) {
     // Disable it.
     module_disable(array('ofed_address'));
-  }
-}
-
-/**
- * Reinstall custom fields.
- * Used to change the display suite settings to display to phones numbers on multiple line.
- */
-function ofed_feature_address_update_7001() {
-  // Include ds settings.
-  $file = drupal_get_path('module', 'ofed_feature_address') . '/install/_ofed_feature_address.ds.inc';
-  if (file_exists($file)) {
-    // Include it.
-    include_once 'install/_ofed_feature_address.ds.inc';
-
-    // Install ds fields settings.
-    if (function_exists('ofed_feature_address_ds_field_settings_info')) {
-      $fields = ofed_feature_address_ds_field_settings_info();
-
-      foreach ($fields as $id => $field) {
-
-        // Remove one key.
-        if (isset($field->api_version)) {
-          unset($field->api_version);
-        }
-        // Serialize the settings.
-        $field->settings = serialize($field->settings);
-
-        // Cast variable like an array.
-        $field = (array) $field;
-
-        // Delete from database as they might not be updated.
-        db_delete('ds_fields')->condition('field', $field['field'], '=')->execute();
-
-        // Save in database.
-        db_insert('ds_field_settings')->fields($field)->execute();
-      }
-    }
-
-    cache_clear_all();
-  }
-}
-
-/**
- * Add the display suite custom field Address for the Address CT display.
- */
-function ofed_feature_address_update_7002() {
-  // Include ds settings.
-  $file = drupal_get_path('module', 'ofed_feature_address') . '/install/_ofed_feature_address.ds.inc';
-
-  if (file_exists($file)) {
-    // Include it.
-    include_once 'install/_ofed_feature_address.ds.inc';
-
-    // Install ds customs fields.
-    if (function_exists('ofed_feature_address_ds_custom_fields_info')) {
-      $fields = ofed_feature_address_ds_custom_fields_info();
-
-      foreach ($fields as $id => $field) {
-        // Remove one key.
-        if (isset($field->api_version)) {
-          unset($field->api_version);
-        }
-        // Serialize the entities.
-        $field->entities = serialize($field->entities);
-        // Serialize the ui_limit.
-        $field->ui_limit = serialize($field->ui_limit);
-        // Serialize the properties.
-        $field->properties = serialize($field->properties);
-
-        // Cast variable like an array.
-        $field = (array) $field;
-
-        // Delete from database as they might not be updated.
-        db_delete('ds_fields')->condition('field', $field['field'], '=')->execute();
-
-        // Save in database.
-        db_insert('ds_fields')->fields($field)->execute();
-      }
-    }
-
-    cache_clear_all();
-  }
-}
-
-/**
- * Reinstall custom fields.
- * Used to change the content of the custom field.
- */
-function ofed_feature_address_update_7003() {
-  // Include ds settings.
-  $file = drupal_get_path('module', 'ofed_feature_address') . '/install/_ofed_feature_address.ds.inc';
-
-  if (file_exists($file)) {
-    // Include it.
-    include_once 'install/_ofed_feature_address.ds.inc';
-
-    // Install ds customs fields.
-    if (function_exists('ofed_feature_address_ds_custom_fields_info')) {
-      $fields = ofed_feature_address_ds_custom_fields_info();
-
-      foreach ($fields as $id => $field) {
-        // Remove one key.
-        if (isset($field->api_version)) {
-          unset($field->api_version);
-        }
-        // Serialize the entities.
-        $field->entities = serialize($field->entities);
-        // Serialize the ui_limit.
-        $field->ui_limit = serialize($field->ui_limit);
-        // Serialize the properties.
-        $field->properties = serialize($field->properties);
-
-        // Cast variable like an array.
-        $field = (array) $field;
-
-        // Delete from database as they might not be updated.
-        db_delete('ds_fields')->condition('field', $field['field'], '=')->execute();
-
-        // Save in database.
-        db_insert('ds_fields')->fields($field)->execute();
-      }
-    }
-
-    cache_clear_all();
-  }
-}
-
-/**
- * Add patterns for taxonomy paths.
- */
-function ofed_feature_download_update_7004() {
-  // Add the new variables for path alias patterns.
-  $pattern_default = variable_get('pathauto_taxonomy_term_ofed_address_pattern', '');
-  if (empty($pattern_default)) {
-    variable_set('pathauto_taxonomy_term_ofed_address_pattern', '[term:vocabulary:i18n-name]/[term:name]');
-  }
-  $pattern_en = variable_get('pathauto_taxonomy_term_ofed_address_en_pattern', '');
-  if (empty($pattern_en)) {
-    variable_set('pathauto_taxonomy_term_ofed_address_en_pattern', 'addresses/[term:name]');
-  }
-  $pattern_nl = variable_get('pathauto_taxonomy_term_ofed_address_nl_pattern', '');
-  if (empty($pattern_nl)) {
-    variable_set('pathauto_taxonomy_term_ofed_address_nl_pattern', 'adressen/[term:name]');
-  }
-  $pattern_fr = variable_get('pathauto_taxonomy_term_ofed_address_fr_pattern', '');
-  if (empty($pattern_fr)) {
-    variable_set('pathauto_taxonomy_term_ofed_address_fr_pattern', 'adresses/[term:name]');
   }
 }

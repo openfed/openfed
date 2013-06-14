@@ -1,0 +1,15 @@
+/*		SLIDESHOW  		*/
+
+.node-ofed-slideshow										{
+	border: 1px solid #E1DED7;
+	background: #F4F4F3;
+	padding: 10px;
+}
+.view-mode-full.node-ofed-slideshow .field-slideshow-wrapper{
+	border: none;
+	background: transparent;
+} 
+.view-mode-full.node-ofed-slideshow .field-slideshow		{
+	height: 164px !important;
+	margin: auto !important;
+}

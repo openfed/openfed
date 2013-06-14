@@ -39,13 +39,6 @@ function ofed_feature_page_ds_field_settings_info() {
         ),
       ),
     ),
-    'field_ofed_page_thumb' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'classes' => 'float-left',
-        ),
-      ),
-    ),
     'field_ofed_page_update' => array(
       'formatter_settings' => array(
         'ft' => array(
@@ -117,7 +110,7 @@ function ofed_feature_page_ds_field_settings_info() {
     'field_ofed_page_pubdate' => array(
       'formatter_settings' => array(
         'ft' => array(
-          'classes' => 'clear-block',
+          'classes' => ' clear-block',
           'lb' => 'Published date',
         ),
       ),
@@ -144,6 +137,20 @@ function ofed_feature_page_ds_field_settings_info() {
       'weight' => '0',
       'label' => 'hidden',
       'format' => 'default',
+    ),
+    'field_ofed_page_pubdate' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'classes' => 'clear-block',
+        ),
+      ),
+    ),
+    'field_ofed_page_update' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'classes' => 'clear-block',
+        ),
+      ),
     ),
   );
   $export['node|ofed_page|search_index'] = $ds_fieldsetting;
@@ -283,21 +290,19 @@ function ofed_feature_page_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'ds_content' => array(
-        0 => 'field_ofed_page_pubdate',
-        1 => 'field_ofed_page_update',
-        2 => 'field_ofed_page_summary',
-        3 => 'field_ofed_page_thumb',
-        4 => 'field_ofed_page_body',
-        5 => 'field_ofed_page_docs',
+        0 => 'field_ofed_page_summary',
+        1 => 'field_ofed_page_body',
+        2 => 'field_ofed_page_docs',
+        3 => 'field_ofed_page_pubdate',
+        4 => 'field_ofed_page_update',
       ),
     ),
     'fields' => array(
-      'field_ofed_page_pubdate' => 'ds_content',
-      'field_ofed_page_update' => 'ds_content',
       'field_ofed_page_summary' => 'ds_content',
-      'field_ofed_page_thumb' => 'ds_content',
       'field_ofed_page_body' => 'ds_content',
       'field_ofed_page_docs' => 'ds_content',
+      'field_ofed_page_pubdate' => 'ds_content',
+      'field_ofed_page_update' => 'ds_content',
     ),
     'classes' => array(),
     'wrappers' => array(
@@ -322,19 +327,19 @@ function ofed_feature_page_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'ds_content' => array(
-        0 => 'field_ofed_page_pubdate',
-        1 => 'field_ofed_page_update',
-        2 => 'field_ofed_page_summary',
-        3 => 'field_ofed_page_body',
-        4 => 'field_ofed_page_docs',
+        0 => 'field_ofed_page_summary',
+        1 => 'field_ofed_page_body',
+        2 => 'field_ofed_page_docs',
+        3 => 'field_ofed_page_pubdate',
+        4 => 'field_ofed_page_update',
       ),
     ),
     'fields' => array(
-      'field_ofed_page_pubdate' => 'ds_content',
-      'field_ofed_page_update' => 'ds_content',
       'field_ofed_page_summary' => 'ds_content',
       'field_ofed_page_body' => 'ds_content',
       'field_ofed_page_docs' => 'ds_content',
+      'field_ofed_page_pubdate' => 'ds_content',
+      'field_ofed_page_update' => 'ds_content',
     ),
     'classes' => array(),
     'wrappers' => array(
@@ -360,17 +365,17 @@ function ofed_feature_page_ds_layout_settings_info() {
     'regions' => array(
       'ds_content' => array(
         0 => 'title',
-        1 => 'field_ofed_page_pubdate',
-        2 => 'field_ofed_page_update',
-        3 => 'field_ofed_page_summary',
+        1 => 'field_ofed_page_summary',
+        2 => 'field_ofed_page_pubdate',
+        3 => 'field_ofed_page_update',
         4 => 'node_link',
       ),
     ),
     'fields' => array(
       'title' => 'ds_content',
+      'field_ofed_page_summary' => 'ds_content',
       'field_ofed_page_pubdate' => 'ds_content',
       'field_ofed_page_update' => 'ds_content',
-      'field_ofed_page_summary' => 'ds_content',
       'node_link' => 'ds_content',
     ),
     'classes' => array(),
@@ -397,20 +402,20 @@ function ofed_feature_page_ds_layout_settings_info() {
     'regions' => array(
       'ds_content' => array(
         0 => 'title',
-        1 => 'field_ofed_page_pubdate',
-        2 => 'field_ofed_page_update',
-        3 => 'field_ofed_page_summary',
-        4 => 'field_ofed_page_body',
-        5 => 'field_ofed_page_docs',
+        1 => 'field_ofed_page_summary',
+        2 => 'field_ofed_page_body',
+        3 => 'field_ofed_page_docs',
+        4 => 'field_ofed_page_pubdate',
+        5 => 'field_ofed_page_update',
       ),
     ),
     'fields' => array(
       'title' => 'ds_content',
-      'field_ofed_page_pubdate' => 'ds_content',
-      'field_ofed_page_update' => 'ds_content',
       'field_ofed_page_summary' => 'ds_content',
       'field_ofed_page_body' => 'ds_content',
       'field_ofed_page_docs' => 'ds_content',
+      'field_ofed_page_pubdate' => 'ds_content',
+      'field_ofed_page_update' => 'ds_content',
     ),
     'classes' => array(),
     'wrappers' => array(
@@ -436,17 +441,17 @@ function ofed_feature_page_ds_layout_settings_info() {
     'regions' => array(
       'ds_content' => array(
         0 => 'title',
-        1 => 'field_ofed_page_pubdate',
-        2 => 'field_ofed_page_update',
-        3 => 'field_ofed_page_summary',
+        1 => 'field_ofed_page_summary',
+        2 => 'field_ofed_page_pubdate',
+        3 => 'field_ofed_page_update',
         4 => 'node_link',
       ),
     ),
     'fields' => array(
       'title' => 'ds_content',
+      'field_ofed_page_summary' => 'ds_content',
       'field_ofed_page_pubdate' => 'ds_content',
       'field_ofed_page_update' => 'ds_content',
-      'field_ofed_page_summary' => 'ds_content',
       'node_link' => 'ds_content',
     ),
     'classes' => array(),
@@ -473,17 +478,17 @@ function ofed_feature_page_ds_layout_settings_info() {
     'regions' => array(
       'ds_content' => array(
         0 => 'title',
-        1 => 'field_ofed_page_pubdate',
-        2 => 'field_ofed_page_update',
-        3 => 'field_ofed_page_summary',
+        1 => 'field_ofed_page_summary',
+        2 => 'field_ofed_page_pubdate',
+        3 => 'field_ofed_page_update',
         4 => 'node_link',
       ),
     ),
     'fields' => array(
       'title' => 'ds_content',
+      'field_ofed_page_summary' => 'ds_content',
       'field_ofed_page_pubdate' => 'ds_content',
       'field_ofed_page_update' => 'ds_content',
-      'field_ofed_page_summary' => 'ds_content',
       'node_link' => 'ds_content',
     ),
     'classes' => array(),

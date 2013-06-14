@@ -17,26 +17,6 @@ function ofed_feature_download_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'ofed_download';
   $ds_fieldsetting->view_mode = 'block_column';
   $ds_fieldsetting->settings = array(
-    'file_size' => array(
-      'weight' => '2',
-      'label' => 'hidden',
-      'format' => 'default',
-      'formatter_settings' => array(
-        'ft' => array(
-          'classes' => 'float-left',
-        ),
-      ),
-    ),
-    'file_type' => array(
-      'weight' => '1',
-      'label' => 'hidden',
-      'format' => 'default',
-      'formatter_settings' => array(
-        'ft' => array(
-          'classes' => 'float-left',
-        ),
-      ),
-    ),
     'title' => array(
       'weight' => '0',
       'label' => 'hidden',
@@ -49,7 +29,7 @@ function ofed_feature_download_ds_field_settings_info() {
       ),
     ),
     'node_link' => array(
-      'weight' => '6',
+      'weight' => '4',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -86,26 +66,6 @@ function ofed_feature_download_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'ofed_download';
   $ds_fieldsetting->view_mode = 'block_element';
   $ds_fieldsetting->settings = array(
-    'file_size' => array(
-      'weight' => '2',
-      'label' => 'hidden',
-      'format' => 'default',
-      'formatter_settings' => array(
-        'ft' => array(
-          'classes' => 'float-left',
-        ),
-      ),
-    ),
-    'file_type' => array(
-      'weight' => '1',
-      'label' => 'hidden',
-      'format' => 'default',
-      'formatter_settings' => array(
-        'ft' => array(
-          'classes' => 'float-left',
-        ),
-      ),
-    ),
     'title' => array(
       'weight' => '0',
       'label' => 'hidden',
@@ -132,6 +92,22 @@ function ofed_feature_download_ds_field_settings_info() {
         ),
       ),
     ),
+    'field_ofed_download_pubdate' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'classes' => 'clear-block',
+          'lb' => 'Published date',
+        ),
+      ),
+    ),
+    'field_ofed_download_update' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'classes' => 'clear-block',
+          'lb' => 'Updated date',
+        ),
+      ),
+    ),
   );
   $export['node|ofed_download|block_element'] = $ds_fieldsetting;
 
@@ -142,26 +118,6 @@ function ofed_feature_download_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'ofed_download';
   $ds_fieldsetting->view_mode = 'block_list';
   $ds_fieldsetting->settings = array(
-    'file_size' => array(
-      'weight' => '2',
-      'label' => 'hidden',
-      'format' => 'default',
-      'formatter_settings' => array(
-        'ft' => array(
-          'classes' => 'float-left',
-        ),
-      ),
-    ),
-    'file_type' => array(
-      'weight' => '1',
-      'label' => 'hidden',
-      'format' => 'default',
-      'formatter_settings' => array(
-        'ft' => array(
-          'classes' => 'float-left',
-        ),
-      ),
-    ),
     'title' => array(
       'weight' => '0',
       'label' => 'hidden',
@@ -175,6 +131,22 @@ function ofed_feature_download_ds_field_settings_info() {
         ),
       ),
     ),
+    'field_ofed_download_pubdate' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'classes' => 'clear-block',
+          'lb' => 'Published date',
+        ),
+      ),
+    ),
+    'field_ofed_download_update' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'classes' => 'clear-block',
+          'lb' => 'Updated date',
+        ),
+      ),
+    ),
   );
   $export['node|ofed_download|block_list'] = $ds_fieldsetting;
 
@@ -185,61 +157,6 @@ function ofed_feature_download_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'ofed_download';
   $ds_fieldsetting->view_mode = 'default';
   $ds_fieldsetting->settings = array(
-    'file_size' => array(
-      'weight' => '1',
-      'label' => 'hidden',
-      'format' => 'default',
-      'formatter_settings' => array(
-        'ft' => array(
-          'classes' => 'float-left',
-        ),
-      ),
-    ),
-    'file_type' => array(
-      'weight' => '0',
-      'label' => 'hidden',
-      'format' => 'default',
-      'formatter_settings' => array(
-        'ft' => array(
-          'classes' => 'float-left',
-        ),
-      ),
-    ),
-    'file_url_open' => array(
-      'weight' => '9',
-      'label' => 'hidden',
-      'format' => 'default',
-      'formatter_settings' => array(
-        'ft' => array(
-          'classes' => 'float-left',
-        ),
-      ),
-    ),
-    'file_url_persistent' => array(
-      'weight' => '11',
-      'label' => 'hidden',
-      'format' => 'default',
-      'formatter_settings' => array(
-        'ft' => array(
-          'classes' => 'float-left',
-        ),
-      ),
-    ),
-    'url_file_save' => array(
-      'weight' => '10',
-      'label' => 'hidden',
-      'format' => 'default',
-      'formatter_settings' => array(
-        'ft' => array(
-          'classes' => 'float-left',
-        ),
-      ),
-    ),
-    'links' => array(
-      'weight' => '12',
-      'label' => 'hidden',
-      'format' => 'default',
-    ),
     'field_ofed_download_author' => array(
       'formatter_settings' => array(
         'ft' => array(
@@ -294,61 +211,6 @@ function ofed_feature_download_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'ofed_download';
   $ds_fieldsetting->view_mode = 'full';
   $ds_fieldsetting->settings = array(
-    'file_size' => array(
-      'weight' => '1',
-      'label' => 'hidden',
-      'format' => 'default',
-      'formatter_settings' => array(
-        'ft' => array(
-          'classes' => 'float-left',
-        ),
-      ),
-    ),
-    'file_type' => array(
-      'weight' => '0',
-      'label' => 'hidden',
-      'format' => 'default',
-      'formatter_settings' => array(
-        'ft' => array(
-          'classes' => 'float-left',
-        ),
-      ),
-    ),
-    'file_url_open' => array(
-      'weight' => '6',
-      'label' => 'hidden',
-      'format' => 'default',
-      'formatter_settings' => array(
-        'ft' => array(
-          'classes' => 'float-left',
-        ),
-      ),
-    ),
-    'file_url_persistent' => array(
-      'weight' => '7',
-      'label' => 'hidden',
-      'format' => 'default',
-      'formatter_settings' => array(
-        'ft' => array(
-          'classes' => 'float-left',
-        ),
-      ),
-    ),
-    'url_file_save' => array(
-      'weight' => '8',
-      'label' => 'hidden',
-      'format' => 'default',
-      'formatter_settings' => array(
-        'ft' => array(
-          'classes' => 'float-left',
-        ),
-      ),
-    ),
-    'links' => array(
-      'weight' => '12',
-      'label' => 'hidden',
-      'format' => 'default',
-    ),
     'field_ofed_download_author' => array(
       'formatter_settings' => array(
         'ft' => array(
@@ -403,26 +265,6 @@ function ofed_feature_download_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'ofed_download';
   $ds_fieldsetting->view_mode = 'page_list';
   $ds_fieldsetting->settings = array(
-    'file_size' => array(
-      'weight' => '2',
-      'label' => 'hidden',
-      'format' => 'default',
-      'formatter_settings' => array(
-        'ft' => array(
-          'classes' => 'float-left',
-        ),
-      ),
-    ),
-    'file_type' => array(
-      'weight' => '1',
-      'label' => 'hidden',
-      'format' => 'default',
-      'formatter_settings' => array(
-        'ft' => array(
-          'classes' => 'float-left',
-        ),
-      ),
-    ),
     'title' => array(
       'weight' => '0',
       'label' => 'hidden',
@@ -437,7 +279,7 @@ function ofed_feature_download_ds_field_settings_info() {
       ),
     ),
     'node_link' => array(
-      'weight' => '8',
+      'weight' => '6',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -489,56 +331,6 @@ function ofed_feature_download_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'ofed_download';
   $ds_fieldsetting->view_mode = 'print';
   $ds_fieldsetting->settings = array(
-    'file_size' => array(
-      'weight' => '2',
-      'label' => 'hidden',
-      'format' => 'default',
-      'formatter_settings' => array(
-        'ft' => array(
-          'classes' => 'float-left',
-        ),
-      ),
-    ),
-    'file_type' => array(
-      'weight' => '1',
-      'label' => 'hidden',
-      'format' => 'default',
-      'formatter_settings' => array(
-        'ft' => array(
-          'classes' => 'float-left',
-        ),
-      ),
-    ),
-    'file_url_open' => array(
-      'weight' => '10',
-      'label' => 'hidden',
-      'format' => 'default',
-      'formatter_settings' => array(
-        'ft' => array(
-          'classes' => 'float-left',
-        ),
-      ),
-    ),
-    'file_url_persistent' => array(
-      'weight' => '12',
-      'label' => 'hidden',
-      'format' => 'default',
-      'formatter_settings' => array(
-        'ft' => array(
-          'classes' => 'clear-block',
-        ),
-      ),
-    ),
-    'url_file_save' => array(
-      'weight' => '11',
-      'label' => 'hidden',
-      'format' => 'default',
-      'formatter_settings' => array(
-        'ft' => array(
-          'classes' => 'float-left',
-        ),
-      ),
-    ),
     'title' => array(
       'weight' => '0',
       'label' => 'hidden',
@@ -599,36 +391,6 @@ function ofed_feature_download_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'ofed_download';
   $ds_fieldsetting->view_mode = 'references';
   $ds_fieldsetting->settings = array(
-    'file_size' => array(
-      'weight' => '2',
-      'label' => 'hidden',
-      'format' => 'default',
-      'formatter_settings' => array(
-        'ft' => array(
-          'classes' => 'float-left',
-        ),
-      ),
-    ),
-    'file_type' => array(
-      'weight' => '1',
-      'label' => 'hidden',
-      'format' => 'default',
-      'formatter_settings' => array(
-        'ft' => array(
-          'classes' => 'float-left',
-        ),
-      ),
-    ),
-    'url_file_save' => array(
-      'weight' => '3',
-      'label' => 'hidden',
-      'format' => 'default',
-      'formatter_settings' => array(
-        'ft' => array(
-          'classes' => 'float-left',
-        ),
-      ),
-    ),
     'title' => array(
       'weight' => '0',
       'label' => 'hidden',
@@ -652,16 +414,6 @@ function ofed_feature_download_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'ofed_download';
   $ds_fieldsetting->view_mode = 'rss';
   $ds_fieldsetting->settings = array(
-    'file_size' => array(
-      'weight' => '2',
-      'label' => 'hidden',
-      'format' => 'default',
-    ),
-    'file_type' => array(
-      'weight' => '1',
-      'label' => 'hidden',
-      'format' => 'default',
-    ),
     'title' => array(
       'weight' => '0',
       'label' => 'hidden',
@@ -711,31 +463,6 @@ function ofed_feature_download_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'ofed_download';
   $ds_fieldsetting->view_mode = 'search_index';
   $ds_fieldsetting->settings = array(
-    'file_size' => array(
-      'weight' => '2',
-      'label' => 'hidden',
-      'format' => 'default',
-    ),
-    'file_type' => array(
-      'weight' => '1',
-      'label' => 'hidden',
-      'format' => 'default',
-    ),
-    'file_url_open' => array(
-      'weight' => '10',
-      'label' => 'hidden',
-      'format' => 'default',
-    ),
-    'file_url_persistent' => array(
-      'weight' => '12',
-      'label' => 'hidden',
-      'format' => 'default',
-    ),
-    'url_file_save' => array(
-      'weight' => '11',
-      'label' => 'hidden',
-      'format' => 'default',
-    ),
     'title' => array(
       'weight' => '0',
       'label' => 'hidden',
@@ -773,26 +500,6 @@ function ofed_feature_download_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'ofed_download';
   $ds_fieldsetting->view_mode = 'search_result';
   $ds_fieldsetting->settings = array(
-    'file_size' => array(
-      'weight' => '2',
-      'label' => 'hidden',
-      'format' => 'default',
-      'formatter_settings' => array(
-        'ft' => array(
-          'classes' => 'float-left',
-        ),
-      ),
-    ),
-    'file_type' => array(
-      'weight' => '1',
-      'label' => 'hidden',
-      'format' => 'default',
-      'formatter_settings' => array(
-        'ft' => array(
-          'classes' => 'float-left',
-        ),
-      ),
-    ),
     'title' => array(
       'weight' => '0',
       'label' => 'hidden',
@@ -807,7 +514,7 @@ function ofed_feature_download_ds_field_settings_info() {
       ),
     ),
     'node_link' => array(
-      'weight' => '6',
+      'weight' => '4',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -858,7 +565,7 @@ function ofed_feature_download_ds_field_settings_info() {
       ),
     ),
     'node_link' => array(
-      'weight' => '3',
+      'weight' => '4',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -869,152 +576,23 @@ function ofed_feature_download_ds_field_settings_info() {
         ),
       ),
     ),
+    'field_ofed_download_pubdate' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'lb' => 'Published date',
+        ),
+      ),
+    ),
+    'field_ofed_download_update' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'classes' => 'clear-block',
+          'lb' => 'Updated date',
+        ),
+      ),
+    ),
   );
   $export['node|ofed_download|teaser'] = $ds_fieldsetting;
-
-  return $export;
-}
-
-/**
- * Implements hook_ds_custom_fields_info().
- */
-function ofed_feature_download_ds_custom_fields_info() {
-  $export = array();
-
-  $ds_field = new stdClass();
-  $ds_field->api_version = 1;
-  $ds_field->field = 'file_name';
-  $ds_field->label = 'File Name';
-  $ds_field->field_type = 5;
-  $ds_field->entities = array(
-    'node' => 'node',
-  );
-  $ds_field->ui_limit = 'ofed_download|*';
-  $ds_field->properties = array(
-    'code' => array(
-      'value' => '<?php
-  foreach($entity->field_ofed_download_file as $file) {
-    $pathinfo = pathinfo($file["0"]["filename"]);
-    echo "<span class=\\"file-name\\">".$pathinfo["filename"]."</span>";
-  }
-  ?>',
-      'format' => 'ds_code',
-    ),
-    'use_token' => FALSE,
-  );
-  $export['file_name'] = $ds_field;
-
-  $ds_field = new stdClass();
-  $ds_field->api_version = 1;
-  $ds_field->field = 'file_size';
-  $ds_field->label = 'File Size';
-  $ds_field->field_type = 5;
-  $ds_field->entities = array(
-    'node' => 'node',
-  );
-  $ds_field->ui_limit = 'ofed_download|*';
-  $ds_field->properties = array(
-    'code' => array(
-      'value' => '<?php
-  foreach($entity->field_ofed_download_file as $file) {
-    echo "<span class=\\"file-size\\">".format_size($file["0"]["filesize"])."</span>";
-  }
-  ?>',
-      'format' => 'ds_code',
-    ),
-    'use_token' => FALSE,
-  );
-  $export['file_size'] = $ds_field;
-
-  $ds_field = new stdClass();
-  $ds_field->api_version = 1;
-  $ds_field->field = 'file_type';
-  $ds_field->label = 'File Type';
-  $ds_field->field_type = 5;
-  $ds_field->entities = array(
-    'node' => 'node',
-  );
-  $ds_field->ui_limit = 'ofed_download|*';
-  $ds_field->properties = array(
-    'code' => array(
-      'value' => '<?php
-  foreach($entity->field_ofed_download_file as $file) {
-    $pathinfo = pathinfo($file["0"]["filename"]);
-    echo "<span class=\\"file-type-".strip_tags($pathinfo["extension"])."\\">".strip_tags($pathinfo["extension"])."</span>";
-  }
-  ?>',
-      'format' => 'ds_code',
-    ),
-    'use_token' => FALSE,
-  );
-  $export['file_type'] = $ds_field;
-
-  $ds_field = new stdClass();
-  $ds_field->api_version = 1;
-  $ds_field->field = 'file_url_open';
-  $ds_field->label = 'File url open';
-  $ds_field->field_type = 5;
-  $ds_field->entities = array(
-    'node' => 'node',
-  );
-  $ds_field->ui_limit = 'ofed_download|*';
-  $ds_field->properties = array(
-    'code' => array(
-      'value' => '<?php
-foreach($entity->field_ofed_download_file as $file) {
-  echo l( t("View file"), file_create_url($file["0"]["uri"]), array("attributes" => array("class" => "file-url-open", "target" => "_blank", "title" => t("View file"))) );
-}
-?>',
-      'format' => 'ds_code',
-    ),
-    'use_token' => FALSE,
-  );
-  $export['file_url_open'] = $ds_field;
-
-  $ds_field = new stdClass();
-  $ds_field->api_version = 1;
-  $ds_field->field = 'file_url_persistent';
-  $ds_field->label = 'File url persistent';
-  $ds_field->field_type = 5;
-  $ds_field->entities = array(
-    'node' => 'node',
-  );
-  $ds_field->ui_limit = 'ofed_download|*';
-  $ds_field->properties = array(
-    'code' => array(
-      'value' => '<?php
-foreach($entity->field_ofed_download_file as $file) {
-  echo l( t("Share file"), "download-file/".$entity->nid, array("attributes" => array("target" => "_blank", "title" => t("Share file"))) );
-  echo "<span class=\\"url-file-persistent\\">".url("download-file/".$entity->nid, array("absolute" => TRUE))."</span>";
-}
-?>',
-      'format' => 'ds_code',
-    ),
-    'use_token' => FALSE,
-  );
-  $export['file_url_persistent'] = $ds_field;
-
-  $ds_field = new stdClass();
-  $ds_field->api_version = 1;
-  $ds_field->field = 'url_file_save';
-  $ds_field->label = 'File url save';
-  $ds_field->field_type = 5;
-  $ds_field->entities = array(
-    'node' => 'node',
-  );
-  $ds_field->ui_limit = 'ofed_download|*';
-  $ds_field->properties = array(
-    'code' => array(
-      'value' => '<?php
-foreach($entity->field_ofed_download_file as $file) {
-  echo l( t("Save file"), "download-file/".$entity->nid, array("attributes" => array("class" => "file-url-save", "title" => t("Save file"))) );
-}
-?>',
-      'format' => 'ds_code',
-    ),
-    'use_token' => FALSE,
-  );
-  $export['url_file_save'] = $ds_field;
 
   return $export;
 }
@@ -1036,21 +614,17 @@ function ofed_feature_download_ds_layout_settings_info() {
     'regions' => array(
       'ds_content' => array(
         0 => 'title',
-        1 => 'file_type',
-        2 => 'file_size',
-        3 => 'field_ofed_download_pubdate',
-        4 => 'field_ofed_download_update',
-        5 => 'field_ofed_download_summary',
-        6 => 'node_link',
+        1 => 'field_ofed_download_summary',
+        2 => 'field_ofed_download_pubdate',
+        3 => 'field_ofed_download_update',
+        4 => 'node_link',
       ),
     ),
     'fields' => array(
       'title' => 'ds_content',
-      'file_type' => 'ds_content',
-      'file_size' => 'ds_content',
+      'field_ofed_download_summary' => 'ds_content',
       'field_ofed_download_pubdate' => 'ds_content',
       'field_ofed_download_update' => 'ds_content',
-      'field_ofed_download_summary' => 'ds_content',
       'node_link' => 'ds_content',
     ),
     'classes' => array(),
@@ -1077,15 +651,15 @@ function ofed_feature_download_ds_layout_settings_info() {
     'regions' => array(
       'ds_content' => array(
         0 => 'title',
-        1 => 'file_type',
-        2 => 'file_size',
+        1 => 'field_ofed_download_pubdate',
+        2 => 'field_ofed_download_update',
         3 => 'node_link',
       ),
     ),
     'fields' => array(
       'title' => 'ds_content',
-      'file_type' => 'ds_content',
-      'file_size' => 'ds_content',
+      'field_ofed_download_pubdate' => 'ds_content',
+      'field_ofed_download_update' => 'ds_content',
       'node_link' => 'ds_content',
     ),
     'classes' => array(),
@@ -1112,14 +686,14 @@ function ofed_feature_download_ds_layout_settings_info() {
     'regions' => array(
       'ds_content' => array(
         0 => 'title',
-        1 => 'file_type',
-        2 => 'file_size',
+        1 => 'field_ofed_download_pubdate',
+        2 => 'field_ofed_download_update',
       ),
     ),
     'fields' => array(
       'title' => 'ds_content',
-      'file_type' => 'ds_content',
-      'file_size' => 'ds_content',
+      'field_ofed_download_pubdate' => 'ds_content',
+      'field_ofed_download_update' => 'ds_content',
     ),
     'classes' => array(),
     'wrappers' => array(
@@ -1144,35 +718,23 @@ function ofed_feature_download_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'ds_content' => array(
-        0 => 'file_type',
-        1 => 'file_size',
-        2 => 'field_ofed_download_author',
-        3 => 'field_ofed_download_pubdate',
-        4 => 'field_ofed_download_update',
-        5 => 'field_ofed_download_summary',
-        6 => 'field_ofed_download_thumb',
-        7 => 'field_ofed_download_body',
-        8 => 'field_ofed_download_file',
-        9 => 'file_url_open',
-        10 => 'url_file_save',
-        11 => 'file_url_persistent',
-        12 => 'links',
+        0 => 'field_ofed_download_summary',
+        1 => 'field_ofed_download_thumb',
+        2 => 'field_ofed_download_body',
+        3 => 'field_ofed_download_file',
+        4 => 'field_ofed_download_author',
+        5 => 'field_ofed_download_pubdate',
+        6 => 'field_ofed_download_update',
       ),
     ),
     'fields' => array(
-      'file_type' => 'ds_content',
-      'file_size' => 'ds_content',
-      'field_ofed_download_author' => 'ds_content',
-      'field_ofed_download_pubdate' => 'ds_content',
-      'field_ofed_download_update' => 'ds_content',
       'field_ofed_download_summary' => 'ds_content',
       'field_ofed_download_thumb' => 'ds_content',
       'field_ofed_download_body' => 'ds_content',
       'field_ofed_download_file' => 'ds_content',
-      'file_url_open' => 'ds_content',
-      'url_file_save' => 'ds_content',
-      'file_url_persistent' => 'ds_content',
-      'links' => 'ds_content',
+      'field_ofed_download_author' => 'ds_content',
+      'field_ofed_download_pubdate' => 'ds_content',
+      'field_ofed_download_update' => 'ds_content',
     ),
     'classes' => array(),
     'wrappers' => array(
@@ -1197,35 +759,23 @@ function ofed_feature_download_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'ds_content' => array(
-        0 => 'file_type',
-        1 => 'file_size',
-        2 => 'field_ofed_download_author',
-        3 => 'field_ofed_download_pubdate',
-        4 => 'field_ofed_download_update',
-        5 => 'field_ofed_download_summary',
-        6 => 'field_ofed_download_thumb',
-        7 => 'field_ofed_download_body',
-        8 => 'field_ofed_download_file',
-        9 => 'file_url_open',
-        10 => 'url_file_save',
-        11 => 'file_url_persistent',
-        12 => 'links',
+        0 => 'field_ofed_download_summary',
+        1 => 'field_ofed_download_thumb',
+        2 => 'field_ofed_download_body',
+        3 => 'field_ofed_download_file',
+        4 => 'field_ofed_download_author',
+        5 => 'field_ofed_download_pubdate',
+        6 => 'field_ofed_download_update',
       ),
     ),
     'fields' => array(
-      'file_type' => 'ds_content',
-      'file_size' => 'ds_content',
-      'field_ofed_download_author' => 'ds_content',
-      'field_ofed_download_pubdate' => 'ds_content',
-      'field_ofed_download_update' => 'ds_content',
       'field_ofed_download_summary' => 'ds_content',
       'field_ofed_download_thumb' => 'ds_content',
       'field_ofed_download_body' => 'ds_content',
       'field_ofed_download_file' => 'ds_content',
-      'file_url_open' => 'ds_content',
-      'url_file_save' => 'ds_content',
-      'file_url_persistent' => 'ds_content',
-      'links' => 'ds_content',
+      'field_ofed_download_author' => 'ds_content',
+      'field_ofed_download_pubdate' => 'ds_content',
+      'field_ofed_download_update' => 'ds_content',
     ),
     'classes' => array(),
     'wrappers' => array(
@@ -1251,25 +801,21 @@ function ofed_feature_download_ds_layout_settings_info() {
     'regions' => array(
       'ds_content' => array(
         0 => 'title',
-        1 => 'file_type',
-        2 => 'file_size',
-        3 => 'field_ofed_download_pubdate',
-        4 => 'field_ofed_download_update',
-        5 => 'field_ofed_download_author',
-        6 => 'field_ofed_download_thumb',
-        7 => 'field_ofed_download_summary',
-        8 => 'node_link',
+        1 => 'field_ofed_download_thumb',
+        2 => 'field_ofed_download_summary',
+        3 => 'field_ofed_download_author',
+        4 => 'field_ofed_download_pubdate',
+        5 => 'field_ofed_download_update',
+        6 => 'node_link',
       ),
     ),
     'fields' => array(
       'title' => 'ds_content',
-      'file_type' => 'ds_content',
-      'file_size' => 'ds_content',
-      'field_ofed_download_pubdate' => 'ds_content',
-      'field_ofed_download_update' => 'ds_content',
-      'field_ofed_download_author' => 'ds_content',
       'field_ofed_download_thumb' => 'ds_content',
       'field_ofed_download_summary' => 'ds_content',
+      'field_ofed_download_author' => 'ds_content',
+      'field_ofed_download_pubdate' => 'ds_content',
+      'field_ofed_download_update' => 'ds_content',
       'node_link' => 'ds_content',
     ),
     'classes' => array(),
@@ -1296,34 +842,24 @@ function ofed_feature_download_ds_layout_settings_info() {
     'regions' => array(
       'ds_content' => array(
         0 => 'title',
-        1 => 'file_type',
-        2 => 'file_size',
-        3 => 'field_ofed_download_author',
-        4 => 'field_ofed_download_pubdate',
-        5 => 'field_ofed_download_update',
-        6 => 'field_ofed_download_thumb',
-        7 => 'field_ofed_download_summary',
-        8 => 'field_ofed_download_body',
-        9 => 'field_ofed_download_file',
-        10 => 'file_url_open',
-        11 => 'url_file_save',
-        12 => 'file_url_persistent',
+        1 => 'field_ofed_download_author',
+        2 => 'field_ofed_download_thumb',
+        3 => 'field_ofed_download_summary',
+        4 => 'field_ofed_download_body',
+        5 => 'field_ofed_download_file',
+        6 => 'field_ofed_download_pubdate',
+        7 => 'field_ofed_download_update',
       ),
     ),
     'fields' => array(
       'title' => 'ds_content',
-      'file_type' => 'ds_content',
-      'file_size' => 'ds_content',
       'field_ofed_download_author' => 'ds_content',
-      'field_ofed_download_pubdate' => 'ds_content',
-      'field_ofed_download_update' => 'ds_content',
       'field_ofed_download_thumb' => 'ds_content',
       'field_ofed_download_summary' => 'ds_content',
       'field_ofed_download_body' => 'ds_content',
       'field_ofed_download_file' => 'ds_content',
-      'file_url_open' => 'ds_content',
-      'url_file_save' => 'ds_content',
-      'file_url_persistent' => 'ds_content',
+      'field_ofed_download_pubdate' => 'ds_content',
+      'field_ofed_download_update' => 'ds_content',
     ),
     'classes' => array(),
     'wrappers' => array(
@@ -1349,16 +885,10 @@ function ofed_feature_download_ds_layout_settings_info() {
     'regions' => array(
       'ds_content' => array(
         0 => 'title',
-        1 => 'file_type',
-        2 => 'file_size',
-        3 => 'url_file_save',
       ),
     ),
     'fields' => array(
       'title' => 'ds_content',
-      'file_type' => 'ds_content',
-      'file_size' => 'ds_content',
-      'url_file_save' => 'ds_content',
     ),
     'classes' => array(),
     'wrappers' => array(
@@ -1384,17 +914,13 @@ function ofed_feature_download_ds_layout_settings_info() {
     'regions' => array(
       'ds_content' => array(
         0 => 'title',
-        1 => 'file_type',
-        2 => 'file_size',
-        3 => 'field_ofed_download_pubdate',
-        4 => 'field_ofed_download_update',
-        5 => 'node_link',
+        1 => 'field_ofed_download_pubdate',
+        2 => 'field_ofed_download_update',
+        3 => 'node_link',
       ),
     ),
     'fields' => array(
       'title' => 'ds_content',
-      'file_type' => 'ds_content',
-      'file_size' => 'ds_content',
       'field_ofed_download_pubdate' => 'ds_content',
       'field_ofed_download_update' => 'ds_content',
       'node_link' => 'ds_content',
@@ -1423,34 +949,24 @@ function ofed_feature_download_ds_layout_settings_info() {
     'regions' => array(
       'ds_content' => array(
         0 => 'title',
-        1 => 'file_type',
-        2 => 'file_size',
-        3 => 'field_ofed_download_author',
-        4 => 'field_ofed_download_pubdate',
-        5 => 'field_ofed_download_update',
-        6 => 'field_ofed_download_thumb',
-        7 => 'field_ofed_download_summary',
-        8 => 'field_ofed_download_body',
-        9 => 'field_ofed_download_file',
-        10 => 'file_url_open',
-        11 => 'url_file_save',
-        12 => 'file_url_persistent',
+        1 => 'field_ofed_download_author',
+        2 => 'field_ofed_download_thumb',
+        3 => 'field_ofed_download_summary',
+        4 => 'field_ofed_download_body',
+        5 => 'field_ofed_download_file',
+        6 => 'field_ofed_download_pubdate',
+        7 => 'field_ofed_download_update',
       ),
     ),
     'fields' => array(
       'title' => 'ds_content',
-      'file_type' => 'ds_content',
-      'file_size' => 'ds_content',
       'field_ofed_download_author' => 'ds_content',
-      'field_ofed_download_pubdate' => 'ds_content',
-      'field_ofed_download_update' => 'ds_content',
       'field_ofed_download_thumb' => 'ds_content',
       'field_ofed_download_summary' => 'ds_content',
       'field_ofed_download_body' => 'ds_content',
       'field_ofed_download_file' => 'ds_content',
-      'file_url_open' => 'ds_content',
-      'url_file_save' => 'ds_content',
-      'file_url_persistent' => 'ds_content',
+      'field_ofed_download_pubdate' => 'ds_content',
+      'field_ofed_download_update' => 'ds_content',
     ),
     'classes' => array(),
     'wrappers' => array(
@@ -1476,21 +992,17 @@ function ofed_feature_download_ds_layout_settings_info() {
     'regions' => array(
       'ds_content' => array(
         0 => 'title',
-        1 => 'file_type',
-        2 => 'file_size',
-        3 => 'field_ofed_download_pubdate',
-        4 => 'field_ofed_download_update',
-        5 => 'field_ofed_download_summary',
-        6 => 'node_link',
+        1 => 'field_ofed_download_summary',
+        2 => 'field_ofed_download_pubdate',
+        3 => 'field_ofed_download_update',
+        4 => 'node_link',
       ),
     ),
     'fields' => array(
       'title' => 'ds_content',
-      'file_type' => 'ds_content',
-      'file_size' => 'ds_content',
+      'field_ofed_download_summary' => 'ds_content',
       'field_ofed_download_pubdate' => 'ds_content',
       'field_ofed_download_update' => 'ds_content',
-      'field_ofed_download_summary' => 'ds_content',
       'node_link' => 'ds_content',
     ),
     'classes' => array(),
@@ -1518,12 +1030,16 @@ function ofed_feature_download_ds_layout_settings_info() {
       'ds_content' => array(
         0 => 'title',
         1 => 'field_ofed_download_summary',
-        2 => 'node_link',
+        2 => 'field_ofed_download_pubdate',
+        3 => 'field_ofed_download_update',
+        4 => 'node_link',
       ),
     ),
     'fields' => array(
       'title' => 'ds_content',
       'field_ofed_download_summary' => 'ds_content',
+      'field_ofed_download_pubdate' => 'ds_content',
+      'field_ofed_download_update' => 'ds_content',
       'node_link' => 'ds_content',
     ),
     'classes' => array(),

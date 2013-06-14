@@ -24,9 +24,15 @@ You can change the value of this counter by the value of your choice and you can
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 15,
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_integer',
+        'weight' => 8,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -58,9 +64,13 @@ You can change the value of this counter by the value of your choice and you can
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 19,
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 5,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -99,9 +109,13 @@ You can change the value of this counter by the value of your choice and you can
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 14,
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 1,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -140,9 +154,13 @@ You can change the value of this counter by the value of your choice and you can
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 13,
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 0,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -181,9 +199,13 @@ You can change the value of this counter by the value of your choice and you can
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 17,
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 3,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -222,9 +244,13 @@ You can change the value of this counter by the value of your choice and you can
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 16,
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 2,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -263,9 +289,13 @@ You can change the value of this counter by the value of your choice and you can
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 18,
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 4,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -308,7 +338,7 @@ You can change the value of this counter by the value of your choice and you can
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => 20,
+        'weight' => 7,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -356,7 +386,7 @@ You can change the value of this counter by the value of your choice and you can
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 12,
+        'weight' => 20,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -435,9 +465,16 @@ You can change the value of this counter by the value of your choice and you can
         'weight' => 2,
       ),
       'default' => array(
-        'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
+        'label' => 'inline',
+        'module' => 'date',
+        'settings' => array(
+          'format_type' => 'short',
+          'fromto' => 'both',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+        ),
+        'type' => 'date_default',
         'weight' => 9,
       ),
       'full' => array(
@@ -614,7 +651,7 @@ You can change the value of this counter by the value of your choice and you can
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 10,
+        'weight' => 18,
       ),
       'full' => array(
         'label' => 'hidden',

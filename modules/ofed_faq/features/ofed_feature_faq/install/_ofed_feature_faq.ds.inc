@@ -17,21 +17,6 @@ function ofed_feature_faq_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'ofed_faq';
   $ds_fieldsetting->view_mode = 'default';
   $ds_fieldsetting->settings = array(
-    'anchor' => array(
-      'weight' => '0',
-      'label' => 'hidden',
-      'format' => 'default',
-    ),
-    'top_of_page' => array(
-      'weight' => '3',
-      'label' => 'hidden',
-      'format' => 'default',
-      'formatter_settings' => array(
-        'ft' => array(
-          'classes' => 'align-right',
-        ),
-      ),
-    ),
     'title' => array(
       'weight' => '1',
       'label' => 'hidden',
@@ -54,21 +39,6 @@ function ofed_feature_faq_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'ofed_faq';
   $ds_fieldsetting->view_mode = 'full';
   $ds_fieldsetting->settings = array(
-    'anchor' => array(
-      'weight' => '0',
-      'label' => 'hidden',
-      'format' => 'default',
-    ),
-    'top_of_page' => array(
-      'weight' => '3',
-      'label' => 'hidden',
-      'format' => 'default',
-      'formatter_settings' => array(
-        'ft' => array(
-          'classes' => 'align-right',
-        ),
-      ),
-    ),
     'title' => array(
       'weight' => '1',
       'label' => 'hidden',
@@ -171,11 +141,6 @@ function ofed_feature_faq_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'ofed_faq';
   $ds_fieldsetting->view_mode = 'teaser';
   $ds_fieldsetting->settings = array(
-    'anchor' => array(
-      'weight' => '0',
-      'label' => 'hidden',
-      'format' => 'default',
-    ),
     'title' => array(
       'weight' => '1',
       'label' => 'hidden',
@@ -186,16 +151,6 @@ function ofed_feature_faq_ds_field_settings_info() {
       'formatter_settings' => array(
         'ft' => array(
           'classes' => 'clear-block',
-        ),
-      ),
-    ),
-    'top_of_page' => array(
-      'weight' => '3',
-      'label' => 'hidden',
-      'format' => 'default',
-      'formatter_settings' => array(
-        'ft' => array(
-          'classes' => 'align-right',
         ),
       ),
     ),
@@ -221,17 +176,13 @@ function ofed_feature_faq_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'ds_content' => array(
-        0 => 'anchor',
-        1 => 'title',
-        2 => 'field_ofed_faq_answer',
-        3 => 'top_of_page',
+        0 => 'title',
+        1 => 'field_ofed_faq_answer',
       ),
     ),
     'fields' => array(
-      'anchor' => 'ds_content',
       'title' => 'ds_content',
       'field_ofed_faq_answer' => 'ds_content',
-      'top_of_page' => 'ds_content',
     ),
     'classes' => array(),
     'wrappers' => array(
@@ -256,17 +207,13 @@ function ofed_feature_faq_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'ds_content' => array(
-        0 => 'anchor',
-        1 => 'title',
-        2 => 'field_ofed_faq_answer',
-        3 => 'top_of_page',
+        0 => 'title',
+        1 => 'field_ofed_faq_answer',
       ),
     ),
     'fields' => array(
-      'anchor' => 'ds_content',
       'title' => 'ds_content',
       'field_ofed_faq_answer' => 'ds_content',
-      'top_of_page' => 'ds_content',
     ),
     'classes' => array(),
     'wrappers' => array(
@@ -415,17 +362,13 @@ function ofed_feature_faq_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'ds_content' => array(
-        0 => 'anchor',
-        1 => 'title',
-        2 => 'field_ofed_faq_answer',
-        3 => 'top_of_page',
+        0 => 'title',
+        1 => 'field_ofed_faq_answer',
       ),
     ),
     'fields' => array(
-      'anchor' => 'ds_content',
       'title' => 'ds_content',
       'field_ofed_faq_answer' => 'ds_content',
-      'top_of_page' => 'ds_content',
     ),
     'classes' => array(),
     'wrappers' => array(
