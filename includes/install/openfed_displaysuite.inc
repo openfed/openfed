@@ -62,7 +62,7 @@ more|More link
 variable_set('ds_classes_regions', '');
 
 /**
- * VIEW MODES 
+ * VIEW MODES
  */
 $view_mode = new stdClass();
 $view_mode->view_mode = 'page_list';
@@ -94,37 +94,3 @@ $view_mode->label = 'References';
 $view_mode->entities = array('node' => 'node');
 drupal_write_record('ds_view_modes', $view_mode);
 
-
-/**
- * CODE FIELD 
- */
-// Node : Top of page
-$field = new stdClass();
-$field->properties = array(
-  'code' => array(
-    'value' => '<a href="#" class="top-of-page"><?php echo t("Top of page"); ?></a>',
-    'format' => 'ds_code'
-  ),
-  'use_token' => FALSE
-);
-$field->field = 'top_of_page';
-$field->label = 'Top of page';
-$field->entities = array('node' => 'node');
-$field->field_type = DS_FIELD_TYPE_CODE;
-drupal_write_record('ds_fields', $field);
-
-
-// Node : Anchor
-$field = new stdClass();
-$field->properties = array(
-  'code' => array(
-    'value' => '<span id="<?php echo $entity->nid;?>"></span>',
-    'format' => 'ds_code'
-  ),
-  'use_token' => FALSE
-);
-$field->field = 'anchor';
-$field->label = 'Anchor';
-$field->entities = array('node' => 'node');
-$field->field_type = DS_FIELD_TYPE_CODE;
-drupal_write_record('ds_fields', $field);
