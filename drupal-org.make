@@ -38,6 +38,53 @@ libraries[jquery.jcarousel][destination] = "libraries/jquery.jcarousel"
 libraries[jquery.jcarousel][directory_name] = "lib"
 libraries[jquery.jcarousel][type] = "library"
 
+
+;
+; OpenFed Modules
+; Please fill the following out. Type may be one of get, git, bzr or svn, and url is the url of the download.
+;
+
+projects[addemar_subscription][download][type] = "git"
+projects[addemar_subscription][download][url] = http://git.drupal.org/sandbox/Openfed/2019683.git
+projects[addemar_subscription][download][branch] = 7.x-1.x
+projects[addemar_subscription][directory_name] = "addemar_subscription"
+projects[addemar_subscription][subdir] = openfed
+projects[addemar_subscription][type] = module
+
+projects[maintenance_theme_selector][download][type] = "git"
+projects[maintenance_theme_selector][download][url] = http://git.drupal.org/sandbox/Openfed/2021405.git
+projects[maintenance_theme_selector][download][branch] = 7.x-1.x
+projects[maintenance_theme_selector][directory_name] = "maintenance_theme_selector"
+projects[maintenance_theme_selector][subdir] = openfed
+projects[maintenance_theme_selector][type] = module
+
+projects[ofed_switcher][download][type] = "git"
+projects[ofed_switcher][download][url] = http://git.drupal.org/sandbox/Openfed/2021377.git
+projects[ofed_switcher][download][branch] = 7.x-1.x
+projects[ofed_switcher][directory_name] = "ofed_switcher"
+projects[ofed_switcher][subdir] = openfed
+projects[ofed_switcher][type] = module
+
+projects[ofed_vmcd][download][type] = "git"
+projects[ofed_vmcd][download][url] = http://git.drupal.org/sandbox/Openfed/2021399.git
+projects[ofed_vmcd][download][branch] = 7.x-1.x
+projects[ofed_vmcd][directory_name] = "ofed_vmcd"
+projects[ofed_vmcd][subdir] = openfed
+projects[ofed_vmcd][type] = module
+
+projects[waia_integration][download][type] = "git"
+projects[waia_integration][download][url] = http://git.drupal.org/sandbox/Openfed/2021409.git
+projects[waia_integration][download][branch] = 7.x-1.x
+projects[waia_integration][directory_name] = "waia_integration"
+projects[waia_integration][subdir] = openfed
+projects[waia_integration][type] = module
+
+projects[nerra][download][type] = "git"
+projects[nerra][download][url] = http://git.drupal.org/sandbox/Openfed/2021473.git
+projects[nerra][download][branch] = 7.x-1.x
+projects[nerra][directory_name] = "nerra"
+projects[nerra][type] = theme
+
 ;
 ; Modules
 ; Please fill the following out. Type may be one of get, git, bzr or svn, and url is the url of the download.
@@ -276,7 +323,7 @@ projects[print][subdir] = contrib
 
 projects[quiz][version] = "4.0-beta1"
 projects[quiz][subdir] = contrib
-projects[quiz][patch][] = "http://drupal.org/files/quiz-cant_view_long_answer_questions-1899654-1.patch"
+;projects[quiz][patch][] = "http://drupal.org/files/quiz-cant_view_long_answer_questions-1899654-1.patch"
 projects[quiz][patch][] = "http://drupal.org/files/undefined_index_group_by-1827880-7.patch"
 
 projects[redirect][version] = "1.0-rc1"

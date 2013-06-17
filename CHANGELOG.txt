@@ -1,6 +1,17 @@
 CHANGELOG
 ===========
 
+17 June 2013
+------------
+
+  * Issues:
+    # 1959848: Move waia to separate project
+    # 1959850: Move addemar to separate module
+    # 2021321: Move ofed_switcher to different project
+    # 2021323: Move ofed_vmcd to separate project
+    # 2021331: Move maintenance-selector to new project
+    # 1983050: Move nerra theme
+
 07 June 2013
 ------------
 
@@ -214,7 +225,7 @@ CHANGELOG
 
   * Modules added:
       Contrib
-        - ShareThis	(2.5)
+        - ShareThis (2.5)
       Custom
         - menu_dam: Allow all custom menus to receive an active trail
         - maintenance_theme_selector: Maintenance theme module allow to select an another theme to use with the maintenance mode
@@ -364,8 +375,8 @@ CHANGELOG
     - metatag (1.0-beta4)
 
  * Themes:
-	- minimal layout added to nerra
-	- minimal layout added to cms_theme
+  - minimal layout added to nerra
+  - minimal layout added to cms_theme
 
  * Config added:
     - DS
