@@ -1,6 +1,7 @@
-name = OpenFED
-description = Select this profile to install OpenFED distribution
+name = OpenFed
+description = Select this profile to install OpenFed distribution
 core = 7.x
+version = "7.x-0.9"
 
 ; System Requirements.
   php_memory_limit = 224M
@@ -137,10 +138,6 @@ core = 7.x
     dependencies[] = token
     dependencies[] = transliteration
     dependencies[] = waia_integration
-  ; Panels
-    dependencies[] = panels_mini
-    dependencies[] = panels_node
-    dependencies[] = panels
   ; Path breadcrumbs
     dependencies[] = path_breadcrumbs_ui
     dependencies[] = path_breadcrumbs

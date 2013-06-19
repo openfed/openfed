@@ -2,6 +2,6 @@
 
 /**
  * @file
- * Code for the openFED Photos - Feature feature.
+ * Code for the OpenFed Photos - Feature feature.
  */
 include_once 'ofed_feature_photogallery.features.inc';

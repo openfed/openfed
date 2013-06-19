@@ -34,7 +34,6 @@ variable_set('ds_search_group_by_type', FALSE);
 variable_set('ds_search_group_by_type_other', 'Other');
 variable_set('ds_search_group_by_type_other_wrapper', 'markup');
 variable_set('ds_search_group_by_type_settings', array(
-  'panel' => array('status' => 1, 'label' => 'Results for panel', 'wrapper' => 'markup', 'weight' => 0),
   'webform' => array('status' => 1, 'label' => 'Results for webform', 'wrapper' => 'markup', 'weight' => 0)
   )
 );

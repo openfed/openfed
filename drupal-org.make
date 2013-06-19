@@ -48,35 +48,35 @@ projects[addemar_subscription][download][type] = "git"
 projects[addemar_subscription][download][url] = http://git.drupal.org/sandbox/Openfed/2019683.git
 projects[addemar_subscription][download][branch] = 7.x-1.x
 projects[addemar_subscription][directory_name] = "addemar_subscription"
-projects[addemar_subscription][subdir] = openfed
+projects[addemar_subscription][subdir] = contrib
 projects[addemar_subscription][type] = module
 
 projects[maintenance_theme_selector][download][type] = "git"
 projects[maintenance_theme_selector][download][url] = http://git.drupal.org/sandbox/Openfed/2021405.git
 projects[maintenance_theme_selector][download][branch] = 7.x-1.x
 projects[maintenance_theme_selector][directory_name] = "maintenance_theme_selector"
-projects[maintenance_theme_selector][subdir] = openfed
+projects[maintenance_theme_selector][subdir] = contrib
 projects[maintenance_theme_selector][type] = module
 
 projects[ofed_switcher][download][type] = "git"
 projects[ofed_switcher][download][url] = http://git.drupal.org/sandbox/Openfed/2021377.git
 projects[ofed_switcher][download][branch] = 7.x-1.x
 projects[ofed_switcher][directory_name] = "ofed_switcher"
-projects[ofed_switcher][subdir] = openfed
+projects[ofed_switcher][subdir] = contrib
 projects[ofed_switcher][type] = module
 
 projects[ofed_vmcd][download][type] = "git"
 projects[ofed_vmcd][download][url] = http://git.drupal.org/sandbox/Openfed/2021399.git
 projects[ofed_vmcd][download][branch] = 7.x-1.x
 projects[ofed_vmcd][directory_name] = "ofed_vmcd"
-projects[ofed_vmcd][subdir] = openfed
+projects[ofed_vmcd][subdir] = contrib
 projects[ofed_vmcd][type] = module
 
 projects[waia_integration][download][type] = "git"
 projects[waia_integration][download][url] = http://git.drupal.org/sandbox/Openfed/2021409.git
 projects[waia_integration][download][branch] = 7.x-1.x
 projects[waia_integration][directory_name] = "waia_integration"
-projects[waia_integration][subdir] = openfed
+projects[waia_integration][subdir] = contrib
 projects[waia_integration][type] = module
 
 projects[nerra][download][type] = "git"

@@ -1,6 +1,6 @@
 name = Photos galeries - Module
 description = Manage photos galeries.
-package = openFED
+package = OpenFed
 core = 7.x
 version = "7.x-1.0"
 

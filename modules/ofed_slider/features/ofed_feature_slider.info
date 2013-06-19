@@ -1,7 +1,7 @@
 name = Slider
 description = Feature needed to manage Sliders.
 core = 7.x
-package = openFED
+package = OpenFed
 php = 5.2.4
 version = 7.x-1.0
 project = ofed_feature_slider

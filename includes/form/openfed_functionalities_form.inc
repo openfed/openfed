@@ -152,19 +152,7 @@ function _openfed_functionalities_grant_permissions() {
     'create ofed_banner content',
     'create ofed_slider content',
     'create ofed_slideshow content',
-    'create panel content',
-    'edit own panel content',
-    'edit any panel content',
-    'delete own panel content',
-    'delete any panel content',
     'delete any webform content',
-    'override panel published option',
-    'override panel promote to front page option',
-    'override panel sticky option',
-    'override panel revision option',
-    'enter panel revision log entry',
-    'override panel authored on option',
-    'override panel authored by option',
     'override webform authored by option',
   );
   $revoke['Builder'] = array(
@@ -172,12 +160,10 @@ function _openfed_functionalities_grant_permissions() {
     'administer nodes',
     'delete revisions',
     'delete any webform content',
-    'delete any panel content',
   );
   $revoke['Configurator'] = array(
     'delete revisions',
     'delete any webform content',
-    'delete any panel content',
   );
 
   foreach ($roles as $role_name) {

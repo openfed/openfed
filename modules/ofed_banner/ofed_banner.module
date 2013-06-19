@@ -147,8 +147,13 @@ function ofed_banner_block_view($delta = '') {
  * @param type $node
  */
 function ofed_banner_form_alter(&$form, &$form_state, $form_id) {
+  // Set click to 0 in case of new content.
   if ($form_id == 'ofed_banner_node_form') {
-    $form['#node']->field_ofed_banner_click_count['und'][0]['value'] = 0;
-    $form['field_ofed_banner_click_count']['und'][0]['value']['#default_value'] = 0;
+    // Only for new content.
+    $arg = arg(1);
+    if(isset($arg) && $arg == 'add') {
+      $form['#node']->field_ofed_banner_click_count['und'][0]['value'] = 0;
+      $form['field_ofed_banner_click_count']['und'][0]['value']['#default_value'] = 0;
+    }
   }
 }

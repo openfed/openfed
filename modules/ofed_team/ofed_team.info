@@ -1,6 +1,6 @@
 name = Team members - Module
 description = Manage the team members
-package = openFED
+package = OpenFed
 core = 7.x
 version = "7.x-1.0"
 

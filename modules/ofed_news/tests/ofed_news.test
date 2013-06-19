@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Unit tests for OpenFED news module.
+ * Unit tests for OpenFed news module.
  */
 class OfedNewsTestCase extends DrupalWebTestCase {
 
@@ -34,7 +34,7 @@ class OfedNewsTestCase extends DrupalWebTestCase {
     return array(
       'name' => 'News',
       'description' => 'Create a node in every language, edit it and delete it.',
-      'group' => '-OpenFED',
+      'group' => '-OpenFed',
     );
   }
 

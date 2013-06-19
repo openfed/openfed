@@ -4,7 +4,7 @@
  */
 
 /*
-	Project name: openFED
+	Project name: OpenFed
 	Project url: 
 	Version: 0.1
 	Author: Blue4You
@@ -19,7 +19,7 @@
           el.addEventListener('keydown',function(e){if(e.keyCode==32){e.preventDefault();}},true);	
         }
 		
-		// Change the logo from themes "seven" by the actual logo "openFED" because it can't be change directly in the html
+		// Change the logo from themes "seven" by the actual logo "OpenFed" because it can't be change directly in the html
 		var path = $("#logo").attr("src");		// take the path of the image called with the id "logo"
 		
 		var reg = new RegExp("[/]+", "g");		// create a regular expression that looks for every  "/" in the variable "path"

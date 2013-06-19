@@ -1,5 +1,15 @@
 CHANGELOG
 ===========
+19 June 2013
+------------
+
+  *Issues: 
+    # 2022237: Remove Panels modules
+    # 1959850: Move addemar to separate module
+		# 1968946: Memory requirements
+    # Others : 
+      - Moved modules are now in the contrib subdir instead of openfed
+			- Checking / Changing the name of the solution by the correct spelling (OpenFed).
 
 17 June 2013
 ------------
@@ -37,7 +47,7 @@ CHANGELOG
     # 1994936: Module upgrade: ckeditor
     # 1994918: Library upgrade: ckeditor
     # 1968954: Colorbox plugin missing
-    Fixing issues relative to an internal document and bug tracking.
+    Fixing issues relative to an internal document and bug tracking
 
   * Modules added:
       Contrib
@@ -74,7 +84,7 @@ CHANGELOG
 
   * Themes updated:
       Custom 
-        - nerra: update the nerra_button function to generate the buttons class correctly.
+        - nerra: update the nerra_button function to generate the buttons class correctly
 
   * Patches:
     Contrib
@@ -284,7 +294,7 @@ CHANGELOG
     - Features display (layout, fields,...) moved in installer to put config in database
 
   * Libraries:
-    - libraries are not downloaded anymore but included by default in the profil now.
+    - libraries are not downloaded anymore but included by default in the profil now
     - jquery.imagesloaded added
 
   * Modules updated:

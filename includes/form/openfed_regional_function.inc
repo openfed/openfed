@@ -90,15 +90,9 @@ function _openfed_create_content_type($lang) {
 
     switch ($lang) {
       case 'en':
-        $title = st('Home');
-        $alias = st('home');
-
         // store main link source variable for a language
         variable_store_set('language', $lang, 'menu_main_links_source', 'main-menu');
-
-        // create a link to the front in the main menu
-        _openfed_create_front_menu_link('main-menu', $title);
-
+        
         // show block for english language only
         _openfed_show_block_for_language('system', 'main-menu', $lang);
 
@@ -122,12 +116,9 @@ function _openfed_create_content_type($lang) {
 
         // create a menu block for submenu
         _openfed_create_submenu($lang, 'main-menu');
-        break;
+      break;
 
       case 'fr':
-        // set title & alias string
-        $title = st('Accueil');
-        $alias = st('accueil');
         $menu_name = 'main-french-menu';
 
         // create the french menu
@@ -138,9 +129,6 @@ function _openfed_create_content_type($lang) {
 
         // store main link source variable for a language
         variable_store_set('language', $lang, 'menu_main_links_source', $menu_name);
-
-        // create front link in menu
-        _openfed_create_front_menu_link($menu_name, $title);
 
         // show block for french language only
         _openfed_show_block_for_language('menu', $menu_name, $lang);
@@ -162,10 +150,9 @@ function _openfed_create_content_type($lang) {
 
         // set the menu in the navigation region for nerra
         _openfed_set_block_into_region('menu', $menu_name, 'navigation');
-        break;
+      break;
+    
       case 'nl':
-        $title = st('Welkom');
-        $alias = st('welcom');
         $menu_name = "main-dutch-menu";
 
         // create the Dutch menu
@@ -176,9 +163,6 @@ function _openfed_create_content_type($lang) {
 
         // store variable for a language
         variable_store_set('language', $lang, 'menu_main_links_source', $menu_name);
-
-        // create front link
-        _openfed_create_front_menu_link($menu_name, $title);
 
         // show block for dutch language only
         _openfed_show_block_for_language('menu', $menu_name, $lang);
@@ -200,67 +184,10 @@ function _openfed_create_content_type($lang) {
 
         // set the menu in the navigation region for nerra
         _openfed_set_block_into_region('menu', $menu_name, 'navigation');
-        break;
+      break;
     }
+    
     variable_set('ckeditor_link_autocomplete_menus', $ck_link);
-    $pages = array(
-      'name' => $alias,
-      'task' => 'page',
-      'admin_title' => $title,
-      'path' => $alias,
-      'access' => array(
-        'plugins' => array()
-      ),
-      'menu' => array(),
-      'arguments' => array(),
-      'conf' => array(
-        'admin_paths' => array()
-      ),
-    );
-    drupal_write_record('page_manager_pages', $pages);
-
-    $display = array(
-      'layout' => 'onecol',
-      'layout_settings' => array(),
-      'panel_settings' => array(
-        'style_settings' => array(
-          'default' => '',
-          'middle' => '',
-        )
-      ),
-      'cache' => array(),
-      'title' => '',
-      'hide_title' => 1,
-      'title_pane' => 0,
-    );
-    drupal_write_record('panels_display', $display);
-
-    $handlers = array(
-      'name' => 'page_' . $alias . '_panel_context',
-      'task' => 'page',
-      'subtask' => $alias,
-      'handler' => 'panel_context',
-      'weight' => 0,
-      'conf' => array(
-        'title' => $title,
-        'no_blocks' => 0,
-        'pipeline' => 'standard',
-        'body_classes_to_remove' => '',
-        'body_classes_to_add' => '',
-        'css_id' => '',
-        'css' => '',
-        'contexts' => array(),
-        'relationships' => array(),
-        'did' => $display['did']
-      )
-    );
-    drupal_write_record('page_manager_handlers', $handlers);
-
-
-    // set panel to the front page
-    if ($lang == 'en') variable_set('site_frontpage', $alias);
-
-    variable_store_set('language', $lang, 'site_frontpage', $alias);
   }
 }
 

@@ -18,7 +18,7 @@ function ofed_requirements_install() {
   $profile_name = variable_get('install_profile', '');
   if ($profile_name != 'openfed') {
     // Set message.
-    drupal_set_message(t('The "Requirements Module" must be used with the openFed distribution only'));
+    drupal_set_message(t('The "Requirements Module" must be used with the OpenFed distribution only'));
     
     // Return "false" to stop install.
     return FALSE;

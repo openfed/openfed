@@ -16,7 +16,7 @@ projects[drupal][patch][] = http://drupal.org/files/allow_change_system-requirem
 projects[drupal][patch][] = http://drupal.org/files/drupal-1470656-14.patch
 
 
-; Download the openfed install profile and recursively build all its dependencies
+; Download the OpenFed install profile and recursively build all its dependencies
 projects[openfed][type] = profile
 projects[openfed][download][url] = http://git.drupal.org/sandbox/bart.hanssens/1813432.git
 projects[openfed][download][branch] = 7.x-0.x

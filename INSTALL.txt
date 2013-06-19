@@ -47,5 +47,15 @@ INSTALLATION
      
      drush make build-openfed.make /path/to/your/project
 
-2. Follow the standard Drupal way to create your site by creating the database
+2. Create your files and private directories under 
+   /path/to/your/project/sites/default and then give the permissions to your 
+   webserver's user. You can do it as follow :
+   
+     cd /path/to/your/project
+     mkdir -p sites/default/files sites/default/private
+     chown -R www-data sites/default/files sites/default/private
+     
+   You should also have a tmp directory outside the web directory (for instance, /var/tmp)
+
+3. Follow the standard Drupal way to create your site by creating the database
    and running the install script.

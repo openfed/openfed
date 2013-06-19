@@ -29,8 +29,8 @@ msgid "Provide the official Belgian Federal Authorities header."
 msgstr "Biedt het officiële briefhoofd van de Belgische federale overheid."
 
 #: ofed_federalheader.info:0
-msgid "openFED"
-msgstr "openFED"
+msgid "OpenFed"
+msgstr "OpenFed"
 
 #: includes/ofed_federalheader.blocks.inc:9
 msgid "Belgian Federal header"

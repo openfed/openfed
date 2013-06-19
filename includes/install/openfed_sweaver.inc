@@ -80,8 +80,6 @@ variable_set('sweaver_enabled', FALSE);
 variable_set('sweaver_paths', "admin*
 node/add*
 node/*/edit
-node/*/panel*
-panels/ajax*
 user/*/edit
 batch*
 wysiwyg_imageupload/*

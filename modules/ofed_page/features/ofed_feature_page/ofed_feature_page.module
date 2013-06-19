@@ -2,6 +2,6 @@
 
 /**
  * @file
- * Code for the openFED Pages - Feature feature.
+ * Code for the OpenFed Pages - Feature feature.
  */
 include_once 'ofed_feature_page.features.inc';

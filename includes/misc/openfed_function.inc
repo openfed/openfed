@@ -364,7 +364,6 @@ function _openfed_return_permission_builder() {
     // Display Suite Extras
     'ds_switch ofed_download' => TRUE,
     'ds_switch ofed_page' => TRUE,
-    'ds_switch panel' => TRUE,
     'ds_switch webform' => TRUE,
     // Display Suite UI
     'admin_view_modes' => TRUE,
@@ -410,9 +409,6 @@ function _openfed_return_permission_builder() {
     // Meta tags
     'administer meta tags' => TRUE,
     'edit meta tags' => TRUE,
-    // Mini panels
-    'create mini panels' => TRUE,
-    'administer mini panels' => TRUE,
     // Mollom
     'administer mollom' => TRUE,
     'access mollom statistics' => TRUE,
@@ -437,11 +433,6 @@ function _openfed_return_permission_builder() {
     'edit any ofed_page content' => TRUE,
     'delete own ofed_page content' => TRUE,
     'delete any ofed_page content' => TRUE,
-    // CT: Panel
-    'create panel content' => TRUE,
-    'edit own panel content' => TRUE,
-    'edit any panel content' => TRUE,
-    'delete own panel content' => TRUE,
     // CT: Webform
     'create webform content' => TRUE,
     'edit own webform content' => TRUE,
@@ -464,14 +455,6 @@ function _openfed_return_permission_builder() {
     'enter ofed_page revision log entry' => TRUE,
     'override ofed_page authored on option' => TRUE,
     'override ofed_page authored by option' => TRUE,
-    // CT: Panel
-    'override panel published option' => TRUE,
-    'override panel promote to front page option' => TRUE,
-    'override panel sticky option' => TRUE,
-    'override panel revision option' => TRUE,
-    'enter panel revision log entry' => TRUE,
-    'override panel authored on option' => TRUE,
-    'override panel authored by option' => TRUE,
     // CT: Webform
     'override webform published option' => TRUE,
     'override webform promote to front page option' => TRUE,
@@ -486,20 +469,6 @@ function _openfed_return_permission_builder() {
     // Views multi-column display
     'administer views multi-column display' => TRUE,
     'use views multi-column display' => TRUE,
-    // Panel nodes
-    'create panel-nodes' => TRUE,
-    'edit any panel-nodes' => TRUE,
-    'edit own panel-nodes' => TRUE,
-    'administer panel-nodes' => TRUE,
-    'delete any panel-nodes' => TRUE,
-    'delete own panel-nodes' => TRUE,
-    // Panels
-    'use panels dashboard' => TRUE,
-    'view pane admin links' => TRUE,
-    'administer pane access' => TRUE,
-    'administer advanced pane settings' => TRUE,
-    'administer panels layouts' => TRUE,
-    'administer panels styles' => TRUE,
     // Path
     'administer url aliases' => TRUE,
     'create url aliases' => TRUE,
@@ -611,7 +580,6 @@ function _openfed_return_permission_configurator() {
     // Display Suite Extras
     'ds_switch ofed_download' => TRUE,
     'ds_switch ofed_page' => TRUE,
-    'ds_switch panel' => TRUE,
     'ds_switch webform' => TRUE,
     // Display Suite UI
     'admin_view_modes' => TRUE,
@@ -652,9 +620,6 @@ function _openfed_return_permission_configurator() {
     // Meta tags
     'administer meta tags' => TRUE,
     'edit meta tags' => TRUE,
-    // Mini panels
-    'create mini panels' => TRUE,
-    'administer mini panels' => TRUE,
     // Mollom
     'access mollom statistics' => TRUE,
     // Multilingual content
@@ -680,11 +645,6 @@ function _openfed_return_permission_configurator() {
     'edit any ofed_page content' => TRUE,
     'delete own ofed_page content' => TRUE,
     'delete any ofed_page content' => TRUE,
-    // CT: Panel
-    'create panel content' => TRUE,
-    'edit own panel content' => TRUE,
-    'edit any panel content' => TRUE,
-    'delete own panel content' => TRUE,
     // CT: Webform
     'create webform content' => TRUE,
     'edit own webform content' => TRUE,
@@ -707,14 +667,6 @@ function _openfed_return_permission_configurator() {
     'enter ofed_page revision log entry' => TRUE,
     'override ofed_page authored on option' => TRUE,
     'override ofed_page authored by option' => TRUE,
-    // CT: Panel
-    'override panel published option' => TRUE,
-    'override panel promote to front page option' => TRUE,
-    'override panel sticky option' => TRUE,
-    'override panel revision option' => TRUE,
-    'enter panel revision log entry' => TRUE,
-    'override panel authored on option' => TRUE,
-    'override panel authored by option' => TRUE,
     // CT: Webform
     'override webform published option' => TRUE,
     'override webform promote to front page option' => TRUE,
@@ -729,22 +681,6 @@ function _openfed_return_permission_configurator() {
     // Views multi-column display
     'administer views multi-column display' => TRUE,
     'use views multi-column display' => TRUE,
-    // Panel nodes
-    'create panel-nodes' => TRUE,
-    'edit any panel-nodes' => TRUE,
-    'edit own panel-nodes' => TRUE,
-    'administer panel-nodes' => TRUE,
-    'delete any panel-nodes' => TRUE,
-    'delete own panel-nodes' => TRUE,
-    // Panels
-    'use panels dashboard' => TRUE,
-    'view pane admin links' => TRUE,
-    'administer pane access' => TRUE,
-    'administer advanced pane settings' => TRUE,
-    'administer panels layouts' => TRUE,
-    'administer panels styles' => TRUE,
-    'use panels caching features' => TRUE,
-    'use panels locks' => TRUE,
     // Path
     'administer url aliases' => TRUE,
     'create url aliases' => TRUE,

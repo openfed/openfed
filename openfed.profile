@@ -31,7 +31,7 @@ require_once('includes/form/openfed_complete_function.inc');
  */
 function openfed_form_install_configure_form_alter(&$form, $form_state) {
   // Pre-populate the site name with the server name.
-  $form['site_information']['site_name']['#default_value'] = 'OpenFED';
+  $form['site_information']['site_name']['#default_value'] = 'OpenFed';
   $form['server_settings']['site_default_country']['#default_value'] = 'BE';
   
   // Only check for updates, no need for email notifications
@@ -85,7 +85,7 @@ function openfed_install_tasks($install_state) {
   // load css for custom layout
   drupal_add_css('profiles/openfed/themes/maintenance/assets/styles/design.css');
 
-  drupal_set_title('OpenFED : '.  drupal_get_title());
+  drupal_set_title('OpenFed : '.  drupal_get_title());
   $menu_tools = !empty($install_state['parameters']['menu_list']) && $install_state['parameters']['menu_list'] = 'menu-tools-menu'; 
   $menu_footer = !empty($install_state['parameters']['menu_list']) && $install_state['parameters']['menu_list'] = 'menu-footer-menu'; 
   

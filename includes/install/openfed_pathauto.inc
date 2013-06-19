@@ -46,6 +46,3 @@ variable_set('pathauto_transliterate', TRUE);
 variable_set('pathauto_update_action', 2);
 variable_set('pathauto_user_pattern', 'users/[user:name]');
 variable_set('pathauto_verbose', FALSE);
-
-
-variable_set('pathauto_node_panel_pattern', '[node:title]');

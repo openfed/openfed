@@ -1,6 +1,6 @@
 name = FAQ's - Module
 description = Manage frequently asked questions.
-package = openFED
+package = OpenFed
 core = 7.x
 version = "7.x-1.0"
 

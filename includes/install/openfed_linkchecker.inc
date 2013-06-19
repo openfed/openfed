@@ -41,4 +41,4 @@ variable_set('linkchecker_ignore_response_codes', "200
 
 variable_set('linkchecker_scan_blocks', TRUE);
 variable_set('linkchecker_scan_comments', FALSE);
-variable_set('linkchecker_scan_nodetypes', array('panel' => ''));
+variable_set('linkchecker_scan_nodetypes', array());
