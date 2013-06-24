@@ -1111,14 +1111,19 @@ function theme_form_element_checkbox_list($variables) {
   if (!empty($element['#attributes']['disabled'])) {
     $attributes['class'][] = 'form-disabled';
   }
-  $output = '<div' . drupal_attributes($attributes) . '>' . "\n";
-
+  
+  $output = '';
+//  $output = '<div' . drupal_attributes($attributes) . '>' . "\n";
+  
   // If #title is not set, we don't display any label or required marker.
   if (!isset($element['#title'])) {
     $element['#title_display'] = 'none';
   }
-  $prefix = isset($element['#field_prefix']) ? '<span class="field-prefix">' . $element['#field_prefix'] . '</span> ' : '';
-  $suffix = isset($element['#field_suffix']) ? ' <span class="field-suffix">' . $element['#field_suffix'] . '</span>' : '';
+  
+  $prefix = '';
+  $suffix = '';
+//  $prefix = isset($element['#field_prefix']) ? '<span class="field-prefix">' . $element['#field_prefix'] . '</span> ' : '';
+//  $suffix = isset($element['#field_suffix']) ? ' <span class="field-suffix">' . $element['#field_suffix'] . '</span>' : '';
 
   switch ($element['#title_display']) {
     case 'before':
@@ -1142,15 +1147,15 @@ function theme_form_element_checkbox_list($variables) {
   if (!empty($element['#description'])) {
     $output .= '<div class="description">' . $element['#description'] . "</div>\n";
   }
-  // Manage the new variable
-  if (!empty($element['#full_description'])) {
-    $output .= '<div class="full-description">' . $element['#full_description'] . "</div>\n";
-  }
-  if (!empty($element['#picture'])) {
-    $output .= '<div class="picture">' . theme('image', array('path' => $element['#picture'])) . "</div>\n";
-  }
+//  // Manage the new variable
+//  if (!empty($element['#full_description'])) {
+//    $output .= '<div class="full-description">' . $element['#full_description'] . "</div>\n";
+//  }
+//  if (!empty($element['#picture'])) {
+//    $output .= '<div class="picture">' . theme('image', array('path' => $element['#picture'])) . "</div>\n";
+//  }
 
-  $output .= "</div>\n";
+  //$output .= "</div>\n";
 
   return $output;
 }

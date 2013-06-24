@@ -139,7 +139,7 @@ function ofed_feature_address_strongarm() {
       'display' => array(
         'language' => array(
           'default' => array(
-            'weight' => '23',
+            'weight' => '18',
             'visible' => FALSE,
           ),
           'teaser' => array(
@@ -151,7 +151,7 @@ function ofed_feature_address_strongarm() {
             'visible' => FALSE,
           ),
           'page_list' => array(
-            'weight' => '23',
+            'weight' => '18',
             'visible' => FALSE,
           ),
         ),

@@ -51,12 +51,12 @@ projects[addemar_subscription][directory_name] = "addemar_subscription"
 projects[addemar_subscription][subdir] = contrib
 projects[addemar_subscription][type] = module
 
-projects[maintenance_theme_selector][download][type] = "git"
-projects[maintenance_theme_selector][download][url] = http://git.drupal.org/sandbox/Openfed/2021405.git
-projects[maintenance_theme_selector][download][branch] = 7.x-1.x
-projects[maintenance_theme_selector][directory_name] = "maintenance_theme_selector"
-projects[maintenance_theme_selector][subdir] = contrib
-projects[maintenance_theme_selector][type] = module
+projects[menu_dam][download][type] = "git"
+projects[menu_dam][download][url] = http://git.drupal.org/sandbox/Openfed/2026821.git
+projects[menu_dam][download][branch] = 7.x-1.x
+projects[menu_dam][directory_name] = "menu_dam"
+projects[menu_dam][subdir] = contrib
+projects[menu_dam][type] = module
 
 projects[ofed_switcher][download][type] = "git"
 projects[ofed_switcher][download][url] = http://git.drupal.org/sandbox/Openfed/2021377.git
@@ -78,6 +78,18 @@ projects[waia_integration][download][branch] = 7.x-1.x
 projects[waia_integration][directory_name] = "waia_integration"
 projects[waia_integration][subdir] = contrib
 projects[waia_integration][type] = module
+
+projects[cms_theme][download][type] = "git"
+projects[cms_theme][download][url] = http://git.drupal.org/sandbox/Openfed/2026885.git
+projects[cms_theme][download][branch] = 7.x-1.x
+projects[cms_theme][directory_name] = "cms_theme"
+projects[cms_theme][type] = theme
+
+projects[maintenance][download][type] = "git"
+projects[maintenance][download][url] = http://git.drupal.org/sandbox/Openfed/2026857.git
+projects[maintenance][download][branch] = 7.x-1.x
+projects[maintenance][directory_name] = "maintenance"
+projects[maintenance][type] = theme
 
 projects[nerra][download][type] = "git"
 projects[nerra][download][url] = http://git.drupal.org/sandbox/Openfed/2021473.git
@@ -161,7 +173,7 @@ projects[entity][subdir] = contrib
 
 projects[entityreference][version] = "1.0"
 projects[entityreference][subdir] = contrib 
-projects[entityreference][patch][] = "http://drupal.org/files/entityreference-devel-generate-fix.diff"
+projects[entityreference][patch][1916376] = "http://drupal.org/files/entityreference-devel-generate-fix.diff"
 
 projects[entity_translation][version] = "1.0-beta2"
 projects[entity_translation][subdir] = contrib 
@@ -177,7 +189,7 @@ projects[facetapi_i18n][subdir] = contrib
 
 projects[features][version] = "2.0-rc1"
 projects[features][subdir] = contrib
-projects[features][patch][] = "http://drupal.org/files/features_static_caches-1063204-32.patch"
+projects[features][patch][1063204] = "http://drupal.org/files/features_static_caches-1063204-32.patch"
 
 projects[features_override][version] = "2.0-beta2"
 projects[features_override][subdir] = contrib 
@@ -187,7 +199,7 @@ projects[field_collection][subdir] = contrib
 
 projects[field-conditional-state][version] = "1.0"
 projects[field-conditional-state][subdir] = contrib
-projects[field-conditional-state][patch][] = "http://drupal.org/files/field-conditional-state-notice_undefined_property_stdclas_content-1721924-2.patch"
+projects[field-conditional-state][patch][1721924] = "http://drupal.org/files/field-conditional-state-notice_undefined_property_stdclas_content-1721924-2.patch"
 
 projects[field_group][version] = "1.1"
 projects[field_group][subdir] = contrib 
@@ -242,14 +254,14 @@ projects[libraries][subdir] = contrib
 
 projects[link][version] = "1.1"
 projects[link][subdir] = contrib
-projects[link][patch][] = "http://drupal.org/files/Fixed_title_value_in_link_field_update_instance_undefined-1914286-3.patch"
+projects[link][patch][1914286] = "http://drupal.org/files/Fixed_title_value_in_link_field_update_instance_undefined-1914286-3.patch"
 
 projects[linkchecker][version] = "1.1"
 projects[linkchecker][subdir] = contrib
 
 projects[logintoboggan][version] = "1.3"
 projects[logintoboggan][subdir] = contrib
-projects[logintoboggan][patch][] = "http://drupal.org/files/logintoboggan-minpasswordlength-1142808-9.patch"
+projects[logintoboggan][patch][1142808] = "http://drupal.org/files/logintoboggan-minpasswordlength-1142808-9.patch"
 
 projects[media][version] = "1.3"
 projects[media][subdir] = contrib 
@@ -292,14 +304,14 @@ projects[multiselect][subdir] = contrib
 
 projects[navigation404][version] = "1.0"
 projects[navigation404][subdir] = contrib
-projects[navigation404][patch][] = "http://drupal.org/files/navigation404-undefined_index_site_404-1844830-0.patch"
+projects[navigation404][patch][1844830] = "http://drupal.org/files/navigation404-undefined_index_site_404-1844830-0.patch"
 
 projects[override_node_options][version] = "1.12"
 projects[override_node_options][subdir] = contrib
 
 projects[page_title][version] = "2.7"
 projects[page_title][subdir] = contrib
-projects[page_title][patch][] = "http://drupal.org/files/1024624-11-include_once.patch"
+projects[page_title][patch][1024624] = "http://drupal.org/files/1024624-11-include_once.patch"
 
 projects[panels][version] = "3.3"
 projects[panels][subdir] = contrib
@@ -312,8 +324,8 @@ projects[path_breadcrumbs][subdir] = contrib
 
 projects[pathauto][version] = "1.2"
 projects[pathauto][subdir] = contrib
-projects[pathauto][patch][] = "http://drupal.org/files/290421-pathauto-DRUPAL-7--1-x.patch"
-projects[pathauto][patch][] = "http://drupal.org/files/pathauto-path_alias_for_taxonomy_terms_always_created_in_default_language-1993462-0.patch"
+projects[pathauto][patch][290421] = "http://drupal.org/files/290421-pathauto-DRUPAL-7--1-x.patch"
+projects[pathauto][patch][1993462] = "http://drupal.org/files/pathauto-path_alias_for_taxonomy_terms_always_created_in_default_language-1993462-0.patch"
 
 projects[performance][version] = "2.0-beta1"
 projects[performance][subdir] = contrib
@@ -323,8 +335,8 @@ projects[print][subdir] = contrib
 
 projects[quiz][version] = "4.0-beta1"
 projects[quiz][subdir] = contrib
-;projects[quiz][patch][] = "http://drupal.org/files/quiz-cant_view_long_answer_questions-1899654-1.patch"
-projects[quiz][patch][] = "http://drupal.org/files/undefined_index_group_by-1827880-7.patch"
+;projects[quiz][patch][1899654] = "http://drupal.org/files/quiz-cant_view_long_answer_questions-1899654-1.patch"
+projects[quiz][patch][1827880] = "http://drupal.org/files/undefined_index_group_by-1827880-7.patch"
 
 projects[redirect][version] = "1.0-rc1"
 projects[redirect][subdir] = contrib

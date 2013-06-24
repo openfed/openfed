@@ -1574,7 +1574,7 @@ function ofed_feature_job_field_default_field_instances() {
     'label' => 'Summary',
     'required' => 0,
     'settings' => array(
-      'text_processing' => 1,
+      'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(

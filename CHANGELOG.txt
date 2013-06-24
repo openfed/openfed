@@ -1,15 +1,33 @@
 CHANGELOG
 ===========
-19 June 2013
-------------
 
-  *Issues: 
+24 June 2013 - Version 1.0
+--------------------------
+
+  * Issues: 
+    # 2023615: Installation hangs, modules at 97%, memory requirement up to 320M
+    # 2022283: Wysiwyg missing in the body field of the meeting content type
+    # 2024019: Remove Wysiwyg from the job summary field
+    # 2022293: Download fields not multiple in the job content type
+    # 2023909: Add patch numbers in make file
+		# 1970398: Code creep: functionalities screen
+		# 2026573: Move menu_dam to separate project
+		# 2026365: Move maintenance theme to separate project
+		# 2026363: Move cms_theme to separate project
+		# 2025423: Don't include maintenance_theme_selector
+    # Others : 
+	- 
+
+19 June 2013 - Version 0.9
+--------------------------
+
+  * Issues: 
     # 2022237: Remove Panels modules
     # 1959850: Move addemar to separate module
 		# 1968946: Memory requirements
     # Others : 
       - Moved modules are now in the contrib subdir instead of openfed
-			- Checking / Changing the name of the solution by the correct spelling (OpenFed).
+      - Checking / Changing the name of the solution by the correct spelling (OpenFed)
 
 17 June 2013
 ------------
