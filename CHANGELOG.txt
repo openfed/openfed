@@ -6,6 +6,8 @@ No date definded yet - No version definded yet
 
   * Issues: 
     # 2028635: Install process does not display the OpenFed mantenance theme
+    # Others : 
+      - Solve spelling mistake
 
 24 June 2013 - Version 1.0
 --------------------------
