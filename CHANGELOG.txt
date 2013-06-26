@@ -1,5 +1,11 @@
 CHANGELOG
-===========
+=========
+
+No date definded yet - No version definded yet
+----------------------------------------------
+
+  * Issues: 
+    # 2028635: Install process does not display the OpenFed mantenance theme
 
 24 June 2013 - Version 1.0
 --------------------------
@@ -15,8 +21,6 @@ CHANGELOG
 		# 2026365: Move maintenance theme to separate project
 		# 2026363: Move cms_theme to separate project
 		# 2025423: Don't include maintenance_theme_selector
-    # Others : 
-	- 
 
 19 June 2013 - Version 0.9
 --------------------------

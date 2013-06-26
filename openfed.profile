@@ -80,11 +80,11 @@ function system_form_install_settings_form_alter(&$form, &$form_state, &$install
  * task that can be accomplish within the installation process
  */
 function openfed_install_tasks($install_state) {
-  // load js for custom layout
-  drupal_add_js('profiles/openfed/themes/maintenance/assets/scripts/script.js');
-  // load css for custom layout
-  drupal_add_css('profiles/openfed/themes/maintenance/assets/styles/design.css');
-
+  // Load js for custom layout.
+  drupal_add_js(drupal_get_path('theme', 'maintenance') . '/assets/scripts/script.js');
+  // Load css for custom layout.
+  drupal_add_css(drupal_get_path('theme', 'maintenance') . '/assets/styles/design.css');
+  
   drupal_set_title('OpenFed : '.  drupal_get_title());
   $menu_tools = !empty($install_state['parameters']['menu_list']) && $install_state['parameters']['menu_list'] = 'menu-tools-menu'; 
   $menu_footer = !empty($install_state['parameters']['menu_list']) && $install_state['parameters']['menu_list'] = 'menu-footer-menu'; 
