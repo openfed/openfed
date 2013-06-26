@@ -12,10 +12,10 @@ function ofed_feature_team_views_default_views() {
 
   $view = new view();
   $view->name = 'ofed_team';
-  $view->description = 'All views, blocks, ... related to team.';
+  $view->description = 'All views, blocks, ... related to team members.';
   $view->tag = 'default';
   $view->base_table = 'node';
-  $view->human_name = 'Team';
+  $view->human_name = 'Team members';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -444,7 +444,7 @@ function ofed_feature_team_views_default_views() {
   $handler->display->display_options['filters']['language']['value'] = array(
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
-  $handler->display->display_options['block_description'] = 'Team Member: Teaser';
+  $handler->display->display_options['block_description'] = 'Team Members: Teaser';
 
   /* Display: Block: List */
   $handler = $view->new_display('block', 'Block: List', 'ofed_team_block_list');
@@ -509,7 +509,7 @@ function ofed_feature_team_views_default_views() {
   $handler->display->display_options['filters']['language']['value'] = array(
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
-  $handler->display->display_options['block_description'] = 'Team Member: List';
+  $handler->display->display_options['block_description'] = 'Team Members: List';
 
   /* Display: Block: Column */
   $handler = $view->new_display('block', 'Block: Column', 'ofed_team_block_column');
@@ -573,7 +573,7 @@ function ofed_feature_team_views_default_views() {
   $handler->display->display_options['filters']['language']['value'] = array(
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
-  $handler->display->display_options['block_description'] = 'Team Member: Column';
+  $handler->display->display_options['block_description'] = 'Team Members: Column';
   $translatables['ofed_team'] = array(
     t('Master'),
     t('Team members'),
@@ -604,11 +604,11 @@ function ofed_feature_team_views_default_views() {
     t('Block: Teaser'),
     t('Latest Team Members'),
     t('See all Team Members'),
-    t('Team Member: Teaser'),
+    t('Team Members: Teaser'),
     t('Block: List'),
-    t('Team Member: List'),
+    t('Team Members: List'),
     t('Block: Column'),
-    t('Team Member: Column'),
+    t('Team Members: Column'),
   );
   $export['ofed_team'] = $view;
 

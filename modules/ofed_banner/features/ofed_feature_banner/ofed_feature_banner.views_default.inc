@@ -12,10 +12,10 @@ function ofed_feature_banner_views_default_views() {
 
   $view = new view();
   $view->name = 'ofed_banner';
-  $view->description = 'All views, blocks, ... related to banner.';
+  $view->description = 'All views, blocks, ... related to banners.';
   $view->tag = 'default';
   $view->base_table = 'node';
-  $view->human_name = 'Banner';
+  $view->human_name = 'Banners';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */

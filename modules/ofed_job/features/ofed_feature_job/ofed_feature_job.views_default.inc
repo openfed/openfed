@@ -12,10 +12,10 @@ function ofed_feature_job_views_default_views() {
 
   $view = new view();
   $view->name = 'ofed_job';
-  $view->description = 'All views, blocks, ... related to job.';
+  $view->description = 'All views, blocks, ... related to jobs.';
   $view->tag = 'default';
   $view->base_table = 'node';
-  $view->human_name = 'Job';
+  $view->human_name = 'Jobs';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -393,7 +393,7 @@ function ofed_feature_job_views_default_views() {
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
   $handler->display->display_options['use_more_always'] = TRUE;
   $handler->display->display_options['defaults']['use_more_text'] = FALSE;
-  $handler->display->display_options['use_more_text'] = 'See all job';
+  $handler->display->display_options['use_more_text'] = 'See all jobs';
   $handler->display->display_options['defaults']['access'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['defaults']['pager'] = FALSE;
@@ -457,7 +457,7 @@ function ofed_feature_job_views_default_views() {
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
   $handler->display->display_options['use_more_always'] = TRUE;
   $handler->display->display_options['defaults']['use_more_text'] = FALSE;
-  $handler->display->display_options['use_more_text'] = 'See all job';
+  $handler->display->display_options['use_more_text'] = 'See all jobs';
   $handler->display->display_options['defaults']['access'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['defaults']['pager'] = FALSE;
@@ -522,7 +522,7 @@ function ofed_feature_job_views_default_views() {
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
   $handler->display->display_options['use_more_always'] = TRUE;
   $handler->display->display_options['defaults']['use_more_text'] = FALSE;
-  $handler->display->display_options['use_more_text'] = 'See all job';
+  $handler->display->display_options['use_more_text'] = 'See all jobs';
   $handler->display->display_options['defaults']['access'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['defaults']['pager'] = FALSE;
@@ -586,7 +586,7 @@ function ofed_feature_job_views_default_views() {
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
   $handler->display->display_options['use_more_always'] = TRUE;
   $handler->display->display_options['defaults']['use_more_text'] = FALSE;
-  $handler->display->display_options['use_more_text'] = 'See all job';
+  $handler->display->display_options['use_more_text'] = 'See all jobs';
   $handler->display->display_options['defaults']['access'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['defaults']['pager'] = FALSE;
@@ -667,7 +667,7 @@ function ofed_feature_job_views_default_views() {
     t('Page: Sticky '),
     t('Block: Teaser'),
     t('Latest jobs'),
-    t('See all job'),
+    t('See all jobs'),
     t('Jobs: Teaser'),
     t('Block: List'),
     t('Jobs: List'),

@@ -12,10 +12,10 @@ function ofed_feature_faq_views_default_views() {
 
   $view = new view();
   $view->name = 'ofed_faq';
-  $view->description = 'All views, blocks, ... related to FAQ\'s.';
+  $view->description = 'All views, blocks, ... related to FAQ.';
   $view->tag = 'default';
   $view->base_table = 'node';
-  $view->human_name = 'FAQ\'s';
+  $view->human_name = 'FAQ';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -55,7 +55,7 @@ function ofed_feature_faq_views_default_views() {
   /* Display: CMS */
   $handler = $view->new_display('page', 'CMS', 'ofed_faq_cms');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Faq\'s';
+  $handler->display->display_options['title'] = 'FAQ';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['access'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
@@ -248,7 +248,7 @@ function ofed_feature_faq_views_default_views() {
   /* Display: Page: List */
   $handler = $view->new_display('page', 'Page: List', 'ofed_faq_page_list');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'FAQ\'s';
+  $handler->display->display_options['title'] = 'FAQ';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['access'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
@@ -297,7 +297,7 @@ function ofed_feature_faq_views_default_views() {
   /* Display: Page: List summary */
   $handler = $view->new_display('attachment', 'Page: List summary', 'ofed_faq_page_list_summary');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'FAQ\'s Summary';
+  $handler->display->display_options['title'] = 'FAQ Summary';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['access'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
@@ -372,7 +372,7 @@ function ofed_feature_faq_views_default_views() {
     t('next ›'),
     t('last »'),
     t('CMS'),
-    t('Faq\'s'),
+    t('FAQ'),
     t('author'),
     t('Title'),
     t('Author'),
@@ -383,9 +383,9 @@ function ofed_feature_faq_views_default_views() {
     t('Type'),
     t('Published'),
     t('Page: List'),
-    t('FAQ\'s'),
+    t('FAQ'),
     t('Page: List summary'),
-    t('FAQ\'s Summary'),
+    t('FAQ Summary'),
     t('<a href="#[nid]" class="faq-title-anchor">[title]</a>'),
   );
   $export['ofed_faq'] = $view;
