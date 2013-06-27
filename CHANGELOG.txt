@@ -5,7 +5,8 @@ No date definded yet - No version definded yet
 ----------------------------------------------
 
   * Issues: 
-    # 2028635: Install process does not display the OpenFed mantenance theme
+    # 2028635: Install process does not display the OpenFed maintenance theme
+		# 2029617: Missings paths alias, paths warning or wrong path alias patterns - Address
     # Others : 
       - Solve spelling mistake
 

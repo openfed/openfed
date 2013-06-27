@@ -87,6 +87,39 @@ function ofed_feature_address_install() {
       }
     }
   }
+  
+  // Paths alias management.
+  $path_source = 'addresses';
+  // Set path alias whitelist.
+  $path_alias_whitelist = variable_get('path_alias_whitelist', array());
+  if (!array_key_exists($path_source, $path_alias_whitelist)) {
+    $path_alias_whitelist[$path_source] = TRUE;
+    variable_set('path_alias_whitelist', $path_alias_whitelist);
+  }
+  
+  // Set path alias for each languages.
+  $languages = language_list('enabled');
+  foreach ($languages as $language) {
+    // FR.
+    if (isset($language['fr'])) {
+      $path = array(
+        'source'   => $path_source,
+        'alias'    => 'adresses',
+        'language' => 'fr',
+      );
+      db_insert('url_alias')->fields($path)->execute();
+    }
+
+    // NL.
+    if (isset($language['nl'])) {
+      $path = array(
+        'source'   => $path_source,
+        'alias'    => 'adressen',
+        'language' => 'nl',
+      );
+      db_insert('url_alias')->fields($path)->execute();
+    }
+  }
 }
 
 /**
@@ -97,5 +130,43 @@ function ofed_feature_address_uninstall() {
   if (module_exists('ofed_address')) {
     // Disable it.
     module_disable(array('ofed_address'));
+  }
+}
+
+/**
+ * Create the missing paths alias for each languages.
+ */
+function ofed_feature_address_update_7100 () {
+  // Paths alias management.
+  $path_source = 'addresses';
+  // Set path alias whitelist.
+  $path_alias_whitelist = variable_get('path_alias_whitelist', array());
+  if (!array_key_exists($path_source, $path_alias_whitelist)) {
+    $path_alias_whitelist[$path_source] = TRUE;
+    variable_set('path_alias_whitelist', $path_alias_whitelist);
+  }
+  
+  // Set path alias for each languages.
+  $languages = language_list('enabled');
+  foreach ($languages as $language) {
+    // FR.
+    if (isset($language['fr']) && !drupal_lookup_path('alias', 'addresses', 'fr')) {
+      $path = array(
+        'source'   => $path_source,
+        'alias'    => 'adresses',
+        'language' => 'fr',
+      );
+      db_insert('url_alias')->fields($path)->execute();
+    }
+
+    // NL.
+    if (isset($language['nl']) && !drupal_lookup_path('alias', 'addresses', 'nl')) {
+      $path = array(
+        'source'   => $path_source,
+        'alias'    => 'adressen',
+        'language' => 'nl',
+      );
+      db_insert('url_alias')->fields($path)->execute();
+    }
   }
 }
