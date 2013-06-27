@@ -84,24 +84,33 @@ function ofed_feature_download_install() {
       }
     }
   }
-
-  // Create path alias for each languages.
+  
+  // Paths alias management.
+  $path_source = 'downloads';
+  // Set path alias whitelist.
+  $path_alias_whitelist = variable_get('path_alias_whitelist', array());
+  if (!array_key_exists($path_source, $path_alias_whitelist)) {
+    $path_alias_whitelist[$path_source] = TRUE;
+    variable_set('path_alias_whitelist', $path_alias_whitelist);
+  }
+  
+  // Set path alias for each languages.
   $languages = language_list('enabled');
   foreach ($languages as $language) {
     // FR.
     if (isset($language['fr'])) {
       $path = array(
-        'source'   => 'downloads',
+        'source'   => $path_source,
         'alias'    => 'telechargements',
         'language' => 'fr',
       );
       db_insert('url_alias')->fields($path)->execute();
     }
 
+    // NL.
     if (isset($language['nl'])) {
-      // NL.
       $path = array(
-        'source'   => 'downloads',
+        'source'   => $path_source,
         'alias'    => 'downloads',
         'language' => 'nl',
       );
@@ -118,5 +127,43 @@ function ofed_feature_download_uninstall() {
   if (module_exists('ofed_download')) {
     // Disable it.
     module_disable(array('ofed_download'));
+  }
+}
+
+/**
+ * Create the missing paths alias for each languages.
+ */
+function ofed_feature_download_update_7100 () {
+  // Paths alias management.
+  $path_source = 'downloads';
+  // Set path alias whitelist.
+  $path_alias_whitelist = variable_get('path_alias_whitelist', array());
+  if (!array_key_exists($path_source, $path_alias_whitelist)) {
+    $path_alias_whitelist[$path_source] = TRUE;
+    variable_set('path_alias_whitelist', $path_alias_whitelist);
+  }
+  
+  // Set path alias for each languages.
+  $languages = language_list('enabled');
+  foreach ($languages as $language) {
+    // FR.
+    if (isset($language['fr']) && !drupal_lookup_path('alias', $path_source, 'fr')) {
+      $path = array(
+        'source'   => $path_source,
+        'alias'    => 'telechargements',
+        'language' => 'fr',
+      );
+      db_insert('url_alias')->fields($path)->execute();
+    }
+
+    // NL.
+    if (isset($language['nl']) && !drupal_lookup_path('alias', $path_source, 'nl')) {
+      $path = array(
+        'source'   => $path_source,
+        'alias'    => 'downloads',
+        'language' => 'nl',
+      );
+      db_insert('url_alias')->fields($path)->execute();
+    }
   }
 }
