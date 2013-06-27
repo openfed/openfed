@@ -150,7 +150,7 @@ function ofed_feature_address_update_7100 () {
   $languages = language_list('enabled');
   foreach ($languages as $language) {
     // FR.
-    if (isset($language['fr']) && !drupal_lookup_path('alias', 'addresses', 'fr')) {
+    if (isset($language['fr']) && !drupal_lookup_path('alias', $path_source, 'fr')) {
       $path = array(
         'source'   => $path_source,
         'alias'    => 'adresses',
@@ -160,7 +160,7 @@ function ofed_feature_address_update_7100 () {
     }
 
     // NL.
-    if (isset($language['nl']) && !drupal_lookup_path('alias', 'addresses', 'nl')) {
+    if (isset($language['nl']) && !drupal_lookup_path('alias', $path_source, 'nl')) {
       $path = array(
         'source'   => $path_source,
         'alias'    => 'adressen',
