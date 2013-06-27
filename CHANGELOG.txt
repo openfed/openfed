@@ -8,6 +8,7 @@ No date definded yet - No version definded yet
     # 2028635: Install process does not display the OpenFed maintenance theme
 		# 2029663: Remove CMS menu install in banner feature
 		# 2029617: Missings paths alias, paths warning or wrong path alias patterns - Address
+		# 2029621: Missings paths alias, paths warning or wrong path alias patterns - Banner
     # Others : 
       - Solve spelling mistake
 
