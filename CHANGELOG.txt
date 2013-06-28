@@ -11,6 +11,7 @@ No date definded yet - No version definded yet
 		# 2029621: Missing paths alias, paths warning or wrong path alias patterns - Banner
 		# 2029623: Missing paths alias, paths warning or wrong path alias patterns - Download
 		# 2029627: Missing paths alias, paths warning or wrong path alias patterns - Events
+		# 2029627: Missing paths alias, paths warning or wrong path alias patterns - FAQ
     # Others : 
       - Solve spelling mistake
 

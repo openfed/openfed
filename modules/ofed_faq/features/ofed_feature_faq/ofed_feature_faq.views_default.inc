@@ -243,7 +243,7 @@ function ofed_feature_faq_views_default_views() {
     6 => 0,
     7 => 0,
   );
-  $handler->display->display_options['path'] = 'cms/faqs';
+  $handler->display->display_options['path'] = 'cms/faq';
 
   /* Display: Page: List */
   $handler = $view->new_display('page', 'Page: List', 'ofed_faq_page_list');
@@ -292,7 +292,7 @@ function ofed_feature_faq_views_default_views() {
   $handler->display->display_options['filters']['language']['value'] = array(
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
-  $handler->display->display_options['path'] = 'faqs';
+  $handler->display->display_options['path'] = 'faq';
 
   /* Display: Page: List summary */
   $handler = $view->new_display('attachment', 'Page: List summary', 'ofed_faq_page_list_summary');
