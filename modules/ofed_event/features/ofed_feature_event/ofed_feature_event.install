@@ -184,17 +184,37 @@ function ofed_feature_event_update_7100() {
   module_load_include('module', 'transliteration', 'transliteration');
 
   // Update node paths.
-  $settings = array(
-    array(
+  $settings = array();
+  // DEFAULT.
+  $settings[] = array(
+    'content_type' => 'ofed_event',
+    'content_language' => '',
+    'pattern_var_name' => 'pathauto_node_ofed_event_pattern',
+    'pattern_var_value_new' => 'evenementen/[node:title]',
+    'pattern_var_value_old' => 'evenement/[node:title]',
+    'matches_patterns' => 'evenement/*',
+  );
+  // UND.
+  $settings[] = array(
+    'content_type' => 'ofed_event',
+    'content_language' => 'und',
+    'pattern_var_name' => 'pathauto_node_ofed_event_und_pattern',
+    'pattern_var_value_new' => 'evenementen/[node:title]',
+    'pattern_var_value_old' => 'evenement/[node:title]',
+    'matches_patterns' => 'evenement/*',
+  );
+  // NL.
+  if (!empty($languages[1]['nl'])) {
+    $settings[] = array(
       'content_type' => 'ofed_event',
       'content_language' => 'nl',
       'pattern_var_name' => 'pathauto_node_ofed_event_nl_pattern',
       'pattern_var_value_new' => 'evenementen/[node:title]',
       'pattern_var_value_old' => 'evenement/[node:title]',
       'matches_patterns' => 'evenement/*',
-    ),
-  );
-
+    );
+  }
+  
   // For each settings.
   foreach($settings as $setting) {
     // Set the actual value.
