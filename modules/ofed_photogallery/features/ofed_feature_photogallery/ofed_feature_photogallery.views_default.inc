@@ -12,10 +12,10 @@ function ofed_feature_photogallery_views_default_views() {
 
   $view = new view();
   $view->name = 'ofed_photogallery';
-  $view->description = 'All views, blocks, ... related to photos galeries.';
+  $view->description = 'All views, blocks, ... related to photo galleries.';
   $view->tag = 'default';
   $view->base_table = 'node';
-  $view->human_name = 'Photos galeries';
+  $view->human_name = 'Photo galleries';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -25,7 +25,7 @@ function ofed_feature_photogallery_views_default_views() {
   $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['use_more'] = TRUE;
   $handler->display->display_options['use_more_always'] = FALSE;
-  $handler->display->display_options['use_more_text'] = 'See all galeries';
+  $handler->display->display_options['use_more_text'] = 'See all galleries';
   $handler->display->display_options['link_display'] = 'ofed_photogallery_page_list';
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['access']['perm'] = 'edit any ofed_photogallery content';
@@ -58,14 +58,14 @@ function ofed_feature_photogallery_views_default_views() {
   /* Display: CMS */
   $handler = $view->new_display('page', 'CMS', 'ofed_photogallery_cms');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Photos gallery';
+  $handler->display->display_options['title'] = 'Photo galleries';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['use_more'] = FALSE;
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['defaults']['use_more_text'] = FALSE;
-  $handler->display->display_options['use_more_text'] = 'See all galeries';
+  $handler->display->display_options['use_more_text'] = 'See all galleries';
   $handler->display->display_options['defaults']['access'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['access']['perm'] = 'edit any ofed_photogallery content';
@@ -249,19 +249,19 @@ function ofed_feature_photogallery_views_default_views() {
     6 => 0,
     7 => 0,
   );
-  $handler->display->display_options['path'] = 'cms/photos-galleries';
+  $handler->display->display_options['path'] = 'cms/photo-galleries';
 
   /* Display: Page: List */
   $handler = $view->new_display('page', 'Page: List', 'ofed_photogallery_page_list');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Photos galleries';
+  $handler->display->display_options['title'] = 'Photo galleries';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['use_more'] = FALSE;
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['defaults']['use_more_text'] = FALSE;
-  $handler->display->display_options['use_more_text'] = 'See all galeries';
+  $handler->display->display_options['use_more_text'] = 'See all galleries';
   $handler->display->display_options['defaults']['access'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['defaults']['pager'] = FALSE;
@@ -314,12 +314,12 @@ function ofed_feature_photogallery_views_default_views() {
   $handler->display->display_options['filters']['language']['value'] = array(
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
-  $handler->display->display_options['path'] = 'photos-galleries';
+  $handler->display->display_options['path'] = 'photo-galleries';
 
   /* Display: Block: Teaser */
   $handler = $view->new_display('block', 'Block: Teaser', 'ofed_photogallery_block_info');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Latest photos galleries';
+  $handler->display->display_options['title'] = 'Latest photo galleries';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['use_more'] = FALSE;
   $handler->display->display_options['use_more'] = TRUE;
@@ -327,7 +327,7 @@ function ofed_feature_photogallery_views_default_views() {
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
   $handler->display->display_options['use_more_always'] = TRUE;
   $handler->display->display_options['defaults']['use_more_text'] = FALSE;
-  $handler->display->display_options['use_more_text'] = 'See all galeries';
+  $handler->display->display_options['use_more_text'] = 'See all galleries';
   $handler->display->display_options['defaults']['access'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['defaults']['pager'] = FALSE;
@@ -382,12 +382,12 @@ function ofed_feature_photogallery_views_default_views() {
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
   $handler->display->display_options['filters']['language']['group'] = 1;
-  $handler->display->display_options['block_description'] = 'Photos galeries: Teaser';
+  $handler->display->display_options['block_description'] = 'Photo galleries: Teaser';
 
   /* Display: Block: List */
   $handler = $view->new_display('block', 'Block: List', 'ofed_photogallery_block_list');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Latest photos galleries';
+  $handler->display->display_options['title'] = 'Latest photo galleries';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['use_more'] = FALSE;
   $handler->display->display_options['use_more'] = TRUE;
@@ -395,7 +395,7 @@ function ofed_feature_photogallery_views_default_views() {
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
   $handler->display->display_options['use_more_always'] = TRUE;
   $handler->display->display_options['defaults']['use_more_text'] = FALSE;
-  $handler->display->display_options['use_more_text'] = 'See all galeries';
+  $handler->display->display_options['use_more_text'] = 'See all galleries';
   $handler->display->display_options['defaults']['access'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['defaults']['pager'] = FALSE;
@@ -451,12 +451,12 @@ function ofed_feature_photogallery_views_default_views() {
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
   $handler->display->display_options['filters']['language']['group'] = 1;
-  $handler->display->display_options['block_description'] = 'Photos galeries: List';
+  $handler->display->display_options['block_description'] = 'Photo galleries: List';
 
   /* Display: Block: Column */
   $handler = $view->new_display('block', 'Block: Column', 'ofed_photogallery_block_column');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Latest photos galleries';
+  $handler->display->display_options['title'] = 'Latest photo galleries';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['use_more'] = FALSE;
   $handler->display->display_options['use_more'] = TRUE;
@@ -464,7 +464,7 @@ function ofed_feature_photogallery_views_default_views() {
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
   $handler->display->display_options['use_more_always'] = TRUE;
   $handler->display->display_options['defaults']['use_more_text'] = FALSE;
-  $handler->display->display_options['use_more_text'] = 'See all galeries';
+  $handler->display->display_options['use_more_text'] = 'See all galleries';
   $handler->display->display_options['defaults']['access'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['defaults']['pager'] = FALSE;
@@ -519,12 +519,12 @@ function ofed_feature_photogallery_views_default_views() {
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
   $handler->display->display_options['filters']['language']['group'] = 1;
-  $handler->display->display_options['block_description'] = 'Photos galeries: Column';
+  $handler->display->display_options['block_description'] = 'Photo galleries: Column';
 
   /* Display: Block: Latest one */
   $handler = $view->new_display('block', 'Block: Latest one', 'ofed_photogallery_block_latest_one');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Latest one photos galery ';
+  $handler->display->display_options['title'] = 'Latest one photo gallery ';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['use_more'] = FALSE;
   $handler->display->display_options['use_more'] = TRUE;
@@ -532,7 +532,7 @@ function ofed_feature_photogallery_views_default_views() {
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
   $handler->display->display_options['use_more_always'] = TRUE;
   $handler->display->display_options['defaults']['use_more_text'] = FALSE;
-  $handler->display->display_options['use_more_text'] = 'See all galeries';
+  $handler->display->display_options['use_more_text'] = 'See all galleries';
   $handler->display->display_options['defaults']['link_display'] = FALSE;
   $handler->display->display_options['link_display'] = 'ofed_photogallery_page_list';
   $handler->display->display_options['defaults']['access'] = FALSE;
@@ -587,12 +587,12 @@ function ofed_feature_photogallery_views_default_views() {
   $handler->display->display_options['filters']['language']['value'] = array(
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
-  $handler->display->display_options['block_description'] = 'Photos galeries: Latest one photos galery';
+  $handler->display->display_options['block_description'] = 'Photo galleries: Latest one photo gallery';
 
   /* Display: Block: Latest one updated */
   $handler = $view->new_display('block', 'Block: Latest one updated', 'ofed_photogallery_block_latest_one_updated');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Latest updated photos galery';
+  $handler->display->display_options['title'] = 'Latest updated photo gallery';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['use_more'] = FALSE;
   $handler->display->display_options['use_more'] = TRUE;
@@ -600,7 +600,7 @@ function ofed_feature_photogallery_views_default_views() {
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
   $handler->display->display_options['use_more_always'] = TRUE;
   $handler->display->display_options['defaults']['use_more_text'] = FALSE;
-  $handler->display->display_options['use_more_text'] = 'See all galeries';
+  $handler->display->display_options['use_more_text'] = 'See all galleries';
   $handler->display->display_options['defaults']['link_display'] = FALSE;
   $handler->display->display_options['link_display'] = 'ofed_photogallery_page_list';
   $handler->display->display_options['defaults']['access'] = FALSE;
@@ -657,10 +657,10 @@ function ofed_feature_photogallery_views_default_views() {
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
   $handler->display->display_options['filters']['language']['group'] = 1;
-  $handler->display->display_options['block_description'] = 'Photos galeries: Latest updated photos galery';
+  $handler->display->display_options['block_description'] = 'Photo galleries: Latest updated photo gallery';
   $translatables['ofed_photogallery'] = array(
     t('Master'),
-    t('See all galeries'),
+    t('See all galleries'),
     t('Apply'),
     t('Reset'),
     t('Sort by'),
@@ -675,7 +675,7 @@ function ofed_feature_photogallery_views_default_views() {
     t('last »'),
     t('Published'),
     t('CMS'),
-    t('Photos gallery'),
+    t('Photo gallery'),
     t('author'),
     t('Title'),
     t('Author'),
@@ -684,20 +684,20 @@ function ofed_feature_photogallery_views_default_views() {
     t('Edit'),
     t('Delete'),
     t('Page: List'),
-    t('Photos galleries'),
+    t('Photo galleries'),
     t('Block: Teaser'),
-    t('Latest photos galleries'),
-    t('Photos galeries: Teaser'),
+    t('Latest photo galleries'),
+    t('Photo galleries: Teaser'),
     t('Block: List'),
-    t('Photos galeries: List'),
+    t(' galleries: List'),
     t('Block: Column'),
-    t('Photos galeries: Column'),
+    t('Photo galleries: Column'),
     t('Block: Latest one'),
-    t('Latest one photos galery '),
-    t('Photos galeries: Latest one photos galery'),
+    t('Latest one photo gallery '),
+    t('Photo galleries: Latest one photo gallery'),
     t('Block: Latest one updated'),
-    t('Latest updated photos galery'),
-    t('Photos galeries: Latest updated photos galery'),
+    t('Latest updated photo gallery'),
+    t('Photo galleries: Latest updated photo gallery'),
   );
   $export['ofed_photogallery'] = $view;
 

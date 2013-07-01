@@ -279,7 +279,7 @@ function ofed_feature_photogallery_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_ofed_photogallery_pattern';
-  $strongarm->value = 'photos-galleries/[node:title]';
+  $strongarm->value = 'photo-galleries/[node:title]';
   $export['pathauto_node_ofed_photogallery_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -307,7 +307,7 @@ function ofed_feature_photogallery_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_taxonomy_term_ofed_photogallery_nl_pattern';
-  $strongarm->value = 'fotos-galerijs/[term:name]';
+  $strongarm->value = 'fotogalerijen/[node:title]';
   $export['pathauto_taxonomy_term_ofed_photogallery_nl_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
