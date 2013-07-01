@@ -198,7 +198,7 @@ function ofed_feature_video_update_7100 () {
   // Delete from path alias whitelist.
   $path_alias_whitelist = variable_get('path_alias_whitelist', array());
   if (array_key_exists('video', $path_alias_whitelist)) {
-    unset($path_alias_whitelist['job']);
+    unset($path_alias_whitelist['video']);
     variable_set('path_alias_whitelist', $path_alias_whitelist);
   }
   
