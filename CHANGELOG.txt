@@ -21,6 +21,7 @@ No date definded yet - No version definded yet
 		# 2029645: Missing paths alias, paths warning or wrong path alias patterns - Slider
 		# 2029653: Missing paths alias, paths warning or wrong path alias patterns - Video
 		# 2029651: Missing paths alias, paths warning or wrong path alias patterns - Team member
+		# 2029647: Missing paths alias, paths warning or wrong path alias patterns - Slideshow
     # Others : 
       - Solve spelling mistake
 
