@@ -85,24 +85,33 @@ function ofed_feature_news_install() {
     }
   }
 
-  // Create path alias for each languages.
+  // Paths alias management.
+  $path_source = 'news';
+  // Set path alias whitelist.
+  $path_alias_whitelist = variable_get('path_alias_whitelist', array());
+  if (!array_key_exists($path_source, $path_alias_whitelist)) {
+    $path_alias_whitelist[$path_source] = TRUE;
+    variable_set('path_alias_whitelist', $path_alias_whitelist);
+  }
+
+  // Set path alias for each languages.
   $languages = language_list('enabled');
   foreach ($languages as $language) {
     // FR.
     if (isset($language['fr'])) {
       $path = array(
-        'source'   => 'news',
-        'alias'    => 'actualites',
+        'source' => $path_source,
+        'alias' => 'actualites',
         'language' => 'fr',
       );
       db_insert('url_alias')->fields($path)->execute();
     }
 
+    // NL.
     if (isset($language['nl'])) {
-      // NL.
       $path = array(
-        'source'   => 'news',
-        'alias'    => 'nieuws',
+        'source' => $path_source,
+        'alias' => 'nieuws',
         'language' => 'nl',
       );
       db_insert('url_alias')->fields($path)->execute();
@@ -118,5 +127,19 @@ function ofed_feature_news_uninstall() {
   if (module_exists('ofed_news')) {
     // Disable it.
     module_disable(array('ofed_news'));
+  }
+}
+
+/**
+ * Add content type to path alias whitelist.
+ */
+function ofed_feature_news_update_7100 () {
+  // Add newest alias.
+  $path_source = 'news';
+  // Set path alias whitelist.
+  $path_alias_whitelist = variable_get('path_alias_whitelist', array());
+  if (!array_key_exists($path_source, $path_alias_whitelist)) {
+    $path_alias_whitelist[$path_source] = TRUE;
+    variable_set('path_alias_whitelist', $path_alias_whitelist);
   }
 }
