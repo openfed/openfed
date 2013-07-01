@@ -202,15 +202,6 @@ function ofed_feature_photogallery_update_7100() {
     'pattern_var_value_old' => 'photos-galleries/[node:title]',
     'matches_patterns' => 'photos-galleries/*',
   );
-  // UND.
-  $settings[] = array(
-    'content_type' => 'ofed_photogallery',
-    'content_language' => 'und',
-    'pattern_var_name' => 'pathauto_node_ofed_photogallery_und_pattern',
-    'pattern_var_value_new' => 'photo-galleries/[node:title]',
-    'pattern_var_value_old' => '',
-    'matches_patterns' => 'photos-galleries/*',
-  );
   // NL.
   if (!empty($languages[1]['nl'])) {
     $settings[] = array(
