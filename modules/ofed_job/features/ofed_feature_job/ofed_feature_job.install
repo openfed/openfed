@@ -85,24 +85,33 @@ function ofed_feature_job_install() {
     }
   }
 
-  // Create path alias for each languages.
+  // Paths alias management.
+  $path_source = 'jobs';
+  // Set path alias whitelist.
+  $path_alias_whitelist = variable_get('path_alias_whitelist', array());
+  if (!array_key_exists($path_source, $path_alias_whitelist)) {
+    $path_alias_whitelist[$path_source] = TRUE;
+    variable_set('path_alias_whitelist', $path_alias_whitelist);
+  }
+
+  // Set path alias for each languages.
   $languages = language_list('enabled');
   foreach ($languages as $language) {
     // FR.
     if (isset($language['fr'])) {
       $path = array(
-        'source' => 'job',
-        'alias' => 'job',
+        'source' => $path_source,
+        'alias' => 'jobs',
         'language' => 'fr',
       );
       db_insert('url_alias')->fields($path)->execute();
     }
 
+    // NL.
     if (isset($language['nl'])) {
-      // NL.
       $path = array(
-        'source' => 'job',
-        'alias' => 'job',
+        'source' => $path_source,
+        'alias' => 'jobs',
         'language' => 'nl',
       );
       db_insert('url_alias')->fields($path)->execute();
@@ -118,5 +127,55 @@ function ofed_feature_job_uninstall() {
   if (module_exists('ofed_job')) {
     // Disable it.
     module_disable(array('ofed_job'));
+  }
+}
+
+/**
+ * Create the missing paths alias for each languages.
+ */
+function ofed_feature_job_update_7100 () {
+  // Paths alias management.
+  // Delete wrong alias.
+  db_delete('url_alias')->condition('source', 'job')->condition('alias', 'job')->condition('language', 'fr')->execute();
+  db_delete('url_alias')->condition('source', 'job')->condition('alias', 'job')->condition('language', 'nl')->execute();
+  
+  // Delete from path alias whitelist.
+  $path_alias_whitelist = variable_get('path_alias_whitelist', array());
+  if (array_key_exists('job', $path_alias_whitelist)) {
+    unset($path_alias_whitelist['job']);
+    variable_set('path_alias_whitelist', $path_alias_whitelist);
+  }
+  
+  // Add newest alias.
+  $path_source = 'jobs';
+  // Set path alias whitelist.
+  $path_alias_whitelist = variable_get('path_alias_whitelist', array());
+  if (!array_key_exists($path_source, $path_alias_whitelist)) {
+    $path_alias_whitelist[$path_source] = TRUE;
+    variable_set('path_alias_whitelist', $path_alias_whitelist); 
+  }
+  
+  // Set path alias for each languages.
+  $languages = language_list('enabled');
+  foreach ($languages as $language) {
+    // FR.
+    if (isset($language['fr']) && !drupal_lookup_path('alias', $path_source, 'fr')) {
+      $path = array(
+        'source'   => $path_source,
+        'alias'    => 'jobs',
+        'language' => 'fr',
+      );
+      db_insert('url_alias')->fields($path)->execute();
+    }
+
+    // NL.
+    if (isset($language['nl']) && !drupal_lookup_path('alias', $path_source, 'nl')) {
+      $path = array(
+        'source'   => $path_source,
+        'alias'    => 'jobs',
+        'language' => 'nl',
+      );
+      db_insert('url_alias')->fields($path)->execute();
+    }
   }
 }

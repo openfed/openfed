@@ -14,6 +14,7 @@ No date definded yet - No version definded yet
 		# 2029627: Missing paths alias, paths warning or wrong path alias patterns - Events
 		# 2029627: Missing paths alias, paths warning or wrong path alias patterns - FAQ
 		# 2029637: Missing paths alias, paths warning or wrong path alias patterns - Meeting
+		# 2029635: Missing paths alias, paths warning or wrong path alias patterns - Job
     # Others : 
       - Solve spelling mistake
 
