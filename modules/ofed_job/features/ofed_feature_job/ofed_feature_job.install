@@ -17,28 +17,6 @@ function ofed_feature_job_install() {
     module_enable(array('ofed_job'));
   }
 
-  // Install menu link(s).
-  $menus = menu_get_menus(FALSE);
-  if (!isset($menus['menu-cms-menu'])) {
-    // Create a CMS Menu if not exist.
-    $menu = array();
-    $menu['menu_name'] = "menu-cms-menu";
-    $menu['title'] = "CMS Menu";
-    $menu['description'] = "";
-    menu_save($menu);
-    // Update the menu router information.
-    menu_rebuild();
-  }
-  // Create the menu content type link(s).
-  $item = array(
-    'link_title' => t('Job'),
-    'link_path' => 'cms/job',
-    'router_path' => 'cms/job',
-    'menu_name' => 'menu-cms-menu',
-    'customized' => 1,
-  );
-  menu_link_save($item);
-
   // Include ds settings.
   $file = drupal_get_path('module', 'ofed_feature_job') . '/install/_ofed_feature_job.ds.inc';
   if (file_exists($file)) {
