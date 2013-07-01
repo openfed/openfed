@@ -23,6 +23,7 @@ No date definded yet - No version definded yet
 		# 2029651: Missing paths alias, paths warning or wrong path alias patterns - Team member
 		# 2029647: Missing paths alias, paths warning or wrong path alias patterns - Slideshow
 		# 2029657: Missing paths alias, paths warning or wrong path alias patterns - Photo gallery
+		# 2029641: Missing paths alias, paths warning or wrong path alias patterns - Page
     # Others : 
       - Solve spelling mistake
 
