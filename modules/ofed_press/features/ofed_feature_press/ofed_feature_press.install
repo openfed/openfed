@@ -85,23 +85,32 @@ function ofed_feature_press_install() {
     }
   }
 
-  // Create path alias for each languages.
+  // Paths alias management.
+  $path_source = 'press';
+  // Set path alias whitelist.
+  $path_alias_whitelist = variable_get('path_alias_whitelist', array());
+  if (!array_key_exists($path_source, $path_alias_whitelist)) {
+    $path_alias_whitelist[$path_source] = TRUE;
+    variable_set('path_alias_whitelist', $path_alias_whitelist);
+  }
+
+  // Set path alias for each languages.
   $languages = language_list('enabled');
   foreach ($languages as $language) {
     // FR.
     if (isset($language['fr'])) {
       $path = array(
-        'source' => 'press',
+        'source' => $path_source,
         'alias' => 'presse',
         'language' => 'fr',
       );
       db_insert('url_alias')->fields($path)->execute();
     }
 
+    // NL.
     if (isset($language['nl'])) {
-      // NL.
       $path = array(
-        'source' => 'press',
+        'source' => $path_source,
         'alias' => 'pers',
         'language' => 'nl',
       );
@@ -118,5 +127,19 @@ function ofed_feature_press_uninstall() {
   if (module_exists('ofed_press')) {
     // Disable it.
     module_disable(array('ofed_press'));
+  }
+}
+
+/**
+ * Add content type to path alias whitelist.
+ */
+function ofed_feature_press_update_7100 () {
+  // Add newest alias.
+  $path_source = 'press';
+  // Set path alias whitelist.
+  $path_alias_whitelist = variable_get('path_alias_whitelist', array());
+  if (!array_key_exists($path_source, $path_alias_whitelist)) {
+    $path_alias_whitelist[$path_source] = TRUE;
+    variable_set('path_alias_whitelist', $path_alias_whitelist);
   }
 }
