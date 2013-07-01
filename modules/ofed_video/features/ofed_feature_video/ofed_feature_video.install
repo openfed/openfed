@@ -85,24 +85,33 @@ function ofed_feature_video_install() {
     }
   }
 
-  // Create path alias for each languages.
+  // Paths alias management.
+  $path_source = 'videos';
+  // Set path alias whitelist.
+  $path_alias_whitelist = variable_get('path_alias_whitelist', array());
+  if (!array_key_exists($path_source, $path_alias_whitelist)) {
+    $path_alias_whitelist[$path_source] = TRUE;
+    variable_set('path_alias_whitelist', $path_alias_whitelist);
+  }
+
+  // Set path alias for each languages.
   $languages = language_list('enabled');
   foreach ($languages as $language) {
     // FR.
     if (isset($language['fr'])) {
       $path = array(
-        'source' => 'video',
-        'alias' => 'video',
+        'source' => $path_source,
+        'alias' => 'videos',
         'language' => 'fr',
       );
       db_insert('url_alias')->fields($path)->execute();
     }
 
+    // NL.
     if (isset($language['nl'])) {
-      // NL.
       $path = array(
-        'source' => 'video',
-        'alias' => 'video',
+        'source' => $path_source,
+        'alias' => 'videos',
         'language' => 'nl',
       );
       db_insert('url_alias')->fields($path)->execute();
@@ -174,5 +183,55 @@ function ofed_feature_video_uninstall() {
   if (module_exists('ofed_video')) {
     // Disable it.
     module_disable(array('ofed_video'));
+  }
+}
+
+/**
+ * Create the missing paths alias for each languages.
+ */
+function ofed_feature_video_update_7100 () {
+  // Paths alias management.
+  // Delete wrong alias.
+  db_delete('url_alias')->condition('source', 'video')->condition('alias', 'video')->condition('language', 'fr')->execute(); 
+  db_delete('url_alias')->condition('source', 'video')->condition('alias', 'video')->condition('language', 'nl')->execute(); 
+  
+  // Delete from path alias whitelist.
+  $path_alias_whitelist = variable_get('path_alias_whitelist', array());
+  if (array_key_exists('video', $path_alias_whitelist)) {
+    unset($path_alias_whitelist['job']);
+    variable_set('path_alias_whitelist', $path_alias_whitelist);
+  }
+  
+  // Add newest alias.
+  $path_source = 'videos';
+  // Set path alias whitelist.
+  $path_alias_whitelist = variable_get('path_alias_whitelist', array());
+  if (!array_key_exists($path_source, $path_alias_whitelist)) {
+    $path_alias_whitelist[$path_source] = TRUE;
+    variable_set('path_alias_whitelist', $path_alias_whitelist); 
+  }
+  
+  // Set path alias for each languages.
+  $languages = language_list('enabled');
+  foreach ($languages as $language) {
+    // FR.
+    if (isset($language['fr']) && !drupal_lookup_path('alias', $path_source, 'fr')) {
+      $path = array(
+        'source'   => $path_source,
+        'alias'    => 'videos',
+        'language' => 'fr',
+      );
+      db_insert('url_alias')->fields($path)->execute();
+    }
+
+    // NL.
+    if (isset($language['nl']) && !drupal_lookup_path('alias', $path_source, 'nl')) {
+      $path = array(
+        'source'   => $path_source,
+        'alias'    => 'videos',
+        'language' => 'nl',
+      );
+      db_insert('url_alias')->fields($path)->execute();
+    }
   }
 }

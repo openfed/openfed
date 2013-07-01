@@ -19,6 +19,7 @@ No date definded yet - No version definded yet
 		# 2029639: Missing paths alias, paths warning or wrong path alias patterns - News
 		# 2029643: Missing paths alias, paths warning or wrong path alias patterns - Press
 		# 2029645: Missing paths alias, paths warning or wrong path alias patterns - Slider
+		# 2029653: Missing paths alias, paths warning or wrong path alias patterns - Video
     # Others : 
       - Solve spelling mistake
 
