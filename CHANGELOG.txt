@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+No date yet - No version number yet
+-----------------------------------
+  * Issues:
+    # 2032879: Incorrect profile number in the .make file
+
 1 July 2013 - 1.0-beta2
 -----------------------
 

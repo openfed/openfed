@@ -19,4 +19,4 @@ projects[drupal][patch][1470656] = http://drupal.org/files/drupal-1470656-14.pat
 ; Download the OpenFed install profile and recursively build all its dependencies
 projects[openfed][type] = profile
 projects[openfed][download][url] = http://git.drupal.org/sandbox/bart.hanssens/1813432.git
-projects[openfed][download][branch] = 7.x-0.x
+projects[openfed][download][branch] = 7.x-1.x
