@@ -1,34 +1,35 @@
 CHANGELOG
 =========
 
-No date definded yet - No version definded yet
-----------------------------------------------
+01 July 2013 - 1.1-beta1 
+------------------------
 
   * Issues: 
     # 2028635: Install process does not display the OpenFed maintenance theme
-		# 2029663: Remove CMS menu install in banner feature
-		# 2032039: Remove CMS menu install in job feature
-		# 2032141: Remove CMS menu install in video feature
-		# 2029617: Missing paths alias, paths warning or wrong path alias patterns - Address
-		# 2029621: Missing paths alias, paths warning or wrong path alias patterns - Banner
-		# 2029623: Missing paths alias, paths warning or wrong path alias patterns - Download
-		# 2029627: Missing paths alias, paths warning or wrong path alias patterns - Events
-		# 2029627: Missing paths alias, paths warning or wrong path alias patterns - FAQ
-		# 2029637: Missing paths alias, paths warning or wrong path alias patterns - Meeting
-		# 2029635: Missing paths alias, paths warning or wrong path alias patterns - Job
-		# 2029639: Missing paths alias, paths warning or wrong path alias patterns - News
-		# 2029643: Missing paths alias, paths warning or wrong path alias patterns - Press
-		# 2029645: Missing paths alias, paths warning or wrong path alias patterns - Slider
-		# 2029653: Missing paths alias, paths warning or wrong path alias patterns - Video
-		# 2029651: Missing paths alias, paths warning or wrong path alias patterns - Team member
-		# 2029647: Missing paths alias, paths warning or wrong path alias patterns - Slideshow
-		# 2029657: Missing paths alias, paths warning or wrong path alias patterns - Photo gallery
-		# 2029641: Missing paths alias, paths warning or wrong path alias patterns - Page
+    # 2029663: Remove CMS menu install in banner feature
+    # 2032039: Remove CMS menu install in job feature
+    # 2032141: Remove CMS menu install in video feature
+    # 2029617: Missing paths alias, paths warning or wrong path alias patterns - Address
+    # 2029621: Missing paths alias, paths warning or wrong path alias patterns - Banner
+    # 2029623: Missing paths alias, paths warning or wrong path alias patterns - Download
+    # 2029627: Missing paths alias, paths warning or wrong path alias patterns - Events
+    # 2029627: Missing paths alias, paths warning or wrong path alias patterns - FAQ
+    # 2029637: Missing paths alias, paths warning or wrong path alias patterns - Meeting
+    # 2029635: Missing paths alias, paths warning or wrong path alias patterns - Job
+    # 2029639: Missing paths alias, paths warning or wrong path alias patterns - News
+    # 2029643: Missing paths alias, paths warning or wrong path alias patterns - Press
+    # 2029645: Missing paths alias, paths warning or wrong path alias patterns - Slider
+    # 2029653: Missing paths alias, paths warning or wrong path alias patterns - Video
+    # 2029651: Missing paths alias, paths warning or wrong path alias patterns - Team member
+    # 2029647: Missing paths alias, paths warning or wrong path alias patterns - Slideshow
+    # 2029657: Missing paths alias, paths warning or wrong path alias patterns - Photo gallery
+    # 2029641: Missing paths alias, paths warning or wrong path alias patterns - Page
     # Others : 
       - Solve spelling mistake
 
-24 June 2013 - Version 1.0
---------------------------
+
+24 June 2013 - Version 1.0-beta1
+--------------------------------
 
   * Issues: 
     # 2023615: Installation hangs, modules at 97%, memory requirement up to 320M
@@ -42,6 +43,7 @@ No date definded yet - No version definded yet
 		# 2026363: Move cms_theme to separate project
 		# 2025423: Don't include maintenance_theme_selector
 
+
 19 June 2013 - Version 0.9
 --------------------------
 
@@ -53,6 +55,7 @@ No date definded yet - No version definded yet
       - Moved modules are now in the contrib subdir instead of openfed
       - Checking / Changing the name of the solution by the correct spelling (OpenFed)
 
+
 17 June 2013
 ------------
 
@@ -63,6 +66,7 @@ No date definded yet - No version definded yet
     # 2021323: Move ofed_vmcd to separate project
     # 2021331: Move maintenance-selector to new project
     # 1983050: Move nerra theme
+
 
 07 June 2013
 ------------
@@ -144,6 +148,7 @@ No date definded yet - No version definded yet
     Custom
       - addemar_subscription: Multiple newsletters now available 
 
+
 07 April 2013
 -------------
   
@@ -165,11 +170,13 @@ No date definded yet - No version definded yet
       Contrib
         - logintoboggan: patch added to fix the password length issue
 
+
 22 April 2013
 -------------
   
   * Issues:
     Fixing issues relative to an internal document.
+
 
 09 April 2013
 -------------
@@ -200,6 +207,7 @@ No date definded yet - No version definded yet
   * Patches:
       Contrib
         - quiz: patch added to avoid: warning: preg_match(): no ending delimiter '.' found in file_scan_directory()
+
 
 13 March 2013
 -------------
@@ -259,6 +267,7 @@ No date definded yet - No version definded yet
         - quiz: patch added to avoid: warning: preg_match(): no ending delimiter '.' found in file_scan_directory()
         - metatag: patch added to avoid: Theme key "metatag_twitter_cards" not found.  
 
+
 28 February 2013
 ----------------
 
@@ -301,6 +310,7 @@ No date definded yet - No version definded yet
         - Ctools: ctools fix warning message
         - Features: features static caches
         - Scheduler: more integration options
+
 
 31 January 2013
 ---------------
@@ -350,6 +360,7 @@ No date definded yet - No version definded yet
   * Themes:
     - Change inclusion of scripts and styles
 
+
 21 January 2013
 ---------------
 
@@ -362,6 +373,7 @@ No date definded yet - No version definded yet
   * Modules updated:
     - patch added for text_resize
 
+
 11 January 2013
 ---------------
 
@@ -369,6 +381,7 @@ No date definded yet - No version definded yet
     #1885012: Core update: Drupal 7.18
     #1885022: Library update: ckeditor
     #1885124: Error: Column 'module' cannot be null
+
 
 09 January 2013
 ---------------
@@ -403,6 +416,7 @@ No date definded yet - No version definded yet
     - cms_theme
       - Breadcrumb region added
       - Theming for system page
+
 
 28 november 2012
 ----------------
@@ -441,6 +455,7 @@ No date definded yet - No version definded yet
 
 * Modules remove: 
     - better_formats
+
 
 21 november 2012
 ----------------
@@ -495,6 +510,7 @@ No date definded yet - No version definded yet
     - search_config
     - site_map
     - views
+
 
 9 november 2012
 ---------------
