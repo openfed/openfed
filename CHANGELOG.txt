@@ -1,8 +1,8 @@
 CHANGELOG
 =========
 
-01 July 2013 - 1.1-beta1 
-------------------------
+1 July 2013 - 1.0-beta2
+-----------------------
 
   * Issues: 
     # 2028635: Install process does not display the OpenFed maintenance theme
