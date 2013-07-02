@@ -181,6 +181,8 @@ function ofed_feature_photogallery_update_7100() {
   }
 
   // Update path patterns.
+  variable_set('pathauto_taxonomy_term_ofed_photogallery_nl_pattern', 'fotogalerijen/[term:name]');
+
   // Include the modules functions needed.
   // Pathauto.
   module_load_include('module', 'pathauto', 'pathauto');

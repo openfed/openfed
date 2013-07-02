@@ -6,6 +6,7 @@ No date yet - No version number yet
   * Issues:
     # 2032879: Incorrect profile number in the .make file
     # 2029647: Missing paths alias, paths warning or wrong path alias patterns - Slideshow
+    # 2029657: Missing paths alias, paths warning or wrong path alias patterns - Photo gallery
 
 1 July 2013 - 1.0-beta2
 -----------------------
