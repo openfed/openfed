@@ -162,6 +162,11 @@ function openfed_role_form_submit($form, &$form_state) {
     }
 
     $updated_roles = array('Builder', 'Configurator', 'User Manager');
+    // array_filter role list to remove unchecked roles
+    // array_values to get the selected roles
+    // array_map to ucfirst all remaining entries
+    // array_intersect to avoid the in_array call in the foreach loop
+    $updated_roles = array_intersect($updated_roles, array_map('ucfirst', array_values(array_filter($values['role_list']))));
 
     foreach ($updated_roles as $role) {
       $web_role = user_role_load_by_name($role);
