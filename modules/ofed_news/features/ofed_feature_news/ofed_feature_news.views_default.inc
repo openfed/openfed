@@ -69,7 +69,7 @@ function ofed_feature_news_views_default_views() {
   $handler->display->display_options['access']['perm'] = 'edit any ofed_news content';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'full';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '4';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '25';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['quantity'] = '9';
@@ -214,14 +214,6 @@ function ofed_feature_news_views_default_views() {
   $handler->display->display_options['filters']['language']['id'] = 'language';
   $handler->display->display_options['filters']['language']['table'] = 'node';
   $handler->display->display_options['filters']['language']['field'] = 'language';
-  $handler->display->display_options['filters']['language']['value'] = array(
-    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
-    '***DEFAULT_LANGUAGE***' => '***DEFAULT_LANGUAGE***',
-    'und' => 'und',
-    'en' => 'en',
-    'nl' => 'nl',
-    'fr' => 'fr',
-  );
   $handler->display->display_options['filters']['language']['group'] = 1;
   $handler->display->display_options['filters']['language']['exposed'] = TRUE;
   $handler->display->display_options['filters']['language']['expose']['operator_id'] = 'language_op';

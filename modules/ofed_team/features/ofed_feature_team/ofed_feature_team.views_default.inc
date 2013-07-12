@@ -214,14 +214,6 @@ function ofed_feature_team_views_default_views() {
   $handler->display->display_options['filters']['language']['id'] = 'language';
   $handler->display->display_options['filters']['language']['table'] = 'node';
   $handler->display->display_options['filters']['language']['field'] = 'language';
-  $handler->display->display_options['filters']['language']['value'] = array(
-    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
-    '***DEFAULT_LANGUAGE***' => '***DEFAULT_LANGUAGE***',
-    'und' => 'und',
-    'en' => 'en',
-    'nl' => 'nl',
-    'fr' => 'fr',
-  );
   $handler->display->display_options['filters']['language']['group'] = 1;
   $handler->display->display_options['filters']['language']['exposed'] = TRUE;
   $handler->display->display_options['filters']['language']['expose']['operator_id'] = 'language_op';
