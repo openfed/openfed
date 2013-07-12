@@ -10,6 +10,7 @@ No date yet - No version number yet
     #2029657: Missing paths alias, paths warning or wrong path alias patterns - Photo gallery
     #1980560: New modules: solr etc
     #2039705: Array to string conversion in Apache Solr Search
+    #2040787: Missing news items in view "content", visible via StartPage "Show news"
 
 1 July 2013 - 1.0-beta2
 -----------------------

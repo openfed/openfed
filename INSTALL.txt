@@ -13,7 +13,8 @@ Openfed requires:
 
 - PHP 5.3.5 (or greater) (http://www.php.net/).
 - A PHP memory_limit set to 320M (or higher)
-- Drush
+- A PHP max_input_vars set to 5000 (or higher)
+- Drush 5.x or higher
 
 For further information see Drupal's INSTALL.txt file.
 
