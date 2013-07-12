@@ -117,9 +117,6 @@ function ofed_feature_slideshow_strongarm() {
       'block_element' => array(
         'custom_settings' => FALSE,
       ),
-      'block_info' => array(
-        'custom_settings' => FALSE,
-      ),
       'block_list' => array(
         'custom_settings' => FALSE,
       ),

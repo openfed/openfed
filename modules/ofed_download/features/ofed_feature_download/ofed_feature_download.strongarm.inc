@@ -58,10 +58,10 @@ function ofed_feature_download_strongarm() {
         'custom_settings' => TRUE,
       ),
       'rss' => array(
-        'custom_settings' => TRUE,
+        'custom_settings' => FALSE,
       ),
       'search_index' => array(
-        'custom_settings' => TRUE,
+        'custom_settings' => FALSE,
       ),
       'search_result' => array(
         'custom_settings' => TRUE,
@@ -83,9 +83,6 @@ function ofed_feature_download_strongarm() {
       ),
       'block_element' => array(
         'custom_settings' => TRUE,
-      ),
-      'block_info' => array(
-        'custom_settings' => FALSE,
       ),
       'block_list' => array(
         'custom_settings' => TRUE,
@@ -157,10 +154,6 @@ function ofed_feature_download_strongarm() {
           ),
           'block_column' => array(
             'weight' => '20',
-            'visible' => FALSE,
-          ),
-          'block_info' => array(
-            'weight' => '12',
             'visible' => FALSE,
           ),
           'block_list' => array(

@@ -58,10 +58,10 @@ function ofed_feature_photogallery_strongarm() {
         'custom_settings' => TRUE,
       ),
       'rss' => array(
-        'custom_settings' => TRUE,
+        'custom_settings' => FALSE,
       ),
       'search_index' => array(
-        'custom_settings' => TRUE,
+        'custom_settings' => FALSE,
       ),
       'search_result' => array(
         'custom_settings' => TRUE,
@@ -79,9 +79,6 @@ function ofed_feature_photogallery_strongarm() {
         'custom_settings' => TRUE,
       ),
       'block_element' => array(
-        'custom_settings' => TRUE,
-      ),
-      'block_info' => array(
         'custom_settings' => TRUE,
       ),
       'block_list' => array(
@@ -154,10 +151,6 @@ function ofed_feature_photogallery_strongarm() {
           ),
           'block_element' => array(
             'weight' => '13',
-            'visible' => FALSE,
-          ),
-          'block_info' => array(
-            'weight' => '11',
             'visible' => FALSE,
           ),
           'block_list' => array(

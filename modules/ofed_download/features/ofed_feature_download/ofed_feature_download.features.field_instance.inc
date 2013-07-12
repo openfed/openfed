@@ -29,13 +29,6 @@ function ofed_feature_download_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 17,
       ),
-      'block_info' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 1,
-      ),
       'block_list' => array(
         'label' => 'above',
         'settings' => array(),
@@ -75,19 +68,6 @@ function ofed_feature_download_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 20,
-      ),
-      'rss' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 21,
-      ),
-      'search_index' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 1,
       ),
       'search_result' => array(
         'label' => 'above',
@@ -140,13 +120,6 @@ function ofed_feature_download_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 20,
       ),
-      'block_info' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 5,
-      ),
       'block_list' => array(
         'label' => 'above',
         'settings' => array(),
@@ -185,19 +158,6 @@ function ofed_feature_download_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 18,
-      ),
-      'rss' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 19,
-      ),
-      'search_index' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 4,
       ),
       'search_result' => array(
         'label' => 'above',
@@ -249,13 +209,6 @@ function ofed_feature_download_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 21,
       ),
-      'block_info' => array(
-        'label' => 'above',
-        'module' => 'file',
-        'settings' => array(),
-        'type' => 'file_default',
-        'weight' => 6,
-      ),
       'block_list' => array(
         'label' => 'above',
         'settings' => array(),
@@ -301,19 +254,6 @@ function ofed_feature_download_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 19,
-      ),
-      'rss' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 20,
-      ),
-      'search_index' => array(
-        'label' => 'hidden',
-        'module' => 'file',
-        'settings' => array(),
-        'type' => 'file_default',
-        'weight' => 5,
       ),
       'search_result' => array(
         'label' => 'above',
@@ -382,19 +322,6 @@ function ofed_feature_download_field_default_field_instances() {
         'type' => 'date_default',
         'weight' => 1,
       ),
-      'block_info' => array(
-        'label' => 'above',
-        'module' => 'date',
-        'settings' => array(
-          'format_type' => 'date_only',
-          'fromto' => 'both',
-          'multiple_from' => '',
-          'multiple_number' => '',
-          'multiple_to' => '',
-        ),
-        'type' => 'date_default',
-        'weight' => 2,
-      ),
       'block_list' => array(
         'label' => 'inline',
         'module' => 'date',
@@ -465,32 +392,6 @@ function ofed_feature_download_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 21,
-      ),
-      'rss' => array(
-        'label' => 'inline',
-        'module' => 'date',
-        'settings' => array(
-          'format_type' => 'short',
-          'fromto' => 'both',
-          'multiple_from' => '',
-          'multiple_number' => '',
-          'multiple_to' => '',
-        ),
-        'type' => 'date_default',
-        'weight' => 3,
-      ),
-      'search_index' => array(
-        'label' => 'inline',
-        'module' => 'date',
-        'settings' => array(
-          'format_type' => 'short',
-          'fromto' => 'both',
-          'multiple_from' => '',
-          'multiple_number' => '',
-          'multiple_to' => '',
-        ),
-        'type' => 'date_default',
-        'weight' => 6,
       ),
       'search_result' => array(
         'label' => 'inline',
@@ -568,13 +469,6 @@ function ofed_feature_download_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 18,
       ),
-      'block_info' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 4,
-      ),
       'block_list' => array(
         'label' => 'above',
         'settings' => array(),
@@ -620,19 +514,6 @@ function ofed_feature_download_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 17,
-      ),
-      'rss' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 18,
-      ),
-      'search_index' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 3,
       ),
       'search_result' => array(
         'label' => 'hidden',
@@ -686,16 +567,6 @@ function ofed_feature_download_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 19,
       ),
-      'block_info' => array(
-        'label' => 'above',
-        'module' => 'image',
-        'settings' => array(
-          'image_link' => '',
-          'image_style' => '',
-        ),
-        'type' => 'image',
-        'weight' => 3,
-      ),
       'block_list' => array(
         'label' => 'above',
         'settings' => array(),
@@ -747,22 +618,6 @@ function ofed_feature_download_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 16,
-      ),
-      'rss' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 17,
-      ),
-      'search_index' => array(
-        'label' => 'hidden',
-        'module' => 'image',
-        'settings' => array(
-          'image_link' => '',
-          'image_style' => '',
-        ),
-        'type' => 'image',
-        'weight' => 2,
       ),
       'search_result' => array(
         'label' => 'above',
@@ -836,12 +691,6 @@ function ofed_feature_download_field_default_field_instances() {
         'type' => 'date_default',
         'weight' => 2,
       ),
-      'block_info' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 13,
-      ),
       'block_list' => array(
         'label' => 'inline',
         'module' => 'date',
@@ -912,32 +761,6 @@ function ofed_feature_download_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 15,
-      ),
-      'rss' => array(
-        'label' => 'inline',
-        'module' => 'date',
-        'settings' => array(
-          'format_type' => 'short',
-          'fromto' => 'both',
-          'multiple_from' => '',
-          'multiple_number' => '',
-          'multiple_to' => '',
-        ),
-        'type' => 'date_default',
-        'weight' => 4,
-      ),
-      'search_index' => array(
-        'label' => 'inline',
-        'module' => 'date',
-        'settings' => array(
-          'format_type' => 'short',
-          'fromto' => 'both',
-          'multiple_from' => '',
-          'multiple_number' => '',
-          'multiple_to' => '',
-        ),
-        'type' => 'date_default',
-        'weight' => 7,
       ),
       'search_result' => array(
         'label' => 'inline',
@@ -1018,12 +841,6 @@ function ofed_feature_download_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 22,
       ),
-      'block_info' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 14,
-      ),
       'block_list' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1055,18 +872,6 @@ function ofed_feature_download_field_default_field_instances() {
         'weight' => 23,
       ),
       'references' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 23,
-      ),
-      'rss' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 23,
-      ),
-      'search_index' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',

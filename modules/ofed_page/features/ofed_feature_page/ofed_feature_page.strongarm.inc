@@ -58,10 +58,10 @@ function ofed_feature_page_strongarm() {
         'custom_settings' => TRUE,
       ),
       'rss' => array(
-        'custom_settings' => TRUE,
+        'custom_settings' => FALSE,
       ),
       'search_index' => array(
-        'custom_settings' => TRUE,
+        'custom_settings' => FALSE,
       ),
       'search_result' => array(
         'custom_settings' => TRUE,
@@ -76,9 +76,6 @@ function ofed_feature_page_strongarm() {
         'custom_settings' => FALSE,
       ),
       'block_element' => array(
-        'custom_settings' => FALSE,
-      ),
-      'block_info' => array(
         'custom_settings' => FALSE,
       ),
       'block_list' => array(
