@@ -291,3 +291,63 @@ function ofed_feature_faq_update_7100() {
     }
   }
 }
+
+/**
+ * Disable unused view modes.
+ */
+function ofed_feature_faq_update_7101 () {
+  // Set the bundle name.
+  $bundle = 'ofed_faq';
+  // Set what display will be removed.
+  $displays_to_delete = array('search_index', 'rss', 'block_info');
+
+  // Delete display suite layout settings.
+  foreach ($displays_to_delete as $display_to_delete) {
+    db_delete('ds_layout_settings')->condition('id', 'node|' .  $bundle . '|' . $display_to_delete)->execute();
+  }
+  // Delete display suite field settings.
+  foreach ($displays_to_delete as $display_to_delete) {
+    db_delete('ds_field_settings')->condition('id', 'node|' .  $bundle . '|' . $display_to_delete)->execute();
+  }
+  
+  // Update field instance.
+  // Get field config instance for each field used by the content type.
+  // Select each field instance for this bundle.
+  $fields = db_select('field_config_instance', 'fci')->fields('fci')->condition('bundle', $bundle)->execute()->fetchAll();
+  foreach ($fields as $field) {
+    // Get data.
+    $data = unserialize($field->data);
+    // Remove displays.
+    foreach ($displays_to_delete as $display_to_delete) {
+      if (isset($data['display'][$display_to_delete])) {
+        unset($data['display'][$display_to_delete]);
+      }
+    }
+    // Set data.
+    $field->data = serialize($data);
+    // Update record.
+    db_update('field_config_instance')->fields(array('data' => $field->data))->condition('id', $field->id)->execute();
+  }
+
+  // Update bundle settings variable.
+  // Get variable content.
+  $bundle_settings_node = variable_get('field_bundle_settings_node__' . $bundle, array());
+  if (!empty($bundle_settings_node)) {
+    // Disable displays.
+    foreach ($displays_to_delete as $display_to_delete) {
+      if (isset($bundle_settings_node['view_modes'][$display_to_delete])) {
+        if ($display_to_delete == 'block_info') {
+          unset ($bundle_settings_node['view_modes'][$display_to_delete]);
+          if (isset($bundle_settings_node['extra_fields']['display']['language'][$display_to_delete])) {
+            unset ($bundle_settings_node['extra_fields']['display']['language'][$display_to_delete]);
+          }
+        }
+        else {
+          $bundle_settings_node['view_modes'][$display_to_delete] = array('custom_settings' => FALSE);
+        }
+      }
+    }
+    // Set variable content.
+    variable_set('field_bundle_settings_node__' . $bundle, $bundle_settings_node);
+  }
+}

@@ -69,19 +69,6 @@ function ofed_feature_job_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 5,
       ),
-      'rss' => array(
-        'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 6,
-      ),
-      'search_index' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 5,
-      ),
       'search_result' => array(
         'label' => 'hidden',
         'settings' => array(),
@@ -174,19 +161,6 @@ function ofed_feature_job_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 13,
       ),
-      'rss' => array(
-        'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 14,
-      ),
-      'search_index' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 13,
-      ),
       'search_result' => array(
         'label' => 'hidden',
         'settings' => array(),
@@ -270,18 +244,6 @@ function ofed_feature_job_field_default_field_instances() {
         'weight' => 26,
       ),
       'references' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 26,
-      ),
-      'rss' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 26,
-      ),
-      'search_index' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -391,22 +353,6 @@ function ofed_feature_job_field_default_field_instances() {
         'type' => 'entityreference_entity_view',
         'weight' => 16,
       ),
-      'rss' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 17,
-      ),
-      'search_index' => array(
-        'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'links' => 1,
-          'view_mode' => 'references',
-        ),
-        'type' => 'entityreference_entity_view',
-        'weight' => 16,
-      ),
       'search_result' => array(
         'label' => 'above',
         'settings' => array(),
@@ -500,19 +446,6 @@ function ofed_feature_job_field_default_field_instances() {
         'type' => 'i18n_taxonomy_term_reference_plain',
         'weight' => 11,
       ),
-      'rss' => array(
-        'label' => 'inline',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 12,
-      ),
-      'search_index' => array(
-        'label' => 'inline',
-        'module' => 'i18n_taxonomy',
-        'settings' => array(),
-        'type' => 'i18n_taxonomy_term_reference_plain',
-        'weight' => 11,
-      ),
       'search_result' => array(
         'label' => 'inline',
         'settings' => array(),
@@ -596,19 +529,6 @@ function ofed_feature_job_field_default_field_instances() {
         'weight' => 10,
       ),
       'references' => array(
-        'label' => 'inline',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 10,
-      ),
-      'rss' => array(
-        'label' => 'inline',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 11,
-      ),
-      'search_index' => array(
         'label' => 'inline',
         'module' => 'text',
         'settings' => array(),
@@ -707,19 +627,6 @@ function ofed_feature_job_field_default_field_instances() {
         'type' => 'i18n_taxonomy_term_reference_plain',
         'weight' => 7,
       ),
-      'rss' => array(
-        'label' => 'inline',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 8,
-      ),
-      'search_index' => array(
-        'label' => 'inline',
-        'module' => 'i18n_taxonomy',
-        'settings' => array(),
-        'type' => 'i18n_taxonomy_term_reference_plain',
-        'weight' => 7,
-      ),
       'search_result' => array(
         'label' => 'inline',
         'settings' => array(),
@@ -803,19 +710,6 @@ function ofed_feature_job_field_default_field_instances() {
         'weight' => 15,
       ),
       'references' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 15,
-      ),
-      'rss' => array(
-        'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 16,
-      ),
-      'search_index' => array(
         'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
@@ -914,19 +808,6 @@ function ofed_feature_job_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 14,
       ),
-      'rss' => array(
-        'label' => 'inline',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 15,
-      ),
-      'search_index' => array(
-        'label' => 'inline',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 14,
-      ),
       'search_result' => array(
         'label' => 'inline',
         'settings' => array(),
@@ -981,19 +862,6 @@ function ofed_feature_job_field_default_field_instances() {
       ),
       'block_element' => array(
         'label' => 'inline',
-        'module' => 'date',
-        'settings' => array(
-          'format_type' => 'short',
-          'fromto' => 'both',
-          'multiple_from' => '',
-          'multiple_number' => '',
-          'multiple_to' => '',
-        ),
-        'type' => 'date_default',
-        'weight' => 1,
-      ),
-      'block_info' => array(
-        'label' => 'above',
         'module' => 'date',
         'settings' => array(
           'format_type' => 'short',
@@ -1072,32 +940,6 @@ function ofed_feature_job_field_default_field_instances() {
       ),
       'references' => array(
         'label' => 'inline',
-        'module' => 'date',
-        'settings' => array(
-          'format_type' => 'short',
-          'fromto' => 'both',
-          'multiple_from' => '',
-          'multiple_number' => '',
-          'multiple_to' => '',
-        ),
-        'type' => 'date_default',
-        'weight' => 1,
-      ),
-      'rss' => array(
-        'label' => 'inline',
-        'module' => 'date',
-        'settings' => array(
-          'format_type' => 'short',
-          'fromto' => 'both',
-          'multiple_from' => '',
-          'multiple_number' => '',
-          'multiple_to' => '',
-        ),
-        'type' => 'date_default',
-        'weight' => 1,
-      ),
-      'search_index' => array(
-        'label' => 'hidden',
         'module' => 'date',
         'settings' => array(
           'format_type' => 'short',
@@ -1224,19 +1066,6 @@ function ofed_feature_job_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 6,
       ),
-      'rss' => array(
-        'label' => 'inline',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 7,
-      ),
-      'search_index' => array(
-        'label' => 'inline',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 6,
-      ),
       'search_result' => array(
         'label' => 'inline',
         'settings' => array(),
@@ -1323,19 +1152,6 @@ function ofed_feature_job_field_default_field_instances() {
         'weight' => 9,
       ),
       'references' => array(
-        'label' => 'inline',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 9,
-      ),
-      'rss' => array(
-        'label' => 'inline',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 10,
-      ),
-      'search_index' => array(
         'label' => 'inline',
         'module' => 'text',
         'settings' => array(),
@@ -1434,19 +1250,6 @@ function ofed_feature_job_field_default_field_instances() {
         'type' => 'i18n_taxonomy_term_reference_plain',
         'weight' => 12,
       ),
-      'rss' => array(
-        'label' => 'inline',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 13,
-      ),
-      'search_index' => array(
-        'label' => 'inline',
-        'module' => 'i18n_taxonomy',
-        'settings' => array(),
-        'type' => 'i18n_taxonomy_term_reference_plain',
-        'weight' => 12,
-      ),
       'search_result' => array(
         'label' => 'inline',
         'settings' => array(),
@@ -1533,20 +1336,6 @@ function ofed_feature_job_field_default_field_instances() {
         'weight' => 3,
       ),
       'references' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 3,
-      ),
-      'rss' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 3,
-      ),
-      'search_index' => array(
         'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
@@ -1662,22 +1451,6 @@ function ofed_feature_job_field_default_field_instances() {
         'type' => 'image',
         'weight' => 4,
       ),
-      'rss' => array(
-        'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 5,
-      ),
-      'search_index' => array(
-        'label' => 'hidden',
-        'module' => 'image',
-        'settings' => array(
-          'image_link' => '',
-          'image_style' => 'ofed_job_thumb',
-        ),
-        'type' => 'image',
-        'weight' => 4,
-      ),
       'search_result' => array(
         'label' => 'hidden',
         'module' => 'image',
@@ -1744,19 +1517,6 @@ function ofed_feature_job_field_default_field_instances() {
       ),
       'block_element' => array(
         'label' => 'inline',
-        'module' => 'date',
-        'settings' => array(
-          'format_type' => 'short',
-          'fromto' => 'both',
-          'multiple_from' => '',
-          'multiple_number' => '',
-          'multiple_to' => '',
-        ),
-        'type' => 'date_default',
-        'weight' => 2,
-      ),
-      'block_info' => array(
-        'label' => 'above',
         'module' => 'date',
         'settings' => array(
           'format_type' => 'short',
@@ -1835,32 +1595,6 @@ function ofed_feature_job_field_default_field_instances() {
       ),
       'references' => array(
         'label' => 'inline',
-        'module' => 'date',
-        'settings' => array(
-          'format_type' => 'short',
-          'fromto' => 'both',
-          'multiple_from' => '',
-          'multiple_number' => '',
-          'multiple_to' => '',
-        ),
-        'type' => 'date_default',
-        'weight' => 2,
-      ),
-      'rss' => array(
-        'label' => 'inline',
-        'module' => 'date',
-        'settings' => array(
-          'format_type' => 'short',
-          'fromto' => 'both',
-          'multiple_from' => '',
-          'multiple_number' => '',
-          'multiple_to' => '',
-        ),
-        'type' => 'date_default',
-        'weight' => 2,
-      ),
-      'search_index' => array(
-        'label' => 'hidden',
         'module' => 'date',
         'settings' => array(
           'format_type' => 'short',
@@ -1951,13 +1685,6 @@ function ofed_feature_job_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 25,
       ),
-      'block_info' => array(
-        'label' => 'above',
-        'module' => 'list',
-        'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 24,
-      ),
       'block_list' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1990,18 +1717,6 @@ function ofed_feature_job_field_default_field_instances() {
       ),
       'references' => array(
         'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 24,
-      ),
-      'rss' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 25,
-      ),
-      'search_index' => array(
-        'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 24,
@@ -2100,22 +1815,6 @@ function ofed_feature_job_field_default_field_instances() {
         'weight' => 8,
       ),
       'references' => array(
-        'label' => 'inline',
-        'module' => 'entityreference',
-        'settings' => array(
-          'links' => 1,
-          'view_mode' => 'references',
-        ),
-        'type' => 'entityreference_entity_view',
-        'weight' => 8,
-      ),
-      'rss' => array(
-        'label' => 'inline',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 9,
-      ),
-      'search_index' => array(
         'label' => 'inline',
         'module' => 'entityreference',
         'settings' => array(

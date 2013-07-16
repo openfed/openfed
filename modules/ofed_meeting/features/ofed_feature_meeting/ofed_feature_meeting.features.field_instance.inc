@@ -81,22 +81,6 @@ function ofed_feature_meeting_field_default_field_instances() {
         'type' => 'entityreference_entity_view',
         'weight' => 8,
       ),
-      'rss' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 8,
-      ),
-      'search_index' => array(
-        'label' => 'hidden',
-        'module' => 'entityreference',
-        'settings' => array(
-          'links' => 0,
-          'view_mode' => 'references',
-        ),
-        'type' => 'entityreference_entity_view',
-        'weight' => 8,
-      ),
       'search_result' => array(
         'label' => 'above',
         'settings' => array(),
@@ -184,19 +168,6 @@ function ofed_feature_meeting_field_default_field_instances() {
         'weight' => 5,
       ),
       'references' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 5,
-      ),
-      'rss' => array(
-        'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 5,
-      ),
-      'search_index' => array(
         'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
@@ -346,32 +317,6 @@ function ofed_feature_meeting_field_default_field_instances() {
         'type' => 'date_default',
         'weight' => 3,
       ),
-      'rss' => array(
-        'label' => 'inline',
-        'module' => 'date',
-        'settings' => array(
-          'format_type' => 'short',
-          'fromto' => 'both',
-          'multiple_from' => '',
-          'multiple_number' => '',
-          'multiple_to' => '',
-        ),
-        'type' => 'date_default',
-        'weight' => 3,
-      ),
-      'search_index' => array(
-        'label' => 'hidden',
-        'module' => 'date',
-        'settings' => array(
-          'format_type' => 'short',
-          'fromto' => 'both',
-          'multiple_from' => '',
-          'multiple_number' => '',
-          'multiple_to' => '',
-        ),
-        'type' => 'date_default',
-        'weight' => 3,
-      ),
       'search_result' => array(
         'label' => 'inline',
         'module' => 'date',
@@ -495,22 +440,6 @@ function ofed_feature_meeting_field_default_field_instances() {
         'type' => 'entityreference_entity_view',
         'weight' => 7,
       ),
-      'rss' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 7,
-      ),
-      'search_index' => array(
-        'label' => 'hidden',
-        'module' => 'entityreference',
-        'settings' => array(
-          'links' => 1,
-          'view_mode' => 'references',
-        ),
-        'type' => 'entityreference_entity_view',
-        'weight' => 7,
-      ),
       'search_result' => array(
         'label' => 'above',
         'settings' => array(),
@@ -603,19 +532,6 @@ function ofed_feature_meeting_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
-      'rss' => array(
-        'label' => 'inline',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 6,
-      ),
-      'search_index' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 6,
-      ),
       'search_result' => array(
         'label' => 'inline',
         'settings' => array(),
@@ -666,19 +582,6 @@ function ofed_feature_meeting_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 6,
-      ),
-      'block_info' => array(
-        'label' => 'inline',
-        'module' => 'date',
-        'settings' => array(
-          'format_type' => 'short',
-          'fromto' => 'both',
-          'multiple_from' => '',
-          'multiple_number' => '',
-          'multiple_to' => '',
-        ),
-        'type' => 'date_default',
-        'weight' => 1,
       ),
       'block_list' => array(
         'label' => 'inline',
@@ -733,32 +636,6 @@ function ofed_feature_meeting_field_default_field_instances() {
       ),
       'references' => array(
         'label' => 'inline',
-        'module' => 'date',
-        'settings' => array(
-          'format_type' => 'short',
-          'fromto' => 'both',
-          'multiple_from' => '',
-          'multiple_number' => '',
-          'multiple_to' => '',
-        ),
-        'type' => 'date_default',
-        'weight' => 1,
-      ),
-      'rss' => array(
-        'label' => 'inline',
-        'module' => 'date',
-        'settings' => array(
-          'format_type' => 'short',
-          'fromto' => 'both',
-          'multiple_from' => '',
-          'multiple_number' => '',
-          'multiple_to' => '',
-        ),
-        'type' => 'date_default',
-        'weight' => 1,
-      ),
-      'search_index' => array(
-        'label' => 'hidden',
         'module' => 'date',
         'settings' => array(
           'format_type' => 'short',
@@ -881,20 +758,6 @@ function ofed_feature_meeting_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 4,
       ),
-      'rss' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 4,
-      ),
-      'search_index' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 4,
-      ),
       'search_result' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -947,19 +810,6 @@ function ofed_feature_meeting_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 5,
-      ),
-      'block_info' => array(
-        'label' => 'inline',
-        'module' => 'date',
-        'settings' => array(
-          'format_type' => 'short',
-          'fromto' => 'both',
-          'multiple_from' => '',
-          'multiple_number' => '',
-          'multiple_to' => '',
-        ),
-        'type' => 'date_default',
-        'weight' => 2,
       ),
       'block_list' => array(
         'label' => 'inline',
@@ -1014,32 +864,6 @@ function ofed_feature_meeting_field_default_field_instances() {
       ),
       'references' => array(
         'label' => 'inline',
-        'module' => 'date',
-        'settings' => array(
-          'format_type' => 'short',
-          'fromto' => 'both',
-          'multiple_from' => '',
-          'multiple_number' => '',
-          'multiple_to' => '',
-        ),
-        'type' => 'date_default',
-        'weight' => 2,
-      ),
-      'rss' => array(
-        'label' => 'inline',
-        'module' => 'date',
-        'settings' => array(
-          'format_type' => 'short',
-          'fromto' => 'both',
-          'multiple_from' => '',
-          'multiple_number' => '',
-          'multiple_to' => '',
-        ),
-        'type' => 'date_default',
-        'weight' => 2,
-      ),
-      'search_index' => array(
-        'label' => 'hidden',
         'module' => 'date',
         'settings' => array(
           'format_type' => 'short',
@@ -1123,12 +947,6 @@ function ofed_feature_meeting_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 16,
       ),
-      'block_info' => array(
-        'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 16,
-      ),
       'block_list' => array(
         'label' => 'hidden',
         'settings' => array(),
@@ -1160,18 +978,6 @@ function ofed_feature_meeting_field_default_field_instances() {
         'weight' => 16,
       ),
       'references' => array(
-        'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 16,
-      ),
-      'rss' => array(
-        'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 16,
-      ),
-      'search_index' => array(
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',

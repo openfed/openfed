@@ -85,9 +85,6 @@ function ofed_feature_banner_strongarm() {
       'block_column' => array(
         'custom_settings' => FALSE,
       ),
-      'block_info' => array(
-        'custom_settings' => FALSE,
-      ),
       'block_list' => array(
         'custom_settings' => FALSE,
       ),
@@ -157,10 +154,6 @@ function ofed_feature_banner_strongarm() {
           ),
           'block_column' => array(
             'weight' => '18',
-            'visible' => FALSE,
-          ),
-          'block_info' => array(
-            'weight' => '15',
             'visible' => FALSE,
           ),
           'block_list' => array(

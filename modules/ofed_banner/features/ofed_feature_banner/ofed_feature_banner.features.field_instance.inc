@@ -438,19 +438,6 @@ You can change the value of this counter by the value of your choice and you can
         'type' => 'date_default',
         'weight' => 2,
       ),
-      'block_info' => array(
-        'label' => 'above',
-        'module' => 'date',
-        'settings' => array(
-          'format_type' => 'short',
-          'fromto' => 'both',
-          'multiple_from' => '',
-          'multiple_number' => '',
-          'multiple_to' => '',
-        ),
-        'type' => 'date_default',
-        'weight' => 8,
-      ),
       'block_list' => array(
         'label' => 'inline',
         'module' => 'date',
@@ -518,32 +505,6 @@ You can change the value of this counter by the value of your choice and you can
       ),
       'references' => array(
         'label' => 'inline',
-        'module' => 'date',
-        'settings' => array(
-          'format_type' => 'short',
-          'fromto' => 'both',
-          'multiple_from' => '',
-          'multiple_number' => '',
-          'multiple_to' => '',
-        ),
-        'type' => 'date_default',
-        'weight' => 2,
-      ),
-      'rss' => array(
-        'label' => 'inline',
-        'module' => 'date',
-        'settings' => array(
-          'format_type' => 'short',
-          'fromto' => 'both',
-          'multiple_from' => '',
-          'multiple_number' => '',
-          'multiple_to' => '',
-        ),
-        'type' => 'date_default',
-        'weight' => 2,
-      ),
-      'search_index' => array(
-        'label' => 'hidden',
         'module' => 'date',
         'settings' => array(
           'format_type' => 'short',
@@ -634,13 +595,6 @@ You can change the value of this counter by the value of your choice and you can
         'type' => 'hidden',
         'weight' => 17,
       ),
-      'block_info' => array(
-        'label' => 'above',
-        'module' => 'list',
-        'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 9,
-      ),
       'block_list' => array(
         'label' => 'above',
         'settings' => array(),
@@ -673,18 +627,6 @@ You can change the value of this counter by the value of your choice and you can
       ),
       'references' => array(
         'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 17,
-      ),
-      'rss' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 16,
-      ),
-      'search_index' => array(
-        'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 17,

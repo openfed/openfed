@@ -38,20 +38,6 @@ function ofed_feature_faq_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 2,
       ),
-      'rss' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 2,
-      ),
-      'search_index' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 1,
-      ),
       'search_result' => array(
         'label' => 'hidden',
         'settings' => array(),
@@ -108,18 +94,6 @@ function ofed_feature_faq_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 1,
-      ),
-      'rss' => array(
-        'label' => 'inline',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 1,
-      ),
-      'search_index' => array(
-        'label' => 'inline',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 2,
       ),
       'search_result' => array(
         'label' => 'hidden',
@@ -187,18 +161,6 @@ function ofed_feature_faq_field_default_field_instances() {
         'weight' => 10,
       ),
       'print' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 8,
-      ),
-      'rss' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 8,
-      ),
-      'search_index' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',

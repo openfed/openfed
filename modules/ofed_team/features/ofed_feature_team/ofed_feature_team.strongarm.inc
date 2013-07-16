@@ -116,10 +116,10 @@ function ofed_feature_team_strongarm() {
         'custom_settings' => TRUE,
       ),
       'rss' => array(
-        'custom_settings' => TRUE,
+        'custom_settings' => FALSE,
       ),
       'search_index' => array(
-        'custom_settings' => TRUE,
+        'custom_settings' => FALSE,
       ),
       'search_result' => array(
         'custom_settings' => TRUE,
@@ -135,9 +135,6 @@ function ofed_feature_team_strongarm() {
       ),
       'block_column' => array(
         'custom_settings' => TRUE,
-      ),
-      'block_info' => array(
-        'custom_settings' => FALSE,
       ),
       'block_list' => array(
         'custom_settings' => TRUE,
@@ -208,10 +205,6 @@ function ofed_feature_team_strongarm() {
           ),
           'block_column' => array(
             'weight' => '22',
-            'visible' => FALSE,
-          ),
-          'block_info' => array(
-            'weight' => '15',
             'visible' => FALSE,
           ),
           'block_list' => array(

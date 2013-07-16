@@ -145,7 +145,7 @@ function ofed_feature_news_update_7100 () {
 }
 
 /**
- * Disable unused display suite view modes.
+ * Disable unused view modes.
  */
 function ofed_feature_news_update_7101 () {
   // Set the bundle name.
