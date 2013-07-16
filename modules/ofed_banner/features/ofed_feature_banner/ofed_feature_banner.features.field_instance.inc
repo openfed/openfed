@@ -516,6 +516,19 @@ You can change the value of this counter by the value of your choice and you can
         'type' => 'date_default',
         'weight' => 2,
       ),
+      'rss' => array(
+        'label' => 'inline',
+        'module' => 'date',
+        'settings' => array(
+          'format_type' => 'short',
+          'fromto' => 'both',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+        ),
+        'type' => 'date_default',
+        'weight' => 2,
+      ),
       'search_result' => array(
         'label' => 'inline',
         'module' => 'date',
@@ -630,6 +643,12 @@ You can change the value of this counter by the value of your choice and you can
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 17,
+      ),
+      'rss' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 16,
       ),
       'search_result' => array(
         'label' => 'above',

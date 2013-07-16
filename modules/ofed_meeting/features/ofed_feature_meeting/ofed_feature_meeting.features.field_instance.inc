@@ -81,6 +81,12 @@ function ofed_feature_meeting_field_default_field_instances() {
         'type' => 'entityreference_entity_view',
         'weight' => 8,
       ),
+      'rss' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 8,
+      ),
       'search_result' => array(
         'label' => 'above',
         'settings' => array(),
@@ -172,6 +178,12 @@ function ofed_feature_meeting_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
+        'weight' => 5,
+      ),
+      'rss' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 5,
       ),
       'search_result' => array(
@@ -317,6 +329,19 @@ function ofed_feature_meeting_field_default_field_instances() {
         'type' => 'date_default',
         'weight' => 3,
       ),
+      'rss' => array(
+        'label' => 'inline',
+        'module' => 'date',
+        'settings' => array(
+          'format_type' => 'short',
+          'fromto' => 'both',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+        ),
+        'type' => 'date_default',
+        'weight' => 3,
+      ),
       'search_result' => array(
         'label' => 'inline',
         'module' => 'date',
@@ -440,6 +465,12 @@ function ofed_feature_meeting_field_default_field_instances() {
         'type' => 'entityreference_entity_view',
         'weight' => 7,
       ),
+      'rss' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 7,
+      ),
       'search_result' => array(
         'label' => 'above',
         'settings' => array(),
@@ -531,6 +562,12 @@ function ofed_feature_meeting_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
+      ),
+      'rss' => array(
+        'label' => 'inline',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 6,
       ),
       'search_result' => array(
         'label' => 'inline',
@@ -635,6 +672,19 @@ function ofed_feature_meeting_field_default_field_instances() {
         'weight' => 1,
       ),
       'references' => array(
+        'label' => 'inline',
+        'module' => 'date',
+        'settings' => array(
+          'format_type' => 'short',
+          'fromto' => 'both',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+        ),
+        'type' => 'date_default',
+        'weight' => 1,
+      ),
+      'rss' => array(
         'label' => 'inline',
         'module' => 'date',
         'settings' => array(
@@ -758,6 +808,13 @@ function ofed_feature_meeting_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 4,
       ),
+      'rss' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 4,
+      ),
       'search_result' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -875,6 +932,19 @@ function ofed_feature_meeting_field_default_field_instances() {
         'type' => 'date_default',
         'weight' => 2,
       ),
+      'rss' => array(
+        'label' => 'inline',
+        'module' => 'date',
+        'settings' => array(
+          'format_type' => 'short',
+          'fromto' => 'both',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+        ),
+        'type' => 'date_default',
+        'weight' => 2,
+      ),
       'search_result' => array(
         'label' => 'inline',
         'module' => 'date',
@@ -978,6 +1048,12 @@ function ofed_feature_meeting_field_default_field_instances() {
         'weight' => 16,
       ),
       'references' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 16,
+      ),
+      'rss' => array(
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',

@@ -151,7 +151,7 @@ function ofed_feature_news_update_7101 () {
   // Set the bundle name.
   $bundle = 'ofed_news';
   // Set what display will be removed.
-  $displays_to_delete = array('search_index', 'rss', 'block_info');
+  $displays_to_delete = array('search_index', 'block_info');
 
   // Delete display suite layout settings.
   foreach ($displays_to_delete as $display_to_delete) {

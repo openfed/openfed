@@ -12,9 +12,13 @@ No date yet - No version number yet
     #2039705: Array to string conversion in Apache Solr Search
     #2040787: Missing news items in view "content", visible via StartPage "Show news"
     #2019409: Module upgrade: ds
+    #2039605: Role permissions are not applied when activating a content type/feature after initial setup
 		# Others : 
       - Add the module and the feature who setup the Apache Solr for OpenFed (experimental).
       - Disable unused display suite view modes for news, download, page, photogallery, press, slideshow.
+      - Restore the RSS view mode.
+      - Add the missing metatags entries in .info files
+
 
 1 July 2013 - 1.0-beta2
 -----------------------

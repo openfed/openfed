@@ -69,6 +69,12 @@ function ofed_feature_download_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 20,
       ),
+      'rss' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 21,
+      ),
       'search_result' => array(
         'label' => 'above',
         'settings' => array(),
@@ -158,6 +164,12 @@ function ofed_feature_download_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 18,
+      ),
+      'rss' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 19,
       ),
       'search_result' => array(
         'label' => 'above',
@@ -254,6 +266,12 @@ function ofed_feature_download_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 19,
+      ),
+      'rss' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 20,
       ),
       'search_result' => array(
         'label' => 'above',
@@ -393,6 +411,19 @@ function ofed_feature_download_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 21,
       ),
+      'rss' => array(
+        'label' => 'inline',
+        'module' => 'date',
+        'settings' => array(
+          'format_type' => 'short',
+          'fromto' => 'both',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+        ),
+        'type' => 'date_default',
+        'weight' => 3,
+      ),
       'search_result' => array(
         'label' => 'inline',
         'module' => 'date',
@@ -515,6 +546,12 @@ function ofed_feature_download_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 17,
       ),
+      'rss' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 18,
+      ),
       'search_result' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -618,6 +655,12 @@ function ofed_feature_download_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 16,
+      ),
+      'rss' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 17,
       ),
       'search_result' => array(
         'label' => 'above',
@@ -762,6 +805,19 @@ function ofed_feature_download_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 15,
       ),
+      'rss' => array(
+        'label' => 'inline',
+        'module' => 'date',
+        'settings' => array(
+          'format_type' => 'short',
+          'fromto' => 'both',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+        ),
+        'type' => 'date_default',
+        'weight' => 4,
+      ),
       'search_result' => array(
         'label' => 'inline',
         'module' => 'date',
@@ -872,6 +928,12 @@ function ofed_feature_download_field_default_field_instances() {
         'weight' => 23,
       ),
       'references' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 23,
+      ),
+      'rss' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',

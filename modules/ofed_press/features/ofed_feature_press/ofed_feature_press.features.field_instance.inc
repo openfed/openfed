@@ -57,6 +57,13 @@ function ofed_feature_press_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 3,
       ),
+      'rss' => array(
+        'label' => 'inline',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 3,
+      ),
       'search_result' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -163,6 +170,12 @@ function ofed_feature_press_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 6,
       ),
+      'rss' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 14,
+      ),
       'search_result' => array(
         'label' => 'above',
         'settings' => array(),
@@ -268,6 +281,12 @@ function ofed_feature_press_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 7,
       ),
+      'rss' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 9,
+      ),
       'search_result' => array(
         'label' => 'above',
         'settings' => array(),
@@ -352,6 +371,12 @@ function ofed_feature_press_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 15,
       ),
+      'rss' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 15,
+      ),
       'search_result' => array(
         'label' => 'above',
         'settings' => array(),
@@ -426,6 +451,12 @@ function ofed_feature_press_field_default_field_instances() {
         'weight' => 16,
       ),
       'print' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 16,
+      ),
+      'rss' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -561,6 +592,19 @@ function ofed_feature_press_field_default_field_instances() {
         'type' => 'date_default',
         'weight' => 1,
       ),
+      'rss' => array(
+        'label' => 'inline',
+        'module' => 'date',
+        'settings' => array(
+          'format_type' => 'date_only',
+          'fromto' => 'both',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+        ),
+        'type' => 'date_default',
+        'weight' => 1,
+      ),
       'search_result' => array(
         'label' => 'inline',
         'module' => 'date',
@@ -657,6 +701,12 @@ function ofed_feature_press_field_default_field_instances() {
         'weight' => 17,
       ),
       'print' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 17,
+      ),
+      'rss' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -768,6 +818,12 @@ function ofed_feature_press_field_default_field_instances() {
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 4,
+      ),
+      'rss' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 13,
       ),
       'search_result' => array(
         'label' => 'hidden',
@@ -887,6 +943,12 @@ function ofed_feature_press_field_default_field_instances() {
         ),
         'type' => 'image',
         'weight' => 5,
+      ),
+      'rss' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 12,
       ),
       'search_result' => array(
         'label' => 'above',
@@ -1013,6 +1075,19 @@ function ofed_feature_press_field_default_field_instances() {
         'type' => 'date_default',
         'weight' => 2,
       ),
+      'rss' => array(
+        'label' => 'inline',
+        'module' => 'date',
+        'settings' => array(
+          'format_type' => 'date_only',
+          'fromto' => 'both',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+        ),
+        'type' => 'date_default',
+        'weight' => 2,
+      ),
       'search_result' => array(
         'label' => 'inline',
         'module' => 'date',
@@ -1111,6 +1186,12 @@ function ofed_feature_press_field_default_field_instances() {
         'weight' => 18,
       ),
       'print' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 18,
+      ),
+      'rss' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',

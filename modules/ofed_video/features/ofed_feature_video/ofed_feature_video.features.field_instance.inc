@@ -68,6 +68,12 @@ function ofed_feature_video_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 4,
       ),
+      'rss' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
+      ),
       'search_result' => array(
         'label' => 'hidden',
         'settings' => array(),
@@ -167,6 +173,12 @@ function ofed_feature_video_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 5,
+      ),
+      'rss' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 6,
       ),
       'search_result' => array(
         'label' => 'hidden',
@@ -272,6 +284,12 @@ function ofed_feature_video_field_default_field_instances() {
         'type' => 'file_rendered',
         'weight' => 0,
       ),
+      'rss' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 5,
+      ),
       'search_result' => array(
         'label' => 'hidden',
         'module' => 'file_entity',
@@ -368,6 +386,12 @@ function ofed_feature_video_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 6,
+      ),
+      'rss' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 7,
       ),
       'search_result' => array(
         'label' => 'hidden',
@@ -519,6 +543,19 @@ function ofed_feature_video_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 11,
       ),
+      'rss' => array(
+        'label' => 'inline',
+        'module' => 'date',
+        'settings' => array(
+          'format_type' => 'short',
+          'fromto' => 'both',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+        ),
+        'type' => 'date_default',
+        'weight' => 1,
+      ),
       'search_result' => array(
         'label' => 'inline',
         'module' => 'date',
@@ -636,6 +673,12 @@ function ofed_feature_video_field_default_field_instances() {
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 2,
+      ),
+      'rss' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 4,
       ),
       'search_result' => array(
         'label' => 'hidden',
@@ -775,6 +818,19 @@ function ofed_feature_video_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 14,
       ),
+      'rss' => array(
+        'label' => 'inline',
+        'module' => 'date',
+        'settings' => array(
+          'format_type' => 'short',
+          'fromto' => 'both',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+        ),
+        'type' => 'date_default',
+        'weight' => 3,
+      ),
       'search_result' => array(
         'label' => 'inline',
         'module' => 'date',
@@ -885,6 +941,12 @@ function ofed_feature_video_field_default_field_instances() {
         'weight' => 15,
       ),
       'references' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 15,
+      ),
+      'rss' => array(
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',

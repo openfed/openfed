@@ -136,6 +136,12 @@ function ofed_feature_team_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 8,
       ),
+      'rss' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 14,
+      ),
       'search_result' => array(
         'label' => 'hidden',
         'settings' => array(),
@@ -218,6 +224,13 @@ function ofed_feature_team_field_default_field_instances() {
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_plain',
         'weight' => 1,
+      ),
+      'rss' => array(
+        'label' => 'hidden',
+        'module' => 'i18n_taxonomy',
+        'settings' => array(),
+        'type' => 'i18n_taxonomy_term_reference_plain',
+        'weight' => 0,
       ),
       'search_result' => array(
         'label' => 'hidden',
@@ -306,6 +319,12 @@ function ofed_feature_team_field_default_field_instances() {
         'type' => 'entityreference_entity_view',
         'weight' => 10,
       ),
+      'rss' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 20,
+      ),
       'search_result' => array(
         'label' => 'above',
         'settings' => array(),
@@ -385,6 +404,12 @@ function ofed_feature_team_field_default_field_instances() {
         'settings' => array(),
         'type' => 'email_default',
         'weight' => 5,
+      ),
+      'rss' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 12,
       ),
       'search_result' => array(
         'label' => 'above',
@@ -466,6 +491,13 @@ function ofed_feature_team_field_default_field_instances() {
         'settings' => array(),
         'type' => 'text_plain',
         'weight' => 2,
+      ),
+      'rss' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 1,
       ),
       'search_result' => array(
         'label' => 'hidden',
@@ -551,6 +583,12 @@ function ofed_feature_team_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 6,
       ),
+      'rss' => array(
+        'label' => 'inline',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 18,
+      ),
       'search_result' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -632,6 +670,12 @@ function ofed_feature_team_field_default_field_instances() {
         'type' => 'i18n_taxonomy_term_reference_plain',
         'weight' => 7,
       ),
+      'rss' => array(
+        'label' => 'inline',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 19,
+      ),
       'search_result' => array(
         'label' => 'inline',
         'settings' => array(),
@@ -710,6 +754,13 @@ function ofed_feature_team_field_default_field_instances() {
         'settings' => array(),
         'type' => 'text_plain',
         'weight' => 3,
+      ),
+      'rss' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 2,
       ),
       'search_result' => array(
         'label' => 'hidden',
@@ -791,6 +842,12 @@ function ofed_feature_team_field_default_field_instances() {
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 4,
+      ),
+      'rss' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 15,
       ),
       'search_result' => array(
         'label' => 'above',
@@ -884,6 +941,12 @@ function ofed_feature_team_field_default_field_instances() {
         ),
         'type' => 'image',
         'weight' => 0,
+      ),
+      'rss' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 17,
       ),
       'search_result' => array(
         'label' => 'above',
@@ -1040,6 +1103,19 @@ function ofed_feature_team_field_default_field_instances() {
         'type' => 'date_default',
         'weight' => 1,
       ),
+      'rss' => array(
+        'label' => 'inline',
+        'module' => 'date',
+        'settings' => array(
+          'format_type' => 'short',
+          'fromto' => 'both',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+        ),
+        'type' => 'date_default',
+        'weight' => 3,
+      ),
       'search_result' => array(
         'label' => 'inline',
         'module' => 'date',
@@ -1147,6 +1223,12 @@ function ofed_feature_team_field_default_field_instances() {
         ),
         'type' => 'field_collection_fields',
         'weight' => 9,
+      ),
+      'rss' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 16,
       ),
       'search_result' => array(
         'label' => 'above',
@@ -1288,6 +1370,19 @@ function ofed_feature_team_field_default_field_instances() {
         'type' => 'date_default',
         'weight' => 2,
       ),
+      'rss' => array(
+        'label' => 'inline',
+        'module' => 'date',
+        'settings' => array(
+          'format_type' => 'short',
+          'fromto' => 'both',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+        ),
+        'type' => 'date_default',
+        'weight' => 4,
+      ),
       'search_result' => array(
         'label' => 'inline',
         'module' => 'date',
@@ -1402,6 +1497,12 @@ function ofed_feature_team_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 17,
+      ),
+      'rss' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 22,
       ),
       'search_result' => array(
         'label' => 'above',

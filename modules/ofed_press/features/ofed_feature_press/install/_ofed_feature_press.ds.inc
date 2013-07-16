@@ -382,6 +382,49 @@ function ofed_feature_press_ds_field_settings_info() {
 
   $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'node|ofed_press|rss';
+  $ds_fieldsetting->entity_type = 'node';
+  $ds_fieldsetting->bundle = 'ofed_press';
+  $ds_fieldsetting->view_mode = 'rss';
+  $ds_fieldsetting->settings = array(
+    'title' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+    'node_link' => array(
+      'weight' => '4',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'link text' => 'Read more',
+        'wrapper' => '',
+        'ft' => array(
+          'classes' => 'more',
+        ),
+      ),
+    ),
+    'field_ofed_press_pubdate' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'classes' => 'clear-block',
+          'lb' => 'Published date',
+        ),
+      ),
+    ),
+    'field_ofed_press_update' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'classes' => 'clear-block',
+          'lb' => 'Update date',
+        ),
+      ),
+    ),
+  );
+  $export['node|ofed_press|rss'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
   $ds_fieldsetting->id = 'node|ofed_press|search_result';
   $ds_fieldsetting->entity_type = 'node';
   $ds_fieldsetting->bundle = 'ofed_press';
@@ -761,6 +804,43 @@ function ofed_feature_press_ds_layout_settings_info() {
     'hide_sidebars' => 0,
   );
   $export['node|ofed_press|print'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|ofed_press|rss';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'ofed_press';
+  $ds_layout->view_mode = 'rss';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'title',
+        1 => 'field_ofed_press_pubdate',
+        2 => 'field_ofed_press_update',
+        3 => 'field_ofed_press_author',
+        4 => 'node_link',
+      ),
+    ),
+    'fields' => array(
+      'title' => 'ds_content',
+      'field_ofed_press_pubdate' => 'ds_content',
+      'field_ofed_press_update' => 'ds_content',
+      'field_ofed_press_author' => 'ds_content',
+      'node_link' => 'ds_content',
+    ),
+    'classes' => array(),
+    'wrappers' => array(
+      'ds_content' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'hide_page_title' => '0',
+    'page_option_title' => '',
+    'hide_sidebars' => 0,
+  );
+  $export['node|ofed_press|rss'] = $ds_layout;
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
