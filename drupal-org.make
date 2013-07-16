@@ -168,7 +168,7 @@ projects[diff][subdir] = contrib
 projects[draggableviews][version] = "2.0"
 projects[draggableviews][subdir] = contrib 
 
-projects[ds][version] = "2.3"
+projects[ds][version] = "2.4"
 projects[ds][subdir] = contrib 
 
 projects[easy_breadcrumb][version] = "2.1"
