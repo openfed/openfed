@@ -14,6 +14,7 @@ function ofed_feature_event_user_default_permissions() {
   $permissions['create ofed_event content'] = array(
     'name' => 'create ofed_event content',
     'roles' => array(
+      'Administrator' => 'Administrator',
       'Builder' => 'Builder',
       'Configurator' => 'Configurator',
       'Content Manager' => 'Content Manager',
@@ -25,6 +26,7 @@ function ofed_feature_event_user_default_permissions() {
   $permissions['delete any ofed_event content'] = array(
     'name' => 'delete any ofed_event content',
     'roles' => array(
+      'Administrator' => 'Administrator',
       'Builder' => 'Builder',
       'Configurator' => 'Configurator',
       'Content Manager' => 'Content Manager',
@@ -36,6 +38,7 @@ function ofed_feature_event_user_default_permissions() {
   $permissions['delete own ofed_event content'] = array(
     'name' => 'delete own ofed_event content',
     'roles' => array(
+      'Administrator' => 'Administrator',
       'Builder' => 'Builder',
       'Configurator' => 'Configurator',
       'Content Manager' => 'Content Manager',
@@ -47,6 +50,7 @@ function ofed_feature_event_user_default_permissions() {
   $permissions['edit any ofed_event content'] = array(
     'name' => 'edit any ofed_event content',
     'roles' => array(
+      'Administrator' => 'Administrator',
       'Builder' => 'Builder',
       'Configurator' => 'Configurator',
       'Content Manager' => 'Content Manager',
@@ -58,6 +62,7 @@ function ofed_feature_event_user_default_permissions() {
   $permissions['edit own ofed_event content'] = array(
     'name' => 'edit own ofed_event content',
     'roles' => array(
+      'Administrator' => 'Administrator',
       'Builder' => 'Builder',
       'Configurator' => 'Configurator',
       'Content Manager' => 'Content Manager',
@@ -69,6 +74,7 @@ function ofed_feature_event_user_default_permissions() {
   $permissions['enter ofed_event revision log entry'] = array(
     'name' => 'enter ofed_event revision log entry',
     'roles' => array(
+      'Administrator' => 'Administrator',
       'Builder' => 'Builder',
       'Configurator' => 'Configurator',
       'Content Manager' => 'Content Manager',
@@ -80,6 +86,7 @@ function ofed_feature_event_user_default_permissions() {
   $permissions['override ofed_event authored by option'] = array(
     'name' => 'override ofed_event authored by option',
     'roles' => array(
+      'Administrator' => 'Administrator',
       'Builder' => 'Builder',
       'Configurator' => 'Configurator',
       'Content Manager' => 'Content Manager',
@@ -91,6 +98,7 @@ function ofed_feature_event_user_default_permissions() {
   $permissions['override ofed_event authored on option'] = array(
     'name' => 'override ofed_event authored on option',
     'roles' => array(
+      'Administrator' => 'Administrator',
       'Builder' => 'Builder',
       'Configurator' => 'Configurator',
       'Content Manager' => 'Content Manager',
@@ -102,6 +110,7 @@ function ofed_feature_event_user_default_permissions() {
   $permissions['override ofed_event promote to front page option'] = array(
     'name' => 'override ofed_event promote to front page option',
     'roles' => array(
+      'Administrator' => 'Administrator',
       'Builder' => 'Builder',
       'Configurator' => 'Configurator',
       'Content Manager' => 'Content Manager',
@@ -113,6 +122,7 @@ function ofed_feature_event_user_default_permissions() {
   $permissions['override ofed_event published option'] = array(
     'name' => 'override ofed_event published option',
     'roles' => array(
+      'Administrator' => 'Administrator',
       'Builder' => 'Builder',
       'Configurator' => 'Configurator',
       'Content Manager' => 'Content Manager',
@@ -124,6 +134,7 @@ function ofed_feature_event_user_default_permissions() {
   $permissions['override ofed_event revision option'] = array(
     'name' => 'override ofed_event revision option',
     'roles' => array(
+      'Administrator' => 'Administrator',
       'Builder' => 'Builder',
       'Configurator' => 'Configurator',
       'Content Manager' => 'Content Manager',
@@ -135,6 +146,7 @@ function ofed_feature_event_user_default_permissions() {
   $permissions['override ofed_event sticky option'] = array(
     'name' => 'override ofed_event sticky option',
     'roles' => array(
+      'Administrator' => 'Administrator',
       'Builder' => 'Builder',
       'Configurator' => 'Configurator',
       'Content Manager' => 'Content Manager',

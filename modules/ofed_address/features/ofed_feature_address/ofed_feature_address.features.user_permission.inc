@@ -14,6 +14,7 @@ function ofed_feature_address_user_default_permissions() {
   $permissions['create ofed_address content'] = array(
     'name' => 'create ofed_address content',
     'roles' => array(
+      'Administrator' => 'Administrator',
       'Builder' => 'Builder',
       'Configurator' => 'Configurator',
       'Content Manager' => 'Content Manager',
@@ -25,6 +26,7 @@ function ofed_feature_address_user_default_permissions() {
   $permissions['delete any ofed_address content'] = array(
     'name' => 'delete any ofed_address content',
     'roles' => array(
+      'Administrator' => 'Administrator',
       'Builder' => 'Builder',
       'Configurator' => 'Configurator',
       'Content Manager' => 'Content Manager',
@@ -36,6 +38,7 @@ function ofed_feature_address_user_default_permissions() {
   $permissions['delete own ofed_address content'] = array(
     'name' => 'delete own ofed_address content',
     'roles' => array(
+      'Administrator' => 'Administrator',
       'Builder' => 'Builder',
       'Configurator' => 'Configurator',
       'Content Manager' => 'Content Manager',
@@ -47,6 +50,7 @@ function ofed_feature_address_user_default_permissions() {
   $permissions['edit any ofed_address content'] = array(
     'name' => 'edit any ofed_address content',
     'roles' => array(
+      'Administrator' => 'Administrator',
       'Builder' => 'Builder',
       'Configurator' => 'Configurator',
       'Content Manager' => 'Content Manager',
@@ -58,6 +62,7 @@ function ofed_feature_address_user_default_permissions() {
   $permissions['edit own ofed_address content'] = array(
     'name' => 'edit own ofed_address content',
     'roles' => array(
+      'Administrator' => 'Administrator',
       'Builder' => 'Builder',
       'Configurator' => 'Configurator',
       'Content Manager' => 'Content Manager',

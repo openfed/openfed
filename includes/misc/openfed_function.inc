@@ -421,40 +421,12 @@ function _openfed_return_permission_builder() {
     'view own unpublished content' => TRUE,
     'view revisions' => TRUE,
     'revert revisions' => TRUE,
-    // CT: Download
-    'create ofed_download content' => TRUE,
-    'edit own ofed_download content' => TRUE,
-    'edit any ofed_download content' => TRUE,
-    'delete own ofed_download content' => TRUE,
-    'delete any ofed_download content' => TRUE,
-    // CT: Page
-    'create ofed_page content' => TRUE,
-    'edit own ofed_page content' => TRUE,
-    'edit any ofed_page content' => TRUE,
-    'delete own ofed_page content' => TRUE,
-    'delete any ofed_page content' => TRUE,
     // CT: Webform
     'create webform content' => TRUE,
     'edit own webform content' => TRUE,
     'edit any webform content' => TRUE,
     'delete own webform content' => TRUE,
     // Override node options
-    // CT: Download
-    'override ofed_download published option' => TRUE,
-    'override ofed_download promote to front page option' => TRUE,
-    'override ofed_download sticky option' => TRUE,
-    'override ofed_download revision option' => TRUE,
-    'enter ofed_download revision log entry' => TRUE,
-    'override ofed_download authored on option' => TRUE,
-    'override ofed_download authored by option' => TRUE,
-    // CT: Page
-    'override ofed_page published option' => TRUE,
-    'override ofed_page promote to front page option' => TRUE,
-    'override ofed_page sticky option' => TRUE,
-    'override ofed_page revision option' => TRUE,
-    'enter ofed_page revision log entry' => TRUE,
-    'override ofed_page authored on option' => TRUE,
-    'override ofed_page authored by option' => TRUE,
     // CT: Webform
     'override webform published option' => TRUE,
     'override webform promote to front page option' => TRUE,
@@ -633,40 +605,12 @@ function _openfed_return_permission_configurator() {
     'view own unpublished content' => TRUE,
     'view revisions' => TRUE,
     'revert revisions' => TRUE,
-    // CT: Download
-    'create ofed_download content' => TRUE,
-    'edit own ofed_download content' => TRUE,
-    'edit any ofed_download content' => TRUE,
-    'delete own ofed_download content' => TRUE,
-    'delete any ofed_download content' => TRUE,
-    // CT: Page
-    'create ofed_page content' => TRUE,
-    'edit own ofed_page content' => TRUE,
-    'edit any ofed_page content' => TRUE,
-    'delete own ofed_page content' => TRUE,
-    'delete any ofed_page content' => TRUE,
     // CT: Webform
     'create webform content' => TRUE,
     'edit own webform content' => TRUE,
     'edit any webform content' => TRUE,
     'delete own webform content' => TRUE,
     // Override node options
-    // CT: Download
-    'override ofed_download published option' => TRUE,
-    'override ofed_download promote to front page option' => TRUE,
-    'override ofed_download sticky option' => TRUE,
-    'override ofed_download revision option' => TRUE,
-    'enter ofed_download revision log entry' => TRUE,
-    'override ofed_download authored on option' => TRUE,
-    'override ofed_download authored by option' => TRUE,
-    // CT: Page
-    'override ofed_page published option' => TRUE,
-    'override ofed_page promote to front page option' => TRUE,
-    'override ofed_page sticky option' => TRUE,
-    'override ofed_page revision option' => TRUE,
-    'enter ofed_page revision log entry' => TRUE,
-    'override ofed_page authored on option' => TRUE,
-    'override ofed_page authored by option' => TRUE,
     // CT: Webform
     'override webform published option' => TRUE,
     'override webform promote to front page option' => TRUE,
@@ -794,38 +738,12 @@ function _openfed_return_permission_content_manager() {
     'view own unpublished content' => TRUE,
     'view revisions' => TRUE,
     'revert revisions' => TRUE,
-    // CT: Download
-    'create ofed_download content' => TRUE,
-    'edit own ofed_download content' => TRUE,
-    'edit any ofed_download content' => TRUE,
-    'delete own ofed_download content' => TRUE,
-    'delete any ofed_download content' => TRUE,
-    // CT: Page
-    'create ofed_page content' => TRUE,
-    'edit own ofed_page content' => TRUE,
-    'edit any ofed_page content' => TRUE,
-    'delete own ofed_page content' => TRUE,
-    'delete any ofed_page content' => TRUE,
     // CT: Webform
     'create webform content' => TRUE,
     'edit own webform content' => TRUE,
     'edit any webform content' => TRUE,
     'delete own webform content' => TRUE,
     // Override node options
-    // CT: Download
-    'override ofed_download published option' => TRUE,
-    'override ofed_download promote to front page option' => TRUE,
-    'override ofed_download sticky option' => TRUE,
-    'override ofed_download revision option' => TRUE,
-    'enter ofed_download revision log entry' => TRUE,
-    'override ofed_download authored on option' => TRUE,
-    // CT: Page
-    'override ofed_page published option' => TRUE,
-    'override ofed_page promote to front page option' => TRUE,
-    'override ofed_page sticky option' => TRUE,
-    'override ofed_page revision option' => TRUE,
-    'enter ofed_page revision log entry' => TRUE,
-    'override ofed_page authored on option' => TRUE,
     // CT: Webform
     'override webform published option' => TRUE,
     'override webform promote to front page option' => TRUE,
@@ -1111,15 +1029,15 @@ function theme_form_element_checkbox_list($variables) {
   if (!empty($element['#attributes']['disabled'])) {
     $attributes['class'][] = 'form-disabled';
   }
-  
+
   $output = '';
 //  $output = '<div' . drupal_attributes($attributes) . '>' . "\n";
-  
+
   // If #title is not set, we don't display any label or required marker.
   if (!isset($element['#title'])) {
     $element['#title_display'] = 'none';
   }
-  
+
   $prefix = '';
   $suffix = '';
 //  $prefix = isset($element['#field_prefix']) ? '<span class="field-prefix">' . $element['#field_prefix'] . '</span> ' : '';

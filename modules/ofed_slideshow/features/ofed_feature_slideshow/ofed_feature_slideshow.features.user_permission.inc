@@ -14,6 +14,7 @@ function ofed_feature_slideshow_user_default_permissions() {
   $permissions['create ofed_slideshow content'] = array(
     'name' => 'create ofed_slideshow content',
     'roles' => array(
+      'Administrator' => 'Administrator',
       'Builder' => 'Builder',
       'Configurator' => 'Configurator',
     ),
@@ -24,6 +25,7 @@ function ofed_feature_slideshow_user_default_permissions() {
   $permissions['delete any ofed_slideshow content'] = array(
     'name' => 'delete any ofed_slideshow content',
     'roles' => array(
+      'Administrator' => 'Administrator',
       'Builder' => 'Builder',
       'Configurator' => 'Configurator',
     ),
@@ -34,6 +36,7 @@ function ofed_feature_slideshow_user_default_permissions() {
   $permissions['delete own ofed_slideshow content'] = array(
     'name' => 'delete own ofed_slideshow content',
     'roles' => array(
+      'Administrator' => 'Administrator',
       'Builder' => 'Builder',
       'Configurator' => 'Configurator',
     ),
@@ -44,6 +47,7 @@ function ofed_feature_slideshow_user_default_permissions() {
   $permissions['edit any ofed_slideshow content'] = array(
     'name' => 'edit any ofed_slideshow content',
     'roles' => array(
+      'Administrator' => 'Administrator',
       'Builder' => 'Builder',
       'Configurator' => 'Configurator',
       'Content Manager' => 'Content Manager',
@@ -55,6 +59,7 @@ function ofed_feature_slideshow_user_default_permissions() {
   $permissions['edit own ofed_slideshow content'] = array(
     'name' => 'edit own ofed_slideshow content',
     'roles' => array(
+      'Administrator' => 'Administrator',
       'Builder' => 'Builder',
       'Configurator' => 'Configurator',
     ),
@@ -65,6 +70,7 @@ function ofed_feature_slideshow_user_default_permissions() {
   $permissions['enter ofed_slideshow revision log entry'] = array(
     'name' => 'enter ofed_slideshow revision log entry',
     'roles' => array(
+      'Administrator' => 'Administrator',
       'Builder' => 'Builder',
       'Configurator' => 'Configurator',
       'Content Manager' => 'Content Manager',
@@ -76,6 +82,7 @@ function ofed_feature_slideshow_user_default_permissions() {
   $permissions['override ofed_slideshow authored by option'] = array(
     'name' => 'override ofed_slideshow authored by option',
     'roles' => array(
+      'Administrator' => 'Administrator',
       'Builder' => 'Builder',
       'Configurator' => 'Configurator',
       'Content Manager' => 'Content Manager',
@@ -87,6 +94,7 @@ function ofed_feature_slideshow_user_default_permissions() {
   $permissions['override ofed_slideshow authored on option'] = array(
     'name' => 'override ofed_slideshow authored on option',
     'roles' => array(
+      'Administrator' => 'Administrator',
       'Builder' => 'Builder',
       'Configurator' => 'Configurator',
       'Content Manager' => 'Content Manager',
@@ -98,6 +106,7 @@ function ofed_feature_slideshow_user_default_permissions() {
   $permissions['override ofed_slideshow promote to front page option'] = array(
     'name' => 'override ofed_slideshow promote to front page option',
     'roles' => array(
+      'Administrator' => 'Administrator',
       'Builder' => 'Builder',
       'Configurator' => 'Configurator',
       'Content Manager' => 'Content Manager',
@@ -109,6 +118,7 @@ function ofed_feature_slideshow_user_default_permissions() {
   $permissions['override ofed_slideshow published option'] = array(
     'name' => 'override ofed_slideshow published option',
     'roles' => array(
+      'Administrator' => 'Administrator',
       'Builder' => 'Builder',
       'Configurator' => 'Configurator',
       'Content Manager' => 'Content Manager',
@@ -120,6 +130,7 @@ function ofed_feature_slideshow_user_default_permissions() {
   $permissions['override ofed_slideshow revision option'] = array(
     'name' => 'override ofed_slideshow revision option',
     'roles' => array(
+      'Administrator' => 'Administrator',
       'Builder' => 'Builder',
       'Configurator' => 'Configurator',
       'Content Manager' => 'Content Manager',
@@ -131,6 +142,7 @@ function ofed_feature_slideshow_user_default_permissions() {
   $permissions['override ofed_slideshow sticky option'] = array(
     'name' => 'override ofed_slideshow sticky option',
     'roles' => array(
+      'Administrator' => 'Administrator',
       'Builder' => 'Builder',
       'Configurator' => 'Configurator',
       'Content Manager' => 'Content Manager',
