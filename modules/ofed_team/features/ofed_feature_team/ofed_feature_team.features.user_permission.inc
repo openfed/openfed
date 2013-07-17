@@ -142,5 +142,17 @@ function ofed_feature_team_user_default_permissions() {
     'module' => 'override_node_options',
   );
 
+  // Exported permission: override ofed_team sticky option.
+  $permissions['override ofed_team sticky option'] = array(
+    'name' => 'override ofed_team sticky option',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+      'Builder' => 'Builder',
+      'Configurator' => 'Configurator',
+      'Content Manager' => 'Content Manager',
+    ),
+    'module' => 'override_node_options',
+  );
+
   return $permissions;
 }
