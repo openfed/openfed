@@ -13,17 +13,21 @@ No date yet - No version number yet
     #2040787: Missing news items in view "content", visible via StartPage "Show news"
     #2019409: Module upgrade: ds
     #2039605: Role permissions are not applied when activating a content type/feature after initial setup
-		# Others : 
+    # Others :
       - Add the module and the feature who setup the Apache Solr for OpenFed (experimental).
       - Disable unused display suite view modes for news, download, page, photogallery, press, slideshow.
       - Restore the RSS view mode.
       - Add the missing metatags entries in .info files
 
+  * Patches:
+    Contrib
+      - view_unpublished: #1192074: Respect View_Unpublished permissions on the Content overview page
+
 
 1 July 2013 - 1.0-beta2
 -----------------------
 
-  * Issues: 
+  * Issues:
     # 2028635: Install process does not display the OpenFed maintenance theme
     # 2029663: Remove CMS menu install in banner feature
     # 2032039: Remove CMS menu install in job feature
@@ -43,34 +47,34 @@ No date yet - No version number yet
     # 2029647: Missing paths alias, paths warning or wrong path alias patterns - Slideshow
     # 2029657: Missing paths alias, paths warning or wrong path alias patterns - Photo gallery
     # 2029641: Missing paths alias, paths warning or wrong path alias patterns - Page
-    # Others : 
+    # Others :
       - Solve spelling mistake
 
 
 24 June 2013 - Version 1.0-beta1
 --------------------------------
 
-  * Issues: 
+  * Issues:
     # 2023615: Installation hangs, modules at 97%, memory requirement up to 320M
     # 2022283: Wysiwyg missing in the body field of the meeting content type
     # 2024019: Remove Wysiwyg from the job summary field
     # 2022293: Download fields not multiple in the job content type
     # 2023909: Add patch numbers in make file
-		# 1970398: Code creep: functionalities screen
-		# 2026573: Move menu_dam to separate project
-		# 2026365: Move maintenance theme to separate project
-		# 2026363: Move cms_theme to separate project
-		# 2025423: Don't include maintenance_theme_selector
+    # 1970398: Code creep: functionalities screen
+    # 2026573: Move menu_dam to separate project
+    # 2026365: Move maintenance theme to separate project
+    # 2026363: Move cms_theme to separate project
+    # 2025423: Don't include maintenance_theme_selector
 
 
 19 June 2013 - Version 0.9
 --------------------------
 
-  * Issues: 
+  * Issues:
     # 2022237: Remove Panels modules
     # 1959850: Move addemar to separate module
-		# 1968946: Memory requirements
-    # Others : 
+    # 1968946: Memory requirements
+    # Others :
       - Moved modules are now in the contrib subdir instead of openfed
       - Checking / Changing the name of the solution by the correct spelling (OpenFed)
 
@@ -129,7 +133,7 @@ No date yet - No version number yet
   * Modules updated:
       Contrib
         - views (3.7)
-        - features (2.0-rc1) 
+        - features (2.0-rc1)
         - securelogin (2.5)
         - backup_migrate (2.7)
         - performance (2.0-beta1)
@@ -142,13 +146,13 @@ No date yet - No version number yet
         - colorbox (2.4)
         - ckeditor (1.13)
 
-  * Modules removed: 
+  * Modules removed:
       Custom
         - ofed (1.0)
         - ofed_pagemodel (1.0), renamed by ofed_vmcd
 
   * Themes updated:
-      Custom 
+      Custom
         - nerra: update the nerra_button function to generate the buttons class correctly
 
   * Patches:
@@ -165,12 +169,12 @@ No date yet - No version number yet
 -------------
   * Modules updated:
     Custom
-      - addemar_subscription: Multiple newsletters now available 
+      - addemar_subscription: Multiple newsletters now available
 
 
 07 April 2013
 -------------
-  
+
   * Issues:
     #1977862: Module upgrade: content_access
     #1977858: Module upgrade: mollom
@@ -179,7 +183,7 @@ No date yet - No version number yet
     #1970480: Remove content type bar
     #1943270: Installation warning: file_put_contents permission denied
     Fixing issues relative to an internal document.
-    
+
   * Modules updated:
       Contrib
         - content_access (1.2-beta2)
@@ -192,14 +196,14 @@ No date yet - No version number yet
 
 22 April 2013
 -------------
-  
+
   * Issues:
     Fixing issues relative to an internal document.
 
 
 09 April 2013
 -------------
-  
+
   * Issues:
     #1958960: Module upgrade: rules
     #1958962: Module upgrade: views
@@ -208,7 +212,7 @@ No date yet - No version number yet
   * Features:
     - ofed_slider added
     - ofed_quiz added
-    
+
   * Modules updated:
       Contrib
         - rules (2.3)
@@ -264,7 +268,7 @@ No date yet - No version number yet
         - token (1.5)
         - link (1.1)
         - linkchecker (1.1)
-        - media (1.3)  
+        - media (1.3)
         - features (2.0-beta1)
         - weight (2.2)
         - robotstxt (1.1)
@@ -284,7 +288,7 @@ No date yet - No version number yet
   * Patches:
       Contrib
         - quiz: patch added to avoid: warning: preg_match(): no ending delimiter '.' found in file_scan_directory()
-        - metatag: patch added to avoid: Theme key "metatag_twitter_cards" not found.  
+        - metatag: patch added to avoid: Theme key "metatag_twitter_cards" not found.
 
 
 28 February 2013
@@ -298,7 +302,7 @@ No date yet - No version number yet
   * Features updated:
     - rename the feature ofed_new to ofed_news
     - manage sticky in all content types views
-    
+
   * Config added:
     - sharethis
     - force the openfed install profile to check php_memory_limit to have at least 256M
@@ -351,7 +355,7 @@ No date yet - No version number yet
   * Content:
     - add default contact webform for each language if activated
     - add default menu_block for submenu for each language if activated
-    
+
   * Features:
     - add a path alias for French or Dutch if enabled
     - change display of date field: every content type featured used date_only except news that show short date
@@ -409,7 +413,7 @@ No date yet - No version number yet
   #1852784: Installation screen: Setup functionalities not accessible with keyboard ?
   #1852934: Maintenance theme: image not found
 
- * Modules updated: 
+ * Modules updated:
     - linkchecker (1.0)
 
  * Modules added:
@@ -452,7 +456,7 @@ No date yet - No version number yet
     - sweaver (1.3)
     - colorbox
     - field_slideshow
-    
+
  * Modules updated:
     - countries (2.1)
     - diff (3.2)
@@ -472,18 +476,18 @@ No date yet - No version number yet
     - Create a default Builder user
     - search_config
 
-* Modules remove: 
+* Modules remove:
     - better_formats
 
 
 21 november 2012
 ----------------
- * Issues: 
+ * Issues:
     #1837894: Library update: ckeditor
     #1838178: Missing module: ckeditor
 
  * Drupal updated to 7.17
- * Modules updated: 
+ * Modules updated:
     - ds (2.0)
     - email (1.2)
     - flag (2.0)
@@ -495,7 +499,7 @@ No date yet - No version number yet
     - token (1.4)
     - views (3.5)
 
- * Modules added: 
+ * Modules added:
     - better_formats
     - draggableviews
     - lexicon
