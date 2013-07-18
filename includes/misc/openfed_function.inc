@@ -182,7 +182,7 @@ function _openfed_return_functionalities_list() {
   $modules = drupal_get_path('profile', 'openfed') . '/assets/images/modules.png';
 
   $function_list = array(
-    // Content types
+    // Content types.
     'ofed_address' => array(
       'title' => st('Address'),
       'picture' => $features,
@@ -244,8 +244,7 @@ function _openfed_return_functionalities_list() {
       'description' => st('Enables the creation of team members.'),
     ),
 
-
-    // Modules
+    // Modules.
     'poll' => array(
       'title' => st('Poll'),
       'picture' => $modules,
@@ -310,11 +309,6 @@ function _openfed_return_functionalities_list() {
       'title' => st('Role delegation'),
       'picture' => $modules,
       'description' => st('Allows site administrators to grant some roles the authority to assign selected roles to users.'),
-    ),
-    'securelogin' => array(
-      'title' => st('Secure login'),
-      'picture' => $modules,
-      'description' => st('Enables secure login.'),
     ),
   );
   return $function_list;
@@ -854,15 +848,6 @@ function _openfed_return_permission_authenticated_user() {
     'access news feeds' => TRUE,
     // Display Suite Extras
     'view ds_flag_bookmarks on node' => TRUE,
-//     'view anchor on node' => TRUE,
-//     'view file_name on node' => TRUE,
-//     'view file_reference on node' => TRUE,
-//     'view file_size on node' => TRUE,
-//     'view file_type on node' => TRUE,
-//     'view file_url_open on node' => TRUE,
-//     'view file_url_persistent on node' => TRUE,
-//     'view top_of_page on node' => TRUE,
-//     'view url_file_save on node' => TRUE,
     'view title on node' => TRUE,
     'view links on node' => TRUE,
     'view node_link on node' => TRUE,
@@ -907,15 +892,6 @@ function _openfed_return_permission_anonymous_user() {
     'access news feeds' => TRUE,
     // Display Suite Extras
     'view ds_flag_bookmarks on node' => TRUE,
-//     'view anchor on node' => TRUE,
-//     'view file_name on node' => TRUE,
-//     'view file_reference on node' => TRUE,
-//     'view file_size on node' => TRUE,
-//     'view file_type on node' => TRUE,
-//     'view file_url_open on node' => TRUE,
-//     'view file_url_persistent on node' => TRUE,
-//     'view top_of_page on node' => TRUE,
-//     'view url_file_save on node' => TRUE,
     'view title on node' => TRUE,
     'view links on node' => TRUE,
     'view node_link on node' => TRUE,
@@ -1031,7 +1007,6 @@ function theme_form_element_checkbox_list($variables) {
   }
 
   $output = '';
-//  $output = '<div' . drupal_attributes($attributes) . '>' . "\n";
 
   // If #title is not set, we don't display any label or required marker.
   if (!isset($element['#title'])) {
@@ -1040,8 +1015,6 @@ function theme_form_element_checkbox_list($variables) {
 
   $prefix = '';
   $suffix = '';
-//  $prefix = isset($element['#field_prefix']) ? '<span class="field-prefix">' . $element['#field_prefix'] . '</span> ' : '';
-//  $suffix = isset($element['#field_suffix']) ? ' <span class="field-suffix">' . $element['#field_suffix'] . '</span>' : '';
 
   switch ($element['#title_display']) {
     case 'before':
@@ -1065,15 +1038,6 @@ function theme_form_element_checkbox_list($variables) {
   if (!empty($element['#description'])) {
     $output .= '<div class="description">' . $element['#description'] . "</div>\n";
   }
-//  // Manage the new variable
-//  if (!empty($element['#full_description'])) {
-//    $output .= '<div class="full-description">' . $element['#full_description'] . "</div>\n";
-//  }
-//  if (!empty($element['#picture'])) {
-//    $output .= '<div class="picture">' . theme('image', array('path' => $element['#picture'])) . "</div>\n";
-//  }
-
-  //$output .= "</div>\n";
 
   return $output;
 }

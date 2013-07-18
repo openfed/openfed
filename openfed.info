@@ -153,6 +153,7 @@ version = "7.x-1.0"
     dependencies[] = rules_admin
   ; Security
     dependencies[] = seckit
+    dependencies[] = securelogin
   ; Seo
     dependencies[] = page_title
   ; Sharing
