@@ -21,6 +21,7 @@ No date yet - No version number yet
       - Add the missing metatags entries in .info files
 			- Add (during install process) the correct file path for temporary files folder.
 			- Add (during install process) the correct file path for public files folder.
+			- Set 25 items / pages for the "page list" and cms "views".
 
   * Patches:
     Contrib
