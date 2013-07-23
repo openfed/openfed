@@ -15,7 +15,16 @@ No date yet - No version number yet
     #2039605: Role permissions are not applied when activating a content type/feature after initial setup
     #2036965: Enable secure login by default
     #2028655: Remove Sweaver module
-    # Others : 
+    #2048439: Module upgrade : easy_breadcrumb
+    #2048441: Module upgrade : libraries
+    #2048447: Module upgrade : Mollom
+    #2044787: Module upgrade: apachesolr_multilingual
+    #2022211: Module upgrade: elements
+    #2022225: Module upgrade: entity
+    #2044793: Module upgrade: i18n
+    #2022221: Module upgrade: imagecache_actions
+    #2022209: Module upgrade: webform
+    # Others :
       - Add the module and the feature who setup the Apache Solr for OpenFed (experimental).
       - Disable unused display suite view modes for news, download, page, photogallery, press, slideshow.
       - Restore the RSS view mode.
@@ -23,6 +32,18 @@ No date yet - No version number yet
       - Add (during install process) the correct file path for temporary files folder.
       - Add (during install process) the correct file path for public files folder.
       - Set 25 items / pages for the "page list" and cms "views".
+
+   Modules updated:
+      Contrib
+        - Apache Solr Multilingual (1.0-beta2)
+        - Easy Breadcrumb (2.7)
+        - Elements (1.4)
+        - Entity API (1.1)
+        - i18n (1.9)
+        - Imagecache actions (1.3)
+        - Libraries (2.1)
+        - Mollom (2.7)
+        - Webform (3.19)
 
   * Patches:
     Contrib
