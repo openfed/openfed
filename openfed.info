@@ -164,7 +164,6 @@ version = "7.x-1.0"
     dependencies[] = ckeditor_link
     dependencies[] = extlink
     dependencies[] = jquery_plugin
-    dependencies[] = sweaver
   ; Variable
     dependencies[] = variable
     dependencies[] = variable_views

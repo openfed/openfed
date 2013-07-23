@@ -470,9 +470,6 @@ function _openfed_return_permission_builder() {
     'translate admin strings' => TRUE,
     // Stylizer
     'administer stylizer' => TRUE,
-    // Sweaver
-    'configure sweaver' => TRUE,
-    'use editor' => TRUE,
     // System
     'administer actions' => TRUE,
     'access administration pages' => TRUE,
@@ -655,9 +652,6 @@ function _openfed_return_permission_configurator() {
     'translate admin strings' => TRUE,
     // Stylizer
     'administer stylizer' => TRUE,
-    // Sweaver
-    'configure sweaver' => TRUE,
-    'use editor' => TRUE,
     // System
     'administer actions' => TRUE,
     'access administration pages' => TRUE,

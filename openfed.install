@@ -92,9 +92,6 @@ function openfed_install() {
   // Secure login
   require_once('includes/install/openfed_securelogin.inc');
 
-  // Sweaver
-  require_once('includes/install/openfed_sweaver.inc');
-
   // Text Resize.
   require_once('includes/install/openfed_text_resize.inc');
 

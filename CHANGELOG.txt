@@ -13,20 +13,20 @@ No date yet - No version number yet
     #2040787: Missing news items in view "content", visible via StartPage "Show news"
     #2019409: Module upgrade: ds
     #2039605: Role permissions are not applied when activating a content type/feature after initial setup
-		#2036965: Enable secure login by default
-		# Others : 
+    #2036965: Enable secure login by default
+    #2028655: Remove Sweaver module
+    # Others : 
       - Add the module and the feature who setup the Apache Solr for OpenFed (experimental).
       - Disable unused display suite view modes for news, download, page, photogallery, press, slideshow.
       - Restore the RSS view mode.
       - Add the missing metatags entries in .info files
-			- Add (during install process) the correct file path for temporary files folder.
-			- Add (during install process) the correct file path for public files folder.
-			- Set 25 items / pages for the "page list" and cms "views".
+      - Add (during install process) the correct file path for temporary files folder.
+      - Add (during install process) the correct file path for public files folder.
+      - Set 25 items / pages for the "page list" and cms "views".
 
   * Patches:
     Contrib
       - view_unpublished: #1192074: Respect View_Unpublished permissions on the Content overview page
-
 
 1 July 2013 - 1.0-beta2
 -----------------------
@@ -54,7 +54,6 @@ No date yet - No version number yet
     # Others :
       - Solve spelling mistake
 
-
 24 June 2013 - Version 1.0-beta1
 --------------------------------
 
@@ -70,7 +69,6 @@ No date yet - No version number yet
     # 2026363: Move cms_theme to separate project
     # 2025423: Don't include maintenance_theme_selector
 
-
 19 June 2013 - Version 0.9
 --------------------------
 
@@ -82,7 +80,6 @@ No date yet - No version number yet
       - Moved modules are now in the contrib subdir instead of openfed
       - Checking / Changing the name of the solution by the correct spelling (OpenFed)
 
-
 17 June 2013
 ------------
 
@@ -93,7 +90,6 @@ No date yet - No version number yet
     # 2021323: Move ofed_vmcd to separate project
     # 2021331: Move maintenance-selector to new project
     # 1983050: Move nerra theme
-
 
 07 June 2013
 ------------
@@ -168,13 +164,11 @@ No date yet - No version number yet
               - Fix issue with long answer
               - Fix issue with undefined index
 
-
 13 April 2013
 -------------
   * Modules updated:
     Custom
       - addemar_subscription: Multiple newsletters now available
-
 
 07 April 2013
 -------------
@@ -197,13 +191,11 @@ No date yet - No version number yet
       Contrib
         - logintoboggan: patch added to fix the password length issue
 
-
 22 April 2013
 -------------
 
   * Issues:
     Fixing issues relative to an internal document.
-
 
 09 April 2013
 -------------
@@ -238,7 +230,6 @@ No date yet - No version number yet
 
 13 March 2013
 -------------
-
   * Drupal updated to 7.21
 
   * Issues:
@@ -294,7 +285,6 @@ No date yet - No version number yet
         - quiz: patch added to avoid: warning: preg_match(): no ending delimiter '.' found in file_scan_directory()
         - metatag: patch added to avoid: Theme key "metatag_twitter_cards" not found.
 
-
 28 February 2013
 ----------------
 
@@ -337,7 +327,6 @@ No date yet - No version number yet
         - Ctools: ctools fix warning message
         - Features: features static caches
         - Scheduler: more integration options
-
 
 31 January 2013
 ---------------
@@ -387,7 +376,6 @@ No date yet - No version number yet
   * Themes:
     - Change inclusion of scripts and styles
 
-
 21 January 2013
 ---------------
 
@@ -400,7 +388,6 @@ No date yet - No version number yet
   * Modules updated:
     - patch added for text_resize
 
-
 11 January 2013
 ---------------
 
@@ -408,7 +395,6 @@ No date yet - No version number yet
     #1885012: Core update: Drupal 7.18
     #1885022: Library update: ckeditor
     #1885124: Error: Column 'module' cannot be null
-
 
 09 January 2013
 ---------------
@@ -443,7 +429,6 @@ No date yet - No version number yet
     - cms_theme
       - Breadcrumb region added
       - Theming for system page
-
 
 28 november 2012
 ----------------
@@ -482,7 +467,6 @@ No date yet - No version number yet
 
 * Modules remove:
     - better_formats
-
 
 21 november 2012
 ----------------
@@ -537,7 +521,6 @@ No date yet - No version number yet
     - search_config
     - site_map
     - views
-
 
 9 november 2012
 ---------------

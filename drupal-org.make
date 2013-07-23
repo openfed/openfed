@@ -402,9 +402,6 @@ projects[special_menu_items][subdir] = contrib
 projects[strongarm][version] = "2.0"
 projects[strongarm][subdir] = contrib
 
-projects[sweaver][version] = "1.3"
-projects[sweaver][subdir] = contrib
-
 projects[table_altrow][version] = "1.2"
 projects[table_altrow][subdir] = contrib
 
