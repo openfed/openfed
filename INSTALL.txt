@@ -1,4 +1,3 @@
-
 CONTENTS OF THIS FILE
 ---------------------
 
@@ -11,20 +10,18 @@ REQUIREMENTS AND NOTES
 
 Openfed requires:
 
-- PHP 5.3.5 (or greater) (http://www.php.net/).
+- PHP 5.3.5 (or greater) (http://www.php.net).
 - A PHP memory_limit set to 320M (or higher)
 - A PHP max_input_vars set to 5000 (or higher)
 - Drush 5.x or higher
 
 For further information see Drupal's INSTALL.txt file.
 
-
 OPTIONAL SERVER REQUIREMENTS
 ----------------------------
 
 - If you want to use OpenFed's Addemar integration, you will have to enable 
   SOAP on your webserver.
-
 
 INSTALLATION
 ------------
