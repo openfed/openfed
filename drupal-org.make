@@ -379,7 +379,7 @@ projects[seckit][subdir] = contrib
 
 projects[securelogin][version] = "1.4"
 projects[securelogin][subdir] = contrib
-projects[securelogin][patch][2044839] = "https://drupal.org/files/securelogin-access_denied_during_install_process_when_installed_with_profile-2044839-0.patch"
+;projects[securelogin][patch][2044839] = "https://drupal.org/files/securelogin-access_denied_during_install_process_when_installed_with_profile-2044839-0.patch"
 
 projects[security_review][version] = "1.0"
 projects[security_review][subdir] = contrib
