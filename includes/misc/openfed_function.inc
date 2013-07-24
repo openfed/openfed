@@ -82,10 +82,14 @@ function _openfed_set_block_into_region($module_name, $delta_name, $region_name)
     'cache' => -1,
   );
 
-  $exist = db_query(
-    'SELECT * FROM {block} WHERE module = :module AND delta = :delta AND theme = :theme', array(':module' => $block['module'], ':delta' => $block['delta'], ':theme' => $block['theme'])
-    )
+  $exist = db_select('block', 'b')
+    ->fields('b')
+    ->condition('module', $block['module'])
+    ->condition('delta', $block['delta'])
+    ->condition('theme', $block['theme'])
+    ->execute()
     ->fetchObject();
+
   if (empty($exist)) {
     $query = db_insert('block')
       ->fields($block);
