@@ -1,8 +1,9 @@
 CHANGELOG
 =========
 
-24 July 2013 - 1.0-beta3
-------------------------
+24 July 2013 - Version 7.x-1.0-beta3
+------------------------------------
+
   * Issues:
     #2032879: Incorrect profile number in the .make file
     #2029647: Missing paths alias, paths warning or wrong path alias patterns - Slideshow
@@ -50,8 +51,8 @@ CHANGELOG
     Contrib
       - view_unpublished: #1192074: Respect View_Unpublished permissions on the Content overview page
 
-1 July 2013 - 1.0-beta2
------------------------
+1 July 2013 - Version 7.x-1.0-beta2
+-----------------------------------
 
   * Issues:
     # 2028635: Install process does not display the OpenFed maintenance theme
@@ -76,8 +77,8 @@ CHANGELOG
     # Others :
       - Solve spelling mistake
 
-24 June 2013 - Version 1.0-beta1
---------------------------------
+24 June 2013 - Version 7.x-1.0-beta1
+------------------------------------
 
   * Issues:
     # 2023615: Installation hangs, modules at 97%, memory requirement up to 320M
@@ -91,8 +92,8 @@ CHANGELOG
     # 2026363: Move cms_theme to separate project
     # 2025423: Don't include maintenance_theme_selector
 
-19 June 2013 - Version 0.9
---------------------------
+19 June 2013 - Version 7.x-0.9
+------------------------------
 
   * Issues:
     # 2022237: Remove Panels modules
