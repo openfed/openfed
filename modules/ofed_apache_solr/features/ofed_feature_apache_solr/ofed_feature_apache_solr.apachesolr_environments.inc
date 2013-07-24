@@ -13,8 +13,8 @@ function ofed_feature_apache_solr_apachesolr_environments() {
   $environment = new stdClass();
   $environment->api_version = 1;
   $environment->env_id = 'solr';
-  $environment->name = 'localhost server';
-  $environment->url = 'http://localhost:8983/solr';
+  $environment->name = 'Main server';
+  $environment->url = 'http://hostname:port/solr/corename';
   $environment->service_class = '';
   $environment->conf = array(
     'apachesolr_index_last' => array(),
