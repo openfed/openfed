@@ -6,7 +6,7 @@ No date yet - No version number yet
 
   * Issues:
     #2027615: Page title: user_cancel warning
-	#2048401: Installer: use db_select in openfed_blocks.inc
+    #2048401: Installer: use db_select in openfed_blocks.inc
     # Others:
       - Make use of Drupal Database API instead of db_query across the distribution (related to #2048401)
 
