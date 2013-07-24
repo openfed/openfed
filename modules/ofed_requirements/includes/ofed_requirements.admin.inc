@@ -215,7 +215,11 @@ function ofed_requirements_admin_requirements_notes_reset_confirm() {
  */
 function ofed_requirements_admin_requirements_notes_reset_confirm_submit($form, &$form_state) {
   // Get all variables used for remarks and erase it.
-  $result = db_query("SELECT name FROM {variable} WHERE name LIKE 'ofed_requirements_remarks_%'");
+  $result = db_select('variable', 'v')
+    ->fields('v', array('name'))
+    ->condition('name', 'ofed_requirements_remarks_%', 'LIKE')
+    ->execute();
+
   foreach ($result as $record) {
     variable_set($record->name, '');
   }

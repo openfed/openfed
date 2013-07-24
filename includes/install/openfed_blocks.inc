@@ -55,7 +55,7 @@ $default_values = array(
   // SIDEBAR FIRST
   // CONTENT TOP
   // CONTENT
-  array(// System help 
+  array(// System help
     'module' => 'system',
     'delta' => 'help',
     'theme' => openfed_return_default_front_theme_name(),
@@ -93,11 +93,16 @@ $default_values = array(
   // BOTTOM
   // FOOTER
 );
+
 foreach ($default_values as $block) {
-  $exist = db_query(
-    'SELECT * FROM {block} WHERE module = :module AND delta = :delta AND theme = :theme', array(':module' => $block['module'], ':delta' => $block['delta'], ':theme' => $block['theme'])
-    )
+  $exist = db_select('block', 'b')
+    ->fields('b')
+    ->condition('module', $block['module'])
+    ->condition('delta', $block['delta'])
+    ->condition('theme', $block['theme'])
+    ->execute()
     ->fetchObject();
+
   if (empty($exist)) {
     $query = db_insert('block')
       ->fields($block);
@@ -105,13 +110,12 @@ foreach ($default_values as $block) {
   else {
     $query = db_update('block')
       ->fields($block)
-      ->condition('module', $block['module'], '=')
-      ->condition('delta', $block['delta'], '=')
-      ->condition('theme', $block['theme'], '=');
+      ->condition('module', $block['module'])
+      ->condition('delta', $block['delta'])
+      ->condition('theme', $block['theme']);
   }
   $query->execute();
 }
-
 
 // CMS THEME
 $admin_values = array(
@@ -145,7 +149,7 @@ $admin_values = array(
   // SIDEBAR FIRST
   // CONTENT TOP
   // CONTENT
-  array(// System help 
+  array(// System help
     'module' => 'system',
     'delta' => 'help',
     'theme' => openfed_return_default_backend_theme_name(),
@@ -172,11 +176,16 @@ $admin_values = array(
   // BOTTOM
   // FOOTER
 );
+
 foreach ($admin_values as $block) {
-  $exist = db_query(
-    'SELECT * FROM {block} WHERE module = :module AND delta = :delta AND theme = :theme', array(':module' => $block['module'], ':delta' => $block['delta'], ':theme' => $block['theme'])
-    )
+  $exist = db_select('block', 'b')
+    ->fields('b')
+    ->condition('module', $block['module'])
+    ->condition('delta', $block['delta'])
+    ->condition('theme', $block['theme'])
+    ->execute()
     ->fetchObject();
+
   if (empty($exist)) {
     $query = db_insert('block')
       ->fields($block);
@@ -184,9 +193,9 @@ foreach ($admin_values as $block) {
   else {
     $query = db_update('block')
       ->fields($block)
-      ->condition('module', $block['module'], '=')
-      ->condition('delta', $block['delta'], '=')
-      ->condition('theme', $block['theme'], '=');
+      ->condition('module', $block['module'])
+      ->condition('delta', $block['delta'])
+      ->condition('theme', $block['theme']);
   }
   $query->execute();
 }

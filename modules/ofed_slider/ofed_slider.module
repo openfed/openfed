@@ -61,8 +61,12 @@ function ofed_slider_node_insert($node) {
  */
 function ofed_slider_node_update($node) {
   if ($node->type == 'ofed_slider' && $node->status  == FALSE) {
+    $delta = 'ofed_slider_' . $node->nid;
     // Disable block.
-    db_query("UPDATE {block} SET status = 0 WHERE delta = 'ofed_slider_" . $node->nid . "'");
+    db_update('block')
+      ->fields(array('status' => 0))
+      ->condition('delta', $delta)
+      ->execute();
   }
 }
 
@@ -72,10 +76,17 @@ function ofed_slider_node_update($node) {
  */
 function ofed_slider_node_delete($node) {
   if ($node->type == 'ofed_slider') {
+    $delta = 'ofed_slider_' . $node->nid;
     // Delete block.
-    db_query("DELETE FROM {block} WHERE delta = 'ofed_slider_" . $node->nid . "' AND module = 'ofed_slider" . $node->type . "'");
+    db_delete('block')
+      ->condition('delta', $delta)
+      ->condition('module', $node->type)
+      ->execute();
     // Delete block language.
-    db_query("DELETE FROM {i18n_block_language} WHERE delta = 'ofed_slider_" . $node->nid . "' AND module = 'ofed_slider" . $node->type . "'");
+    db_delete('i18n_block_language')
+      ->condition('delta', $delta)
+      ->condition('module', $node->type)
+      ->execute();
   }
 }
 
@@ -87,8 +98,14 @@ function ofed_slider_block_info() {
   $blocks = array();
 
   // Get all nodes if type is ofed_slider and published.
-  $result = db_query("SELECT nid, title, language FROM {node} WHERE type = 'ofed_slider' AND status = 1");
+  $result = db_select('node', 'n')
+    ->fields('n', array('nid', 'title', 'language'))
+    ->condition('type', 'ofed_slider')
+    ->condition('status', '1')
+    ->execute();
+
   if ($result->rowCount() > 0) {
+
     while ($record = $result->fetchAssoc()) {
       // Create block.
       $node = node_load($record['nid']);
@@ -109,9 +126,9 @@ function ofed_slider_block_info() {
 function ofed_slider_block_view($delta = '') {
   // Initialize.
   $block = array();
-  
+
   if (preg_match('#^ofed_slider#', $delta)) {
-    $nid = str_replace('ofed_slider_', '', $delta); 
+    $nid = str_replace('ofed_slider_', '', $delta);
     if ($nid && is_numeric($nid)) {
       // Define the block properties.
       $block['subject'] = '';

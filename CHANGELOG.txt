@@ -1,11 +1,14 @@
 CHANGELOG
 =========
 
-Not yet date - Not yet version
-------------------------------
+No date yet - No version number yet
+------------------------------------
 
   * Issues:
     #2027615: Page title: user_cancel warning
+	#2048401: Installer: use db_select in openfed_blocks.inc
+    # Others:
+      - Make use of Drupal Database API instead of db_query across the distribution (related to #2048401)
 
 24 July 2013 - Version 7.x-1.0-beta3
 ------------------------------------
@@ -41,7 +44,7 @@ Not yet date - Not yet version
       - Add (during install process) the correct file path for public files folder.
       - Set 25 items / pages for the "page list" and cms "views".
 
-   Modules updated:
+  * Modules updated:
       Contrib
         - Apache Solr Multilingual (1.0-beta2)
         - Easy Breadcrumb (2.7)
@@ -54,8 +57,8 @@ Not yet date - Not yet version
         - Webform (3.19)
 
   * Patches:
-    Contrib
-      - view_unpublished: #1192074: Respect View_Unpublished permissions on the Content overview page
+      Contrib
+        - view_unpublished: #1192074: Respect View_Unpublished permissions on the Content overview page
 
 1 July 2013 - Version 7.x-1.0-beta2
 -----------------------------------
