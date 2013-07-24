@@ -327,6 +327,7 @@ projects[override_node_options][subdir] = contrib
 projects[page_title][version] = "2.7"
 projects[page_title][subdir] = contrib
 projects[page_title][patch][1024624] = "http://drupal.org/files/1024624-11-include_once.patch"
+projects[page_title][patch][1282564] = "https://drupal.org/files/issues/pass_by_value-1282564-1.patch"
 
 projects[panels][version] = "3.3"
 projects[panels][subdir] = contrib
