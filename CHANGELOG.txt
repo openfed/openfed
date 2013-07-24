@@ -6,6 +6,7 @@ Not yet date - Not yet version
 
   * Issues:
     #2027615: Page title: user_cancel warning
+    #2048339: Installation screen: order functionalities
 
 24 July 2013 - Version 7.x-1.0-beta3
 ------------------------------------
