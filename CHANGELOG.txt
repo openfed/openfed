@@ -1,14 +1,22 @@
 CHANGELOG
 =========
 
-No date yet - Version 7.x-1.0-beta3
-------------------------------------
+Not yet date - Not yet version
+------------------------------
+
   * Issues:
     #2049927: Module upgrade: beididp
     #2027615: Page title: user_cancel warning
     #2048339: Installation screen: order functionalities
     #2048401: Installer: use db_select in openfed_blocks.inc
     #2048235: Library update: ckeditor
+    # Others:
+      - Make use of Drupal Database API instead of db_query across the distribution (related to #2048401)
+
+24 July 2013 - Version 7.x-1.0-beta3
+------------------------------------
+
+  * Issues:
     #2032879: Incorrect profile number in the .make file
     #2029647: Missing paths alias, paths warning or wrong path alias patterns - Slideshow
     #2029657: Missing paths alias, paths warning or wrong path alias patterns - Photo gallery
@@ -30,7 +38,7 @@ No date yet - Version 7.x-1.0-beta3
     #2044793: Module upgrade: i18n
     #2022221: Module upgrade: imagecache_actions
     #2022209: Module upgrade: webform
-    #Others :
+    # Others :
       - Add the module and the feature who setup the Apache Solr for OpenFed (experimental).
       - Disable unused display suite view modes for news, download, page, photogallery, press, slideshow.
       - Restore the RSS view mode.
@@ -38,8 +46,7 @@ No date yet - Version 7.x-1.0-beta3
       - Add (during install process) the correct file path for temporary files folder.
       - Add (during install process) the correct file path for public files folder.
       - Set 25 items / pages for the "page list" and cms "views".
-      - Make use of Drupal Database API instead of db_query across the distribution (related to #2048401)
- 
+
   * Modules updated:
       Contrib
         - Apache Solr Multilingual (1.0-beta2)
