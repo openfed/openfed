@@ -13,6 +13,7 @@ Not yet date - Not yet version
     #2043987: Apache solr feature: file rename
     #2043183: View CMS filters, language
     #2048235: Library update: ckeditor
+    #2025003: Enable user mail translation by default
     # Others:
       - Make use of Drupal Database API instead of db_query across the distribution (related to #2048401)
       - Rename OpenFed Photo galleries module labels in the feature list (install process)

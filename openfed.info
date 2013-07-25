@@ -102,6 +102,7 @@ version = "7.x-1.0"
     dependencies[] = i18n_translation
     dependencies[] = translation_table
     dependencies[] = i18n_variable
+    dependencies[] = i18n_user
   ; Multilanguage
     dependencies[] = translation_helpers
   ; Other
