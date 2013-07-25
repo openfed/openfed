@@ -156,9 +156,6 @@ projects[ctools][subdir] = contrib
 projects[date][version] = "2.6"
 projects[date][subdir] = contrib
 
-projects[devel][version] = "1.3"
-projects[devel][subdir] = contrib
-
 projects[diff][version] = "3.2"
 projects[diff][subdir] = contrib
 
@@ -339,9 +336,6 @@ projects[pathauto][version] = "1.2"
 projects[pathauto][subdir] = contrib
 projects[pathauto][patch][290421] = "http://drupal.org/files/290421-pathauto-DRUPAL-7--1-x.patch"
 projects[pathauto][patch][1993462] = "http://drupal.org/files/pathauto-path_alias_for_taxonomy_terms_always_created_in_default_language-1993462-0.patch"
-
-projects[performance][version] = "2.0-beta1"
-projects[performance][subdir] = contrib
 
 projects[print][version] = "1.2"
 projects[print][subdir] = contrib
