@@ -9,7 +9,7 @@ core = 7.x
 
 ; CK Editor
 libraries[ckeditor][download][type] = "get"
-libraries[ckeditor][download][url] = "http://download.cksource.com/CKEditor/CKEditor/CKEditor%204.1.1/ckeditor_4.1.1_standard.zip"
+libraries[ckeditor][download][url] = "http://download.cksource.com/CKEditor/CKEditor/CKEditor%204.1.3/ckeditor_4.1.3_standard.zip"
 libraries[ckeditor][directory_name] = "ckeditor"
 libraries[ckeditor][type] = "library"
 
@@ -129,7 +129,7 @@ projects[apachesolr_multilingual][subdir] = contrib
 projects[backup_migrate][version] = "2.7"
 projects[backup_migrate][subdir] = contrib
 
-projects[beididp][version] = "0.7"
+projects[beididp][version] = "1.0-alpha1"
 projects[beididp][subdir] = contrib
 
 projects[calendar][version] = "3.4"
