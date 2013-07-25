@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * ofed_feature_apache_solr.strongarm.inc
+ * ofed_feature_solr.strongarm.inc
  */
 
 /**
  * Implements hook_strongarm().
  */
-function ofed_feature_apache_solr_strongarm() {
+function ofed_feature_solr_strongarm() {
   $export = array();
 
   $strongarm = new stdClass();

@@ -223,9 +223,9 @@ function _openfed_return_functionalities_list() {
       'description' => st('Enables the creation of news.'),
     ),
     'ofed_photogallery' => array(
-      'title' => st('Photos galeries'),
+      'title' => st('Photo galleries'),
       'picture' => $features,
-      'description' => st('Enables the creation of photos galeries.'),
+      'description' => st('Enables the creation of photo galleries.'),
     ),
     'ofed_press' => array(
       'title' => st('Press'),
@@ -242,10 +242,20 @@ function _openfed_return_functionalities_list() {
       'picture' => $features,
       'description' => st('Enables the creation of slideshows.'),
     ),
+    'ofed_solr' => array(
+      'title' => st('Apache Solr'),
+      'picture' => $features,
+      'description' => st('Enables Apache Solr search engine for OpenFed (EXPERIMENTAL).'),
+    ),
     'ofed_team' => array(
       'title' => st('Team member'),
       'picture' => $features,
       'description' => st('Enables the creation of team members.'),
+    ),
+    'ofed_video' => array(
+      'title' => st('Video'),
+      'picture' => $features,
+      'description' => st('Enables the creation of videos.'),
     ),
 
     // Modules.

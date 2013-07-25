@@ -3,20 +3,20 @@
 /**
  * Implements hook_schema().
  */
-function ofed_apache_solr_schema() {
+function ofed_solr_schema() {
 
 }
 
 /**
  * Implements hook_install().
  */
-function ofed_apache_solr_install() {
+function ofed_solr_install() {
 
 }
 
 /**
  * Implements hook_uninstall().
  */
-function ofed_apache_solr_uninstall() {
+function ofed_solr_uninstall() {
 
 }

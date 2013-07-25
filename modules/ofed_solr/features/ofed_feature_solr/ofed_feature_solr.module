@@ -4,4 +4,4 @@
  * Code for the Apache Solr feature.
  */
 
-include_once 'ofed_feature_apache_solr.features.inc';
+include_once 'ofed_feature_solr.features.inc';

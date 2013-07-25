@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * ofed_feature_apache_solr.features.user_permission.inc
+ * ofed_feature_solr.features.user_permission.inc
  */
 
 /**
  * Implements hook_user_default_permissions().
  */
-function ofed_feature_apache_solr_user_default_permissions() {
+function ofed_feature_solr_user_default_permissions() {
   $permissions = array();
 
   // Exported permission: administer search.

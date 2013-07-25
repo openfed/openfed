@@ -10,9 +10,13 @@ Not yet date - Not yet version
     #2048339: Installation screen: order functionalities
     #2048401: Installer: use db_select in openfed_blocks.inc
 		#2043085: Apache Solr - Feature deployement fail (comment #6), remove Apache Solr Confgen module
+    #2043987: Apache solr feature: file rename
     #2048235: Library update: ckeditor
     # Others:
       - Make use of Drupal Database API instead of db_query across the distribution (related to #2048401)
+      - Rename OpenFed Photo galleries module labels in the feature list (install process)
+      - Add the OpenFed Videos module in the feature list (install process)
+      - Add the OpenFed Solr module in the feature list (install process)
 
 24 July 2013 - Version 7.x-1.0-beta3
 ------------------------------------

@@ -4,4 +4,4 @@ package = OpenFed
 core = 7.x
 version = "7.x-1.0-dev"
 
-dependencies[] = ofed_feature_apache_solr
+dependencies[] = ofed_feature_solr

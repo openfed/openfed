@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * ofed_feature_apache_solr.apachesolr_search_defaults.inc
+ * ofed_feature_solr.apachesolr_search_defaults.inc
  */
 
 /**
  * Implements hook_apachesolr_search_default_searchers().
  */
-function ofed_feature_apache_solr_apachesolr_search_default_searchers() {
+function ofed_feature_solr_apachesolr_search_default_searchers() {
   $export = array();
 
   $searcher = new stdClass();

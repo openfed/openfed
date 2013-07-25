@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * ofed_feature_apache_solr.apachesolr_environments.inc
+ * ofed_feature_solr.apachesolr_environments.inc
  */
 
 /**
  * Implements hook_apachesolr_environments().
  */
-function ofed_feature_apache_solr_apachesolr_environments() {
+function ofed_feature_solr_apachesolr_environments() {
   $export = array();
 
   $environment = new stdClass();

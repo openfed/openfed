@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * ofed_feature_apache_solr.variable.inc
+ * ofed_feature_solr.variable.inc
  */
 
 /**
  * Implements hook_variable_realm_default_variables().
  */
-function ofed_feature_apache_solr_variable_realm_default_variables() {
+function ofed_feature_solr_variable_realm_default_variables() {
   $realm_variables = array();
   
   $realm_variables['language_solr_version']['en:1.4.x'] = array();
