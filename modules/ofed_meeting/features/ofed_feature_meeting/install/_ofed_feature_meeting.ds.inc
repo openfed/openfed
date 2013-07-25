@@ -39,7 +39,7 @@ function ofed_feature_meeting_ds_field_settings_info() {
         'wrapper' => '',
         'class' => '',
         'ft' => array(
-          'classes' => 'clear-block',
+          'classes' => 'clear-block more',
         ),
       ),
     ),
@@ -88,7 +88,7 @@ function ofed_feature_meeting_ds_field_settings_info() {
         'wrapper' => '',
         'class' => '',
         'ft' => array(
-          'classes' => 'clear-block',
+          'classes' => 'clear-block more',
         ),
       ),
     ),
@@ -137,7 +137,7 @@ function ofed_feature_meeting_ds_field_settings_info() {
         'wrapper' => '',
         'class' => '',
         'ft' => array(
-          'classes' => 'clear-block',
+          'classes' => 'clear-block more',
         ),
       ),
     ),
@@ -313,7 +313,7 @@ function ofed_feature_meeting_ds_field_settings_info() {
         'wrapper' => '',
         'class' => '',
         'ft' => array(
-          'classes' => 'clear-block',
+          'classes' => 'clear-block more',
         ),
       ),
     ),
@@ -433,7 +433,7 @@ function ofed_feature_meeting_ds_field_settings_info() {
         'wrapper' => '',
         'class' => '',
         'ft' => array(
-          'classes' => 'clear-block',
+          'classes' => 'clear-block more',
         ),
       ),
     ),
@@ -524,7 +524,7 @@ function ofed_feature_meeting_ds_field_settings_info() {
         'wrapper' => '',
         'class' => '',
         'ft' => array(
-          'classes' => 'clear-block',
+          'classes' => 'clear-block more',
         ),
       ),
     ),
@@ -587,7 +587,7 @@ function ofed_feature_meeting_ds_field_settings_info() {
         'wrapper' => '',
         'class' => '',
         'ft' => array(
-          'classes' => 'clear-block',
+          'classes' => 'clear-block more',
         ),
       ),
     ),
@@ -650,7 +650,7 @@ function ofed_feature_meeting_ds_field_settings_info() {
         'wrapper' => '',
         'class' => '',
         'ft' => array(
-          'classes' => 'clear-block',
+          'classes' => 'clear-block more',
         ),
       ),
     ),
