@@ -11,6 +11,7 @@ Not yet date - Not yet version
     #2048401: Installer: use db_select in openfed_blocks.inc
 		#2043085: Apache Solr - Feature deployement fail (comment #6), remove Apache Solr Confgen module
     #2043987: Apache solr feature: file rename
+    #2043183: View CMS filters, language
     #2048235: Library update: ckeditor
     # Others:
       - Make use of Drupal Database API instead of db_query across the distribution (related to #2048401)
