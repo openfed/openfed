@@ -123,9 +123,6 @@ projects[apachesolr_attachments][patch][1980750] = "http://drupal.org/files/apac
 projects[apachesolr_autocomplete][version] = "1.3"
 projects[apachesolr_autocomplete][subdir] = contrib
 
-projects[apachesolr_confgen][version] = "1.0-beta1"
-projects[apachesolr_confgen][subdir] = contrib
-
 projects[apachesolr_multilingual][version] = "1.0-beta2"
 projects[apachesolr_multilingual][subdir] = contrib
 
