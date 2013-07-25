@@ -92,7 +92,7 @@ function ofed_feature_team_ds_field_settings_info() {
         'wrapper' => '',
         'class' => '',
         'ft' => array(
-          'classes' => 'clear-block',
+          'classes' => 'clear-block more',
         ),
       ),
     ),
@@ -511,7 +511,7 @@ function ofed_feature_team_ds_field_settings_info() {
         'wrapper' => '',
         'class' => '',
         'ft' => array(
-          'classes' => 'clear-block',
+          'classes' => 'clear-block more',
         ),
       ),
     ),
@@ -553,7 +553,7 @@ function ofed_feature_team_ds_field_settings_info() {
       ),
     ),
   );
-  $export['node|ofed_team|rss'] = $ds_fieldsetting;  
+  $export['node|ofed_team|rss'] = $ds_fieldsetting;
 
   $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;

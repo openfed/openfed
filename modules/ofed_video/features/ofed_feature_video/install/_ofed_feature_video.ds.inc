@@ -200,7 +200,9 @@ function ofed_feature_video_ds_field_settings_info() {
         'link text' => 'Read more',
         'wrapper' => '',
         'class' => '',
-        'ft' => array(),
+        'ft' => array(
+          'classes' => 'more',
+        ),
       ),
     ),
     'field_ofed_video_embed' => array(
@@ -253,7 +255,9 @@ function ofed_feature_video_ds_field_settings_info() {
         'link text' => 'Read more',
         'wrapper' => '',
         'class' => '',
-        'ft' => array(),
+        'ft' => array(
+          'classes' => 'more',
+        ),
       ),
     ),
     'field_ofed_video_embed' => array(
