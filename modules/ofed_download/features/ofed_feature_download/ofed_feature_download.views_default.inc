@@ -662,7 +662,7 @@ function ofed_feature_download_views_default_views() {
   /* Display: Block: Latest one */
   $handler = $view->new_display('block', 'Block: Latest one', 'ofed_download_block_latest_one');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Latest one download';
+  $handler->display->display_options['title'] = 'Recent downloads';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['use_more'] = FALSE;
   $handler->display->display_options['use_more'] = TRUE;
@@ -771,7 +771,7 @@ function ofed_feature_download_views_default_views() {
     t('Block: Column'),
     t('Downloads: Column'),
     t('Block: Latest one'),
-    t('Latest one download'),
+    t('Recent downloads'),
     t('Downloads: Latest one'),
   );
   $export['ofed_download'] = $view;
