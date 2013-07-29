@@ -71,13 +71,6 @@ projects[ofed_vmcd][directory_name] = "ofed_vmcd"
 projects[ofed_vmcd][subdir] = contrib
 projects[ofed_vmcd][type] = module
 
-projects[waia_integration][download][type] = "git"
-projects[waia_integration][download][url] = http://git.drupal.org/sandbox/Openfed/2021409.git
-projects[waia_integration][download][branch] = 7.x-1.x
-projects[waia_integration][directory_name] = "waia_integration"
-projects[waia_integration][subdir] = contrib
-projects[waia_integration][type] = module
-
 projects[cms_theme][download][type] = "git"
 projects[cms_theme][download][url] = http://git.drupal.org/sandbox/Openfed/2026885.git
 projects[cms_theme][download][branch] = 7.x-1.x

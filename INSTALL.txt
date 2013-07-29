@@ -14,13 +14,17 @@ Openfed requires:
 - A PHP memory_limit set to 320M (or higher)
 - A PHP max_input_vars set to 5000 (or higher)
 - Drush 5.x or higher
+- The following directories in sites/default :
+  - public (sites/default/public)
+  - private (sites/default/private)
+  - tmp (sites/default/tmp)
 
 For further information see Drupal's INSTALL.txt file.
 
 OPTIONAL SERVER REQUIREMENTS
 ----------------------------
 
-- If you want to use OpenFed's Addemar integration, you will have to enable 
+- If you want to use OpenFed's Addemar integration, you will have to enable
   SOAP on your webserver.
 
 INSTALLATION
@@ -39,20 +43,20 @@ INSTALLATION
      wget http://drupal.org/files/projects/openfed-x.y.tar.gz
      tar -zxvf openfed-x.y.tar.gz
 
-   This will create a new directory openfed-x.y/ containing all OpenFed files 
+   This will create a new directory openfed-x.y/ containing all OpenFed files
    and directories. Then, you will have to build your Drupal installation using
    the drush make command. The usage is as follow :
-     
+
      drush make build-openfed.make /path/to/your/project
 
-2. Create your files and private directories under 
-   /path/to/your/project/sites/default and then give the permissions to your 
+2. Create your files and private directories under
+   /path/to/your/project/sites/default and then give the permissions to your
    webserver's user. You can do it as follow :
-   
+
      cd /path/to/your/project
      mkdir -p sites/default/files sites/default/private
      chown -R www-data sites/default/files sites/default/private
-     
+
    You should also have a tmp directory outside the web directory (for instance, /var/tmp)
 
 3. Follow the standard Drupal way to create your site by creating the database
