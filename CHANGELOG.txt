@@ -19,7 +19,7 @@ Not yet date - Not yet version
     #2045841: All content types: read more
     #2051121: Remove module: waia_integration
     #2045627: Download: review display
-    #2050941: Disable Backup and Migrate by default
+		#2050941: Disable Backup and Migrate by default
     #2050945: Disable aggregator by default
     #2050929: Enable rdf by default
     #Others:
