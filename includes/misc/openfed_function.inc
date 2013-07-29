@@ -364,16 +364,6 @@ function _openfed_return_permission_builder() {
     'access admin theme' => TRUE,
     // Administrative pages
     'administer admin paths' => TRUE,
-    // Aggregator
-    'administer news feeds' => TRUE,
-    'access news feeds' => TRUE,
-    // Backup and Migrate
-    'access backup and migrate' => TRUE,
-    'perform backup' => TRUE,
-    'access backup files' => TRUE,
-    'delete backup files' => TRUE,
-    'restore from backup' => TRUE,
-    'administer backup and migrate' => TRUE,
     // Block
     'administer blocks' => TRUE,
     // CKEditor
@@ -556,9 +546,6 @@ function _openfed_return_permission_configurator() {
     'access admin theme' => TRUE,
     // Administrative pages
     'administer admin paths' => TRUE,
-    // Aggregator
-    'administer news feeds' => TRUE,
-    'access news feeds' => TRUE,
     // Block
     'administer blocks' => TRUE,
     // CKEditor
@@ -724,8 +711,6 @@ function _openfed_return_permission_content_manager() {
     'flush caches' => TRUE,
     // Administration theme
     'access admin theme' => TRUE,
-    // Aggregator
-    'access news feeds' => TRUE,
     // CKEditor Link
     'access ckeditor link' => TRUE,
     // Content translation
@@ -818,8 +803,6 @@ function _openfed_return_permission_user_manager() {
     'access administration menu' => TRUE,
     // Administration theme
     'access admin theme' => TRUE,
-    // Aggregator
-    'access news feeds' => TRUE,
     // Contextual links
     'access contextual links' => TRUE,
     // Node
@@ -849,8 +832,6 @@ function _openfed_return_permission_authenticated_visitor() {
   $permission = array(
     // Add another
     'use add another' => TRUE,
-    // Aggregator
-    'access news feeds' => TRUE,
     // Node
     'access content' => TRUE,
     'view own unpublished content' => TRUE,
@@ -871,8 +852,6 @@ function _openfed_return_permission_authenticated_user() {
   $permission = array(
     // Add another
     'use add another' => TRUE,
-    // Aggregator
-    'access news feeds' => TRUE,
     // Display Suite Extras
     'view ds_flag_bookmarks on node' => TRUE,
     'view title on node' => TRUE,
@@ -915,8 +894,6 @@ function _openfed_return_permission_authenticated_user() {
  */
 function _openfed_return_permission_anonymous_user() {
   $permission = array(
-    // Aggregator
-    'access news feeds' => TRUE,
     // Display Suite Extras
     'view ds_flag_bookmarks on node' => TRUE,
     'view title on node' => TRUE,
