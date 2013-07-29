@@ -29,7 +29,7 @@ function ofed_feature_download_ds_field_settings_info() {
       ),
     ),
     'node_link' => array(
-      'weight' => '4',
+      'weight' => '3',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -44,7 +44,6 @@ function ofed_feature_download_ds_field_settings_info() {
       'formatter_settings' => array(
         'ft' => array(
           'classes' => 'clear-block',
-          'lb' => 'Published date',
         ),
       ),
     ),
@@ -99,7 +98,6 @@ function ofed_feature_download_ds_field_settings_info() {
       'formatter_settings' => array(
         'ft' => array(
           'classes' => 'clear-block',
-          'lb' => 'Published date',
         ),
       ),
     ),
@@ -235,7 +233,7 @@ function ofed_feature_download_ds_field_settings_info() {
       ),
     ),
     'node_link' => array(
-      'weight' => '6',
+      'weight' => '3',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -252,7 +250,6 @@ function ofed_feature_download_ds_field_settings_info() {
       'formatter_settings' => array(
         'ft' => array(
           'classes' => 'clear-block',
-          'lb' => 'Published date',
         ),
       ),
     ),
@@ -368,7 +365,7 @@ function ofed_feature_download_ds_field_settings_info() {
       ),
     ),
     'node_link' => array(
-      'weight' => '5',
+      'weight' => '3',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -383,7 +380,6 @@ function ofed_feature_download_ds_field_settings_info() {
       'formatter_settings' => array(
         'ft' => array(
           'classes' => 'clear-block',
-          'lb' => 'Published date',
         ),
       ),
     ),
@@ -419,7 +415,7 @@ function ofed_feature_download_ds_field_settings_info() {
       ),
     ),
     'node_link' => array(
-      'weight' => '4',
+      'weight' => '3',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -434,7 +430,6 @@ function ofed_feature_download_ds_field_settings_info() {
       'formatter_settings' => array(
         'ft' => array(
           'classes' => 'clear-block',
-          'lb' => 'Published date',
         ),
       ),
     ),
@@ -462,7 +457,7 @@ function ofed_feature_download_ds_field_settings_info() {
       ),
     ),
     'node_link' => array(
-      'weight' => '4',
+      'weight' => '3',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -477,7 +472,6 @@ function ofed_feature_download_ds_field_settings_info() {
       'label' => 'hidden',
       'formatter_settings' => array(
         'ft' => array(
-          'lb' => 'Published date',
         ),
       ),
     ),
@@ -639,22 +633,22 @@ function ofed_feature_download_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'ds_content' => array(
-        0 => 'field_ofed_download_summary',
-        1 => 'field_ofed_download_thumb',
-        2 => 'field_ofed_download_body',
-        3 => 'field_ofed_download_file',
-        4 => 'field_ofed_download_author',
-        5 => 'field_ofed_download_pubdate',
+        0 => 'field_ofed_download_pubdate',
+        1 => 'field_ofed_download_summary',
+        2 => 'field_ofed_download_thumb',
+        3 => 'field_ofed_download_body',
+        4 => 'field_ofed_download_file',
+        5 => 'field_ofed_download_author',
         6 => 'field_ofed_download_update',
       ),
     ),
     'fields' => array(
+      'field_ofed_download_pubdate' => 'ds_content',
       'field_ofed_download_summary' => 'ds_content',
       'field_ofed_download_thumb' => 'ds_content',
       'field_ofed_download_body' => 'ds_content',
       'field_ofed_download_file' => 'ds_content',
       'field_ofed_download_author' => 'ds_content',
-      'field_ofed_download_pubdate' => 'ds_content',
       'field_ofed_download_update' => 'ds_content',
     ),
     'classes' => array(),

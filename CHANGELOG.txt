@@ -18,11 +18,14 @@ Not yet date - Not yet version
     #2050013: Remove module: devel
     #2045841: All content types: read more
     #2051121: Remove module: waia_integration
-    # Others:
+    #2045627: Download: review display
+    #Others:
       - Make use of Drupal Database API instead of db_query across the distribution (related to #2048401)
       - Rename OpenFed Photo galleries module labels in the feature list (install process)
       - Add the OpenFed Videos module in the feature list (install process)
       - Add the OpenFed Solr module in the feature list (install process)
+      - Extra information in the install file for the required file system
+      - Delete sweaver install file
 
 24 July 2013 - Version 7.x-1.0-beta3
 ------------------------------------
@@ -49,7 +52,7 @@ Not yet date - Not yet version
     #2044793: Module upgrade: i18n
     #2022221: Module upgrade: imagecache_actions
     #2022209: Module upgrade: webform
-    # Others :
+    #Others :
       - Add the module and the feature who setup the Apache Solr for OpenFed (experimental).
       - Disable unused display suite view modes for news, download, page, photogallery, press, slideshow.
       - Restore the RSS view mode.
