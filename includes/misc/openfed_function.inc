@@ -242,11 +242,6 @@ function _openfed_return_functionalities_list() {
       'picture' => $features,
       'description' => st('Enables the creation of slideshows.'),
     ),
-    'ofed_solr' => array(
-      'title' => st('Apache Solr'),
-      'picture' => $features,
-      'description' => st('Enables Apache Solr search engine for OpenFed (EXPERIMENTAL).'),
-    ),
     'ofed_team' => array(
       'title' => st('Team member'),
       'picture' => $features,

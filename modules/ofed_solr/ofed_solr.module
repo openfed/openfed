@@ -1,6 +1,0 @@
-<?php
-
-/**
- * @file
- * Module needed to install and configure Apache Solr with the Openfed distribution.
- */

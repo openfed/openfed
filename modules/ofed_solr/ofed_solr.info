@@ -1,7 +1,0 @@
-name = Apache Solr - Module
-description = Install and configure Apache Solr for OpenFed (EXPERIMENTAL)
-package = OpenFed
-core = 7.x
-version = "7.x-1.0-dev"
-
-dependencies[] = ofed_feature_solr
