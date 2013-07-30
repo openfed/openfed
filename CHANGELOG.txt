@@ -4,6 +4,7 @@ CHANGELOG
 Not yet date - Version 7.x-1.0-rc1
 ----------------------------------
    * Issues:
+   #2053483: Installer: installation fails (required modules), remove devel and waia-integration dependencies 
     
 
 30 July 2013 - Version 7.x-1.0-beta4
