@@ -278,11 +278,11 @@ function ofed_feature_news_views_default_views() {
   $handler->display->display_options['defaults']['header'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Publication date (field_ofed_download_pubdate) */
-  $handler->display->display_options['sorts']['field_ofed_download_pubdate_value']['id'] = 'field_ofed_download_pubdate_value';
-  $handler->display->display_options['sorts']['field_ofed_download_pubdate_value']['table'] = 'field_data_field_ofed_download_pubdate';
-  $handler->display->display_options['sorts']['field_ofed_download_pubdate_value']['field'] = 'field_ofed_download_pubdate_value';
-  $handler->display->display_options['sorts']['field_ofed_download_pubdate_value']['order'] = 'DESC';
+  /* Sort criterion: Content: Publication date (field_ofed_news_pubdate) */
+  $handler->display->display_options['sorts']['field_ofed_news_pubdate_value']['id'] = 'field_ofed_news_pubdate_value';
+  $handler->display->display_options['sorts']['field_ofed_news_pubdate_value']['table'] = 'field_data_field_ofed_news_pubdate';
+  $handler->display->display_options['sorts']['field_ofed_news_pubdate_value']['field'] = 'field_ofed_news_pubdate_value';
+  $handler->display->display_options['sorts']['field_ofed_news_pubdate_value']['order'] = 'DESC';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */

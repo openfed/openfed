@@ -3,9 +3,9 @@ CHANGELOG
 
 Not yet date - Version 7.x-1.0-rc1
 ----------------------------------
-   * Issues:
-   #2053483: Installer: installation fails (required modules), remove devel and waia-integration dependencies 
-    
+  * Issues:
+    #2053483: Installer: installation fails (required modules), remove devel and waia-integration dependencies
+    #2047455: News list is using the wrong sorting date field
 
 30 July 2013 - Version 7.x-1.0-beta4
 ------------------------------------
@@ -25,7 +25,7 @@ Not yet date - Version 7.x-1.0-rc1
     #2045841: All content types: read more
     #2051121: Remove module: waia_integration
     #2045627: Download: review display
-		#2050941: Disable Backup and Migrate by default
+    #2050941: Disable Backup and Migrate by default
     #2050945: Disable aggregator by default
     #2050929: Enable rdf by default
     #2043085: Apache Solr - Feature deployment fails (comment #11), remove Apache Solr feature
