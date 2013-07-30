@@ -320,7 +320,7 @@ function _openfed_return_functionalities_list() {
       'description' => st('Allows site administrators to grant some roles the authority to assign selected roles to users.'),
     ),
   );
-  
+
   // Sort.
   usort($function_list, '_openfed_sort_functionalities_list');
 
@@ -334,12 +334,12 @@ function _openfed_return_functionalities_list() {
  * @return int
  */
 function _openfed_sort_functionalities_list($a, $b){
-	if($a['title'] == $b['title']){
+  if($a['title'] == $b['title']){
     // Return.
-		return 0;
-	}
+    return 0;
+  }
   // Return.
-	return ($a['title'] < $b['title']) ? -1 : 1;
+  return ($a['title'] < $b['title']) ? -1 : 1;
 }
 
 /**
