@@ -3,6 +3,11 @@ CHANGELOG
 
 Not yet date - Not yet version
 ------------------------------
+   * Issues:
+    
+
+30 July 2013 - Version 7.x-1.0-beta4
+------------------------------
 
   * Issues:
     #2049927: Module upgrade: beididp
