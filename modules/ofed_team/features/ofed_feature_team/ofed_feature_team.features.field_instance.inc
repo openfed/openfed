@@ -997,7 +997,7 @@ function ofed_feature_team_field_default_field_instances() {
   $field_instances['node-ofed_team-field_ofed_team_pubdate'] = array(
     'bundle' => 'ofed_team',
     'deleted' => 0,
-    'description' => 'This date typically refers to the moment the content element was released and is be displayed without label next to the title of the content element in lists and pages. and is typically used to sort content.',
+    'description' => 'This date typically refers to the moment the content element was released and is to be displayed without label next to the title of the content element in lists and pages. It is typically used to sort content.',
     'display' => array(
       'block_column' => array(
         'label' => 'inline',
@@ -1567,7 +1567,7 @@ function ofed_feature_team_field_default_field_instances() {
   t('Social media site');
   t('Social medias');
   t('This date field is used to indicate when the content element was last modified.');
-  t('This date typically refers to the moment the content element was released and is be displayed without label next to the title of the content element in lists and pages. and is typically used to sort content.');
+  t('This date typically refers to the moment the content element was released and is to be displayed without label next to the title of the content element in lists and pages. It is typically used to sort content.');
   t('Thumb');
   t('Use system update date instead of Last updated date');
 

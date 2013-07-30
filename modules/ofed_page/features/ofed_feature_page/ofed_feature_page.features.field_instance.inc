@@ -140,7 +140,7 @@ function ofed_feature_page_field_default_field_instances() {
   $field_instances['node-ofed_page-field_ofed_page_pubdate'] = array(
     'bundle' => 'ofed_page',
     'deleted' => 0,
-    'description' => 'This date typically refers to the moment the content element was released and is be displayed without label next to the title of the content element in lists and pages. and is typically used to sort content.',
+    'description' => 'This date typically refers to the moment the content element was released and is to be displayed without label next to the title of the content element in lists and pages. It is typically used to sort content.',
     'display' => array(
       'default' => array(
         'label' => 'inline',
@@ -473,7 +473,7 @@ function ofed_feature_page_field_default_field_instances() {
   t('Publication date');
   t('Summary');
   t('This date field is used to indicate when the content element was last modified.');
-  t('This date typically refers to the moment the content element was released and is be displayed without label next to the title of the content element in lists and pages. and is typically used to sort content.');
+  t('This date typically refers to the moment the content element was released and is to be displayed without label next to the title of the content element in lists and pages. It is typically used to sort content.');
   t('Use system update date instead of Last updated date');
 
   return $field_instances;
