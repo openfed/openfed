@@ -182,148 +182,81 @@ function _openfed_return_taxonomy_list() {
  * @return array
  */
 function _openfed_return_functionalities_list() {
-  $features = drupal_get_path('profile', 'openfed') . '/assets/images/features.png';
-  $modules = drupal_get_path('profile', 'openfed') . '/assets/images/modules.png';
-
   $function_list = array(
-    // Content types.
     'ofed_address' => array(
       'title' => st('Address'),
-      'picture' => $features,
       'description' => st('Enables the creation of addresses.'),
     ),
     'ofed_banner' => array(
       'title' => st('Banner'),
-      'picture' => $features,
       'description' => st('Enables the creation of banners.'),
+    ),
+    'blog' => array(
+      'title' => st('Blog'),
+      'description' => st('Enables the creation of blog.'),
     ),
     'ofed_event' => array(
       'title' => st('Event'),
-      'picture' => $features,
       'description' => st('Enables the creation of events.'),
     ),
     'ofed_faq' => array(
       'title' => st('FAQ'),
-      'picture' => $features,
       'description' => st('Enables the creation of frequently asked questions.'),
+    ),
+    'forum' => array(
+      'title' => st('Forum'),
+      'description' => st('Enables the creation of forum.'),
     ),
     'ofed_job' => array(
       'title' => st('Job'),
-      'picture' => $features,
       'description' => st('Enables the creation of jobs.'),
+    ),
+    'lexicon' => array(
+      'title' => st('Lexicon'),
+      'description' => st('Maintain one or more lexicons on your site and optionally mark term from one or more lexicons in the content of the website.'),
     ),
     'ofed_meeting' => array(
       'title' => st('Meeting'),
-      'picture' => $features,
       'description' => st('Enables the creation of meetings.'),
     ),
     'ofed_news' => array(
       'title' => st('News'),
-      'picture' => $features,
       'description' => st('Enables the creation of news.'),
     ),
     'ofed_photogallery' => array(
       'title' => st('Photo galleries'),
-      'picture' => $features,
       'description' => st('Enables the creation of photo galleries.'),
+    ),
+   'poll' => array(
+      'title' => st('Poll'),
+      'description' => st('Enables the creation of poll.'),
     ),
     'ofed_press' => array(
       'title' => st('Press'),
-      'picture' => $features,
       'description' => st('Enables the creation of press.'),
     ),
     'ofed_slider' => array(
       'title' => st('Slider'),
-      'picture' => $features,
       'description' => st('Enables the creation of sliders.'),
     ),
     'ofed_slideshow' => array(
       'title' => st('Slideshow'),
-      'picture' => $features,
       'description' => st('Enables the creation of slideshows.'),
     ),
     'ofed_team' => array(
       'title' => st('Team member'),
-      'picture' => $features,
       'description' => st('Enables the creation of team members.'),
     ),
     'ofed_video' => array(
       'title' => st('Video'),
-      'picture' => $features,
       'description' => st('Enables the creation of videos.'),
-    ),
-
-    // Modules.
-    'poll' => array(
-      'title' => st('Poll'),
-      'picture' => $modules,
-      'description' => st('Enables the creation of poll.'),
-    ),
-    'blog' => array(
-      'title' => st('Blog'),
-      'picture' => $modules,
-      'description' => st('Enables the creation of blog.'),
-    ),
-    'forum' => array(
-      'title' => st('Forum'),
-      'picture' => $modules,
-      'description' => st('Enables the creation of forum.'),
-    ),
-    'lexicon' => array(
-      'title' => st('Lexicon'),
-      'picture' => $modules,
-      'description' => st('Maintain one or more lexicons on your site and optionally mark term from one or more lexicons in the content of the website.'),
-    ),
-    'ofed_federalheader' => array(
-      'title' => st('Federal header'),
-      'picture' => $modules,
-      'description' => st('Provide the official Belgian Federal Authorities header.'),
-    ),
-    'content_access' => array(
-      'title' => st('Content Access'),
-      'picture' => $modules,
-      'description' => st('Provides flexible content access control.'),
-    ),
-    'countries' => array(
-      'title' => st('Countries'),
-      'picture' => $modules,
-      'description' => st('A module that provides a FAPI / Field country element and a simple wrapper module to store / update country data.'),
-    ),
-    'field_permission' => array(
-      'title' => st('Field Permission'),
-      'picture' => $modules,
-      'description' => st('Set field-level permissions to create, update or view fields.'),
-    ),
-    'l10n_client' => array(
-      'title' => st('Localization client'),
-      'picture' => $modules,
-      'description' => st('Provides on-page localization'),
-    ),
-    'module_filter' => array(
-      'title' => st('Module filter'),
-      'picture' => $modules,
-      'description' => st('Filter the modules list.'),
-    ),
-    'multiple_node_menu' => array(
-      'title' => st('Multiple node menu'),
-      'picture' => $modules,
-      'description' => st('Replaces the node menu form with one that can handle multiple parents.'),
-    ),
-    'performance' => array(
-      'title' => st('Performance'),
-      'picture' => $modules,
-      'description' => st('Logs detailed and/or summary page generation time and memory consumption for page requests.'),
-    ),
-    'role_delegation' => array(
-      'title' => st('Role delegation'),
-      'picture' => $modules,
-      'description' => st('Allows site administrators to grant some roles the authority to assign selected roles to users.'),
     ),
   );
 
   // Sort.
   usort($function_list, '_openfed_sort_functionalities_list');
 
+  // Return.
   return $function_list;
 }
 

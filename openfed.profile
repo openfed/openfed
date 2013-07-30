@@ -131,12 +131,12 @@ function openfed_install_tasks($install_state) {
     
   // Step to choose which additional functionalities to add.
   $tasks['openfed_functionalities_form'] = array(
-    'display_name' => st('Setup Functionalities'),
+    'display_name' => st('Enable content types'),
     'display' => TRUE,
     'type' => 'form',
   );
   $tasks['openfed_batch_functionalities'] = array(
-    'display_name' => st('Import functionalities'),
+    'display_name' => st('Import content types'),
     'display' => $openfed_need_batch_functionalities,
     'type' => 'batch',
     'run' => $openfed_need_batch_functionalities ? INSTALL_TASK_RUN_IF_NOT_COMPLETED : INSTALL_TASK_SKIP,
