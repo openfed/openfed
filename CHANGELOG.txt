@@ -9,6 +9,7 @@ Not yet date - Version 7.x-1.0-rc1
     #2043195: Correct labels and help text dates in content types
     #2047471: Events are sorted on "Publication date" instead on (event) "start date"
     #2047463: Events block lists (latest, teaser, list) show past items
+    #2053499: Installer: cleanup functionalities screen
 
 30 July 2013 - Version 7.x-1.0-beta4
 ------------------------------------

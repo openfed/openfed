@@ -6,16 +6,16 @@
  * @return array
  */
 function openfed_functionalities_form() {
-  drupal_set_title(st('Functionalities configuration'));
+  drupal_set_title(st('Enable content types'));
   $form = array();
 
   $form['intro'] = array(
-    '#markup' => '<p>' . st('Select the specific functionalities that have to be available in the website.') . '</p><p>' . st('Note : each module can be enabled after the installation in the Modules list.') . '</p>',
+    '#markup' => '<p>' . st('Select the specific content types that have to be available in the website.') . '</p><p>' . st('Note : each content typ can be enabled after the installation in the Features list.') . '</p>',
   );
 
   $form['module_list'] = array(
     '#type' => 'checkboxes',
-    '#title' => st('Setup your module below.'),
+    '#title' => st('Setup your content types below.'),
     '#options' => _openfed_return_functionalities_list(),
     '#attributes' => array('class' => array('clearfix')),
     '#process' => array('form_process_checkboxes_at_install'), // override process for theming
