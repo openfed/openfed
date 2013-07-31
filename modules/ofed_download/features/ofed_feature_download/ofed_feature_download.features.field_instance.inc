@@ -47,14 +47,14 @@ function ofed_feature_download_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 4,
+        'weight' => 5,
       ),
       'page_list' => array(
         'label' => 'inline',
         'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 3,
+        'type' => 'hidden',
+        'weight' => 10,
       ),
       'print' => array(
         'label' => 'hidden',
@@ -144,13 +144,13 @@ function ofed_feature_download_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 2,
+        'weight' => 3,
       ),
       'page_list' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 20,
+        'weight' => 12,
       ),
       'print' => array(
         'label' => 'hidden',
@@ -239,7 +239,7 @@ function ofed_feature_download_field_default_field_instances() {
         'module' => 'file',
         'settings' => array(),
         'type' => 'file_default',
-        'weight' => 3,
+        'weight' => 4,
       ),
       'ofed_page_list' => array(
         'label' => 'above',
@@ -252,7 +252,7 @@ function ofed_feature_download_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 21,
+        'weight' => 13,
       ),
       'print' => array(
         'label' => 'hidden',
@@ -315,10 +315,10 @@ function ofed_feature_download_field_default_field_instances() {
     'description' => 'This date typically refers to the moment the content element was released and is to be displayed without label next to the title of the content element in lists and pages. It is typically used to sort content.',
     'display' => array(
       'block_column' => array(
-        'label' => 'inline',
+        'label' => 'hidden',
         'module' => 'date',
         'settings' => array(
-          'format_type' => 'short',
+          'format_type' => 'date_only',
           'fromto' => 'both',
           'multiple_from' => '',
           'multiple_number' => '',
@@ -329,22 +329,15 @@ function ofed_feature_download_field_default_field_instances() {
       ),
       'block_element' => array(
         'label' => 'inline',
-        'module' => 'date',
-        'settings' => array(
-          'format_type' => 'short',
-          'fromto' => 'both',
-          'multiple_from' => '',
-          'multiple_number' => '',
-          'multiple_to' => '',
-        ),
-        'type' => 'date_default',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 1,
       ),
       'block_list' => array(
-        'label' => 'inline',
+        'label' => 'hidden',
         'module' => 'date',
         'settings' => array(
-          'format_type' => 'short',
+          'format_type' => 'date_only',
           'fromto' => 'both',
           'multiple_from' => '',
           'multiple_number' => '',
@@ -377,13 +370,13 @@ function ofed_feature_download_field_default_field_instances() {
           'multiple_to' => '',
         ),
         'type' => 'date_default',
-        'weight' => 5,
+        'weight' => 0,
       ),
       'page_list' => array(
-        'label' => 'inline',
+        'label' => 'hidden',
         'module' => 'date',
         'settings' => array(
-          'format_type' => 'short',
+          'format_type' => 'date_only',
           'fromto' => 'both',
           'multiple_from' => '',
           'multiple_number' => '',
@@ -438,10 +431,10 @@ function ofed_feature_download_field_default_field_instances() {
         'weight' => 2,
       ),
       'teaser' => array(
-        'label' => 'inline',
+        'label' => 'hidden',
         'module' => 'date',
         'settings' => array(
-          'format_type' => 'short',
+          'format_type' => 'date_only',
           'fromto' => 'both',
           'multiple_from' => '',
           'multiple_number' => '',
@@ -518,7 +511,7 @@ function ofed_feature_download_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 0,
+        'weight' => 1,
       ),
       'ofed_page_list' => array(
         'label' => 'above',
@@ -628,7 +621,7 @@ function ofed_feature_download_field_default_field_instances() {
           'image_style' => 'ofed_download_thumb',
         ),
         'type' => 'image',
-        'weight' => 1,
+        'weight' => 2,
       ),
       'page_list' => array(
         'label' => 'hidden',
@@ -710,41 +703,20 @@ function ofed_feature_download_field_default_field_instances() {
     'display' => array(
       'block_column' => array(
         'label' => 'inline',
-        'module' => 'date',
-        'settings' => array(
-          'format_type' => 'short',
-          'fromto' => 'both',
-          'multiple_from' => '',
-          'multiple_number' => '',
-          'multiple_to' => '',
-        ),
-        'type' => 'date_default',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 3,
       ),
       'block_element' => array(
         'label' => 'inline',
-        'module' => 'date',
-        'settings' => array(
-          'format_type' => 'short',
-          'fromto' => 'both',
-          'multiple_from' => '',
-          'multiple_number' => '',
-          'multiple_to' => '',
-        ),
-        'type' => 'date_default',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 2,
       ),
       'block_list' => array(
         'label' => 'inline',
-        'module' => 'date',
-        'settings' => array(
-          'format_type' => 'short',
-          'fromto' => 'both',
-          'multiple_from' => '',
-          'multiple_number' => '',
-          'multiple_to' => '',
-        ),
-        'type' => 'date_default',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 2,
       ),
       'default' => array(
@@ -775,16 +747,9 @@ function ofed_feature_download_field_default_field_instances() {
       ),
       'page_list' => array(
         'label' => 'inline',
-        'module' => 'date',
-        'settings' => array(
-          'format_type' => 'short',
-          'fromto' => 'both',
-          'multiple_from' => '',
-          'multiple_number' => '',
-          'multiple_to' => '',
-        ),
-        'type' => 'date_default',
-        'weight' => 5,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 11,
       ),
       'print' => array(
         'label' => 'inline',
@@ -833,15 +798,8 @@ function ofed_feature_download_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'inline',
-        'module' => 'date',
-        'settings' => array(
-          'format_type' => 'short',
-          'fromto' => 'both',
-          'multiple_from' => '',
-          'multiple_number' => '',
-          'multiple_to' => '',
-        ),
-        'type' => 'date_default',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 3,
       ),
     ),
@@ -913,13 +871,13 @@ function ofed_feature_download_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 22,
+        'weight' => 14,
       ),
       'page_list' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 23,
+        'weight' => 15,
       ),
       'print' => array(
         'label' => 'above',
