@@ -34,7 +34,7 @@ libraries[jquery.imagesloaded][type] = "library"
 
 ; jquery.jcarousel
 libraries[jquery.jcarousel][download][type] = "get"
-libraries[jquery.jcarousel][download][url] = "https://github.com/jsor/jcarousel/raw/0.2.8/dist/jquery.jcarousel.min.js"
+libraries[jquery.jcarousel][download][url] = "https://github.com/jsor/jcarousel/raw/0.2.8/lib/jquery.jcarousel.min.js"
 libraries[jquery.jcarousel][destination] = "libraries/jquery.jcarousel"
 libraries[jquery.jcarousel][directory_name] = "lib"
 libraries[jquery.jcarousel][type] = "library"
