@@ -40,9 +40,6 @@ version = "7.x-1.0"
     dependencies[] = multiselect
   ; Chaos Tools
     dependencies[] = ctools
-    dependencies[] = page_manager
-    dependencies[] = stylizer
-    dependencies[] = views_content
   ; Date
     dependencies[] = date
     dependencies[] = date_all_day

@@ -419,8 +419,6 @@ function _openfed_return_permission_builder() {
     // String translation
     'translate user-defined strings' => TRUE,
     'translate admin strings' => TRUE,
-    // Stylizer
-    'administer stylizer' => TRUE,
     // System
     'administer actions' => TRUE,
     'access administration pages' => TRUE,
@@ -598,8 +596,6 @@ function _openfed_return_permission_configurator() {
     // String translation
     'translate user-defined strings' => TRUE,
     'translate admin strings' => TRUE,
-    // Stylizer
-    'administer stylizer' => TRUE,
     // System
     'administer actions' => TRUE,
     'access administration pages' => TRUE,
