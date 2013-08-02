@@ -13,6 +13,7 @@ Not yet date - Version 7.x-1.0-rc1
     #2053499: Installer: cleanup functionalities screen
     #2044961: Photo Gallery doesn't work
     #2045627: Download: review display
+    #2050937: Disable ctools submodules by default
     #2052801: New module: twitter
 
 30 July 2013 - Version 7.x-1.0-beta4
