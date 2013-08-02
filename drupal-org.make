@@ -28,14 +28,13 @@ libraries[jquery.cycle][type] = "library"
 ; jquery.imagesloaded
 libraries[jquery.imagesloaded][download][type] = "file"
 libraries[jquery.imagesloaded][download][request_type] = "get"
-libraries[jquery.imagesloaded][download][filename] = "jquery.imagesloaded.js"
-libraries[jquery.imagesloaded][download][url] = "https://github.com/desandro/imagesloaded/raw/master/imagesloaded.js"
+libraries[jquery.imagesloaded][download][url] = "https://github.com/desandro/imagesloaded/raw/v2.1.2/jquery.imagesloaded.min.js"
 libraries[jquery.imagesloaded][directory_name] = "jquery.imagesloaded"
 libraries[jquery.imagesloaded][type] = "library"
 
 ; jquery.jcarousel
 libraries[jquery.jcarousel][download][type] = "get"
-libraries[jquery.jcarousel][download][url] = "https://github.com/jsor/jcarousel/raw/0.3.0-beta.4/dist/jquery.jcarousel.min.js"
+libraries[jquery.jcarousel][download][url] = "https://github.com/jsor/jcarousel/raw/0.2.8/dist/jquery.jcarousel.min.js"
 libraries[jquery.jcarousel][destination] = "libraries/jquery.jcarousel"
 libraries[jquery.jcarousel][directory_name] = "lib"
 libraries[jquery.jcarousel][type] = "library"
