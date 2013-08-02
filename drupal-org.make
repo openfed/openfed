@@ -409,6 +409,9 @@ projects[translation_table][subdir] = contrib
 projects[transliteration][version] = "3.1"
 projects[transliteration][subdir] = contrib
 
+projects[twitter][version] = "5.8"
+projects[twitter][subdir] = contrib
+
 projects[variable][version] = "2.2"
 projects[variable][subdir] = contrib
 
