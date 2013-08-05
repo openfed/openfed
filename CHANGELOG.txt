@@ -16,6 +16,8 @@ No date yet - Version 7.x-1.0-rc1
     #2055363: Photo Gallery: JS error when JS aggregation is on
     #2050937: Disable ctools submodules by default
     #2052801: New module: twitter
+    # Other:
+      - Add a Drush command file to the profile
 
 30 July 2013 - Version 7.x-1.0-beta4
 ------------------------------------
