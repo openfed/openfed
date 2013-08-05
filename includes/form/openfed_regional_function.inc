@@ -92,7 +92,7 @@ function _openfed_create_content_type($lang) {
       case 'en':
         // store main link source variable for a language
         variable_store_set('language', $lang, 'menu_main_links_source', 'main-menu');
-        
+
         // show block for english language only
         _openfed_show_block_for_language('system', 'main-menu', $lang);
 
@@ -100,7 +100,7 @@ function _openfed_create_content_type($lang) {
         $date_format = array();
         $date_format[] = array('format' => 'd/m/Y', 'type' => 'date_only', 'language' => 'en');
         $date_format[] = array('format' => 'c', 'type' => 'html5_tools_iso8601', 'language' => 'en');
-        $date_format[] = array('format' => 'l, F j, Y - H:i', 'type' => 'long', 'language' => 'en');
+        $date_format[] = array('format' => 'l, j F, Y - H:i', 'type' => 'long', 'language' => 'en');
         $date_format[] = array('format' => 'D, d/m/Y - H:i', 'type' => 'medium', 'language' => 'en');
         $date_format[] = array('format' => 'd/m/Y - H:i', 'type' => 'short', 'language' => 'en');
         _openfed_localize_date_format($date_format);
@@ -151,7 +151,7 @@ function _openfed_create_content_type($lang) {
         // set the menu in the navigation region for nerra
         _openfed_set_block_into_region('menu', $menu_name, 'navigation');
       break;
-    
+
       case 'nl':
         $menu_name = "main-dutch-menu";
 
@@ -186,7 +186,7 @@ function _openfed_create_content_type($lang) {
         _openfed_set_block_into_region('menu', $menu_name, 'navigation');
       break;
     }
-    
+
     variable_set('ckeditor_link_autocomplete_menus', $ck_link);
   }
 }
