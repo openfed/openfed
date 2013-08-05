@@ -315,6 +315,13 @@ function ofed_feature_event_views_default_views() {
   $handler->display->display_options['filters']['sticky']['table'] = 'node';
   $handler->display->display_options['filters']['sticky']['field'] = 'sticky';
   $handler->display->display_options['filters']['sticky']['value'] = '0';
+  /* Filter criterion: Content: Start date / end date - end date (field_ofed_event_date:value2) */
+  $handler->display->display_options['filters']['field_ofed_event_date_value2']['id'] = 'field_ofed_event_date_value2';
+  $handler->display->display_options['filters']['field_ofed_event_date_value2']['table'] = 'field_data_field_ofed_event_date';
+  $handler->display->display_options['filters']['field_ofed_event_date_value2']['field'] = 'field_ofed_event_date_value2';
+  $handler->display->display_options['filters']['field_ofed_event_date_value2']['operator'] = '>=';
+  $handler->display->display_options['filters']['field_ofed_event_date_value2']['granularity'] = 'second';
+  $handler->display->display_options['filters']['field_ofed_event_date_value2']['default_date'] = 'now';
   $handler->display->display_options['path'] = 'events';
 
   /* Display: Page: Sticky  */
@@ -367,6 +374,13 @@ function ofed_feature_event_views_default_views() {
   $handler->display->display_options['filters']['sticky']['table'] = 'node';
   $handler->display->display_options['filters']['sticky']['field'] = 'sticky';
   $handler->display->display_options['filters']['sticky']['value'] = '1';
+  /* Filter criterion: Content: Start date / end date - end date (field_ofed_event_date:value2) */
+  $handler->display->display_options['filters']['field_ofed_event_date_value2']['id'] = 'field_ofed_event_date_value2';
+  $handler->display->display_options['filters']['field_ofed_event_date_value2']['table'] = 'field_data_field_ofed_event_date';
+  $handler->display->display_options['filters']['field_ofed_event_date_value2']['field'] = 'field_ofed_event_date_value2';
+  $handler->display->display_options['filters']['field_ofed_event_date_value2']['operator'] = '>=';
+  $handler->display->display_options['filters']['field_ofed_event_date_value2']['granularity'] = 'second';
+  $handler->display->display_options['filters']['field_ofed_event_date_value2']['default_date'] = 'now';
   $handler->display->display_options['displays'] = array(
     'ofed_event_page_list' => 'ofed_event_page_list',
     'default' => 0,
@@ -699,6 +713,7 @@ function ofed_feature_event_views_default_views() {
     t('Latest one event'),
     t('Events: Latest one'),
   );
+
   $export['ofed_event'] = $view;
 
   return $export;
