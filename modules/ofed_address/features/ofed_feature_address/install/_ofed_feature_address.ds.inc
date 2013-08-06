@@ -181,6 +181,24 @@ function ofed_feature_address_ds_field_settings_info() {
         ),
       ),
     ),
+    'field_ofed_address_phone' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'fis' => TRUE,
+          'fis-el' => 'div',
+          'fis-cl' => 'field-name-field-ofed-address-phone',
+          'fis-at' => '',
+          'fis-def-at' => FALSE,
+          'fi' => TRUE,
+          'fi-el' => 'div',
+          'fi-cl' => 'field-phone-item',
+          'fi-at' => '',
+          'fi-def-at' => FALSE,
+          'fi-odd-even' => TRUE,
+        ),
+      ),
+    ),
   );
   $export['node|ofed_address|references'] = $ds_fieldsetting;
 

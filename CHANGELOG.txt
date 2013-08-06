@@ -18,6 +18,7 @@ No date yet - Version 7.x-1.0-rc1
     #2052801: New module: twitter
     #2047457: Publication date module using US date format with date picker
     #2033053: Entity reference load nodes with wrong language
+    #2038017: Address: display of phone numbers
     # Other:
       - Add a Drush command file to the profile
 
