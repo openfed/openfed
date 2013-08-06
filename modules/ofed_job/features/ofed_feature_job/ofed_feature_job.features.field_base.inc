@@ -116,18 +116,17 @@ function ofed_feature_job_field_default_field_bases() {
     'locked' => 0,
     'module' => 'entityreference',
     'settings' => array(
-      'handler' => 'base',
+      'handler' => 'views',
       'handler_settings' => array(
         'behaviors' => array(
           'views-select-list' => array(
             'status' => 0,
           ),
         ),
-        'sort' => array(
-          'type' => 'none',
-        ),
-        'target_bundles' => array(
-          'ofed_download' => 'ofed_download',
+        'view' => array(
+          'args' => array(),
+          'display_name' => 'entityreference_ofed_download',
+          'view_name' => 'ofed_download',
         ),
       ),
       'target_type' => 'node',
@@ -548,18 +547,17 @@ function ofed_feature_job_field_default_field_bases() {
     'locked' => 0,
     'module' => 'entityreference',
     'settings' => array(
-      'handler' => 'base',
+      'handler' => 'views',
       'handler_settings' => array(
         'behaviors' => array(
           'views-select-list' => array(
             'status' => 0,
           ),
         ),
-        'sort' => array(
-          'type' => 'none',
-        ),
-        'target_bundles' => array(
-          'ofed_address' => 'ofed_address',
+        'view' => array(
+          'args' => array(),
+          'display_name' => 'entityreference_ofed_address',
+          'view_name' => 'ofed_address',
         ),
       ),
       'target_type' => 'node',

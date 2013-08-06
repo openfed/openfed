@@ -116,18 +116,17 @@ function ofed_feature_press_field_default_field_bases() {
     'locked' => 0,
     'module' => 'entityreference',
     'settings' => array(
-      'handler' => 'base',
+      'handler' => 'views',
       'handler_settings' => array(
         'behaviors' => array(
           'views-select-list' => array(
             'status' => 0,
           ),
         ),
-        'sort' => array(
-          'type' => 'none',
-        ),
-        'target_bundles' => array(
-          'ofed_download' => 'ofed_download',
+        'view' => array(
+          'args' => array(),
+          'display_name' => 'entityreference_ofed_download',
+          'view_name' => 'ofed_download',
         ),
       ),
       'handler_submit' => 'Change handler',
