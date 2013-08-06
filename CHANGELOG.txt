@@ -20,6 +20,10 @@ No date yet - Version 7.x-1.0-rc1
     # Other:
       - Add a Drush command file to the profile
 
+  * Patches:
+    Contrib
+      - Sharethis: #2044081: ShareThis buttons not visible in content area
+
 30 July 2013 - Version 7.x-1.0-beta4
 ------------------------------------
 
