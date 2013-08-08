@@ -202,6 +202,29 @@ function ofed_feature_address_ds_field_settings_info() {
   );
   $export['node|ofed_address|references'] = $ds_fieldsetting;
 
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'node|ofed_address|short_reference';
+  $ds_fieldsetting->entity_type = 'node';
+  $ds_fieldsetting->bundle = 'ofed_address';
+  $ds_fieldsetting->view_mode = 'short_reference';
+  $ds_fieldsetting->settings = array(
+    'title' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'link' => '1',
+        'wrapper' => 'div',
+        'class' => 'field field-name-field-ofed-address-name',
+        'ft' => array(
+          'classes' => 'clear-block',
+        ),
+      ),
+    ),
+  );
+  $export['node|ofed_address|short_reference'] = $ds_fieldsetting;
+
   return $export;
 }
 
@@ -225,12 +248,12 @@ function ofed_feature_address_ds_layout_settings_info() {
         1 => 'group_address_line_1',
         2 => 'group_address_line_2',
         3 => 'field_ofed_address_street',
-        4 => 'field_ofed_address_number',
-        5 => 'group_address_line_3',
-        6 => 'field_ofed_address_zip',
-        7 => 'field_ofed_address_city',
-        8 => 'field_ofed_address_bus',
-        9 => 'field_ofed_address_country',
+        4 => 'group_address_line_3',
+        5 => 'field_ofed_address_zip',
+        6 => 'field_ofed_address_number',
+        7 => 'field_ofed_address_bus',
+        8 => 'field_ofed_address_country',
+        9 => 'field_ofed_address_city',
         10 => 'field_ofed_address_email',
         11 => 'field_ofed_address_phone',
         12 => 'field_ofed_address_opening_hours',
@@ -244,12 +267,12 @@ function ofed_feature_address_ds_layout_settings_info() {
       'group_address_line_1' => 'ds_content',
       'group_address_line_2' => 'ds_content',
       'field_ofed_address_street' => 'ds_content',
-      'field_ofed_address_number' => 'ds_content',
       'group_address_line_3' => 'ds_content',
       'field_ofed_address_zip' => 'ds_content',
-      'field_ofed_address_city' => 'ds_content',
+      'field_ofed_address_number' => 'ds_content',
       'field_ofed_address_bus' => 'ds_content',
       'field_ofed_address_country' => 'ds_content',
+      'field_ofed_address_city' => 'ds_content',
       'field_ofed_address_email' => 'ds_content',
       'field_ofed_address_phone' => 'ds_content',
       'field_ofed_address_opening_hours' => 'ds_content',
@@ -377,6 +400,35 @@ function ofed_feature_address_ds_layout_settings_info() {
     'hide_sidebars' => 0,
   );
   $export['node|ofed_address|references'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|ofed_address|short_reference';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'ofed_address';
+  $ds_layout->view_mode = 'short_reference';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'title',
+      ),
+    ),
+    'fields' => array(
+      'title' => 'ds_content',
+    ),
+    'classes' => array(),
+    'wrappers' => array(
+      'ds_content' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'hide_page_title' => '0',
+    'page_option_title' => '',
+    'hide_sidebars' => 0,
+  );
+  $export['node|ofed_address|short_reference'] = $ds_layout;
 
   return $export;
 }

@@ -38,6 +38,12 @@ function ofed_feature_address_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 4,
       ),
+      'short_reference' => array(
+        'label' => 'inline',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 4,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -92,6 +98,12 @@ function ofed_feature_address_field_default_field_instances() {
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 7,
+      ),
+      'short_reference' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -152,6 +164,12 @@ function ofed_feature_address_field_default_field_instances() {
         'type' => 'country_default_i18n',
         'weight' => 9,
       ),
+      'short_reference' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 4,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -209,6 +227,12 @@ function ofed_feature_address_field_default_field_instances() {
         'type' => 'entityreference_entity_view',
         'weight' => 14,
       ),
+      'short_reference' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 9,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -263,6 +287,12 @@ function ofed_feature_address_field_default_field_instances() {
         'settings' => array(),
         'type' => 'email_default',
         'weight' => 10,
+      ),
+      'short_reference' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -339,6 +369,12 @@ function ofed_feature_address_field_default_field_instances() {
         'type' => 'simple_gmap',
         'weight' => 13,
       ),
+      'short_reference' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 8,
+      ),
     ),
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
@@ -386,6 +422,12 @@ function ofed_feature_address_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
+        'weight' => 0,
+      ),
+      'short_reference' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 0,
       ),
       'teaser' => array(
@@ -443,6 +485,12 @@ function ofed_feature_address_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 3,
       ),
+      'short_reference' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 3,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -496,6 +544,12 @@ function ofed_feature_address_field_default_field_instances() {
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 12,
+      ),
+      'short_reference' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 7,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -551,6 +605,12 @@ function ofed_feature_address_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 11,
       ),
+      'short_reference' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 6,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -604,6 +664,12 @@ function ofed_feature_address_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
+        'weight' => 2,
+      ),
+      'short_reference' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 2,
       ),
       'teaser' => array(
@@ -671,6 +737,12 @@ function ofed_feature_address_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 21,
       ),
+      'short_reference' => array(
+        'label' => 'inline',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 10,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -736,6 +808,12 @@ function ofed_feature_address_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 22,
       ),
+      'short_reference' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 17,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -789,6 +867,12 @@ function ofed_feature_address_field_default_field_instances() {
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 6,
+      ),
+      'short_reference' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',
