@@ -30,31 +30,6 @@ function ofed_feature_photogallery_ds_field_settings_info() {
         ),
       ),
     ),
-    'node_link' => array(
-      'weight' => '4',
-      'label' => 'hidden',
-      'format' => 'default',
-      'formatter_settings' => array(
-        'link text' => 'Read more',
-        'wrapper' => '',
-        'ft' => array(
-          'classes' => 'more',
-        ),
-      ),
-    ),
-    'field_ofed_photog_images' => array(
-      'formatter_settings' => array(
-        'ft' => array(),
-      ),
-    ),
-    'field_ofed_photog_update' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'classes' => 'clear-block',
-          'lb' => 'Update date',
-        ),
-      ),
-    ),
   );
   $export['node|ofed_photogallery|block_column'] = $ds_fieldsetting;
 
@@ -78,26 +53,6 @@ function ofed_feature_photogallery_ds_field_settings_info() {
         ),
       ),
     ),
-    'node_link' => array(
-      'weight' => '4',
-      'label' => 'hidden',
-      'format' => 'default',
-      'formatter_settings' => array(
-        'link text' => 'Read more',
-        'wrapper' => '',
-        'ft' => array(
-          'classes' => 'more',
-        ),
-      ),
-    ),
-    'field_ofed_photog_update' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'classes' => 'clear-block',
-          'lb' => 'Update date',
-        ),
-      ),
-    ),
   );
   $export['node|ofed_photogallery|block_element'] = $ds_fieldsetting;
 
@@ -118,26 +73,6 @@ function ofed_feature_photogallery_ds_field_settings_info() {
         'class' => '',
         'ft' => array(
           'classes' => 'clear-block',
-        ),
-      ),
-    ),
-    'node_link' => array(
-      'weight' => '3',
-      'label' => 'hidden',
-      'format' => 'default',
-      'formatter_settings' => array(
-        'link text' => 'Read more',
-        'wrapper' => '',
-        'ft' => array(
-          'classes' => 'more',
-        ),
-      ),
-    ),
-    'field_ofed_photog_update' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'classes' => 'clear-block',
-          'lb' => 'Update date',
         ),
       ),
     ),
@@ -210,26 +145,16 @@ function ofed_feature_photogallery_ds_field_settings_info() {
       'weight' => '0',
       'label' => 'hidden',
       'format' => 'default',
-    ),
-    'node_link' => array(
-      'weight' => '4',
-      'label' => 'hidden',
-      'format' => 'default',
       'formatter_settings' => array(
-        'link text' => 'Read more',
-        'wrapper' => '',
+        'link' => '1',
+        'wrapper' => 'h2',
         'class' => '',
-        'ft' => array(
-          'classes' => 'more',
-        ),
+        'ft' => array(),
       ),
     ),
-    'field_ofed_photog_update' => array(
+    'field_ofed_photog_images' => array(
       'formatter_settings' => array(
-        'ft' => array(
-          'classes' => 'clear-block',
-          'lb' => 'Update date',
-        ),
+        'ft' => array(),
       ),
     ),
   );
@@ -393,16 +318,12 @@ function ofed_feature_photogallery_ds_layout_settings_info() {
         0 => 'title',
         1 => 'field_ofed_photog_summary',
         2 => 'field_ofed_photog_images',
-        3 => 'field_ofed_photog_update',
-        4 => 'node_link',
       ),
     ),
     'fields' => array(
       'title' => 'ds_content',
       'field_ofed_photog_summary' => 'ds_content',
       'field_ofed_photog_images' => 'ds_content',
-      'field_ofed_photog_update' => 'ds_content',
-      'node_link' => 'ds_content',
     ),
     'classes' => array(),
     'wrappers' => array(
@@ -430,16 +351,12 @@ function ofed_feature_photogallery_ds_layout_settings_info() {
         0 => 'title',
         1 => 'field_ofed_photog_summary',
         2 => 'field_ofed_photog_images',
-        3 => 'field_ofed_photog_update',
-        4 => 'node_link',
       ),
     ),
     'fields' => array(
       'title' => 'ds_content',
       'field_ofed_photog_summary' => 'ds_content',
       'field_ofed_photog_images' => 'ds_content',
-      'field_ofed_photog_update' => 'ds_content',
-      'node_link' => 'ds_content',
     ),
     'classes' => array(),
     'wrappers' => array(
@@ -466,15 +383,11 @@ function ofed_feature_photogallery_ds_layout_settings_info() {
       'ds_content' => array(
         0 => 'title',
         1 => 'field_ofed_photog_images',
-        2 => 'field_ofed_photog_update',
-        3 => 'node_link',
       ),
     ),
     'fields' => array(
       'title' => 'ds_content',
       'field_ofed_photog_images' => 'ds_content',
-      'field_ofed_photog_update' => 'ds_content',
-      'node_link' => 'ds_content',
     ),
     'classes' => array(),
     'wrappers' => array(
@@ -536,16 +449,16 @@ function ofed_feature_photogallery_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'ds_content' => array(
-        0 => 'field_ofed_photog_summary',
-        1 => 'field_ofed_photog_body',
-        2 => 'field_ofed_photog_images',
+        0 => 'field_ofed_photog_images',
+        1 => 'field_ofed_photog_summary',
+        2 => 'field_ofed_photog_body',
         3 => 'field_ofed_photog_update',
       ),
     ),
     'fields' => array(
+      'field_ofed_photog_images' => 'ds_content',
       'field_ofed_photog_summary' => 'ds_content',
       'field_ofed_photog_body' => 'ds_content',
-      'field_ofed_photog_images' => 'ds_content',
       'field_ofed_photog_update' => 'ds_content',
     ),
     'classes' => array(),
@@ -574,16 +487,12 @@ function ofed_feature_photogallery_ds_layout_settings_info() {
         0 => 'title',
         1 => 'field_ofed_photog_summary',
         2 => 'field_ofed_photog_images',
-        3 => 'field_ofed_photog_update',
-        4 => 'node_link',
       ),
     ),
     'fields' => array(
       'title' => 'ds_content',
       'field_ofed_photog_summary' => 'ds_content',
       'field_ofed_photog_images' => 'ds_content',
-      'field_ofed_photog_update' => 'ds_content',
-      'node_link' => 'ds_content',
     ),
     'classes' => array(),
     'wrappers' => array(

@@ -47,7 +47,7 @@ function ofed_feature_photogallery_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 1,
+        'weight' => 2,
       ),
       'page_list' => array(
         'label' => 'above',
@@ -298,7 +298,7 @@ function ofed_feature_photogallery_field_default_field_instances() {
           'slideshow_carousel_skin' => '',
           'slideshow_carousel_speed' => 500,
           'slideshow_carousel_vertical' => 0,
-          'slideshow_carousel_visible' => 4,
+          'slideshow_carousel_visible' => 6,
           'slideshow_colorbox_image_style' => 'ofed_photogallery_images_slideshow_large',
           'slideshow_colorbox_slideshow' => '',
           'slideshow_colorbox_slideshow_speed' => 4000,
@@ -321,7 +321,7 @@ function ofed_feature_photogallery_field_default_field_instances() {
           'slideshow_timeout' => 4000,
         ),
         'type' => 'slideshow',
-        'weight' => 2,
+        'weight' => 0,
       ),
       'page_list' => array(
         'label' => 'hidden',
@@ -485,7 +485,7 @@ function ofed_feature_photogallery_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 0,
+        'weight' => 1,
       ),
       'page_list' => array(
         'label' => 'hidden',
@@ -576,41 +576,20 @@ function ofed_feature_photogallery_field_default_field_instances() {
     'display' => array(
       'block_column' => array(
         'label' => 'inline',
-        'module' => 'date',
-        'settings' => array(
-          'format_type' => 'short',
-          'fromto' => 'both',
-          'multiple_from' => '',
-          'multiple_number' => '',
-          'multiple_to' => '',
-        ),
-        'type' => 'date_default',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 3,
       ),
       'block_element' => array(
         'label' => 'inline',
-        'module' => 'date',
-        'settings' => array(
-          'format_type' => 'short',
-          'fromto' => 'both',
-          'multiple_from' => '',
-          'multiple_number' => '',
-          'multiple_to' => '',
-        ),
-        'type' => 'date_default',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 3,
       ),
       'block_list' => array(
         'label' => 'inline',
-        'module' => 'date',
-        'settings' => array(
-          'format_type' => 'long',
-          'fromto' => 'both',
-          'multiple_from' => '',
-          'multiple_number' => '',
-          'multiple_to' => '',
-        ),
-        'type' => 'date_default',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 2,
       ),
       'default' => array(
@@ -641,15 +620,8 @@ function ofed_feature_photogallery_field_default_field_instances() {
       ),
       'page_list' => array(
         'label' => 'inline',
-        'module' => 'date',
-        'settings' => array(
-          'format_type' => 'long',
-          'fromto' => 'both',
-          'multiple_from' => '',
-          'multiple_number' => '',
-          'multiple_to' => '',
-        ),
-        'type' => 'date_default',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 3,
       ),
       'print' => array(
@@ -693,15 +665,8 @@ function ofed_feature_photogallery_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'inline',
-        'module' => 'date',
-        'settings' => array(
-          'format_type' => 'short',
-          'fromto' => 'both',
-          'multiple_from' => '',
-          'multiple_number' => '',
-          'multiple_to' => '',
-        ),
-        'type' => 'date_default',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 3,
       ),
     ),
@@ -773,7 +738,7 @@ function ofed_feature_photogallery_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 13,
+        'weight' => 11,
       ),
       'page_list' => array(
         'label' => 'above',

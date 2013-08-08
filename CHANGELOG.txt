@@ -20,6 +20,7 @@ No date yet - Version 7.x-1.0-rc1
     #2033053: Entity reference load nodes with wrong language
     #2038017: Address: display of phone numbers
     #2045683: Jobs: review display
+    #2044973: Photo gallery: review display
     # Other:
       - Add a Drush command file to the profile
 

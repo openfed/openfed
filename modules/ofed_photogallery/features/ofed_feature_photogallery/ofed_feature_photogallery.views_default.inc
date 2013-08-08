@@ -516,7 +516,7 @@ function ofed_feature_photogallery_views_default_views() {
   /* Display: Block: Latest one */
   $handler = $view->new_display('block', 'Block: Latest one', 'ofed_photogallery_block_latest_one');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Latest one photo gallery ';
+  $handler->display->display_options['title'] = 'New photo gallery ';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['use_more'] = FALSE;
   $handler->display->display_options['use_more'] = TRUE;
@@ -579,7 +579,7 @@ function ofed_feature_photogallery_views_default_views() {
   $handler->display->display_options['filters']['language']['value'] = array(
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
-  $handler->display->display_options['block_description'] = 'Photo galleries: Latest one photo gallery';
+  $handler->display->display_options['block_description'] = 'Photo galleries: New photo gallery';
 
   /* Display: Block: Latest one updated */
   $handler = $view->new_display('block', 'Block: Latest one updated', 'ofed_photogallery_block_latest_one_updated');
@@ -685,8 +685,8 @@ function ofed_feature_photogallery_views_default_views() {
     t('Block: Column'),
     t('Photo galleries: Column'),
     t('Block: Latest one'),
-    t('Latest one photo gallery '),
-    t('Photo galleries: Latest one photo gallery'),
+    t('New photo gallery '),
+    t('Photo galleries: New photo gallery'),
     t('Block: Latest one updated'),
     t('Latest updated photo gallery'),
     t('Photo galleries: Latest updated photo gallery'),
