@@ -27,6 +27,7 @@ No date yet - Version 7.x-1.0-rc1
     #2056233: Module upgrade: extlink
     #2056229: Module upgrade: apachesolr
     #2044957: Photo gallery: column block
+    #2060283: Photo Gallery : Overlay not themed
     #Other :
       - Add a Drush command file to the profile
       - Change patch from issue #1772316 (related to core changes, issue still not fixed)
