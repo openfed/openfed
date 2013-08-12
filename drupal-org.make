@@ -107,10 +107,10 @@ projects[admin_path][subdir] = contrib
 projects[admin_theme][version] = "1.0"
 projects[admin_theme][subdir] = contrib
 
-projects[apachesolr][version] = "1.3"
+projects[apachesolr][version] = "1.4"
 projects[apachesolr][subdir] = contrib
 
-projects[apachesolr_attachments][version] = "1.2"
+projects[apachesolr_attachments][version] = "1.4"
 projects[apachesolr_attachments][subdir] = contrib
 projects[apachesolr_attachments][patch][1980750] = "http://drupal.org/files/apachesolr-attachments-snippets-1980750-8.patch"
 
@@ -181,7 +181,7 @@ projects[entityreference][patch][1916376] = "http://drupal.org/files/entityrefer
 projects[entity_translation][version] = "1.0-beta2"
 projects[entity_translation][subdir] = contrib
 
-projects[extlink][version] = "1.12"
+projects[extlink][version] = "1.13"
 projects[extlink][subdir] = contrib
 
 projects[facetapi][version] = "1.3"
@@ -190,7 +190,7 @@ projects[facetapi][subdir] = contrib
 projects[facetapi_i18n][version] = "1.0-beta2"
 projects[facetapi_i18n][subdir] = contrib
 
-projects[features][version] = "2.0-rc1"
+projects[features][version] = "2.0-rc2"
 projects[features][subdir] = contrib
 projects[features][patch][1063204] = "http://drupal.org/files/features_static_caches-1063204-32.patch"
 

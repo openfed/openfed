@@ -1,11 +1,12 @@
 api = 2
 core = 7.x
 
-projects[drupal][version] = "7.22"
+projects[drupal][version] = "7.23"
 
 ; Allow install profiles to change the system requirements
 ; see http://drupal.org/node/1772316
-projects[drupal][patch][1772316] = http://drupal.org/files/allow_change_system-requirements-1772316-4.patch
+;projects[drupal][patch][1772316] = http://drupal.org/files/allow_change_system-requirements-1772316-4.patch
+projects[drupal][patch][1772316] = https://drupal.org/files/drupal7-allow_change_system-requirements-1772316-18.patch
 
 ; Tests for: $info['fields'] not always set?
 ; see http://drupal.org/node/1400256
