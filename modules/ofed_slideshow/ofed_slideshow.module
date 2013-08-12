@@ -35,7 +35,15 @@ function _ofed_slideshow_insert_after_first_element(&$a, $element) {
  * Implements hook_preprocess_node().
  */
 function ofed_slideshow_preprocess_node() {
-  drupal_add_library('jquery_plugin', 'cycle');
+  //drupal_add_library('jquery_plugin', 'cycle');
+  $path = libraries_get_path('jquery.cycle');
+
+  if (file_exists($path . '/jquery.cycle.all.min.js')){
+    drupal_add_js($path . '/jquery.cycle.all.min.js');
+  }
+  elseif (file_exists($path . '/jquery.cycle.all.js')) {
+    drupal_add_js($path . '/jquery.cycle.all.js');
+  }
   drupal_add_js(drupal_get_path('module', 'ofed_slideshow') . '/assets/scripts/ofed_slideshow.js');
   drupal_add_css(drupal_get_path('module', 'ofed_slideshow') . '/assets/styles/ofed_slideshow.css');
 }
