@@ -110,9 +110,8 @@ projects[admin_theme][subdir] = contrib
 projects[apachesolr][version] = "1.4"
 projects[apachesolr][subdir] = contrib
 
-projects[apachesolr_attachments][version] = "1.4"
+projects[apachesolr_attachments][version] = "1.3"
 projects[apachesolr_attachments][subdir] = contrib
-projects[apachesolr_attachments][patch][1980750] = "http://drupal.org/files/apachesolr-attachments-snippets-1980750-8.patch"
 
 projects[apachesolr_autocomplete][version] = "1.3"
 projects[apachesolr_autocomplete][subdir] = contrib
