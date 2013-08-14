@@ -1,7 +1,7 @@
 CHANGELOG
 =========
 
-No date yet - Version 7.x-1.0-rc1
+13 August 2013 - Version 7.x-1.0-rc1
 ----------------------------------
   * Issues:
     #2060293: Drupal core update (7.23)
