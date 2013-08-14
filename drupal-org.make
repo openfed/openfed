@@ -191,7 +191,6 @@ projects[facetapi_i18n][subdir] = contrib
 
 projects[features][version] = "2.0-rc2"
 projects[features][subdir] = contrib
-projects[features][patch][1063204] = "http://drupal.org/files/features_static_caches-1063204-32.patch"
 
 projects[features_override][version] = "2.0-beta2"
 projects[features_override][subdir] = contrib

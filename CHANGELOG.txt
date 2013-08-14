@@ -7,6 +7,7 @@ No date yet - Version 7.x-1.0-rc2
  * Issues:
     #2045841: All content types: read more
     #2045683: Jobs: review display
+    #2060535: Module upgrade: features
 
 
 13 August 2013 - Version 7.x-1.0-rc1
