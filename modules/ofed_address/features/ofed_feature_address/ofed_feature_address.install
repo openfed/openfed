@@ -87,7 +87,7 @@ function ofed_feature_address_install() {
       }
     }
   }
-  
+
   // Paths alias management.
   $path_source = 'addresses';
   // Set path alias whitelist.
@@ -96,7 +96,7 @@ function ofed_feature_address_install() {
     $path_alias_whitelist[$path_source] = TRUE;
     variable_set('path_alias_whitelist', $path_alias_whitelist);
   }
-  
+
   // Set path alias for each languages.
   $languages = language_list('enabled');
   foreach ($languages as $language) {
@@ -145,7 +145,7 @@ function ofed_feature_address_update_7100 () {
     $path_alias_whitelist[$path_source] = TRUE;
     variable_set('path_alias_whitelist', $path_alias_whitelist);
   }
-  
+
   // Set path alias for each languages.
   $languages = language_list('enabled');
   foreach ($languages as $language) {
@@ -188,7 +188,7 @@ function ofed_feature_address_update_7101 () {
   foreach ($displays_to_delete as $display_to_delete) {
     db_delete('ds_field_settings')->condition('id', 'node|' .  $bundle . '|' . $display_to_delete)->execute();
   }
-  
+
   // Update field instance.
   // Get field config instance for each field used by the content type.
   // Select each field instance for this bundle.

@@ -1,8 +1,16 @@
 CHANGELOG
 =========
 
+No date yet - Version 7.x-1.0-rc2
+------------------------------------
+
+ * Issues:
+    #2045841: All content types: read more
+    #2045683: Jobs: review display
+
+
 13 August 2013 - Version 7.x-1.0-rc1
-----------------------------------
+------------------------------------
   * Issues:
     #2060293: Drupal core update (7.23)
     #2053483: Installer: installation fails (required modules), remove devel and waia-integration dependencies

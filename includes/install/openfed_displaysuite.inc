@@ -93,3 +93,9 @@ $view_mode->label = 'References';
 $view_mode->entities = array('node' => 'node');
 drupal_write_record('ds_view_modes', $view_mode);
 
+$view_mode = new stdClass();
+$view_mode->view_mode = 'short_references';
+$view_mode->label = 'Short references';
+$view_mode->entities = array('node' => 'node');
+drupal_write_record('ds_view_modes', $view_mode);
+

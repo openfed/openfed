@@ -114,6 +114,9 @@ function ofed_feature_address_strongarm() {
       'revision' => array(
         'custom_settings' => FALSE,
       ),
+      'short_reference' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(

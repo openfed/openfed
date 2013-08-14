@@ -720,15 +720,8 @@ function ofed_feature_address_field_default_field_instances() {
       ),
       'page_list' => array(
         'label' => 'inline',
-        'module' => 'date',
-        'settings' => array(
-          'format_type' => 'short',
-          'fromto' => 'both',
-          'multiple_from' => '',
-          'multiple_number' => '',
-          'multiple_to' => '',
-        ),
-        'type' => 'date_default',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 5,
       ),
       'references' => array(
