@@ -170,7 +170,7 @@ projects[email][subdir] = contrib
 projects[emfield][version] = "1.0-alpha2"
 projects[emfield][subdir] = contrib
 
-projects[entity][version] = "1.1"
+projects[entity][version] = "1.2"
 projects[entity][subdir] = contrib
 
 projects[entityreference][version] = "1.0"
@@ -192,7 +192,7 @@ projects[facetapi_i18n][subdir] = contrib
 projects[features][version] = "2.0-rc2"
 projects[features][subdir] = contrib
 
-projects[features_override][version] = "2.0-beta2"
+projects[features_override][version] = "2.0-beta3"
 projects[features_override][subdir] = contrib
 
 projects[field_collection][version] = "1.0-beta5"
@@ -411,7 +411,7 @@ projects[transliteration][subdir] = contrib
 projects[twitter][version] = "5.8"
 projects[twitter][subdir] = contrib
 
-projects[variable][version] = "2.2"
+projects[variable][version] = "2.3"
 projects[variable][subdir] = contrib
 
 projects[view_unpublished][version] = "1.1"
@@ -436,7 +436,7 @@ projects[webform][subdir] = contrib
 projects[webform_rules][version] = "1.6"
 projects[webform_rules][subdir] = contrib
 
-projects[weight][version] = "2.2"
+projects[weight][version] = "2.3"
 projects[weight][subdir] = contrib
 
 projects[xmlsitemap][version] = "2.0-rc2"
