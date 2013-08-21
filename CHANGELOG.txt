@@ -12,6 +12,7 @@ No date yet - Version 7.x-1.0-rc2
     #2064879: Module upgrade: weight
     #2064877: Module upgrade: features_override
     #2064873: Module upgrade: variable
+    #2036959: New module: username enumeration prevention
     
 13 August 2013 - Version 7.x-1.0-rc1
 ------------------------------------

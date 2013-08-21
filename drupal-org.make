@@ -411,6 +411,9 @@ projects[transliteration][subdir] = contrib
 projects[twitter][version] = "5.8"
 projects[twitter][subdir] = contrib
 
+projects[username_enumeration_prevention][version] = "1.0"
+projects[username_enumeration_prevention][subdir] = contrib
+
 projects[variable][version] = "2.3"
 projects[variable][subdir] = contrib
 
