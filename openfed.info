@@ -148,6 +148,7 @@ version = "7.x-1.0"
   ; Security
     dependencies[] = seckit
     dependencies[] = securelogin
+    dependencies[] = username_enumeration_prevention
   ; Seo
     dependencies[] = page_title
   ; Sharing
