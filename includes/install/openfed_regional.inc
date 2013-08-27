@@ -6,8 +6,6 @@ variable_set('i18n_hide_translation_links', TRUE);
 // Regional and language > Regional Settings at "admin/config/regional/settings"
 variable_set('date_first_day', 1);
 
-
-
 // Regional and language > Multilingual settings > node options at "admin/config/regional/i18n/node"
 variable_set('i18n_node_default_language_none', 1);
 
@@ -61,10 +59,37 @@ $arr = Array(
     ),
     'file' => 'includes/locale.inc'
   ),
+  'language-cookie' => Array(
+    'callbacks' => Array(
+      'language' => 'locale_cookie_language_from_cookie',
+    ),
+    'file' => drupal_get_path('module', 'locale_cookie') . '/includes/locale_cookie.inc',
+  ),
   'language-default' => Array(
     'callbacks' => Array(
       'language' => 'language_from_default'
     )
   )
 );
+
 variable_set('language_negotiation_language', $arr);
+
+// Regional and language > Language > Detection and selection order
+$arr = Array(
+  'locale-url' => -10,
+  'language-cookie' => -8,
+  'locale-session' => -6,
+  'locale-user' => -4,
+  'locale-browser' => -2,
+  'language-default' => 10,
+);
+
+variable_set('locale_language_providers_weight_language', $arr);
+
+// Regional and language > Language > Detection and selection > Cookie
+variable_set('locale_cookie_language_negotiation_cookie_param', 'language');
+variable_set('locale_cookie_language_negotiation_cookie_expire', '365');
+variable_set('locale_cookie_language_negotiation_cookie_path', '/');
+variable_set('locale_cookie_language_negotiation_cookie_domain', '');
+variable_set('locale_cookie_language_negotiation_cookie_secure', 0);
+variable_set('locale_cookie_language_negotiation_cookie_http_only', 0);

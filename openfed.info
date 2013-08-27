@@ -98,6 +98,7 @@ version = "7.x-1.0"
     dependencies[] = translation_table
     dependencies[] = i18n_variable
     dependencies[] = i18n_user
+    dependencies[] = locale_cookie
   ; Multilanguage
     dependencies[] = translation_helpers
   ; Other
