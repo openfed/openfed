@@ -2,7 +2,7 @@ CHANGELOG
 =========
 
 No date yet - Version 7.x-1.0-rc2
-------------------------------------
+---------------------------------
 
  * Issues:
     #2045841: All content types: read more
@@ -14,7 +14,16 @@ No date yet - Version 7.x-1.0-rc2
     #2064873: Module upgrade: variable
     #2036959: New module: username enumeration prevention
     #2037961: Store language preference in cookie
-    
+    #Other :
+      - Use addemar_subscription on full project.
+      - Use ofed_vmcd on full project.
+      - Use ofed_switcher on full project.
+      - Use ofed_maintenance_theme_selector on full project.
+      - Use ofed_menu_dam on full project.
+      - Use ofed_theme_cms on full project.
+      - Use ofed_theme_maintenance on full project.
+      - Use ofed_theme_nerra on full project.
+
 13 August 2013 - Version 7.x-1.0-rc1
 ------------------------------------
   * Issues:

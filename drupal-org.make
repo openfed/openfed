@@ -44,51 +44,29 @@ libraries[jquery.jcarousel][type] = "library"
 ; Please fill the following out. Type may be one of get, git, bzr or svn, and url is the url of the download.
 ;
 
-projects[addemar_subscription][download][type] = "git"
-projects[addemar_subscription][download][url] = http://git.drupal.org/sandbox/Openfed/2019683.git
-projects[addemar_subscription][download][branch] = 7.x-1.x
-projects[addemar_subscription][directory_name] = "addemar_subscription"
+projects[addemar_subscription][version] = "1.0"
 projects[addemar_subscription][subdir] = contrib
-projects[addemar_subscription][type] = module
 
-projects[menu_dam][download][type] = "git"
-projects[menu_dam][download][url] = http://git.drupal.org/sandbox/Openfed/2026821.git
-projects[menu_dam][download][branch] = 7.x-1.x
-projects[menu_dam][directory_name] = "menu_dam"
-projects[menu_dam][subdir] = contrib
-projects[menu_dam][type] = module
+projects[ofed_menu_dam][version] = "1.0"
+projects[ofed_menu_dam][subdir] = contrib
 
-projects[ofed_switcher][download][type] = "git"
-projects[ofed_switcher][download][url] = http://git.drupal.org/sandbox/Openfed/2021377.git
-projects[ofed_switcher][download][branch] = 7.x-1.x
-projects[ofed_switcher][directory_name] = "ofed_switcher"
+projects[ofed_switcher][version] = "1.0"
 projects[ofed_switcher][subdir] = contrib
-projects[ofed_switcher][type] = module
 
-projects[ofed_vmcd][download][type] = "git"
-projects[ofed_vmcd][download][url] = http://git.drupal.org/sandbox/Openfed/2021399.git
-projects[ofed_vmcd][download][branch] = 7.x-1.x
-projects[ofed_vmcd][directory_name] = "ofed_vmcd"
+projects[ofed_maintenance_theme_selector][version] = "1.0"
+projects[ofed_maintenance_theme_selector][subdir] = contrib
+
+projects[ofed_vmcd][version] = "1.0"
 projects[ofed_vmcd][subdir] = contrib
-projects[ofed_vmcd][type] = module
 
-projects[cms_theme][download][type] = "git"
-projects[cms_theme][download][url] = http://git.drupal.org/sandbox/Openfed/2026885.git
-projects[cms_theme][download][branch] = 7.x-1.x
-projects[cms_theme][directory_name] = "cms_theme"
-projects[cms_theme][type] = theme
+projects[ofed_theme_nerra][version] = "1.0"
+projects[ofed_theme_nerra][subdir] = contrib
 
-projects[maintenance][download][type] = "git"
-projects[maintenance][download][url] = http://git.drupal.org/sandbox/Openfed/2026857.git
-projects[maintenance][download][branch] = 7.x-1.x
-projects[maintenance][directory_name] = "maintenance"
-projects[maintenance][type] = theme
+projects[ofed_theme_cms][version] = "1.0"
+projects[ofed_theme_cms][subdir] = contrib
 
-projects[nerra][download][type] = "git"
-projects[nerra][download][url] = http://git.drupal.org/sandbox/Openfed/2021473.git
-projects[nerra][download][branch] = 7.x-1.x
-projects[nerra][directory_name] = "nerra"
-projects[nerra][type] = theme
+projects[ofed_theme_maintenance][version] = "1.0"
+projects[ofed_theme_maintenance][subdir] = contrib
 
 ;
 ; Modules
