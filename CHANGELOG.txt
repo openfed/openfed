@@ -12,8 +12,10 @@ No date yet - Version 7.x-1.0-rc2
     #2060535: Module upgrade: features
     #2067785: Module upgrade: entity_api
     #2064879: Module upgrade: weight
+    #2079359: Module upgrade: features
     #2064877: Module upgrade: features_override
     #2064873: Module upgrade: variable
+    #2079355: Module upgrade: field_group
     #2036959: New module: username enumeration prevention
     #2037961: Store language preference in cookie
     #Other :
