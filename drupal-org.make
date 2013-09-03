@@ -180,7 +180,7 @@ projects[field-conditional-state][version] = "1.0"
 projects[field-conditional-state][subdir] = contrib
 projects[field-conditional-state][patch][1721924] = "http://drupal.org/files/field-conditional-state-notice_undefined_property_stdclas_content-1721924-2.patch"
 
-projects[field_group][version] = "1.1"
+projects[field_group][version] = "1.2"
 projects[field_group][subdir] = contrib
 
 projects[field_permissions][version] = "1.0-beta2"
