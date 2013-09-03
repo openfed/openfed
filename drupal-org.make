@@ -20,7 +20,7 @@ libraries[colorbox][directory_name] = "colorbox"
 libraries[colorbox][type] = "library"
 
 ; jquery.cycle
-libraries[jquery.cycle][download][type] = "git"
+libraries[jquery.cycle][download][type] = "get"
 libraries[jquery.cycle][download][url] = "https://github.com/malsup/cycle/archive/master.zip"
 libraries[jquery.cycle][directory_name] = "jquery.cycle"
 libraries[jquery.cycle][type] = "library"
