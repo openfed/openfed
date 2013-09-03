@@ -25,6 +25,7 @@ No date yet - Version 7.x-1.0-rc2
       - Use ofed_theme_cms on full project.
       - Use ofed_theme_maintenance on full project.
       - Use ofed_theme_nerra on full project.
+      - Fix patch's path for locale_cookie module
 
 13 August 2013 - Version 7.x-1.0-rc1
 ------------------------------------
