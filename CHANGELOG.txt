@@ -5,6 +5,7 @@ No date yet - Version 7.x-1.0-rc2
 ---------------------------------
 
  * Issues:
+    #2079669: Changed jquery.cycle url in make file   
     #2045841: All content types: read more
     #2045683: Jobs: review display
     #2060535: Module upgrade: features
