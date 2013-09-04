@@ -18,6 +18,7 @@ No date yet - Version 7.x-1.0-rc2
     #2064873: Module upgrade: variable
     #2079355: Module upgrade: field_group
     #2036959: New module: username enumeration prevention
+    #2043079: Comment #8 - Module upgrade: ds
     #2037961: Store language preference in cookie
     #Other :
       - Use addemar_subscription on full project.
