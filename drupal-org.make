@@ -26,11 +26,12 @@ libraries[jquery.cycle][directory_name] = "jquery.cycle"
 libraries[jquery.cycle][type] = "library"
 
 ; jquery.imagesloaded
-libraries[jquery.imagesloaded][download][type] = "file"
-libraries[jquery.imagesloaded][download][request_type] = "get"
-libraries[jquery.imagesloaded][download][url] = "https://github.com/desandro/imagesloaded/raw/v2.1.2/jquery.imagesloaded.min.js"
-libraries[jquery.imagesloaded][directory_name] = "jquery.imagesloaded"
-libraries[jquery.imagesloaded][type] = "library"
+; awaiting whitelisting, see https://drupal.org/node/2080029
+;libraries[jquery.imagesloaded][download][type] = "file"
+;libraries[jquery.imagesloaded][download][request_type] = "get"
+;libraries[jquery.imagesloaded][download][url] = "https://github.com/desandro/imagesloaded/raw/v2.1.2/jquery.imagesloaded.min.js"
+;libraries[jquery.imagesloaded][directory_name] = "jquery.imagesloaded"
+;libraries[jquery.imagesloaded][type] = "library"
 
 ; jquery.jcarousel
 libraries[jquery.jcarousel][download][type] = "get"
