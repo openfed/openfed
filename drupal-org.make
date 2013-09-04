@@ -226,10 +226,11 @@ projects[jquery_update][subdir] = contrib
 projects[l10n_client][version] = "1.1"
 projects[l10n_client][subdir] = contrib
 
+; Patches block automated build, see https://drupal.org/node/2037961
 projects[locale_cookie][version] = "1.0"
 projects[locale_cookie][subdir] = contrib
-projects[locale_cookie][patch][2074991] = "https://drupal.org/files/locale-cookie_adding_of_all_settable_settings_for_a_cookie-2074991-4.patch"
-projects[locale_cookie][patch][2075047] = "https://drupal.org/files/locale-cookie_wrong_language_redirection_caused_by_incompatibility_with_the_global_redirect_module-2075047-0_0.patch"
+;projects[locale_cookie][patch][2074991] = "https://drupal.org/files/locale-cookie_adding_of_all_settable_settings_for_a_cookie-2074991-4.patch"
+;projects[locale_cookie][patch][2075047] = "https://drupal.org/files/locale-cookie_wrong_language_redirection_caused_by_incompatibility_with_the_global_redirect_module-2075047-0_0.patch"
 
 projects[lexicon][version] = "1.10"
 projects[lexicon][subdir] = contrib
