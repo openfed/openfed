@@ -26,7 +26,7 @@ No date yet - Version 7.x-1.x
     #2081947: Module upgrade: module_filter
     #2080029: Included jquery.imagesloaded files (for now)
     #2042961: Promoted to full project
-    #2079669: Changed jquery.cycle url in make file   
+    #2079669: Changed jquery.cycle url in make file
     #2045841: All content types: read more
     #2045683: Jobs: review display
     #2060535: Module upgrade: features
@@ -39,7 +39,9 @@ No date yet - Version 7.x-1.x
     #2036959: New module: username enumeration prevention
     #2043079: Module upgrade: ds
     #2037961: Store language preference in cookie
-    #Other :
+    #2037919: add node id to CMS view content filter
+    #2028401: Event is not always sticky on top of lists
+    #Others :
       - Use addemar_subscription on full project.
       - Use ofed_vmcd on full project.
       - Use ofed_switcher on full project.
@@ -79,7 +81,7 @@ No date yet - Version 7.x-1.x
     #2060283: Photo Gallery : Overlay not themed
     #2060291: Photo Gallery: Portrait images are not centered
     #2028391: Photo gallery: layout issue with the block column display
-    #Other :
+    #Others :
       - Add a Drush command file to the profile
       - Change patch from issue #1772316 (related to core changes, issue still not fixed)
 
