@@ -276,7 +276,7 @@ projects[menu_position][subdir] = contrib
 projects[metatag][version] = "1.0-beta7"
 projects[metatag][subdir] = contrib
 
-projects[module_filter][version] = "1.7"
+projects[module_filter][version] = "1.8"
 projects[module_filter][subdir] = contrib
 
 projects[mollom][version] = "2.7"
