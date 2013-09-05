@@ -343,7 +343,7 @@ projects[scheduler][subdir] = contrib
 projects[search_config][version] = "1.0"
 projects[search_config][subdir] = contrib
 
-projects[seckit][version] = "1.5"
+projects[seckit][version] = "1.6"
 projects[seckit][subdir] = contrib
 
 projects[securelogin][version] = "1.4"

@@ -5,6 +5,7 @@ No date yet - Version 7.x-1.0-rc2
 ---------------------------------
 
  * Issues:
+    #2081941: Module upgrade: seckit
     #2081947: Module upgrade: module_filter
     #2080029: Included jquery.imagesloaded files (for now)
     #2042961: Promoted to full project
