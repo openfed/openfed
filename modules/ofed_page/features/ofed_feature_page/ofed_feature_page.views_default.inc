@@ -70,15 +70,24 @@ function ofed_feature_page_views_default_views() {
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['style_options']['columns'] = array(
+    'nid' => 'nid',
     'title' => 'title',
     'name' => 'name',
     'language' => 'language',
+    'field_ofed_page_pubdate' => 'field_ofed_page_pubdate',
     'changed' => 'changed',
     'edit_node' => 'edit_node',
     'delete_node' => 'delete_node',
   );
   $handler->display->display_options['style_options']['default'] = '-1';
   $handler->display->display_options['style_options']['info'] = array(
+    'nid' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
     'title' => array(
       'sortable' => 1,
       'default_sort_order' => 'asc',
@@ -94,6 +103,13 @@ function ofed_feature_page_views_default_views() {
       'empty_column' => 0,
     ),
     'language' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_ofed_page_pubdate' => array(
       'sortable' => 1,
       'default_sort_order' => 'asc',
       'align' => '',
@@ -129,6 +145,10 @@ function ofed_feature_page_views_default_views() {
   $handler->display->display_options['relationships']['uid']['table'] = 'node';
   $handler->display->display_options['relationships']['uid']['field'] = 'uid';
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -148,6 +168,17 @@ function ofed_feature_page_views_default_views() {
   $handler->display->display_options['fields']['language']['table'] = 'node';
   $handler->display->display_options['fields']['language']['field'] = 'language';
   $handler->display->display_options['fields']['language']['element_label_colon'] = FALSE;
+  /* Field: Content: Publication date */
+  $handler->display->display_options['fields']['field_ofed_page_pubdate']['id'] = 'field_ofed_page_pubdate';
+  $handler->display->display_options['fields']['field_ofed_page_pubdate']['table'] = 'field_data_field_ofed_page_pubdate';
+  $handler->display->display_options['fields']['field_ofed_page_pubdate']['field'] = 'field_ofed_page_pubdate';
+  $handler->display->display_options['fields']['field_ofed_page_pubdate']['settings'] = array(
+    'format_type' => 'long',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
   /* Field: Content: Updated date */
   $handler->display->display_options['fields']['changed']['id'] = 'changed';
   $handler->display->display_options['fields']['changed']['table'] = 'node';
@@ -240,6 +271,25 @@ function ofed_feature_page_views_default_views() {
     6 => 0,
     7 => 0,
   );
+  /* Filter criterion: Content: Nid */
+  $handler->display->display_options['filters']['nid']['id'] = 'nid';
+  $handler->display->display_options['filters']['nid']['table'] = 'node';
+  $handler->display->display_options['filters']['nid']['field'] = 'nid';
+  $handler->display->display_options['filters']['nid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['nid']['expose']['operator_id'] = 'nid_op';
+  $handler->display->display_options['filters']['nid']['expose']['label'] = 'Nid';
+  $handler->display->display_options['filters']['nid']['expose']['use_operator'] = TRUE;
+  $handler->display->display_options['filters']['nid']['expose']['operator'] = 'nid_op';
+  $handler->display->display_options['filters']['nid']['expose']['identifier'] = 'nid';
+  $handler->display->display_options['filters']['nid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    5 => 0,
+    6 => 0,
+    7 => 0,
+  );
   $handler->display->display_options['path'] = 'cms/pages';
   $translatables['ofed_page'] = array(
     t('Master'),
@@ -260,13 +310,16 @@ function ofed_feature_page_views_default_views() {
     t('Title'),
     t('Pages'),
     t('author'),
+    t('Nid'),
     t('Author'),
     t('Language'),
+    t('Publication date'),
     t('Updated date'),
     t('Edit'),
     t('Delete'),
     t('Published'),
   );
+
   $export['ofed_page'] = $view;
 
   return $export;
