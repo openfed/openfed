@@ -325,7 +325,7 @@ projects[quiz][patch][1827880] = "http://drupal.org/files/undefined_index_group_
 projects[redirect][version] = "1.0-rc1"
 projects[redirect][subdir] = contrib
 
-projects[registration][version] = "1.1"
+projects[registration][version] = "1.2"
 projects[registration][subdir] = contrib
 
 projects[robotstxt][version] = "1.1"
