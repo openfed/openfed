@@ -76,26 +76,26 @@ function ofed_feature_job_views_default_views() {
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['style_options']['columns'] = array(
+    'nid' => 'nid',
     'title' => 'title',
-    'field_ofed_job_date' => 'field_ofed_job_date',
     'name' => 'name',
     'language' => 'language',
     'changed' => 'changed',
     'edit_node' => 'edit_node',
     'delete_node' => 'delete_node',
   );
-  $handler->display->display_options['style_options']['default'] = 'field_ofed_job_date';
+  $handler->display->display_options['style_options']['default'] = '-1';
   $handler->display->display_options['style_options']['info'] = array(
-    'title' => array(
+    'nid' => array(
       'sortable' => 1,
       'default_sort_order' => 'asc',
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
     ),
-    'field_ofed_job_date' => array(
+    'title' => array(
       'sortable' => 1,
-      'default_sort_order' => 'desc',
+      'default_sort_order' => 'asc',
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
@@ -137,6 +137,10 @@ function ofed_feature_job_views_default_views() {
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -249,6 +253,25 @@ function ofed_feature_job_views_default_views() {
     6 => 0,
     7 => 0,
   );
+  /* Filter criterion: Content: Nid */
+  $handler->display->display_options['filters']['nid']['id'] = 'nid';
+  $handler->display->display_options['filters']['nid']['table'] = 'node';
+  $handler->display->display_options['filters']['nid']['field'] = 'nid';
+  $handler->display->display_options['filters']['nid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['nid']['expose']['operator_id'] = 'nid_op';
+  $handler->display->display_options['filters']['nid']['expose']['label'] = 'Nid';
+  $handler->display->display_options['filters']['nid']['expose']['use_operator'] = TRUE;
+  $handler->display->display_options['filters']['nid']['expose']['operator'] = 'nid_op';
+  $handler->display->display_options['filters']['nid']['expose']['identifier'] = 'nid';
+  $handler->display->display_options['filters']['nid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    5 => 0,
+    6 => 0,
+    7 => 0,
+  );
   $handler->display->display_options['path'] = 'cms/jobs';
 
   /* Display: Page: List */
@@ -278,6 +301,11 @@ function ofed_feature_job_views_default_views() {
   $handler->display->display_options['defaults']['header'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Sticky */
+  $handler->display->display_options['sorts']['sticky']['id'] = 'sticky';
+  $handler->display->display_options['sorts']['sticky']['table'] = 'node';
+  $handler->display->display_options['sorts']['sticky']['field'] = 'sticky';
+  $handler->display->display_options['sorts']['sticky']['order'] = 'DESC';
   /* Sort criterion: Content: Publication date (field_ofed_download_pubdate) */
   $handler->display->display_options['sorts']['field_ofed_download_pubdate_value']['id'] = 'field_ofed_download_pubdate_value';
   $handler->display->display_options['sorts']['field_ofed_download_pubdate_value']['table'] = 'field_data_field_ofed_download_pubdate';
@@ -408,6 +436,11 @@ function ofed_feature_job_views_default_views() {
   $handler->display->display_options['defaults']['header'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Sticky */
+  $handler->display->display_options['sorts']['sticky']['id'] = 'sticky';
+  $handler->display->display_options['sorts']['sticky']['table'] = 'node';
+  $handler->display->display_options['sorts']['sticky']['field'] = 'sticky';
+  $handler->display->display_options['sorts']['sticky']['order'] = 'DESC';
   /* Sort criterion: Content: Publication date (field_ofed_job_pubdate) */
   $handler->display->display_options['sorts']['field_ofed_job_pubdate_value']['id'] = 'field_ofed_job_pubdate_value';
   $handler->display->display_options['sorts']['field_ofed_job_pubdate_value']['table'] = 'field_data_field_ofed_job_pubdate';
@@ -473,6 +506,11 @@ function ofed_feature_job_views_default_views() {
   $handler->display->display_options['defaults']['header'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Sticky */
+  $handler->display->display_options['sorts']['sticky']['id'] = 'sticky';
+  $handler->display->display_options['sorts']['sticky']['table'] = 'node';
+  $handler->display->display_options['sorts']['sticky']['field'] = 'sticky';
+  $handler->display->display_options['sorts']['sticky']['order'] = 'DESC';
   /* Sort criterion: Content: Publication date (field_ofed_job_pubdate) */
   $handler->display->display_options['sorts']['field_ofed_job_pubdate_value']['id'] = 'field_ofed_job_pubdate_value';
   $handler->display->display_options['sorts']['field_ofed_job_pubdate_value']['table'] = 'field_data_field_ofed_job_pubdate';
@@ -537,6 +575,11 @@ function ofed_feature_job_views_default_views() {
   $handler->display->display_options['defaults']['header'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Sticky */
+  $handler->display->display_options['sorts']['sticky']['id'] = 'sticky';
+  $handler->display->display_options['sorts']['sticky']['table'] = 'node';
+  $handler->display->display_options['sorts']['sticky']['field'] = 'sticky';
+  $handler->display->display_options['sorts']['sticky']['order'] = 'DESC';
   /* Sort criterion: Content: Publication date (field_ofed_job_pubdate) */
   $handler->display->display_options['sorts']['field_ofed_job_pubdate_value']['id'] = 'field_ofed_job_pubdate_value';
   $handler->display->display_options['sorts']['field_ofed_job_pubdate_value']['table'] = 'field_data_field_ofed_job_pubdate';
@@ -606,6 +649,11 @@ function ofed_feature_job_views_default_views() {
   $handler->display->display_options['sorts']['field_ofed_job_pubdate_value']['table'] = 'field_data_field_ofed_job_pubdate';
   $handler->display->display_options['sorts']['field_ofed_job_pubdate_value']['field'] = 'field_ofed_job_pubdate_value';
   $handler->display->display_options['sorts']['field_ofed_job_pubdate_value']['order'] = 'DESC';
+  /* Sort criterion: Content: Sticky */
+  $handler->display->display_options['sorts']['sticky']['id'] = 'sticky';
+  $handler->display->display_options['sorts']['sticky']['table'] = 'node';
+  $handler->display->display_options['sorts']['sticky']['field'] = 'sticky';
+  $handler->display->display_options['sorts']['sticky']['order'] = 'DESC';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -648,6 +696,7 @@ function ofed_feature_job_views_default_views() {
     t('‹ previous'),
     t('next ›'),
     t('last »'),
+    t('Nid'),
     t('Title'),
     t('Author'),
     t('Language'),
@@ -669,6 +718,7 @@ function ofed_feature_job_views_default_views() {
     t('Latest one job'),
     t('Jobs: Latest one'),
   );
+
   $export['ofed_job'] = $view;
 
   return $export;

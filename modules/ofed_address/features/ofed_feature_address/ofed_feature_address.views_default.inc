@@ -61,16 +61,23 @@ function ofed_feature_address_views_default_views() {
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['style_options']['columns'] = array(
+    'nid' => 'nid',
     'title' => 'title',
     'name' => 'name',
     'language' => 'language',
     'changed' => 'changed',
     'edit_node' => 'edit_node',
     'delete_node' => 'delete_node',
-    'nid' => 'nid',
   );
   $handler->display->display_options['style_options']['default'] = 'title';
   $handler->display->display_options['style_options']['info'] = array(
+    'nid' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
     'title' => array(
       'sortable' => 1,
       'default_sort_order' => 'asc',
@@ -105,13 +112,6 @@ function ofed_feature_address_views_default_views() {
       'empty_column' => 0,
     ),
     'delete_node' => array(
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'nid' => array(
-      'sortable' => 1,
-      'default_sort_order' => 'asc',
       'align' => '',
       'separator' => '',
       'empty_column' => 0,

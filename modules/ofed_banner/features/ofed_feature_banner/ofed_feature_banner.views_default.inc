@@ -76,6 +76,7 @@ function ofed_feature_banner_views_default_views() {
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['style_options']['columns'] = array(
+    'nid' => 'nid',
     'title' => 'title',
     'field_ofed_banner_type' => 'field_ofed_banner_type',
     'field_ofed_banner_click_count' => 'field_ofed_banner_click_count',
@@ -87,6 +88,13 @@ function ofed_feature_banner_views_default_views() {
   );
   $handler->display->display_options['style_options']['default'] = '-1';
   $handler->display->display_options['style_options']['info'] = array(
+    'nid' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
     'title' => array(
       'sortable' => 1,
       'default_sort_order' => 'asc',

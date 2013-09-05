@@ -40,6 +40,11 @@ function ofed_feature_faq_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Sort criterion: Content: Sticky */
+  $handler->display->display_options['sorts']['sticky']['id'] = 'sticky';
+  $handler->display->display_options['sorts']['sticky']['table'] = 'node';
+  $handler->display->display_options['sorts']['sticky']['field'] = 'sticky';
+  $handler->display->display_options['sorts']['sticky']['order'] = 'DESC';
   /* Sort criterion: Content: Title */
   $handler->display->display_options['sorts']['title']['id'] = 'title';
   $handler->display->display_options['sorts']['title']['table'] = 'node';
@@ -69,14 +74,23 @@ function ofed_feature_faq_views_default_views() {
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['style_options']['columns'] = array(
+    'nid' => 'nid',
     'title' => 'title',
     'name' => 'name',
     'language' => 'language',
+    'changed' => 'changed',
     'edit_node' => 'edit_node',
     'delete_node' => 'delete_node',
   );
   $handler->display->display_options['style_options']['default'] = '-1';
   $handler->display->display_options['style_options']['info'] = array(
+    'nid' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
     'title' => array(
       'sortable' => 1,
       'default_sort_order' => 'asc',
@@ -92,6 +106,13 @@ function ofed_feature_faq_views_default_views() {
       'empty_column' => 0,
     ),
     'language' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'changed' => array(
       'sortable' => 1,
       'default_sort_order' => 'asc',
       'align' => '',
@@ -120,6 +141,10 @@ function ofed_feature_faq_views_default_views() {
   $handler->display->display_options['relationships']['uid']['table'] = 'node';
   $handler->display->display_options['relationships']['uid']['field'] = 'uid';
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -235,6 +260,25 @@ function ofed_feature_faq_views_default_views() {
     6 => 0,
     7 => 0,
   );
+  /* Filter criterion: Content: Nid */
+  $handler->display->display_options['filters']['nid']['id'] = 'nid';
+  $handler->display->display_options['filters']['nid']['table'] = 'node';
+  $handler->display->display_options['filters']['nid']['field'] = 'nid';
+  $handler->display->display_options['filters']['nid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['nid']['expose']['operator_id'] = 'nid_op';
+  $handler->display->display_options['filters']['nid']['expose']['label'] = 'Nid';
+  $handler->display->display_options['filters']['nid']['expose']['use_operator'] = TRUE;
+  $handler->display->display_options['filters']['nid']['expose']['operator'] = 'nid_op';
+  $handler->display->display_options['filters']['nid']['expose']['identifier'] = 'nid';
+  $handler->display->display_options['filters']['nid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    5 => 0,
+    6 => 0,
+    7 => 0,
+  );
   $handler->display->display_options['path'] = 'cms/faq';
 
   /* Display: Page: List */
@@ -257,6 +301,11 @@ function ofed_feature_faq_views_default_views() {
   $handler->display->display_options['row_options']['default_fieldset']['view_mode'] = 'teaser';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Sticky */
+  $handler->display->display_options['sorts']['sticky']['id'] = 'sticky';
+  $handler->display->display_options['sorts']['sticky']['table'] = 'node';
+  $handler->display->display_options['sorts']['sticky']['field'] = 'sticky';
+  $handler->display->display_options['sorts']['sticky']['order'] = 'DESC';
   /* Sort criterion: Content: Title */
   $handler->display->display_options['sorts']['title']['id'] = 'title';
   $handler->display->display_options['sorts']['title']['table'] = 'node';
@@ -366,6 +415,7 @@ function ofed_feature_faq_views_default_views() {
     t('CMS'),
     t('FAQ'),
     t('author'),
+    t('Nid'),
     t('Title'),
     t('Author'),
     t('Language'),
@@ -375,11 +425,11 @@ function ofed_feature_faq_views_default_views() {
     t('Type'),
     t('Published'),
     t('Page: List'),
-    t('FAQ'),
     t('Page: List summary'),
     t('FAQ Summary'),
     t('<a href="#[nid]" class="faq-title-anchor">[title]</a>'),
   );
+
   $export['ofed_faq'] = $view;
 
   return $export;
