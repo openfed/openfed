@@ -199,7 +199,7 @@ projects[globalredirect][subdir] = contrib
 projects[google_analytics][version] = "1.3"
 projects[google_analytics][subdir] = contrib
 
-projects[hierarchical_select][version] = "3.0-alpha5"
+projects[hierarchical_select][version] = "3.0-alpha6"
 projects[hierarchical_select][subdir] = contrib
 
 projects[html5_tools][version] = "1.2"
