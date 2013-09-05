@@ -5,6 +5,7 @@ No date yet - Version 7.x-1.0-rc2
 ---------------------------------
 
  * Issues:
+    #2082201: Module upgrade: entity_translation
     #2082197: Module upgrade: registration
     #2079357: Module upgrade: i18n
     #2081929: Module upgrade: hierarchical_select
