@@ -223,7 +223,7 @@ projects[jquery_plugin][subdir] = contrib
 projects[jquery_update][version] = "2.3"
 projects[jquery_update][subdir] = contrib
 
-projects[l10n_client][version] = "1.1"
+projects[l10n_client][version] = "1.3"
 projects[l10n_client][subdir] = contrib
 
 ; Patches block automated build, see https://drupal.org/node/2037961
