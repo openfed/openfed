@@ -456,7 +456,6 @@ function ofed_feature_slider_views_default_views() {
     t('Edit'),
     t('Delete'),
   );
-
   $export['ofed_sliders'] = $view;
 
   return $export;
