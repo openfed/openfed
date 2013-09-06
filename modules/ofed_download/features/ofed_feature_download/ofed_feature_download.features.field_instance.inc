@@ -103,7 +103,7 @@ function ofed_feature_download_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 9,
+      'weight' => 6,
     ),
   );
 
@@ -199,7 +199,7 @@ function ofed_feature_download_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 6,
+      'weight' => 3,
     ),
   );
 
@@ -304,7 +304,7 @@ function ofed_feature_download_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'file_generic',
-      'weight' => 8,
+      'weight' => 5,
     ),
   );
 
@@ -464,7 +464,7 @@ function ofed_feature_download_field_default_field_instances() {
         'increment' => 15,
         'input_format' => 'd/m/Y - H:i:s',
         'input_format_custom' => '',
-        'label_position' => 'above',
+        'label_position' => 'none',
         'text_parts' => array(),
         'year_range' => '-3:+3',
       ),
@@ -575,7 +575,7 @@ function ofed_feature_download_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 5,
+      'weight' => 2,
     ),
   );
 
@@ -691,7 +691,7 @@ function ofed_feature_download_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 7,
+      'weight' => 4,
     ),
   );
 
@@ -823,7 +823,7 @@ function ofed_feature_download_field_default_field_instances() {
         'increment' => 15,
         'input_format' => 'd/m/Y - H:i:s',
         'input_format_custom' => '',
-        'label_position' => 'above',
+        'label_position' => 'none',
         'text_parts' => array(),
         'year_range' => '-3:+3',
       ),

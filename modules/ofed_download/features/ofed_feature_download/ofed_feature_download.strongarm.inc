@@ -103,19 +103,22 @@ function ofed_feature_download_strongarm() {
           'weight' => '0',
         ),
         'metatags' => array(
-          'weight' => '13',
+          'weight' => '12',
         ),
         'title' => array(
           'weight' => '1',
         ),
         'path' => array(
-          'weight' => '12',
-        ),
-        'redirect' => array(
           'weight' => '11',
         ),
-        'xmlsitemap' => array(
+        'redirect' => array(
           'weight' => '10',
+        ),
+        'xmlsitemap' => array(
+          'weight' => '9',
+        ),
+        'flag' => array(
+          'weight' => '8',
         ),
       ),
       'display' => array(

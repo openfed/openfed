@@ -883,7 +883,6 @@ function ofed_feature_download_views_default_views() {
     t('Entity Reference'),
     t('[title] ([language] - id: [nid])'),
   );
-
   $export['ofed_download'] = $view;
 
   return $export;
