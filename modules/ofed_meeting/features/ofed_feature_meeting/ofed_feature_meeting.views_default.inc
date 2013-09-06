@@ -718,7 +718,6 @@ function ofed_feature_meeting_views_default_views() {
     t('Latest one meeting'),
     t('Meetings: Latest one'),
   );
-
   $export['ofed_meeting'] = $view;
 
   return $export;
