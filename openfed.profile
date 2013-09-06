@@ -59,7 +59,7 @@ function openfed_install_tasks($install_state) {
   
   // Step to choose which language to pre-install.
   $tasks['openfed_regional_form'] = array(
-    'display_name' => st('Set up locale'),
+    'display_name' => st('Enable languages'),
     'display' => TRUE,
     'type' => 'form',
   );
@@ -73,7 +73,7 @@ function openfed_install_tasks($install_state) {
   
   // Step to choose which menu to pre-install.
   $tasks['openfed_menu_form'] = array(
-    'display_name' => st('Enable menu'),
+    'display_name' => st('Enable menus'),
     'display' => TRUE,
     'type' => 'form',
   );
