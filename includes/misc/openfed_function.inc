@@ -137,9 +137,9 @@ function _openfed_return_menu_list() {
  */
 function _openfed_return_roles_list() {
   $role_list = array(
-    'configurator' => st('Configurator: user in the final client\'s team who has advanced knowledge in Drupal, who can configure modules.'),
-    'content_manager' => st('Content Manager: has the permission to create and edit content items.'),
-    'user_manager' => st('User Manager: has the permissions to create new users and to manage their permissions.'),
+    'configurator' => st('Configurator: experienced Drupal user, can configure modules.'),
+    'content_manager' => st('Content Manager: can create and edit content items.'),
+    'user_manager' => st('User Manager: can create new users and manage their permissions.'),
     'authenticated_visitor' => st('Authenticated Visitor: this role is required if there is possibility to log in into the website.'),
   );
   return $role_list;

@@ -7,15 +7,12 @@
 function openfed_role_form() {
   drupal_set_title(st('Enable roles'));
   $form = array();
-  $form['intro'] = array(
-    '#markup' => '<p>' . st('Select the roles and the corresponding permission to foresee:') . '<br/>' . st('(By default "Admin" role is automatically created.)') . '</p>',
-  );
+
   $form['role_list'] = array(
     '#type' => 'checkboxes',
-    '#title' => st('Roles'),
+    '#title' => st('Roles:'),
     '#options' => _openfed_return_roles_list(),
-    '#description' => st('Note : by checking the roles, the roles and their associated set of permissions will be automatically created.<br>
-      They can also be created after the installation, but the set of permissions will have to be defined manually.')
+    '#description' => st('By checking the roles, the roles and their associated set of permissions will be automatically created.'), 
   );
   $form['submit'] = array(
     '#type' => 'submit',
@@ -82,7 +79,7 @@ function openfed_role_form_submit($form, &$form_state) {
       $um_role = user_role_load_by_name('User Manager');
       user_role_change_permissions($um_role->rid, _openfed_return_permission_user_manager());
 
-      // Create rule to warn User Manager when ther is a new user account created
+      // Create rule to warn User Manager when a new user account was created
       if (module_exists('rules')) {
         $rule = '
         {
