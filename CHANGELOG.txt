@@ -4,6 +4,7 @@ CHANGELOG
 No date yet - Version 7.x-1.x
 -----------------------------
  * Issues:
+    #2083197: Installer UI: removed useless descriptions from content type page
     #2082485: Removed alter hook that added table prefix from installer
     #2083135: Installer UI: use "enable" instead of "setup"
     #2083133: Module removal: module_filter

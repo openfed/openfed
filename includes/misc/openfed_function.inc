@@ -185,71 +185,54 @@ function _openfed_return_functionalities_list() {
   $function_list = array(
     'ofed_address' => array(
       'title' => st('Address'),
-      'description' => st('Enables the creation of addresses.'),
     ),
     'ofed_banner' => array(
       'title' => st('Banner'),
-      'description' => st('Enables the creation of banners.'),
     ),
     'blog' => array(
       'title' => st('Blog'),
-      'description' => st('Enables the creation of blog.'),
     ),
     'ofed_event' => array(
       'title' => st('Event'),
-      'description' => st('Enables the creation of events.'),
     ),
     'ofed_faq' => array(
       'title' => st('FAQ'),
-      'description' => st('Enables the creation of frequently asked questions.'),
     ),
     'forum' => array(
       'title' => st('Forum'),
-      'description' => st('Enables the creation of forum.'),
     ),
     'ofed_job' => array(
       'title' => st('Job'),
-      'description' => st('Enables the creation of jobs.'),
     ),
     'lexicon' => array(
       'title' => st('Lexicon'),
-      'description' => st('Maintain one or more lexicons on your site and optionally mark term from one or more lexicons in the content of the website.'),
     ),
     'ofed_meeting' => array(
       'title' => st('Meeting'),
-      'description' => st('Enables the creation of meetings.'),
     ),
     'ofed_news' => array(
       'title' => st('News'),
-      'description' => st('Enables the creation of news.'),
     ),
     'ofed_photogallery' => array(
       'title' => st('Photo galleries'),
-      'description' => st('Enables the creation of photo galleries.'),
     ),
    'poll' => array(
       'title' => st('Poll'),
-      'description' => st('Enables the creation of poll.'),
     ),
     'ofed_press' => array(
       'title' => st('Press'),
-      'description' => st('Enables the creation of press.'),
     ),
     'ofed_slider' => array(
       'title' => st('Slider'),
-      'description' => st('Enables the creation of sliders.'),
     ),
     'ofed_slideshow' => array(
       'title' => st('Slideshow'),
-      'description' => st('Enables the creation of slideshows.'),
     ),
     'ofed_team' => array(
       'title' => st('Team member'),
-      'description' => st('Enables the creation of team members.'),
     ),
     'ofed_video' => array(
       'title' => st('Video'),
-      'description' => st('Enables the creation of videos.'),
     ),
   );
 

@@ -10,7 +10,7 @@ function openfed_functionalities_form() {
   $form = array();
 
   $form['intro'] = array(
-    '#markup' => '<p>' . st('Select the specific content types that have to be available in the website.') . '</p><p>' . st('Note : each content typ can be enabled after the installation in the Features list.') . '</p>',
+    '#markup' => '<p>' . st('Select the specific content types that have to be available in the website.') . '</p><p>' . st('Note : each content type can be enabled after the installation in the Features list.') . '</p>',
   );
 
   $form['module_list'] = array(
