@@ -13,8 +13,8 @@ function ofed_feature_event_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
-  $field_group->identifier = 'group_oved_event_page_meta|node|ofed_event|form';
-  $field_group->group_name = 'group_oved_event_page_meta';
+  $field_group->identifier = 'group_ofed_event_page_meta|node|ofed_event|form';
+  $field_group->group_name = 'group_ofed_event_page_meta';
   $field_group->entity_type = 'node';
   $field_group->bundle = 'ofed_event';
   $field_group->mode = 'form';
@@ -38,7 +38,7 @@ function ofed_feature_event_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $export['group_oved_event_page_meta|node|ofed_event|form'] = $field_group;
+  $export['group_ofed_event_page_meta|node|ofed_event|form'] = $field_group;
 
   return $export;
 }
