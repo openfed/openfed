@@ -666,7 +666,6 @@ function ofed_feature_team_views_default_views() {
     t('Block: Column'),
     t('Team Members: Column'),
   );
-
   $export['ofed_team'] = $view;
 
   return $export;
