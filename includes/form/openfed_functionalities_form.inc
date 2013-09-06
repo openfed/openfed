@@ -13,11 +13,10 @@ function openfed_functionalities_form() {
     '#markup' => '<p>' . st('Select the specific content types that have to be available in the website.') . '</p><p>' . st('Note : each content type can be enabled after the installation in the Features list.') . '</p>',
   );
 
-  $form['module_list'] = array(
+  $form['types_list'] = array(
     '#type' => 'checkboxes',
     '#title' => st('Content types:'),
     '#options' => _openfed_return_functionalities_list(),
-    '#attributes' => array('class' => array('clearfix')),
   );
 
   $form['submit'] = array(
@@ -37,7 +36,7 @@ function openfed_functionalities_form() {
 function openfed_functionalities_form_submit($form, &$form_state) {
   $values = $form_state['values'];
 
-  if (!empty($values['module_list'])) {
+  if (!empty($values['types_list'])) {
     $enable = array(
       'theme_default' => openfed_return_default_maintenance_theme_name(),
       'admin_theme' => openfed_return_default_maintenance_theme_name(),
@@ -52,7 +51,7 @@ function openfed_functionalities_form_submit($form, &$form_state) {
     }
 
     $module_list = array();
-    foreach ($values['module_list'] as $key => $name) {
+    foreach ($values['types_list'] as $key => $name) {
       if ($key === $name) {
         $module_list[] = $name;
       }
