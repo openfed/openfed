@@ -203,7 +203,7 @@ function _openfed_return_functionalities_list() {
   );
 
   // Sort.
-  usort($function_list, '_openfed_sort_functionalities_list');
+  natsort($function_list, '_openfed_sort_functionalities_list');
 
   // Return.
   return $function_list;
