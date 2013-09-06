@@ -5,20 +5,20 @@
  * @return array
  */
 function openfed_regional_form() {
-  drupal_set_title(st('Regional configuration'));
+  drupal_set_title(st('Enable languages'));
   $form = array();
-  $form['intro'] = array(
-    '#markup' => '<p>' . st('Select the regional languages which have to be foreseen.') . '</p>',
-  );
 
   $form['regional_list'] = array(
     '#type' => 'checkboxes',
-    '#title' => st('Regional languages list'),
+    '#title' => st('Languages'),
     '#options' => _openfed_return_languages_list(),
-    '#description' => '<p>' . st('Note : when checking a language, a main menu will automatically be created in the menus list for that language, and the menu will be located in the corresponding Navigation area.<br>
-      If no languages are checked, only the English language will be enabled. Consequently, the main menu will be created for the English language only and will be located in the Navigation area. <br>
-      Additional languages can be enabled after the installation, but the main menu will then have to be created manually for each language and located in the corresponding area.'
-    ) . '</p>'
+    '#description' => '<p>' .
+      st('When checking a language, a main menu will automatically be created in the menus list for that language, and the menu will be shown in the corresponding Navigation area.') .
+      '</p><p>' .
+      st('If no languages are checked, only English will be enabled. Consequently, the main menu will be created for English only and will be shown in the Navigation area.') .
+      '</p><p>' .
+      st('Additional languages can be enabled after the installation, but the main menu will then have to be created and configured manually for each additional language.') .
+      '</p>',
   );
   $form['submit'] = array(
     '#type' => 'submit',
