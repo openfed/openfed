@@ -500,7 +500,7 @@ No date yet - Version 7.x-1.x
     - Features display (layout, fields,...) moved in installer to put config in database
 
   * Libraries:
-    - libraries are not downloaded anymore but included by default in the profil now
+    - libraries are not downloaded anymore but included by default in the profile now
     - jquery.imagesloaded added
 
   * Modules updated:
