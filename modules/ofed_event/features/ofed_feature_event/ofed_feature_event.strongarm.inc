@@ -107,19 +107,19 @@ function ofed_feature_event_strongarm() {
           'weight' => '0',
         ),
         'metatags' => array(
-          'weight' => '17',
+          'weight' => '18',
         ),
         'title' => array(
           'weight' => '1',
         ),
         'path' => array(
-          'weight' => '16',
+          'weight' => '17',
         ),
         'redirect' => array(
-          'weight' => '15',
+          'weight' => '16',
         ),
         'xmlsitemap' => array(
-          'weight' => '14',
+          'weight' => '15',
         ),
       ),
       'display' => array(

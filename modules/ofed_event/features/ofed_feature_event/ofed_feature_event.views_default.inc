@@ -755,7 +755,6 @@ function ofed_feature_event_views_default_views() {
     t('Latest one event'),
     t('Events: Latest one'),
   );
-
   $export['ofed_event'] = $view;
 
   return $export;
