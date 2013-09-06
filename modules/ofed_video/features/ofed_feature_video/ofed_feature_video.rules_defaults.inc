@@ -20,7 +20,7 @@ function ofed_feature_video_default_rules_configuration() {
             "type" : { "value" : { "ofed_video" : "ofed_video" } }
           }
         },
-        { "AND" : [  ] },
+        { "AND" : [] },
         { "data_is" : {
             "data" : [ "node:field-ofed-video-update-force" ],
             "value" : [ "node:field-ofed-video-update-force" ]

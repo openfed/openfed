@@ -13,6 +13,10 @@ function ofed_feature_video_ctools_plugin_api() {
     return array("version" => "1");
   }
   list($module, $api) = func_get_args();
+  if ($module == "field_group" && $api == "field_group") {
+    return array("version" => "1");
+  }
+  list($module, $api) = func_get_args();
   if ($module == "file_entity" && $api == "file_default_displays") {
     return array("version" => "1");
   }
@@ -28,7 +32,6 @@ function ofed_feature_video_ctools_plugin_api() {
 function ofed_feature_video_views_api() {
   return array("api" => "3.0");
 }
-
 
 /**
  * Implements hook_image_default_styles().

@@ -103,7 +103,7 @@ function ofed_feature_video_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 6,
+      'weight' => 7,
     ),
   );
 
@@ -210,7 +210,7 @@ function ofed_feature_video_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 8,
+      'weight' => 9,
     ),
   );
 
@@ -325,7 +325,7 @@ function ofed_feature_video_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'enfield_widget',
-      'weight' => 7,
+      'weight' => 8,
     ),
   );
 
@@ -436,7 +436,7 @@ function ofed_feature_video_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 9,
+      'weight' => 10,
     ),
   );
 
@@ -608,7 +608,7 @@ function ofed_feature_video_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 2,
+      'weight' => 3,
     ),
   );
 
@@ -711,7 +711,7 @@ function ofed_feature_video_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 5,
+      'weight' => 6,
     ),
   );
 
@@ -883,7 +883,7 @@ function ofed_feature_video_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 3,
+      'weight' => 4,
     ),
   );
 
@@ -980,7 +980,7 @@ function ofed_feature_video_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 4,
+      'weight' => 5,
     ),
   );
 

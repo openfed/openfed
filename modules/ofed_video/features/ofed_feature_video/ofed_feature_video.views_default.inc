@@ -725,7 +725,6 @@ function ofed_feature_video_views_default_views() {
     t('Latest one video'),
     t('Videos: Latest one'),
   );
-
   $export['ofed_video'] = $view;
 
   return $export;
