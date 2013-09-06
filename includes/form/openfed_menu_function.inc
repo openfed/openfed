@@ -7,12 +7,12 @@
 function openfed_menu_form() {
   drupal_set_title(st('Enable menus'));
   $form = array();
+
   $form['menu_list'] = array(
     '#type' => 'checkboxes',
     '#title' => st('Menu list'),
     '#options' => _openfed_return_menu_list(),
-    '#description' => st('Note : by checking these options, the menus will automatically be created in the menus list of the website and located in the corresponding region (either the tools or the footer region).<br>
-      If no menus are checked, they can still be created after the installation, but they will need to be created manually and located in the corresponding region.'),
+    '#description' => st('By checking these options, the menus will automatically be created in the menu list of the website and shown in the corresponding region (either the tools or the footer region).'),
   );
   $form['submit'] = array(
     '#type' => 'submit',
@@ -22,9 +22,7 @@ function openfed_menu_form() {
 }
 
 /**
- * manage the submit of the form
- * @param array $form
- * @param array $form_state 
+ * Form submission handler for openfed_menu_form().
  */
 function openfed_menu_form_submit($form, &$form_state) {
   $values = $form_state['values'];
