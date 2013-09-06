@@ -780,7 +780,6 @@ function ofed_feature_photogallery_views_default_views() {
     t('Latest updated photo gallery'),
     t('Photo galleries: Latest updated photo gallery'),
   );
-
   $export['ofed_photogallery'] = $view;
 
   return $export;

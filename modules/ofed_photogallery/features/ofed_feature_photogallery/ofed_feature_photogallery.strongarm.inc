@@ -100,19 +100,19 @@ function ofed_feature_photogallery_strongarm() {
           'weight' => '0',
         ),
         'metatags' => array(
-          'weight' => '10',
+          'weight' => '12',
         ),
         'title' => array(
           'weight' => '1',
         ),
         'path' => array(
-          'weight' => '9',
+          'weight' => '11',
         ),
         'redirect' => array(
-          'weight' => '8',
+          'weight' => '10',
         ),
         'xmlsitemap' => array(
-          'weight' => '7',
+          'weight' => '9',
         ),
       ),
       'display' => array(
