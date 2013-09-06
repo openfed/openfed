@@ -15,10 +15,9 @@ function openfed_functionalities_form() {
 
   $form['module_list'] = array(
     '#type' => 'checkboxes',
-    '#title' => st('Setup your content types below.'),
+    '#title' => st('Content types:'),
     '#options' => _openfed_return_functionalities_list(),
     '#attributes' => array('class' => array('clearfix')),
-    '#process' => array('form_process_checkboxes_at_install'), // override process for theming
   );
 
   $form['submit'] = array(
