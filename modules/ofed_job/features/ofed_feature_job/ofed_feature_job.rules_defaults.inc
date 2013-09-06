@@ -20,7 +20,7 @@ function ofed_feature_job_default_rules_configuration() {
             "type" : { "value" : { "ofed_job" : "ofed_job" } }
           }
         },
-        { "AND" : [  ] },
+        { "AND" : [] },
         { "data_is" : {
             "data" : [ "node:field-ofed-job-update-force" ],
             "value" : [ "node:field-ofed-job-update-force" ]

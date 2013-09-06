@@ -718,7 +718,6 @@ function ofed_feature_job_views_default_views() {
     t('Latest one job'),
     t('Jobs: Latest one'),
   );
-
   $export['ofed_job'] = $view;
 
   return $export;

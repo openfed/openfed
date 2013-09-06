@@ -13,6 +13,10 @@ function ofed_feature_job_ctools_plugin_api() {
     return array("version" => "1");
   }
   list($module, $api) = func_get_args();
+  if ($module == "field_group" && $api == "field_group") {
+    return array("version" => "1");
+  }
+  list($module, $api) = func_get_args();
   if ($module == "strongarm" && $api == "strongarm") {
     return array("version" => "1");
   }
@@ -24,7 +28,6 @@ function ofed_feature_job_ctools_plugin_api() {
 function ofed_feature_job_views_api() {
   return array("api" => "3.0");
 }
-
 
 /**
  * Implements hook_image_default_styles().
