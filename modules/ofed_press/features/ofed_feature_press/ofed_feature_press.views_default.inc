@@ -672,7 +672,6 @@ function ofed_feature_press_views_default_views() {
     t('Block: Column'),
     t('Press: Column'),
   );
-
   $export['ofed_press'] = $view;
 
   return $export;
