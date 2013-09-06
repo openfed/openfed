@@ -319,7 +319,6 @@ function ofed_feature_page_views_default_views() {
     t('Delete'),
     t('Published'),
   );
-
   $export['ofed_page'] = $view;
 
   return $export;
