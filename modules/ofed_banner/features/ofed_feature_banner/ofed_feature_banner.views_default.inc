@@ -334,7 +334,6 @@ function ofed_feature_banner_views_default_views() {
     t('Delete'),
     t('Published'),
   );
-
   $export['ofed_banner'] = $view;
 
   return $export;

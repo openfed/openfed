@@ -52,7 +52,7 @@ You can change the value of this counter by the value of your choice and you can
       'module' => 'html5_tools',
       'settings' => array(),
       'type' => 'numberfield',
-      'weight' => 12,
+      'weight' => 10,
     ),
   );
 
@@ -97,7 +97,7 @@ You can change the value of this counter by the value of your choice and you can
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 10,
+      'weight' => 8,
     ),
   );
 
@@ -142,7 +142,7 @@ You can change the value of this counter by the value of your choice and you can
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 6,
+      'weight' => 4,
     ),
   );
 
@@ -187,7 +187,7 @@ You can change the value of this counter by the value of your choice and you can
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 5,
+      'weight' => 3,
     ),
   );
 
@@ -232,7 +232,7 @@ You can change the value of this counter by the value of your choice and you can
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 8,
+      'weight' => 6,
     ),
   );
 
@@ -277,7 +277,7 @@ You can change the value of this counter by the value of your choice and you can
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 7,
+      'weight' => 5,
     ),
   );
 
@@ -322,7 +322,7 @@ You can change the value of this counter by the value of your choice and you can
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 9,
+      'weight' => 7,
     ),
   );
 
@@ -331,7 +331,7 @@ You can change the value of this counter by the value of your choice and you can
     'bundle' => 'ofed_banner',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Fill the link to this banner.',
+    'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -371,7 +371,56 @@ You can change the value of this counter by the value of your choice and you can
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 11,
+      'weight' => 9,
+    ),
+  );
+
+  // Exported field_instance: 'node-ofed_banner-field_ofed_banner_pubdate'
+  $field_instances['node-ofed_banner-field_ofed_banner_pubdate'] = array(
+    'bundle' => 'ofed_banner',
+    'deleted' => 0,
+    'description' => 'This date typically refers to the moment the content element was released and is to be displayed without label next to the title of the content element in lists and pages. It is typically used to sort content.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'date',
+        'settings' => array(
+          'format_type' => 'long',
+          'fromto' => 'both',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+        ),
+        'type' => 'date_default',
+        'weight' => 21,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_ofed_banner_pubdate',
+    'label' => 'Publication date',
+    'required' => 0,
+    'settings' => array(
+      'default_value' => 'now',
+      'default_value2' => 'same',
+      'default_value_code' => '',
+      'default_value_code2' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'date',
+      'settings' => array(
+        'display_all_day' => 0,
+        'increment' => 15,
+        'input_format' => 'd/m/Y - H:i:s',
+        'input_format_custom' => '',
+        'label_position' => 'none',
+        'text_parts' => array(),
+        'year_range' => '-3:+3',
+      ),
+      'type' => 'date_popup',
+      'weight' => 3,
     ),
   );
 
@@ -402,7 +451,7 @@ You can change the value of this counter by the value of your choice and you can
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 4,
+      'weight' => 2,
     ),
   );
 
@@ -576,12 +625,12 @@ You can change the value of this counter by the value of your choice and you can
         'increment' => 15,
         'input_format' => 'd/m/Y - H:i:s',
         'input_format_custom' => '',
-        'label_position' => 'above',
+        'label_position' => 'none',
         'text_parts' => array(),
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 2,
+      'weight' => 4,
     ),
   );
 
@@ -678,7 +727,7 @@ You can change the value of this counter by the value of your choice and you can
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 3,
+      'weight' => 5,
     ),
   );
 
@@ -688,7 +737,6 @@ You can change the value of this counter by the value of your choice and you can
   t('Choose the type of this banner.');
   t('Counter (clicks)');
   t('Fill the image of this banner.');
-  t('Fill the link to this banner.');
   t('Image (Button)');
   t('Image (Full)');
   t('Image (Leaderboard)');
@@ -697,7 +745,9 @@ You can change the value of this counter by the value of your choice and you can
   t('Image (Wide skyscraper)');
   t('Last updated date');
   t('Link');
+  t('Publication date');
   t('This date field is used to indicate when the content element was last modified.');
+  t('This date typically refers to the moment the content element was released and is to be displayed without label next to the title of the content element in lists and pages. It is typically used to sort content.');
   t('This is the count of clicks on the banner link (if the link is defined).
 You can change the value of this counter by the value of your choice and you can also put zero like value if you want to reset the counter.');
   t('Type');
