@@ -67,7 +67,7 @@ function ofed_feature_address_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 7,
+      'weight' => 5,
     ),
   );
 
@@ -128,7 +128,7 @@ function ofed_feature_address_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 9,
+      'weight' => 7,
     ),
   );
 
@@ -190,7 +190,7 @@ function ofed_feature_address_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 10,
+      'weight' => 8,
     ),
   );
 
@@ -257,7 +257,7 @@ function ofed_feature_address_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 15,
+      'weight' => 13,
     ),
   );
 
@@ -310,13 +310,13 @@ function ofed_feature_address_field_default_field_instances() {
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 0,
+      'active' => 1,
       'module' => 'email',
       'settings' => array(
         'size' => 60,
       ),
       'type' => 'email_textfield',
-      'weight' => 12,
+      'weight' => 10,
     ),
   );
 
@@ -379,7 +379,7 @@ function ofed_feature_address_field_default_field_instances() {
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_ofed_address_map',
-    'label' => 'Map',
+    'label' => 'GoogleMap',
     'required' => 0,
     'settings' => array(
       'text_processing' => 0,
@@ -392,7 +392,7 @@ function ofed_feature_address_field_default_field_instances() {
         'size' => 120,
       ),
       'type' => 'text_textfield',
-      'weight' => 11,
+      'weight' => 12,
     ),
   );
 
@@ -453,7 +453,7 @@ function ofed_feature_address_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 4,
+      'weight' => 2,
     ),
   );
 
@@ -514,7 +514,7 @@ function ofed_feature_address_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 6,
+      'weight' => 4,
     ),
   );
 
@@ -574,7 +574,7 @@ function ofed_feature_address_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 14,
+      'weight' => 11,
     ),
   );
 
@@ -634,7 +634,74 @@ function ofed_feature_address_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 13,
+      'weight' => 9,
+    ),
+  );
+
+  // Exported field_instance: 'node-ofed_address-field_ofed_address_pubdate'
+  $field_instances['node-ofed_address-field_ofed_address_pubdate'] = array(
+    'bundle' => 'ofed_address',
+    'deleted' => 0,
+    'description' => 'This date typically refers to the moment the content element was released and is to be displayed without label next to the title of the content element in lists and pages. It is typically used to sort content.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'date',
+        'settings' => array(
+          'format_type' => 'long',
+          'fromto' => 'both',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+        ),
+        'type' => 'date_default',
+        'weight' => 18,
+      ),
+      'page_list' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'references' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'short_reference' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_ofed_address_pubdate',
+    'label' => 'Publication date',
+    'required' => 0,
+    'settings' => array(
+      'default_value' => 'now',
+      'default_value2' => 'same',
+      'default_value_code' => '',
+      'default_value_code2' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'date',
+      'settings' => array(
+        'display_all_day' => 0,
+        'increment' => 15,
+        'input_format' => 'd/m/Y - H:i:s',
+        'input_format_custom' => '',
+        'label_position' => 'none',
+        'text_parts' => array(),
+        'year_range' => '-3:+3',
+      ),
+      'type' => 'date_popup',
+      'weight' => 3,
     ),
   );
 
@@ -695,7 +762,7 @@ function ofed_feature_address_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 5,
+      'weight' => 3,
     ),
   );
 
@@ -763,12 +830,12 @@ function ofed_feature_address_field_default_field_instances() {
         'increment' => 15,
         'input_format' => 'd/m/Y - H:i:s',
         'input_format_custom' => '',
-        'label_position' => 'above',
+        'label_position' => 'none',
         'text_parts' => array(),
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 2,
+      'weight' => 4,
     ),
   );
 
@@ -829,7 +896,7 @@ function ofed_feature_address_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 3,
+      'weight' => 5,
     ),
   );
 
@@ -890,7 +957,7 @@ function ofed_feature_address_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 8,
+      'weight' => 6,
     ),
   );
 
@@ -914,14 +981,16 @@ function ofed_feature_address_field_default_field_instances() {
   t('Fill the number of this address.');
   t('Fill the street of this address.');
   t('Fill the zio code of this address.');
+  t('GoogleMap');
   t('Last updated date');
   t('Location name');
-  t('Map');
   t('Number');
   t('Opening hours');
   t('Phone');
+  t('Publication date');
   t('Street');
   t('This date field is used to indicate when the content element was last modified.');
+  t('This date typically refers to the moment the content element was released and is to be displayed without label next to the title of the content element in lists and pages. It is typically used to sort content.');
   t('Use system update date instead of Last updated date');
   t('Zip code');
 

@@ -459,6 +459,7 @@ function ofed_feature_address_views_default_views() {
     t('CMS'),
     t('Addresses'),
     t('author'),
+    t('Nid'),
     t('Title'),
     t('Name'),
     t('Language'),
@@ -471,7 +472,6 @@ function ofed_feature_address_views_default_views() {
     t('Entity Reference'),
     t('[title] ([language] - id: [nid])'),
   );
-
   $export['ofed_address'] = $view;
 
   return $export;

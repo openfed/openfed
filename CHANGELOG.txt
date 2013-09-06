@@ -41,6 +41,7 @@ No date yet - Version 7.x-1.x
     #2037961: Store language preference in cookie
     #2037919: add node id to CMS view content filter
     #2028401: Event is not always sticky on top of lists
+    #2081619: Adress CMS view proposal
     #Others :
       - Use addemar_subscription on full project.
       - Use ofed_vmcd on full project.

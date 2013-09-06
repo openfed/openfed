@@ -48,6 +48,28 @@ function ofed_feature_address_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'default_field_group';
+  $strongarm->value = array(
+    'group_ofed_download_page_meta|node|ofed_download|form' => FALSE,
+    'group_ofed_page_page_meta|node|ofed_page|form' => FALSE,
+    'group_ofed_address_page_meta|node|ofed_address|form' => FALSE,
+    'group_ofed_banner_page_meta|node|ofed_banner|form' => FALSE,
+    'group_ofed_faq_page_meta|node|ofed_faq|form' => FALSE,
+    'group_ofed_photog_page_meta|node|ofed_photogallery|form' => FALSE,
+    'group_ofed_slider_page_meta|node|ofed_slider|form' => FALSE,
+    'group_ofed_slide_page_meta|node|ofed_slideshow|form' => FALSE,
+    'group_oved_event_page_meta|node|ofed_event|form' => FALSE,
+    'group_ofed_job_page_meta|node|ofed_job|form' => FALSE,
+    'group_ofed_meeting_page_meta|node|ofed_meeting|form' => FALSE,
+    'group_ofed_news_page_meta|node|ofed_news|form' => FALSE,
+    'group_ofed_team_page_meta|node|ofed_team|form' => FALSE,
+    'group_ofed_video_page_meta|node|ofed_video|form' => FALSE,
+  );
+  $export['default_field_group'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'diff_enable_revisions_page_node_ofed_address';
   $strongarm->value = 1;
   $export['diff_enable_revisions_page_node_ofed_address'] = $strongarm;
@@ -124,19 +146,19 @@ function ofed_feature_address_strongarm() {
           'weight' => '0',
         ),
         'metatags' => array(
-          'weight' => '19',
+          'weight' => '18',
         ),
         'title' => array(
           'weight' => '1',
         ),
         'path' => array(
-          'weight' => '18',
-        ),
-        'redirect' => array(
           'weight' => '17',
         ),
-        'xmlsitemap' => array(
+        'redirect' => array(
           'weight' => '16',
+        ),
+        'xmlsitemap' => array(
+          'weight' => '15',
         ),
       ),
       'display' => array(

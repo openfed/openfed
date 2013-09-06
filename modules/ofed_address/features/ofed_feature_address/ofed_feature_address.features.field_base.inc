@@ -138,7 +138,7 @@ function ofed_feature_address_field_default_field_bases() {
   // Exported field_base: 'field_ofed_address_email'
   $field_bases['field_ofed_address_email'] = array(
     'active' => 1,
-    'cardinality' => 1,
+    'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_ofed_address_email',
@@ -290,6 +290,36 @@ function ofed_feature_address_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'text',
+  );
+
+  // Exported field_base: 'field_ofed_address_pubdate'
+  $field_bases['field_ofed_address_pubdate'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_ofed_address_pubdate',
+    'foreign keys' => array(),
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'date',
+    'settings' => array(
+      'cache_count' => 4,
+      'cache_enabled' => 0,
+      'granularity' => array(
+        'day' => 'day',
+        'hour' => 'hour',
+        'minute' => 'minute',
+        'month' => 'month',
+        'second' => 0,
+        'year' => 'year',
+      ),
+      'timezone_db' => 'UTC',
+      'todate' => '',
+      'tz_handling' => 'site',
+    ),
+    'translatable' => 0,
+    'type' => 'datetime',
   );
 
   // Exported field_base: 'field_ofed_address_street'
