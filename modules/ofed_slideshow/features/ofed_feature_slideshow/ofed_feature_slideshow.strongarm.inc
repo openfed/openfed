@@ -142,19 +142,19 @@ function ofed_feature_slideshow_strongarm() {
           'weight' => '0',
         ),
         'metatags' => array(
-          'weight' => '10',
+          'weight' => '11',
         ),
         'title' => array(
           'weight' => '1',
         ),
         'path' => array(
-          'weight' => '9',
+          'weight' => '10',
         ),
         'redirect' => array(
-          'weight' => '8',
+          'weight' => '9',
         ),
         'xmlsitemap' => array(
-          'weight' => '7',
+          'weight' => '8',
         ),
       ),
       'display' => array(

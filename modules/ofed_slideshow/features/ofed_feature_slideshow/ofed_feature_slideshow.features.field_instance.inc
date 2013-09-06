@@ -98,7 +98,7 @@ function ofed_feature_slideshow_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 5,
+      'weight' => 6,
     ),
   );
 
@@ -157,7 +157,56 @@ function ofed_feature_slideshow_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 6,
+      'weight' => 7,
+    ),
+  );
+
+  // Exported field_instance: 'node-ofed_slideshow-field_ofed_slide_pubdate'
+  $field_instances['node-ofed_slideshow-field_ofed_slide_pubdate'] = array(
+    'bundle' => 'ofed_slideshow',
+    'deleted' => 0,
+    'description' => 'This date typically refers to the moment the content element was released and is to be displayed without label next to the title of the content element in lists and pages. It is typically used to sort content.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'date',
+        'settings' => array(
+          'format_type' => 'long',
+          'fromto' => 'both',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+        ),
+        'type' => 'date_default',
+        'weight' => 5,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_ofed_slide_pubdate',
+    'label' => 'Publication date',
+    'required' => 0,
+    'settings' => array(
+      'default_value' => 'now',
+      'default_value2' => 'same',
+      'default_value_code' => '',
+      'default_value_code2' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'date',
+      'settings' => array(
+        'display_all_day' => 0,
+        'increment' => 15,
+        'input_format' => 'd/m/Y - H:i:s',
+        'input_format_custom' => '',
+        'label_position' => 'none',
+        'text_parts' => array(),
+        'year_range' => '-3:+3',
+      ),
+      'type' => 'date_popup',
+      'weight' => 3,
     ),
   );
 
@@ -206,12 +255,12 @@ function ofed_feature_slideshow_field_default_field_instances() {
         'increment' => 15,
         'input_format' => 'd/m/Y - H:i:s',
         'input_format_custom' => '',
-        'label_position' => 'above',
+        'label_position' => 'none',
         'text_parts' => array(),
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 2,
+      'weight' => 4,
     ),
   );
 
@@ -260,7 +309,7 @@ function ofed_feature_slideshow_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 3,
+      'weight' => 5,
     ),
   );
 
@@ -271,7 +320,9 @@ function ofed_feature_slideshow_field_default_field_instances() {
   t('Image(s)');
   t('Last updated date');
   t('Link');
+  t('Publication date');
   t('This date field is used to indicate when the content element was last modified.');
+  t('This date typically refers to the moment the content element was released and is to be displayed without label next to the title of the content element in lists and pages. It is typically used to sort content.');
   t('Upload an additional image related to this slideshow.');
   t('Use system update date instead of Last updated date');
 
