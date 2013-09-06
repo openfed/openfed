@@ -1,11 +1,11 @@
 <?php
 
 /**
- * Return the form for functionalities set up.
+ * Return the form for contenttypes set up.
  *
  * @return array
  */
-function openfed_functionalities_form() {
+function openfed_contenttypes_form() {
   drupal_set_title(st('Enable content types'));
   $form = array();
 
@@ -16,7 +16,7 @@ function openfed_functionalities_form() {
   $form['types_list'] = array(
     '#type' => 'checkboxes',
     '#title' => st('Content types:'),
-    '#options' => _openfed_return_functionalities_list(),
+    '#options' => _openfed_return_contenttypes_list(),
   );
 
   $form['submit'] = array(
@@ -33,7 +33,7 @@ function openfed_functionalities_form() {
  * @param array $form
  * @param array $form_state
  */
-function openfed_functionalities_form_submit($form, &$form_state) {
+function openfed_contenttypes_form_submit($form, &$form_state) {
   $values = $form_state['values'];
 
   if (!empty($values['types_list'])) {
@@ -57,56 +57,56 @@ function openfed_functionalities_form_submit($form, &$form_state) {
       }
     }
 
-    variable_set('openfed_need_batch_functionalities', TRUE);
-    variable_set('openfed_need_batch_functionalities_functions', $module_list);
+    variable_set('openfed_need_batch_contenttypes', TRUE);
+    variable_set('openfed_need_batch_contenttypes_functions', $module_list);
   }
 
-  _openfed_functionalities_grant_permissions();
+  _openfed_contenttypes_grant_permissions();
 }
 
 /**
- * batch function to enable functionalities
+ * batch function to enable contenttypes
  */
-function openfed_batch_functionalities() {
-  $values = variable_get('openfed_need_batch_functionalities_functions');
+function openfed_batch_contenttypes() {
+  $values = variable_get('openfed_need_batch_contenttypes_functions');
 
   if (!empty($values)) {
     $batch = array(
-      'title' => st('Importing functionalities'),
+      'title' => st('Importing content types'),
       'operations' => array(
-        array('_openfed_batch_enabling_functionalities', array($values, TRUE)),
+        array('_openfed_batch_enabling_contenttypes', array($values, TRUE)),
       ),
-      'finished' => '_openfed_batch_finished_functionalities',
-      'init_message' => st('Starting import functionalities'),
-      'error_message' => st('Error importing functionalities'),
+      'finished' => '_openfed_batch_finished_contenttypes',
+      'init_message' => st('Starting import content types'),
+      'error_message' => st('Error importing content types'),
     );
     batch_set($batch);
     batch_process('http://' . $_SERVER['HTTP_HOST'] . '/install.php?profile=openfed&locale=en');
   }
   else {
-    variable_del('openfed_need_batch_functionalities');
-    variable_del('openfed_need_batch_functionalities_functions');
+    variable_del('openfed_need_batch_contenttypes');
+    variable_del('openfed_need_batch_contenttypes_functions');
   }
 }
 
 /**
- * declaration of batch operation to enable functionalities
+ * declaration of batch operation to enable contenttypes
  */
-function _openfed_batch_enabling_functionalities($module_list, $enable_dependencies, &$context) {
+function _openfed_batch_enabling_contenttypes($module_list, $enable_dependencies, &$context) {
   module_enable($module_list, $enable_dependencies);
 }
 
 /**
  * declaration of batch finished function
  */
-function _openfed_batch_finished_functionalities($success, $results, $operations) {
+function _openfed_batch_finished_contenttypes($success, $results, $operations) {
   if ($success) {
-    variable_del('openfed_need_batch_functionalities');
-    variable_del('openfed_need_batch_functionalities_functions');
-    drupal_set_message(t('Success importing functionalities'));
+    variable_del('openfed_need_batch_contenttypes');
+    variable_del('openfed_need_batch_contenttypes_functions');
+    drupal_set_message(t('Success importing contenttypes'));
   }
   else {
-    drupal_set_message(t('BatchError importing functionalities'));
+    drupal_set_message(t('BatchError importing contenttypes'));
   }
 
   $enable = array(
@@ -127,7 +127,7 @@ function _openfed_batch_finished_functionalities($success, $results, $operations
   }
 }
 
-function _openfed_functionalities_grant_permissions() {
+function _openfed_contenttypes_grant_permissions() {
   // content related roles
   $roles = array(
     'Administrator',

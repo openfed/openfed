@@ -177,11 +177,11 @@ function _openfed_return_taxonomy_list() {
 }
 
 /**
- * Return the array for the list of all functionalities.
+ * Return the array for the list of all contenttypes.
  *
  * @return array
  */
-function _openfed_return_functionalities_list() {
+function _openfed_return_contenttypes_list() {
   $function_list = array(
     'ofed_address' => st('Address'),
     'ofed_banner' => st('Banner'),
@@ -210,12 +210,12 @@ function _openfed_return_functionalities_list() {
 }
 
 /**
- * Sort functionalities list.
+ * Sort contenttypes list.
  * @param type $a
  * @param type $b
  * @return int
  */
-function _openfed_sort_functionalities_list($a, $b){
+function _openfed_sort_contenttypes_list($a, $b){
   if($a == $b){
     return 0;
   }
@@ -797,54 +797,6 @@ function _openfed_return_permission_anonymous_user() {
     'access site map' => TRUE,
   );
   return $permission;
-}
-
-/**
- * Preprocess of the module list in functionalities install task
- * use this if you want to have a description and full description on checkboxes list.
- *
- * @param array $element
- * @return array
- */
-function form_process_checkboxes_at_install($element) {
-  $value = is_array($element['#value']) ? $element['#value'] : array();
-  $element['#tree'] = TRUE;
-  if (count($element['#options']) > 0) {
-    if (!isset($element['#default_value']) || $element['#default_value'] == 0) {
-      $element['#default_value'] = array();
-    }
-    $weight = 0;
-    foreach ($element['#options'] as $key => $choice) {
-      // Integer 0 is not a valid #return_value, so use '0' instead.
-      // @see form_type_checkbox_value().
-      // @todo For Drupal 8, cast all integer keys to strings for consistency
-      //   with form_process_radios().
-      if ($key === 0) {
-        $key = '0';
-      }
-      // Maintain order of options as defined in #options, in case the element
-      // defines custom option sub-elements, but does not define all option
-      // sub-elements.
-      $weight += 0.001;
-
-      $element += array($key => array());
-      $element[$key] += array(
-        '#type' => 'checkbox',
-        '#title' => $choice['title'],
-        '#return_value' => $key,
-        '#default_value' => isset($value[$key]) ? $key : NULL,
-        '#attributes' => $element['#attributes'],
-        '#ajax' => isset($element['#ajax']) ? $element['#ajax'] : NULL,
-        '#weight' => $weight,
-        '#description' => isset($choice['description']) ? $choice['description'] : NULL, // add a description to the element
-        '#full_description' => isset($choice['full_description']) ? $choice['full_description'] : NULL, // add a new variable to the element
-        '#picture' => isset($choice['picture']) ? $choice['picture'] : NULL, // add a new variable to the element
-        '#process' => array('form_process_checkbox', 'ajax_process_form'), // override process for theming element
-        '#theme_wrappers' => array('form_element_checkbox_list'), // override process for theming wrapper
-      );
-    }
-  }
-  return $element;
 }
 
 /**

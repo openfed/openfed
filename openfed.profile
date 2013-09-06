@@ -19,7 +19,7 @@ require_once('includes/form/openfed_role_function.inc');
 require_once('includes/form/openfed_taxonomy_function.inc');
 
 // Function for the setup of additional function.
-require_once('includes/form/openfed_functionalities_form.inc');
+require_once('includes/form/openfed_contenttypes_form.inc');
   
 // Function for the setup of complete step.
 require_once('includes/form/openfed_complete_function.inc');
@@ -55,7 +55,7 @@ function openfed_install_tasks($install_state) {
   $tasks = array();
   
   $openfed_need_batch_internalization = variable_get('openfed_need_batch_internalization', FALSE);
-  $openfed_need_batch_functionalities = variable_get('openfed_need_batch_functionalities', FALSE);
+  $openfed_need_batch_contenttypes = variable_get('openfed_need_batch_contenttypes', FALSE);
   
   // Step to choose which language to pre-install.
   $tasks['openfed_regional_form'] = array(
@@ -92,17 +92,17 @@ function openfed_install_tasks($install_state) {
     'type' => 'form',
   );
     
-  // Step to choose which additional functionalities to add.
-  $tasks['openfed_functionalities_form'] = array(
+  // Step to choose which additional contenttypes to add.
+  $tasks['openfed_contenttypes_form'] = array(
     'display_name' => st('Enable content types'),
     'display' => TRUE,
     'type' => 'form',
   );
-  $tasks['openfed_batch_functionalities'] = array(
+  $tasks['openfed_batch_contenttypes'] = array(
     'display_name' => st('Import content types'),
-    'display' => $openfed_need_batch_functionalities,
+    'display' => $openfed_need_batch_contenttypes,
     'type' => 'batch',
-    'run' => $openfed_need_batch_functionalities ? INSTALL_TASK_RUN_IF_NOT_COMPLETED : INSTALL_TASK_SKIP,
+    'run' => $openfed_need_batch_contenttypes ? INSTALL_TASK_RUN_IF_NOT_COMPLETED : INSTALL_TASK_SKIP,
   );
     
   // Step to rebuild permission.
