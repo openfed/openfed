@@ -4,6 +4,7 @@ CHANGELOG
 No date yet - Version 7.x-1.x
 -----------------------------
  * Issues: 
+    #2083135: Installer UI: use "enable" instead of "setup"
     #2083133: Module removal: module_filter
 
     #Other :

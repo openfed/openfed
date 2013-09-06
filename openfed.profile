@@ -96,7 +96,7 @@ function openfed_install_tasks($install_state) {
   
   // Step to choose which language to pre-install.
   $tasks['openfed_regional_form'] = array(
-    'display_name' => st('Setup Regional'),
+    'display_name' => st('Set up locale'),
     'display' => TRUE,
     'type' => 'form',
   );
@@ -110,21 +110,21 @@ function openfed_install_tasks($install_state) {
   
   // Step to choose which menu to pre-install.
   $tasks['openfed_menu_form'] = array(
-    'display_name' => st('Setup Menu'),
+    'display_name' => st('Enable menu'),
     'display' => TRUE,
     'type' => 'form',
   );
     
   // Step to choose which taxonomy vocabulary to pre-install.
   $tasks['openfed_taxonomy_form'] = array(
-    'display_name' => st('Setup Taxonomy'),
+    'display_name' => st('Enable taxonomy'),
     'display' => TRUE,
     'type' => 'form',
   );
     
   // Step to choose which role to pre-install.
   $tasks['openfed_role_form'] = array(
-    'display_name' => st('Setup Role'),
+    'display_name' => st('Enable roles'),
     'display' => TRUE,
     'type' => 'form',
   );
