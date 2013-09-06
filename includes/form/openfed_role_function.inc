@@ -22,9 +22,7 @@ function openfed_role_form() {
 }
 
 /**
- * manage the submit of the form
- * @param array $form
- * @param array $form_state
+ * Form submission handler for openfed_role_form().
  */
 function openfed_role_form_submit($form, &$form_state) {
   $values = $form_state['values'];
@@ -45,7 +43,7 @@ function openfed_role_form_submit($form, &$form_state) {
       $permission_vocabularies["delete terms in " . $vocabularies->vid] = TRUE;
     }
 
-    if ($values['role_list']['configurator'] === 'configurator') {
+    if ($values['role_list']['configurator'] == 'configurator') {
       // Manage Configurator information
       $conf_role = new stdClass();
       $conf_role->name = 'Configurator';
@@ -57,7 +55,7 @@ function openfed_role_form_submit($form, &$form_state) {
       user_role_change_permissions($conf_role->rid, $permission);
     }
 
-    if ($values['role_list']['content_manager'] === 'content_manager') {
+    if ($values['role_list']['content_manager'] == 'content_manager') {
       // Manage Content Manager information
       $cm_role = new stdClass();
       $cm_role->name = 'Content Manager';
@@ -69,7 +67,7 @@ function openfed_role_form_submit($form, &$form_state) {
       user_role_change_permissions($cm_role->rid, $permission);
     }
 
-    if ($values['role_list']['user_manager'] === 'user_manager') {
+    if ($values['role_list']['user_manager'] == 'user_manager') {
       // Manage User Manager information
       $um_role = new stdClass();
       $um_role->name = 'User Manager';
@@ -114,7 +112,7 @@ function openfed_role_form_submit($form, &$form_state) {
       }
     }
 
-    if ($values['role_list']['user_manager'] === 'authenticated_visitor') {
+    if ($values['role_list']['authenticated_visitor'] == 'authenticated_visitor') {
       // Manage Authenticated visitor information
       $av_role = new stdClass();
       $av_role->name = 'Authenticated Visitor';
