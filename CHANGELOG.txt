@@ -3,7 +3,9 @@ CHANGELOG
 
 No date yet - Version 7.x-1.x
 -----------------------------
-	* Issues:
+ * Issues: 
+    #2083133: Module removal: module_filter
+
     #Other :
       - Use ofed_theme_nerra 7.x-1.0-dev version.
 
