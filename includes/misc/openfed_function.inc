@@ -183,57 +183,23 @@ function _openfed_return_taxonomy_list() {
  */
 function _openfed_return_functionalities_list() {
   $function_list = array(
-    'ofed_address' => array(
-      'title' => st('Address'),
-    ),
-    'ofed_banner' => array(
-      'title' => st('Banner'),
-    ),
-    'blog' => array(
-      'title' => st('Blog'),
-    ),
-    'ofed_event' => array(
-      'title' => st('Event'),
-    ),
-    'ofed_faq' => array(
-      'title' => st('FAQ'),
-    ),
-    'forum' => array(
-      'title' => st('Forum'),
-    ),
-    'ofed_job' => array(
-      'title' => st('Job'),
-    ),
-    'lexicon' => array(
-      'title' => st('Lexicon'),
-    ),
-    'ofed_meeting' => array(
-      'title' => st('Meeting'),
-    ),
-    'ofed_news' => array(
-      'title' => st('News'),
-    ),
-    'ofed_photogallery' => array(
-      'title' => st('Photo galleries'),
-    ),
-   'poll' => array(
-      'title' => st('Poll'),
-    ),
-    'ofed_press' => array(
-      'title' => st('Press'),
-    ),
-    'ofed_slider' => array(
-      'title' => st('Slider'),
-    ),
-    'ofed_slideshow' => array(
-      'title' => st('Slideshow'),
-    ),
-    'ofed_team' => array(
-      'title' => st('Team member'),
-    ),
-    'ofed_video' => array(
-      'title' => st('Video'),
-    ),
+    'ofed_address' => st('Address'),
+    'ofed_banner' => st('Banner'),
+    'blog' => st('Blog'),
+    'ofed_event' => st('Event'),
+    'ofed_faq' => st('FAQ'),
+    'forum' => st('Forum'),
+    'ofed_job' => st('Job'),
+    'lexicon' => st('Lexicon'),
+    'ofed_meeting' => st('Meeting'),
+    'ofed_news' => st('News'),
+    'ofed_photogallery' => st('Photo galleries'),
+    'poll' => st('Poll'),
+    'ofed_press' => st('Press'),
+    'ofed_slider' => st('Slider'),
+    'ofed_slideshow' => st('Slideshow'),
+    'ofed_team' => st('Team member'),
+    'ofed_video' => st('Video'),
   );
 
   // Sort.
@@ -244,18 +210,16 @@ function _openfed_return_functionalities_list() {
 }
 
 /**
- * Sort functionnalities list.
+ * Sort functionalities list.
  * @param type $a
  * @param type $b
  * @return int
  */
 function _openfed_sort_functionalities_list($a, $b){
-  if($a['title'] == $b['title']){
-    // Return.
+  if($a == $b){
     return 0;
   }
-  // Return.
-  return ($a['title'] < $b['title']) ? -1 : 1;
+  return ($a < $b) ? -1 : 1;
 }
 
 /**
