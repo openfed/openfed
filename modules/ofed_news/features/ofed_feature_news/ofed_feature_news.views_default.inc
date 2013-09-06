@@ -666,7 +666,6 @@ function ofed_feature_news_views_default_views() {
     t('Block: Column'),
     t('News: Column'),
   );
-
   $export['ofed_news'] = $view;
 
   return $export;
