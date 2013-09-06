@@ -5,7 +5,7 @@
  * @return array 
  */
 function openfed_taxonomy_form() {
-  drupal_set_title(st('Taxonomy configuration'));
+  drupal_set_title(st('Enable taxonomy'));
   $form = array();
   $form['intro'] = array(
     '#markup' => '<p>' . st('Select this option if there will be taxonomy vocabularies in the websites, that will be used to re-group items. <br> If this option is not checked, the vocabulary will have to be created manually.') . '</p>',

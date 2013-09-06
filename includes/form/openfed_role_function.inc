@@ -5,7 +5,7 @@
  * @return array
  */
 function openfed_role_form() {
-  drupal_set_title(st('Role configuration'));
+  drupal_set_title(st('Enable roles'));
   $form = array();
   $form['intro'] = array(
     '#markup' => '<p>' . st('Select the roles and the corresponding permission to foresee:') . '<br/>' . st('(By default "Admin" role is automatically created.)') . '</p>',

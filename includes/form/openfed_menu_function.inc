@@ -5,11 +5,8 @@
  * @return array 
  */
 function openfed_menu_form() {
-  drupal_set_title(st('Menu configuration'));
+  drupal_set_title(st('Enable menus'));
   $form = array();
-  $form['intro'] = array(
-    '#markup' => '<p>' . st('Select the menu areas which have to be foreseen:') . '</p>',
-  );
   $form['menu_list'] = array(
     '#type' => 'checkboxes',
     '#title' => st('Menu list'),
