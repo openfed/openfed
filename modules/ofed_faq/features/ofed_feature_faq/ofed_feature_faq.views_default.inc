@@ -429,7 +429,6 @@ function ofed_feature_faq_views_default_views() {
     t('FAQ Summary'),
     t('<a href="#[nid]" class="faq-title-anchor">[title]</a>'),
   );
-
   $export['ofed_faq'] = $view;
 
   return $export;

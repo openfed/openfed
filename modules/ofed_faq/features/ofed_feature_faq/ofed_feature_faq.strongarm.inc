@@ -107,19 +107,19 @@ function ofed_feature_faq_strongarm() {
           'weight' => '0',
         ),
         'metatags' => array(
-          'weight' => '8',
+          'weight' => '10',
         ),
         'title' => array(
-          'weight' => '3',
+          'weight' => '5',
         ),
         'path' => array(
-          'weight' => '7',
+          'weight' => '9',
         ),
         'redirect' => array(
-          'weight' => '6',
+          'weight' => '8',
         ),
         'xmlsitemap' => array(
-          'weight' => '5',
+          'weight' => '7',
         ),
       ),
       'display' => array(
