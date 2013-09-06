@@ -2,7 +2,6 @@ name = Team members - Module
 description = Manage the team members
 package = OpenFed
 core = 7.x
-version = "7.x-1.0"
 
 dependencies[] = ofed_download
 dependencies[] = ofed_feature_team

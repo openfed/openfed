@@ -2,4 +2,3 @@ name = Requirements Module
 description = Display a requirements check page to see if the OpenFed package delivered is compliant with the Fedict rules
 package = OpenFed
 core = 7.x
-version = "7.x-1.0"

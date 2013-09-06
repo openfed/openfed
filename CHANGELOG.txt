@@ -4,6 +4,7 @@ CHANGELOG
 No date yet - Version 7.x-1.x
 -----------------------------
  * Issues:
+    #2083437: Removed version from info files (added by drupal.org) 
     #2083393: Show Authenticated Visitor role in installer
     #2083407: Installer UI: cleaned up menu page
     #2083345: Installer UI: cleaned up roles page

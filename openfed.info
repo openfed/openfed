@@ -1,7 +1,6 @@
 name = OpenFed
 description = Select this profile to install OpenFed distribution.
 core = 7.x
-version = "7.x-1.0"
 
 ; System Requirements.
   php_memory_limit = 320M
