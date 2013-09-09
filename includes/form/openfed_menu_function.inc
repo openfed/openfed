@@ -69,4 +69,3 @@ function openfed_menu_form_submit($form, &$form_state) {
     menu_rebuild();
   }
 }
-?>

@@ -11,4 +11,3 @@ variable_set('easy_breadcrumb-include_title_segment', TRUE);
 variable_set('easy_breadcrumb-segments_separator', "/");
 variable_set('easy_breadcrumb-title_from_page_when_available', TRUE);
 variable_set('easy_breadcrumb-title_segment_as_link', FALSE);
-?>
