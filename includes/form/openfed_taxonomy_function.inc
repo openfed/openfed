@@ -8,13 +8,11 @@ function openfed_taxonomy_form() {
   drupal_set_title(st('Enable taxonomy'));
   $form = array();
 
-  $form['intro'] = array(
-    '#markup' => '<p>' . st('Select this option if there will be taxonomy vocabularies in the websites, that will be used to re-group items. <br> If this option is not checked, the vocabulary will have to be created manually.') . '</p>',
-  );
   $form['taxonomy_list'] = array(
     '#type' => 'checkboxes',
     '#title' => st('Taxonomy'),
     '#options' => _openfed_return_taxonomy_list(),
+    '#description' => st('Select this option if there will be taxonomy vocabularies in the websites, that will be used to re-group items.'),
   );
   $form['submit'] = array(
     '#type' => 'submit',
@@ -24,7 +22,7 @@ function openfed_taxonomy_form() {
 }
 
 /**
- * manage the submit of the form
+ * Form submission handler for openfed_taxonomy_form().
  */
 function openfed_taxonomy_form_submit($form, &$form_state) {
   $values = $form_state['values'];
