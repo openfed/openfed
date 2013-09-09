@@ -9,21 +9,17 @@ function openfed_contenttypes_form() {
   drupal_set_title(st('Enable content types'));
   $form = array();
 
-  $form['intro'] = array(
-    '#markup' => '<p>' . st('Select the specific content types that have to be available in the website.') . '</p><p>' . st('Note : each content type can be enabled after the installation in the Features list.') . '</p>',
-  );
-
   $form['types_list'] = array(
     '#type' => 'checkboxes',
-    '#title' => st('Content types:'),
+    '#title' => st('Content types'),
     '#options' => _openfed_return_contenttypes_list(),
+    '#description' => st('Content types can also be enabled after installation (in the Features list).'),
   );
 
   $form['submit'] = array(
     '#type' => 'submit',
     '#value' => st('Continue'),
   );
-
   return $form;
 }
 
