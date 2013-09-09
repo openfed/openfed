@@ -10,7 +10,7 @@ function openfed_role_form() {
 
   $form['role_list'] = array(
     '#type' => 'checkboxes',
-    '#title' => st('Roles:'),
+    '#title' => st('Roles'),
     '#options' => _openfed_return_roles_list(),
     '#description' => st('By checking the roles, the roles and their associated set of permissions will be automatically created.'), 
   );
