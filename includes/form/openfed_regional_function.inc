@@ -28,9 +28,7 @@ function openfed_regional_form() {
 }
 
 /**
- * manage the submit of the form
- * @param array $form
- * @param array $form_state
+ * Form submission handler for openfed_regional_form().
  */
 function openfed_regional_form_submit($form, &$form_state) {
   $values = $form_state['values'];
