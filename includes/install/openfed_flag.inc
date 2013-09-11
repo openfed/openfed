@@ -1,7 +1,12 @@
 <?php
 
 /**
- * Disable default bookmark flag views 
+ * @file
+ * Needs to be documented.
+ */
+
+/**
+ * Disable default bookmark flag views.
  */
 $status = variable_get('views_defaults', array());
 $status['flag_bookmarks'] = TRUE;

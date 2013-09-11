@@ -1,7 +1,12 @@
 <?php
 
 /**
- * variable for configuration page at "admin/structure/ds/list/extras"
+ * @file
+ * Needs to be documented.
+ */
+
+/**
+ * Variable for configuration page at 'admin/structure/ds/list/extras'.
  */
 variable_set('ds_extras_fields_extra', FALSE);
 variable_set('ds_extras_fields_extra_list', '');
@@ -17,10 +22,8 @@ variable_set('ds_extras_switch_view_mode', TRUE);
 variable_set('ds_extras_vd', TRUE);
 variable_set('ft-default', 'theme_ds_field_minimal');
 
-
-
 /**
- * variable for configuration page at "admin/structure/ds/list/search"
+ * Variable for configuration page at 'admin/structure/ds/list/search'.
  */
 variable_set('ds_search_type', 'node');
 variable_set('ds_search_path', 'content');
@@ -34,15 +37,20 @@ variable_set('ds_search_group_by_type', FALSE);
 variable_set('ds_search_group_by_type_other', 'Other');
 variable_set('ds_search_group_by_type_other_wrapper', 'markup');
 variable_set('ds_search_group_by_type_settings', array(
-  'webform' => array('status' => 1, 'label' => 'Results for webform', 'wrapper' => 'markup', 'weight' => 0)
+  'webform' => array(
+    'status' => 1,
+    'label' =>
+    'Results for webform',
+    'wrapper' => 'markup',
+    'weight' => 0,
+  ),
   )
 );
 variable_set('ds_search_node_form_alter', FALSE);
 variable_set('ds_search_node_limit', '10');
 
-
 /**
- * variable for configuration page at "admin/structure/ds/classes"
+ * Variable for configuration page at 'admin/structure/ds/classes'.
  */
 variable_set('ds_classes_fields', 'align-left|Align left
 align-right|Align right
@@ -57,45 +65,55 @@ highlight-medium|Highlight Medium
 highlight-light|Highlight Light
 more|More link
 ');
-
 variable_set('ds_classes_regions', '');
 
 /**
- * VIEW MODES
+ * View modes.
  */
 $view_mode = new stdClass();
 $view_mode->view_mode = 'page_list';
 $view_mode->label = 'Page list';
-$view_mode->entities = array('node' => 'node');
+$view_mode->entities = array(
+  'node' => 'node',
+);
 drupal_write_record('ds_view_modes', $view_mode);
 
 $view_mode = new stdClass();
 $view_mode->view_mode = 'block_list';
 $view_mode->label = 'Block list';
-$view_mode->entities = array('node' => 'node');
+$view_mode->entities = array(
+  'node' => 'node',
+);
 drupal_write_record('ds_view_modes', $view_mode);
 
 $view_mode = new stdClass();
 $view_mode->view_mode = 'block_column';
 $view_mode->label = 'Block column';
-$view_mode->entities = array('node' => 'node');
+$view_mode->entities = array(
+  'node' => 'node',
+);
 drupal_write_record('ds_view_modes', $view_mode);
 
 $view_mode = new stdClass();
 $view_mode->view_mode = 'block_element';
 $view_mode->label = 'Block element';
-$view_mode->entities = array('node' => 'node');
+$view_mode->entities = array(
+  'node' => 'node',
+);
 drupal_write_record('ds_view_modes', $view_mode);
 
 $view_mode = new stdClass();
 $view_mode->view_mode = 'references';
 $view_mode->label = 'References';
-$view_mode->entities = array('node' => 'node');
+$view_mode->entities = array(
+  'node' => 'node',
+);
 drupal_write_record('ds_view_modes', $view_mode);
 
 $view_mode = new stdClass();
 $view_mode->view_mode = 'short_references';
 $view_mode->label = 'Short references';
-$view_mode->entities = array('node' => 'node');
+$view_mode->entities = array(
+  'node' => 'node',
+);
 drupal_write_record('ds_view_modes', $view_mode);
-

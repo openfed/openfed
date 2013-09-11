@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * @file
+ * Needs to be documented.
+ */
+
 variable_set('securelogin_base_url', 'https://' . $_SERVER['HTTP_HOST']);
 variable_set('securelogin_secure_forms', FALSE);
 variable_set('securelogin_all_forms', TRUE);

@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * @file
+ * Needs to be documented.
+ */
+
 variable_set('extlink_alert', '_blank');
 variable_set('extlink_alert_text', 'This link will take you to an external web site. We are not responsible for their content.');
 variable_set('extlink_class', 'ext');

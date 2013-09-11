@@ -1,6 +1,10 @@
 <?php
 
-$arr = array();
-$arr['canonical'] = TRUE;
+/**
+ * @file
+ * Needs to be documented.
+ */
 
-variable_set('globalredirect_settings', $arr);
+variable_set('globalredirect_settings', array(
+  'canonical' => TRUE,
+));

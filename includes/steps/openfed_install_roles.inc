@@ -1,83 +1,95 @@
 <?php
 
 /**
- * Return the form for role set up
- * @return array
+ * @file
+ * Needs to be documented.
  */
-function openfed_role_form() {
-  drupal_set_title(st('Enable roles'));
-  $form = array();
 
+/**
+ * Form for roles set up.
+ */
+function openfed_install_role_form() {
+  // Set title.
+  drupal_set_title(st('Set up roles'));
+
+  // Set form.
+  $form = array();
+  $form['intro'] = array(
+    '#markup' => '<p>' . st('Select the roles which have to be foreseen (by default the adminitrator role is automatically created.)'). '</p>',
+  );
   $form['role_list'] = array(
     '#type' => 'checkboxes',
     '#title' => st('Roles'),
-    '#options' => _openfed_return_roles_list(),
-    '#description' => st('By checking the roles, the roles and their associated set of permissions will be automatically created.'), 
+    '#options' => _openfed_get_roles_list(),
+    '#description' => st('Note : by checking the roles, the roles and their associated set of permissions will be automatically created.<br><br>
+      They can also be created after the installation, but the set of permissions will have to be defined manually.'),
   );
   $form['submit'] = array(
     '#type' => 'submit',
     '#value' => st('Continue'),
   );
+
+  // Return form.
   return $form;
 }
 
 /**
- * Form submission handler for openfed_role_form().
+ * Manage the submit of the form for roles set up.
  */
-function openfed_role_form_submit($form, &$form_state) {
+function openfed_install_role_form_submit($form, &$form_state) {
   $values = $form_state['values'];
 
+  // Generate and set permissions for roles based on the user choice.
   if (!empty($values['role_list'])) {
-    /* GENERATE DYNAMIC PERMISSION */
     $permission_language = array();
-
     foreach (language_list() as $langcode => $langobject) {
-      $permission_language["manage $langcode translation overview priorities"] = TRUE;
+      $permission_language['manage ' . $langcode . ' translation overview priorities'] = TRUE;
     }
 
     $permission_vocabularies = array();
     $vocabularies = taxonomy_vocabulary_machine_name_load('categories');
-
     if ($vocabularies != FALSE) {
-      $permission_vocabularies["edit terms in " . $vocabularies->vid] = TRUE;
-      $permission_vocabularies["delete terms in " . $vocabularies->vid] = TRUE;
+      $permission_vocabularies['edit terms in ' . $vocabularies->vid] = TRUE;
+      $permission_vocabularies['delete terms in ' . $vocabularies->vid] = TRUE;
     }
 
-    if ($values['role_list']['configurator'] == 'configurator') {
-      // Manage Configurator information
+    // Configurator.
+    if ($values['role_list']['configurator'] === 'configurator') {
+      // Create role.
       $conf_role = new stdClass();
       $conf_role->name = 'Configurator';
       $conf_role->weight = 5;
       user_role_save($conf_role);
-      // Assign permission
+      // Assign permission to role.
       $conf_role = user_role_load_by_name('Configurator');
-      $permission = array_merge(_openfed_return_permission_configurator(), $permission_language, $permission_vocabularies);
+      $permission = array_merge(_openfed_get_permissions_for_role('Configurator'), $permission_language, $permission_vocabularies);
       user_role_change_permissions($conf_role->rid, $permission);
     }
 
-    if ($values['role_list']['content_manager'] == 'content_manager') {
-      // Manage Content Manager information
+    // Content Manager.
+    if ($values['role_list']['content_manager'] === 'content_manager') {
+      // Create role.
       $cm_role = new stdClass();
       $cm_role->name = 'Content Manager';
       $cm_role->weight = 6;
       user_role_save($cm_role);
-      // Assign permission
+      // Assign permission to role.
       $cm_role = user_role_load_by_name('Content Manager');
-      $permission = array_merge(_openfed_return_permission_content_manager(), $permission_language, $permission_vocabularies);
+      $permission = array_merge(_openfed_get_permissions_for_role('Content Manager'), $permission_language, $permission_vocabularies);
       user_role_change_permissions($cm_role->rid, $permission);
     }
 
-    if ($values['role_list']['user_manager'] == 'user_manager') {
-      // Manage User Manager information
+    // User manager.
+    if ($values['role_list']['user_manager'] === 'user_manager') {
+      // Create role.
       $um_role = new stdClass();
       $um_role->name = 'User Manager';
       $um_role->weight = 7;
       user_role_save($um_role);
-      // Assign permission
+      // Assign permission to role.
       $um_role = user_role_load_by_name('User Manager');
-      user_role_change_permissions($um_role->rid, _openfed_return_permission_user_manager());
-
-      // Create rule to warn User Manager when a new user account was created
+      user_role_change_permissions($um_role->rid, _openfed_get_permissions_for_role('User Manager'));
+      // Create rule to warn "User Manager" when ther is a new user account created.
       if (module_exists('rules')) {
         $rule = '
         {
@@ -99,9 +111,7 @@ function openfed_role_form_submit($form, &$form_state) {
         }';
 
         $rules_config = rules_import($rule, $error_msg);
-
         if (empty($error_msg)) {
-
           if ($existing_config = rules_config_load($rules_config->name)) {
             // Copy DB id and remove the new indicator to overwrite the existing record.
             $rules_config->id = $existing_config->id;
@@ -112,60 +122,53 @@ function openfed_role_form_submit($form, &$form_state) {
       }
     }
 
-    if ($values['role_list']['authenticated_visitor'] == 'authenticated_visitor') {
-      // Manage Authenticated visitor information
+    // Authenticated Visitor.
+    if ($values['role_list']['user_manager'] === 'authenticated_visitor') {
+      // Create role.
       $av_role = new stdClass();
       $av_role->name = 'Authenticated Visitor';
       $av_role->weight = 8;
       user_role_save($av_role);
-      // Assign permission
+      // Assign permission to role.
       $av_role = user_role_load_by_name('Authenticated Visitor');
-      user_role_change_permissions($av_role->rid, _openfed_return_permission_authenticated_visitor());
+      user_role_change_permissions($av_role->rid, _openfed_get_permissions_for_role('Authenticated Visitor'));
     }
   }
 
-  // SET PERMISSION FOR ADMINISTRATOR
+  // Set roles permissions for default roles.
+  // Administrator.
   $adm_role = user_role_load_by_name('Administrator');
   $adm_role_rid = $adm_role->rid;
   user_role_grant_permissions($adm_role_rid, array_keys(module_invoke_all('permission')));
 
-  // Assign permission for role Builder
+  // Builder.
   $web_role = user_role_load_by_name('Builder');
   $web_role_rid = $web_role->rid;
-  $permission = array_merge(_openfed_return_permission_builder(), $permission_language, $permission_vocabularies);
+  $permission = array_merge(_openfed_get_permissions_for_role('Builder'), $permission_language, $permission_vocabularies);
   user_role_change_permissions($web_role_rid, $permission);
 
-
-  // SET PERMISSION FOR AUTHENTICATED USER
+  // Authenticated user.
   $auth_role = user_role_load_by_name('authenticated user');
   $auth_role_rid = $auth_role->rid;
-  user_role_change_permissions($auth_role_rid, _openfed_return_permission_authenticated_user());
+  user_role_change_permissions($auth_role_rid, _openfed_get_permissions_for_role('authenticated user'));
 
-
-  // SET PERMISSION FOR ANONYMOUS USER
+  // Anonymous user.
   $ano_role = user_role_load_by_name('anonymous user');
   $ano_role_rid = $ano_role->rid;
-  user_role_change_permissions($ano_role_rid, _openfed_return_permission_anonymous_user());
+  user_role_change_permissions($ano_role_rid, _openfed_get_permissions_for_role('anonymous user'));
 
-  // SETUP ROLE DELEGATION MODULE PERMISSIONS
+  // Setup roles delegation module permission.
   if (module_enable(array('role_delegation'))) {
     $roles = _role_delegation_roles();
     $permissions = array();
-
     foreach ($roles as $rid => $role) {
       $permissions["assign $role role"] = TRUE;
     }
 
     $updated_roles = array('Builder', 'Configurator', 'User Manager');
-    // array_filter role list to remove unchecked roles
-    // array_values to get the selected roles
-    // array_map to ucfirst all remaining entries
-    // array_intersect to avoid the in_array call in the foreach loop
     $updated_roles = array_intersect($updated_roles, array_map('ucfirst', array_values(array_filter($values['role_list']))));
-
     foreach ($updated_roles as $role) {
       $web_role = user_role_load_by_name($role);
-
       if ($role !== 'User Manager') {
         $permissions['administer permissions'] = FALSE;
       }

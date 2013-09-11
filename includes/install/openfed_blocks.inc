@@ -1,13 +1,18 @@
 <?php
 
-// Enable some standard blocks.
-// PUBLIC THEME
-$default_values = array(
-  // TOOLS
-  array(// Print
+/**
+ * @file
+ * Enable some standard blocks.
+ */
+
+// Set frontend blocks.
+$frontend_blocks = array(
+  // Tools.
+  // Print.
+  array(
     'module' => 'print',
     'delta' => 'print-links',
-    'theme' => openfed_return_default_front_theme_name(),
+    'theme' => _openfed_get_theme_frontend(),
     'status' => 1,
     'weight' => 0,
     'region' => 'tools',
@@ -15,10 +20,11 @@ $default_values = array(
     'title' => '<none>',
     'cache' => -1,
   ),
-  array(// Resize
+  // Resize.
+  array(
     'module' => 'text_resize',
     'delta' => '0',
-    'theme' => openfed_return_default_front_theme_name(),
+    'theme' => _openfed_get_theme_frontend(),
     'status' => 1,
     'weight' => 0,
     'region' => 'tools',
@@ -26,12 +32,13 @@ $default_values = array(
     'title' => '<none>',
     'cache' => -1,
   ),
-  // HEADER
-  // NAVIGATION
-  array(// Main Menu
+  // Header.
+  // Navigation.
+  // Main Menu.
+  array(
     'module' => 'system',
     'delta' => 'main-menu',
-    'theme' => openfed_return_default_front_theme_name(),
+    'theme' => _openfed_get_theme_frontend(),
     'status' => 1,
     'weight' => 0,
     'region' => 'navigation',
@@ -39,12 +46,12 @@ $default_values = array(
     'title' => '<none>',
     'cache' => -1,
   ),
-  // TOP
-  // BREADCRUMB
-  array(// Breadcrumb
+  // Top.
+  // Breadcrumb.
+  array(
     'module' => 'easy_breadcrumb',
     'delta' => 'easy_breadcrumb',
-    'theme' => openfed_return_default_front_theme_name(),
+    'theme' => _openfed_get_theme_frontend(),
     'status' => 1,
     'weight' => 0,
     'region' => 'breadcrumb',
@@ -52,13 +59,14 @@ $default_values = array(
     'title' => '<none>',
     'cache' => -1,
   ),
-  // SIDEBAR FIRST
-  // CONTENT TOP
-  // CONTENT
-  array(// System help
+  // Sitebar first.
+  // Content top.
+  // Content.
+  // System help.
+  array(
     'module' => 'system',
     'delta' => 'help',
-    'theme' => openfed_return_default_front_theme_name(),
+    'theme' => _openfed_get_theme_frontend(),
     'status' => 1,
     'weight' => 0,
     'region' => 'content',
@@ -66,10 +74,11 @@ $default_values = array(
     'title' => '',
     'cache' => -1,
   ),
-  array(// Main page content
+  // Main page content.
+  array(
     'module' => 'system',
     'delta' => 'main',
-    'theme' => openfed_return_default_front_theme_name(),
+    'theme' => _openfed_get_theme_frontend(),
     'status' => 1,
     'weight' => 1,
     'region' => 'content',
@@ -77,12 +86,13 @@ $default_values = array(
     'title' => '',
     'cache' => -1,
   ),
-  // CONTENT BOTTOM
-  // ASIDE RIGHT
-  array(// User login
+  // Content bottom.
+  // Aside right.
+  // User login.
+  array(
     'module' => 'user',
     'delta' => 'login',
-    'theme' => openfed_return_default_front_theme_name(),
+    'theme' => _openfed_get_theme_frontend(),
     'status' => 1,
     'weight' => 0,
     'region' => 'sidebar_second',
@@ -90,11 +100,10 @@ $default_values = array(
     'title' => '',
     'cache' => -1,
   ),
-  // BOTTOM
-  // FOOTER
 );
 
-foreach ($default_values as $block) {
+// Install frontend blocks.
+foreach ($frontend_blocks as $block) {
   $exist = db_select('block', 'b')
     ->fields('b')
     ->condition('module', $block['module'])
@@ -117,15 +126,15 @@ foreach ($default_values as $block) {
   $query->execute();
 }
 
-// CMS THEME
-$admin_values = array(
-  // TOOLS
-  // HEADER
-  // NAVIGATION
-  array(// Main Menu
+// Set backend blocks.
+$backend_blocks = array(
+  // Header.
+  // Navigation.
+  // Main Menu.
+  array(
     'module' => 'menu',
     'delta' => 'menu-cms-menu',
-    'theme' => openfed_return_default_backend_theme_name(),
+    'theme' => _openfed_get_theme_backend(),
     'status' => 1,
     'weight' => 0,
     'region' => 'navigation',
@@ -133,12 +142,12 @@ $admin_values = array(
     'title' => '<none>',
     'cache' => -1,
   ),
-  // TOP
-  // BREADCRUMB
-  array(// Breadcrumb
+  // Top.
+  // Breadcrumb.
+  array(
     'module' => 'easy_breadcrumb',
     'delta' => 'easy_breadcrumb',
-    'theme' => openfed_return_default_backend_theme_name(),
+    'theme' => _openfed_get_theme_backend(),
     'status' => 1,
     'weight' => 0,
     'region' => 'breadcrumb',
@@ -146,13 +155,14 @@ $admin_values = array(
     'title' => '<none>',
     'cache' => -1,
   ),
-  // SIDEBAR FIRST
-  // CONTENT TOP
-  // CONTENT
-  array(// System help
+  // Sidebar first.
+  // Content top.
+  // Content.
+  // System help.
+  array(
     'module' => 'system',
     'delta' => 'help',
-    'theme' => openfed_return_default_backend_theme_name(),
+    'theme' => _openfed_get_theme_backend(),
     'status' => 1,
     'weight' => 0,
     'region' => 'content',
@@ -160,10 +170,11 @@ $admin_values = array(
     'title' => '',
     'cache' => -1,
   ),
-  array(// Main page content
+  // Main page content.
+  array(
     'module' => 'system',
     'delta' => 'main',
-    'theme' => openfed_return_default_backend_theme_name(),
+    'theme' => _openfed_get_theme_backend(),
     'status' => 1,
     'weight' => 1,
     'region' => 'content',
@@ -171,13 +182,10 @@ $admin_values = array(
     'title' => '',
     'cache' => -1,
   ),
-  // CONTENT BOTTOM
-  // ASIDE RIGHT
-  // BOTTOM
-  // FOOTER
 );
 
-foreach ($admin_values as $block) {
+// Install backend blocks.
+foreach ($backend_blocks as $block) {
   $exist = db_select('block', 'b')
     ->fields('b')
     ->condition('module', $block['module'])

@@ -1,30 +1,41 @@
 <?php
 
 /**
- * Return the form for taxonomy set up
- * @return array 
+ * @file
+ * Needs to be documented.
  */
-function openfed_taxonomy_form() {
-  drupal_set_title(st('Enable taxonomy'));
-  $form = array();
 
+/**
+ * Form for taxonomy set up.
+ */
+function openfed_install_taxonomy_form() {
+  // Set title.
+  drupal_set_title(st('Set up taxonomy'));
+
+  // Set form.
+  $form = array();
+  $form['intro'] = array(
+    '#markup' => '<p>' . st('Select the taxonomy which have to be foreseen.') . '</p>',
+  );
   $form['taxonomy_list'] = array(
     '#type' => 'checkboxes',
     '#title' => st('Taxonomy'),
-    '#options' => _openfed_return_taxonomy_list(),
-    '#description' => st('Select this option if there will be taxonomy vocabularies in the websites, that will be used to re-group items.'),
+    '#options' => _openfed_get_taxonomy_list(),
+    '#description' => '<p>' . st('Select this option if there will be taxonomy vocabularies in the websites, that will be used to re-group items.') . '</p>',
   );
   $form['submit'] = array(
     '#type' => 'submit',
     '#value' => st('Continue'),
   );
+
+  // Return.
   return $form;
 }
 
 /**
- * Form submission handler for openfed_taxonomy_form().
+ * Manage the submit of the form for taxonomy set up.
  */
-function openfed_taxonomy_form_submit($form, &$form_state) {
+function openfed_install_taxonomy_form_submit($form, &$form_state) {
   $values = $form_state['values'];
   $blocks = array();
   if (!empty($values['taxonomy_list'])) {

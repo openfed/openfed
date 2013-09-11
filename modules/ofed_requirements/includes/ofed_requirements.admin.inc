@@ -237,7 +237,6 @@ function ofed_requirements_admin_requirements_notes_reset_confirm_submit($form, 
 function ofed_requirements_admin_requirements_build_report_text_for_test($title, $errors, $remark) {
   // Initialize.
   $output = '';
-
   $output .= '--------------------------------------------------------------------------------------------------------------' . "\n";
 
   // Build text.
@@ -368,10 +367,10 @@ function _ofed_requirements_check_perms() {
   $errors = array();
 
   // Load OpenFed function file.
-  module_load_include('inc', 'openfed', 'openfed_function');
+  module_load_include('inc', 'openfed', 'openfed_functions');
 
   // Get the default roles names.
-  $roles_default = _openfed_return_roles_list_available_by_default();
+  $roles_default = _openfed_get_roles_list_default();
   // Get the actual role names.
   $roles_actuals = user_roles();
 
@@ -380,32 +379,32 @@ function _ofed_requirements_check_perms() {
     if (in_array($role_actual_name, $roles_default)) {
       // Get the default perms for the current role.
       switch ($role_actual_name) {
-        case 'anonymous user':
-          $perms_default = _openfed_return_permission_anonymous_user();
-          break;
-
-        case 'authenticated user':
-          $perms_default = _openfed_return_permission_authenticated_user();
-          break;
-
         case 'Builder':
-          $perms_default = _openfed_return_permission_builder();
+          $perms_default = _openfed_get_permissions_for_role('Builder');
           break;
 
         case 'Configurator':
-          $perms_default = _openfed_return_permission_configurator();
+          $perms_default = _openfed_get_permissions_for_role('Configurator');
           break;
 
         case 'Content Manager':
-          $perms_default = _openfed_return_permission_content_manager();
+          $perms_default = _openfed_get_permissions_for_role('Content Manager');
           break;
 
         case 'User Manager':
-          $perms_default = _openfed_return_permission_user_manager();
+          $perms_default = _openfed_get_permissions_for_role('User Manager');
           break;
 
         case 'Authenticated Visitor':
-          $perms_default = _openfed_return_permission_authenticated_visitor();
+          $perms_default = _openfed_get_permissions_for_role('Authenticated Visitor');
+          break;
+
+        case 'authenticated user':
+          $perms_default = _openfed_get_permissions_for_role('authenticated user');
+          break;
+
+        case 'anonymous user':
+          $perms_default = _openfed_get_permissions_for_role('anonymous user');
           break;
 
         default:
@@ -458,10 +457,10 @@ function _ofed_requirements_check_roles() {
   $errors = array();
 
   // Load OpenFed function file.
-  module_load_include('inc', 'openfed', 'openfed_function');
+  module_load_include('inc', 'openfed', 'openfed_functions');
 
   // Get the default roles names.
-  $roles_default = _openfed_return_roles_list_available_by_default();
+  $roles_default = _openfed_get_roles_list_default();
   // Get the actual role names.
   $roles_actuals = user_roles();
 

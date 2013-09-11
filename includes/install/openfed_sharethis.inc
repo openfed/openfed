@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * @file
+ * Needs to be documented.
+ */
+
 variable_set('sharethis_button_option', 'stbc_hcount');
 variable_set('sharethis_comments', 'b:0');
 variable_set('sharethis_late_load', FALSE);
@@ -8,8 +13,7 @@ variable_set('sharethis_node_option', 'ofed_download,ofed_page');
 variable_set('sharethis_option_extras', array(
   'Google Plus One:plusone' => 'Google Plus One:plusone',
   'Facebook Like:fblike' => 'Facebook Like:fblike',
-  )
-);
+));
 variable_set('sharethis_service_option', '"Tweet:twitter","LinkedIn:linkedin","Facebook:facebook"');
 variable_set('sharethis_teaser_option', FALSE);
 variable_set('sharethis_twitter_handle', '');

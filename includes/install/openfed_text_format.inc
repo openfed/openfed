@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * @file
+ * Needs to be documented.
+ */
+
 $filtered_html_format = array(
   'format' => 'filtered_html',
   'name' => 'Filtered HTML',
@@ -50,15 +55,13 @@ $arr['allowed_html'] = "<a> <em> <strong> <cite> <blockquote> <code> <ul> <ol> <
 $arr['filter_html_help'] = 1;
 $arr['filter_html_nofollow'] = 0;
 db_update('filter')
-  ->fields(array(
-    'settings' => serialize($arr),
-  ))
-  ->condition('format', 'filtered_html', '=')
-  ->condition('module', 'filter', '=')
-  ->condition('name', 'filter_html', '=')
-  ->execute();
-
-
+->fields(array(
+  'settings' => serialize($arr),
+))
+->condition('format', 'filtered_html', '=')
+->condition('module', 'filter', '=')
+->condition('name', 'filter_html', '=')
+->execute();
 
 $full_html_format = array(
   'format' => 'full_html',

@@ -1,8 +1,18 @@
 <?php
 
+/**
+ * @file
+ * Needs to be documented.
+ */
+
+/**
+ * Needs to be documented.
+ */
 function openfed_drush_command() {
+  // Initialize.
   $items = array();
 
+  // Build array.
   $items['revert-ds-settings'] = array(
     'description' => "Reverts the Display Suite settings to their feature state. Be carefull as it completely deletes existing settings.",
     'arguments' => array(
@@ -14,6 +24,7 @@ function openfed_drush_command() {
     'aliases' => array('rdss'),
   );
 
+  // Return.
   return $items;
 }
 
@@ -29,26 +40,20 @@ function drush_openfed_revert_ds_settings($type = '') {
   $args = func_get_args();
 
   if (!empty($args)) {
-
     foreach ($args as $ct) {
       $available_ct = node_type_get_types();
-
       if (array_key_exists($ct, $available_ct)) {
         $name = str_replace('ofed_', 'ofed_feature_', $ct);
         $file = drupal_get_path('module', $name) . '/install/_' . $name . '.ds.inc';
-
         if (file_exists($file)) {
           // Include it.
           include_once $file;
 
-          $func_name = $name .'_ds_custom_fields_info';
-
+          $func_name = $name . '_ds_custom_fields_info';
           // Install ds customs fields.
           if (function_exists($func_name)) {
             $fields = $func_name();
-
             foreach ($fields as $id => $field) {
-
               // Remove one key.
               if (isset($field->api_version)) {
                 unset($field->api_version);
@@ -71,14 +76,12 @@ function drush_openfed_revert_ds_settings($type = '') {
             }
           }
 
-          $func_name = $name .'_ds_field_settings_info';
+          $func_name = $name . '_ds_field_settings_info';
 
           // Install ds fields settings.
           if (function_exists($func_name)) {
             $fields = $func_name();
-
             foreach ($fields as $id => $field) {
-
               // Remove one key.
               if (isset($field->api_version)) {
                 unset($field->api_version);
@@ -97,14 +100,12 @@ function drush_openfed_revert_ds_settings($type = '') {
             }
           }
 
-          $func_name = $name .'_ds_layout_settings_info';
+          $func_name = $name . '_ds_layout_settings_info';
 
           // Install ds fields settings.
           if (function_exists($func_name)) {
             $layouts = $func_name();
-
             foreach ($layouts as $id => $layout) {
-
               // Remove one key.
               if (isset($layout->api_version)) {
                 unset($layout->api_version);
