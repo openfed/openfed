@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * @file
+ * Needs to be documented.
+ */
+
 variable_set('html5_tools_add_chrome_frame_header', TRUE);
 variable_set('html5_tools_override_contact_forms', TRUE);
 variable_set('html5_tools_override_doctype', TRUE);

@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * @file
+ * Needs to be documented.
+ */
+
 variable_set('path_breadcrumbs_decode_entities', TRUE);
 variable_set('path_breadcrumbs_delimiter', 'Â»');
 variable_set('path_breadcrumbs_hide_single_breadcrumb', FALSE);

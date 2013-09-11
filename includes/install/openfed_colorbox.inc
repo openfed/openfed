@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * @file
+ * Needs to be documented.
+ */
+
 variable_set('colorbox_caption_trim', '0');
 variable_set('colorbox_caption_trim_length', '75');
 variable_set('colorbox_compression_type', 'minified');

@@ -1,19 +1,24 @@
 <?php
 
 /**
- * Updatd the Full format for ckeditor
+ * @file
+ * Needs to be documented.
+ */
+
+/**
+ * Updatd the Full format for ckeditor.
  */
 $arr = array();
 $arr['filebrowser'] = 'imce';
 $arr['filebrowser_image'] = '';
 $arr['filebrowser_flash'] = '';
 $arr['quickupload'] = 'f';
-$arr['ss'] = "2";
+$arr['ss'] = '2';
 $arr['filters']['full_html'] = 1;
-$arr['default'] = "t";
-$arr['show_toggle'] = "t";
-$arr['popup'] = variable_get('ckeditor_popup', 0) ? "t" : "f";
-$arr['skin'] = "kama";
+$arr['default'] = 't';
+$arr['show_toggle'] = 't';
+$arr['popup'] = variable_get('ckeditor_popup', 0) ? 't' : 'f';
+$arr['skin'] = 'kama';
 $arr['toolbar'] = "
 [
     ['Source'],
@@ -27,42 +32,41 @@ $arr['toolbar'] = "
     ['JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock','-','BidiLtr','BidiRtl'],
     ['Link','Unlink','Anchor']
 ]
-  ";
-$arr['expand'] = "t"; // toolbar startup
-$arr['width'] = "100%"; // width
-$arr['lang'] = "en"; // lang
-$arr['auto_lang'] = "t"; // auto detect
-$arr['language_direction'] = "default"; // direction
-$arr['enter_mode'] = "p";
-$arr['shift_enter_mode'] = "br";
+";
+$arr['expand'] = 't';
+$arr['width'] = '100%';
+$arr['lang'] = 'en';
+$arr['auto_lang'] = 't';
+$arr['language_direction'] = 'default';
+$arr['enter_mode'] = 'p';
+$arr['shift_enter_mode'] = 'br';
 $arr['font_format'] = 'p;div;h2;h3;h4;h5;h6';
-$arr['format_source'] = "t";
-$arr['format_output'] = "t";
-$arr['custom_formatting'] = "f";
-$arr['formatting']['custom_formatting_options'] = array('indent' => 'indent', 'breakBeforeOpen' => 'breakBeforeOpen', 'breakAfterOpen' => 'breakAfterOpen', 'breakAfterClose' => 'breakAfterClose', 'breakBeforeClose' => '', 'pre_indent' => '');
-$arr['css_mode'] = "self";
-$arr['css_path'] = "%t../nerra/assets/rte/rte.custom.css";
-$arr['css_style'] = "self";
-$arr['styles_path'] = "%t../nerra/assets/rte/rte.custom.js";
-
-
+$arr['format_source'] = 't';
+$arr['format_output'] = 't';
+$arr['custom_formatting'] = 'f';
+$arr['formatting']['custom_formatting_options'] = array(
+  'indent' => 'indent',
+  'breakBeforeOpen' => 'breakBeforeOpen',
+  'breakAfterOpen' => 'breakAfterOpen',
+  'breakAfterClose' => 'breakAfterClose',
+  'breakBeforeClose' => '',
+  'pre_indent' => ''
+);
+$arr['css_mode'] = 'self';
+$arr['css_path'] = '%t../nerra/assets/rte/rte.custom.css';
+$arr['css_style'] = 'self';
+$arr['styles_path'] = '%t../nerra/assets/rte/rte.custom.js';
 $arr['UserFilesPath'] = '%b%f/content/';
 $arr['UserFilesAbsolutePath'] = '%d%b%f/content/';
-$arr['ckeditor_load_method'] = "ckeditor.js";
+$arr['ckeditor_load_method'] = 'ckeditor.js';
 $arr['ckeditor_load_time_out'] = 0;
-$arr['forcePasteAsPlainText'] = "t";
-$arr['html_entities'] = "t";
-$arr['scayt_autoStartup'] = "f";
-$arr['theme_config_js'] = "f";
-$arr['js_conf'] = "";
+$arr['forcePasteAsPlainText'] = 't';
+$arr['html_entities'] = 't';
+$arr['scayt_autoStartup'] = 'f';
+$arr['theme_config_js'] = 'f';
+$arr['js_conf'] = '';
 
-$loadplugins = array(
-//    'autogrow' => 0,
-//    'counter' => 0,
-//    'drupalbreaks' => 'drupalbreaks',
-//    'mediaembed' => 0,
-//    'stylesheetparser' => 0,
-);
+$loadplugins = array();
 if (module_exists('ckeditor_link')) {
   $loadplugins['ckeditor_link'] = 'ckeditor_link';
 }
@@ -85,29 +89,25 @@ if (!empty($loadplugins)) {
 }
 
 db_update('ckeditor_settings')
-  ->fields(array(
-    'settings' => serialize($arr),
-  ))
-  ->condition('name', 'Full', '=')
-  ->execute();
-
-
-
-
+->fields(array(
+  'settings' => serialize($arr),
+))
+->condition('name', 'Full', '=')
+->execute();
 
 /**
- * Updatd the Advanced format for ckeditor
+ * Updatd the Advanced format for ckeditor.
  */
 $arr = array();
 $arr['filebrowser'] = 'none';
 $arr['filebrowser_image'] = '';
 $arr['filebrowser_flash'] = '';
 $arr['quickupload'] = 'f';
-$arr['ss'] = "2";
+$arr['ss'] = '2';
 $arr['filters']['filtered_html'] = 1;
-$arr['default'] = "t";
-$arr['show_toggle'] = "t";
-$arr['skin'] = "kama";
+$arr['default'] = 't';
+$arr['show_toggle'] = 't';
+$arr['skin'] = 'kama';
 $arr['toolbar'] = "
 [
     ['Source'],
@@ -121,42 +121,41 @@ $arr['toolbar'] = "
     ['JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock'],
     ['Link','Unlink','Anchor']
 ]
-  ";
-$arr['expand'] = "t"; // toolbar startup
-$arr['width'] = "100%"; // width
-$arr['lang'] = "en"; // lang
-$arr['auto_lang'] = "t"; // auto detect
-$arr['language_direction'] = "default"; // direction
-$arr['enter_mode'] = "p";
-$arr['shift_enter_mode'] = "br";
+";
+$arr['expand'] = 't';
+$arr['width'] = '100%';
+$arr['lang'] = 'en';
+$arr['auto_lang'] = 't';
+$arr['language_direction'] = 'default';
+$arr['enter_mode'] = 'p';
+$arr['shift_enter_mode'] = 'br';
 $arr['font_format'] = 'p;div;h2;h3;h4;h5;h6';
-$arr['format_source'] = "t";
-$arr['format_output'] = "t";
-$arr['custom_formatting'] = "f";
-$arr['formatting']['custom_formatting_options'] = array('indent' => 'indent', 'breakBeforeOpen' => 'breakBeforeOpen', 'breakAfterOpen' => 'breakAfterOpen', 'breakAfterClose' => 'breakAfterClose', 'breakBeforeClose' => '', 'pre_indent' => '');
-$arr['css_mode'] = "self";
-$arr['css_path'] = "%t../nerra/assets/rte/rte.custom.css";
-$arr['css_style'] = "self";
-$arr['styles_path'] = "%t../nerra/assets/rte/rte.custom.js";
-
-
+$arr['format_source'] = 't';
+$arr['format_output'] = 't';
+$arr['custom_formatting'] = 'f';
+$arr['formatting']['custom_formatting_options'] = array(
+  'indent' => 'indent',
+  'breakBeforeOpen' => 'breakBeforeOpen',
+  'breakAfterOpen' => 'breakAfterOpen',
+  'breakAfterClose' => 'breakAfterClose',
+  'breakBeforeClose' => '',
+  'pre_indent' => '',
+);
+$arr['css_mode'] = 'self';
+$arr['css_path'] = '%t../nerra/assets/rte/rte.custom.css';
+$arr['css_style'] = 'self';
+$arr['styles_path'] = '%t../nerra/assets/rte/rte.custom.js';
 $arr['UserFilesPath'] = '%b%f/content/';
 $arr['UserFilesAbsolutePath'] = '%d%b%f/content/';
-$arr['ckeditor_load_method'] = "ckeditor.js";
+$arr['ckeditor_load_method'] = 'ckeditor.js';
 $arr['ckeditor_load_time_out'] = 0;
-$arr['forcePasteAsPlainText'] = "t";
-$arr['html_entities'] = "t";
-$arr['scayt_autoStartup'] = "f";
-$arr['theme_config_js'] = "f";
-$arr['js_conf'] = "";
+$arr['forcePasteAsPlainText'] = 't';
+$arr['html_entities'] = 't';
+$arr['scayt_autoStartup'] = 'f';
+$arr['theme_config_js'] = 'f';
+$arr['js_conf'] = '';
 
-$loadplugins = array(
-//    'autogrow' => 0,
-//    'counter' => 0,
-//    'drupalbreaks' => 'drupalbreaks',
-//    'mediaembed' => 0,
-//    'stylesheetparser' => 0,
-);
+$loadplugins = array();
 if (module_exists('ckeditor_link')) {
   $loadplugins['ckeditor_link'] = 'ckeditor_link';
 }
@@ -176,23 +175,21 @@ if (!empty($loadplugins)) {
 }
 
 db_update('ckeditor_settings')
-  ->fields(array(
-    'settings' => serialize($arr),
-  ))
-  ->condition('name', 'Advanced', '=')
-  ->execute();
-
-
+->fields(array(
+  'settings' => serialize($arr),
+))
+->condition('name', 'Advanced', '=')
+->execute();
 
 /**
- * Update the CKEditor Global Profile to set libraries path
+ * Update the CKEditor Global Profile to set libraries path.
  */
 $arr = array();
 $arr['ckeditor_path'] = '%b/profiles/openfed/libraries/ckeditor';
 
 db_update('ckeditor_settings')
-  ->fields(array(
-    'settings' => serialize($arr),
-  ))
-  ->condition('name', 'CKEditor Global Profile', '=')
-  ->execute();
+->fields(array(
+  'settings' => serialize($arr),
+))
+->condition('name', 'CKEditor Global Profile', '=')
+->execute();

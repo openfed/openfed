@@ -3,6 +3,7 @@ CHANGELOG
 
 No date yet - Version 7.x-1.x
 -----------------------------
+
  * Issues:
     #2084673: Installer UI: cleaned up taxonomy screen
     #2083437: Removed unused images 
@@ -16,10 +17,14 @@ No date yet - Version 7.x-1.x
     #2082485: Removed alter hook that added table prefix from installer
     #2083135: Installer UI: use "enable" instead of "setup"
     #2083133: Module removal: module_filter
+    #2083177: Installer: "setup complete" step not required ?
+    #2049957: Installer: file system paths
+    #2083399: Installer: import content types progress bar
     #2084705: FAQ CMS View proposal
-
     #Other :
       - Use ofed_theme_nerra 7.x-1.0-dev version.
+      - Major refactoring of install process (functions, folders and files renamed,
+          functions removed, install steps moved).
 
 05 September 2013 - Version 7.x-1.0-rc2
 ---------------------------------------

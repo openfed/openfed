@@ -13,110 +13,49 @@
  * @see system_install()
  */
 function openfed_install() {
-
   // Include all custom functions.
-  require_once('includes/misc/openfed_function.inc');
+  require_once('includes/misc/openfed_functions.inc');
 
-  // Install of roles.
+  // Include all modules configurations.
   require_once('includes/install/openfed_roles.inc');
-
-  // Configuration of users
   require_once('includes/install/openfed_users.inc');
-
-  // Install of text format.
   require_once('includes/install/openfed_text_format.inc');
-
-  // Menus.
   require_once('includes/install/openfed_menus.inc');
-
-  // Blocks.
   require_once('includes/install/openfed_blocks.inc');
-
-  // CKeditor.
   require_once('includes/install/openfed_ckeditor.inc');
-
-  // CKeditor Link.
   require_once('includes/install/openfed_ckeditor_link.inc');
-
-  // Install of Colorbox.
   require_once('includes/install/openfed_colorbox.inc');
-
-  // Date.
   require_once('includes/install/openfed_date.inc');
-
-  // DisplaySuite.
   require_once('includes/install/openfed_displaysuite.inc');
-
-  // External link.
   require_once('includes/install/openfed_extlink.inc');
-
-  // Easy breadcrumb.
   require_once('includes/install/openfed_easy_breadcrumb.inc');
-
-  // Flag.
   require_once('includes/install/openfed_flag.inc');
-
-  // Globalredirect.
   require_once('includes/install/openfed_globalredirect.inc');
-
-  // HTML5 Tools.
   require_once('includes/install/openfed_html5_tools.inc');
-
-  // IMCE.
   require_once('includes/install/openfed_imce.inc');
-
-  // Linkchecker.
   require_once('includes/install/openfed_linkchecker.inc');
-
-  // Logintoboggan.
   require_once('includes/install/openfed_logintoboggan.inc');
-
-  // Pathauto.
   require_once('includes/install/openfed_pathauto.inc');
-
-  // Path Breadcrumbs.
   require_once('includes/install/openfed_path_breadcrumbs.inc');
-
-  // Print.
   require_once('includes/install/openfed_print.inc');
-
-  // Regional.
   require_once('includes/install/openfed_regional.inc');
-
-  // Sharethis.
   require_once('includes/install/openfed_sharethis.inc');
-
-  // Sitemap
   require_once('includes/install/openfed_sitemap.inc');
-
-  // Secure login
   require_once('includes/install/openfed_securelogin.inc');
-
-  // Text Resize.
   require_once('includes/install/openfed_text_resize.inc');
-
-  // Views.
   require_once('includes/install/openfed_views.inc');
-
-  // Webform.
   require_once('includes/install/openfed_webform.inc');
-
-  variable_set('file_public_path', conf_path() . '/public');
-  variable_set('file_private_path', conf_path() . '/private');
-  variable_set('file_temporary_path', conf_path() . '/tmp');
-  variable_set('install_profile', 'openfed');
 }
 
 /**
- * UPDATES
+ * UPDATES.
  */
 
 /**
- * Add new display mode 'short_references'
+ * Add new display mode 'short_references'.
  */
 function openfed_update_7101() {
   $view_modes = ds_entity_view_modes('node');
-
   if (!array_key_exists('short_reference', $view_modes)) {
     $view_mode = new stdClass();
     $view_mode->view_mode = 'short_references';

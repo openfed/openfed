@@ -1,7 +1,11 @@
 <?php
 
-$arr = array();
-$arr['- any -'] = '';
-$arr['main-menu'] = 'main-menu';
+/**
+ * @file
+ * Needs to be documented.
+ */
 
-variable_set('ckeditor_link_autocomplete_menus', $arr);
+variable_set('ckeditor_link_autocomplete_menus', array(
+  '- any -' => '',
+  'main-menu' => 'main-menu',
+));
