@@ -16,6 +16,7 @@ No date yet - Version 7.x-1.x
     #2082485: Removed alter hook that added table prefix from installer
     #2083135: Installer UI: use "enable" instead of "setup"
     #2083133: Module removal: module_filter
+    #2084705: FAQ CMS View proposal
 
     #Other :
       - Use ofed_theme_nerra 7.x-1.0-dev version.

@@ -21,11 +21,11 @@ function ofed_feature_faq_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Page metadata',
-    'weight' => '1',
+    'weight' => '3',
     'children' => array(
-      0 => 'field_ofed_faq_update',
-      1 => 'field_ofed_faq_update_force',
-      2 => 'field_ofed_faq_pubdate',
+      0 => 'field_ofed_faq_pubdate',
+      1 => 'field_ofed_faq_update',
+      2 => 'field_ofed_faq_update_force',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(

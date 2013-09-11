@@ -74,7 +74,7 @@ function ofed_feature_faq_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 6,
+      'weight' => 2,
     ),
   );
 
