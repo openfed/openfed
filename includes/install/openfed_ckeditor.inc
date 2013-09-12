@@ -53,9 +53,9 @@ $arr['formatting']['custom_formatting_options'] = array(
   'pre_indent' => ''
 );
 $arr['css_mode'] = 'self';
-$arr['css_path'] = '%t../nerra/assets/rte/rte.custom.css';
+$arr['css_path'] = '%t../ofed_theme_nerra/assets/rte/rte.custom.css';
 $arr['css_style'] = 'self';
-$arr['styles_path'] = '%t../nerra/assets/rte/rte.custom.js';
+$arr['styles_path'] = '%t../ofed_theme_nerra/assets/rte/rte.custom.js';
 $arr['UserFilesPath'] = '%b%f/content/';
 $arr['UserFilesAbsolutePath'] = '%d%b%f/content/';
 $arr['ckeditor_load_method'] = 'ckeditor.js';
@@ -142,9 +142,9 @@ $arr['formatting']['custom_formatting_options'] = array(
   'pre_indent' => '',
 );
 $arr['css_mode'] = 'self';
-$arr['css_path'] = '%t../nerra/assets/rte/rte.custom.css';
+$arr['css_path'] = '%t../ofed_theme_nerra/assets/rte/rte.custom.css';
 $arr['css_style'] = 'self';
-$arr['styles_path'] = '%t../nerra/assets/rte/rte.custom.js';
+$arr['styles_path'] = '%t../ofed_theme_nerra/assets/rte/rte.custom.js';
 $arr['UserFilesPath'] = '%b%f/content/';
 $arr['UserFilesAbsolutePath'] = '%d%b%f/content/';
 $arr['ckeditor_load_method'] = 'ckeditor.js';

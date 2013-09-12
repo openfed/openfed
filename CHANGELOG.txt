@@ -22,6 +22,7 @@ No date yet - Version 7.x-1.x
     #2083399: Installer: import content types progress bar
     #2084705: FAQ CMS View proposal
     #2075093: Improvements to CMS view download content type
+    #2087599: Body: not visible
     #Other :
       - Use ofed_theme_nerra 7.x-1.0-dev version.
       - Major refactoring of install process (functions, folders and files renamed,
