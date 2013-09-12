@@ -375,6 +375,7 @@ function _openfed_get_permissions_for_role($role_name) {
         'schedule (un)publishing of nodes',
         // Search.
         'administer search',
+        'search content',
         // Security Kit.
         'administer seckit',
         // Security Review.
@@ -649,6 +650,8 @@ function _openfed_get_permissions_for_role($role_name) {
         'access print',
         // Scheduler
         'schedule (un)publishing of nodes',
+        // Search.
+        'search content',
         // Site map.
         'access site map',
         // System.
@@ -685,6 +688,8 @@ function _openfed_get_permissions_for_role($role_name) {
         'view own unpublished content',
         // Printer-friendly pages.
         'access print',
+        // Search.
+        'search content',
         // Site map.
         'access site map',
         // System.
@@ -707,6 +712,8 @@ function _openfed_get_permissions_for_role($role_name) {
         'view own unpublished content',
         // Printer-friendly pages.
         'access print',
+        // Search.
+        'search content',
         // Site map.
         'access site map',
       );
@@ -746,6 +753,8 @@ function _openfed_get_permissions_for_role($role_name) {
         'view own unpublished content',
         // Printer-friendly pages.
         'access print',
+        // Search.
+        'search content',
         // Site map.
         'access site map',
       );
@@ -782,6 +791,8 @@ function _openfed_get_permissions_for_role($role_name) {
         'access content',
         // Printer-friendly pages.
         'access print',
+        // Search.
+        'search content',
         // Site map.
         'access site map',
       );
