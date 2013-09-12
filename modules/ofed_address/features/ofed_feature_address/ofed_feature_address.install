@@ -119,6 +119,16 @@ function ofed_feature_address_install() {
       );
       db_insert('url_alias')->fields($path)->execute();
     }
+
+    // DE.
+//    if (isset($language['de'])) {
+//      $path = array(
+//        'source'   => $path_source,
+//        'alias'    => '',
+//        'language' => 'de',
+//      );
+//      db_insert('url_alias')->fields($path)->execute();
+//    }
   }
 }
 
@@ -168,6 +178,16 @@ function ofed_feature_address_update_7100 () {
       );
       db_insert('url_alias')->fields($path)->execute();
     }
+
+    // DE.
+//    if (isset($language['de']) && !drupal_lookup_path('alias', $path_source, 'de')) {
+//      $path = array(
+//        'source'   => $path_source,
+//        'alias'    => '',
+//        'language' => 'de',
+//      );
+//      db_insert('url_alias')->fields($path)->execute();
+//    }
   }
 }
 

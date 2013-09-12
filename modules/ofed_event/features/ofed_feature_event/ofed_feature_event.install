@@ -4,7 +4,7 @@
  * Implements hook_schema().
  */
 function ofed_feature_event_schema() {
-  
+
 }
 
 /**
@@ -116,6 +116,16 @@ function ofed_feature_event_install() {
       );
       db_insert('url_alias')->fields($path)->execute();
     }
+
+    // DE.
+//    if (isset($language['de'])) {
+//      $path = array(
+//        'source' => $path_source,
+//        'alias' => '',
+//        'language' => 'de',
+//      );
+//      db_insert('url_alias')->fields($path)->execute();
+//    }
   }
 }
 
@@ -170,6 +180,16 @@ function ofed_feature_event_update_7100() {
       );
       db_insert('url_alias')->fields($path)->execute();
     }
+
+//    // DE.
+//    if (isset($language['de']) && !drupal_lookup_path('alias', $path_source, 'de')) {
+//      $path = array(
+//        'source' => $path_source,
+//        'alias' => '',
+//        'language' => 'de',
+//      );
+//      db_insert('url_alias')->fields($path)->execute();
+//    }
   }
 
   // Update path patterns.
@@ -214,7 +234,7 @@ function ofed_feature_event_update_7100() {
       'matches_patterns' => 'evenement/*',
     );
   }
-  
+
   // For each settings.
   foreach($settings as $setting) {
     // Set the actual value.
@@ -279,7 +299,7 @@ function ofed_feature_event_update_7101 () {
   foreach ($displays_to_delete as $display_to_delete) {
     db_delete('ds_field_settings')->condition('id', 'node|' .  $bundle . '|' . $display_to_delete)->execute();
   }
-  
+
   // Update field instance.
   // Get field config instance for each field used by the content type.
   // Select each field instance for this bundle.
