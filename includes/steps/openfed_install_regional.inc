@@ -264,6 +264,62 @@ function _openfed_install_regional_set_content_for_language($lang) {
         // Set the menu in the navigation region.
         _openfed_set_block_into_region('menu', $menu_name, 'navigation');
         break;
+
+      // German.
+      case 'de':
+        // Set the main dutch menu key.
+        $menu_name = 'main-german-menu';
+
+        // Create the German menu.
+        _openfed_create_custom_menu($menu_name, 'Main German Menu', '', '2', $lang);
+
+        // Add custom menu into ckeditor link for autocomplete menu.
+        $ck_link[$menu_name] = $menu_name;
+
+        // Store variable for a language.
+        variable_store_set('language', $lang, 'menu_main_links_source', $menu_name);
+
+        // Show block for dutch language only.
+        _openfed_show_block_for_language('menu', $menu_name, $lang);
+
+        // Add date format.
+        $date_format = array();
+        $date_format[] = array(
+          'format' => 'd/m/Y',
+          'type' => 'date_only',
+          'language' => $lang,
+        );
+        $date_format[] = array(
+          'format' => 'c',
+          'type' => 'html5_tools_iso8601',
+          'language' => $lang,
+        );
+        $date_format[] = array(
+          'format' => 'l, j. F Y - G:i',
+          'type' => 'long',
+          'language' => $lang,
+        );
+        $date_format[] = array(
+          'format' => 'D, d/m/Y - H:i',
+          'type' => 'medium',
+          'language' => $lang,
+        );
+        $date_format[] = array(
+          'format' => 'd/m/Y - H:i',
+          'type' => 'short',
+          'language' => $lang,
+        );
+        _openfed_install_regional_localize_date_format($date_format);
+
+        // Create webform contact page.
+        _openfed_install_regional_make_contact_webform($lang, $menu_name);
+
+        // Create a menu block for submenu.
+        _openfed_install_regional_make_submenu($lang, $menu_name);
+
+        // Set the menu in the navigation region.
+        _openfed_set_block_into_region('menu', $menu_name, 'navigation');
+        break;
     }
 
     // Set variable.
@@ -284,33 +340,45 @@ function _openfed_install_regional_make_contact_webform($lang, $menu_name = 'mai
   switch ($lang) {
     // English.
     case 'en':
-      $name = st('Name');
-      $subject = st('Subject');
-      $email = st('Email');
-      $message = st('Message');
+      $node_title = st('Contact');
+      $field_name = st('Name');
+      $field_subject = st('Subject');
+      $field_email = st('Email');
+      $field_message = st('Message');
       break;
 
     // French.
     case 'fr':
-      $name = st('Nom');
-      $subject = st('Sujet');
-      $email = st('Email');
-      $message = st('Message');
+      $node_title = st('Contact');
+      $field_name = st('Nom');
+      $field_subject = st('Sujet');
+      $field_email = st('Email');
+      $field_message = st('Message');
       break;
 
     // Dutch.
-    case'nl':
-      $name = st('Naam');
-      $subject = st('Onderwerp');
-      $email = st('Email');
-      $message = st('Bericht');
+    case 'nl':
+      $node_title = st('Contact');
+      $field_name = st('Naam');
+      $field_subject = st('Onderwerp');
+      $field_email = st('Email');
+      $field_message = st('Bericht');
+      break;
+
+    // German.
+    case'de':
+      $node_title = st('Kontakt');
+      $field_name = st('Name');
+      $field_subject = st('Gegenstand');
+      $field_email = st('Email');
+      $field_message = st('Nachricht');
       break;
   }
 
   // Creating webform node.
   $node = new stdClass();
   $node->type = 'webform';
-  $node->title = 'Contact';
+  $node->title = $node_title;
   $node->language = $lang;
   $node->status = 1;
   $node->tnid = 1;
@@ -338,32 +406,32 @@ function _openfed_install_regional_make_contact_webform($lang, $menu_name = 'mai
   // Assign components to webform.
   $components = array(
     0 => array(
-      'name' => $name,
-      'form_key' => strtolower($name),
+      'name' => $field_name,
+      'form_key' => strtolower($field_name),
       'type' => 'textfield',
       'mandatory' => 1,
       'weight' => 0,
       'pid' => 0,
     ),
     1 => array(
-      'name' => $email,
-      'form_key' => strtolower($email),
+      'name' => $field_email,
+      'form_key' => strtolower($field_email),
       'type' => 'email',
       'mandatory' => 1,
       'weight' => 1,
       'pid' => 0,
     ),
     2 => array(
-      'name' => $subject,
-      'form_key' => strtolower($subject),
+      'name' => $field_subject,
+      'form_key' => strtolower($field_subject),
       'type' => 'textfield',
       'mandatory' => 1,
       'weight' => 2,
       'pid' => 0,
     ),
     3 => array(
-      'name' => $message,
-      'form_key' => strtolower($message),
+      'name' => $field_message,
+      'form_key' => strtolower($field_message),
       'type' => 'textarea',
       'mandatory' => 1,
       'weight' => 3,
@@ -404,60 +472,9 @@ function _openfed_install_regional_make_submenu($lang, $menu_name = 'main-menu')
         '1',
         '2',
         '3',
+        '4',
       ));
-      $query = db_insert('block')->fields(array(
-        'visibility',
-        'pages',
-        'custom',
-        'title',
-        'module',
-        'theme',
-        'region',
-        'status',
-        'weight',
-        'delta',
-        'cache',
-      ));
-      $query->values(array(
-        'visibility' => 0,
-        'pages' => '<front>',
-        'custom' => 0,
-        'title' => '<none>',
-        'module' => 'menu_block',
-        'theme' => _openfed_get_theme_frontend(),
-        'region' => 'sidebar_first',
-        'status' => 1,
-        'weight' => 0,
-        'delta' => 1,
-        'cache' => DRUPAL_NO_CACHE,
-      ));
-      $query->values(array(
-        'visibility' => 0,
-        'pages' => '<front>',
-        'custom' => 0,
-        'title' => '<none>',
-        'module' => 'menu_block',
-        'theme' => _openfed_get_theme_backend(),
-        'region' => '',
-        'status' => 0,
-        'weight' => 0,
-        'delta' => 1,
-        'cache' => DRUPAL_NO_CACHE,
-      ));
-      $query->values(array(
-        'visibility' => 0,
-        'pages' => '<front>',
-        'custom' => 0,
-        'title' => '<none>',
-        'module' => 'menu_block',
-        'theme' => _openfed_get_theme_maintenance(),
-        'region' => '',
-        'status' => 0,
-        'weight' => 0,
-        'delta' => 1,
-        'cache' => DRUPAL_NO_CACHE,
-      ));
-      $query->execute();
+
       break;
 
     // French.
@@ -474,6 +491,7 @@ function _openfed_install_regional_make_submenu($lang, $menu_name = 'main-menu')
         '1',
         '2',
         '3',
+        '4',
       ));
       $query = db_insert('block')->fields(array(
         'visibility',
@@ -544,6 +562,7 @@ function _openfed_install_regional_make_submenu($lang, $menu_name = 'main-menu')
         '1',
         '2',
         '3',
+        '4',
       ));
       $query = db_insert('block')->fields(array(
         'visibility',
@@ -595,6 +614,77 @@ function _openfed_install_regional_make_submenu($lang, $menu_name = 'main-menu')
         'status' => 0,
         'weight' => 0,
         'delta' => 3,
+        'cache' => DRUPAL_NO_CACHE,
+      ));
+      $query->execute();
+      break;
+
+    // German.
+    case 'de':
+      variable_set('menu_block_4_title_link', FALSE);
+      variable_set('menu_block_4_admin_title', 'Main german menu(2+)');
+      variable_set('menu_block_4_parent', 'main-german-menu:0');
+      variable_set('menu_block_4_level', '2');
+      variable_set('menu_block_4_follow', FALSE);
+      variable_set('menu_block_4_depth', '0');
+      variable_set('menu_block_4_expanded', FALSE);
+      variable_set('menu_block_4_sort', FALSE);
+      variable_set('menu_block_ids', array(
+        '1',
+        '2',
+        '3',
+        '4',
+      ));
+      $query = db_insert('block')->fields(array(
+        'visibility',
+        'pages',
+        'custom',
+        'title',
+        'module',
+        'theme',
+        'region',
+        'status',
+        'weight',
+        'delta',
+        'cache',
+      ));
+      $query->values(array(
+        'visibility' => 0,
+        'pages' => '<front>',
+        'custom' => 0,
+        'title' => '<none>',
+        'module' => 'menu_block',
+        'theme' => _openfed_get_theme_frontend(),
+        'region' => 'sidebar_first',
+        'status' => 1,
+        'weight' => 0,
+        'delta' => 4,
+        'cache' => DRUPAL_NO_CACHE,
+      ));
+      $query->values(array(
+        'visibility' => 0,
+        'pages' => '<front>',
+        'custom' => 0,
+        'title' => '<none>',
+        'module' => 'menu_block',
+        'theme' => _openfed_get_theme_backend(),
+        'region' => '',
+        'status' => 0,
+        'weight' => 0,
+        'delta' => 4,
+        'cache' => DRUPAL_NO_CACHE,
+      ));
+      $query->values(array(
+        'visibility' => 0,
+        'pages' => '<front>',
+        'custom' => 0,
+        'title' => '<none>',
+        'module' => 'menu_block',
+        'theme' => _openfed_get_theme_maintenance(),
+        'region' => '',
+        'status' => 0,
+        'weight' => 0,
+        'delta' => 4,
         'cache' => DRUPAL_NO_CACHE,
       ));
       $query->execute();

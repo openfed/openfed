@@ -112,6 +112,7 @@ function _openfed_get_languages_list() {
   $languages_list = array(
     'fr' => st('French (Français)'),
     'nl' => st('Dutch (Nederlands)'),
+    'de' => st('German (Deutsch)'),
   );
 
   // Return.
