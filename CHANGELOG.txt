@@ -5,6 +5,7 @@ No date yet - Version 7.x-1.x
 -----------------------------
 
  * Issues:
+    #2037961: Don't enable locale_cooky by default
     #2088621: Don't enable robots.txt by default
     #2088577: Installer UI: additional cleanup
     #2088527: New module: l10n_update

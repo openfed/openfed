@@ -94,7 +94,10 @@ core = 7.x
   dependencies[] = libraries
   dependencies[] = link
   dependencies[] = linkchecker
+/**
+  FIXME: Issue #2037961
   dependencies[] = locale_cookie
+*/
   dependencies[] = logintoboggan
   dependencies[] = logintoboggan_variable
   dependencies[] = media
