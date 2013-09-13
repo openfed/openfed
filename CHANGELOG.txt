@@ -5,6 +5,7 @@ No date yet - Version 7.x-1.x
 -----------------------------
 
  * Issues:
+    #2087829: Theme upgrade: nerra
     #2084673: Installer UI: cleaned up taxonomy screen
     #2083437: Removed unused images 
     #2083437: Removed discouraged php end delimiter
