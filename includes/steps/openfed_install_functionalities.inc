@@ -116,7 +116,7 @@ function openfed_install_functionalities_batch() {
     $batch = array(
       'operations' => $operations,
       'title' => st('Installing Content types'),
-      'progress_message' => t('Completed @current of @total (this process may be take a long time).'),
+      'progress_message' => t('Completed @current of @total.'),
       'error_message' => st('The installation has encountered an error.'),
       'finished' => '_openfed_install_functionalities_batch_finished',
     );
