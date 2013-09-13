@@ -226,6 +226,12 @@ projects[jquery_update][subdir] = contrib
 projects[l10n_client][version] = "1.3"
 projects[l10n_client][subdir] = contrib
 
+projects[l10n_update][type] = module
+projects[l10n_update][download][type] = git
+projects[l10n_update][download][revision] = 8c85a9f
+projects[l10n_update][download][branch] = "7.x-1.x" 
+projects[l10n_update][subdir] = contrib
+
 ; Patches block automated build, see https://drupal.org/node/2037961
 projects[locale_cookie][version] = "1.0"
 projects[locale_cookie][subdir] = contrib
