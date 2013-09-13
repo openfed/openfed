@@ -14,9 +14,7 @@ function openfed_install_taxonomy_form() {
 
   // Set form.
   $form = array();
-  $form['intro'] = array(
-    '#markup' => '<p>' . st('Select the taxonomy which have to be foreseen.') . '</p>',
-  );
+  
   $form['taxonomy_list'] = array(
     '#type' => 'checkboxes',
     '#title' => st('Taxonomy'),
@@ -33,7 +31,7 @@ function openfed_install_taxonomy_form() {
 }
 
 /**
- * Manage the submit of the form for taxonomy set up.
+ * Form submission handler for openfed_install_taxonomy_form().
  */
 function openfed_install_taxonomy_form_submit($form, &$form_state) {
   $values = $form_state['values'];

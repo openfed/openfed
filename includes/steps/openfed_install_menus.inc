@@ -14,15 +14,13 @@ function openfed_install_menu_form() {
 
   // Set form.
   $form = array();
-  $form['intro'] = array(
-    '#markup' => '<p>' . st('Select the menus which have to be foreseen.') . '</p>',
-  );
+  
   $form['menu_list'] = array(
     '#type' => 'checkboxes',
     '#title' => st('Menus'),
     '#options' => _openfed_get_menus_list(),
-    '#description' => st('Note : by checking these options, the menus will automatically be created in the menus list of the website and located in the corresponding region (either the tools or the footer region).<br><br>
-      If no menus are checked, they can still be created after the installation, but they will need to be created manually and located in the corresponding region.'),
+    '#description' => st('By checking these options, the menus will automatically be created in the menus list of the website and shown in the corresponding region (either the tools or the footer region).<br><br>
+      If no menus are checked, they can still be created after the installation, but they will need to be created and added to the correct region manually.'),
   );
   $form['submit'] = array(
     '#type' => 'submit',
@@ -34,7 +32,7 @@ function openfed_install_menu_form() {
 }
 
 /**
- * Manage the submit of the form for menus set up.
+ * Form submission handler for openfed_install_menus_form().
  */
 function openfed_install_menus_form_submit($form, &$form_state) {
   $values = $form_state['values'];

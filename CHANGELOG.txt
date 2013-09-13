@@ -5,6 +5,7 @@ No date yet - Version 7.x-1.x
 -----------------------------
 
  * Issues:
+    #2088577: Installer UI: additional cleanup
     #2088527: New module: l10n_update
     #2082233: Module upgrade: ofed_switcher (FAQ link)
     #2087829: Theme upgrade: nerra

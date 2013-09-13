@@ -14,15 +14,13 @@ function openfed_install_regional_form() {
 
   // Set form.
   $form = array();
-  $form['intro'] = array(
-    '#markup' => '<p>' . st('Select the languages which have to be foreseen.') . '</p>',
-  );
+
   $form['regional_list'] = array(
     '#type' => 'checkboxes',
     '#title' => st('Regional languages'),
     '#options' => _openfed_get_languages_list(),
-    '#description' => '<p>' . st('Note : when checking a language, a main menu will automatically be created in the menus list for that language, and the menu will be located in the corresponding Navigation area.<br><br>
-      If no languages are checked, only the English language will be enabled.<br>Consequently, the main menu will be created for the English language only and will be located in the Navigation area.<br><br>
+    '#description' => '<p>' . st('When checking a language, a main menu will automatically be created in the menus list for that language, and the menu will be located in the corresponding Navigation area.<br><br>
+      If no languages are selected, only the English language will be enabled.<br>Consequently, the main menu will be created for the English language only and will be located in the Navigation area.<br><br>
       Additional languages can be enabled after the installation, but the main menu will then have to be created manually for each language and located in the corresponding area.'
     ) . '</p>',
   );
@@ -36,7 +34,7 @@ function openfed_install_regional_form() {
 }
 
 /**
- * Manage the submit of the form for regional set up.
+ * Form submission handler for openfed_install_regional_form().
  */
 function openfed_install_regional_form_submit($form, &$form_state) {
   $values = $form_state['values'];

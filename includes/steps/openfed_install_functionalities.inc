@@ -16,9 +16,7 @@ function openfed_install_functionalities_form() {
 
   // Set form.
   $form = array();
-  $form['intro'] = array(
-    '#markup' => '<p>' . st('Select the content types which have to be foreseen.') . '</p>',
-  );
+
   $form['functionalities'] = array(
     '#type' => 'checkboxes',
     '#title' => st('Content types'),

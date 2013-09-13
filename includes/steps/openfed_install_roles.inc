@@ -14,14 +14,12 @@ function openfed_install_role_form() {
 
   // Set form.
   $form = array();
-  $form['intro'] = array(
-    '#markup' => '<p>' . st('Select the roles which have to be foreseen (by default the adminitrator role is automatically created.)'). '</p>',
-  );
+
   $form['role_list'] = array(
     '#type' => 'checkboxes',
     '#title' => st('Roles'),
     '#options' => _openfed_get_roles_list(),
-    '#description' => st('Note : by checking the roles, the roles and their associated set of permissions will be automatically created.<br><br>
+    '#description' => st('By selecting the roles, the roles and their associated set of permissions will be automatically created.<br><br>
       They can also be created after the installation, but the set of permissions will have to be defined manually.'),
   );
   $form['submit'] = array(
@@ -34,7 +32,7 @@ function openfed_install_role_form() {
 }
 
 /**
- * Manage the submit of the form for roles set up.
+ * Form submission handler for openfed_install_role_form().
  */
 function openfed_install_role_form_submit($form, &$form_state) {
   $values = $form_state['values'];
