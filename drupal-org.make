@@ -231,6 +231,7 @@ projects[l10n_update][download][type] = git
 projects[l10n_update][download][revision] = 8c85a9f
 projects[l10n_update][download][branch] = "7.x-1.x" 
 projects[l10n_update][subdir] = contrib
+projects[l10n_update][patch][1671570] = "https://drupal.org/files/l10n_update-fetch-module-update-1671570-18_0.patch"
 
 ; FIXME: Issue #2037961
 ;projects[locale_cookie][version] = "1.0"
