@@ -416,8 +416,6 @@ function _openfed_get_permissions_for_role($role_name) {
         'delete own webform submissions',
         // XML sitemap.
         'administer xmlsitemap',
-        // robots.txt.
-        'administer robots.txt',
       );
       break;
 

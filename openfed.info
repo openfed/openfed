@@ -116,7 +116,6 @@ core = 7.x
   dependencies[] = pathauto
   dependencies[] = print
   dependencies[] = redirect
-  dependencies[] = robotstxt
   dependencies[] = role_delegation
   dependencies[] = rules
   dependencies[] = rules_admin
