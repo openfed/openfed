@@ -5,6 +5,7 @@ No date yet - Version 7.x-1.x
 -----------------------------
 
  * Issues:
+    #2089225: Remove module: ofed_maintenance_theme_selector
     #2089211: Don't enable color by default
     #2089193: Patch for ofed_switcher
     #2047599: New module: i18nviews

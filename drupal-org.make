@@ -55,9 +55,6 @@ projects[ofed_switcher][version] = "1.x-dev"
 projects[ofed_switcher][subdir] = contrib
 projects[ofed_switcher][patch][2088715] = "https://drupal.org/files/2088715-link_title-1.patch"
 
-projects[ofed_maintenance_theme_selector][version] = "1.0"
-projects[ofed_maintenance_theme_selector][subdir] = contrib
-
 projects[ofed_vmcd][version] = "1.0"
 projects[ofed_vmcd][subdir] = contrib
 
