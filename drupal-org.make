@@ -208,6 +208,9 @@ projects[html5_tools][subdir] = contrib
 projects[i18n][version] = "1.10"
 projects[i18n][subdir] = contrib
 
+projects[i18nviews][version] = "3.x-dev"
+projects[i18nviews][subdir] = contrib
+
 projects[imagecache_actions][version] = "1.4"
 projects[imagecache_actions][subdir] = contrib
 
