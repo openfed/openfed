@@ -5,6 +5,7 @@ No date yet - Version 7.x-1.x
 -----------------------------
 
  * Issues:
+    #2089193: Patch for ofed_switcher
     #2047599: New module: i18nviews
     #2088701: Don't show pop-up for links to external sites
     #2037961: Don't enable locale_cookie by default
