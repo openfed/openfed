@@ -13,7 +13,6 @@ core = 7.x
 ; Core module dependencies.
 ; -------------------------
   dependencies[] = block
-  dependencies[] = color
   dependencies[] = contextual
   dependencies[] = dblog
   dependencies[] = field_ui
