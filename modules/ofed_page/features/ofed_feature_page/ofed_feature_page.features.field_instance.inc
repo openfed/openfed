@@ -65,7 +65,7 @@ function ofed_feature_page_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 7,
+      'weight' => 3,
     ),
   );
 
@@ -132,7 +132,7 @@ function ofed_feature_page_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 8,
+      'weight' => 4,
     ),
   );
 
@@ -295,7 +295,7 @@ function ofed_feature_page_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 6,
+      'weight' => 2,
     ),
   );
 
