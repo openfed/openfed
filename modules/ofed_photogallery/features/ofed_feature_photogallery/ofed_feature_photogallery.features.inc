@@ -7,16 +7,13 @@
 /**
  * Implements hook_ctools_plugin_api().
  */
-function ofed_feature_photogallery_ctools_plugin_api() {
-  list($module, $api) = func_get_args();
+function ofed_feature_photogallery_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "ds" && $api == "ds") {
     return array("version" => "1");
   }
-  list($module, $api) = func_get_args();
   if ($module == "field_group" && $api == "field_group") {
     return array("version" => "1");
   }
-  list($module, $api) = func_get_args();
   if ($module == "strongarm" && $api == "strongarm") {
     return array("version" => "1");
   }
@@ -25,7 +22,7 @@ function ofed_feature_photogallery_ctools_plugin_api() {
 /**
  * Implements hook_views_api().
  */
-function ofed_feature_photogallery_views_api() {
+function ofed_feature_photogallery_views_api($module = NULL, $api = NULL) {
   return array("api" => "3.0");
 }
 
@@ -56,6 +53,7 @@ function ofed_feature_photogallery_image_default_styles() {
         'weight' => 2,
       ),
     ),
+    'label' => 'ofed_photogallery_images',
   );
 
   // Exported image style: ofed_photogallery_images_gallery_large.
@@ -79,6 +77,7 @@ function ofed_feature_photogallery_image_default_styles() {
         'weight' => 2,
       ),
     ),
+    'label' => 'ofed_photogallery_images_gallery_large',
   );
 
   // Exported image style: ofed_photogallery_images_gallery_medium.
@@ -102,6 +101,7 @@ function ofed_feature_photogallery_image_default_styles() {
         'weight' => 2,
       ),
     ),
+    'label' => 'ofed_photogallery_images_gallery_medium',
   );
 
   // Exported image style: ofed_photogallery_images_gallery_small.
@@ -125,6 +125,7 @@ function ofed_feature_photogallery_image_default_styles() {
         'weight' => 2,
       ),
     ),
+    'label' => 'ofed_photogallery_images_gallery_small',
   );
 
   // Exported image style: ofed_photogallery_images_slideshow_large.
@@ -148,6 +149,7 @@ function ofed_feature_photogallery_image_default_styles() {
         'weight' => 2,
       ),
     ),
+    'label' => 'ofed_photogallery_images_slideshow_large',
   );
 
   // Exported image style: ofed_photogallery_images_slideshow_medium.
@@ -171,6 +173,7 @@ function ofed_feature_photogallery_image_default_styles() {
         'weight' => 2,
       ),
     ),
+    'label' => 'ofed_photogallery_images_slideshow_medium',
   );
 
   // Exported image style: ofed_photogallery_images_slideshow_small.
@@ -194,6 +197,7 @@ function ofed_feature_photogallery_image_default_styles() {
         'weight' => 2,
       ),
     ),
+    'label' => 'ofed_photogallery_images_slideshow_small',
   );
 
   // Exported image style: ofed_photogallery_images_slideshow_thumb_block_column.
@@ -217,6 +221,7 @@ function ofed_feature_photogallery_image_default_styles() {
         'weight' => 2,
       ),
     ),
+    'label' => 'ofed_photogallery_images_slideshow_thumb_block_column',
   );
 
   // Exported image style: ofed_photogallery_images_slideshow_thumb_block_element.
@@ -240,6 +245,7 @@ function ofed_feature_photogallery_image_default_styles() {
         'weight' => 2,
       ),
     ),
+    'label' => 'ofed_photogallery_images_slideshow_thumb_block_element',
   );
 
   // Exported image style: ofed_photogallery_images_slideshow_thumb_block_list.
@@ -263,6 +269,7 @@ function ofed_feature_photogallery_image_default_styles() {
         'weight' => 2,
       ),
     ),
+    'label' => 'ofed_photogallery_images_slideshow_thumb_block_list',
   );
 
   // Exported image style: ofed_photogallery_images_slideshow_thumb_block_teaser.
@@ -286,6 +293,7 @@ function ofed_feature_photogallery_image_default_styles() {
         'weight' => 2,
       ),
     ),
+    'label' => 'ofed_photogallery_images_slideshow_thumb_block_teaser',
   );
 
   // Exported image style: ofed_photogallery_images_slideshow_thumb_page_list.
@@ -309,6 +317,7 @@ function ofed_feature_photogallery_image_default_styles() {
         'weight' => 2,
       ),
     ),
+    'label' => 'ofed_photogallery_images_slideshow_thumb_page_list',
   );
 
   return $styles;

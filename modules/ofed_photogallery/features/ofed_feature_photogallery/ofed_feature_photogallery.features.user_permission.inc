@@ -10,7 +10,7 @@
 function ofed_feature_photogallery_user_default_permissions() {
   $permissions = array();
 
-  // Exported permission: create ofed_photogallery content.
+  // Exported permission: 'create ofed_photogallery content'.
   $permissions['create ofed_photogallery content'] = array(
     'name' => 'create ofed_photogallery content',
     'roles' => array(
@@ -22,7 +22,7 @@ function ofed_feature_photogallery_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: delete any ofed_photogallery content.
+  // Exported permission: 'delete any ofed_photogallery content'.
   $permissions['delete any ofed_photogallery content'] = array(
     'name' => 'delete any ofed_photogallery content',
     'roles' => array(
@@ -34,7 +34,7 @@ function ofed_feature_photogallery_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: delete own ofed_photogallery content.
+  // Exported permission: 'delete own ofed_photogallery content'.
   $permissions['delete own ofed_photogallery content'] = array(
     'name' => 'delete own ofed_photogallery content',
     'roles' => array(
@@ -46,7 +46,7 @@ function ofed_feature_photogallery_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: edit any ofed_photogallery content.
+  // Exported permission: 'edit any ofed_photogallery content'.
   $permissions['edit any ofed_photogallery content'] = array(
     'name' => 'edit any ofed_photogallery content',
     'roles' => array(
@@ -58,7 +58,7 @@ function ofed_feature_photogallery_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: edit own ofed_photogallery content.
+  // Exported permission: 'edit own ofed_photogallery content'.
   $permissions['edit own ofed_photogallery content'] = array(
     'name' => 'edit own ofed_photogallery content',
     'roles' => array(
@@ -70,7 +70,7 @@ function ofed_feature_photogallery_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: enter ofed_photogallery revision log entry.
+  // Exported permission: 'enter ofed_photogallery revision log entry'.
   $permissions['enter ofed_photogallery revision log entry'] = array(
     'name' => 'enter ofed_photogallery revision log entry',
     'roles' => array(
@@ -82,7 +82,7 @@ function ofed_feature_photogallery_user_default_permissions() {
     'module' => 'override_node_options',
   );
 
-  // Exported permission: override ofed_photogallery authored by option.
+  // Exported permission: 'override ofed_photogallery authored by option'.
   $permissions['override ofed_photogallery authored by option'] = array(
     'name' => 'override ofed_photogallery authored by option',
     'roles' => array(
@@ -94,7 +94,7 @@ function ofed_feature_photogallery_user_default_permissions() {
     'module' => 'override_node_options',
   );
 
-  // Exported permission: override ofed_photogallery authored on option.
+  // Exported permission: 'override ofed_photogallery authored on option'.
   $permissions['override ofed_photogallery authored on option'] = array(
     'name' => 'override ofed_photogallery authored on option',
     'roles' => array(
@@ -106,7 +106,7 @@ function ofed_feature_photogallery_user_default_permissions() {
     'module' => 'override_node_options',
   );
 
-  // Exported permission: override ofed_photogallery promote to front page option.
+  // Exported permission: 'override ofed_photogallery promote to front page option'.
   $permissions['override ofed_photogallery promote to front page option'] = array(
     'name' => 'override ofed_photogallery promote to front page option',
     'roles' => array(
@@ -118,7 +118,7 @@ function ofed_feature_photogallery_user_default_permissions() {
     'module' => 'override_node_options',
   );
 
-  // Exported permission: override ofed_photogallery published option.
+  // Exported permission: 'override ofed_photogallery published option'.
   $permissions['override ofed_photogallery published option'] = array(
     'name' => 'override ofed_photogallery published option',
     'roles' => array(
@@ -130,7 +130,7 @@ function ofed_feature_photogallery_user_default_permissions() {
     'module' => 'override_node_options',
   );
 
-  // Exported permission: override ofed_photogallery revision option.
+  // Exported permission: 'override ofed_photogallery revision option'.
   $permissions['override ofed_photogallery revision option'] = array(
     'name' => 'override ofed_photogallery revision option',
     'roles' => array(
@@ -142,7 +142,7 @@ function ofed_feature_photogallery_user_default_permissions() {
     'module' => 'override_node_options',
   );
 
-  // Exported permission: override ofed_photogallery sticky option.
+  // Exported permission: 'override ofed_photogallery sticky option'.
   $permissions['override ofed_photogallery sticky option'] = array(
     'name' => 'override ofed_photogallery sticky option',
     'roles' => array(

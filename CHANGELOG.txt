@@ -13,6 +13,7 @@ No date yet - Version 7.x-1.x
     #2087643: Event CMS View proposal
     #2089797: Press CMS view proposal
     #2087689: Page CMS view proposal
+    #2089799: Photo gallery CMS view proposal
 
 15 September 2013 - Version 7.x-1.0-rc3
 ---------------------------------------

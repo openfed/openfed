@@ -123,7 +123,7 @@ function ofed_feature_photogallery_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 7,
+      'weight' => 3,
     ),
   );
 
@@ -442,7 +442,7 @@ function ofed_feature_photogallery_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 8,
+      'weight' => 4,
     ),
   );
 
@@ -667,7 +667,7 @@ function ofed_feature_photogallery_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 6,
+      'weight' => 2,
     ),
   );
 
