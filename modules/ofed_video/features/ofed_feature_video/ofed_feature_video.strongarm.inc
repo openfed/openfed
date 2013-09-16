@@ -113,13 +113,13 @@ function ofed_feature_video_strongarm() {
           'weight' => '1',
         ),
         'path' => array(
-          'weight' => '13',
+          'weight' => '10',
         ),
         'redirect' => array(
-          'weight' => '12',
+          'weight' => '9',
         ),
         'xmlsitemap' => array(
-          'weight' => '11',
+          'weight' => '8',
         ),
       ),
       'display' => array(

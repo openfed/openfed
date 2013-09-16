@@ -21,7 +21,7 @@ function ofed_feature_video_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Page metadata',
-    'weight' => '2',
+    'weight' => '7',
     'children' => array(
       0 => 'field_ofed_video_pubdate',
       1 => 'field_ofed_video_update',
