@@ -21,7 +21,7 @@ function ofed_feature_news_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Page metadata',
-    'weight' => '2',
+    'weight' => '9',
     'children' => array(
       0 => 'field_ofed_news_pubdate',
       1 => 'field_ofed_news_update',
