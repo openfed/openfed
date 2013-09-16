@@ -3,8 +3,9 @@ CHANGELOG
 
 No date yet - Version 7.x-1.x
 -----------------------------
-  * Issues: 
+  * Issues:
     #2087513: Jobs CMS view proposal
+    #2089895: RTE not loading
 
 15 September 2013 - Version 7.x-1.0-rc3
 ---------------------------------------
@@ -15,11 +16,11 @@ No date yet - Version 7.x-1.x
  * Removed module:
     #2089225: Remove module: ofed_maintenance_theme_selector
     #2083133: Module removal: module_filter
- 
+
  * Upgraded modules:
     #2082233: Module upgrade: ofed_switcher (FAQ link)
     #2087829: Theme upgrade: nerra
- 
+
  * Issues:
     #2089211: Don't enable color by default
     #2089193: Patch for ofed_switcher
@@ -28,9 +29,9 @@ No date yet - Version 7.x-1.x
     #2088621: Don't enable robots.txt by default
     #2088577: Installer UI: additional cleanup
     #2084673: Installer UI: cleaned up taxonomy screen
-    #2083437: Removed unused images 
+    #2083437: Removed unused images
     #2083437: Removed discouraged php end delimiter
-    #2083437: Removed version from info files (added by drupal.org) 
+    #2083437: Removed version from info files (added by drupal.org)
     #2083393: Show Authenticated Visitor role in installer
     #2083407: Installer UI: cleaned up menu page
     #2083345: Installer UI: cleaned up roles page
