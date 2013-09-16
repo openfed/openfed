@@ -197,7 +197,7 @@ function ofed_feature_slider_field_default_field_instances() {
       'module' => 'field_collection',
       'settings' => array(),
       'type' => 'field_collection_embed',
-      'weight' => 6,
+      'weight' => 2,
     ),
   );
 

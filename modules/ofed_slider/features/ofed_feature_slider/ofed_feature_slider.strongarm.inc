@@ -127,13 +127,13 @@ function ofed_feature_slider_strongarm() {
           'weight' => '1',
         ),
         'path' => array(
-          'weight' => '9',
+          'weight' => '6',
         ),
         'redirect' => array(
-          'weight' => '8',
+          'weight' => '5',
         ),
         'xmlsitemap' => array(
-          'weight' => '7',
+          'weight' => '4',
         ),
       ),
       'display' => array(
