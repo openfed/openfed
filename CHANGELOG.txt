@@ -15,6 +15,7 @@ No date yet - Version 7.x-1.x
     #2087689: Page CMS view proposal
     #2089799: Photo gallery CMS view proposal
     #2087531: remove redundant text from "add content" node
+    #2044027: Notice: Trying to get property of non-object
 
 15 September 2013 - Version 7.x-1.0-rc3
 ---------------------------------------
