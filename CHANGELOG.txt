@@ -3,6 +3,8 @@ CHANGELOG
 
 No date yet - Version 7.x-1.x
 -----------------------------
+  * Issues: 
+    #2087513: Jobs CMS view proposal
 
 15 September 2013 - Version 7.x-1.0-rc3
 ---------------------------------------

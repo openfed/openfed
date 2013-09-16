@@ -104,7 +104,7 @@ function ofed_feature_job_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 7,
+      'weight' => 4,
     ),
   );
 
@@ -202,7 +202,7 @@ function ofed_feature_job_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 18,
+      'weight' => 5,
     ),
   );
 
@@ -211,74 +211,68 @@ function ofed_feature_job_field_default_field_instances() {
     'bundle' => 'ofed_job',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Fill the diploma of this job.',
+    'description' => '',
     'display' => array(
       'block_column' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 26,
+        'weight' => 0,
       ),
       'block_element' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 26,
+        'weight' => 0,
       ),
       'block_list' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 26,
+        'weight' => 0,
       ),
       'default' => array(
         'label' => 'above',
+        'module' => 'text',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 26,
+        'type' => 'text_default',
+        'weight' => 25,
       ),
       'full' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 25,
+        'weight' => 0,
       ),
       'page_list' => array(
-        'label' => 'inline',
-        'module' => 'text',
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 6,
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'print' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 26,
-      ),
-      'references' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 26,
+        'weight' => 0,
       ),
       'rss' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 26,
+        'weight' => 0,
       ),
       'search_result' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 28,
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 26,
+        'weight' => 0,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -294,10 +288,10 @@ function ofed_feature_job_field_default_field_instances() {
       'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'size' => 60,
+        'rows' => 5,
       ),
-      'type' => 'text_textfield',
-      'weight' => 17,
+      'type' => 'text_textarea',
+      'weight' => 16,
     ),
   );
 
@@ -697,7 +691,7 @@ function ofed_feature_job_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 11,
+      'weight' => 12,
     ),
   );
 
@@ -795,7 +789,7 @@ function ofed_feature_job_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 20,
+      'weight' => 7,
     ),
   );
 
@@ -893,7 +887,7 @@ function ofed_feature_job_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 19,
+      'weight' => 6,
     ),
   );
 
@@ -1171,7 +1165,7 @@ function ofed_feature_job_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 10,
+      'weight' => 2,
     ),
   );
 
@@ -1269,7 +1263,7 @@ function ofed_feature_job_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 13,
+      'weight' => 11,
     ),
   );
 
@@ -1368,7 +1362,7 @@ function ofed_feature_job_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 16,
+      'weight' => 13,
     ),
   );
 
@@ -1472,7 +1466,7 @@ function ofed_feature_job_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 6,
+      'weight' => 3,
     ),
   );
 
@@ -1984,7 +1978,7 @@ function ofed_feature_job_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 12,
+      'weight' => 10,
     ),
   );
 
@@ -2000,7 +1994,6 @@ function ofed_feature_job_field_default_field_instances() {
   t('Fill the application process for this job.');
   t('Fill the content of this job.');
   t('Fill the description for this job.');
-  t('Fill the diploma of this job.');
   t('Fill the image of this job.');
   t('Fill the languages for this job.');
   t('Fill the occupation of this job.');

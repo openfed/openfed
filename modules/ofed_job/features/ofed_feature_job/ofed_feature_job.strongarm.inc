@@ -107,19 +107,19 @@ function ofed_feature_job_strongarm() {
           'weight' => '0',
         ),
         'metatags' => array(
-          'weight' => '24',
+          'weight' => '21',
         ),
         'title' => array(
           'weight' => '1',
         ),
         'path' => array(
-          'weight' => '23',
+          'weight' => '20',
         ),
         'redirect' => array(
-          'weight' => '22',
+          'weight' => '19',
         ),
         'xmlsitemap' => array(
-          'weight' => '21',
+          'weight' => '18',
         ),
       ),
       'display' => array(
