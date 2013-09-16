@@ -187,7 +187,6 @@ function ofed_feature_job_node_info() {
     'ofed_job' => array(
       'name' => t('Job'),
       'base' => 'node_content',
-      'description' => t('Use <em>Job</em> to create an manage any job.'),
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',

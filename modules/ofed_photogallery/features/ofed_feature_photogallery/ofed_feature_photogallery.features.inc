@@ -331,7 +331,6 @@ function ofed_feature_photogallery_node_info() {
     'ofed_photogallery' => array(
       'name' => t('Photos gallery'),
       'base' => 'node_content',
-      'description' => t('Use <em>Photos gallery</em> to create an manage any photos galeries.'),
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',

@@ -161,7 +161,6 @@ function ofed_feature_team_node_info() {
     'ofed_team' => array(
       'name' => t('Team members'),
       'base' => 'node_content',
-      'description' => t('Use <em>Team members</em> to create an manage any members of the team memebers.'),
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',

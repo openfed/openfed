@@ -184,7 +184,6 @@ function ofed_feature_meeting_node_info() {
     'ofed_meeting' => array(
       'name' => t('Meeting'),
       'base' => 'node_content',
-      'description' => t('Use <em>Meeting</em> to create an manage any meetings.'),
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',

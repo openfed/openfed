@@ -215,7 +215,6 @@ function ofed_feature_download_node_info() {
     'ofed_download' => array(
       'name' => t('Download'),
       'base' => 'node_content',
-      'description' => t('Use <em>Download</em> to add many documents who can be downloaded by someone else.'),
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',

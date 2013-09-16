@@ -37,7 +37,6 @@ function ofed_feature_address_node_info() {
     'ofed_address' => array(
       'name' => t('Address'),
       'base' => 'node_content',
-      'description' => t('Use <em>Address</em> to add an address who might be added to a content.'),
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',

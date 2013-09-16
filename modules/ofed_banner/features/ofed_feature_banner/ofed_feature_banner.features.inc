@@ -37,7 +37,6 @@ function ofed_feature_banner_node_info() {
     'ofed_banner' => array(
       'name' => t('Banner'),
       'base' => 'node_content',
-      'description' => t('Use <em>Banner</em> to create an manage any banner.'),
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',

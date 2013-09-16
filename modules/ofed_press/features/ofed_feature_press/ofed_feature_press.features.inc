@@ -163,7 +163,6 @@ function ofed_feature_press_node_info() {
     'ofed_press' => array(
       'name' => t('Press'),
       'base' => 'node_content',
-      'description' => t('Use <em>Press</em> to create an manage any press.'),
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',

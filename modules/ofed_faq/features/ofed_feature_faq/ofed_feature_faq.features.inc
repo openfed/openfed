@@ -34,7 +34,6 @@ function ofed_feature_faq_node_info() {
     'ofed_faq' => array(
       'name' => t('FAQ'),
       'base' => 'node_content',
-      'description' => t('Use <em>FAQ</em> to create an manage any frequently asked questions.'),
       'has_title' => '1',
       'title_label' => t('Question'),
       'help' => '',

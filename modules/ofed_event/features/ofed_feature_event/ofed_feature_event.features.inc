@@ -187,7 +187,6 @@ function ofed_feature_event_node_info() {
     'ofed_event' => array(
       'name' => t('Event'),
       'base' => 'node_content',
-      'description' => t('Use <em>Event</em> to create an manage any events.'),
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',

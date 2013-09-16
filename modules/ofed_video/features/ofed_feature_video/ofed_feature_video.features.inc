@@ -70,7 +70,6 @@ function ofed_feature_video_node_info() {
     'ofed_video' => array(
       'name' => t('Video'),
       'base' => 'node_content',
-      'description' => t('Use <em>Video</em> to create an manage any video.'),
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',

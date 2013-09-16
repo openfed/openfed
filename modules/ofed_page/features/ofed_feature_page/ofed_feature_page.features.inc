@@ -34,7 +34,6 @@ function ofed_feature_page_node_info() {
     'ofed_page' => array(
       'name' => t('Page'),
       'base' => 'node_content',
-      'description' => t('Use <em>Page</em> to create an manage any page.'),
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',
