@@ -11,6 +11,7 @@ No date yet - Version 7.x-1.x
     #2089803: Video CMS View proposal
     #2087625: News CMS View proposal
     #2087643: Event CMS View proposal
+    #2089797: Press CMS view proposal
 
 15 September 2013 - Version 7.x-1.0-rc3
 ---------------------------------------

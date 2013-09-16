@@ -113,13 +113,13 @@ function ofed_feature_press_strongarm() {
           'weight' => '1',
         ),
         'path' => array(
-          'weight' => '16',
+          'weight' => '13',
         ),
         'redirect' => array(
-          'weight' => '15',
+          'weight' => '12',
         ),
         'xmlsitemap' => array(
-          'weight' => '14',
+          'weight' => '11',
         ),
       ),
       'display' => array(
