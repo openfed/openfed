@@ -50,7 +50,7 @@ function openfed_install_tasks_alter(&$tasks, $install_state) {
   }
 
   // Set the title.
-  drupal_set_title('OpenFed : '.  drupal_get_title());
+  drupal_set_title('OpenFed : ' .  drupal_get_title());
 
   // Rewrite completly the tasks array.
   // It's the only way to reorder all steps.
