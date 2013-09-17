@@ -15,7 +15,7 @@ function ofed_feature_page_field_default_field_instances() {
     'bundle' => 'ofed_page',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Fill the content of this page.',
+    'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -50,6 +50,7 @@ function ofed_feature_page_field_default_field_instances() {
         'weight' => 14,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_ofed_page_body',
     'label' => 'Body',
@@ -467,7 +468,6 @@ function ofed_feature_page_field_default_field_instances() {
   t('Body');
   t('Check the box in order to use the system date as updated date for your content item.');
   t('Download(s)');
-  t('Fill the content of this page.');
   t('Last updated date');
   t('Publication date');
   t('Summary');
