@@ -16,6 +16,8 @@ No date yet - Version 7.x-1.x
     #2089799: Photo gallery CMS view proposal
     #2087531: remove redundant text from "add content" node
     #2044027: Notice: Trying to get property of non-object
+    #Others:
+      - Work with dev version of ofed_cms_theme
 
 15 September 2013 - Version 7.x-1.0-rc3
 ---------------------------------------
@@ -55,7 +57,7 @@ No date yet - Version 7.x-1.x
     #2084705: FAQ CMS View proposal
     #2075093: Improvements to CMS view download content type
     #2087599: Body: not visible
-    #Other :
+    #Others :
       - Use ofed_theme_nerra 7.x-1.0-dev version.
       - Major refactoring of install process (functions, folders and files renamed,
           functions removed, install steps moved).
