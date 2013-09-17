@@ -15,7 +15,7 @@ function ofed_feature_event_field_default_field_instances() {
     'bundle' => 'ofed_event',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Enter the first letters of the address that needs to be available on this content item. Make sure that your address content is created as a address content item first.',
+    'description' => '(points to content type address)',
     'display' => array(
       'block_column' => array(
         'label' => 'above',
@@ -126,7 +126,7 @@ function ofed_feature_event_field_default_field_instances() {
     'bundle' => 'ofed_event',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Fill the author name of this event.',
+    'description' => '',
     'display' => array(
       'block_column' => array(
         'label' => 'above',
@@ -224,7 +224,7 @@ function ofed_feature_event_field_default_field_instances() {
     'bundle' => 'ofed_event',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Fill the content of this event.',
+    'description' => '',
     'display' => array(
       'block_column' => array(
         'label' => 'hidden',
@@ -321,7 +321,7 @@ function ofed_feature_event_field_default_field_instances() {
   $field_instances['node-ofed_event-field_ofed_event_date'] = array(
     'bundle' => 'ofed_event',
     'deleted' => 0,
-    'description' => 'Fill the start and the end date of this event.',
+    'description' => '',
     'display' => array(
       'block_column' => array(
         'label' => 'inline',
@@ -501,7 +501,7 @@ function ofed_feature_event_field_default_field_instances() {
     'bundle' => 'ofed_event',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Enter the first letters of the document that needs to be available on this content item. Make sure that your document is created as a download content item first.',
+    'description' => '',
     'display' => array(
       'block_column' => array(
         'label' => 'above',
@@ -608,7 +608,7 @@ function ofed_feature_event_field_default_field_instances() {
     'bundle' => 'ofed_event',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Add an additional link related to this event.',
+    'description' => '',
     'display' => array(
       'block_column' => array(
         'label' => 'above',
@@ -697,6 +697,7 @@ function ofed_feature_event_field_default_field_instances() {
         'url_cutoff' => 80,
       ),
       'enable_tokens' => 1,
+      'rel_remove' => 'default',
       'title' => 'optional',
       'title_maxlength' => 128,
       'title_value' => '',
@@ -718,7 +719,7 @@ function ofed_feature_event_field_default_field_instances() {
     'bundle' => 'ofed_event',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Fill the oraganizer of this event.',
+    'description' => '',
     'display' => array(
       'block_column' => array(
         'label' => 'above',
@@ -947,7 +948,7 @@ function ofed_feature_event_field_default_field_instances() {
         'increment' => 15,
         'input_format' => 'd/m/Y - H:i:s',
         'input_format_custom' => '',
-        'label_position' => 'above',
+        'label_position' => 'none',
         'text_parts' => array(),
         'year_range' => '-3:+3',
       ),
@@ -961,7 +962,7 @@ function ofed_feature_event_field_default_field_instances() {
     'bundle' => 'ofed_event',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Fill the summary of this event.',
+    'description' => '',
     'display' => array(
       'block_column' => array(
         'label' => 'hidden',
@@ -1064,7 +1065,7 @@ function ofed_feature_event_field_default_field_instances() {
   $field_instances['node-ofed_event-field_ofed_event_thumb'] = array(
     'bundle' => 'ofed_event',
     'deleted' => 0,
-    'description' => 'Fill the image of this event.',
+    'description' => '',
     'display' => array(
       'block_column' => array(
         'label' => 'hidden',
@@ -1320,7 +1321,7 @@ function ofed_feature_event_field_default_field_instances() {
         'increment' => 15,
         'input_format' => 'd/m/Y - H:i:s',
         'input_format_custom' => '',
-        'label_position' => 'above',
+        'label_position' => 'none',
         'text_parts' => array(),
         'year_range' => '-3:+3',
       ),
@@ -1428,20 +1429,12 @@ function ofed_feature_event_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Add an additional link related to this event.');
+  t('(points to content type address)');
   t('Address');
   t('Author');
   t('Body');
   t('Check the box in order to use the system date as updated date for your content item.');
   t('Download(s)');
-  t('Enter the first letters of the address that needs to be available on this content item. Make sure that your address content is created as a address content item first.');
-  t('Enter the first letters of the document that needs to be available on this content item. Make sure that your document is created as a download content item first.');
-  t('Fill the author name of this event.');
-  t('Fill the content of this event.');
-  t('Fill the image of this event.');
-  t('Fill the oraganizer of this event.');
-  t('Fill the start and the end date of this event.');
-  t('Fill the summary of this event.');
   t('Last updated date');
   t('Link(s)');
   t('Organizer');
