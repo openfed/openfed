@@ -242,7 +242,7 @@ function ofed_feature_page_field_default_field_instances() {
     'bundle' => 'ofed_page',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Fill the summary of this page.',
+    'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -280,6 +280,7 @@ function ofed_feature_page_field_default_field_instances() {
         'weight' => 1,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_ofed_page_summary',
     'label' => 'Summary',
@@ -468,7 +469,6 @@ function ofed_feature_page_field_default_field_instances() {
   t('Download(s)');
   t('Enter the first letters of the document that needs to be available on this content item. Make sure that your document is created as a download content item first.');
   t('Fill the content of this page.');
-  t('Fill the summary of this page.');
   t('Last updated date');
   t('Publication date');
   t('Summary');
