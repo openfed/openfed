@@ -74,7 +74,7 @@ function ofed_feature_page_field_default_field_instances() {
     'bundle' => 'ofed_page',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Enter the first letters of the document that needs to be available on this content item. Make sure that your document is created as a download content item first.',
+    'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -410,7 +410,7 @@ function ofed_feature_page_field_default_field_instances() {
       ),
     ),
     'deleted' => 0,
-    'description' => 'Check the box in order to use the system date as updated date for your content item.',
+    'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -446,7 +446,7 @@ function ofed_feature_page_field_default_field_instances() {
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_ofed_page_update_force',
-    'label' => 'Use system update date instead of Last updated date',
+    'label' => 'Check the box in order to use the system date as updated date for your content item.',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -467,14 +467,12 @@ function ofed_feature_page_field_default_field_instances() {
   t('Body');
   t('Check the box in order to use the system date as updated date for your content item.');
   t('Download(s)');
-  t('Enter the first letters of the document that needs to be available on this content item. Make sure that your document is created as a download content item first.');
   t('Fill the content of this page.');
   t('Last updated date');
   t('Publication date');
   t('Summary');
   t('This date field is used to indicate when the content element was last modified.');
   t('This date typically refers to the moment the content element was released and is to be displayed without label next to the title of the content element in lists and pages. It is typically used to sort content.');
-  t('Use system update date instead of Last updated date');
 
   return $field_instances;
 }
