@@ -841,7 +841,7 @@ function ofed_feature_download_field_default_field_instances() {
       ),
     ),
     'deleted' => 0,
-    'description' => 'Check the box in order to use the system date as updated date for your content item.',
+    'description' => '',
     'display' => array(
       'block_column' => array(
         'label' => 'above',
@@ -913,7 +913,7 @@ function ofed_feature_download_field_default_field_instances() {
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_ofed_download_update_force',
-    'label' => 'Use system update date instead of Last updated date',
+    'label' => 'Check the box in order to use the system date as updated date for your content item.',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -946,7 +946,6 @@ function ofed_feature_download_field_default_field_instances() {
   t('This date typically refers to the moment the content element was released and is to be displayed without label next to the title of the content element in lists and pages. It is typically used to sort content.');
   t('Thumb');
   t('Upload a file related to this download.');
-  t('Use system update date instead of Last updated date');
 
   return $field_instances;
 }

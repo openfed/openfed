@@ -643,7 +643,7 @@ You can change the value of this counter by the value of your choice and you can
       ),
     ),
     'deleted' => 0,
-    'description' => 'Check the box in order to use the system date as updated date for your content item.',
+    'description' => '',
     'display' => array(
       'block_column' => array(
         'label' => 'above',
@@ -715,7 +715,7 @@ You can change the value of this counter by the value of your choice and you can
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_ofed_banner_update_force',
-    'label' => 'Use system update date instead of Last updated date',
+    'label' => 'Check the box in order to use the system date as updated date for your content item.',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -751,7 +751,6 @@ You can change the value of this counter by the value of your choice and you can
   t('This is the count of clicks on the banner link (if the link is defined).
 You can change the value of this counter by the value of your choice and you can also put zero like value if you want to reset the counter.');
   t('Type');
-  t('Use system update date instead of Last updated date');
 
   return $field_instances;
 }
