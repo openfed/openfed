@@ -113,13 +113,13 @@ function ofed_feature_meeting_strongarm() {
           'weight' => '1',
         ),
         'path' => array(
-          'weight' => '14',
+          'weight' => '11',
         ),
         'redirect' => array(
-          'weight' => '13',
+          'weight' => '10',
         ),
         'xmlsitemap' => array(
-          'weight' => '12',
+          'weight' => '9',
         ),
       ),
       'display' => array(

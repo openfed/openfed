@@ -15,7 +15,7 @@ function ofed_feature_meeting_field_default_field_instances() {
     'bundle' => 'ofed_meeting',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Enter the first letters of the address that needs to be available on this content item. Make sure that your address content is created as a address content item first.',
+    'description' => '',
     'display' => array(
       'block_column' => array(
         'label' => 'above',
@@ -117,7 +117,7 @@ function ofed_feature_meeting_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 11,
+      'weight' => 6,
     ),
   );
 
@@ -215,7 +215,7 @@ function ofed_feature_meeting_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 8,
+      'weight' => 3,
     ),
   );
 
@@ -394,7 +394,7 @@ function ofed_feature_meeting_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 6,
+      'weight' => 4,
     ),
   );
 
@@ -403,7 +403,7 @@ function ofed_feature_meeting_field_default_field_instances() {
     'bundle' => 'ofed_meeting',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Enter the first letters of the document that needs to be available on this content item. Make sure that your document is created as a download content item first.',
+    'description' => '',
     'display' => array(
       'block_column' => array(
         'label' => 'above',
@@ -501,7 +501,7 @@ function ofed_feature_meeting_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 9,
+      'weight' => 7,
     ),
   );
 
@@ -598,7 +598,7 @@ function ofed_feature_meeting_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 10,
+      'weight' => 5,
     ),
   );
 
@@ -846,7 +846,7 @@ function ofed_feature_meeting_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 7,
+      'weight' => 2,
     ),
   );
 
@@ -1097,8 +1097,6 @@ function ofed_feature_meeting_field_default_field_instances() {
   t('Body');
   t('Check the box in order to use the system date as updated date for your content item.');
   t('Download(s)');
-  t('Enter the first letters of the address that needs to be available on this content item. Make sure that your address content is created as a address content item first.');
-  t('Enter the first letters of the document that needs to be available on this content item. Make sure that your document is created as a download content item first.');
   t('Last updated date');
   t('Organizer');
   t('Publication date');
