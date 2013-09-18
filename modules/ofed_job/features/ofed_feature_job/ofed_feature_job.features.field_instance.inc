@@ -300,7 +300,7 @@ function ofed_feature_job_field_default_field_instances() {
     'bundle' => 'ofed_job',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Enter the first letters of the document that needs to be available on this content item. Make sure that your document is created as a download content item first.',
+    'description' => '',
     'display' => array(
       'block_column' => array(
         'label' => 'above',
@@ -1872,7 +1872,7 @@ function ofed_feature_job_field_default_field_instances() {
     'bundle' => 'ofed_job',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Enter the first letters of the address that needs to be available on this content item. Make sure that your address content is created as a address content item first.',
+    'description' => '',
     'display' => array(
       'block_column' => array(
         'label' => 'inline',
@@ -1989,8 +1989,6 @@ function ofed_feature_job_field_default_field_instances() {
   t('Check the box in order to use the system date as updated date for your content item.');
   t('Diploma(s)');
   t('Download(s)');
-  t('Enter the first letters of the address that needs to be available on this content item. Make sure that your address content is created as a address content item first.');
-  t('Enter the first letters of the document that needs to be available on this content item. Make sure that your document is created as a download content item first.');
   t('Job description');
   t('Job reference');
   t('Language(s)');
