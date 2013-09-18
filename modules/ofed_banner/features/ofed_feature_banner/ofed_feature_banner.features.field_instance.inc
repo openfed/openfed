@@ -19,8 +19,8 @@ function ofed_feature_banner_field_default_field_instances() {
       ),
     ),
     'deleted' => 0,
-    'description' => 'This is the count of clicks on the banner link (if the link is defined).
-You can change the value of this counter by the value of your choice and you can also put zero like value if you want to reset the counter.',
+    'description' => 'This is the number of time the banner has been clicked (if the link is defined).
+You can change this value to fit your needs and you can also reset it by putting 0 as value.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -60,7 +60,7 @@ You can change the value of this counter by the value of your choice and you can
   $field_instances['node-ofed_banner-field_ofed_banner_img_button'] = array(
     'bundle' => 'ofed_banner',
     'deleted' => 0,
-    'description' => 'Fill the image of this banner.',
+    'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -105,7 +105,7 @@ You can change the value of this counter by the value of your choice and you can
   $field_instances['node-ofed_banner-field_ofed_banner_img_full'] = array(
     'bundle' => 'ofed_banner',
     'deleted' => 0,
-    'description' => 'Fill the image of this banner.',
+    'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -150,7 +150,7 @@ You can change the value of this counter by the value of your choice and you can
   $field_instances['node-ofed_banner-field_ofed_banner_img_leadboard'] = array(
     'bundle' => 'ofed_banner',
     'deleted' => 0,
-    'description' => 'Fill the image of this banner.',
+    'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -195,7 +195,7 @@ You can change the value of this counter by the value of your choice and you can
   $field_instances['node-ofed_banner-field_ofed_banner_img_mrectangle'] = array(
     'bundle' => 'ofed_banner',
     'deleted' => 0,
-    'description' => 'Fill the image of this banner.',
+    'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -240,7 +240,7 @@ You can change the value of this counter by the value of your choice and you can
   $field_instances['node-ofed_banner-field_ofed_banner_img_skyscraper'] = array(
     'bundle' => 'ofed_banner',
     'deleted' => 0,
-    'description' => 'Fill the image of this banner.',
+    'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -285,7 +285,7 @@ You can change the value of this counter by the value of your choice and you can
   $field_instances['node-ofed_banner-field_ofed_banner_img_srectangle'] = array(
     'bundle' => 'ofed_banner',
     'deleted' => 0,
-    'description' => 'Fill the image of this banner.',
+    'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -429,7 +429,7 @@ You can change the value of this counter by the value of your choice and you can
     'bundle' => 'ofed_banner',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Choose the type of this banner.',
+    'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -734,7 +734,6 @@ You can change the value of this counter by the value of your choice and you can
   // Translatables
   // Included for use with string extractors like potx.
   t('Check the box in order to use the system date as updated date for your content item.');
-  t('Choose the type of this banner.');
   t('Counter (clicks)');
   t('Image (Button)');
   t('Image (Full)');
@@ -747,8 +746,8 @@ You can change the value of this counter by the value of your choice and you can
   t('Publication date');
   t('This date field is used to indicate when the content element was last modified.');
   t('This date typically refers to the moment the content element was released and is to be displayed without label next to the title of the content element in lists and pages. It is typically used to sort content.');
-  t('This is the count of clicks on the banner link (if the link is defined).
-You can change the value of this counter by the value of your choice and you can also put zero like value if you want to reset the counter.');
+  t('This is the number of time the banner has been clicked (if the link is defined).
+You can change this value to fit your needs and you can also reset it by putting 0 as value.');
   t('Type');
 
   return $field_instances;
