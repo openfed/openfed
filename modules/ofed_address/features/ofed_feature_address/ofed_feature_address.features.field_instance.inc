@@ -199,7 +199,7 @@ function ofed_feature_address_field_default_field_instances() {
     'bundle' => 'ofed_address',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '(points to content type download)',
+    'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -243,7 +243,7 @@ function ofed_feature_address_field_default_field_instances() {
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_ofed_address_directions',
-    'label' => 'Directions',
+    'label' => 'Directions (points to "Download" items)',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -963,13 +963,12 @@ function ofed_feature_address_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('(points to content type download)');
   t('Bus');
   t('Check the box in order to use the system date as updated date for your content item.');
   t('City');
   t('Copy paste the address search field from Google Maps here (Eg: "Rue de la loi 16, 1000 Bruxelles").');
   t('Country');
-  t('Directions');
+  t('Directions (points to "Download" items)');
   t('Email');
   t('GoogleMap');
   t('Last updated date');
