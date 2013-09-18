@@ -278,7 +278,7 @@ function ofed_feature_job_field_default_field_instances() {
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_ofed_job_diplomas',
-    'label' => 'Diploma(s)',
+    'label' => 'Required diploma(s)',
     'required' => 0,
     'settings' => array(
       'text_processing' => 0,
@@ -1987,7 +1987,7 @@ function ofed_feature_job_field_default_field_instances() {
   t('Application procedure');
   t('Body');
   t('Check the box in order to use the system date as updated date for your content item.');
-  t('Diploma(s)');
+  t('Required diploma(s)');
   t('Download(s)');
   t('Job description');
   t('Job reference');
