@@ -15,7 +15,7 @@ function ofed_feature_download_field_default_field_instances() {
     'bundle' => 'ofed_download',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Fill the author name of this download.',
+    'description' => '',
     'display' => array(
       'block_column' => array(
         'label' => 'above',
@@ -112,7 +112,7 @@ function ofed_feature_download_field_default_field_instances() {
     'bundle' => 'ofed_download',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Fill the content of this download.',
+    'description' => '',
     'display' => array(
       'block_column' => array(
         'label' => 'above',
@@ -478,7 +478,7 @@ function ofed_feature_download_field_default_field_instances() {
     'bundle' => 'ofed_download',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Fill the summary of this download.',
+    'description' => '',
     'display' => array(
       'block_column' => array(
         'label' => 'hidden',
@@ -583,7 +583,7 @@ function ofed_feature_download_field_default_field_instances() {
   $field_instances['node-ofed_download-field_ofed_download_thumb'] = array(
     'bundle' => 'ofed_download',
     'deleted' => 0,
-    'description' => 'Fill the image of this download.',
+    'description' => '',
     'display' => array(
       'block_column' => array(
         'label' => 'above',
@@ -935,10 +935,6 @@ function ofed_feature_download_field_default_field_instances() {
   t('Body');
   t('Check the box in order to use the system date as updated date for your content item.');
   t('File');
-  t('Fill the author name of this download.');
-  t('Fill the content of this download.');
-  t('Fill the image of this download.');
-  t('Fill the summary of this download.');
   t('Last updated date');
   t('Publication date');
   t('Summary');

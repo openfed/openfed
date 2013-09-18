@@ -736,7 +736,6 @@ You can change the value of this counter by the value of your choice and you can
   t('Check the box in order to use the system date as updated date for your content item.');
   t('Choose the type of this banner.');
   t('Counter (clicks)');
-  t('Fill the image of this banner.');
   t('Image (Button)');
   t('Image (Full)');
   t('Image (Leaderboard)');

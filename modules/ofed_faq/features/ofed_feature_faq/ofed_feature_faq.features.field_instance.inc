@@ -15,7 +15,7 @@ function ofed_feature_faq_field_default_field_instances() {
     'bundle' => 'ofed_faq',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Fill the answer to this question.',
+    'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -300,7 +300,6 @@ function ofed_feature_faq_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Answer');
   t('Check the box in order to use the system date as updated date for your content item.');
-  t('Fill the answer to this question.');
   t('Last updated date');
   t('Publication date');
   t('This date field is used to indicate when the content element was last modified.');

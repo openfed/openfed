@@ -107,7 +107,7 @@ function ofed_feature_slideshow_field_default_field_instances() {
     'bundle' => 'ofed_slideshow',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Fill the link to this slideshow.',
+    'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -316,7 +316,6 @@ function ofed_feature_slideshow_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Check the box in order to use the system date as updated date for your content item.');
-  t('Fill the link to this slideshow.');
   t('Image(s)');
   t('Last updated date');
   t('Link');

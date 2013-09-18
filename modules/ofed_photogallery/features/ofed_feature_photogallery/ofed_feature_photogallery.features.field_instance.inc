@@ -15,7 +15,7 @@ function ofed_feature_photogallery_field_default_field_instances() {
     'bundle' => 'ofed_photogallery',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Fill the content of this photos gallery.',
+    'description' => '',
     'display' => array(
       'block_column' => array(
         'label' => 'above',
@@ -554,7 +554,7 @@ function ofed_feature_photogallery_field_default_field_instances() {
     'bundle' => 'ofed_photogallery',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Fill the summary of this photos gallery.',
+    'description' => '',
     'display' => array(
       'block_column' => array(
         'label' => 'hidden',
@@ -897,8 +897,6 @@ function ofed_feature_photogallery_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Body');
   t('Check the box in order to use the system date as updated date for your content item.');
-  t('Fill the content of this photos gallery.');
-  t('Fill the summary of this photos gallery.');
   t('Image(s)');
   t('Last updated date');
   t('Publication date');

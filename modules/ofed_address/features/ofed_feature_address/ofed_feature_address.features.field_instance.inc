@@ -15,7 +15,7 @@ function ofed_feature_address_field_default_field_instances() {
     'bundle' => 'ofed_address',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Fill the bus of this address.',
+    'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'inline',
@@ -76,7 +76,7 @@ function ofed_feature_address_field_default_field_instances() {
     'bundle' => 'ofed_address',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Fill the city of thos address.',
+    'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -141,7 +141,7 @@ function ofed_feature_address_field_default_field_instances() {
       ),
     ),
     'deleted' => 0,
-    'description' => 'Fill the coutry of this address.',
+    'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -199,7 +199,7 @@ function ofed_feature_address_field_default_field_instances() {
     'bundle' => 'ofed_address',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Fill one or more directions of this address.',
+    'description' => '(points to content type download)',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -266,7 +266,7 @@ function ofed_feature_address_field_default_field_instances() {
     'bundle' => 'ofed_address',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Fill one or more email address of this address.',
+    'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -401,7 +401,7 @@ function ofed_feature_address_field_default_field_instances() {
     'bundle' => 'ofed_address',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Fill the location name of this address.',
+    'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -462,7 +462,7 @@ function ofed_feature_address_field_default_field_instances() {
     'bundle' => 'ofed_address',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Fill the number of this address.',
+    'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -523,7 +523,7 @@ function ofed_feature_address_field_default_field_instances() {
     'bundle' => 'ofed_address',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Fill one the opening hours of this address.',
+    'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -583,7 +583,7 @@ function ofed_feature_address_field_default_field_instances() {
     'bundle' => 'ofed_address',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Fill one or more phone number of this address.',
+    'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -710,7 +710,7 @@ function ofed_feature_address_field_default_field_instances() {
     'bundle' => 'ofed_address',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Fill the street of this address.',
+    'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -905,7 +905,7 @@ function ofed_feature_address_field_default_field_instances() {
     'bundle' => 'ofed_address',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Fill the zip code of this address.',
+    'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -963,6 +963,7 @@ function ofed_feature_address_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('(points to content type download)');
   t('Bus');
   t('Check the box in order to use the system date as updated date for your content item.');
   t('City');
@@ -970,17 +971,6 @@ function ofed_feature_address_field_default_field_instances() {
   t('Country');
   t('Directions');
   t('Email');
-  t('Fill one or more directions of this address.');
-  t('Fill one or more email address of this address.');
-  t('Fill one or more phone number of this address.');
-  t('Fill one the opening hours of this address.');
-  t('Fill the bus of this address.');
-  t('Fill the city of thos address.');
-  t('Fill the coutry of this address.');
-  t('Fill the location name of this address.');
-  t('Fill the number of this address.');
-  t('Fill the street of this address.');
-  t('Fill the zip code of this address.');
   t('GoogleMap');
   t('Last updated date');
   t('Location name');

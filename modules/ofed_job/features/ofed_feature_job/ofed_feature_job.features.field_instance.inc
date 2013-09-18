@@ -15,7 +15,7 @@ function ofed_feature_job_field_default_field_instances() {
     'bundle' => 'ofed_job',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Fill the content of this job.',
+    'description' => '',
     'display' => array(
       'block_column' => array(
         'label' => 'hidden',
@@ -113,7 +113,7 @@ function ofed_feature_job_field_default_field_instances() {
     'bundle' => 'ofed_job',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Fill the description for this job.',
+    'description' => '',
     'display' => array(
       'block_column' => array(
         'label' => 'hidden',
@@ -411,7 +411,7 @@ function ofed_feature_job_field_default_field_instances() {
     'bundle' => 'ofed_job',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Fill the year experience for this job.',
+    'description' => '',
     'display' => array(
       'block_column' => array(
         'label' => 'inline',
@@ -506,7 +506,7 @@ function ofed_feature_job_field_default_field_instances() {
     'bundle' => 'ofed_job',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Fill the languages for this job.',
+    'description' => '',
     'display' => array(
       'block_column' => array(
         'label' => 'inline',
@@ -605,7 +605,7 @@ function ofed_feature_job_field_default_field_instances() {
     'bundle' => 'ofed_job',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Fill the occupation of this job.',
+    'description' => '',
     'display' => array(
       'block_column' => array(
         'label' => 'inline',
@@ -700,7 +700,7 @@ function ofed_feature_job_field_default_field_instances() {
     'bundle' => 'ofed_job',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Fill the application process for this job.',
+    'description' => '',
     'display' => array(
       'block_column' => array(
         'label' => 'hidden',
@@ -798,7 +798,7 @@ function ofed_feature_job_field_default_field_instances() {
     'bundle' => 'ofed_job',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Fill the profile for this job.',
+    'description' => '',
     'display' => array(
       'block_column' => array(
         'label' => 'inline',
@@ -1075,7 +1075,7 @@ function ofed_feature_job_field_default_field_instances() {
     'bundle' => 'ofed_job',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Fill the reference of this job.',
+    'description' => '',
     'display' => array(
       'block_column' => array(
         'label' => 'inline',
@@ -1174,7 +1174,7 @@ function ofed_feature_job_field_default_field_instances() {
     'bundle' => 'ofed_job',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Fill the sector of this job.',
+    'description' => '',
     'display' => array(
       'block_column' => array(
         'label' => 'inline',
@@ -1272,7 +1272,7 @@ function ofed_feature_job_field_default_field_instances() {
     'bundle' => 'ofed_job',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Fill the study level of this job.',
+    'description' => '',
     'display' => array(
       'block_column' => array(
         'label' => 'inline',
@@ -1371,7 +1371,7 @@ function ofed_feature_job_field_default_field_instances() {
     'bundle' => 'ofed_job',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Fill the summary of this job.',
+    'description' => '',
     'display' => array(
       'block_column' => array(
         'label' => 'hidden',
@@ -1474,7 +1474,7 @@ function ofed_feature_job_field_default_field_instances() {
   $field_instances['node-ofed_job-field_ofed_job_thumb'] = array(
     'bundle' => 'ofed_job',
     'deleted' => 0,
-    'description' => 'Fill the image of this job.',
+    'description' => '',
     'display' => array(
       'block_column' => array(
         'label' => 'hidden',
@@ -1991,18 +1991,6 @@ function ofed_feature_job_field_default_field_instances() {
   t('Download(s)');
   t('Enter the first letters of the address that needs to be available on this content item. Make sure that your address content is created as a address content item first.');
   t('Enter the first letters of the document that needs to be available on this content item. Make sure that your document is created as a download content item first.');
-  t('Fill the application process for this job.');
-  t('Fill the content of this job.');
-  t('Fill the description for this job.');
-  t('Fill the image of this job.');
-  t('Fill the languages for this job.');
-  t('Fill the occupation of this job.');
-  t('Fill the profile for this job.');
-  t('Fill the reference of this job.');
-  t('Fill the sector of this job.');
-  t('Fill the study level of this job.');
-  t('Fill the summary of this job.');
-  t('Fill the year experience for this job.');
   t('Job description');
   t('Job reference');
   t('Language(s)');

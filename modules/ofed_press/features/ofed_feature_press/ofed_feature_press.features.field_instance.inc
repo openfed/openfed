@@ -15,7 +15,7 @@ function ofed_feature_press_field_default_field_instances() {
     'bundle' => 'ofed_press',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Fill the author name of this press.',
+    'description' => '',
     'display' => array(
       'block_column' => array(
         'label' => 'inline',
@@ -129,7 +129,7 @@ function ofed_feature_press_field_default_field_instances() {
     'bundle' => 'ofed_press',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Fill the content of this press.',
+    'description' => '',
     'display' => array(
       'block_column' => array(
         'label' => 'above',
@@ -240,7 +240,7 @@ function ofed_feature_press_field_default_field_instances() {
     'bundle' => 'ofed_press',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Fill the contact name of this press.',
+    'description' => '',
     'display' => array(
       'block_column' => array(
         'label' => 'above',
@@ -776,7 +776,7 @@ function ofed_feature_press_field_default_field_instances() {
     'bundle' => 'ofed_press',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Fill the summary of this press.',
+    'description' => '',
     'display' => array(
       'block_column' => array(
         'label' => 'hidden',
@@ -890,7 +890,7 @@ function ofed_feature_press_field_default_field_instances() {
   $field_instances['node-ofed_press-field_ofed_press_thumb'] = array(
     'bundle' => 'ofed_press',
     'deleted' => 0,
-    'description' => 'Fill the image of this press.',
+    'description' => '',
     'display' => array(
       'block_column' => array(
         'label' => 'above',
@@ -1239,11 +1239,6 @@ function ofed_feature_press_field_default_field_instances() {
   t('Contact person(s)');
   t('Download(s)');
   t('Enter the first letters of the document that needs to be available on this content item. Make sure that your document is created as a download content item first.');
-  t('Fill the author name of this press.');
-  t('Fill the contact name of this press.');
-  t('Fill the content of this press.');
-  t('Fill the image of this press.');
-  t('Fill the summary of this press.');
   t('Last updated date');
   t('Link(s)');
   t('Publication date');

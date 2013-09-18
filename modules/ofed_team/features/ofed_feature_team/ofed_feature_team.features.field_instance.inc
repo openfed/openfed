@@ -15,7 +15,7 @@ function ofed_feature_team_field_default_field_instances() {
     'bundle' => 'field_ofed_team_social',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Fill the URL of the social media site.',
+    'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -95,7 +95,7 @@ function ofed_feature_team_field_default_field_instances() {
     'bundle' => 'ofed_team',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Fill the content of this team member.',
+    'description' => '',
     'display' => array(
       'block_column' => array(
         'label' => 'hidden',
@@ -181,7 +181,7 @@ function ofed_feature_team_field_default_field_instances() {
     'bundle' => 'ofed_team',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Fill the civility title of this team member.',
+    'description' => '',
     'display' => array(
       'block_column' => array(
         'label' => 'hidden',
@@ -364,7 +364,7 @@ function ofed_feature_team_field_default_field_instances() {
     'bundle' => 'ofed_team',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Fill the email address of this team member.',
+    'description' => '',
     'display' => array(
       'block_column' => array(
         'label' => 'above',
@@ -448,7 +448,7 @@ function ofed_feature_team_field_default_field_instances() {
     'bundle' => 'ofed_team',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Fill the first name of this team member.',
+    'description' => '',
     'display' => array(
       'block_column' => array(
         'label' => 'hidden',
@@ -539,7 +539,7 @@ function ofed_feature_team_field_default_field_instances() {
     'bundle' => 'ofed_team',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Fill the function of this team member.',
+    'description' => '',
     'display' => array(
       'block_column' => array(
         'label' => 'inline',
@@ -629,7 +629,7 @@ function ofed_feature_team_field_default_field_instances() {
     'bundle' => 'ofed_team',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Fill the gender of this team member.',
+    'description' => '',
     'display' => array(
       'block_column' => array(
         'label' => 'inline',
@@ -711,7 +711,7 @@ function ofed_feature_team_field_default_field_instances() {
     'bundle' => 'ofed_team',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Fill the last name of this team member.',
+    'description' => '',
     'display' => array(
       'block_column' => array(
         'label' => 'hidden',
@@ -802,7 +802,7 @@ function ofed_feature_team_field_default_field_instances() {
     'bundle' => 'ofed_team',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Fill the phoen number of this team member.',
+    'description' => '',
     'display' => array(
       'block_column' => array(
         'label' => 'hidden',
@@ -884,7 +884,7 @@ function ofed_feature_team_field_default_field_instances() {
   $field_instances['node-ofed_team-field_ofed_team_picture'] = array(
     'bundle' => 'ofed_team',
     'deleted' => 0,
-    'description' => 'Fill the image of this team members.',
+    'description' => '',
     'display' => array(
       'block_column' => array(
         'label' => 'hidden',
@@ -1545,16 +1545,6 @@ function ofed_feature_team_field_default_field_instances() {
   t('Civility title');
   t('Email');
   t('Enter the first letters of the address that needs to be available on this content item. Make sure that your address content is created as a address content item first.');
-  t('Fill the URL of the social media site.');
-  t('Fill the civility title of this team member.');
-  t('Fill the content of this team member.');
-  t('Fill the email address of this team member.');
-  t('Fill the first name of this team member.');
-  t('Fill the function of this team member.');
-  t('Fill the gender of this team member.');
-  t('Fill the image of this team members.');
-  t('Fill the last name of this team member.');
-  t('Fill the phoen number of this team member.');
   t('First name');
   t('Function');
   t('Gender');

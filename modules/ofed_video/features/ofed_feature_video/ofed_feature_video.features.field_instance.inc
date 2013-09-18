@@ -15,7 +15,7 @@ function ofed_feature_video_field_default_field_instances() {
     'bundle' => 'ofed_video',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Fill the content of this video.',
+    'description' => '',
     'display' => array(
       'block_column' => array(
         'label' => 'hidden',
@@ -334,7 +334,7 @@ function ofed_feature_video_field_default_field_instances() {
     'bundle' => 'ofed_video',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Fill the link to this video.',
+    'description' => '',
     'display' => array(
       'block_column' => array(
         'label' => 'hidden',
@@ -617,7 +617,7 @@ function ofed_feature_video_field_default_field_instances() {
     'bundle' => 'ofed_video',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Fill the summary of this video.',
+    'description' => '',
     'display' => array(
       'block_column' => array(
         'label' => 'hidden',
@@ -990,10 +990,6 @@ function ofed_feature_video_field_default_field_instances() {
   t('Check the box in order to use the system date as updated date for your content item.');
   t('Description');
   t('Enter the first letters of the document that needs to be available on this content item. Make sure that your document is created as a download content item first.');
-  t('Fill the URL of this video (support YouTube, Vimeo and Dailymotion).');
-  t('Fill the content of this video.');
-  t('Fill the link to this video.');
-  t('Fill the summary of this video.');
   t('Last updated date');
   t('Link');
   t('Publication date');

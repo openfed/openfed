@@ -126,7 +126,7 @@ function ofed_feature_meeting_field_default_field_instances() {
     'bundle' => 'ofed_meeting',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Fill the content of this meeting.',
+    'description' => '',
     'display' => array(
       'block_column' => array(
         'label' => 'hidden',
@@ -223,7 +223,7 @@ function ofed_feature_meeting_field_default_field_instances() {
   $field_instances['node-ofed_meeting-field_ofed_meeting_date'] = array(
     'bundle' => 'ofed_meeting',
     'deleted' => 0,
-    'description' => 'Fill the start and the end date of this meeting.',
+    'description' => '',
     'display' => array(
       'block_column' => array(
         'label' => 'inline',
@@ -510,7 +510,7 @@ function ofed_feature_meeting_field_default_field_instances() {
     'bundle' => 'ofed_meeting',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Fill the oraganizer of this meeting.',
+    'description' => '',
     'display' => array(
       'block_column' => array(
         'label' => 'inline',
@@ -751,7 +751,7 @@ function ofed_feature_meeting_field_default_field_instances() {
     'bundle' => 'ofed_meeting',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Fill the summary of this summary.',
+    'description' => '',
     'display' => array(
       'block_column' => array(
         'label' => 'hidden',
@@ -1099,10 +1099,6 @@ function ofed_feature_meeting_field_default_field_instances() {
   t('Download(s)');
   t('Enter the first letters of the address that needs to be available on this content item. Make sure that your address content is created as a address content item first.');
   t('Enter the first letters of the document that needs to be available on this content item. Make sure that your document is created as a download content item first.');
-  t('Fill the content of this meeting.');
-  t('Fill the oraganizer of this meeting.');
-  t('Fill the start and the end date of this meeting.');
-  t('Fill the summary of this summary.');
   t('Last updated date');
   t('Organizer');
   t('Publication date');

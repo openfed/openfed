@@ -15,7 +15,7 @@ function ofed_feature_news_field_default_field_instances() {
     'bundle' => 'ofed_news',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Fill the author name of this news.',
+    'description' => '',
     'display' => array(
       'block_column' => array(
         'label' => 'above',
@@ -127,7 +127,7 @@ function ofed_feature_news_field_default_field_instances() {
     'bundle' => 'ofed_news',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Fill the content of this news.',
+    'description' => '',
     'display' => array(
       'block_column' => array(
         'label' => 'above',
@@ -662,7 +662,7 @@ function ofed_feature_news_field_default_field_instances() {
     'bundle' => 'ofed_news',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Fill the summary of this news.',
+    'description' => '',
     'display' => array(
       'block_column' => array(
         'label' => 'hidden',
@@ -749,7 +749,7 @@ function ofed_feature_news_field_default_field_instances() {
   $field_instances['node-ofed_news-field_ofed_news_thumb'] = array(
     'bundle' => 'ofed_news',
     'deleted' => 0,
-    'description' => 'Fill the image of this news.',
+    'description' => '',
     'display' => array(
       'block_column' => array(
         'label' => 'hidden',
@@ -1102,10 +1102,6 @@ function ofed_feature_news_field_default_field_instances() {
   t('Check the box in order to use the system date as updated date for your content item.');
   t('Download(s)');
   t('Enter the first letters of the document that needs to be available on this content item. Make sure that your document is created as a download content item first.');
-  t('Fill the author name of this news.');
-  t('Fill the content of this news.');
-  t('Fill the image of this news.');
-  t('Fill the summary of this news.');
   t('Last updated date');
   t('Link(s)');
   t('Publication date');
