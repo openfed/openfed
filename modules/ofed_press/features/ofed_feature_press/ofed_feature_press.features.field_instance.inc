@@ -325,7 +325,7 @@ function ofed_feature_press_field_default_field_instances() {
     'bundle' => 'ofed_press',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Enter the first letters of the document that needs to be available on this content item. Make sure that your document is created as a download content item first.',
+    'description' => '',
     'display' => array(
       'block_column' => array(
         'label' => 'above',
@@ -416,7 +416,7 @@ function ofed_feature_press_field_default_field_instances() {
     'bundle' => 'ofed_press',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Add an additional link related to this press.',
+    'description' => '',
     'display' => array(
       'block_column' => array(
         'label' => 'above',
@@ -666,7 +666,7 @@ function ofed_feature_press_field_default_field_instances() {
     'bundle' => 'ofed_press',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Add the source of this press.',
+    'description' => '',
     'display' => array(
       'block_column' => array(
         'label' => 'above',
@@ -1231,14 +1231,11 @@ function ofed_feature_press_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Add an additional link related to this press.');
-  t('Add the source of this press.');
   t('Author');
   t('Body');
   t('Check the box in order to use the system date as updated date for your content item.');
   t('Contact person(s)');
   t('Download(s)');
-  t('Enter the first letters of the document that needs to be available on this content item. Make sure that your document is created as a download content item first.');
   t('Last updated date');
   t('Link(s)');
   t('Publication date');
