@@ -164,13 +164,13 @@ function ofed_feature_team_strongarm() {
           'weight' => '1',
         ),
         'path' => array(
-          'weight' => '19',
+          'weight' => '16',
         ),
         'redirect' => array(
-          'weight' => '18',
+          'weight' => '15',
         ),
         'xmlsitemap' => array(
-          'weight' => '17',
+          'weight' => '14',
         ),
       ),
       'display' => array(

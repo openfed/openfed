@@ -64,7 +64,7 @@ function ofed_feature_team_field_default_field_instances() {
     'bundle' => 'field_ofed_team_social',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Select a social media.',
+    'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -172,7 +172,7 @@ function ofed_feature_team_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 11,
+      'weight' => 2,
     ),
   );
 
@@ -260,7 +260,7 @@ function ofed_feature_team_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 6,
+      'weight' => 3,
     ),
   );
 
@@ -269,7 +269,7 @@ function ofed_feature_team_field_default_field_instances() {
     'bundle' => 'ofed_team',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Enter the first letters of the address that needs to be available on this content item. Make sure that your address content is created as a address content item first.',
+    'description' => '',
     'display' => array(
       'block_column' => array(
         'label' => 'above',
@@ -355,7 +355,7 @@ function ofed_feature_team_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 15,
+      'weight' => 12,
     ),
   );
 
@@ -439,7 +439,7 @@ function ofed_feature_team_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'email_textfield',
-      'weight' => 9,
+      'weight' => 6,
     ),
   );
 
@@ -530,7 +530,7 @@ function ofed_feature_team_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 8,
+      'weight' => 5,
     ),
   );
 
@@ -620,7 +620,7 @@ function ofed_feature_team_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 14,
+      'weight' => 10,
     ),
   );
 
@@ -702,7 +702,7 @@ function ofed_feature_team_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 13,
+      'weight' => 9,
     ),
   );
 
@@ -793,7 +793,7 @@ function ofed_feature_team_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 7,
+      'weight' => 4,
     ),
   );
 
@@ -876,7 +876,7 @@ function ofed_feature_team_field_default_field_instances() {
       'module' => 'html5_tools',
       'settings' => array(),
       'type' => 'telwidget',
-      'weight' => 10,
+      'weight' => 7,
     ),
   );
 
@@ -989,7 +989,7 @@ function ofed_feature_team_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 12,
+      'weight' => 8,
     ),
   );
 
@@ -1177,7 +1177,7 @@ function ofed_feature_team_field_default_field_instances() {
     'bundle' => 'ofed_team',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Add a social media link for this team manager.',
+    'description' => '',
     'display' => array(
       'block_column' => array(
         'label' => 'above',
@@ -1256,7 +1256,7 @@ function ofed_feature_team_field_default_field_instances() {
       'module' => 'field_collection',
       'settings' => array(),
       'type' => 'field_collection_embed',
-      'weight' => 16,
+      'weight' => 11,
     ),
   );
 
@@ -1538,13 +1538,11 @@ function ofed_feature_team_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Add a social media link for this team manager.');
   t('Address');
   t('Body');
   t('Check the box in order to use the system date as updated date for your content item.');
   t('Civility title');
   t('Email');
-  t('Enter the first letters of the address that needs to be available on this content item. Make sure that your address content is created as a address content item first.');
   t('First name');
   t('Function');
   t('Gender');
@@ -1552,7 +1550,6 @@ function ofed_feature_team_field_default_field_instances() {
   t('Last updated date');
   t('Phone');
   t('Publication date');
-  t('Select a social media.');
   t('Social media link ');
   t('Social media site');
   t('Social medias');

@@ -7,16 +7,13 @@
 /**
  * Implements hook_ctools_plugin_api().
  */
-function ofed_feature_team_ctools_plugin_api() {
-  list($module, $api) = func_get_args();
+function ofed_feature_team_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "ds" && $api == "ds") {
     return array("version" => "1");
   }
-  list($module, $api) = func_get_args();
   if ($module == "field_group" && $api == "field_group") {
     return array("version" => "1");
   }
-  list($module, $api) = func_get_args();
   if ($module == "strongarm" && $api == "strongarm") {
     return array("version" => "1");
   }
@@ -25,7 +22,7 @@ function ofed_feature_team_ctools_plugin_api() {
 /**
  * Implements hook_views_api().
  */
-function ofed_feature_team_views_api() {
+function ofed_feature_team_views_api($module = NULL, $api = NULL) {
   return array("api" => "3.0");
 }
 
@@ -56,6 +53,7 @@ function ofed_feature_team_image_default_styles() {
         'weight' => 2,
       ),
     ),
+    'label' => 'ofed_team_thumb',
   );
 
   // Exported image style: ofed_team_thumb_block_column.
@@ -79,6 +77,7 @@ function ofed_feature_team_image_default_styles() {
         'weight' => 2,
       ),
     ),
+    'label' => 'ofed_team_thumb_block_column',
   );
 
   // Exported image style: ofed_team_thumb_block_list.
@@ -102,6 +101,7 @@ function ofed_feature_team_image_default_styles() {
         'weight' => 2,
       ),
     ),
+    'label' => 'ofed_team_thumb_block_list',
   );
 
   // Exported image style: ofed_team_thumb_block_teaser.
@@ -125,6 +125,7 @@ function ofed_feature_team_image_default_styles() {
         'weight' => 2,
       ),
     ),
+    'label' => 'ofed_team_thumb_block_teaser',
   );
 
   // Exported image style: ofed_team_thumb_page_list.
@@ -148,6 +149,7 @@ function ofed_feature_team_image_default_styles() {
         'weight' => 2,
       ),
     ),
+    'label' => 'ofed_team_thumb_page_list',
   );
 
   return $styles;
@@ -161,6 +163,7 @@ function ofed_feature_team_node_info() {
     'ofed_team' => array(
       'name' => t('Team members'),
       'base' => 'node_content',
+      'description' => '',
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',
