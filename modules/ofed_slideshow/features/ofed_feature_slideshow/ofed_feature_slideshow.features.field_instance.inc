@@ -14,7 +14,7 @@ function ofed_feature_slideshow_field_default_field_instances() {
   $field_instances['node-ofed_slideshow-field_ofed_slide_images'] = array(
     'bundle' => 'ofed_slideshow',
     'deleted' => 0,
-    'description' => 'Upload an additional image related to this slideshow.',
+    'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -75,6 +75,7 @@ function ofed_feature_slideshow_field_default_field_instances() {
         'weight' => 1,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_ofed_slide_images',
     'label' => 'Image(s)',
@@ -98,7 +99,7 @@ function ofed_feature_slideshow_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 6,
+      'weight' => 2,
     ),
   );
 
@@ -157,7 +158,7 @@ function ofed_feature_slideshow_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 7,
+      'weight' => 3,
     ),
   );
 
@@ -322,7 +323,6 @@ function ofed_feature_slideshow_field_default_field_instances() {
   t('Publication date');
   t('This date field is used to indicate when the content element was last modified.');
   t('This date typically refers to the moment the content element was released and is to be displayed without label next to the title of the content element in lists and pages. It is typically used to sort content.');
-  t('Upload an additional image related to this slideshow.');
 
   return $field_instances;
 }

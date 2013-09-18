@@ -148,13 +148,13 @@ function ofed_feature_slideshow_strongarm() {
           'weight' => '1',
         ),
         'path' => array(
-          'weight' => '10',
+          'weight' => '7',
         ),
         'redirect' => array(
-          'weight' => '9',
+          'weight' => '6',
         ),
         'xmlsitemap' => array(
-          'weight' => '8',
+          'weight' => '5',
         ),
       ),
       'display' => array(
