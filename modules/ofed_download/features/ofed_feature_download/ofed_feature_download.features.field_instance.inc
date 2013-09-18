@@ -207,7 +207,7 @@ function ofed_feature_download_field_default_field_instances() {
   $field_instances['node-ofed_download-field_ofed_download_file'] = array(
     'bundle' => 'ofed_download',
     'deleted' => 0,
-    'description' => 'Upload a file related to this download.',
+    'description' => '',
     'display' => array(
       'block_column' => array(
         'label' => 'above',
@@ -941,7 +941,6 @@ function ofed_feature_download_field_default_field_instances() {
   t('This date field is used to indicate when the content element was last modified.');
   t('This date typically refers to the moment the content element was released and is to be displayed without label next to the title of the content element in lists and pages. It is typically used to sort content.');
   t('Thumb');
-  t('Upload a file related to this download.');
 
   return $field_instances;
 }
