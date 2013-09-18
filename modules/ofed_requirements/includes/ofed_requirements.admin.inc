@@ -583,7 +583,7 @@ function _ofed_requirements_check_feature($feature_key, $feature_name) {
 
     case FEATURES_OVERRIDDEN:
       // Actual code state = Database content != File content (see api.txt in feature module.)
-      $errors[] = t('The !feature is overrided. The feature does match with the feature file content.', array('!feature' => $feature_name));
+      $errors[] = t('The !feature is overriden. The feature does match with the feature file content.', array('!feature' => $feature_name));
       break;
 
     default:
@@ -592,7 +592,7 @@ function _ofed_requirements_check_feature($feature_key, $feature_name) {
       break;
   }
 
-  // If the feature needs review or is overrided;
+  // If the feature needs review or is overriden;
   if ($feature_status == FEATURES_NEEDS_REVIEW || $feature_status == FEATURES_OVERRIDDEN) {
     // Define component names (used for message).
     $component_names = array(
@@ -634,7 +634,7 @@ function _ofed_requirements_check_feature($feature_key, $feature_name) {
 
         case FEATURES_OVERRIDDEN:
           // Actual code state = Database content != File content (see api.txt in feature module.)
-          $errors[] = t('The component "!component" is overrided.', array('!component' => $component_name));
+          $errors[] = t('The component "!component" is overriden.', array('!component' => $component_name));
           break;
 
         default:

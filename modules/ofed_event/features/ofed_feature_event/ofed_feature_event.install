@@ -220,7 +220,7 @@ function ofed_feature_event_update_7100() {
     // Set the actual value.
     $setting['pattern_var_value_now'] = variable_get($setting['pattern_var_name'], '');
 
-    // If the pattern was not overrided.
+    // If the pattern was not overriden.
     if ($setting['pattern_var_value_now'] == $setting['pattern_var_value_old']) {
       // Update pattern variable.
       variable_set($setting['pattern_var_name'], $setting['pattern_var_value_new']);

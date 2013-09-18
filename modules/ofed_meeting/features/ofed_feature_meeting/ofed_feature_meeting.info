@@ -1,5 +1,5 @@
 name = Meeting
-description = Feature needed to manage meeting.
+description = Feature needed to manage meetings.
 core = 7.x
 package = OpenFed
 php = 5.2.4

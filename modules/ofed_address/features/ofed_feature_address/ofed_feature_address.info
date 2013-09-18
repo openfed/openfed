@@ -1,5 +1,5 @@
 name = Address
-description = Feature needed to manage address.
+description = Feature needed to manage addresses.
 core = 7.x
 package = OpenFed
 php = 5.2.4
