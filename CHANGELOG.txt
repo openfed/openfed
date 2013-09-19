@@ -3,6 +3,9 @@ CHANGELOG
 
 No date yet - Version 7.x-1.x
 -----------------------------
+  * Upgraded modules:
+    #2090401: Module upgrade: rules
+
   * Issues:
     #2087513: Jobs CMS view proposal
     #2089895: RTE not loading
