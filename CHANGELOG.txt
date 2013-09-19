@@ -33,6 +33,7 @@ No date yet - Version 7.x-1.x
     #2087523: Add support for German language (banner feature).
     #2087523: Add support for German language (download feature).
     #2087523: Add support for German language (event feature).
+    #2087523: Add support for German language (page feature).
     #Others:
       - Work with dev version of ofed_cms_theme
       - Remove redundant lables and fix some typos
