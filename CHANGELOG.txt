@@ -5,6 +5,7 @@ No date yet - Version 7.x-1.x
 -----------------------------
   * Upgraded modules:
     #2090401: Module upgrade: rules
+    #2092673: Module upgrade: seckit
 
   * Issues:
     #2087513: Jobs CMS view proposal
