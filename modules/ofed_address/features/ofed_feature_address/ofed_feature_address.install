@@ -121,14 +121,14 @@ function ofed_feature_address_install() {
     }
 
     // DE.
-//    if (isset($language['de'])) {
-//      $path = array(
-//        'source'   => $path_source,
-//        'alias'    => '',
-//        'language' => 'de',
-//      );
-//      db_insert('url_alias')->fields($path)->execute();
-//    }
+    if (isset($language['de'])) {
+      $path = array(
+        'source'   => $path_source,
+        'alias'    => 'adressen',
+        'language' => 'de',
+      );
+      db_insert('url_alias')->fields($path)->execute();
+    }
   }
 }
 
@@ -178,16 +178,6 @@ function ofed_feature_address_update_7100 () {
       );
       db_insert('url_alias')->fields($path)->execute();
     }
-
-    // DE.
-//    if (isset($language['de']) && !drupal_lookup_path('alias', $path_source, 'de')) {
-//      $path = array(
-//        'source'   => $path_source,
-//        'alias'    => '',
-//        'language' => 'de',
-//      );
-//      db_insert('url_alias')->fields($path)->execute();
-//    }
   }
 }
 
@@ -248,5 +238,30 @@ function ofed_feature_address_update_7101 () {
     }
     // Set variable content.
     variable_set('field_bundle_settings_node__' . $bundle, $bundle_settings_node);
+  }
+}
+
+/**
+ * Create the missing paths alias for german language.
+ */
+function ofed_feature_event_update_7102 () {
+  // Paths alias management.
+  $path_source = 'addresses';
+  // Set path alias whitelist.
+  $path_alias_whitelist = variable_get('path_alias_whitelist', array());
+  if (!array_key_exists($path_source, $path_alias_whitelist)) {
+    $path_alias_whitelist[$path_source] = TRUE;
+    variable_set('path_alias_whitelist', $path_alias_whitelist);
+  }
+
+  // Set path alias for german language.
+  $languages = language_list('enabled');
+  if (isset($languages['de']) && !drupal_lookup_path('alias', $path_source, 'de')) {
+    $path = array(
+      'source'   => $path_source,
+      'alias'    => 'adressen',
+      'language' => 'de',
+    );
+    db_insert('url_alias')->fields($path)->execute();
   }
 }

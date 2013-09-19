@@ -28,6 +28,11 @@ No date yet - Version 7.x-1.x
     #2087531: remove redundant text from "add content" node
     #2044027: Notice: Trying to get property of non-object
     #2090067: Drush fra -y fails
+    #2087523: Add support for German language (install process).
+    #2087523: Add support for German language (address feature).
+    #2087523: Add support for German language (banner feature).
+    #2087523: Add support for German language (download feature).
+    #2087523: Add support for German language (event feature).
     #Others:
       - Work with dev version of ofed_cms_theme
       - Remove redundant lables and fix some typos
