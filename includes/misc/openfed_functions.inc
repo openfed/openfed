@@ -297,6 +297,9 @@ function _openfed_get_permissions_for_role($role_name) {
         'administer imce',
         // IMAGE.
         'administer image styles',
+        // Interface switcher (ofed_switcher)
+        'access ofed_switcher administration',
+        'access ofed_switcher content',
         // Link Checker.
         'access broken links report',
         'access own broken links report',
@@ -468,6 +471,9 @@ function _openfed_get_permissions_for_role($role_name) {
         'administer flags',
         // Image.
         'administer image styles',
+        // Interface switcher (ofed_switcher)
+        'access ofed_switcher administration',
+        'access ofed_switcher content',
         // Link Checker.
         'access broken links report',
         'access own broken links report',
@@ -602,6 +608,9 @@ function _openfed_get_permissions_for_role($role_name) {
         'use text format full_html',
         // Image.
         'administer image styles',
+        // Interface switcher (ofed_switcher)
+        'access ofed_switcher administration',
+        'access ofed_switcher content',
         // Link Checker.
         'access broken links report',
         'access own broken links report',

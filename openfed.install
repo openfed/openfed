@@ -66,7 +66,7 @@ function openfed_update_7101() {
 }
 
 /**
- * Fix issue with ckeditor configuration
+ * Fix issue with ckeditor configuration (#2087599)
  */
 function openfed_update_7102() {
   // Update Full settings
@@ -103,4 +103,21 @@ function openfed_update_7102() {
   ))
   ->condition('name', 'Advanced', '=')
   ->execute();
+}
+
+/**
+ * Fix #2087517 permissions on the start page
+ */
+function openfed_update_7103() {
+  $roles = array('Builder', 'Configurator', 'Content Manager');
+  $permissions = array('access ofed_switcher administration', 'access ofed_switcher content');
+
+  foreach ($roles as $role_name) {
+    $role = user_role_load_by_name($role_name);
+
+    if (!empty($role->rid)) {
+      // Assign permission to role.
+      user_role_grant_permissions($role->rid, $permissions);
+    }
+  }
 }
