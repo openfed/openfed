@@ -116,6 +116,16 @@ function ofed_feature_slideshow_install() {
       );
       db_insert('url_alias')->fields($path)->execute();
     }
+    
+    // DE.
+    if (isset($language['de'])) {
+      $path = array(
+        'source' => $path_source,
+        'alias' => 'slideshows',
+        'language' => 'de',
+      );
+      db_insert('url_alias')->fields($path)->execute();
+    }
   }
 }
 
@@ -295,5 +305,30 @@ function ofed_feature_slideshow_update_7101 () {
     }
     // Set variable content.
     variable_set('field_bundle_settings_node__' . $bundle, $bundle_settings_node);
+  }
+}
+
+/**
+ * Create the missing paths alias for german language.
+ */
+function ofed_feature_slideshow_update_7102 () {
+  // Paths alias management.
+  $path_source = 'slideshows';
+  // Set path alias whitelist.
+  $path_alias_whitelist = variable_get('path_alias_whitelist', array());
+  if (!array_key_exists($path_source, $path_alias_whitelist)) {
+    $path_alias_whitelist[$path_source] = TRUE;
+    variable_set('path_alias_whitelist', $path_alias_whitelist);
+  }
+
+  // Set path alias for german language.
+  $languages = language_list('enabled');
+  if (isset($languages['de']) && !drupal_lookup_path('alias', $path_source, 'de')) {
+    $path = array(
+      'source'   => $path_source,
+      'alias'    => 'slideshows',
+      'language' => 'de',
+    );
+    db_insert('url_alias')->fields($path)->execute();
   }
 }
