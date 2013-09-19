@@ -282,6 +282,13 @@ function ofed_feature_meeting_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_ofed_meeting_de_pattern';
+  $strongarm->value = 'sitzungen/[node:title]';
+  $export['pathauto_node_ofed_meeting_de_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_ofed_meeting_pattern';
   $strongarm->value = 'meetings/[node:title]';
   $export['pathauto_node_ofed_meeting_pattern'] = $strongarm;
@@ -313,6 +320,13 @@ function ofed_feature_meeting_strongarm() {
   $strongarm->name = 'pathauto_taxonomy_term_ofed_meeting_nl_pattern';
   $strongarm->value = 'vergaderingen/[term:name]';
   $export['pathauto_taxonomy_term_ofed_meeting_nl_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_ofed_meeting_de_pattern';
+  $strongarm->value = 'sitzungen/[term:name]';
+  $export['pathauto_taxonomy_term_ofed_meeting_de_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

@@ -36,6 +36,7 @@ No date yet - Version 7.x-1.x
     #2087523: Add support for German language (page feature)
     #2087523: Add support for German language (job feature)
     #2087523: Add support for German language (faq feature)
+    #2087523: Add support for German language (meeting feature)
     #2087517: permissions on the start page in minifed
     #Others:
       - Work with dev version of ofed_cms_theme

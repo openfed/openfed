@@ -268,7 +268,7 @@ function ofed_feature_job_update_7102 () {
   if (isset($languages['de']) && !drupal_lookup_path('alias', $path_source, 'de')) {
     $path = array(
       'source'   => $path_source,
-      'alias'    => 'arbeitsplätze',
+      'alias'    => 'arbeitsplatze',
       'language' => 'de',
     );
     db_insert('url_alias')->fields($path)->execute();
