@@ -288,9 +288,9 @@ function ofed_feature_job_field_default_field_instances() {
       'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'rows' => 5,
+        'size' => 80,
       ),
-      'type' => 'text_textarea',
+      'type' => 'text_textfield',
       'weight' => 16,
     ),
   );
@@ -1987,7 +1987,6 @@ function ofed_feature_job_field_default_field_instances() {
   t('Application procedure');
   t('Body');
   t('Check the box in order to use the system date as updated date for your content item.');
-  t('Required diploma(s)');
   t('Download(s)');
   t('Job description');
   t('Job reference');
@@ -1996,6 +1995,7 @@ function ofed_feature_job_field_default_field_instances() {
   t('Occupation(s)');
   t('Profile');
   t('Publication date');
+  t('Required diploma(s)');
   t('Sector');
   t('Study level(s)');
   t('Summary');

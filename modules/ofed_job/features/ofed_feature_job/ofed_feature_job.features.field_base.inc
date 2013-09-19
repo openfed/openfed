@@ -67,7 +67,7 @@ function ofed_feature_job_field_default_field_bases() {
   // Exported field_base: 'field_ofed_job_diplomas'
   $field_bases['field_ofed_job_diplomas'] = array(
     'active' => 1,
-    'cardinality' => 1,
+    'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_ofed_job_diplomas',
@@ -86,9 +86,11 @@ function ofed_feature_job_field_default_field_bases() {
     ),
     'locked' => 0,
     'module' => 'text',
-    'settings' => array(),
+    'settings' => array(
+      'max_length' => 500,
+    ),
     'translatable' => 0,
-    'type' => 'text_long',
+    'type' => 'text',
   );
 
   // Exported field_base: 'field_ofed_job_docs'

@@ -27,6 +27,7 @@ No date yet - Version 7.x-1.x
     #2089805: Webform CMS view proposal
     #2087531: remove redundant text from "add content" node
     #2044027: Notice: Trying to get property of non-object
+    #2090067: Drush fra -y fails
     #Others:
       - Work with dev version of ofed_cms_theme
       - Remove redundant lables and fix some typos
