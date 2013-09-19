@@ -64,3 +64,43 @@ function openfed_update_7101() {
     drupal_write_record('ds_view_modes', $view_mode);
   }
 }
+
+/**
+ * Fix issue with ckeditor configuration
+ */
+function openfed_update_7102() {
+  // Update Full settings
+  $settings = db_select('ckeditor_settings', 'c')
+    ->fields('c', array('settings'))
+    ->condition('name', 'Full')
+    ->execute()
+    ->fetchField();
+  $settings = unserialize($settings);
+  $settings['css_path'] = ' /profiles/openfed/assets/rte/rte.custom.css';
+  $settings['styles_path'] = ' /profiles/openfed/assets/rte/rte.custom.js';
+
+  db_update('ckeditor_settings')
+  ->fields(array(
+    'settings' => serialize($settings),
+  ))
+  ->condition('name', 'Full', '=')
+  ->execute();
+
+  // Update Full settings
+  $settings = db_select('ckeditor_settings', 'c')
+    ->fields('c', array('settings'))
+    ->condition('name', 'Advanced')
+    ->execute()
+    ->fetchField();
+  $settings = unserialize($settings);
+
+  $settings['css_path'] = ' /profiles/openfed/assets/rte/rte.custom.css';
+  $settings['styles_path'] = ' /profiles/openfed/assets/rte/rte.custom.js';
+
+  db_update('ckeditor_settings')
+  ->fields(array(
+    'settings' => serialize($settings),
+  ))
+  ->condition('name', 'Advanced', '=')
+  ->execute();
+}
