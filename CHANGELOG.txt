@@ -47,6 +47,7 @@ No date yet - Version 7.x-1.x
     #Others:
       - Work with dev version of ofed_cms_theme
       - Remove redundant lables and fix some typos
+      - Make use of OpenFed CMS theme 1.1
 
 15 September 2013 - Version 7.x-1.0-rc3
 ---------------------------------------
