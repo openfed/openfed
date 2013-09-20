@@ -4,6 +4,7 @@ CHANGELOG
 No date yet - Version 7.x-1.x
 -----------------------------
   * Upgraded modules:
+    #2075093: Theme upgrade: ofed_theme_cms
     #2090401: Module upgrade: rules
     #2092673: Module upgrade: seckit
 
