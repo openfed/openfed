@@ -61,7 +61,7 @@ projects[ofed_vmcd][subdir] = contrib
 projects[ofed_theme_nerra][version] = "1.x-dev"
 projects[ofed_theme_nerra][subdir] = contrib
 
-projects[ofed_theme_cms][version] = "1.1"
+projects[ofed_theme_cms][version] = "1.x-dev"
 projects[ofed_theme_cms][subdir] = contrib
 
 projects[ofed_theme_maintenance][version] = "1.0"
