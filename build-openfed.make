@@ -22,3 +22,8 @@ projects[openfed][type] = profile
 projects[openfed][version] = 1.x-dev
 projects[openfed][download][type] = git
 projects[openfed][download][branch] = 7.x-1.x
+
+; Localize
+translations[] = nl
+translations[] = fr
+translations[] = de
