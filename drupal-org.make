@@ -230,7 +230,7 @@ projects[l10n_client][subdir] = contrib
 projects[l10n_update][type] = module
 projects[l10n_update][download][type] = git
 projects[l10n_update][download][revision] = 8c85a9f
-projects[l10n_update][download][branch] = "7.x-1.x" 
+projects[l10n_update][download][branch] = "7.x-1.x"
 projects[l10n_update][subdir] = contrib
 projects[l10n_update][patch][1671570] = "https://drupal.org/files/l10n_update-fetch-module-update-1671570-18_0.patch"
 
@@ -339,7 +339,7 @@ projects[robotstxt][subdir] = contrib
 projects[role_delegation][version] = "1.1"
 projects[role_delegation][subdir] = contrib
 
-projects[rules][version] = "2.4"
+projects[rules][version] = "2.3"
 projects[rules][subdir] = contrib
 
 projects[scheduler][version] = "1.1"
