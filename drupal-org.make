@@ -3,9 +3,9 @@ api = 2
 core = 7.x
 
 ; Localize
-translations[] = nl
-translations[] = fr
-translations[] = de
+;translations[] = nl
+;translations[] = fr
+;translations[] = de
 
 ;
 ; Libraries
