@@ -9,6 +9,7 @@ No date yet - Version 7.x-1.x
     #2092673: Module upgrade: seckit
 
   * Issues:
+    #2095009: Added drupal-org-core.make file
     #2087509: Added nl, fr, de translations in drush make file
     #2087513: Jobs CMS view proposal
     #2089895: RTE not loading
