@@ -1,11 +1,6 @@
 api = 2
 core = 7.x
 
-; Localize
-translations[] = nl
-translations[] = fr
-translations[] = de
-
 projects[drupal][version] = "7.23"
 
 ; Allow install profiles to change the system requirements
