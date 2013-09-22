@@ -1,11 +1,14 @@
 CHANGELOG
 =========
 
-No date yet - Version 7.x-1.x
+No date yet - Version 7.x-1.0
 -----------------------------
+ 
+
+22 September 2013 - Version 7.x-1.0-rc4
+---------------------------------------
   * Upgraded modules:
     #2075093: Theme upgrade: ofed_theme_cms
-    #2090401: Module upgrade: rules
     #2092673: Module upgrade: seckit
 
   * Issues:
