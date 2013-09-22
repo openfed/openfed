@@ -3,7 +3,8 @@ CHANGELOG
 
 No date yet - Version 7.x-1.0
 -----------------------------
- 
+  * Issues:
+    #2037961: readd locale_cookie to make file 
 
 22 September 2013 - Version 7.x-1.0-rc4
 ---------------------------------------
