@@ -73,51 +73,27 @@ projects[ofed_theme_maintenance][subdir] = contrib
 
 projects[addanother][version] = "2.1"
 projects[addanother][subdir] = contrib
-projects[addanother][translations][] = nl
-projects[addanother][translations][] = fr
-projects[addanother][translations][] = de
 
 projects[admin_menu][version] = "3.0-rc4"
 projects[admin_menu][subdir] = contrib
-projects[admin_menu][translations][] = nl
-projects[admin_menu][translations][] = fr
-projects[admin_menu][translations][] = de
 
 projects[admin_path][version] = "1.0"
 projects[admin_path][subdir] = contrib
-projects[admin_path][translations][] = nl
-projects[admin_path][translations][] = fr
-projects[admin_path][translations][] = de
 
 projects[admin_theme][version] = "1.0"
 projects[admin_theme][subdir] = contrib
-projects[admin_theme][translations][] = nl
-projects[admin_theme][translations][] = fr
-projects[admin_theme][translations][] = de
 
 projects[apachesolr][version] = "1.4"
 projects[apachesolr][subdir] = contrib
-projects[apachesolr][translations][] = nl
-projects[apachesolr][translations][] = fr
-projects[apachesolr][translations][] = de
 
 projects[apachesolr_attachments][version] = "1.3"
 projects[apachesolr_attachments][subdir] = contrib
-projects[apachesolr_attachments][translations][] = nl
-projects[apachesolr_attachments][translations][] = fr
-projects[apachesolr_attachments][translations][] = de
 
 projects[apachesolr_autocomplete][version] = "1.3"
 projects[apachesolr_autocomplete][subdir] = contrib
-projects[apachesolr_autocomplete][translations][] = nl
-projects[apachesolr_autocomplete][translations][] = fr
-projects[apachesolr_autocomplete][translations][] = de
 
 projects[apachesolr_multilingual][version] = "1.0-beta2"
 projects[apachesolr_multilingual][subdir] = contrib
-projects[apachesolr_multilingual][translations][] = nl
-projects[apachesolr_multilingual][translations][] = fr
-projects[apachesolr_multilingual][translations][] = de
 
 projects[backup_migrate][version] = "2.7"
 projects[backup_migrate][subdir] = contrib

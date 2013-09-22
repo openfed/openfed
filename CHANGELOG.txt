@@ -10,7 +10,6 @@ No date yet - Version 7.x-1.x
 
   * Issues:
     #2095009: Added drupal-org-core.make file
-    #2087509: Added nl, fr, de translations in drush make file
     #2087513: Jobs CMS view proposal
     #2089895: RTE not loading
     #2087599: Body not visible (related to #1983058: Code creep: ckeditor in nerra)
