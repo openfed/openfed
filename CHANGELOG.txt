@@ -1,8 +1,11 @@
 CHANGELOG
 =========
 
-No date yet - Version 7.x-1.0
------------------------------
+23 September 2013 - Version 7.x-1.0-rc5
+---------------------------------------
+  * New module:
+    #2094967: New module: comment_goodness
+
   * Issues:
     #2037961: readd locale_cookie to make file 
 

@@ -113,6 +113,9 @@ projects[ckeditor_link][subdir] = contrib
 projects[colorbox][version] = "2.4"
 projects[colorbox][subdir] = contrib
 
+projects[comment_goodies][version] = "1.4"
+projects[comment_gooedies][subdir] = contrib
+
 projects[content_access][version] = "1.2-beta2"
 projects[content_access][subdir] = contrib
 
