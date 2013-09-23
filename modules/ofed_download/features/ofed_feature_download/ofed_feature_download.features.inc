@@ -92,6 +92,7 @@ function ofed_feature_download_image_default_styles() {
   // Exported image style: ofed_download_thumb.
   $styles['ofed_download_thumb'] = array(
     'name' => 'ofed_download_thumb',
+    'label' => 'ofed_download_thumb',
     'effects' => array(
       7 => array(
         'label' => 'Scale',
@@ -115,6 +116,7 @@ function ofed_feature_download_image_default_styles() {
   // Exported image style: ofed_download_thumb_block_column.
   $styles['ofed_download_thumb_block_column'] = array(
     'name' => 'ofed_download_thumb_block_column',
+    'label' => 'ofed_download_thumb_block_column',
     'effects' => array(
       7 => array(
         'label' => 'Scale',
@@ -138,6 +140,7 @@ function ofed_feature_download_image_default_styles() {
   // Exported image style: ofed_download_thumb_block_list.
   $styles['ofed_download_thumb_block_list'] = array(
     'name' => 'ofed_download_thumb_block_list',
+    'label' => 'ofed_download_thumb_block_list',
     'effects' => array(
       7 => array(
         'label' => 'Scale',
@@ -161,6 +164,7 @@ function ofed_feature_download_image_default_styles() {
   // Exported image style: ofed_download_thumb_block_teaser.
   $styles['ofed_download_thumb_block_teaser'] = array(
     'name' => 'ofed_download_thumb_block_teaser',
+    'label' => 'ofed_download_thumb_block_teaser',
     'effects' => array(
       7 => array(
         'label' => 'Scale',
@@ -184,6 +188,7 @@ function ofed_feature_download_image_default_styles() {
   // Exported image style: ofed_download_thumb_page_list.
   $styles['ofed_download_thumb_page_list'] = array(
     'name' => 'ofed_download_thumb_page_list',
+    'label' => 'ofed_download_thumb_page_list',
     'effects' => array(
       7 => array(
         'label' => 'Scale',

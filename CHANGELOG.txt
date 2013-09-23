@@ -6,6 +6,7 @@ No date yet - Not version yet
   * Issues:
     #2095759: Check dependencies on rules_ui
     #2095743: Replace module twitter with twitter_block
+    #2095699: Cleanup features so they are note overriden once installed
 
 23 September 2013 - Version 7.x-1.0-rc5
 ---------------------------------------

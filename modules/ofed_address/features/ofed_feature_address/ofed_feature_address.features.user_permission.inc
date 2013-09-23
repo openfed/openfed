@@ -74,6 +74,7 @@ function ofed_feature_address_user_default_permissions() {
   $permissions['enter ofed_address revision log entry'] = array(
     'name' => 'enter ofed_address revision log entry',
     'roles' => array(
+      'Administrator' => 'Administrator',
       'Builder' => 'Builder',
       'Configurator' => 'Configurator',
       'Content Manager' => 'Content Manager',
@@ -85,6 +86,7 @@ function ofed_feature_address_user_default_permissions() {
   $permissions['override ofed_address authored by option'] = array(
     'name' => 'override ofed_address authored by option',
     'roles' => array(
+      'Administrator' => 'Administrator',
       'Builder' => 'Builder',
       'Configurator' => 'Configurator',
       'Content Manager' => 'Content Manager',
@@ -96,6 +98,7 @@ function ofed_feature_address_user_default_permissions() {
   $permissions['override ofed_address authored on option'] = array(
     'name' => 'override ofed_address authored on option',
     'roles' => array(
+      'Administrator' => 'Administrator',
       'Builder' => 'Builder',
       'Configurator' => 'Configurator',
       'Content Manager' => 'Content Manager',
@@ -107,6 +110,7 @@ function ofed_feature_address_user_default_permissions() {
   $permissions['override ofed_address promote to front page option'] = array(
     'name' => 'override ofed_address promote to front page option',
     'roles' => array(
+      'Administrator' => 'Administrator',
       'Builder' => 'Builder',
       'Configurator' => 'Configurator',
       'Content Manager' => 'Content Manager',
@@ -129,6 +133,7 @@ function ofed_feature_address_user_default_permissions() {
   $permissions['override ofed_address revision option'] = array(
     'name' => 'override ofed_address revision option',
     'roles' => array(
+      'Administrator' => 'Administrator',
       'Builder' => 'Builder',
       'Configurator' => 'Configurator',
       'Content Manager' => 'Content Manager',
@@ -140,6 +145,7 @@ function ofed_feature_address_user_default_permissions() {
   $permissions['override ofed_address sticky option'] = array(
     'name' => 'override ofed_address sticky option',
     'roles' => array(
+      'Administrator' => 'Administrator',
       'Builder' => 'Builder',
       'Configurator' => 'Configurator',
       'Content Manager' => 'Content Manager',

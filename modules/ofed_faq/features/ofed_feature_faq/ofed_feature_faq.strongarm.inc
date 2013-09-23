@@ -271,7 +271,7 @@ function ofed_feature_faq_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_ofed_faq_de_pattern';
   $strongarm->value = 'faq/[node:title]';
-  $export['pathauto_node_ofed_faq_nl_pattern'] = $strongarm;
+  $export['pathauto_node_ofed_faq_de_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

@@ -254,6 +254,17 @@ function ofed_feature_faq_update_7100() {
       'matches_patterns' => 'faqs/*',
     );
   }
+  // DE.
+  if (!empty($languages[1]['de'])) {
+    $settings[] = array(
+      'content_type' => 'ofed_faq',
+      'content_language' => 'de',
+      'pattern_var_name' => 'pathauto_node_ofed_faq_de_pattern',
+      'pattern_var_value_new' => 'faq/[node:title]',
+      'pattern_var_value_old' => 'faqs/[node:title]',
+      'matches_patterns' => 'faqs/*',
+    );
+  }
 
   // For each settings.
   foreach($settings as $setting) {
