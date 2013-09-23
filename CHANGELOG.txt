@@ -1,13 +1,20 @@
 CHANGELOG
 =========
 
+No date yet - Not version yet
+-----------------------------
+  * Issues:
+    #2095759: Check dependencies on rules_ui
+    #2095743: Replace module twitter with twitter_block
+
 23 September 2013 - Version 7.x-1.0-rc5
 ---------------------------------------
   * New module:
     #2094967: New module: comment_goodness
 
   * Issues:
-    #2037961: readd locale_cookie to make file 
+    #2037961: read locale_cookie to make file
+
 
 22 September 2013 - Version 7.x-1.0-rc4
 ---------------------------------------

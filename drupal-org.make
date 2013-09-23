@@ -400,8 +400,8 @@ projects[translation_table][subdir] = contrib
 projects[transliteration][version] = "3.1"
 projects[transliteration][subdir] = contrib
 
-projects[twitter][version] = "5.8"
-projects[twitter][subdir] = contrib
+projects[twitter_block][version] = "2.1"
+projects[twitter_block][subdir] = contrib
 
 projects[username_enumeration_prevention][version] = "1.0"
 projects[username_enumeration_prevention][subdir] = contrib
