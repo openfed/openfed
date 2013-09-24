@@ -8,6 +8,7 @@ No date yet - Not version yet
     #2095743: Replace module twitter with twitter_block
     #2095699: Cleanup features so they are note overriden once installed
     #2087599: Body not visible (related to #1983058: Code creep: ckeditor in nerra)
+    #2081615: Banner CMS view proposal
 
 23 September 2013 - Version 7.x-1.0-rc5
 ---------------------------------------

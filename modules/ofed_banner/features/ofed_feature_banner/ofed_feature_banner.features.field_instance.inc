@@ -93,7 +93,7 @@ You can change this value to fit your needs and you can also reset it by putting
       'active' => 1,
       'module' => 'image',
       'settings' => array(
-        'preview_image_style' => 'thumbnail',
+        'preview_image_style' => 'ofed_banner_button',
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
@@ -138,7 +138,7 @@ You can change this value to fit your needs and you can also reset it by putting
       'active' => 1,
       'module' => 'image',
       'settings' => array(
-        'preview_image_style' => 'thumbnail',
+        'preview_image_style' => 'ofed_banner_full',
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
@@ -183,7 +183,7 @@ You can change this value to fit your needs and you can also reset it by putting
       'active' => 1,
       'module' => 'image',
       'settings' => array(
-        'preview_image_style' => 'thumbnail',
+        'preview_image_style' => 'ofed_banner_leaderboard',
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
@@ -228,7 +228,7 @@ You can change this value to fit your needs and you can also reset it by putting
       'active' => 1,
       'module' => 'image',
       'settings' => array(
-        'preview_image_style' => 'thumbnail',
+        'preview_image_style' => 'ofed_banner_medium_rectangle',
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
@@ -273,7 +273,7 @@ You can change this value to fit your needs and you can also reset it by putting
       'active' => 1,
       'module' => 'image',
       'settings' => array(
-        'preview_image_style' => 'thumbnail',
+        'preview_image_style' => 'ofed_banner_wide_skyscraper',
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
@@ -318,7 +318,7 @@ You can change this value to fit your needs and you can also reset it by putting
       'active' => 1,
       'module' => 'image',
       'settings' => array(
-        'preview_image_style' => 'thumbnail',
+        'preview_image_style' => 'ofed_banner_square_rectangle',
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
