@@ -76,8 +76,8 @@ function openfed_update_7102() {
     ->execute()
     ->fetchField();
   $settings = unserialize($settings);
-  $settings['css_path'] = ' /profiles/openfed/assets/rte/rte.custom.css';
-  $settings['styles_path'] = ' /profiles/openfed/assets/rte/rte.custom.js';
+  $settings['css_path'] = '/profiles/openfed/assets/rte/rte.custom.css';
+  $settings['styles_path'] = '/profiles/openfed/assets/rte/rte.custom.js';
 
   db_update('ckeditor_settings')
   ->fields(array(
@@ -94,8 +94,8 @@ function openfed_update_7102() {
     ->fetchField();
   $settings = unserialize($settings);
 
-  $settings['css_path'] = ' /profiles/openfed/assets/rte/rte.custom.css';
-  $settings['styles_path'] = ' /profiles/openfed/assets/rte/rte.custom.js';
+  $settings['css_path'] = '/profiles/openfed/assets/rte/rte.custom.css';
+  $settings['styles_path'] = '/profiles/openfed/assets/rte/rte.custom.js';
 
   db_update('ckeditor_settings')
   ->fields(array(
@@ -120,4 +120,45 @@ function openfed_update_7103() {
       user_role_grant_permissions($role->rid, $permissions);
     }
   }
+}
+
+
+/**
+ * Fix issue with ckeditor configuration (#2087599) fixing extra space typo
+ */
+function openfed_update_7104() {
+  // Update Full settings
+  $settings = db_select('ckeditor_settings', 'c')
+    ->fields('c', array('settings'))
+    ->condition('name', 'Full')
+    ->execute()
+    ->fetchField();
+  $settings = unserialize($settings);
+  $settings['css_path'] = '/profiles/openfed/assets/rte/rte.custom.css';
+  $settings['styles_path'] = '/profiles/openfed/assets/rte/rte.custom.js';
+
+  db_update('ckeditor_settings')
+  ->fields(array(
+    'settings' => serialize($settings),
+  ))
+  ->condition('name', 'Full', '=')
+  ->execute();
+
+  // Update Full settings
+  $settings = db_select('ckeditor_settings', 'c')
+    ->fields('c', array('settings'))
+    ->condition('name', 'Advanced')
+    ->execute()
+    ->fetchField();
+  $settings = unserialize($settings);
+
+  $settings['css_path'] = '/profiles/openfed/assets/rte/rte.custom.css';
+  $settings['styles_path'] = '/profiles/openfed/assets/rte/rte.custom.js';
+
+  db_update('ckeditor_settings')
+  ->fields(array(
+    'settings' => serialize($settings),
+  ))
+  ->condition('name', 'Advanced', '=')
+  ->execute();
 }
