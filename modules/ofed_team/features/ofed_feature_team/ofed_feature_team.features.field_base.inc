@@ -408,7 +408,7 @@ function ofed_feature_team_field_default_field_bases() {
     'settings' => array(
       'allowed_values' => array(
         'facebook' => 'Facebook',
-        'twitter' => 'Twittter',
+        'twitter' => 'Twitter',
         'linkedin' => 'LinkedIn',
         'googlep' => 'Google+',
       ),

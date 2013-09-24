@@ -12,6 +12,7 @@ No date yet - Not version yet
     #2089213: Don't enable some Imagecache modules
     #2095833: Content type: Address
     #2095809: Content type: event
+    #2093223: typos in the fields
 
 23 September 2013 - Version 7.x-1.0-rc5
 ---------------------------------------

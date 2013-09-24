@@ -578,12 +578,12 @@ function _ofed_requirements_check_feature($feature_key, $feature_name) {
   switch ($feature_status) {
     case FEATURES_NEEDS_REVIEW:
       // Actual code state != Database content != File content (see api.txt in feature module.)
-      $errors[] = t('The !feature needs review. The feature does match with the feature file content.', array('!feature' => $feature_name));
+      $errors[] = t('The !feature needs review. The feature does not match with its file content.', array('!feature' => $feature_name));
       break;
 
     case FEATURES_OVERRIDDEN:
       // Actual code state = Database content != File content (see api.txt in feature module.)
-      $errors[] = t('The !feature is overriden. The feature does match with the feature file content.', array('!feature' => $feature_name));
+      $errors[] = t('The !feature is overriden. The feature does not match with its file content.', array('!feature' => $feature_name));
       break;
 
     default:

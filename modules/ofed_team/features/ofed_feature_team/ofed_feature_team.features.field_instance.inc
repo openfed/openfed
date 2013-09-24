@@ -1246,7 +1246,7 @@ function ofed_feature_team_field_default_field_instances() {
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_ofed_team_social',
-    'label' => 'Social medias',
+    'label' => 'Social media',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -1552,7 +1552,7 @@ function ofed_feature_team_field_default_field_instances() {
   t('Publication date');
   t('Social media link ');
   t('Social media site');
-  t('Social medias');
+  t('Social media');
   t('This date field is used to indicate when the content element was last modified.');
   t('This date typically refers to the moment the content element was released and is to be displayed without label next to the title of the content element in lists and pages. It is typically used to sort content.');
   t('Thumb');
