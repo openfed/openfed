@@ -10,6 +10,7 @@ No date yet - Not version yet
     #2087599: Body not visible (related to #1983058: Code creep: ckeditor in nerra)
     #2081615: Banner CMS view proposal
     #2089213: Don't enable some Imagecache modules
+    #2095833: Content type: Address
 
 23 September 2013 - Version 7.x-1.0-rc5
 ---------------------------------------

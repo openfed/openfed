@@ -54,7 +54,7 @@ function ofed_feature_address_field_default_field_instances() {
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_ofed_address_bus',
-    'label' => 'Bus',
+    'label' => 'Box',
     'required' => 0,
     'settings' => array(
       'text_processing' => 0,
@@ -561,7 +561,7 @@ function ofed_feature_address_field_default_field_instances() {
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_ofed_address_opening_hours',
-    'label' => 'Opening hours',
+    'label' => 'Opening hours (Free text)',
     'required' => 0,
     'settings' => array(
       'text_processing' => 0,
@@ -963,7 +963,7 @@ function ofed_feature_address_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Bus');
+  t('Box');
   t('Check the box in order to use the system date as updated date for your content item.');
   t('City');
   t('Copy paste the address search field from Google Maps here (Eg: "Rue de la loi 16, 1000 Bruxelles").');
@@ -974,7 +974,7 @@ function ofed_feature_address_field_default_field_instances() {
   t('Last updated date');
   t('Location name');
   t('Number');
-  t('Opening hours');
+  t('Opening hours (Free text)');
   t('Phone');
   t('Publication date');
   t('Street');
