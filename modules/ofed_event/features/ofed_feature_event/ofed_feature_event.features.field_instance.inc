@@ -103,7 +103,7 @@ function ofed_feature_event_field_default_field_instances() {
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_ofed_event_address',
-    'label' => 'Address',
+    'label' => 'Address (points to the content type address)',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -1430,7 +1430,7 @@ function ofed_feature_event_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('(points to content type address)');
-  t('Address');
+  t('Address (points to the content type address)');
   t('Author');
   t('Body');
   t('Check the box in order to use the system date as updated date for your content item.');
