@@ -3,6 +3,9 @@ CHANGELOG
 
 No date yet - Not version yet
 -----------------------------
+  * New module:
+    #2097789: New module: admin_language
+
   * Issues:
     #2095759: Check dependencies on rules_ui
     #2095743: Replace module twitter with twitter_block
