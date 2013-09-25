@@ -7,6 +7,9 @@ CHANGELOG
     #2097789: New module: admin_language (related to #2096789)
     #2095743: Replace module twitter with twitter_block
  
+  * Upgraded theme:
+    #2095803: Theme upgrade: ofed_theme_cms
+
   * Issues:
     #2095699: Cleanup features so they are note overriden once installed
     #2087599: Body not visible (related to #1983058: Code creep: ckeditor in nerra)
