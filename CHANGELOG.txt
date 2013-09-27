@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+xx October 2013 - Version 7.x-1.x
+---------------------------------
+  * Upgraded modules:
+    #2099183: Module upgrade: security_review 
+
+ 
 25 September 2013 - Version 7.x-1.0
 -----------------------------------
   * New module:
