@@ -162,3 +162,29 @@ function openfed_update_7104() {
   ->condition('name', 'Advanced', '=')
   ->execute();
 }
+
+/**
+ * Fix issue #2037961: Store language preference in cookie
+ */
+function openfed_update_7105() {
+  $negotiation = variable_get('language_negotiation_language', array());
+  $negotiation['language-cookie'] = array(
+    'callbacks' => array(
+      'language' => 'locale_cookie_language_from_cookie',
+    ),
+    'file' => drupal_get_path('module', 'locale_cookie') . '/includes/locale_cookie.inc',
+  );
+  variable_set('language_negotiation_language', $negotiation);
+
+  $provider_weight = variable_get('locale_language_providers_weight_language', array());
+  $provider_weight['language-cookie'] = $provider_weight['locale-url'] + 1;
+  variable_set('locale_language_providers_weight_language', $provider_weight);
+
+  // Regional and language > Language > Detection and selection > Cookie.
+  variable_set('locale_cookie_language_negotiation_cookie_param', 'language');
+  variable_set('locale_cookie_language_negotiation_cookie_expire', '365');
+  variable_set('locale_cookie_language_negotiation_cookie_path', '/');
+  variable_set('locale_cookie_language_negotiation_cookie_domain', '');
+  variable_set('locale_cookie_language_negotiation_cookie_secure', 0);
+  variable_set('locale_cookie_language_negotiation_cookie_http_only', 0);
+}

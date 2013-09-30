@@ -67,15 +67,12 @@ variable_set('language_negotiation_language', array(
     ),
     'file' => 'includes/locale.inc',
   ),
-/** 
-  FIXME: Issue #2037961
   'language-cookie' => array(
     'callbacks' => array(
       'language' => 'locale_cookie_language_from_cookie',
     ),
     'file' => drupal_get_path('module', 'locale_cookie') . '/includes/locale_cookie.inc',
   ),
-*/
   'language-default' => array(
     'callbacks' => array(
       'language' => 'language_from_default'
@@ -86,24 +83,17 @@ variable_set('language_negotiation_language', array(
 // Regional and language > Language > Detection and selection order.
 variable_set('locale_language_providers_weight_language', array(
   'locale-url' => -10,
-/**
-  FIXME Issue #2037961
   'language-cookie' => -8,
-*/
   'locale-session' => -6,
   'locale-user' => -4,
   'locale-browser' => -2,
   'language-default' => 10,
 ));
 
-/**
- FIXME: Issue #2037961
- 
- Regional and language > Language > Detection and selection > Cookie.
- variable_set('locale_cookie_language_negotiation_cookie_param', 'language');
- variable_set('locale_cookie_language_negotiation_cookie_expire', '365');
- variable_set('locale_cookie_language_negotiation_cookie_path', '/');
- variable_set('locale_cookie_language_negotiation_cookie_domain', '');
- variable_set('locale_cookie_language_negotiation_cookie_secure', 0);
- variable_set('locale_cookie_language_negotiation_cookie_http_only', 0);
-*/
+// Regional and language > Language > Detection and selection > Cookie.
+variable_set('locale_cookie_language_negotiation_cookie_param', 'language');
+variable_set('locale_cookie_language_negotiation_cookie_expire', '365');
+variable_set('locale_cookie_language_negotiation_cookie_path', '/');
+variable_set('locale_cookie_language_negotiation_cookie_domain', '');
+variable_set('locale_cookie_language_negotiation_cookie_secure', 0);
+variable_set('locale_cookie_language_negotiation_cookie_http_only', 0);
