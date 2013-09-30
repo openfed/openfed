@@ -4,8 +4,10 @@ CHANGELOG
 xx October 2013 - Version 7.x-1.x
 ---------------------------------
   * Upgraded modules:
-    #2099183: Module upgrade: security_review 
+    #2099183: Module upgrade: security_review
 
+  * Issue:
+    #2080029: Using white-listed jquery.imagesloaded in make file
  
 25 September 2013 - Version 7.x-1.0
 -----------------------------------
