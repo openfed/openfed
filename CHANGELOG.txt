@@ -1,8 +1,8 @@
 CHANGELOG
 =========
 
-xx October 2013 - Version 7.x-1.x
----------------------------------
+xx October 2013 - Version 7.x-1.1-rc1
+-------------------------------------
   * Upgraded modules:
     #2099183: Module upgrade: security_review
     #2037961: Store language preference in cookie
@@ -10,6 +10,7 @@ xx October 2013 - Version 7.x-1.x
 
   * Issue:
     #2080029: Using white-listed jquery.imagesloaded in make file
+    #2102011: Added exact (git) versions instead for modules in dev
  
 25 September 2013 - Version 7.x-1.0
 -----------------------------------

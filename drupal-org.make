@@ -49,17 +49,23 @@ projects[addemar_subscription][subdir] = contrib
 projects[ofed_menu_dam][version] = "1.0"
 projects[ofed_menu_dam][subdir] = contrib
 
-projects[ofed_switcher][version] = "1.x-dev"
-projects[ofed_switcher][subdir] = contrib
+projects[ofed_switcher][download][type] = git
+projects[ofed_switcher][download][branch] = "7.x-1.x"
+projects[ofed_switcher][download][revision] = bcab193
 projects[ofed_switcher][patch][2088715] = "http://drupal.org/files/2088715-link_title-1.patch"
+projects[ofed_switcher][subdir] = contrib
 
 projects[ofed_vmcd][version] = "1.0"
 projects[ofed_vmcd][subdir] = contrib
 
-projects[ofed_theme_nerra][version] = "1.x-dev"
+projects[ofed_theme_nerra][download][type] = git
+projects[ofed_theme_nerra][download][branch] = "7.x-1.x"
+projects[ofed_theme_nerra][download][revision] = 2dbe042
 projects[ofed_theme_nerra][subdir] = contrib
 
-projects[ofed_theme_cms][version] = "1.x-dev"
+projects[ofed_theme_cms][download][type] = git
+projects[ofed_theme_cms][download][branch] = "7.x-1.x"
+projects[ofed_theme_cms][download][revision] = 14bdb47
 projects[ofed_theme_cms][subdir] = contrib
 
 projects[ofed_theme_maintenance][version] = "1.0"
@@ -73,7 +79,9 @@ projects[ofed_theme_maintenance][subdir] = contrib
 projects[addanother][version] = "2.1"
 projects[addanother][subdir] = contrib
 
-projects[admin_language][version] = "1.x-dev"
+projects[admin_language][download][type] = git
+projects[admin_language][download][branch] = "7.x-1.x"
+projects[admin_language][download][revision] = 6f0a6e5
 projects[admin_language][subdir] = contrib
 
 projects[admin_menu][version] = "3.0-rc4"
@@ -210,7 +218,9 @@ projects[html5_tools][subdir] = contrib
 projects[i18n][version] = "1.10"
 projects[i18n][subdir] = contrib
 
-projects[i18nviews][version] = "3.x-dev"
+projects[i18nviews][download][type] = git
+projects[i18nviews][download][branch] = "7.x-3.x"
+projects[i18nviews][download][revision] = 26bd52c
 projects[i18nviews][subdir] = contrib
 
 projects[imagecache_actions][version] = "1.4"
@@ -231,10 +241,9 @@ projects[jquery_update][subdir] = contrib
 projects[l10n_client][version] = "1.3"
 projects[l10n_client][subdir] = contrib
 
-projects[l10n_update][type] = module
 projects[l10n_update][download][type] = git
-projects[l10n_update][download][revision] = 8c85a9f
 projects[l10n_update][download][branch] = "7.x-1.x"
+projects[l10n_update][download][revision] = 8c85a9f
 projects[l10n_update][subdir] = contrib
 projects[l10n_update][patch][1671570] = "http://drupal.org/files/l10n_update-fetch-module-update-1671570-18_0.patch"
 
