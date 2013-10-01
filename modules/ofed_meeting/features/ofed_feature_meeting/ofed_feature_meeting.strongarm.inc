@@ -182,7 +182,7 @@ function ofed_feature_meeting_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'i18n_node_extended_ofed_meeting';
-  $strongarm->value = '4';
+  $strongarm->value = '1';
   $export['i18n_node_extended_ofed_meeting'] = $strongarm;
 
   $strongarm = new stdClass();
