@@ -163,6 +163,7 @@ function ofed_feature_news_node_info() {
     'ofed_news' => array(
       'name' => t('News'),
       'base' => 'node_content',
+      'description' => '',
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',

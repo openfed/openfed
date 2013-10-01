@@ -301,18 +301,12 @@ function ofed_feature_news_ds_field_settings_info() {
         ),
       ),
     ),
-    'field_ofed_news_author' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'classes' => 'clear-block',
-        ),
-      ),
-    ),
     'field_ofed_news_pubdate' => array(
       'formatter_settings' => array(
         'ft' => array(
           'classes' => 'clear-block',
           'lb' => 'Published date',
+          'lb-col' => TRUE,
         ),
       ),
     ),
@@ -320,14 +314,6 @@ function ofed_feature_news_ds_field_settings_info() {
       'formatter_settings' => array(
         'ft' => array(
           'classes' => 'float-left',
-        ),
-      ),
-    ),
-    'field_ofed_news_update' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'classes' => 'clear-block',
-          'lb' => 'Updated date',
         ),
       ),
     ),
@@ -745,18 +731,14 @@ function ofed_feature_news_ds_layout_settings_info() {
       'ds_content' => array(
         0 => 'title',
         1 => 'field_ofed_news_pubdate',
-        2 => 'field_ofed_news_update',
-        3 => 'field_ofed_news_author',
-        4 => 'field_ofed_news_thumb',
-        5 => 'field_ofed_news_summary',
-        6 => 'node_link',
+        2 => 'field_ofed_news_thumb',
+        3 => 'field_ofed_news_summary',
+        4 => 'node_link',
       ),
     ),
     'fields' => array(
       'title' => 'ds_content',
       'field_ofed_news_pubdate' => 'ds_content',
-      'field_ofed_news_update' => 'ds_content',
-      'field_ofed_news_author' => 'ds_content',
       'field_ofed_news_thumb' => 'ds_content',
       'field_ofed_news_summary' => 'ds_content',
       'node_link' => 'ds_content',
@@ -768,6 +750,8 @@ function ofed_feature_news_ds_layout_settings_info() {
     'layout_wrapper' => 'div',
     'layout_attributes' => '',
     'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
     'hide_page_title' => '0',
     'page_option_title' => '',
     'hide_sidebars' => 0,
