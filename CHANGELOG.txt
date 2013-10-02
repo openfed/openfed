@@ -7,6 +7,7 @@ xx October 2013 - Version 7.x-1.1-rc1
     #2099183: Module upgrade: security_review
     #2037961: Store language preference in cookie
     #2096677: OpenFed News overview proposal
+    #2095699: Cleanup features so they are not overriden once installedl
 
   * Issue:
     #2080029: Using white-listed jquery.imagesloaded in make file

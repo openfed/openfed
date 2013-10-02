@@ -130,6 +130,7 @@ features[user_permission][] = override ofed_team authored on option
 features[user_permission][] = override ofed_team promote to front page option
 features[user_permission][] = override ofed_team published option
 features[user_permission][] = override ofed_team revision option
+features[user_permission][] = override ofed_team sticky option
 features[variable][] = addanother_button_ofed_team
 features[variable][] = addanother_message_ofed_team
 features[variable][] = addanother_tab_edit_ofed_team
