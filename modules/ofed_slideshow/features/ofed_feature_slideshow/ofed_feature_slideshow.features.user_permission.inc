@@ -28,6 +28,7 @@ function ofed_feature_slideshow_user_default_permissions() {
       'Administrator' => 'Administrator',
       'Builder' => 'Builder',
       'Configurator' => 'Configurator',
+      'Content Manager' => 'Content Manager',
     ),
     'module' => 'node',
   );
@@ -39,6 +40,7 @@ function ofed_feature_slideshow_user_default_permissions() {
       'Administrator' => 'Administrator',
       'Builder' => 'Builder',
       'Configurator' => 'Configurator',
+      'Content Manager' => 'Content Manager',
     ),
     'module' => 'node',
   );
@@ -62,6 +64,7 @@ function ofed_feature_slideshow_user_default_permissions() {
       'Administrator' => 'Administrator',
       'Builder' => 'Builder',
       'Configurator' => 'Configurator',
+      'Content Manager' => 'Content Manager',
     ),
     'module' => 'node',
   );

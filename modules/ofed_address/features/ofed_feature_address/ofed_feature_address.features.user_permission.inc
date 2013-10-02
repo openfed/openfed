@@ -122,6 +122,7 @@ function ofed_feature_address_user_default_permissions() {
   $permissions['override ofed_address published option'] = array(
     'name' => 'override ofed_address published option',
     'roles' => array(
+      'Administrator' => 'Administrator',
       'Builder' => 'Builder',
       'Configurator' => 'Configurator',
       'Content Manager' => 'Content Manager',
