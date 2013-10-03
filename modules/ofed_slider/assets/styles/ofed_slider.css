@@ -27,18 +27,19 @@
 	padding: 0;
 	margin-top: 0px;
 	z-index: 10000;
-	position: absolute;
+	position: relative;
 	color: #32324B;
-	top: 0;
-	right: -75%;
-	width: 70%;
+	width: 41%;
 	height: auto;
 	background: none;
-	font-size: 2em;
+	font-size: 1.8em;
 	line-height: 1.5em;
 	font-weight: 600;
+	float:right;
 }
-
+.block-ofed-slider .view-mode-full .field-slideshow-slide	{
+	text-align:left;
+}
 .field-name-field-ofed-slider-image-collec .field-slideshow-caption	a,								
 .field-name-field-ofed-slider-image-collec .field-slideshow-caption	a:focus,
 .field-name-field-ofed-slider-image-collec .field-slideshow-caption	a:visited,
@@ -110,4 +111,19 @@
 
 .field-name-field-ofed-slider-image-collec .field-slideshow-controls .next:hover					{
 	background: url(../images/arrow-carrousel-right-active.png) no-repeat 3px 0px;
+}
+@media (max-width: 939px) {
+	.field-name-field-ofed-slider-image-collec .field-slideshow-caption									{
+		font-size: 1.25em;
+		float:none;
+		width: 100%;
+	}
+	.view-mode-full .field-name-field-ofed-slider-image-collec .field-slideshow-wrapper						{
+		min-height: 350px !important;
+	}
+}
+@media (max-width: 479px) {
+	.view-mode-full .field-name-field-ofed-slider-image-collec .field-slideshow-wrapper						{
+		min-height: 300px !important;
+	}
 }
