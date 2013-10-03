@@ -5,6 +5,7 @@ CHANGELOG
 -------------------------------------
   * New module:
     #2037961: Store language preference in cookie
+    #2091003: Re-added devel module
  
   * Upgraded modules:
     #2099183: Module upgrade: security_review
