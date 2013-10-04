@@ -13,7 +13,7 @@ function openfed_install_files_and_folders(){
   $path_files = 'sites/default/files';
   $path_public = $path_files . '/public';
   $path_private = $path_files . '/private';
-  $path_temporary = $path_files . '/temp';
+  $path_temporary = '/tmp';
 
   // Set the variables.
   variable_set('file_public_path', $path_public);
@@ -25,7 +25,7 @@ function openfed_install_files_and_folders(){
   if(!is_dir($path_files)) {
     mkdir($path_files);
   }
-  
+
   // Create public folder.
   if(!is_dir($path_public)) {
     mkdir($path_public);
