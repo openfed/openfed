@@ -188,3 +188,117 @@ function openfed_update_7105() {
   variable_set('locale_cookie_language_negotiation_cookie_secure', 0);
   variable_set('locale_cookie_language_negotiation_cookie_http_only', 0);
 }
+
+/**
+ * Fix issue #2089775: Why both admin_theme and admin_path
+ */
+function openfed_update_7106() {
+  // If admin path module.
+  // Fetch the paths from administrative pages settings.
+  $admin_path = variable_get('admin_path', array());
+  $admin_path_allowed = array();
+  $admin_path_disallo = array();
+  // If config.
+  if(is_array($admin_path) && !empty($admin_path)) {
+    foreach ($admin_path as $key => $value) {
+      if(!empty($value)) {
+        $admin_path_allowed[$key] = $value;
+      }
+      else {
+        $admin_path_disallo[$key] = 0;
+      }
+    }
+  }
+  // If no config.
+  else {
+    // Get patterns.
+    $patterns = path_get_admin_paths();
+    // Split patterns.
+    $admin_path_allowed = $patterns['admin'];
+    $admin_path_disallo = $patterns['non_admin'];
+    if(!empty($admin_path_allowed)) {
+      $admin_path_allowed = explode("\n", $admin_path_allowed);
+      $admin_path_allowed_tmp = array();
+      foreach ($admin_path_allowed as $key => $value) {
+        $value = trim($value);
+        if(!empty($value)) {
+          $admin_path_allowed_tmp[$value] = TRUE;
+        }
+      }
+      $admin_path_allowed = $admin_path_allowed_tmp;
+    }
+    else {
+      $admin_path_allowed = array();
+    }
+    if(!empty($admin_path_disallo)) {
+      $admin_path_disallo = explode("\n", $admin_path_disallo);
+      $admin_path_disallo_tmp = array();
+      foreach ($admin_path_disallo as $key => $value) {
+        $value = trim($value);
+        if(!empty($value)) {
+          $admin_path_disallo_tmp[$value] = FALSE;
+        }
+      }
+      $admin_path_disallo = $admin_path_disallo_tmp;
+    }
+    else {
+      $admin_path_disallo = array();
+    }
+  }
+
+  // Fetch the paths from administrative theme settings.
+  if(!module_exists('admin_theme')) {
+    module_enable(array('admin_theme'));
+  }
+  $admin_theme_allowed = variable_get('admin_theme_path', '');
+  $admin_theme_disallo = variable_get('admin_theme_path_disallow', '');
+  if(!empty($admin_theme_allowed)) {
+    $admin_theme_allowed = explode("\n", $admin_theme_allowed);
+    $admin_theme_allowed_tmp = array();
+    foreach ($admin_theme_allowed as $key => $value) {
+      $value = trim($value);
+      if(!empty($value)) {
+        $admin_theme_allowed_tmp[$value] = TRUE;
+      }
+    }
+    $admin_theme_allowed = $admin_theme_allowed_tmp;
+  }
+  else {
+    $admin_theme_allowed = array();
+  }
+  if(!empty($admin_theme_disallo)) {
+    $admin_theme_disallo = explode("\n", $admin_theme_disallo);
+    $admin_theme_disallo_tmp = array();
+    foreach ($admin_theme_disallo as $key => $value) {
+      $value = trim($value);
+      if(!empty($value)) {
+        $admin_theme_disallo_tmp[$value] = FALSE;
+      }
+    }
+    $admin_theme_disallo = $admin_theme_disallo_tmp;
+  }
+  else {
+    $admin_theme_disallo = array();
+  }
+
+  // Merge the configuration.
+  $admin_theme_allowed = array_merge($admin_theme_allowed, $admin_path_allowed);
+  $admin_theme_disallo = array_merge($admin_theme_disallo, $admin_path_disallo);
+
+  // Convert array to string.
+  $admin_theme_allowed_tmp = array();
+  foreach ($admin_theme_allowed as $key => $value) {
+    $admin_theme_allowed_tmp[] = $key;
+  }
+  $admin_theme_allowed = implode("\n", $admin_theme_allowed_tmp);
+
+  $admin_theme_disallo_tmp = array();
+  foreach ($admin_theme_disallo as $key => $value) {
+    $admin_theme_disallo_tmp[] = $key;
+  }
+  $admin_theme_disallo = implode("\n", $admin_theme_disallo_tmp);
+
+  // Set the new configuration.
+  variable_set('admin_theme_path', $admin_theme_allowed);
+  variable_set('admin_theme_path_disallow', $admin_theme_disallo);
+}

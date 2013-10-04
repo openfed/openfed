@@ -60,12 +60,12 @@ projects[ofed_vmcd][subdir] = contrib
 
 projects[ofed_theme_nerra][download][type] = git
 projects[ofed_theme_nerra][download][branch] = "7.x-1.x"
-projects[ofed_theme_nerra][download][revision] = 8c76e60 
+projects[ofed_theme_nerra][download][revision] = 8c76e60
 projects[ofed_theme_nerra][subdir] = contrib
 
 projects[ofed_theme_cms][download][type] = git
 projects[ofed_theme_cms][download][branch] = "7.x-1.x"
-projects[ofed_theme_cms][download][revision] = 5129c65 
+projects[ofed_theme_cms][download][revision] = 5129c65
 projects[ofed_theme_cms][subdir] = contrib
 
 projects[ofed_theme_maintenance][version] = "1.0"
@@ -86,9 +86,6 @@ projects[admin_language][subdir] = contrib
 
 projects[admin_menu][version] = "3.0-rc4"
 projects[admin_menu][subdir] = contrib
-
-projects[admin_path][version] = "1.0"
-projects[admin_path][subdir] = contrib
 
 projects[admin_theme][version] = "1.0"
 projects[admin_theme][subdir] = contrib
