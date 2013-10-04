@@ -3,17 +3,19 @@ CHANGELOG
 
 No date yet - Version 7.x-1.x
 -----------------------------
+  * Removed module:
+    #2089775: Why both admin_theme and admin_path ? (removed admin_path)
+
   * Upgraded module:
     #2095803: Theme upgrade: ofed_theme_cms
 
   * Issues:
     #2087831: Installer: use tmp by default
-    #2089775: Why both admin_theme and admin_path ?
-		
+
 03 October 2013 - Version 7.x-1.1-rc1
 -------------------------------------
-  * New module:
-    #2037961: Store language preference in cookie
+  * New modules:
+    #2037961: Store language preference in cookie (locale_cookie)
     #2091003: Re-added devel module
  
   * Upgraded modules:
