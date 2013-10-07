@@ -11,19 +11,20 @@ No date yet - Version 7.x-1.x
 
   * Issues:
     #2087831: Installer: use tmp by default
+    #2087517: permissions on the start page in minifed
 
 03 October 2013 - Version 7.x-1.1-rc1
 -------------------------------------
   * New modules:
     #2037961: Store language preference in cookie (locale_cookie)
     #2091003: Re-added devel module
- 
+
   * Upgraded modules:
     #2099183: Module upgrade: security_review
     #2095803, #2087513: Theme upgrade: ofed_theme_cms
     #2021473: Theme upgrade: ofed_theme_nerra
     #2102011: Added exact (git) versions for modules in dev
- 
+
   * Issues:
     #2080029: Using white-listed jquery.imagesloaded in make file
     #2101851: Update multilingual settings in each content types
@@ -36,7 +37,7 @@ No date yet - Version 7.x-1.x
   * New module:
     #2097789: New module: admin_language (related to #2096789)
     #2095743: Replace module twitter with twitter_block
- 
+
   * Upgraded theme:
     #2095803: Theme upgrade: ofed_theme_cms
 

@@ -302,3 +302,20 @@ function openfed_update_7106() {
   variable_set('admin_theme_path', $admin_theme_allowed);
   variable_set('admin_theme_path_disallow', $admin_theme_disallo);
 }
+
+/**
+ * Fix #2087517 permissions on the start page
+ */
+function openfed_update_7107() {
+  $roles = array('Administrator');
+  $permissions = array('access ofed_switcher administration', 'access ofed_switcher content');
+
+  foreach ($roles as $role_name) {
+    $role = user_role_load_by_name($role_name);
+
+    if (!empty($role->rid)) {
+      // Assign permission to role.
+      user_role_grant_permissions($role->rid, $permissions);
+    }
+  }
+}
