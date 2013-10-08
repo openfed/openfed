@@ -33,6 +33,5 @@ function _ofed_event_insert_after_first_element(&$a, $element) {
  * Implements hook_preprocess_node().
  */
 function ofed_event_preprocess_node() {
-  drupal_add_js(drupal_get_path('module', 'ofed_event') . '/assets/scripts/ofed_event.js');
   drupal_add_css(drupal_get_path('module', 'ofed_event') . '/assets/styles/ofed_event.css');
 }

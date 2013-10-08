@@ -33,6 +33,5 @@ function _ofed_news_insert_after_first_element(&$a, $element) {
  * Implements hook_preprocess_node().
  */
 function ofed_news_preprocess_node() {
-  drupal_add_js(drupal_get_path('module', 'ofed_news') . '/assets/scripts/ofed_news.js');
   drupal_add_css(drupal_get_path('module', 'ofed_news') . '/assets/styles/ofed_news.css');
 }

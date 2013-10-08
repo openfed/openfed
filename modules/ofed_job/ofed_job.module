@@ -33,6 +33,5 @@ function _ofed_job_insert_after_first_element(&$a, $element) {
  * Implements hook_preprocess_node().
  */
 function ofed_job_preprocess_node() {
-  drupal_add_js(drupal_get_path('module', 'ofed_job') . '/assets/scripts/ofed_job.js');
   drupal_add_css(drupal_get_path('module', 'ofed_job') . '/assets/styles/ofed_job.css');
 }

@@ -35,7 +35,6 @@ function _ofed_slider_insert_after_first_element(&$a, $element) {
  * Implements hook_preprocess_node().
  */
 function ofed_slider_preprocess_node() {
-  drupal_add_js(drupal_get_path('module', 'ofed_slider') . '/assets/scripts/ofed_slider.js');
   drupal_add_css(drupal_get_path('module', 'ofed_slider') . '/assets/styles/ofed_slider.css');
 }
 

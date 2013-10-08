@@ -33,6 +33,5 @@ function _ofed_video_insert_after_first_element(&$a, $element) {
  * Implements hook_preprocess_node().
  */
 function ofed_video_preprocess_node() {
-  drupal_add_js(drupal_get_path('module', 'ofed_video') . '/assets/scripts/ofed_video.js');
   drupal_add_css(drupal_get_path('module', 'ofed_video') . '/assets/styles/ofed_video.css');
 }

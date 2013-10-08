@@ -13,6 +13,7 @@ No date yet - Version 7.x-1.x
     #2087831: Installer: use tmp by default
     #2087517: permissions on the start page in minifed
     #2104625: Ofed content types package name
+    #2103721: Code cleanup: remove empty js assets
 
 03 October 2013 - Version 7.x-1.1-rc1
 -------------------------------------

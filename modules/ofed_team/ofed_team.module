@@ -33,6 +33,5 @@ function _ofed_team_insert_after_first_element(&$a, $element) {
  * Implements hook_preprocess_node().
  */
 function ofed_team_preprocess_node() {
-  drupal_add_js(drupal_get_path('module', 'ofed_team') . '/assets/scripts/ofed_team.js');
   drupal_add_css(drupal_get_path('module', 'ofed_team') . '/assets/styles/ofed_team.css');
 }
