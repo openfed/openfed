@@ -65,7 +65,7 @@ projects[ofed_theme_nerra][subdir] = contrib
 
 projects[ofed_theme_cms][download][type] = git
 projects[ofed_theme_cms][download][branch] = "7.x-1.x"
-projects[ofed_theme_cms][download][revision] = 0fa0d11 
+projects[ofed_theme_cms][download][revision] = 0fa0d11
 projects[ofed_theme_cms][subdir] = contrib
 
 projects[ofed_theme_maintenance][version] = "1.0"
@@ -149,6 +149,7 @@ projects[ds][subdir] = contrib
 
 projects[easy_breadcrumb][version] = "2.7"
 projects[easy_breadcrumb][subdir] = contrib
+projects[easy_breadcrumb][patch][2071747] = "https://drupal.org/files/easy_breadcrumb-home-breadcrumb-does-not-get-translated-2071747-3.patch"
 
 projects[elements][version] = "1.4"
 projects[elements][subdir] = contrib
