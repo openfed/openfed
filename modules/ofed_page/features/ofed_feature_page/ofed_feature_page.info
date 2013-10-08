@@ -1,7 +1,7 @@
 name = Pages
 description = Feature needed to manage pages.
 core = 7.x
-package = OpenFed
+package = OpenFed - Content Types
 version = 7.x-1.0
 project = ofed_feature_page
 dependencies[] = addanother

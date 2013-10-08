@@ -1,6 +1,6 @@
 name = Press - Module
 description = Manage press.
-package = OpenFed
+package = OpenFed - Content Types
 core = 7.x
 
 dependencies[] = ofed_download

@@ -1,6 +1,6 @@
 name = Slideshows - Module
 description = Manage slideshows.
-package = OpenFed
+package = OpenFed - Content Types
 core = 7.x
 
 dependencies[] = ofed_feature_slideshow

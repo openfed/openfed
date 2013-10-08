@@ -1,6 +1,6 @@
 name = Event - Module
 description = Manage events
-package = OpenFed
+package = OpenFed - Content Types
 core = 7.x
 
 dependencies[] = ofed_download

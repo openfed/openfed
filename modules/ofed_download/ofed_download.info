@@ -1,6 +1,6 @@
 name = Downloads - Module
 description = Manage downloads.
-package = OpenFed
+package = OpenFed - Content Types
 core = 7.x
 
 dependencies[] = ofed_feature_download

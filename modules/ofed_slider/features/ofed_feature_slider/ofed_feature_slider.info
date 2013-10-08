@@ -1,7 +1,7 @@
 name = Slider
 description = Feature needed to manage Sliders.
 core = 7.x
-package = OpenFed
+package = OpenFed - Content Types
 php = 5.2.4
 version = 7.x-1.0
 project = ofed_feature_slider
@@ -127,4 +127,4 @@ features[variable][] = scheduler_unpublish_revision_ofed_slider
 features[variable][] = scheduler_unpublish_touch_ofed_slider
 features[variable][] = xmlsitemap_settings_node_ofed_slider
 features[views_view][] = ofed_sliders
-project path = profiles/openfed/modules/ofed_slider/features
+project path = profiles/OpenFed - Content Types/modules/ofed_slider/features

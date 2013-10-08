@@ -1,7 +1,7 @@
 name = Events
 description = Feature needed to manage events.
 core = 7.x
-package = OpenFed
+package = OpenFed - Content Types
 php = 5.2.4
 version = 7.x-1.0
 project = ofed_feature_event

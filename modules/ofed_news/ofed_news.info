@@ -1,6 +1,6 @@
 name = News - Module
 description = Manage news.
-package = OpenFed
+package = OpenFed - Content Types
 core = 7.x
 
 files[] = ofed_news.module

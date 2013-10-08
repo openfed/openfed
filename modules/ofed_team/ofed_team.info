@@ -1,6 +1,6 @@
 name = Team members - Module
 description = Manage the team members
-package = OpenFed
+package = OpenFed - Content Types
 core = 7.x
 
 dependencies[] = ofed_download
