@@ -249,7 +249,7 @@ projects[l10n_update][patch][1671570] = "http://drupal.org/files/l10n_update-fet
 
 projects[locale_cookie][version] = "1.0"
 projects[locale_cookie][subdir] = contrib
-projects[locale_cookie][patch][2037961] = "https://drupal.org/files/locale_cookie-store_language_preference_in_cookie-2037961-25.patch"
+projects[locale_cookie][patch][2037961] = "https://drupal.org/files/locale_cookie-store_language_preference_in_cookie-2037961-36.patch"
 
 projects[lexicon][version] = "1.10"
 projects[lexicon][subdir] = contrib
