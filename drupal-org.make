@@ -191,7 +191,7 @@ projects[field_collection][subdir] = contrib
 projects[field-conditional-state][version] = "1.1"
 projects[field-conditional-state][subdir] = contrib
 
-projects[field_group][version] = "1.2"
+projects[field_group][version] = "1.3"
 projects[field_group][subdir] = contrib
 
 projects[field_permissions][version] = "1.0-beta2"

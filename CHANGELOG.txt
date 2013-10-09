@@ -8,7 +8,8 @@ No date yet - Version 7.x-1.x
 
   * Upgraded module:
     #2095803: Theme upgrade: ofed_theme_cms
-    #1721924: Module upgrade: field-conditional-state
+    #2107481: Module upgrade: field-conditional-state
+    #2107481: Module upgrade: field_group
 
   * Issues:
     #2087831: Installer: use tmp by default
