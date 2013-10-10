@@ -18,6 +18,7 @@ No date yet - Version 7.x-1.x
     #2103721: Code cleanup: remove empty js assets
     #2037961: new locale_cookie patch
     #2107187: translating the "home" breadcrumb
+    #2103911: Provide "scale & crop" image styles for thumbnails
 
 03 October 2013 - Version 7.x-1.1-rc1
 -------------------------------------
