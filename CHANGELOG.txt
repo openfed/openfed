@@ -16,7 +16,6 @@ No date yet - Version 7.x-1.x
     #2087517: permissions on the start page in minifed
     #2104625: Ofed content types package name
     #2103721: Code cleanup: remove empty js assets
-    #2037961: new locale_cookie patch
     #2107187: translating the "home" breadcrumb
     #2103911: Provide "scale & crop" image styles for thumbnails
     #2088657: Library update: ckeditor
