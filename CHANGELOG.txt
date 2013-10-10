@@ -30,7 +30,7 @@ No date yet - Version 7.x-1.x
   * Upgraded modules:
     #2099183: Module upgrade: security_review
     #2095803, #2087513: Theme upgrade: ofed_theme_cms
-    #2021473: Theme upgrade: ofed_theme_nerra
+    #2088221: Theme upgrade: ofed_theme_nerra
     #2102011: Added exact (git) versions for modules in dev
 
   * Issues:
