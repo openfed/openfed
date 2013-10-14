@@ -257,8 +257,6 @@ function _openfed_get_permissions_for_role($role_name) {
         'flush caches',
         // Administration theme.
         'access admin theme',
-        // Administrative pages.
-        'administer admin paths',
         // Block.
         'administer blocks',
         // CKEditor.
@@ -434,8 +432,6 @@ function _openfed_get_permissions_for_role($role_name) {
         'flush caches',
         // Administration theme.
         'access admin theme',
-        // Administrative pages.
-        'administer admin paths',
         // Block.
         'administer blocks',
         // CKEditor.
