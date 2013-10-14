@@ -175,3 +175,14 @@ function ofed_banner_form_alter(&$form, &$form_state, $form_id) {
     }
   }
 }
+
+/**
+ * Implements hook_ofed_user_default_permissions().
+ */
+function ofed_feature_banner_ofed_user_default_permissions() {
+  // Function used by the ofed_rerquirements module. The hook defined in the
+  // required file hereunder is not available otherwise.
+  require_once drupal_get_path('module', 'ofed_banner') . '/features/ofed_feature_banner/ofed_feature_banner.features.user_permission.inc';
+
+  return ofed_feature_banner_user_default_permissions();
+}

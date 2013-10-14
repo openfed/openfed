@@ -35,3 +35,14 @@ function _ofed_faq_insert_after_first_element(&$a, $element) {
 function ofed_faq_preprocess_node() {
   drupal_add_css(drupal_get_path('module', 'ofed_faq') . '/assets/styles/ofed_faq.css');
 }
+
+/**
+ * Implements hook_ofed_user_default_permissions().
+ */
+function ofed_feature_faq_ofed_user_default_permissions() {
+  // Function used by the ofed_rerquirements module. The hook defined in the
+  // required file hereunder is not available otherwise.
+  require_once drupal_get_path('module', 'ofed_faq') . '/features/ofed_feature_faq/ofed_feature_faq.features.user_permission.inc';
+
+  return ofed_feature_faq_user_default_permissions();
+}

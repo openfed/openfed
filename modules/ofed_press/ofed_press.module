@@ -35,3 +35,14 @@ function _ofed_press_insert_after_first_element(&$a, $element) {
 function ofed_press_preprocess_node() {
   drupal_add_css(drupal_get_path('module', 'ofed_press') . '/assets/styles/ofed_press.css');
 }
+
+/**
+ * Implements hook_ofed_user_default_permissions().
+ */
+function ofed_feature_press_ofed_user_default_permissions() {
+  // Function used by the ofed_rerquirements module. The hook defined in the
+  // required file hereunder is not available otherwise.
+  require_once drupal_get_path('module', 'ofed_press') . '/features/ofed_feature_press/ofed_feature_press.features.user_permission.inc';
+
+  return ofed_feature_press_user_default_permissions();
+}

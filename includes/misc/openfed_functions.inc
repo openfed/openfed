@@ -192,23 +192,23 @@ function _openfed_get_taxonomy_list() {
  */
 function _openfed_get_functionnalities_list() {
   $functionalities = array(
-    'ofed_address' => st('Address'),
-    'ofed_banner' => st('Banner'),
-    'blog' => st('Blog'),
-    'ofed_event' => st('Event'),
-    'ofed_faq' => st('FAQ'),
-    'forum' => st('Forum'),
-    'ofed_job' => st('Job'),
-    'lexicon' => st('Lexicon'),
-    'ofed_meeting' => st('Meeting'),
-    'ofed_news' => st('News'),
-    'ofed_photogallery' => st('Photo galleries'),
-    'poll' => st('Poll'),
-    'ofed_press' => st('Press'),
-    'ofed_slider' => st('Slider'),
-    'ofed_slideshow' => st('Slideshow'),
-    'ofed_team' => st('Team member'),
-    'ofed_video' => st('Video'),
+    'ofed_address' => get_t('Address'),
+    'ofed_banner' => get_t('Banner'),
+    'blog' => get_t('Blog'),
+    'ofed_event' => get_t('Event'),
+    'ofed_faq' => get_t('FAQ'),
+    'forum' => get_t('Forum'),
+    'ofed_job' => get_t('Job'),
+    'lexicon' => get_t('Lexicon'),
+    'ofed_meeting' => get_t('Meeting'),
+    'ofed_news' => get_t('News'),
+    'ofed_photogallery' => get_t('Photo galleries'),
+    'poll' => get_t('Poll'),
+    'ofed_press' => get_t('Press'),
+    'ofed_slider' => get_t('Slider'),
+    'ofed_slideshow' => get_t('Slideshow'),
+    'ofed_team' => get_t('Team member'),
+    'ofed_video' => get_t('Video'),
   );
 
   // Sort by 'title' sub key alphabeticaly and preserve array keys.
@@ -801,15 +801,14 @@ function _openfed_get_permissions_for_role($role_name) {
         'access site map',
       );
       break;
+    default:
+      $permissions = array();
+      break;
   }
 
   // Transform array to associative array.
   if (!empty($permissions)) {
-    $perms = array();
-    foreach ($permissions as $permission) {
-      $perms[$permission] = TRUE;
-    }
-    $permissions = $perms;
+    $permissions = array_fill_keys($permissions, TRUE);
   }
 
   // Return.

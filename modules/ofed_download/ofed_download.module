@@ -35,3 +35,14 @@ function _ofed_download_insert_after_first_element(&$a, $element) {
 function ofed_download_preprocess_node() {
   drupal_add_css(drupal_get_path('module', 'ofed_download') . '/assets/styles/ofed_download.css');
 }
+
+/**
+ * Implements hook_ofed_user_default_permissions().
+ */
+function ofed_feature_download_ofed_user_default_permissions() {
+  // Function used by the ofed_rerquirements module. The hook defined in the
+  // required file hereunder is not available otherwise.
+  require_once drupal_get_path('module', 'ofed_download') . '/features/ofed_feature_download/ofed_feature_download.features.user_permission.inc';
+
+  return ofed_feature_download_user_default_permissions();
+}
