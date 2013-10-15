@@ -7,6 +7,9 @@ CHANGELOG
 
   * New module: language_cookie
 
+  * Upgraded modules and themes:
+    #2109685: Theme upgrade: change CSS import URL to HTTPS (ofed_theme_cms)
+
   * Issues:
     #2109037: Create drush function for the ofed_requirements module
     #2088657: Library update: ckeditor
