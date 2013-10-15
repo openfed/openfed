@@ -191,24 +191,26 @@ function _openfed_get_taxonomy_list() {
  *  The content types list.
  */
 function _openfed_get_functionnalities_list() {
+  $tr = get_t();
+
   $functionalities = array(
-    'ofed_address' => get_t('Address'),
-    'ofed_banner' => get_t('Banner'),
-    'blog' => get_t('Blog'),
-    'ofed_event' => get_t('Event'),
-    'ofed_faq' => get_t('FAQ'),
-    'forum' => get_t('Forum'),
-    'ofed_job' => get_t('Job'),
-    'lexicon' => get_t('Lexicon'),
-    'ofed_meeting' => get_t('Meeting'),
-    'ofed_news' => get_t('News'),
-    'ofed_photogallery' => get_t('Photo galleries'),
-    'poll' => get_t('Poll'),
-    'ofed_press' => get_t('Press'),
-    'ofed_slider' => get_t('Slider'),
-    'ofed_slideshow' => get_t('Slideshow'),
-    'ofed_team' => get_t('Team member'),
-    'ofed_video' => get_t('Video'),
+    'ofed_address' => $tr('Address'),
+    'ofed_banner' => $tr('Banner'),
+    'blog' => $tr('Blog'),
+    'ofed_event' => $tr('Event'),
+    'ofed_faq' => $tr('FAQ'),
+    'forum' => $tr('Forum'),
+    'ofed_job' => $tr('Job'),
+    'lexicon' => $tr('Lexicon'),
+    'ofed_meeting' => $tr('Meeting'),
+    'ofed_news' => $tr('News'),
+    'ofed_photogallery' => $tr('Photo galleries'),
+    'poll' => $tr('Poll'),
+    'ofed_press' => $tr('Press'),
+    'ofed_slider' => $tr('Slider'),
+    'ofed_slideshow' => $tr('Slideshow'),
+    'ofed_team' => $tr('Team member'),
+    'ofed_video' => $tr('Video'),
   );
 
   // Sort by 'title' sub key alphabeticaly and preserve array keys.
