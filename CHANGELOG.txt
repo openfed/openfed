@@ -15,7 +15,6 @@ CHANGELOG
 
   * Issues:
     #2109037: Create drush function for the ofed_requirements module
-    #2088657: Library update: ckeditor
     #2109869: Installer: installation fails, admin_paths role
     #2112509: Installer: names of content types not visible
 
