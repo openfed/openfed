@@ -247,9 +247,9 @@ projects[l10n_update][download][revision] = 8c85a9f
 projects[l10n_update][subdir] = contrib
 projects[l10n_update][patch][1671570] = "http://drupal.org/files/l10n_update-fetch-module-update-1671570-18_0.patch"
 
-projects[locale_cookie][version] = "1.0"
-projects[locale_cookie][subdir] = contrib
-;projects[locale_cookie][patch][2037961] = "https://drupal.org/files/locale_cookie-store_language_preference_in_cookie-2037961-36.patch"
+projects[language_cookie][version] = "1.6"
+projects[language_cookie][subdir] = contrib
+projects[language_cookie][patch][1758754] = "https://drupal.org/files/language_cookie.anonymous_caching.1758754-11.patch"
 
 projects[lexicon][version] = "1.10"
 projects[lexicon][subdir] = contrib

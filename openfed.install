@@ -325,5 +325,6 @@ function openfed_update_7107() {
  */
 function openfed_update_7108() {
   variable_set('page_cache_invoke_hooks', TRUE);
+  module_disable(array('locale_cookie'), FALSE);
 }
 
