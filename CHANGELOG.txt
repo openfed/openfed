@@ -6,10 +6,11 @@ CHANGELOG
   * Removed module:
     #2037961: Removed locale_cookie (using language_cookie instead)
 
-  * New module:
+  * New modules:
     #2037961: Added (patched) language_cookie module
+    #2112471: Ofed_admin_menu for enforcing English admin menu
 
-  * Upgraded modules and themes:
+  * Upgraded theme:
     #2109685: Theme upgrade: change CSS import URL to HTTPS (ofed_theme_cms)
 
   * Issues:
