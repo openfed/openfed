@@ -1,17 +1,21 @@
 CHANGELOG
 =========
 
-Next Release - Version 7.x-1.x
-------------------------------
+15 October 2013 - Version 7.x-1.1
+---------------------------------
+  * Removed module: locale_cookie
+
+  * New module: language_cookie
 
   * Issues:
     #2109037: Create drush function for the ofed_requirements module
     #2088657: Library update: ckeditor
+    #2037961: Store language preference in cookie
 
 10 October 2013 - Version 7.x-1.1-rc2
 -------------------------------------
-  * Removed module:
-    #2089775: Why both admin_theme and admin_path ? (removed admin_path)
+  * Removed module: admin_path
+    #2089775: Why both admin_theme and admin_path?
 
   * Upgraded module:
     #2095803: Theme upgrade: ofed_theme_cms

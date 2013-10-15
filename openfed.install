@@ -319,3 +319,11 @@ function openfed_update_7107() {
     }
   }
 }
+
+/**
+ * Fix #2037961: make sure hook_boot() is invoked in cached pages.
+ */
+function openfed_update_7108() {
+  variable_set('page_cache_invoke_hooks', TRUE);
+}
+
