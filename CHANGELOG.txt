@@ -3,9 +3,11 @@ CHANGELOG
 
 15 October 2013 - Version 7.x-1.1
 ---------------------------------
-  * Removed module: locale_cookie
+  * Removed module:
+    #2037961: Removed locale_cookie (using language_cookie instead)
 
-  * New module: language_cookie
+  * New module:
+    #2037961: Added (patched) language_cookie module
 
   * Upgraded modules and themes:
     #2109685: Theme upgrade: change CSS import URL to HTTPS (ofed_theme_cms)
@@ -20,7 +22,7 @@ CHANGELOG
   * Removed module:
     #2089775: Why both admin_theme and admin_path (removed admin_path) ?
 
-  * Upgraded module and theme:
+  * Upgraded modules and theme:
     #2095803: Theme upgrade: ofed_theme_cms
     #2107481: Module upgrade: field-conditional-state
     #2107481: Module upgrade: field_group
