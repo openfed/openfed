@@ -22,6 +22,6 @@ if(typeof(CKEDITOR) !== 'undefined') {
         { name : 'Div'		, element : 'div', attributes : { 'class' : '' } },
         { name : 'Message Status' , element : 'div', attributes : { 'class' : 'messages status' } },
         { name : 'Message Warning' , element : 'div', attributes : { 'class' : 'messages warning' } },
-        { name : 'Message Error' , element : 'div', attributes : { 'class' : 'messages error' } },
+        { name : 'Message Error' , element : 'div', attributes : { 'class' : 'messages error' } }
     ]);
 }
