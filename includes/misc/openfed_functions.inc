@@ -150,7 +150,7 @@ function _openfed_get_roles_list() {
 }
 
 /**
- * Get the name of all roles availables or created by dafault.
+ * Get the name of all roles availables or created by default.
  * Used to be called after install and bypass the error with the st() function,
  * not recognized after install.
  */
@@ -220,598 +220,772 @@ function _openfed_get_functionnalities_list() {
 }
 
 /**
- * Sort content types list callback function.
- * @param type $a
- * @param type $b
- * @return int
+ * Returns default permissions.
+ *
+ * @return array
+ *  Associative array with as key the permission and as value the array of
+ *  roles this permission applies to.
  */
-//function _openfed_sort_content_types_list($a, $b){
-//  if($a['title'] == $b['title']){
-//    // Return.
-//    return 0;
-//  }
-//  // Return.
-//  return ($a['title'] < $b['title']) ? -1 : 1;
-//}
+function _openfed_get_default_permissions() {
+  $permissions = array(
+    // addanother
+    'administer add another' => array(
+      'Builder',
+      'Configurator',
+      'Content Manager',
+    ),
+    'use add another' => array(
+      'Builder',
+      'Configurator',
+      'Content Manager',
+      'User Manager',
+      'Authenticated Visitor',
+      'authenticated user',
+    ),
+
+    // admin_menu'
+    'access administration menu' => array(
+      'Builder',
+      'Configurator',
+      'Content Manager',
+      'User Manager',
+    ),
+    'flush caches' => array(
+      'Builder',
+      'Configurator',
+      'Content Manager',
+    ),
+
+    // admin_theme
+    'access admin theme' => array(
+      'Builder',
+      'Configurator',
+      'Content Manager',
+      'User Manager',
+    ),
+
+    // block
+    'administer blocks' => array(
+      'Builder',
+      'Configurator',
+    ),
+
+    // ckeditor
+    'administer ckeditor' => array(
+      'Builder',
+      'Configurator',
+    ),
+    'customize ckeditor' => array(
+      'Builder',
+      'Configurator',
+    ),
+
+    // ckeditor_link
+    'access ckeditor link' => array(
+      'Builder',
+      'Configurator',
+      'Content Manager',
+    ),
+    'administer ckeditor link' => array(
+      'Builder',
+      'Configurator',
+    ),
+
+    // contextual
+    'access contextual links' => array(
+      'Builder',
+      'Configurator',
+      'Content Manager',
+      'User Manager',
+    ),
+
+    // ds
+    'admin_display_suite' => array(
+      'Builder',
+      'Configurator',
+    ),
+
+    // ds_extras
+    'ds_switch ofed_download' => array(
+      'Builder',
+      'Configurator',
+    ),
+    'ds_switch ofed_page' => array(
+      'Builder',
+      'Configurator',
+    ),
+    'ds_switch webform' => array(
+      'Builder',
+      'Configurator',
+    ),
+    'view ds_flag_bookmarks on node' => array(
+      'authenticated user',
+      'anonymous user',
+    ),
+    'view title on node' => array(
+      'authenticated user',
+      'anonymous user',
+    ),
+    'view links on node' => array(
+      'authenticated user',
+      'anonymous user',
+    ),
+    'view node_link on node' => array(
+      'authenticated user',
+      'anonymous user',
+    ),
+    'view author on node' => array(
+      'authenticated user',
+      'anonymous user',
+    ),
+    'view post_date on node' => array(
+      'authenticated user',
+      'anonymous user',
+    ),
+    'view submitted_by on node' => array(
+      'authenticated user',
+      'anonymous user',
+    ),
+    'view search_snippet on node' => array(
+      'authenticated user',
+      'anonymous user',
+    ),
+    'view search_info on node' => array(
+      'authenticated user',
+      'anonymous user',
+    ),
+    'view title on taxonomy_term' => array(
+      'authenticated user',
+      'anonymous user',
+    ),
+    'view more_link on taxonomy_term' => array(
+      'authenticated user',
+      'anonymous user',
+    ),
+    'view name on user' => array(
+      'authenticated user',
+      'anonymous user',
+    ),
+    'view title on ds_views' => array(
+      'authenticated user',
+      'anonymous user',
+    ),
+    'view header on ds_views' => array(
+      'authenticated user',
+      'anonymous user',
+    ),
+    'view exposed on ds_views' => array(
+      'authenticated user',
+      'anonymous user',
+    ),
+    'view attachment_before on ds_views' => array(
+      'authenticated user',
+      'anonymous user',
+    ),
+    'view rows on ds_views' => array(
+      'authenticated user',
+      'anonymous user',
+    ),
+    'view empty on ds_views' => array(
+      'authenticated user',
+      'anonymous user',
+    ),
+    'view pager on ds_views' => array(
+      'authenticated user',
+      'anonymous user',
+    ),
+    'view attachment_after on ds_views' => array(
+      'authenticated user',
+      'anonymous user',
+    ),
+    'view more on ds_views' => array(
+      'authenticated user',
+      'anonymous user',
+    ),
+    'view footer on ds_views' => array(
+      'authenticated user',
+      'anonymous user',
+    ),
+    'view feed_icon on ds_views' => array(
+      'authenticated user',
+      'anonymous user',
+    ),
+
+    // ds_ui
+    'admin_view_modes' => array(
+      'Builder',
+      'Configurator',
+    ),
+    'admin_fields' => array(
+      'Builder',
+      'Configurator',
+    ),
+    'admin_classes' => array(
+      'Builder',
+      'Configurator',
+    ),
+
+    // features
+    'administer features' => array(
+      'Builder',
+      'Configurator',
+    ),
+    'manage features' => array(
+      'Builder',
+      'Configurator',
+    ),
+
+    // field_group
+    'administer fieldgroups' => array(
+      'Builder',
+      'Configurator',
+    ),
+
+    // filter
+    'administer filters' => array(
+      'Builder',
+      'Configurator',
+    ),
+    'use text format filtered_html' => array(
+      'Builder',
+      'Configurator',
+      'Content Manager',
+    ),
+    'use text format full_html' => array(
+      'Builder',
+      'Configurator',
+      'Content Manager',
+    ),
+
+    // flag
+    'administer flags' => array(
+      'Builder',
+      'Configurator',
+    ),
+    'use flag import' => array(
+      'Builder',
+    ),
+
+    // i18n_node
+    'administer content translations' => array(
+      'Builder',
+      'Configurator',
+      'Content Manager',
+    ),
+
+    // i18n_string
+    'translate user-defined strings' => array(
+      'Builder',
+      'Configurator',
+    ),
+    'translate admin strings' => array(
+      'Builder',
+      'Configurator',
+    ),
+
+    // image
+    'administer image styles' => array(
+      'Builder',
+      'Configurator',
+      'Content Manager',
+    ),
+
+    // imce
+    'administer imce' => array(
+      'Builder',
+    ),
+
+    // linkchecker
+    'access broken links report' => array(
+      'Builder',
+      'Configurator',
+      'Content Manager',
+    ),
+    'access own broken links report' => array(
+      'Builder',
+      'Configurator',
+      'Content Manager',
+    ),
+    'administer linkchecker' => array(
+      'Builder',
+    ),
+    'edit link settings' => array(
+      'Builder',
+      'Configurator',
+    ),
+
+    // locale
+    'administer languages' => array(
+      'Builder',
+      'Configurator',
+    ),
+    'translate interface' => array(
+      'Builder',
+    ),
+
+    // media
+    'administer media' => array(
+      'Builder',
+      'Configurator',
+      'Content Manager',
+    ),
+    'import media' => array(
+      'Builder',
+      'Configurator',
+      'Content Manager',
+    ),
+    'view media' => array(
+      'Builder',
+      'Configurator',
+      'Content Manager',
+    ),
+    'edit media' => array(
+      'Builder',
+      'Configurator',
+      'Content Manager',
+    ),
+
+    // media_internet
+    'add media from remote sources' => array(
+      'Builder',
+      'Configurator',
+      'Content Manager',
+    ),
+
+    // menu
+    'administer menu' => array(
+      'Builder',
+      'Configurator',
+      'Content Manager',
+    ),
+
+    // menu_attributes
+    'administer menu attributes' => array(
+      'Builder',
+      'Configurator',
+    ),
+
+    // menu_position
+    'administer menu positions' => array(
+      'Builder',
+      'Configurator',
+    ),
+
+    // metatag
+    'administer meta tags' => array(
+      'Builder',
+      'Configurator',
+    ),
+    'edit meta tags' => array(
+      'Builder',
+      'Configurator',
+      'Content Manager',
+    ),
+
+    // mollom
+    'administer mollom' => array(
+      'Builder',
+    ),
+    'access mollom statistics' => array(
+      'Builder',
+      'Configurator',
+    ),
+
+    // node
+    'administer content types' => array(
+      'Builder',
+      'Configurator',
+    ),
+    'access content overview' => array(
+      'Builder',
+      'Configurator',
+      'Content Manager',
+    ),
+    'access content' => array(
+      'Builder',
+      'Configurator',
+      'Content Manager',
+      'User Manager',
+      'Authenticated Visitor',
+      'authenticated user',
+      'anonymous user',
+    ),
+    'view own unpublished content' => array(
+      'Builder',
+      'Configurator',
+      'Content Manager',
+      'User Manager',
+      'Authenticated Visitor',
+      'authenticated user',
+    ),
+    'view revisions' => array(
+      'Builder',
+      'Configurator',
+      'Content Manager',
+    ),
+    'revert revisions' => array(
+      'Builder',
+      'Configurator',
+      'Content Manager',
+    ),
+    'create webform content' => array(
+      'Builder',
+      'Configurator',
+      'Content Manager',
+    ),
+    'edit own webform content' => array(
+      'Builder',
+      'Configurator',
+      'Content Manager',
+    ),
+    'edit any webform content' => array(
+      'Builder',
+      'Configurator',
+      'Content Manager',
+    ),
+    'delete own webform content' => array(
+      'Builder',
+      'Configurator',
+      'Content Manager',
+    ),
+    'bypass node access' => array(
+      'Configurator',
+    ),
+    'administer nodes' => array(
+      'Configurator',
+    ),
+
+    // ofed_switcher
+    'access ofed_switcher administration' => array(
+      'Builder',
+      'Configurator',
+      'Content Manager',
+    ),
+    'access ofed_switcher content' => array(
+      'Builder',
+      'Configurator',
+      'Content Manager',
+    ),
+
+    // ofed_vmcd
+    'administer views multi-column display' => array(
+      'Builder',
+      'Configurator',
+    ),
+    'use views multi-column display' => array(
+      'Builder',
+      'Configurator',
+      'Content Manager',
+    ),
+
+    // override_node_options
+    'override webform published option' => array(
+      'Builder',
+      'Configurator',
+      'Content Manager',
+    ),
+    'override webform promote to front page option' => array(
+      'Builder',
+      'Configurator',
+      'Content Manager',
+    ),
+    'override webform sticky option' => array(
+      'Builder',
+      'Configurator',
+      'Content Manager',
+    ),
+    'override webform revision option' => array(
+      'Builder',
+      'Configurator',
+      'Content Manager',
+    ),
+    'enter webform revision log entry' => array(
+      'Builder',
+      'Configurator',
+      'Content Manager',
+    ),
+    'override webform authored on option' => array(
+      'Builder',
+      'Configurator',
+      'Content Manager',
+    ),
+    'override webform authored by option' => array(
+      'Builder',
+      'Configurator',
+    ),
+
+    // page_title
+    'set page title' => array(
+      'Builder',
+      'Configurator',
+      'Content Manager',
+    ),
+    'administer page titles' => array(
+      'Builder',
+      'Configurator',
+      'Content Manager',
+    ),
+
+    // path
+    'administer url aliases' => array(
+      'Builder',
+      'Configurator',
+      'Content Manager',
+    ),
+    'create url aliases' => array(
+      'Builder',
+      'Configurator',
+      'Content Manager',
+    ),
+
+    // path_breadcrumbs_ui
+    'administer path breadcrumbs' => array(
+      'Builder',
+      'Configurator',
+    ),
+
+    // pathauto
+    'administer pathauto' => array(
+      'Builder',
+      'Configurator',
+    ),
+    'notify of path changes' => array(
+      'Builder',
+      'Configurator',
+    ),
+
+    // print
+    'administer print' => array(
+      'Builder',
+      'Configurator',
+    ),
+    'node-specific print configuration' => array(
+      'Builder',
+      'Configurator',
+    ),
+    'access print' => array(
+      'Builder',
+      'Configurator',
+      'Content Manager',
+      'User Manager',
+      'Authenticated Visitor',
+      'authenticated user',
+      'anonymous user',
+    ),
+
+    // redirect
+    'administer redirects' => array(
+      'Builder',
+      'Configurator',
+    ),
+
+    // rules
+    'administer rules' => array(
+      'Builder',
+      'Configurator',
+    ),
+    'bypass rules access' => array(
+      'Builder',
+      'Configurator',
+    ),
+    'access rules debug' => array(
+      'Builder',
+      'Configurator',
+    ),
+
+    // scheduler
+    'administer scheduler' => array(
+      'Builder',
+      'Configurator',
+    ),
+    'schedule (un)publishing of nodes' => array(
+      'Builder',
+      'Configurator',
+      'Content Manager',
+    ),
+
+    // search
+    'administer search' => array(
+      'Builder',
+      'Configurator',
+    ),
+    'search content' => array(
+      'Builder',
+      'Configurator',
+      'Content Manager',
+      'User Manager',
+      'Authenticated Visitor',
+      'authenticated user',
+      'anonymous user',
+    ),
+
+    // seckit
+    'administer seckit' => array(
+      'Builder',
+      'Configurator',
+    ),
+
+    // security_review
+    'access security review list' => array(
+      'Builder',
+      'Configurator',
+    ),
+    'run security checks' => array(
+      'Builder',
+      'Configurator',
+    ),
+
+    // site_map
+    'access site map' => array(
+      'Builder',
+      'Configurator',
+      'Content Manager',
+      'User Manager',
+      'Authenticated Visitor',
+      'authenticated user',
+      'anonymous user',
+    ),
+
+    // system
+    'administer actions' => array(
+      'Builder',
+      'Configurator',
+    ),
+    'access administration pages' => array(
+      'Builder',
+      'Configurator',
+      'Content Manager',
+      'User Manager',
+    ),
+    'access site in maintenance mode' => array(
+      'Builder',
+    ),
+    'view the administration theme' => array(
+      'Builder',
+      'Configurator',
+      'Content Manager',
+      'User Manager',
+    ),
+    'access site reports' => array(
+      'Builder',
+    ),
+    'block IP addresses' => array(
+      'Builder',
+    ),
+
+    // taxonomy
+    'administer taxonomy' => array(
+      'Builder',
+      'Configurator',
+      'Content Manager',
+    ),
+
+    // translation
+    'translate content' => array(
+      'Builder',
+      'Configurator',
+      'Content Manager',
+    ),
+
+    // translation_overview
+    'view translation overview assigments' => array(
+      'Builder',
+      'Configurator',
+      'Content Manager',
+    ),
+
+    // user
+    'administer permissions' => array(
+      'Builder',
+      'User Manager',
+    ),
+    'administer users' => array(
+      'Builder',
+      'User Manager',
+    ),
+    'access user profiles' => array(
+      'Builder',
+      'Configurator',
+      'User Manager',
+    ),
+
+    // view_unpublished
+    'view any unpublished content' => array(
+      'Builder',
+      'Configurator',
+      'Content Manager',
+    ),
+
+    // views
+    'administer views' => array(
+      'Builder',
+    ),
+    'access all views' => array(
+      'Builder',
+    ),
+
+    // webform
+    'access all webform results' => array(
+      'Builder',
+      'Configurator',
+      'Content Manager',
+    ),
+    'access own webform results' => array(
+      'Builder',
+      'Configurator',
+      'Content Manager',
+    ),
+    'edit all webform submissions' => array(
+      'Builder',
+      'Configurator',
+    ),
+    'delete all webform submissions' => array(
+      'Builder',
+      'Configurator',
+    ),
+    'access own webform submissions' => array(
+      'Builder',
+      'Configurator',
+      'Content Manager',
+    ),
+    'edit own webform submissions' => array(
+      'Builder',
+      'Configurator',
+      'Content Manager',
+    ),
+    'delete own webform submissions' => array(
+      'Builder',
+      'Configurator',
+      'Content Manager',
+    ),
+
+    // xmlsitemap
+    'administer xmlsitemap' => array(
+      'Builder',
+    ),
+  );
+  return $permissions;
+}
 
 /**
  * Get the permissions list for a specified role.
  * @param type $role_name
  *   The role name
  * @return array
- *   The permissions array.
+ *   Associative array with key the permission name and value TRUE if the role
+ *   name has this permission.
  */
 function _openfed_get_permissions_for_role($role_name) {
   // Initialize permissions.
-  $permissions = array();
-  // Switch on role.
-  switch ($role_name) {
-    // Builder.
-    case 'Builder':
-      $permissions = array(
-        // Add another.
-        'administer add another',
-        'use add another',
-        // Administration menu.
-        'access administration menu',
-        'flush caches',
-        // Administration theme.
-        'access admin theme',
-        // Block.
-        'administer blocks',
-        // CKEditor.
-        'administer ckeditor',
-        'customize ckeditor',
-        // CKEditor Link.
-        'access ckeditor link',
-        'administer ckeditor link',
-        // Content translation.
-        'translate content',
-        // Contextual links.
-        'access contextual links',
-        // Display Suite.
-        'admin_display_suite',
-        // Display Suite Extras.
-        'ds_switch ofed_download',
-        'ds_switch ofed_page',
-        'ds_switch webform',
-        // Display Suite UI.
-        'admin_view_modes',
-        'admin_fields',
-        'admin_classes',
-        // Features.
-        'administer features',
-        'manage features',
-        // Fieldgroup.
-        'administer fieldgroups',
-        // Filter.
-        'administer filters',
-        'use text format filtered_html',
-        'use text format full_html',
-        // Flag.
-        'administer flags',
-        'use flag import',
-        // IMCE.
-        'administer imce',
-        // IMAGE.
-        'administer image styles',
-        // Interface switcher (ofed_switcher)
-        'access ofed_switcher administration',
-        'access ofed_switcher content',
-        // Link Checker.
-        'access broken links report',
-        'access own broken links report',
-        'administer linkchecker',
-        'edit link settings',
-        // Locale.
-        'administer languages',
-        'translate interface',
-        // Media.
-        'administer media',
-        'import media',
-        'view media',
-        'edit media',
-        // Media Internet Sources.
-        'add media from remote sources',
-        // Menu.
-        'administer menu',
-        // Menu attributes.
-        'administer menu attributes',
-        // Menu position.
-        'administer menu positions',
-        // Meta tags.
-        'administer meta tags',
-        'edit meta tags',
-        // Mollom.
-        'administer mollom',
-        'access mollom statistics',
-        // Multilingual content.
-        'administer content translations',
-        // Node.
-        'administer content types',
-        'access content overview',
-        'access content',
-        'view own unpublished content',
-        'view revisions',
-        'revert revisions',
-        // CT: Webform.
-        'create webform content',
-        'edit own webform content',
-        'edit any webform content',
-        'delete own webform content',
-        // Override node options.
-        // CT: Webform.
-        'override webform published option',
-        'override webform promote to front page option',
-        'override webform sticky option',
-        'override webform revision option',
-        'enter webform revision log entry',
-        'override webform authored on option',
-        'override webform authored by option',
-        // Page Title.
-        'set page title',
-        'administer page titles',
-        // Views multi-column display.
-        'administer views multi-column display',
-        'use views multi-column display',
-        // Path.
-        'administer url aliases',
-        'create url aliases',
-        // Path breadcrubms UI.
-        'administer path breadcrumbs',
-        // Pathauto.
-        'administer pathauto',
-        'notify of path changes',
-        // Printer-friendly pages.
-        'administer print',
-        'node-specific print configuration',
-        'access print',
-        // Redirect.
-        'administer redirects',
-        // Rules.
-        'administer rules',
-        'bypass rules access',
-        'access rules debug',
-        // Scheduler.
-        'administer scheduler',
-        'schedule (un)publishing of nodes',
-        // Search.
-        'administer search',
-        'search content',
-        // Security Kit.
-        'administer seckit',
-        // Security Review.
-        'access security review list',
-        'run security checks',
-        // Site map.
-        'access site map',
-        // String translation.
-        'translate user-defined strings',
-        'translate admin strings',
-        // System.
-        'administer actions',
-        'access administration pages',
-        'access site in maintenance mode',
-        'view the administration theme',
-        'access site reports',
-        'block IP addresses',
-        // Taxonomy.
-        'administer taxonomy',
-        // Translation overview.
-        'view translation overview assigments',
-        // User.
-        'administer permissions',
-        'administer users',
-        'access user profiles',
-        // View Unpublished.
-        'view any unpublished content',
-        // Views.
-        'administer views',
-        'access all views',
-        // Webform.
-        'access all webform results',
-        'access own webform results',
-        'edit all webform submissions',
-        'delete all webform submissions',
-        'access own webform submissions',
-        'edit own webform submissions',
-        'delete own webform submissions',
-        // XML sitemap.
-        'administer xmlsitemap',
-      );
-      break;
+  $permissions = _openfed_get_default_permissions();
 
-    // Configurator.
-    case 'Configurator':
-      $permissions = array(
-        // Add another.
-        'administer add another',
-        'use add another',
-        // Administration menu.
-        'access administration menu',
-        'flush caches',
-        // Administration theme.
-        'access admin theme',
-        // Block.
-        'administer blocks',
-        // CKEditor.
-        'administer ckeditor',
-        'customize ckeditor',
-        // CKEditor Link.
-        'access ckeditor link',
-        'administer ckeditor link',
-        // Content translation.
-        'translate content',
-        // Contextual links.
-        'access contextual links',
-        // Display Suite.
-        'admin_display_suite',
-        // Display Suite Extras.
-        'ds_switch ofed_download',
-        'ds_switch ofed_page',
-        'ds_switch webform',
-        // Display Suite UI.
-        'admin_view_modes',
-        'admin_fields',
-        'admin_classes',
-        // Features.
-        'administer features',
-        'manage features',
-        // Fieldgroup.
-        'administer fieldgroups',
-        // Filter.
-        'administer filters',
-        'use text format filtered_html',
-        'use text format full_html',
-        // Flag.
-        'administer flags',
-        // Image.
-        'administer image styles',
-        // Interface switcher (ofed_switcher)
-        'access ofed_switcher administration',
-        'access ofed_switcher content',
-        // Link Checker.
-        'access broken links report',
-        'access own broken links report',
-        'edit link settings',
-        // Locale.
-        'administer languages',
-        // Media.
-        'administer media',
-        'import media',
-        'view media',
-        'edit media',
-        // Media Internet Sources.
-        'add media from remote sources',
-        // Menu.
-        'administer menu',
-        // Menu attributes.
-        'administer menu attributes',
-        // Menu position.
-        'administer menu positions',
-        // Meta tags.
-        'administer meta tags',
-        'edit meta tags',
-        // Mollom.
-        'access mollom statistics',
-        // Multilingual content.
-        'administer content translations',
-        // Node.
-        'bypass node access',
-        'administer nodes',
-        'administer content types',
-        'access content overview',
-        'access content',
-        'view own unpublished content',
-        'view revisions',
-        'revert revisions',
-        // CT: Webform.
-        'create webform content',
-        'edit own webform content',
-        'edit any webform content',
-        'delete own webform content',
-        // Override node options.
-        // CT: Webform.
-        'override webform published option',
-        'override webform promote to front page option',
-        'override webform sticky option',
-        'override webform revision option',
-        'enter webform revision log entry',
-        'override webform authored on option',
-        'override webform authored by option',
-        // Page Title.
-        'set page title',
-        'administer page titles',
-        // Views multi-column display.
-        'administer views multi-column display',
-        'use views multi-column display',
-        // Path.
-        'administer url aliases',
-        'create url aliases',
-        // Path breadcrubms UI.
-        'administer path breadcrumbs',
-        // Pathauto.
-        'administer pathauto',
-        'notify of path changes',
-        // Printer-friendly pages.
-        'administer print',
-        'node-specific print configuration',
-        'access print',
-        // Redirect.
-        'administer redirects',
-        // Rules.
-        'administer rules',
-        'bypass rules access',
-        'access rules debug',
-        // Scheduler.
-        'administer scheduler',
-        'schedule (un)publishing of nodes',
-        // Search.
-        'administer search',
-        'search content',
-        // Security Kit.
-        'administer seckit',
-        // Security Review.
-        'access security review list',
-        'run security checks',
-        // Site map.
-        'access site map',
-        // String translation.
-        'translate user-defined strings',
-        'translate admin strings',
-        // System.
-        'administer actions',
-        'access administration pages',
-        'view the administration theme',
-        // Taxonomy.
-        'administer taxonomy',
-        // Translation overview.
-        'view translation overview assigments',
-        // User
-        'access user profiles',
-        // View Unpublished.
-        'view any unpublished content',
-        // Webform.
-        'access all webform results',
-        'access own webform results',
-        'edit all webform submissions',
-        'delete all webform submissions',
-        'access own webform submissions',
-        'edit own webform submissions',
-        'delete own webform submissions',
-      );
-      break;
-
-    // Content Manager.
-    case 'Content Manager':
-      $permissions = array(
-        // Add another.
-        'administer add another',
-        'use add another',
-        // Administration menu.
-        'access administration menu',
-        'flush caches',
-        // Administration theme.
-        'access admin theme',
-        // CKEditor Link.
-        'access ckeditor link',
-        // Content translation.
-        'translate content',
-        // Contextual links.
-        'access contextual links',
-        // Filter.
-        'use text format filtered_html',
-        'use text format full_html',
-        // Image.
-        'administer image styles',
-        // Interface switcher (ofed_switcher)
-        'access ofed_switcher administration',
-        'access ofed_switcher content',
-        // Link Checker.
-        'access broken links report',
-        'access own broken links report',
-        // Media.
-        'administer media',
-        'import media',
-        'view media',
-        'edit media',
-        // Media Internet Sources.
-        'add media from remote sources',
-        // Menu.
-        'administer menu',
-        // Meta tags.
-        'edit meta tags',
-        // Multilingual content.
-        'administer content translations',
-        // Node.
-        'access content overview',
-        'access content',
-        'view own unpublished content',
-        'view revisions',
-        'revert revisions',
-        // CT: Webform.
-        'create webform content',
-        'edit own webform content',
-        'edit any webform content',
-        'delete own webform content',
-        // Override node options.
-        // CT: Webform.
-        'override webform published option',
-        'override webform promote to front page option',
-        'override webform sticky option',
-        'override webform revision option',
-        'enter webform revision log entry',
-        'override webform authored on option',
-        // Page Title.
-        'set page title',
-        'administer page titles',
-        // Page model.
-        'use views multi-column display',
-        // Path.
-        'administer url aliases',
-        'create url aliases',
-        // Printer-friendly pages.
-        'access print',
-        // Scheduler
-        'schedule (un)publishing of nodes',
-        // Search.
-        'search content',
-        // Site map.
-        'access site map',
-        // System.
-        'access administration pages',
-        'view the administration theme',
-        // Taxonomy.
-        'administer taxonomy',
-        // Translation overview.
-        'view translation overview assigments',
-        // View Unpublished.
-        'view any unpublished content',
-        // Webform.
-        'access all webform results',
-        'access own webform results',
-        'access own webform submissions',
-        'edit own webform submissions',
-        'delete own webform submissions',
-      );
-      break;
-
-    // User Manager.
-    case 'User Manager':
-      $permissions = array(
-        // Add another.
-        'use add another',
-        // Administration menu.
-        'access administration menu',
-        // Administration theme.
-        'access admin theme',
-        // Contextual links.
-        'access contextual links',
-        // Node.
-        'access content',
-        'view own unpublished content',
-        // Printer-friendly pages.
-        'access print',
-        // Search.
-        'search content',
-        // Site map.
-        'access site map',
-        // System.
-        'access administration pages',
-        'view the administration theme',
-        // User.
-        'administer permissions',
-        'administer users',
-        'access user profiles',
-      );
-      break;
-
-    // Authenticated Visitor.
-    case 'Authenticated Visitor':
-      $permissions = array(
-        // Add another.
-        'use add another',
-        // Node.
-        'access content',
-        'view own unpublished content',
-        // Printer-friendly pages.
-        'access print',
-        // Search.
-        'search content',
-        // Site map.
-        'access site map',
-      );
-      break;
-
-    // Authenticated user.
-    case 'authenticated user':
-      $permissions = array(
-        // Add another.
-        'use add another',
-        // Display Suite Extras.
-        'view ds_flag_bookmarks on node',
-        'view title on node',
-        'view links on node',
-        'view node_link on node',
-        'view author on node',
-        'view post_date on node',
-        'view submitted_by on node',
-        'view search_snippet on node',
-        'view search_info on node',
-        'view title on taxonomy_term',
-        'view more_link on taxonomy_term',
-        'view name on user',
-        'view title on ds_views',
-        'view header on ds_views',
-        'view exposed on ds_views',
-        'view attachment_before on ds_views',
-        'view rows on ds_views',
-        'view empty on ds_views',
-        'view pager on ds_views',
-        'view attachment_after on ds_views',
-        'view more on ds_views',
-        'view footer on ds_views',
-        'view feed_icon on ds_views',
-        // Node.
-        'access content',
-        'view own unpublished content',
-        // Printer-friendly pages.
-        'access print',
-        // Search.
-        'search content',
-        // Site map.
-        'access site map',
-      );
-      break;
-
-    // Anonymous user.
-    case 'anonymous user':
-      $permissions = array(
-        // Display Suite Extras.
-        'view ds_flag_bookmarks on node',
-        'view title on node',
-        'view links on node',
-        'view node_link on node',
-        'view author on node',
-        'view post_date on node',
-        'view submitted_by on node',
-        'view search_snippet on node',
-        'view search_info on node',
-        'view title on taxonomy_term',
-        'view more_link on taxonomy_term',
-        'view name on user',
-        'view title on ds_views',
-        'view header on ds_views',
-        'view exposed on ds_views',
-        'view attachment_before on ds_views',
-        'view rows on ds_views',
-        'view empty on ds_views',
-        'view pager on ds_views',
-        'view attachment_after on ds_views',
-        'view more on ds_views',
-        'view footer on ds_views',
-        'view feed_icon on ds_views',
-        // Node.
-        'access content',
-        // Printer-friendly pages.
-        'access print',
-        // Search.
-        'search content',
-        // Site map.
-        'access site map',
-      );
-      break;
-  }
-
-  // Transform array to associative array.
-  if (!empty($permissions)) {
-    $perms = array();
-    foreach ($permissions as $permission) {
-      $perms[$permission] = TRUE;
+  // Return the permissions that apply to this role.
+  $permissions_for_role = array();
+  foreach ($permissions as $permission_name => $roles) {
+    if (in_array($role_name, $permissions[$permission_name])) {
+      $permissions_for_role[$permission_name] = TRUE;
     }
-    $permissions = $perms;
   }
 
-  // Return.
-  return $permissions;
+  return $permissions_for_role;
 }

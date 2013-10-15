@@ -132,3 +132,32 @@ function drush_openfed_revert_ds_settings($type = '') {
     }
   }
 }
+
+/**
+ * Validates permissions array hard-coded in openfed_functions.inc.
+ */
+function _openfed_drush_validate_permissions() {
+  $permissions = _openfed_get_default_permissions();
+  $default_roles = _openfed_get_roles_list_default();
+  $modules = array_keys(user_permission_get_modules());
+
+  // Check whether the permissions apply.
+  foreach ($permissions as $permission_name => $roles) {
+    if (!in_array($permission_name, $modules)) {
+      drush_print(t('Invalid permission: "@permission_name"', array(
+      '@permission_name' => $permission_name,
+      ));
+      continue;
+    }
+    // Iterate through roles array. Example: array('Builder', 'Configurator', 'Content Manager').
+    foreach ($roles as $role) {
+      // Check whether the defined roles exist and are spelled correctly.
+      if (!in_array($role, $default_roles)) {
+        drush_print(t('Invalid role for permission @permission_name: @role', array(
+        '@permission_name' => $permission_name,
+        '@role' => $role,
+        )), 'warning');
+      }
+    }
+  }
+}
