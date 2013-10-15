@@ -234,32 +234,36 @@ function ofed_requirements_admin_requirements_notes_reset_confirm_submit($form, 
  * @param string $remark The remark.
  * @return string
  */
-function ofed_requirements_admin_requirements_build_report_text_for_test($title, $errors, $remark) {
+function ofed_requirements_admin_requirements_build_report_text_for_test($title, $errors, $remark, $drush_options = array()) {
   // Initialize.
   $output = '';
-  $output .= '--------------------------------------------------------------------------------------------------------------' . "\n";
 
-  // Build text.
-  $status = (empty($errors)) ? 'Success' : 'Failed';
-  $output .= 'TEST: ' . $title . ' (' . $status . ').' . "\n\n";
+  if (empty($drush_options) || $drush_options['list'] || (!$drush_options['list'] && !empty($errors))) {
+    // Build text.
+    $status = (empty($errors)) ? 'Success' : 'Failed';
+    $output .= 'TEST: ' . $title . ' (' . $status . ').' . "\n";
 
-  $status = (empty($errors)) ? 'None' : '';
-  $output .= 'Error(s): ' . $status . "\n";
-  if (!empty($errors)) {
-    $output .= '---------' . "\n";
-    foreach ($errors as $error) {
-      $output .= $error . "\n";
+    $status = (empty($errors)) ? 'None' : array_shift($errors);
+    $output .= 'Error(s): ' . $status . "\n";
+    if (!empty($errors)) {
+
+      if (empty($drush_options) || $drush_options['list']) {
+
+        foreach ($errors as $error) {
+          $output .= $error . "\n";
+        }
+      }
     }
-  }
 
-  $status = (empty($remark)) ? 'None' : '';
-  $output .= 'Remark(s): ' . $status . "\n";
-  if (!empty($remark)) {
-    $output .= '----------' . "\n";
-    $output .= $remark . "\n";
-  }
-  else {
-    $output .= "\n";
+    $status = (empty($remark)) ? 'None' : '';
+    $output .= 'Remark(s): ' . $status . "\n";
+    if (!empty($remark)) {
+      $output .= '----------' . "\n";
+      $output .= $remark . "\n";
+    }
+    else {
+      $output .= "\n";
+    }
   }
 
   // Return.
@@ -269,44 +273,46 @@ function ofed_requirements_admin_requirements_build_report_text_for_test($title,
 /**
  * Export file.
  */
-function ofed_requirements_admin_requirements_notes_export() {
+function ofed_requirements_admin_requirements_notes_export($drush_options = array()) {
   // Initialize.
   $output = '';
 
-  // Build the file content.
-  $output .= 'FEDICT REQUIREMENT FILE REPORT.' . "\n";
-  $output .= '-------------------------------' . "\n";
+  if (empty($drush_options)) {
+    // Build the file content.
+    $output .= 'FEDICT REQUIREMENT FILE REPORT.' . "\n";
+    $output .= '-------------------------------' . "\n";
+  }
   $output .= 'Report date: ' . date('d/m/Y H:i:s') . "\n\n";
 
   // Add roles infos.
   $title = 'Check the defined users roles';
   $errors = _ofed_requirements_check_roles();
   $remark = variable_get('ofed_requirements_remarks_roles', '');
-  $output .= ofed_requirements_admin_requirements_build_report_text_for_test($title, $errors, $remark);
+  $output .= ofed_requirements_admin_requirements_build_report_text_for_test($title, $errors, $remark, $drush_options);
 
   // Add permissions infos.
   $title = 'Check the permissions assigned to roles';
   $errors = _ofed_requirements_check_perms();
   $remark = variable_get('ofed_requirements_remarks_perms', '');
-  $output .= ofed_requirements_admin_requirements_build_report_text_for_test($title, $errors, $remark);
+  $output .= ofed_requirements_admin_requirements_build_report_text_for_test($title, $errors, $remark, $drush_options);
 
   // Add modules enabled list infos.
   $title = 'Check the enabled modules';
   $errors = _ofed_requirements_check_modules_enabled();
   $remark = variable_get('ofed_requirements_remarks_modules_enabled', '');
-  $output .= ofed_requirements_admin_requirements_build_report_text_for_test($title, $errors, $remark);
+  $output .= ofed_requirements_admin_requirements_build_report_text_for_test($title, $errors, $remark, $drush_options);
 
   // Add modules versions list infos.
   $title = 'Check the modules version';
   $errors = _ofed_requirements_check_modules_version();
   $remark = variable_get('ofed_requirements_remarks_modules_version', '');
-  $output .= ofed_requirements_admin_requirements_build_report_text_for_test($title, $errors, $remark);
+  $output .= ofed_requirements_admin_requirements_build_report_text_for_test($title, $errors, $remark, $drush_options);
 
   // Add variables infos.
   $title = 'Check the settings variables';
   $errors = _ofed_requirements_check_variables();
   $remark = variable_get('ofed_requirements_remarks_variables', '');
-  $output .= ofed_requirements_admin_requirements_build_report_text_for_test($title, $errors, $remark);
+  $output .= ofed_requirements_admin_requirements_build_report_text_for_test($title, $errors, $remark, $drush_options);
 
   // Add feature infos.
   // Fieldsets for each OpenFed features.
@@ -331,30 +337,35 @@ function ofed_requirements_admin_requirements_notes_export() {
     $title = t('Check the !feature', array('!feature' => $feature_name));
     $errors = _ofed_requirements_check_feature($feature_key, $feature_name);
     $remark = variable_get('ofed_requirements_remarks_feature_' . $feature_key, '');
-    $output .= ofed_requirements_admin_requirements_build_report_text_for_test($title, $errors, $remark);
+    $output .= ofed_requirements_admin_requirements_build_report_text_for_test($title, $errors, $remark, $drush_options);
   }
 
-  // Set the file path.
-  $filpath = drupal_realpath('private://') . '/fedict-requirement-report.log';
-
-  // Save the temporary file content.
-  file_unmanaged_save_data($output, $filpath, FILE_EXISTS_REPLACE);
-
-  // Force the download of the file.
-  if (file_exists($filpath)) {
-    header('Content-Description: File Transfer');
-    header('Content-Type: application/octet-stream');
-    header('Content-Disposition: attachment; filename=' . basename($filpath));
-    header('Content-Transfer-Encoding: binary');
-    header('Expires: 0');
-    header('Cache-Control: must-revalidate');
-    header('Pragma: public');
-    header('Content-Length: ' . filesize($filpath));
-    ob_clean();
-    flush();
-    readfile($filpath);
-    exit;
+  if (!empty($drush_options)) {
+    return $output;
   }
+  else {
+    // Set the file path.
+    $filpath = drupal_realpath('private://') . '/fedict-requirement-report.log';
+
+    // Save the temporary file content.
+    file_unmanaged_save_data($output, $filpath, FILE_EXISTS_REPLACE);
+
+    // Force the download of the file.
+    if (file_exists($filpath)) {
+      header('Content-Description: File Transfer');
+      header('Content-Type: application/octet-stream');
+      header('Content-Disposition: attachment; filename=' . basename($filpath));
+      header('Content-Transfer-Encoding: binary');
+      header('Expires: 0');
+      header('Cache-Control: must-revalidate');
+      header('Pragma: public');
+      header('Content-Length: ' . filesize($filpath));
+      ob_clean();
+      flush();
+      readfile($filpath);
+      exit;
+    }
+    }
 }
 
 /**
@@ -374,44 +385,25 @@ function _ofed_requirements_check_perms() {
   // Get the actual role names.
   $roles_actuals = user_roles();
 
+  $featured_default_perms = module_invoke_all('ofed_user_default_permissions');
+  $featured_roles = array();
+
+  foreach($featured_default_perms as $perm) {
+
+    foreach($perm['roles'] as $role) {
+      $featured_roles[$role][$perm['name']] = TRUE;
+    }
+  }
+
   // Check only for used roles included by default in the distribution.
   foreach ($roles_actuals as $role_actual_id => $role_actual_name) {
     if (in_array($role_actual_name, $roles_default)) {
       // Get the default perms for the current role.
-      switch ($role_actual_name) {
-        case 'Builder':
-          $perms_default = _openfed_get_permissions_for_role('Builder');
-          break;
+      $perms_default = _openfed_get_permissions_for_role($role_actual_name);
 
-        case 'Configurator':
-          $perms_default = _openfed_get_permissions_for_role('Configurator');
-          break;
-
-        case 'Content Manager':
-          $perms_default = _openfed_get_permissions_for_role('Content Manager');
-          break;
-
-        case 'User Manager':
-          $perms_default = _openfed_get_permissions_for_role('User Manager');
-          break;
-
-        case 'Authenticated Visitor':
-          $perms_default = _openfed_get_permissions_for_role('Authenticated Visitor');
-          break;
-
-        case 'authenticated user':
-          $perms_default = _openfed_get_permissions_for_role('authenticated user');
-          break;
-
-        case 'anonymous user':
-          $perms_default = _openfed_get_permissions_for_role('anonymous user');
-          break;
-
-        default:
-          // Do nothing...
-          break;
+      if (!empty($featured_roles[$role_actual_name])) {
+        $perms_default = array_merge($perms_default, $featured_roles[$role_actual_name]);
       }
-
       // Get actuals perms.
       $perms_actuals = user_role_permissions(array($role_actual_id => $role_actual_name));
       $perms_actuals = $perms_actuals[$role_actual_id];
@@ -526,10 +518,10 @@ function _ofed_requirements_check_modules_version() {
       $info_version_base = $info_base['version'];
       $info_version_file = '7.x-' . $project_infos['version'];
 
-      // Check module versions.
-      if ($info_version_base != $info_version_file) {
-        $errors[] = t('The actual version (!version_database) of module "!module_name" is not the same than the default version (!version_file) of this module.', array('!module_name' => $project_name, '!version_database' => $info_version_base, '!version_file' => $info_version_file));
-      }
+        // Check module versions.
+        if ((!isset($project_infos['download']['type']) || $project_infos['download']['type'] != 'git') && $info_version_base != $info_version_file) {
+          $errors[] = t('The actual version (!version_database) of module "!module_name" is not the same than the default version (!version_file) of this module.', array('!module_name' => $project_name, '!version_database' => $info_version_base, '!version_file' => $info_version_file));
+        }
     }
   }
 
@@ -652,4 +644,23 @@ function _ofed_requirements_check_feature($feature_key, $feature_name) {
 
   // Return.
   return $errors;
+}
+
+/**
+ * Returns the required/default modules of the OpenFed profile
+ */
+function _ofed_requirements_get_profile_required_modules() {
+  // Inspired by the system_rebuild_module_data function.
+  // I removed the part that were interacting with the database so I just read
+  // the info files here.
+  $modules = _system_rebuild_module_data();
+  $modules = _module_build_dependencies($modules);
+  $functionalities = array_keys(_openfed_get_functionnalities_list());
+  $required = array_keys($modules['openfed']->requires);
+
+  foreach ($functionalities as $functionality) {
+    $required = array_merge($required, array_keys($modules[$functionality]->requires));
+  }
+
+  return array_unique($required);
 }

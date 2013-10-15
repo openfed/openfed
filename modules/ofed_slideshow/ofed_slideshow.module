@@ -161,3 +161,14 @@ function ofed_slideshow_block_view($delta = '') {
   // Return.
   return $block;
 }
+
+/**
+ * Implements hook_ofed_user_default_permissions().
+ */
+function ofed_feature_slideshow_ofed_user_default_permissions() {
+  // Function used by the ofed_rerquirements module. The hook defined in the
+  // required file hereunder is not available otherwise.
+  require_once drupal_get_path('module', 'ofed_slideshow') . '/features/ofed_feature_slideshow/ofed_feature_slideshow.features.user_permission.inc';
+
+  return ofed_feature_slideshow_user_default_permissions();
+}

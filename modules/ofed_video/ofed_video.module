@@ -35,3 +35,14 @@ function _ofed_video_insert_after_first_element(&$a, $element) {
 function ofed_video_preprocess_node() {
   drupal_add_css(drupal_get_path('module', 'ofed_video') . '/assets/styles/ofed_video.css');
 }
+
+/**
+ * Implements hook_ofed_user_default_permissions().
+ */
+function ofed_feature_video_ofed_user_default_permissions() {
+  // Function used by the ofed_rerquirements module. The hook defined in the
+  // required file hereunder is not available otherwise.
+  require_once drupal_get_path('module', 'ofed_video') . '/features/ofed_feature_video/ofed_feature_video.features.user_permission.inc';
+
+  return ofed_feature_video_user_default_permissions();
+}
