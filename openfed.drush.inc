@@ -145,8 +145,8 @@ function _openfed_drush_validate_permissions() {
   foreach ($permissions as $permission_name => $roles) {
     if (!in_array($permission_name, $modules)) {
       drush_print(t('Invalid permission: "@permission_name"', array(
-      '@permission_name' => $permission_name,
-      ));
+        '@permission_name' => $permission_name,
+      )));
       continue;
     }
     // Iterate through roles array. Example: array('Builder', 'Configurator', 'Content Manager').
@@ -154,8 +154,8 @@ function _openfed_drush_validate_permissions() {
       // Check whether the defined roles exist and are spelled correctly.
       if (!in_array($role, $default_roles)) {
         drush_print(t('Invalid role for permission @permission_name: @role', array(
-        '@permission_name' => $permission_name,
-        '@role' => $role,
+          '@permission_name' => $permission_name,
+          '@role' => $role,
         )), 'warning');
       }
     }
