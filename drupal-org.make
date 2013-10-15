@@ -154,7 +154,7 @@ projects[ds][subdir] = contrib
 
 projects[easy_breadcrumb][version] = "2.7"
 projects[easy_breadcrumb][subdir] = contrib
-projects[easy_breadcrumb][patch][2071747] = "https://drupal.org/files/easy_breadcrumb-home-breadcrumb-does-not-get-translated-2071747-3.patch"
+projects[easy_breadcrumb][patch][2071747] = "http://drupal.org/files/easy_breadcrumb-home-breadcrumb-does-not-get-translated-2071747-3.patch"
 
 projects[elements][version] = "1.4"
 projects[elements][subdir] = contrib
@@ -254,7 +254,7 @@ projects[l10n_update][patch][1671570] = "http://drupal.org/files/l10n_update-fet
 
 projects[language_cookie][version] = "1.6"
 projects[language_cookie][subdir] = contrib
-projects[language_cookie][patch][1758754] = "https://drupal.org/files/language_cookie.anonymous_caching.1758754-11.patch"
+projects[language_cookie][patch][1758754] = "http://drupal.org/files/language_cookie.anonymous_caching.1758754-11.patch"
 
 projects[lexicon][version] = "1.10"
 projects[lexicon][subdir] = contrib
