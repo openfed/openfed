@@ -20,7 +20,7 @@ CHANGELOG
   * Removed module:
     #2089775: Why both admin_theme and admin_path (removed admin_path) ?
 
-  * Upgraded module:
+  * Upgraded module and theme:
     #2095803: Theme upgrade: ofed_theme_cms
     #2107481: Module upgrade: field-conditional-state
     #2107481: Module upgrade: field_group
