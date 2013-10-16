@@ -8,7 +8,7 @@ core = 7.x
 
 ; CK Editor
 libraries[ckeditor][download][type] = "get"
-libraries[ckeditor][download][url] = "http://download.cksource.com/CKEditor/CKEditor/CKEditor%204.1.3/ckeditor_4.1.3_standard.zip"
+libraries[ckeditor][download][url] = "http://download.cksource.com/CKEditor/CKEditor/CKEditor%204.2.2/ckeditor_4.2.2_standard.zip"
 libraries[ckeditor][directory_name] = "ckeditor"
 libraries[ckeditor][type] = "library"
 
@@ -49,7 +49,7 @@ projects[addemar_subscription][subdir] = contrib
 projects[ofed_admin_menu][download][type] = git
 projects[ofed_admin_menu][download][branch] = "7.x-1.x"
 projects[ofed_admin_menu][download][revision] = d598aa2
-projects[ofed_admin_menu][subdir] = contrib
+projects[ofed_admin_menu][download][type] = contrib
 
 projects[ofed_menu_dam][version] = "1.0"
 projects[ofed_menu_dam][subdir] = contrib
@@ -70,7 +70,7 @@ projects[ofed_theme_nerra][subdir] = contrib
 
 projects[ofed_theme_cms][download][type] = git
 projects[ofed_theme_cms][download][branch] = "7.x-1.x"
-projects[ofed_theme_cms][download][revision] = d2df593 
+projects[ofed_theme_cms][download][revision] = d2df593
 projects[ofed_theme_cms][subdir] = contrib
 
 projects[ofed_theme_maintenance][version] = "1.0"
@@ -355,7 +355,7 @@ projects[robotstxt][subdir] = contrib
 projects[role_delegation][version] = "1.1"
 projects[role_delegation][subdir] = contrib
 
-projects[rules][version] = "2.3"
+projects[rules][version] = "2.5"
 projects[rules][subdir] = contrib
 
 projects[scheduler][version] = "1.1"
