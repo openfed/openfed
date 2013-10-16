@@ -10,6 +10,7 @@ CHANGELOG
     #2112983: When updating banner nodes, php error is thrown
     #2112471: Corrected ofed_admin_menu info in make file
     #2090401: Module upgrade: rules
+    #2095759: Check dependencies on rules_admin
 
 15 October 2013 - Version 7.x-1.1
 ---------------------------------
