@@ -5,6 +5,7 @@ CHANGELOG
 -------------------------------
   * Issues:
     #2088657: Library update: ckeditor
+    #2112861: Review README.txt
 
 15 October 2013 - Version 7.x-1.1
 ---------------------------------
