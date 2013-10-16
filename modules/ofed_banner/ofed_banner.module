@@ -82,7 +82,7 @@ function ofed_banner_node_update($node) {
     // Disable block.
     $delta = 'ofed_banner_' . $node->nid;
     db_update('block')
-      ->fields(array('status' => 0))
+      -fields(array('status' => 0))
       ->condition('delta', $delta)
       ->execute();
   }

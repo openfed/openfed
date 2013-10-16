@@ -14,7 +14,10 @@ Openfed requires:
 - A PHP memory_limit set to 320M (or higher)
 - A PHP max_input_vars set to 5000 (or higher)
 - Drush 5.x or higher
-- A sites/default/files directory which has to be writable by the web server.
+- The following directories in sites/default :
+  - public (sites/default/public)
+  - private (sites/default/private)
+  - tmp (sites/default/tmp)
 
 For further information see Drupal's INSTALL.txt file.
 
@@ -41,10 +44,18 @@ INSTALLATION
      tar -zxvf openfed-x.y.tar.gz
 
    This will create a new directory openfed-x.y/ containing all OpenFed files
-   and directories. 
+   and directories. Then, you will have to build your Drupal installation using
+   the drush make command. The usage is as follow :
 
-2. Create your files directory at /path/to/your/project/sites/default/files
-   and then give the permissions to your webserver's user. You can do it as follow
+     drush make build-openfed.make /path/to/your/project
+
+2. Create your files and private directories under
+   /path/to/your/project/sites/default and then give the permissions to your
+   webserver's user. You can do it as follow :
+
+     cd /path/to/your/project
+     mkdir -p sites/default/files sites/default/private
+     chown -R www-data sites/default/files sites/default/private
 
    You should also have a tmp directory outside the web directory (for instance, /var/tmp)
 
