@@ -355,7 +355,7 @@ projects[robotstxt][subdir] = contrib
 projects[role_delegation][version] = "1.1"
 projects[role_delegation][subdir] = contrib
 
-projects[rules][version] = "2.3"
+projects[rules][version] = "2.5"
 projects[rules][subdir] = contrib
 
 projects[scheduler][version] = "1.1"
