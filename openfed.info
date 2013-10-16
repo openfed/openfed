@@ -139,7 +139,6 @@ core = 7.x
   dependencies[] = views_bulk_operations
   dependencies[] = views_slideshow
   dependencies[] = views_slideshow_cycle
-  dependencies[] = views_ui
   dependencies[] = webform
   dependencies[] = xmlsitemap
   dependencies[] = xmlsitemap_engines

@@ -60,7 +60,6 @@ dependencies[] = variable
 dependencies[] = variable_store
 dependencies[] = variable_views
 dependencies[] = views
-dependencies[] = views_ui
 dependencies[] = xmlsitemap
 dependencies[] = xmlsitemap_node
 features[ctools][] = ds:ds:1
