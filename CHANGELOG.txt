@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+ Next release - Version 7.x-1.x
+-------------------------------
+  * Issues:
+    #2088657: Library update: ckeditor
+
 15 October 2013 - Version 7.x-1.1
 ---------------------------------
   * Removed module:
