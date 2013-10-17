@@ -56,7 +56,7 @@ projects[ofed_menu_dam][subdir] = contrib
 
 projects[ofed_switcher][download][type] = git
 projects[ofed_switcher][download][branch] = "7.x-1.x"
-projects[ofed_switcher][download][revision] = bcab193
+projects[ofed_switcher][download][revision] = 6605d5b 
 projects[ofed_switcher][patch][2088715] = "http://drupal.org/files/2088715-link_title-1.patch"
 projects[ofed_switcher][subdir] = contrib
 
