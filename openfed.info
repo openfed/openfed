@@ -15,7 +15,6 @@ core = 7.x
   dependencies[] = block
   dependencies[] = contextual
   dependencies[] = dblog
-  dependencies[] = field_ui
   dependencies[] = file
   dependencies[] = image
   dependencies[] = list

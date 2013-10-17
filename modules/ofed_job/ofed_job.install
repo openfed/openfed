@@ -136,9 +136,3 @@ function _ofed_job_taxonomy_term_save($terms, $vid, $lang, $update = FALSE) {
   }
 }
 
-
-
-
-
-
-

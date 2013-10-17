@@ -21,7 +21,6 @@ dependencies[] = entityreference
 dependencies[] = features
 dependencies[] = field_conditional_state
 dependencies[] = field_group
-dependencies[] = field_ui
 dependencies[] = file_entity
 dependencies[] = html5_tools
 dependencies[] = i18n_field

@@ -23,7 +23,6 @@ dependencies[] = features
 dependencies[] = field_collection
 dependencies[] = field_group
 dependencies[] = field_slideshow
-dependencies[] = field_ui
 dependencies[] = file
 dependencies[] = i18n
 dependencies[] = i18n_field
