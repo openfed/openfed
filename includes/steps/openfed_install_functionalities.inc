@@ -76,7 +76,7 @@ function openfed_install_functionalities_batch() {
     // Get modules infos.
     $files = system_rebuild_module_data();
 
-    // Always install required modules first. 
+    // Always install required modules first.
     // Respect the dependencies between the modules.
     $required = array();
     $non_required = array();
@@ -98,11 +98,11 @@ function openfed_install_functionalities_batch() {
         }
       }
     }
- 
+
     // Sort.
     arsort($required);
     arsort($non_required);
-    
+
     // Merge.
     $modules = array_merge($non_required, $required);
 
@@ -128,7 +128,7 @@ function openfed_install_functionalities_batch() {
     // Delete variables.
     variable_del('openfed_content_types_batch_run');
     variable_del('openfed_content_types_batch_functionalities');
-    
+
     // Return.
     return array();
   }

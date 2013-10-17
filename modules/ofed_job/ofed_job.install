@@ -126,6 +126,10 @@ function _ofed_job_taxonomy_term_save($terms, $vid, $lang, $update = FALSE) {
       $new_term->vid = $vid;
       $new_term->language = $lang;
       $new_term->weight = $weight;
+      // Delete the 'menu_rebuild_needed' variable otherwise drupal will rebuild
+      // the menu for every single taxonomy term we create in this install file.
+      // DO NOT REMOVE IT!
+      variable_del('menu_rebuild_needed');
       taxonomy_term_save($new_term);
       $weight++;
     }
