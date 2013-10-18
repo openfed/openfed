@@ -109,7 +109,7 @@ projects[apachesolr_multilingual][subdir] = contrib
 projects[backup_migrate][version] = "2.7"
 projects[backup_migrate][subdir] = contrib
 
-projects[beididp][version] = "1.0-alpha1"
+projects[beididp][version] = "1.0-alpha2"
 projects[beididp][subdir] = contrib
 
 projects[calendar][version] = "3.4"
