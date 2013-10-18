@@ -13,7 +13,7 @@ CHANGELOG
     #2095759: Check dependencies on rules_admin
     #2104833: Job feature installation crash (with the installer)
     #2110189: Check dependencies on field_ui
-    #2021377: Module upgrade: openfed_switcher
+    #2021377, #2088715: Module upgrade: openfed_switcher
 
 15 October 2013 - Version 7.x-1.1
 ---------------------------------
