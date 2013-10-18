@@ -17,8 +17,8 @@ CHANGELOG
     #2114289: Module upgrade: google_analytics
     #2111329: Module upgrade: media_dailymotion
     #2114287: Module upgrade: features_override
+    #2104183: Module upgrade: features
 
-https://drupal.org/node/2111329
 15 October 2013 - Version 7.x-1.1
 ---------------------------------
   * Removed module:
