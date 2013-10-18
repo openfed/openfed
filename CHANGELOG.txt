@@ -16,6 +16,7 @@ CHANGELOG
     #2021377, #2088715: Module upgrade: openfed_switcher
     #2114289: Module upgrade: google_analytics
     #2111329: Module upgrade: media_dailymotion
+    #2114287: Module upgrade: features_override
 
 https://drupal.org/node/2111329
 15 October 2013 - Version 7.x-1.1
