@@ -1,6 +1,5 @@
-# $Id$
 #
-# French translation of Drupal (general)
+# German translation of ofed_federalheader
 # Copyright YEAR NAME <EMAIL@ADDRESS>
 # Generated from files:
 #  ofed_federalheader.info: n/a
