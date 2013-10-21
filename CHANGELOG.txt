@@ -19,6 +19,7 @@ CHANGELOG
     #2114287: Module upgrade: features_override
     #2104183: Module upgrade: features
     #2115379: Module upgrade: beididp
+    #2115081: Infinite Loop when URL redirect source matches URL alias destination
 
 15 October 2013 - Version 7.x-1.1
 ---------------------------------
