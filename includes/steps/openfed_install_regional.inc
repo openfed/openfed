@@ -340,38 +340,38 @@ function _openfed_install_regional_make_contact_webform($lang, $menu_name = 'mai
   switch ($lang) {
     // English.
     case 'en':
-      $node_title = st('Contact');
-      $field_name = st('Name');
-      $field_subject = st('Subject');
-      $field_email = st('Email');
-      $field_message = st('Message');
+      $node_title = 'Contact';
+      $field_name = 'Name';
+      $field_subject = 'Subject';
+      $field_email = 'Email';
+      $field_message = 'Message';
       break;
 
     // French.
     case 'fr':
-      $node_title = st('Contact');
-      $field_name = st('Nom');
-      $field_subject = st('Sujet');
-      $field_email = st('Email');
-      $field_message = st('Message');
+      $node_title = 'Contact';
+      $field_name = 'Nom';
+      $field_subject = 'Sujet';
+      $field_email = 'Email';
+      $field_message = 'Message';
       break;
 
     // Dutch.
     case 'nl':
-      $node_title = st('Contact');
-      $field_name = st('Naam');
-      $field_subject = st('Onderwerp');
-      $field_email = st('Email');
-      $field_message = st('Bericht');
+      $node_title = 'Contact';
+      $field_name = 'Naam';
+      $field_subject = 'Onderwerp';
+      $field_email = 'Email';
+      $field_message = 'Bericht';
       break;
 
     // German.
     case'de':
-      $node_title = st('Kontakt');
-      $field_name = st('Name');
-      $field_subject = st('Gegenstand');
-      $field_email = st('Email');
-      $field_message = st('Nachricht');
+      $node_title = 'Kontakt';
+      $field_name = 'Name';
+      $field_subject = 'Gegenstand';
+      $field_email = 'Email';
+      $field_message = 'Nachricht';
       break;
   }
 
