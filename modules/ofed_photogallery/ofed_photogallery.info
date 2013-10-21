@@ -1,5 +1,5 @@
-name = Photos galeries - Module
-description = Manage photos galeries.
+name = Phots galleries - Module
+description = Manage photo galleries.
 package = OpenFed - Content Types
 core = 7.x
 
