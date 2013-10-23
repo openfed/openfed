@@ -69,7 +69,7 @@ projects[ofed_theme_nerra][subdir] = contrib
 
 projects[ofed_theme_cms][download][type] = git
 projects[ofed_theme_cms][download][branch] = "7.x-1.x"
-projects[ofed_theme_cms][download][revision] = d2df593
+projects[ofed_theme_cms][download][revision] = 1919886
 projects[ofed_theme_cms][subdir] = contrib
 
 projects[ofed_theme_maintenance][version] = "1.0"
@@ -387,6 +387,7 @@ projects[sharethis][patch][2044081] = "http://drupal.org/files/sharethis-2.5-204
 
 projects[simple_gmap][version] = "1.0"
 projects[simple_gmap][subdir] = contrib
+projects[sharethis][patch][2070277] = "https://drupal.org/files/simple_gmap-use_https-2070277-9.patch"
 
 projects[site_map][version] = "1.0"
 projects[site_map][subdir] = contrib

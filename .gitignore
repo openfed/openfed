@@ -3,6 +3,9 @@ libraries/ckeditor/
 libraries/colorbox/
 libraries/jquery.cycle/
 libraries/jquery.jcarousel/
+modules/contrib
 modules/contrib/
 modules/contrib/*
 themes/contrib/
+themes/contrib/*
+themes/contrib
