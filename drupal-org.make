@@ -64,7 +64,7 @@ projects[ofed_vmcd][subdir] = contrib
 
 projects[ofed_theme_nerra][download][type] = git
 projects[ofed_theme_nerra][download][branch] = "7.x-1.x"
-projects[ofed_theme_nerra][download][revision] = 8c76e60
+projects[ofed_theme_nerra][download][revision] = ffd7a6c
 projects[ofed_theme_nerra][subdir] = contrib
 
 projects[ofed_theme_cms][download][type] = git
@@ -253,7 +253,14 @@ projects[l10n_update][patch][1671570] = "http://drupal.org/files/l10n_update-fet
 
 projects[language_cookie][version] = "1.6"
 projects[language_cookie][subdir] = contrib
-projects[language_cookie][patch][1758754] = "http://drupal.org/files/language_cookie.anonymous_caching.1758754-11.patch"
+projects[language_cookie][patch][2118365] = "http://drupal.org/files/language_cookie.url-cookie-provider.2118365-1.patch"
+projects[language_cookie][patch][1758754] = "http://drupal.org/files/language_cookie.anonymous_caching.1758754-20_0.patch"
+
+projects[language_selection_page][type] = git
+projects[language_selection_page][branch] = "7.x-1.x"
+projects[language_selection_page][download][revision] = 1990c41
+projects[language_selection_page][subdir] = contrib
+projects[language_selection_page][patch][2118689] = "https://drupal.org/files/expose_urls.patch"
 
 projects[lexicon][version] = "1.10"
 projects[lexicon][subdir] = contrib
