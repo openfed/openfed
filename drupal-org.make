@@ -380,6 +380,7 @@ projects[sharethis][patch][2044081] = "http://drupal.org/files/sharethis-2.5-204
 
 projects[simple_gmap][version] = "1.0"
 projects[simple_gmap][subdir] = contrib
+projects[sharethis][patch][2070277] = "https://drupal.org/files/simple_gmap-use_https-2070277-9.patch"
 
 projects[site_map][version] = "1.0"
 projects[site_map][subdir] = contrib
