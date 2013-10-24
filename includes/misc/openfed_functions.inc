@@ -820,6 +820,12 @@ function _openfed_get_default_permissions() {
       'authenticated user',
       'anonymous user',
     ),
+    'use advanced search' => array(
+      'Builder',
+      'Configurator',
+      'Content Manager',
+      'User Manager',
+     ),
 
     // seckit
     'administer seckit' => array(
