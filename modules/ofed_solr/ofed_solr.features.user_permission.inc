@@ -55,5 +55,27 @@ function ofed_solr_user_default_permissions() {
     'module' => 'search',
   );
 
+  // Exported permission: 'view search_info on node'.
+  $permissions['view search_info on node'] = array(
+    'name' => 'view search_info on node',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'ds_extras',
+  );
+
+  // Exported permission: 'view search_snippet on node'.
+  $permissions['view search_snippet on node'] = array(
+    'name' => 'view search_snippet on node',
+    'roles' => array(
+      'Administrator' => 'Administrator',
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'ds_extras',
+  );
+
   return $permissions;
 }
