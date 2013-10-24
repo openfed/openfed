@@ -24,6 +24,16 @@ function openfed_install_regional_form() {
       Additional languages can be enabled after the installation, but the main menu will then have to be created manually for each language and located in the corresponding area.'
     ) . '</p>',
   );
+  $form['cookie_and_language_selection'] = array(
+   '#type' => 'checkbox',
+   '#title' => st('Language cookie and language selection page'),
+   '#description' => '<p>' . st('When checking this option, the language cookie
+     and language selection page modules will be automatically configured. This
+     means that for determining the language of a page, the following order will
+     be used: 1. URL prefix, 2. Language cookie, 3. Language selection page.
+     Please note this option is only relevant for multi-lingual sites.') . '</p>',
+  );
+
   $form['submit'] = array(
     '#type' => 'submit',
     '#value' => st('Continue'),
@@ -31,6 +41,19 @@ function openfed_install_regional_form() {
 
   // Return form.
   return $form;
+}
+
+/**
+ * Form validation handler for openfed_install_regional_form().
+ */
+function openfed_install_regional_form_validate($form, &$form_state) {
+  $values = $form_state['values'];
+
+  if (empty(array_filter($values['regional_list'])) && !empty($values['cookie_and_language_selection'])) {
+    form_set_error('regional_list', st('You chose to enable the language cookie
+      and language but did not select a regional language. Please choose at
+      least one regional language.'));
+  }
 }
 
 /**
@@ -46,6 +69,9 @@ function openfed_install_regional_form_submit($form, &$form_state) {
       }
     }
 
+    if (!empty($values['cookie_and_language_selection'])) {
+      variable_set('openfed_regional_batch_cookie_and_language_selection', TRUE);
+    }
     // Set variables.
     variable_set('openfed_regional_batch_run', TRUE);
     variable_set('openfed_regional_batch_lang', $lang);
@@ -73,9 +99,39 @@ function openfed_install_regional_batch() {
       _openfed_install_regional_set_content_for_language($lang);
     }
 
+    if (variable_get('openfed_regional_batch_cookie_and_language_selection') === TRUE) {
+      module_enable(array('language_cookie', 'language_selection_page'));
+      variable_set('language_selection_page_blacklisted_paths', 'install.php');
+
+      require_once DRUPAL_ROOT . '/includes/language.inc';
+      require_once DRUPAL_ROOT . '/includes/locale.inc';
+      require_once DRUPAL_ROOT . '/modules/locale/locale.module';
+
+      $negotiation = array(
+          LOCALE_LANGUAGE_NEGOTIATION_URL,
+          LANGUAGE_COOKIE_NEGOTIATION,
+          LANGUAGE_NEGOTIATION_SELECTION_PAGE,
+          LANGUAGE_NEGOTIATION_DEFAULT,
+      );
+      // Save the new language negotiation options.
+      language_negotiation_set(LANGUAGE_TYPE_INTERFACE, array_flip($negotiation));
+
+      // Save admininstration UI settings.
+      $type = LANGUAGE_TYPE_INTERFACE;
+      $provider_weights = array_flip($negotiation);
+      variable_set("locale_language_providers_weight_$type", $provider_weights);
+
+      // Unset the old language negotiation system variable.
+      variable_del('language_negotiation');
+
+      drupal_set_message(t('The language cookie and the language selection page have been set up.'));
+
+    }
+
     // Delete variables.
     variable_del('openfed_regional_batch_run');
     variable_del('openfed_regional_batch_lang');
+    variable_del('openfed_regional_batch_cookie_and_language_selection');
 
     // Set language block.
     _openfed_set_block_into_region('locale', 'language', 'tools');
