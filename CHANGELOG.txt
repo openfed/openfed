@@ -3,7 +3,11 @@ CHANGELOG
 
  Next release - Version 7.x-1.x
 -------------------------------
-  * Issues:
+  * Upgraded theme:
+    #2109685: Theme upgrade: change CSS import URL to HTTPS (ofed_theme_cms)
+    #2117741: simple google maps & SSL
+
+ * Issues:
     #2088657: Library update: ckeditor
     #2112861: Review README.txt
     #2093129: Check dependencies on views_ui

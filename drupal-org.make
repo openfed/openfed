@@ -56,7 +56,7 @@ projects[ofed_menu_dam][subdir] = contrib
 
 projects[ofed_switcher][download][type] = git
 projects[ofed_switcher][download][branch] = "7.x-1.x"
-projects[ofed_switcher][download][revision] = 6605d5b 
+projects[ofed_switcher][download][revision] = 6605d5b
 projects[ofed_switcher][subdir] = contrib
 
 projects[ofed_vmcd][version] = "1.0"
@@ -385,9 +385,8 @@ projects[sharethis][version] = "2.5"
 projects[sharethis][subdir] = contrib
 projects[sharethis][patch][2044081] = "http://drupal.org/files/sharethis-2.5-2044081-3.patch"
 
-projects[simple_gmap][version] = "1.0"
+projects[simple_gmap][version] = "1.1"
 projects[simple_gmap][subdir] = contrib
-projects[sharethis][patch][2070277] = "https://drupal.org/files/simple_gmap-use_https-2070277-9.patch"
 
 projects[site_map][version] = "1.0"
 projects[site_map][subdir] = contrib
