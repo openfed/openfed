@@ -69,6 +69,9 @@ function openfed_install_regional_form_submit($form, &$form_state) {
       }
     }
 
+    if (!empty($values['cookie_and_language_selection'])) {
+      variable_set('openfed_regional_batch_cookie_and_language_selection', TRUE);
+    }
     // Set variables.
     if (!empty($values['cookie_and_language_selection'])) {
       variable_set('openfed_regional_batch_cookie_and_language_selection', TRUE);
