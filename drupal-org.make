@@ -256,11 +256,11 @@ projects[language_cookie][subdir] = contrib
 projects[language_cookie][patch][2118365] = "http://drupal.org/files/language_cookie.url-cookie-provider.2118365-1.patch"
 projects[language_cookie][patch][1758754] = "http://drupal.org/files/language_cookie.anonymous_caching.1758754-20_0.patch"
 
-projects[language_selection_page][type] = git
-projects[language_selection_page][branch] = "7.x-1.x"
+projects[language_selection_page][download]type] = git
+projects[language_selection_page][download][branch] = "7.x-1.x"
 projects[language_selection_page][download][revision] = 1990c41
 projects[language_selection_page][subdir] = contrib
-projects[language_selection_page][patch][2118689] = "https://drupal.org/files/expose_urls.patch"
+projects[language_selection_page][patch][2118689] = "http://drupal.org/files/expose_urls.patch"
 
 projects[lexicon][version] = "1.10"
 projects[lexicon][subdir] = contrib
