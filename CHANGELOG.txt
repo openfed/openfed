@@ -29,6 +29,7 @@ CHANGELOG
     #2099459: Installer: contact webform labels translation issues
     #2117741: simple google maps & SSL
     #2043085: Apache Solr - Feature deployment fails
+    #1980552: New modules: feeds and xpathparser
 
 15 October 2013 - Version 7.x-1.1
 ---------------------------------
