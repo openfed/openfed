@@ -192,10 +192,10 @@ projects[features_override][subdir] = contrib
 projects[features_override][version] = "2.0-rc1"
 projects[features_override][subdir] = contrib
 
-projects[feeds][version] = "7.x-2.0-alpha8"
+projects[feeds][version] = "2.0-alpha8"
 projects[feeds][subdir] = contrib
 
-projects[feeds_xpathparser][version] = "7.x-1.0-beta4"
+projects[feeds_xpathparser][version] = "1.0-beta4"
 projects[feeds][subdir] = contrib
 
 projects[field_collection][version] = "1.0-beta5"
