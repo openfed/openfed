@@ -245,6 +245,9 @@ projects[imce][subdir] = contrib
 projects[imce_mkdir][version] = "1.0"
 projects[imce_mkdir][subdir] = contrib
 
+projects[job_scheduler][version] = "7.x-2.0-alpha3"
+projects[job_scheduler][subdir] = contrib
+
 projects[jquery_plugin][version] = "1.0"
 projects[jquery_plugin][subdir] = contrib
 
