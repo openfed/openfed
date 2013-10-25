@@ -7,7 +7,10 @@ CHANGELOG
     #2109685: Theme upgrade: change CSS import URL to HTTPS (ofed_theme_cms)
     #2117741: simple google maps & SSL
 
- * Issues:
+  * New modules:
+    #1980552: New modules: feeds and xpathparser
+
+  * Issues:
     #2088657: Library update: ckeditor
     #2112861: Review README.txt
     #2093129: Check dependencies on views_ui
@@ -30,7 +33,6 @@ CHANGELOG
     #2117741: simple google maps & SSL
     #2043085: Apache Solr - Feature deployment fails
     #2069973: A splash page with language choice should be added
-    #1980552: New modules: feeds and xpathparser
 
 15 October 2013 - Version 7.x-1.1
 ---------------------------------
