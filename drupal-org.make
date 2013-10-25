@@ -269,6 +269,7 @@ projects[language_selection_page][download][revision] = 1990c41
 projects[language_selection_page][subdir] = contrib
 projects[language_selection_page][patch][2118689] = "http://drupal.org/files/expose_urls.patch"
 projects[language_selection_page][patch][2119463] = "http://drupal.org/files/language_selection_page.globalredirect.patch"
+projects[language_selection_page][patch][2119439] = "http://drupal.org/files/language_selection_page.emptypath.2119439.patch"
 
 projects[lexicon][version] = "1.10"
 projects[lexicon][subdir] = contrib
