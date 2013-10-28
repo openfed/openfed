@@ -169,7 +169,7 @@ function ofed_banner_form_alter(&$form, &$form_state, $form_id) {
   if ($form_id == 'ofed_banner_node_form') {
     // Only for new content.
     $arg = arg(1);
-    if(isset($arg) && $arg == 'add') {
+    if (isset($arg) && $arg == 'add') {
       $form['#node']->field_ofed_banner_click_count['und'][0]['value'] = 0;
       $form['field_ofed_banner_click_count']['und'][0]['value']['#default_value'] = 0;
     }
@@ -179,10 +179,11 @@ function ofed_banner_form_alter(&$form, &$form_state, $form_id) {
 /**
  * Implements hook_ofed_user_default_permissions().
  */
-function ofed_feature_banner_ofed_user_default_permissions() {
+function ofed_banner_ofed_user_default_permissions() {
   // Function used by the ofed_rerquirements module. The hook defined in the
   // required file hereunder is not available otherwise.
   require_once drupal_get_path('module', 'ofed_banner') . '/features/ofed_feature_banner/ofed_feature_banner.features.user_permission.inc';
 
   return ofed_feature_banner_user_default_permissions();
 }
+

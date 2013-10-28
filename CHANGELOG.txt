@@ -1,14 +1,24 @@
 CHANGELOG
 =========
 
- Next release - Version 7.x-1.x
--------------------------------
-  * Upgraded theme:
-    #2109685: Theme upgrade: change CSS import URL to HTTPS (ofed_theme_cms)
-    #2117741: simple google maps & SSL
-
+28 October 2013 - Version 7.x-1.2-rc1
+-------------------------------------
   * New modules:
     #1980552: New modules: feeds and xpathparser
+    #2069973: A splash page with language choice (langauge_selection_page) 
+
+  * Upgraded modules
+    #2117741: simple google maps & SSL
+    #2090401: Module upgrade: rules
+    #2021377, #2088715: Module upgrade: openfed_switcher
+    #2114289: Module upgrade: google_analytics
+    #2111329: Module upgrade: media_dailymotion
+    #2114287: Module upgrade: features_override
+    #2104183: Module upgrade: features
+    #2115379: Module upgrade: beididp
+ 
+  * Upgraded theme:
+    #2109685: Theme upgrade: change CSS import URL to HTTPS (ofed_theme_cms)
 
   * Issues:
     #2088657: Library update: ckeditor
@@ -16,23 +26,16 @@ CHANGELOG
     #2093129: Check dependencies on views_ui
     #2112983: When updating banner nodes, php error is thrown
     #2112471: Corrected ofed_admin_menu info in make file
-    #2090401: Module upgrade: rules
     #2095759: Check dependencies on rules_admin
     #2104833: Job feature installation crash (with the installer)
     #2110189: Check dependencies on field_ui
-    #2021377, #2088715: Module upgrade: openfed_switcher
-    #2114289: Module upgrade: google_analytics
-    #2111329: Module upgrade: media_dailymotion
-    #2114287: Module upgrade: features_override
-    #2104183: Module upgrade: features
-    #2115379: Module upgrade: beididp
-    #2115081: Infinite Loop when URL redirect source matches URL alias destination
+    #2115081: Infinite Loop when URL redirect source matches alias destination
     #2044149: Photo Gallery: different blocks with identical functionality
     #2116753: CKEditor config doesn't apply
     #2099459: Installer: contact webform labels translation issues
-    #2117741: simple google maps & SSL
     #2043085: Apache Solr - Feature deployment fails
     #2069973: A splash page with language choice should be added
+    #2083437: Code quality: warnings in PAreview report
 
 15 October 2013 - Version 7.x-1.1
 ---------------------------------
