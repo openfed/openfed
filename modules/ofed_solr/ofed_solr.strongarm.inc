@@ -13,6 +13,13 @@ function ofed_solr_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'apachesolr_attachments_extract_using';
+  $strongarm->value = 'solr';
+  $export['apachesolr_attachments_extract_using'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'apachesolr_attachments_tika_jar';
   $strongarm->value = 'tika-app-1.4.jar';
   $export['apachesolr_attachments_tika_jar'] = $strongarm;
