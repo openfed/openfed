@@ -18,7 +18,7 @@ function _ofed_banner_block_render_banner($nid) {
   // Load the node.
   $entity = entity_load('node', array($nid));
   // If node exists.
-  if(!empty($entity)) {
+  if (!empty($entity)) {
     $entity = $entity[$nid];
 
     // Set the type of the banner.
@@ -67,7 +67,7 @@ function _ofed_banner_block_render_banner($nid) {
     }
 
     // Render the content.
-    $output .= '<div class="banner banner-'.$type.'">';
+    $output .= '<div class="banner banner-' . $type . '">';
     $output .= $banner;
     $output .= '</div>';
   }
@@ -75,3 +75,4 @@ function _ofed_banner_block_render_banner($nid) {
   // Return.
   return $output;
 }
+

@@ -164,7 +164,7 @@ function openfed_install_tasks_alter(&$tasks, $install_state) {
     $task_temp['install_import_locales_remaining'] = $tasks['install_import_locales_remaining'];
   }
 
-  if(isset($tasks['install_finished'])) {
+  if (isset($tasks['install_finished'])) {
     $task_temp['install_finished'] = $tasks['install_finished'];
   }
 

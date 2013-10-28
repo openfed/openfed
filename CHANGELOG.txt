@@ -34,6 +34,8 @@ CHANGELOG
     #2116753: CKEditor config doesn't apply
     #2099459: Installer: contact webform labels translation issues
     #2043085: Apache Solr - Feature deployment fails
+    #2069973: A splash page with language choice should be added
+    #2083437: Code quality: warnings in PAreview report
 
 15 October 2013 - Version 7.x-1.1
 ---------------------------------
