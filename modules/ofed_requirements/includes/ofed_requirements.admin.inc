@@ -120,21 +120,21 @@ function ofed_requirements_admin_requirements_form() {
 
   // Fieldsets for each OpenFed features.
   $features = array(
-    'ofed_feature_address' => 'OpenFed "Address" feature',
-    'ofed_feature_banner' => 'OpenFed "Banners" feature',
-    'ofed_feature_download' => 'OpenFed "Downloads" feature',
-    'ofed_feature_event' => 'OpenFed "Events" feature',
-    'ofed_feature_faq' => 'OpenFed "FAQ\'s" feature',
-    'ofed_feature_job' => 'OpenFed "Jobs" feature',
-    'ofed_feature_meeting' => 'OpenFed "Meeting" feature',
-    'ofed_feature_news' => 'OpenFed "News" feature',
-    'ofed_feature_page' => 'OpenFed "Pages" feature',
-    'ofed_feature_photogallery' => 'OpenFed "Photos galeries" feature',
-    'ofed_feature_press' => 'OpenFed "Press" feature',
-    'ofed_feature_slider' => 'OpenFed "Slider" feature',
-    'ofed_feature_slideshow' => 'OpenFed "Slideshows" feature',
-    'ofed_feature_team' => 'OpenFed "Team members" feature',
-    'ofed_feature_video' => 'OpenFed "Videos" feature',
+    'ofed_address' => 'OpenFed "Address" feature',
+    'ofed_banner' => 'OpenFed "Banners" feature',
+    'ofed_download' => 'OpenFed "Downloads" feature',
+    'ofed_event' => 'OpenFed "Events" feature',
+    'ofed_faq' => 'OpenFed "FAQ\'s" feature',
+    'ofed_job' => 'OpenFed "Jobs" feature',
+    'ofed_meeting' => 'OpenFed "Meeting" feature',
+    'ofed_news' => 'OpenFed "News" feature',
+    'ofed_page' => 'OpenFed "Pages" feature',
+    'ofed_photogallery' => 'OpenFed "Photos galeries" feature',
+    'ofed_press' => 'OpenFed "Press" feature',
+    'ofed_slider' => 'OpenFed "Slider" feature',
+    'ofed_slideshow' => 'OpenFed "Slideshows" feature',
+    'ofed_team' => 'OpenFed "Team members" feature',
+    'ofed_video' => 'OpenFed "Videos" feature',
   );
   foreach ($features as $feature_key => $feature_name) {
     $errors = _ofed_requirements_check_feature($feature_key, $feature_name);
@@ -317,21 +317,21 @@ function ofed_requirements_admin_requirements_notes_export($drush_options = arra
   // Add feature infos.
   // Fieldsets for each OpenFed features.
   $features = array(
-    'ofed_feature_address' => 'OpenFed "Address" feature',
-    'ofed_feature_banner' => 'OpenFed "Banners" feature',
-    'ofed_feature_download' => 'OpenFed "Downloads" feature',
-    'ofed_feature_event' => 'OpenFed "Events" feature',
-    'ofed_feature_faq' => 'OpenFed "FAQ\'s" feature',
-    'ofed_feature_job' => 'OpenFed "Jobs" feature',
-    'ofed_feature_meeting' => 'OpenFed "Meeting" feature',
-    'ofed_feature_news' => 'OpenFed "News" feature',
-    'ofed_feature_page' => 'OpenFed "Pages" feature',
-    'ofed_feature_photogallery' => 'OpenFed "Photos galeries" feature',
-    'ofed_feature_press' => 'OpenFed "Press" feature',
-    'ofed_feature_slider' => 'OpenFed "Slider" feature',
-    'ofed_feature_slideshow' => 'OpenFed "Slideshows" feature',
-    'ofed_feature_team' => 'OpenFed "Team members" feature',
-    'ofed_feature_video' => 'OpenFed "Videos" feature',
+    'ofed_address' => 'OpenFed "Address" feature',
+    'ofed_banner' => 'OpenFed "Banners" feature',
+    'ofed_download' => 'OpenFed "Downloads" feature',
+    'ofed_event' => 'OpenFed "Events" feature',
+    'ofed_faq' => 'OpenFed "FAQ\'s" feature',
+    'ofed_job' => 'OpenFed "Jobs" feature',
+    'ofed_meeting' => 'OpenFed "Meeting" feature',
+    'ofed_news' => 'OpenFed "News" feature',
+    'ofed_page' => 'OpenFed "Pages" feature',
+    'ofed_photogallery' => 'OpenFed "Photos galeries" feature',
+    'ofed_press' => 'OpenFed "Press" feature',
+    'ofed_slider' => 'OpenFed "Slider" feature',
+    'ofed_slideshow' => 'OpenFed "Slideshows" feature',
+    'ofed_team' => 'OpenFed "Team members" feature',
+    'ofed_video' => 'OpenFed "Videos" feature',
   );
   foreach ($features as $feature_key => $feature_name) {
     $title = t('Check the !feature', array('!feature' => $feature_name));

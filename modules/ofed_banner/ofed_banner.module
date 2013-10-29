@@ -4,7 +4,8 @@
  * @file
  * Module needed to manage x with the Openfed distribution.
  */
-include 'includes/ofed_banner.blocks.inc';
+include_once 'ofed_banner.features.inc';
+include_once 'includes/ofed_banner.blocks.inc';
 
 /**
  * Implements hook_menu().
@@ -182,8 +183,8 @@ function ofed_banner_form_alter(&$form, &$form_state, $form_id) {
 function ofed_banner_ofed_user_default_permissions() {
   // Function used by the ofed_rerquirements module. The hook defined in the
   // required file hereunder is not available otherwise.
-  require_once drupal_get_path('module', 'ofed_banner') . '/features/ofed_feature_banner/ofed_feature_banner.features.user_permission.inc';
+  require_once drupal_get_path('module', 'ofed_banner') . '/ofed_banner.features.user_permission.inc';
 
-  return ofed_feature_banner_user_default_permissions();
+  return ofed_banner_user_default_permissions();
 }
 

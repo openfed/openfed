@@ -4,6 +4,7 @@
  * @file
  * Module needed to manage press with the Openfed distribution.
  */
+include_once 'ofed_press.features.inc';
 
 /**
  * Implements hook_theme_registry_alter().
@@ -42,7 +43,7 @@ function ofed_press_preprocess_node() {
 function ofed_press_ofed_user_default_permissions() {
   // Function used by the ofed_rerquirements module. The hook defined in the
   // required file hereunder is not available otherwise.
-  require_once drupal_get_path('module', 'ofed_press') . '/features/ofed_feature_press/ofed_feature_press.features.user_permission.inc';
+  require_once drupal_get_path('module', 'ofed_press') . '/ofed_press.features.user_permission.inc';
 
-  return ofed_feature_press_user_default_permissions();
+  return ofed_press_user_default_permissions();
 }

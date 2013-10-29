@@ -43,7 +43,6 @@ function drush_openfed_revert_ds_settings($type = '') {
     foreach ($args as $ct) {
       $available_ct = node_type_get_types();
       if (array_key_exists($ct, $available_ct)) {
-        $name = str_replace('ofed_', 'ofed_feature_', $ct);
         $file = drupal_get_path('module', $name) . '/install/_' . $name . '.ds.inc';
         if (file_exists($file)) {
           // Include it.

@@ -1,7 +1,0 @@
-<?php
-
-/**
- * @file
- * Code for the Banner feature.
- */
-include_once 'ofed_feature_banner.features.inc';

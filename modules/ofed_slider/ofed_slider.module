@@ -4,6 +4,7 @@
  * @file
  * Module needed to manage sliders with the Openfed distribution.
  */
+include_once 'ofed_slider.features.inc';
 require_once 'includes/ofed_slider.misc.inc';
 require_once 'includes/ofed_slider.blocks.inc';
 
@@ -145,7 +146,7 @@ function ofed_slider_block_view($delta = '') {
 function ofed_slider_ofed_user_default_permissions() {
   // Function used by the ofed_rerquirements module. The hook defined in the
   // required file hereunder is not available otherwise.
-  require_once drupal_get_path('module', 'ofed_slider') . '/features/ofed_feature_slider/ofed_feature_slider.features.user_permission.inc';
+  require_once drupal_get_path('module', 'ofed_slider') . '/ofed_slider.features.user_permission.inc';
 
-  return ofed_feature_slider_user_default_permissions();
+  return ofed_slider_user_default_permissions();
 }
