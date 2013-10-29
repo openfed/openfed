@@ -1,6 +1,13 @@
 CHANGELOG
 =========
 
+29 October 2013 - Version 7.x-1.2-rc2
+-------------------------------------
+  * Issues:
+    #2083437: Code quality improvements
+    #2043085: Apache solr: use remote solr / tika instead of local tika
+    Set up default site slogan
+
 28 October 2013 - Version 7.x-1.2-rc1
 -------------------------------------
   * New modules:
