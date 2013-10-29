@@ -12,7 +12,7 @@ function _ofed_slideshow_block_render_slider($nid) {
   $entity = entity_load('node', array($nid));
 
   // If node exists.
-  if(!empty($entity)) {
+  if (!empty($entity)) {
     $output .= drupal_render(node_view(node_load($nid)));
   }
   

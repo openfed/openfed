@@ -66,11 +66,14 @@ function openfed_install_complete() {
   // Enable caching.
   variable_set('cache', TRUE);
 
-  // Enable prepocessing styles.
+  // Enable preprocessing styles.
   variable_set('preprocess_css', TRUE);
 
-  // Enable prepocessing scripts.
+  // Enable preprocessing scripts.
   variable_set('preprocess_js', TRUE);
+
+  // Set up default site slogan (used on front page title).
+  variable_set('site_slogan', 'OpenFed - General-purpose, multilingual Drupal distribution');
 }
 
 /**

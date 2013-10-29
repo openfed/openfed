@@ -17,3 +17,4 @@ function _ofed_banner_counter($nid) {
   }
   exit();
 }
+

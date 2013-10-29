@@ -143,7 +143,7 @@ function ofed_feature_news_uninstall() {
 /**
  * Add content type to path alias whitelist.
  */
-function ofed_feature_news_update_7100 () {
+function ofed_feature_news_update_7100() {
   // Add newest alias.
   $path_source = 'news';
   // Set path alias whitelist.
@@ -157,7 +157,7 @@ function ofed_feature_news_update_7100 () {
 /**
  * Disable unused view modes.
  */
-function ofed_feature_news_update_7101 () {
+function ofed_feature_news_update_7101() {
   // Set the bundle name.
   $bundle = 'ofed_news';
   // Set what display will be removed.
@@ -165,11 +165,11 @@ function ofed_feature_news_update_7101 () {
 
   // Delete display suite layout settings.
   foreach ($displays_to_delete as $display_to_delete) {
-    db_delete('ds_layout_settings')->condition('id', 'node|' .  $bundle . '|' . $display_to_delete)->execute();
+    db_delete('ds_layout_settings')->condition('id', 'node|' . $bundle . '|' . $display_to_delete)->execute();
   }
   // Delete display suite field settings.
   foreach ($displays_to_delete as $display_to_delete) {
-    db_delete('ds_field_settings')->condition('id', 'node|' .  $bundle . '|' . $display_to_delete)->execute();
+    db_delete('ds_field_settings')->condition('id', 'node|' . $bundle . '|' . $display_to_delete)->execute();
   }
   
   // Update field instance.
@@ -199,9 +199,9 @@ function ofed_feature_news_update_7101 () {
     foreach ($displays_to_delete as $display_to_delete) {
       if (isset($bundle_settings_node['view_modes'][$display_to_delete])) {
         if ($display_to_delete == 'block_info') {
-          unset ($bundle_settings_node['view_modes'][$display_to_delete]);
+          unset($bundle_settings_node['view_modes'][$display_to_delete]);
           if (isset($bundle_settings_node['extra_fields']['display']['language'][$display_to_delete])) {
-            unset ($bundle_settings_node['extra_fields']['display']['language'][$display_to_delete]);
+            unset($bundle_settings_node['extra_fields']['display']['language'][$display_to_delete]);
           }
         }
         else {
@@ -217,7 +217,7 @@ function ofed_feature_news_update_7101 () {
 /**
  * Create the missing paths alias for german language.
  */
-function ofed_feature_news_update_7102 () {
+function ofed_feature_news_update_7102() {
   // Paths alias management.
   $path_source = 'news';
   // Set path alias whitelist.

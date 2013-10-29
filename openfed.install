@@ -199,9 +199,9 @@ function openfed_update_7106() {
   $admin_path_allowed = array();
   $admin_path_disallo = array();
   // If config.
-  if(is_array($admin_path) && !empty($admin_path)) {
+  if (is_array($admin_path) && !empty($admin_path)) {
     foreach ($admin_path as $key => $value) {
-      if(!empty($value)) {
+      if (!empty($value)) {
         $admin_path_allowed[$key] = $value;
       }
       else {
@@ -216,12 +216,12 @@ function openfed_update_7106() {
     // Split patterns.
     $admin_path_allowed = $patterns['admin'];
     $admin_path_disallo = $patterns['non_admin'];
-    if(!empty($admin_path_allowed)) {
+    if (!empty($admin_path_allowed)) {
       $admin_path_allowed = explode("\n", $admin_path_allowed);
       $admin_path_allowed_tmp = array();
       foreach ($admin_path_allowed as $key => $value) {
         $value = trim($value);
-        if(!empty($value)) {
+        if (!empty($value)) {
           $admin_path_allowed_tmp[$value] = TRUE;
         }
       }
@@ -230,12 +230,12 @@ function openfed_update_7106() {
     else {
       $admin_path_allowed = array();
     }
-    if(!empty($admin_path_disallo)) {
+    if (!empty($admin_path_disallo)) {
       $admin_path_disallo = explode("\n", $admin_path_disallo);
       $admin_path_disallo_tmp = array();
       foreach ($admin_path_disallo as $key => $value) {
         $value = trim($value);
-        if(!empty($value)) {
+        if (!empty($value)) {
           $admin_path_disallo_tmp[$value] = FALSE;
         }
       }
@@ -247,17 +247,17 @@ function openfed_update_7106() {
   }
 
   // Fetch the paths from administrative theme settings.
-  if(!module_exists('admin_theme')) {
+  if (!module_exists('admin_theme')) {
     module_enable(array('admin_theme'));
   }
   $admin_theme_allowed = variable_get('admin_theme_path', '');
   $admin_theme_disallo = variable_get('admin_theme_path_disallow', '');
-  if(!empty($admin_theme_allowed)) {
+  if (!empty($admin_theme_allowed)) {
     $admin_theme_allowed = explode("\n", $admin_theme_allowed);
     $admin_theme_allowed_tmp = array();
     foreach ($admin_theme_allowed as $key => $value) {
       $value = trim($value);
-      if(!empty($value)) {
+      if (!empty($value)) {
         $admin_theme_allowed_tmp[$value] = TRUE;
       }
     }
@@ -266,12 +266,12 @@ function openfed_update_7106() {
   else {
     $admin_theme_allowed = array();
   }
-  if(!empty($admin_theme_disallo)) {
+  if (!empty($admin_theme_disallo)) {
     $admin_theme_disallo = explode("\n", $admin_theme_disallo);
     $admin_theme_disallo_tmp = array();
     foreach ($admin_theme_disallo as $key => $value) {
       $value = trim($value);
-      if(!empty($value)) {
+      if (!empty($value)) {
         $admin_theme_disallo_tmp[$value] = FALSE;
       }
     }

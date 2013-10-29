@@ -64,7 +64,7 @@ projects[ofed_vmcd][subdir] = contrib
 
 projects[ofed_theme_nerra][download][type] = git
 projects[ofed_theme_nerra][download][branch] = "7.x-1.x"
-projects[ofed_theme_nerra][download][revision] = ffd7a6c
+projects[ofed_theme_nerra][download][revision] = df9a284
 projects[ofed_theme_nerra][subdir] = contrib
 
 projects[ofed_theme_cms][download][type] = git
@@ -192,11 +192,11 @@ projects[features_override][subdir] = contrib
 projects[features_override][version] = "2.0-rc1"
 projects[features_override][subdir] = contrib
 
-projects[feeds][version] = "7.x-2.0-alpha8"
+projects[feeds][version] = "2.0-alpha8"
 projects[feeds][subdir] = contrib
 
-projects[feeds_xpathparser][version] = "7.x-1.0-beta4"
-projects[feeds][subdir] = contrib
+projects[feeds_xpathparser][version] = "1.0-beta4"
+projects[feeds_xpathparser][subdir] = contrib
 
 projects[field_collection][version] = "1.0-beta5"
 projects[field_collection][subdir] = contrib
@@ -245,6 +245,9 @@ projects[imce][subdir] = contrib
 projects[imce_mkdir][version] = "1.0"
 projects[imce_mkdir][subdir] = contrib
 
+projects[job_scheduler][version] = "2.0-alpha3"
+projects[job_scheduler][subdir] = contrib
+
 projects[jquery_plugin][version] = "1.0"
 projects[jquery_plugin][subdir] = contrib
 
@@ -269,6 +272,7 @@ projects[language_selection_page][download][revision] = 1990c41
 projects[language_selection_page][subdir] = contrib
 projects[language_selection_page][patch][2118689] = "http://drupal.org/files/expose_urls.patch"
 projects[language_selection_page][patch][2119463] = "http://drupal.org/files/language_selection_page.globalredirect.patch"
+projects[language_selection_page][patch][2119439] = "http://drupal.org/files/language_selection_page.emptypath.2119439.patch"
 
 projects[lexicon][version] = "1.10"
 projects[lexicon][subdir] = contrib

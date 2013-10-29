@@ -31,7 +31,7 @@ function openfed_install_regional_form() {
       and language selection page modules will be automatically configured. This
       means that for determining the language of a page, the following order will
       be used: 1. URL prefix, 2. Language cookie, 3. Language selection page.') . '</p><p>'.
-      st('Please note, this option is only relevant for sites using multiple languages.') . '</p>',
+      st('Note this option is only relevant for sites using multiple languages.') . '</p>',
   );
 
   $form['submit'] = array(
@@ -48,9 +48,11 @@ function openfed_install_regional_form() {
  */
 function openfed_install_regional_form_validate($form, &$form_state) {
   $values = $form_state['values'];
-  if (empty(array_filter($values['regional_list'])) && !empty($values['cookie_and_language_selection'])) {
+  $regional_enabled = array_filter($values['regional_list']);
+  if (empty($regional_enabled) && !empty($values['cookie_and_language_selection'])) {
     form_set_error('regional_list', st('You chose to enable the language cookie
       and language but did not select a regional language. Please choose at
+t
       least one regional language.'));
   }
 }
