@@ -33,9 +33,6 @@ function openfed_install_role_form() {
 
 /**
  * Form submission handler for openfed_install_role_form().
- *
- * @param array $form The form array.
- * @param array $form_state The form state array.
  */
 function openfed_install_role_form_submit($form, &$form_state) {
   $values = $form_state['values'];

@@ -33,9 +33,6 @@ function openfed_install_menu_form() {
 
 /**
  * Form submission handler for openfed_install_menus_form().
- *
- * @param array $form The form array.
- * @param array $form_state The form state array.
  */
 function openfed_install_menus_form_submit($form, &$form_state) {
   $values = $form_state['values'];
