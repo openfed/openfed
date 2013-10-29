@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Needs to be documented.
+ * Sets up regional settings during install.
  */
 
 // Regional and language > Regional Settings

@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Needs to be documented.
+ * Sets up Secure Login during install.
  */
 
 variable_set('securelogin_base_url', 'https://' . $_SERVER['HTTP_HOST']);

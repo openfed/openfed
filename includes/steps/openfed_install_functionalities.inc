@@ -2,13 +2,13 @@
 
 /**
  * @file
- * Needs to be documented.
+ * "Functionalities"/"Content types" step in installer.
  */
 
 /**
- * Return the form for functionalities set up.
+ * Return the form for functionalities set-up.
  *
- * @return array
+ * @return array The functionalities form.
  */
 function openfed_install_functionalities_form() {
   // Set title.
@@ -20,7 +20,7 @@ function openfed_install_functionalities_form() {
   $form['functionalities'] = array(
     '#type' => 'checkboxes',
     '#title' => st('Content types'),
-    '#options' => _openfed_get_functionnalities_list(),
+    '#options' => _openfed_get_functionalities_list(),
     '#attributes' => array('class' => array('clearfix')),
     '#description' => '<p>' . st('Content types can also be enabled after installation (in the Features list).') . '</p>',
   );
@@ -35,24 +35,27 @@ function openfed_install_functionalities_form() {
 
 /**
  * Form submission handler for openfed_install_functionalities_form().
+ *
+ * @param array $form The form array.
+ * @param array $form_state The form state array.
  */
 function openfed_install_functionalities_form_submit($form, &$form_state) {
   $values = $form_state['values'];
   if (!empty($values['functionalities'])) {
-    $fonctionnalities = $values['functionalities'];
-    // Clean fonctionnalities array.
-    $_fonctionnalities = array();
-    foreach ($fonctionnalities as $key => $value) {
+    $functionalities = $values['functionalities'];
+    // Clean functionalities array.
+    $_functionalities = array();
+    foreach ($functionalities as $key => $value) {
       if(!empty($value)) {
-        $_fonctionnalities[$key] = $value;
+        $_functionalities[$key] = $value;
       }
     }
-    $fonctionnalities = $_fonctionnalities;
-    // If always fonctionnalities...
-    if (!empty($fonctionnalities)) {
+    $functionalities = $_functionalities;
+    // If always functionalities...
+    if (!empty($functionalities)) {
       // Enable modules (create array for batch process).
       $module_list = array();
-      foreach ($fonctionnalities as $key => $name) {
+      foreach ($functionalities as $key => $name) {
         if ($key === $name) {
           $modules_list[] = $name;
         }

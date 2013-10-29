@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Needs to be documented.
+ * Sets up CKeditor Link during install.
  */
 
 variable_set('ckeditor_link_autocomplete_menus', array(

@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Needs to be documented.
+ * Sets up Views during install.
  */
 
 variable_set('views_devel_output', FALSE);

@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Needs to be documented.
+ * Sets up Logintoboggan during install.
  */
 
 variable_set('logintoboggan_confirm_email_at_registration', 0);

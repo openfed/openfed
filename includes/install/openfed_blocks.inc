@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Enable some standard blocks.
+ * Enables several standard blocks during install.
  */
 
 // Set frontend blocks.

@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Needs to be documented.
+ * "Files and folders" step.
  */
 
 /**

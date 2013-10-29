@@ -655,7 +655,7 @@ function _ofed_requirements_get_profile_required_modules() {
   // the info files here.
   $modules = _system_rebuild_module_data();
   $modules = _module_build_dependencies($modules);
-  $functionalities = array_keys(_openfed_get_functionnalities_list());
+  $functionalities = array_keys(_openfed_get_functionalities_list());
   $required = array_keys($modules['openfed']->requires);
 
   foreach ($functionalities as $functionality) {

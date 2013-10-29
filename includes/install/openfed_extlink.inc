@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Needs to be documented.
+ * Sets up External Links during install.
  */
 
 variable_set('extlink_alert_text', 'This link will take you to an external web site. We are not responsible for their content.');

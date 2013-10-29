@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Needs to be documented.
+ * Sets up Colorbox during install.
  */
 
 variable_set('colorbox_caption_trim', '0');

@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Needs to be documented.
+ * Sets up Pathauto during install.
  */
 
 variable_set('pathauto_blog_pattern', 'blogs/[user:name]');

@@ -2,18 +2,17 @@
 
 /**
  * @file
- * Needs to be documented.
+ * "Install Complete" step.
  */
 
 /**
- * Complete set up.
- * @return array
+ * Complete the set-up.
  */
 function openfed_install_complete() {
   // Grant permissions.
   _openfed_install_complete_grant_permissions();
 
-  // Set theme variable.
+  // Set theme variables.
   $enable = array(
     'theme_default' => _openfed_get_theme_frontend(),
     'admin_theme' => _openfed_get_theme_backend(),
@@ -29,7 +28,7 @@ function openfed_install_complete() {
   // Disable the default drupal themes.
   theme_disable(array('bartik', 'seven'));
 
-  // Set admin theme for node edit.
+  // Set up node edit screen to use the admin screen.
   variable_set('node_admin_theme', '1');
 
   // Disable admin theme for batch action.
@@ -75,7 +74,7 @@ function openfed_install_complete() {
 }
 
 /**
- * Needs to be defined.
+ * Sets up node permissions at end of install.
  */
 function _openfed_install_complete_grant_permissions() {
   // Content related roles.
@@ -86,12 +85,16 @@ function _openfed_install_complete_grant_permissions() {
     'Content Manager',
   );
 
-  // Retreive node permissions.
+  // Retrieve node permissions.
   $permissions = module_invoke('node', 'permission');
   $permissions = array_keys($permissions);
+  // Retrieve override node permissions.
   $override_permissions = module_invoke('override_node_options', 'permission');
   $override_permissions = array_keys($override_permissions);
+  // Merge both
   $perms = array_merge($permissions, $override_permissions);
+
+  // Set up permissions to revoke.
   $revoke = array();
   $revoke['Content Manager'] = array(
     'bypass node access',

@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Needs to be documented.
+ * Sets up Global Redirect during install.
  */
 
 variable_set('globalredirect_settings', array(

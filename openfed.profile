@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Needs to be documented.
+ * Openfed profile file for Openfed distribution.
  */
 
 /**
@@ -34,7 +34,8 @@ function openfed_form_install_configure_form_alter(&$form, $form_state) {
 
 /**
  * Implements hook_install_tasks().
- * Task that can be accomplish within the installation process.
+ *
+ * Sets up tasks that can be accomplished within the installation process.
  */
 function openfed_install_tasks_alter(&$tasks, $install_state) {
   // Insert js and css to be able to change the layout.
@@ -52,8 +53,7 @@ function openfed_install_tasks_alter(&$tasks, $install_state) {
   // Set the title.
   drupal_set_title('OpenFed : ' .  drupal_get_title());
 
-  // Rewrite completly the tasks array.
-  // It's the only way to reorder all steps.
+  // Rewrite the tasks array as this is the only way to reorder all steps.
   $task_temp = array();
 
   if (isset($tasks['install_select_profile'])) {
@@ -97,7 +97,7 @@ function openfed_install_tasks_alter(&$tasks, $install_state) {
     $task_temp['install_import_locales'] = $tasks['install_import_locales'];
   }
 
-  // Openfed task place here.
+  // Place Openfed tasks here.
   // Step to choose which language to pre-install.
   $task_temp['openfed_install_regional_form'] = array(
     'display_name' => st('Set up regional'),
@@ -105,7 +105,7 @@ function openfed_install_tasks_alter(&$tasks, $install_state) {
     'type' => 'form',
   );
 
-  // Batch the process of language activation if a language must be pre-install.
+  // Batch the process of language activation if a language must be pre-installed.
   $task_temp['openfed_install_regional_batch'] = array(
     'display_name' => st('Import internalization'),
     'display' => variable_get('openfed_regional_batch_run', FALSE),
@@ -113,21 +113,21 @@ function openfed_install_tasks_alter(&$tasks, $install_state) {
     'run' => variable_get('openfed_regional_batch_run', FALSE) ? INSTALL_TASK_RUN_IF_NOT_COMPLETED : INSTALL_TASK_SKIP,
   );
 
-  // Step to choose which menu to pre-install.
+  // Step to choose which menus to pre-install.
   $task_temp['openfed_install_menu_form'] = array(
     'display_name' => st('Set up menus'),
     'display' => TRUE,
     'type' => 'form',
   );
 
-  // Step to choose which taxonomy vocabulary to pre-install.
+  // Step to choose which taxonomy vocabularies to pre-install.
   $task_temp['openfed_install_taxonomy_form'] = array(
     'display_name' => st('Set up taxonomy'),
     'display' => TRUE,
     'type' => 'form',
   );
 
-  // Step to choose which role to pre-install.
+  // Step to choose which roles to pre-install.
   $task_temp['openfed_install_role_form'] = array(
     'display_name' => st('Set up roles'),
     'display' => TRUE,
@@ -141,8 +141,8 @@ function openfed_install_tasks_alter(&$tasks, $install_state) {
     'type' => 'form',
   );
 
-  // Batch the process of functionnalities activation if a fonctionnalities
-  // must be pre-install.
+  // Batch the process of functionalities activation if a functionality must be
+  // pre-installed.
   $task_temp['openfed_install_functionalities_batch'] = array(
     'display_name' => st('Import content types'),
     'display' => variable_get('openfed_content_types_batch_run', FALSE),
@@ -150,7 +150,7 @@ function openfed_install_tasks_alter(&$tasks, $install_state) {
     'run' => variable_get('openfed_content_types_batch_run', FALSE) ? INSTALL_TASK_RUN_IF_NOT_COMPLETED : INSTALL_TASK_SKIP,
   );
 
-  // Step to rebuild permission.
+  // Step to rebuild permissions.
   $task_temp['openfed_install_complete'] = array(
     'display_name' => st('Setup complete'),
     'display' => FALSE,

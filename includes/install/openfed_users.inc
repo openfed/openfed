@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Needs to be documented.
+ * Sets up user settings during install.
  */
 
 // Allow visitor account creation, but with administrative approval.

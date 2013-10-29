@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Needs to be documented.
+ * Sets up Share This during install.
  */
 
 variable_set('sharethis_button_option', 'stbc_hcount');

@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Needs to be documented.
+ * Sets up Webform during install.
  */
 
 variable_set('addanother_button_webform', FALSE);

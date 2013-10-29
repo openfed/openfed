@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Needs to be documented.
+ * Sets up Text Resize during install.
  */
 
 variable_set('text_resize_line_height_allow', TRUE);

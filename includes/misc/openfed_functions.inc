@@ -2,33 +2,33 @@
 
 /**
  * @file
- * Needs to be documented.
+ * Contains helper functions for Openfed distribution.
  */
 
 /**
- * Get the name of the theme frontend.
+ * Gets the name of the theme frontend.
  */
 function _openfed_get_theme_frontend() {
   return 'nerra';
 }
 /**
- * Get the name of the theme backend.
+ * Gets the name of the theme backend.
  */
 function _openfed_get_theme_backend() {
   return 'cms_theme';
 }
 /**
- * Get the name of the theme maintenance.
+ * Gets the name of the theme maintenance.
  */
 function _openfed_get_theme_maintenance() {
   return 'maintenance';
 }
 
 /**
- * Show a block for a language.
- * @param string $module
- * @param string $delta
- * @param string $language
+ * Shows a block for a language.
+ * @param string $module The module to add the block for.
+ * @param string $delta The delta to use.
+ * @param string $language The language to add the block for.
  */
 function _openfed_show_block_for_language($module, $delta, $language) {
   $query = db_insert('i18n_block_language')->fields(array('language', 'module', 'delta'));
@@ -38,6 +38,9 @@ function _openfed_show_block_for_language($module, $delta, $language) {
 
 /**
  * Create menu entry for home.
+ *
+ * @param string $menu_name The machine name of the menu for the link.
+ * @param string $title Title to appear in menu for the link.
  */
 function _openfed_create_front_menu_link($menu_name, $title) {
   // Create a Home link
@@ -52,6 +55,12 @@ function _openfed_create_front_menu_link($menu_name, $title) {
 
 /**
  * Create a custom menu.
+ *
+ * @param string $menu_name The unique name of the custom menu.
+ * @param string $title The human readable menu title.
+ * @param string $description The custom menu description.
+ * @param int $i18n_mode Multilingual options for the menu item.
+ * @param string $language The language code for the menu item.
  */
 function _openfed_create_custom_menu($menu_name, $title, $description = '', $i18n_mode = '2', $language = 'en') {
   $menu = array();
@@ -64,7 +73,11 @@ function _openfed_create_custom_menu($menu_name, $title, $description = '', $i18
 }
 
 /**
- * Active menu block into navigation region.
+ * Sets menu block into a region.
+ *
+ * @param string $module_name Which module is being configured.
+ * @param string $delta_name Which block is being configured.
+ * @param string $region_name Which region is being configured.
  */
 function _openfed_set_block_into_region($module_name, $delta_name, $region_name) {
   $block = array(
@@ -102,17 +115,18 @@ function _openfed_set_block_into_region($module_name, $delta_name, $region_name)
 }
 
 /**
- * Get the list of potential languages.
+ * Gets the list of potential languages.
  *
  * @return array
  *  The language list.
  */
 function _openfed_get_languages_list() {
   // Set the language list.
+  $tr = get_t();
   $languages_list = array(
-    'fr' => st('French (Français)'),
-    'nl' => st('Dutch (Nederlands)'),
-    'de' => st('German (Deutsch)'),
+    'fr' => $tr('French (Français)'),
+    'nl' => $tr('Dutch (Nederlands)'),
+    'de' => $tr('German (Deutsch)'),
   );
 
   // Return.
@@ -120,39 +134,41 @@ function _openfed_get_languages_list() {
 }
 
 /**
- * Get the list of potential menu.
+ * Gets the list of potential menus to enable.
  *
  * @return array
  *   The menus list.
  */
 function _openfed_get_menus_list() {
+  $tr = get_t();
   $menu_list = array(
-    'menu-tools-menu' => st('Tools Menu: placed at the very top of the screen.'),
-    'menu-footer-menu' => st('Footer Menu: placed at the very bottom of the screen.')
+    'menu-tools-menu' => $tr('Tools Menu: placed at the very top of the screen.'),
+    'menu-footer-menu' => $tr('Footer Menu: placed at the very bottom of the screen.')
   );
   return $menu_list;
 }
 
 /**
- * Get the list of all roles.
+ * Gets the list of all potential roles to enable.
  *
  * @return array
  *   The roles list.
  */
 function _openfed_get_roles_list() {
+  $tr = get_t();
   $role_list = array(
-    'configurator' => st('Configurator: Experienced Drupal user, can configure modules.'),
-    'content_manager' => st('Content Manager: Can create and edit content items.'),
-    'user_manager' => st('User Manager: Can create new users and manage their permissions.'),
-    'authenticated_visitor' => st('Authenticated Visitor.'),
+    'configurator' => $tr('Configurator: Experienced Drupal user, can configure modules.'),
+    'content_manager' => $tr('Content Manager: Can create and edit content items.'),
+    'user_manager' => $tr('User Manager: Can create new users and manage their permissions.'),
+    'authenticated_visitor' => $tr('Authenticated Visitor.'),
   );
   return $role_list;
 }
 
 /**
- * Get the name of all roles availables or created by default.
- * Used to be called after install and bypass the error with the st() function,
- * not recognized after install.
+ * Gets the name of all roles available or created by default.
+ *
+ * Used to be called after install.
  */
 function _openfed_get_roles_list_default() {
   // Set roles.
@@ -172,7 +188,7 @@ function _openfed_get_roles_list_default() {
 }
 
 /**
- * Get the list of all taxonomy.
+ * Gets the list of all taxonomie.
  *
  * @return array
  *  The taxonomy list.
@@ -185,12 +201,12 @@ function _openfed_get_taxonomy_list() {
 }
 
 /**
- * Get the list of all content types.
+ * Gets the list of all content types/"functionalities".
  *
  * @return array
- *  The content types list.
+ *  The content type list.
  */
-function _openfed_get_functionnalities_list() {
+function _openfed_get_functionalities_list() {
   $tr = get_t();
 
   $functionalities = array(
@@ -214,7 +230,6 @@ function _openfed_get_functionnalities_list() {
   );
 
   // Sort by 'title' sub key alphabeticaly and preserve array keys.
-  //uasort($functionalities, '_openfed_sort_content_types_list');
   natsort($functionalities);
 
   // Return.
@@ -976,7 +991,8 @@ function _openfed_get_default_permissions() {
 }
 
 /**
- * Get the permissions list for a specified role.
+ * Gets the permissions list for a specified role.
+ *
  * @param type $role_name
  *   The role name
  * @return array

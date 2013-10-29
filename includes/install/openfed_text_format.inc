@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Needs to be documented.
+ * Sets up text formats during install.
  */
 
 $filtered_html_format = array(

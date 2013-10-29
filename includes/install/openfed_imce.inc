@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Needs to be documented.
+ * Sets up IMCE during installer.
  */
 
 variable_set('imce_roles_profiles', array(

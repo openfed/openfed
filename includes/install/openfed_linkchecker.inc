@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Needs to be documented.
+ * Sets up Link Checker during installer.
  */
 
 variable_set('linkchecker_action_status_code_301', FALSE);

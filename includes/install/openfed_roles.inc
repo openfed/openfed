@@ -2,12 +2,12 @@
 
 /**
  * @file
- * Needs to be documented.
+ * Sets up roles during install.
  */
 
 /**
- * Create a default role for site admninistrators, with all available
- * permissions assigned.
+ * Create a default role for site admnistrators, with all available permissions
+ * assigned.
  */
 $admin_role = new stdClass();
 $admin_role->name = 'Administrator';
@@ -19,7 +19,7 @@ $adm_role_rid = $adm_role->rid;
 // Set this as the administrator role.
 variable_set('user_admin_role', $adm_role_rid);
 
-// Assign user 1 the "administrator" role.
+// Assign the "administrator" role to user 1.
 db_insert('users_roles')->fields(array('uid' => 1, 'rid' => $adm_role_rid))->execute();
 
 /**

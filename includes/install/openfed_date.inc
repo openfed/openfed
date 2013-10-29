@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Needs to be documented.
+ * Sets up Date types during install.
  */
 
 // Adding custom format to list.

@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Needs to be documented.
+ * Sets up HTML5 Tools during install.
  */
 
 variable_set('html5_tools_add_chrome_frame_header', TRUE);

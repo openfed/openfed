@@ -2,11 +2,11 @@
 
 /**
  * @file
- * Needs to be documented.
+ * Sets up CKeditor during install.
  */
 
 /**
- * Updatd the Full format for ckeditor.
+ * Updates the Full format for ckeditor.
  */
 $arr = array();
 $arr['filebrowser'] = 'imce';

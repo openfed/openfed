@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Needs to be documented.
+ * "Roles" step in installer.
  */
 
 /**
@@ -33,6 +33,9 @@ function openfed_install_role_form() {
 
 /**
  * Form submission handler for openfed_install_role_form().
+ *
+ * @param array $form The form array.
+ * @param array $form_state The form state array.
  */
 function openfed_install_role_form_submit($form, &$form_state) {
   $values = $form_state['values'];
@@ -155,7 +158,7 @@ function openfed_install_role_form_submit($form, &$form_state) {
   $ano_role_rid = $ano_role->rid;
   user_role_change_permissions($ano_role_rid, _openfed_get_permissions_for_role('anonymous user'));
 
-  // Setup roles delegation module permission.
+  // Set up roles delegation module permission.
   if (module_enable(array('role_delegation'))) {
     $roles = _role_delegation_roles();
     $permissions = array();

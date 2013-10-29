@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Needs to be documented.
+ * Sets up Easy Breadcrumb during install.
  */
 
 variable_set('easy_breadcrumb-capitalizator_ignored_words', array(

@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Needs to be documented.
+ * Sets up Sitemap during install.
  */
 
 variable_set('site_map_categories_depth', 'all');

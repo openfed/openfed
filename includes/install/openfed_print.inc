@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Needs to be documented.
+ * Sets up Print during install.
  */
 
 variable_set('print_display_sys_urllist', FALSE);

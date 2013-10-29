@@ -2,11 +2,11 @@
 
 /**
  * @file
- * Needs to be documented.
+ * "Regional" step in installer.
  */
 
 /**
- * Form for regional set up.
+ * Form for regional set-up.
  */
 function openfed_install_regional_form() {
   // Set title.
