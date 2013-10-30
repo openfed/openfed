@@ -1,14 +1,7 @@
 LICENSE.txt
-libraries/ckeditor/
-libraries/colorbox/
-libraries/jquery.cycle/
-libraries/jquery.jcarousel/
-modules/contrib
+libraries/
 modules/contrib/
-modules/contrib/*
 themes/contrib/
-themes/contrib/*
-themes/contrib
 .buildpath
 .settings
 .settings/
