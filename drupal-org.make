@@ -406,6 +406,9 @@ projects[site_map][subdir] = contrib
 projects[site_verify][version] = "1.0"
 projects[site_verify][subdir] = contrib
 
+projects[smart_trim][version] = "1.4"
+projects[smart_trim][subdir] = contrib
+
 projects[special_menu_items][version] = "2.0"
 projects[special_menu_items][subdir] = contrib
 

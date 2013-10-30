@@ -3,8 +3,12 @@ CHANGELOG
 
 TBD - Version 7.x
 -----------------
+  * New modules:
+    #2120401: New module: Smart Trim
+
   * Issues:
     #2095849: Order of language and title fields is switched for content type: webform
+
 
 28 October 2013 - Version 7.x-1.2-rc1
 -------------------------------------
