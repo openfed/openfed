@@ -366,6 +366,11 @@ function openfed_update_7109() {
     // Reset the features_codecache variable (rebuild by features).
     variable_del('features_codecache');
 
+    // Delete the features entires from the system table
+    db_delete('system')
+      ->condition('module', db_like('ofed_feature') . '%', 'LIKE')
+      ->execute();
+
     // Clear the cache to rebuild the info field ot the system's table
     cache_clear_all();
   }
