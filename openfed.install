@@ -368,7 +368,7 @@ function openfed_update_7109() {
 
     // Delete the features entires from the system table
     db_delete('system')
-      ->condition('module', db_like('ofed_feature') . '%', 'LIKE')
+      ->condition('name', db_like('ofed_feature') . '%', 'LIKE')
       ->execute();
 
     // Clear the cache to rebuild the info field ot the system's table
