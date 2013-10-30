@@ -6,6 +6,10 @@ TBD - Version 7.x
   * New modules:
     #2120401: New module: Smart Trim
 
+  * Upgraded modules:
+    #2123477: Module upgrade: rules
+    #2123479: Module upgrade: media_youtube
+
   * Issues:
     #2095849: Order of language and title fields is switched for content type: webform
 
@@ -16,7 +20,7 @@ TBD - Version 7.x
     #1980552: New modules: feeds and xpathparser
     #2069973: A splash page with language choice (langauge_selection_page) 
 
-  * Upgraded modules
+  * Upgraded modules:
     #2117741: simple google maps & SSL
     #2090401: Module upgrade: rules
     #2021377, #2088715: Module upgrade: openfed_switcher

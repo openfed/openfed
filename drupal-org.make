@@ -300,7 +300,7 @@ projects[media_dailymotion][subdir] = contrib
 projects[media_vimeo][version] = "1.0-beta5"
 projects[media_vimeo][subdir] = contrib
 
-projects[media_youtube][version] = "2.0-rc3"
+projects[media_youtube][version] = "2.0-rc4"
 projects[media_youtube][subdir] = contrib
 
 projects[menu_attributes][version] = "1.0-rc2"
@@ -374,7 +374,7 @@ projects[robotstxt][subdir] = contrib
 projects[role_delegation][version] = "1.1"
 projects[role_delegation][subdir] = contrib
 
-projects[rules][version] = "2.5"
+projects[rules][version] = "2.6"
 projects[rules][subdir] = contrib
 
 projects[scheduler][version] = "1.1"
