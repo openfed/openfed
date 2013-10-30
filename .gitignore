@@ -9,3 +9,7 @@ modules/contrib/*
 themes/contrib/
 themes/contrib/*
 themes/contrib
+.buildpath
+.settings
+.settings/
+.project
