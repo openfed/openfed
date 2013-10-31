@@ -2,7 +2,7 @@
 
 /**
  * @file
- * "Files and folders" step.
+ * Needs to be documented.
  */
 
 /**
@@ -10,7 +10,7 @@
  */
 function openfed_install_files_and_folders(){
   // Define paths.
-  $path_files = 'sites/default/files';
+  $path_files = conf_path(FALSE) . '/files';
   $path_public = $path_files . '/public';
   $path_private = $path_files . '/private';
   $path_temporary = '/tmp';
