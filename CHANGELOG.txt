@@ -5,6 +5,7 @@ CHANGELOG
   * Issues:
     #2028697: Small corrections to changelog
     #2112861: Added upgrade note to README.txt and small corrections
+    #2089895: RTE not loading, corrected css / js path to CKEditor
 
 29 October 2013 - Version 7.x-1.2-rc2
 -------------------------------------
