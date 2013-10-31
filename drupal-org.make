@@ -115,6 +115,9 @@ projects[beididp][subdir] = contrib
 projects[calendar][version] = "3.4"
 projects[calendar][subdir] = contrib
 
+projects[captcha][version] = "7.x-1.0"
+projects[captcha][subdir] = contrib
+
 projects[ckeditor][version] = "1.13"
 projects[ckeditor][subdir] = contrib
 
@@ -321,9 +324,6 @@ projects[menu_position][subdir] = contrib
 projects[metatag][version] = "1.0-beta7"
 projects[metatag][subdir] = contrib
 
-projects[mollom][version] = "2.7"
-projects[mollom][subdir] = contrib
-
 projects[multiple_node_menu][version] = "1.0-beta1"
 projects[multiple_node_menu][subdir] = contrib
 
@@ -363,6 +363,9 @@ projects[quiz][version] = "4.0-beta1"
 projects[quiz][subdir] = contrib
 ;projects[quiz][patch][1899654] = "http://drupal.org/files/quiz-cant_view_long_answer_questions-1899654-1.patch"
 projects[quiz][patch][1827880] = "http://drupal.org/files/undefined_index_group_by-1827880-7.patch"
+
+projects[recaptcha][version] = "7.x-1.1"
+projects[recaptcha][subdir] = contrib
 
 projects[redirect][version] = "1.0-rc1"
 projects[redirect][subdir] = contrib

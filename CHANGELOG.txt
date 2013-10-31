@@ -6,6 +6,7 @@ TBD - Version 7.x
   * New modules:
     #2120401: New module: Smart Trim
     #2076051: New module: Honeypot
+    #2122259: Replace module Mollom with Recaptcha
 
   * Upgraded modules:
     #2123477: Module upgrade: rules
