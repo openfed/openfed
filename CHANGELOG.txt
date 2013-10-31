@@ -1,5 +1,9 @@
 CHANGELOG
 =========
+31 October 2013 - Version 7.x-1.2
+---------------------------------
+  * Issues:
+    #2028697: Small corrections to changelog
 
 29 October 2013 - Version 7.x-1.2-rc2
 -------------------------------------
@@ -12,7 +16,7 @@ CHANGELOG
 -------------------------------------
   * New modules:
     #1980552: New modules: feeds and xpathparser
-    #2069973: A splash page with language choice (langauge_selection_page) 
+    #2069973: A splash page with language choice (language_selection_page) 
 
   * Upgraded modules
     #2117741: simple google maps & SSL
