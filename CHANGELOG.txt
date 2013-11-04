@@ -14,6 +14,7 @@ TBD - Version 7.x
 
   * Issues:
     #2095849: Order of language and title fields is switched for content type: webform
+    #2081591: Alternate text and title of a "banner image" are not mandatory, yet they're marked with an asterisk
 
 
 28 October 2013 - Version 7.x-1.2-rc1
