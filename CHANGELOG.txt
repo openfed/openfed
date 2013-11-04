@@ -3,6 +3,9 @@ CHANGELOG
 
 TBD - Version 7.x
 -----------------
+  * Removed module:
+    #2123763: Remove module: robotstxt
+
   * New modules:
     #2120401: New module: Smart Trim
     #2076051: New module: Honeypot

@@ -374,9 +374,6 @@ projects[redirect][patch][1796596] = "http://drupal.org/files/redirect.circular-
 projects[registration][version] = "1.2"
 projects[registration][subdir] = contrib
 
-projects[robotstxt][version] = "1.1"
-projects[robotstxt][subdir] = contrib
-
 projects[role_delegation][version] = "1.1"
 projects[role_delegation][subdir] = contrib
 
