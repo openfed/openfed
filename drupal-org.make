@@ -130,6 +130,11 @@ projects[colorbox][subdir] = contrib
 projects[comment_goodness][version] = "1.4"
 projects[comment_goodness][subdir] = contrib
 
+projects[config_perms][download][type] = git
+projects[config_perms][download][branch] = "7.x-2.x"
+projects[config_perms][download][revision] = 0953b4b
+projects[config_perms][subdir] = contrib
+
 projects[content_access][version] = "1.2-beta2"
 projects[content_access][subdir] = contrib
 

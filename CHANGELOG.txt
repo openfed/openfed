@@ -5,11 +5,13 @@ TBD - Version 7.x
 -----------------
   * Removed module:
     #2123763: Remove module: robotstxt
+    #2122259: Remove module: Recaptcha
 
   * New modules:
     #2120401: New module: Smart Trim
     #2076051: New module: Honeypot
-    #2122259: Replace module Mollom with Recaptcha
+    #2122259: New module: Recaptcha
+    #2127881: New module: Custom permissions
 
   * Upgraded modules:
     #2123477: Module upgrade: rules
