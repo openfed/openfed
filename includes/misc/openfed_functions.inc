@@ -308,12 +308,6 @@ function _openfed_get_default_permissions() {
       'Configurator',
     ),
 
-    // config_perms
-    'administer site information' => array(
-      'Builder',
-      'Configurator',
-    ),   
-
     // contextual
     'access contextual links' => array(
       'Builder',
@@ -688,12 +682,6 @@ function _openfed_get_default_permissions() {
       'Builder',
       'Configurator',
       'Content Manager',
-    ),
-
-    // ofed_cms_theme
-    'edit site information' => array(
-      'Builder',
-      'Configurator',
     ),
 
     // ofed_vmcd

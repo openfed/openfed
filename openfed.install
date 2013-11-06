@@ -327,27 +327,3 @@ function openfed_update_7108() {
   variable_set('page_cache_invoke_hooks', TRUE);
   module_disable(array('locale_cookie'), FALSE);
 }
-
-/**
- * Fix #2127881: Builder/Configurator roles should be able to edit Site
- * Information.
- */
-function openfed_update_7109() {
-  if (!module_exists('config_perms')) {
-    module_enable(array('config_perms'));
-  }
-  $roles = array(
-    'Builder',
-    'Configurator',
-  );
-  $permissions = array('administer site information');
-
-  foreach ($roles as $role_name) {
-    $role = user_role_load_by_name($role_name);
-
-    if (!empty($role->rid)) {
-      // Assign permission to role.
-      user_role_grant_permissions($role->rid, $permissions);
-    }
-  }
-}
