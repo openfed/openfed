@@ -111,7 +111,7 @@ projects[beididp][subdir] = contrib
 projects[calendar][version] = "3.4"
 projects[calendar][subdir] = contrib
 
-projects[captcha][version] = "7.x-1.0"
+projects[captcha][version] = "1.0"
 projects[captcha][subdir] = contrib
 
 projects[ckeditor][version] = "1.13"
@@ -218,13 +218,16 @@ projects[flag][subdir] = contrib
 projects[globalredirect][version] = "1.5"
 projects[globalredirect][subdir] = contrib
 
+projects[gmap][version] = "2.8"
+projects[gmap][subdir] = contrib
+
 projects[google_analytics][version] = "1.4"
 projects[google_analytics][subdir] = contrib
 
 projects[hierarchical_select][version] = "3.0-alpha6"
 projects[hierarchical_select][subdir] = contrib
 
-projects[honeypot][version] = "7.x-1.15"
+projects[honeypot][version] = "1.15"
 projects[honeypot][subdir] = contrib
 
 projects[html5_tools][version] = "1.2"
@@ -288,6 +291,9 @@ projects[link][patch][1914286] = "http://drupal.org/files/Fixed_title_value_in_l
 
 projects[linkchecker][version] = "1.1"
 projects[linkchecker][subdir] = contrib
+
+projects[location][version] = "3.1"
+projects[location][subdir] = contrib
 
 projects[logintoboggan][version] = "1.3"
 projects[logintoboggan][subdir] = contrib
@@ -360,7 +366,7 @@ projects[quiz][subdir] = contrib
 ;projects[quiz][patch][1899654] = "http://drupal.org/files/quiz-cant_view_long_answer_questions-1899654-1.patch"
 projects[quiz][patch][1827880] = "http://drupal.org/files/undefined_index_group_by-1827880-7.patch"
 
-projects[recaptcha][version] = "7.x-1.1"
+projects[recaptcha][version] = "1.1"
 projects[recaptcha][subdir] = contrib
 
 projects[redirect][version] = "1.0-rc1"

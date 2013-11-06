@@ -11,6 +11,7 @@ TBD - Version 7.x
     #2120401: New module: Smart Trim
     #2076051: New module: Honeypot
     #2122259: New module: Recaptcha
+    #2123691: Module inclusion: GMap & Location
 
   * Upgraded modules:
     #2123477: Module upgrade: rules
