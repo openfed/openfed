@@ -16,6 +16,7 @@ TBD - Version 7.x
   * Upgraded modules:
     #2123477: Module upgrade: rules
     #2123479: Module upgrade: media_youtube
+    #2119423: Module upgrade: apachesolr
 
   * Issues:
     #2095849: Order of language and title fields is switched for content type: webform
