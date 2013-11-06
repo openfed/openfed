@@ -788,7 +788,7 @@ function ofed_news_field_default_field_instances() {
         'module' => 'image',
         'settings' => array(
           'image_link' => 'content',
-          'image_style' => 'ofed_news_thumb_page_list',
+          'image_style' => 'ofed_news_thumb',
         ),
         'type' => 'image',
         'weight' => 4,

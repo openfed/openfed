@@ -891,7 +891,7 @@ function ofed_team_field_default_field_instances() {
         'module' => 'image',
         'settings' => array(
           'image_link' => 'content',
-          'image_style' => 'ofed_team_thumb_block_column',
+          'image_style' => 'ofed_team_thumb',
         ),
         'type' => 'image',
         'weight' => 4,
@@ -927,7 +927,7 @@ function ofed_team_field_default_field_instances() {
         'module' => 'image',
         'settings' => array(
           'image_link' => 'content',
-          'image_style' => 'ofed_team_thumb_page_list',
+          'image_style' => 'ofed_team_thumb',
         ),
         'type' => 'image',
         'weight' => 4,
@@ -959,7 +959,7 @@ function ofed_team_field_default_field_instances() {
         'module' => 'image',
         'settings' => array(
           'image_link' => 'content',
-          'image_style' => 'ofed_team_thumb_block_teaser',
+          'image_style' => 'ofed_team_thumb',
         ),
         'type' => 'image',
         'weight' => 4,

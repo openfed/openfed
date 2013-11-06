@@ -1110,7 +1110,7 @@ function ofed_event_field_default_field_instances() {
         'module' => 'image',
         'settings' => array(
           'image_link' => '',
-          'image_style' => 'ofed_download_thumb_page_list',
+          'image_style' => 'ofed_event_thumb',
         ),
         'type' => 'image',
         'weight' => 3,
