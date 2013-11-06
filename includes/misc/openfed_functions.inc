@@ -673,11 +673,6 @@ function _openfed_get_default_permissions() {
     ),
 
     // ofed_switcher
-    'access ofed_switcher administration' => array(
-      'Builder',
-      'Configurator',
-      'Content Manager',
-    ),
     'access ofed_switcher content' => array(
       'Builder',
       'Configurator',
