@@ -46,11 +46,6 @@ libraries[jquery.jcarousel][type] = "library"
 projects[addemar_subscription][version] = "1.0"
 projects[addemar_subscription][subdir] = contrib
 
-projects[ofed_admin_menu][download][type] = git
-projects[ofed_admin_menu][download][branch] = "7.x-1.x"
-projects[ofed_admin_menu][download][revision] = d598aa2
-projects[ofed_admin_menu][subdir] = contrib
-
 projects[ofed_menu_dam][version] = "1.0"
 projects[ofed_menu_dam][subdir] = contrib
 
@@ -90,6 +85,7 @@ projects[admin_language][subdir] = contrib
 
 projects[admin_menu][version] = "3.0-rc4"
 projects[admin_menu][subdir] = contrib
+projects[admin_menu][patch][2096789] = "http://drupal.org/files/issues/admin_menu-interface_language_is_mixed_instead_of_forced_EN-2096789-20.patch"
 
 projects[admin_theme][version] = "1.0"
 projects[admin_theme][subdir] = contrib
