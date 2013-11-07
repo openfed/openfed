@@ -302,9 +302,6 @@ projects[logintoboggan][patch][1142808] = "http://drupal.org/files/logintoboggan
 projects[media][version] = "1.3"
 projects[media][subdir] = contrib
 
-projects[media_dailymotion][version] = "1.1"
-projects[media_dailymotion][subdir] = contrib
-
 projects[media_vimeo][version] = "1.0-beta5"
 projects[media_vimeo][subdir] = contrib
 

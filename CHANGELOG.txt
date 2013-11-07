@@ -6,6 +6,7 @@ TBD - Version 7.x
   * Removed module:
     #2123763: Remove module: robotstxt
     #2122259: Remove module: Recaptcha
+    #2123811: Remove module: media_dailymotion
 
   * New modules:
     #2120401: New module: Smart Trim
