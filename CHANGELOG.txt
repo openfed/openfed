@@ -24,6 +24,7 @@ TBD - Version 7.x
     #2118525: Add go to CMS button
     #2043269: Menu link choice does not match language choice
     #2096789: Interface language is mixed instead of forced EN
+    #2128833: Start Page: Add a show button for each content type
 
 
 28 October 2013 - Version 7.x-1.2-rc1
