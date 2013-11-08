@@ -150,7 +150,7 @@ projects[draggableviews][subdir] = contrib
 projects[ds][version] = "2.6"
 projects[ds][subdir] = contrib
 
-projects[easy_breadcrumb][version] = "2.7"
+projects[easy_breadcrumb][version] = "2.9"
 projects[easy_breadcrumb][subdir] = contrib
 projects[easy_breadcrumb][patch][2071747] = "http://drupal.org/files/easy_breadcrumb-home-breadcrumb-does-not-get-translated-2071747-3.patch"
 

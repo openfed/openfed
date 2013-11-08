@@ -18,6 +18,7 @@ TBD - Version 7.x
     #2123477: Module upgrade: rules
     #2123479: Module upgrade: media_youtube
     #2119423: Module upgrade: apachesolr
+    #2130767: Module upgrade: easy_breadcrumb
 
   * Issues:
     #2095849: Order of language and title fields is switched for content type: webform
