@@ -358,7 +358,7 @@ projects[pathauto][patch][1993462] = "http://drupal.org/files/pathauto-path_alia
 projects[print][version] = "1.2"
 projects[print][subdir] = contrib
 
-projects[quiz][version] = "4.0-beta1"
+projects[quiz][version] = "4.0-beta2"
 projects[quiz][subdir] = contrib
 ;projects[quiz][patch][1899654] = "http://drupal.org/files/quiz-cant_view_long_answer_questions-1899654-1.patch"
 projects[quiz][patch][1827880] = "http://drupal.org/files/undefined_index_group_by-1827880-7.patch"
