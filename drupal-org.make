@@ -1,6 +1,10 @@
 api = 2
 core = 7.x
 
+translations[] = nl
+translations[] = fr
+translations[] = de
+
 ;
 ; Libraries
 ; Please fill the following out. Type may be one of get, git, bzr or svn, and url is the url of the download.
@@ -366,7 +370,6 @@ projects[print][subdir] = contrib
 projects[quiz][version] = "4.0-beta2"
 projects[quiz][subdir] = contrib
 ;projects[quiz][patch][1899654] = "http://drupal.org/files/quiz-cant_view_long_answer_questions-1899654-1.patch"
-projects[quiz][patch][1827880] = "http://drupal.org/files/undefined_index_group_by-1827880-7.patch"
 
 projects[recaptcha][version] = "1.1"
 projects[recaptcha][subdir] = contrib
