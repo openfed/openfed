@@ -368,7 +368,7 @@ projects[quiz][subdir] = contrib
 ;projects[quiz][patch][1899654] = "http://drupal.org/files/quiz-cant_view_long_answer_questions-1899654-1.patch"
 projects[quiz][patch][1827880] = "http://drupal.org/files/undefined_index_group_by-1827880-7.patch"
 
-projects[recaptcha][version] = "1.1"
+projects[recaptcha][version] = "1.10"
 projects[recaptcha][subdir] = contrib
 
 projects[redirect][version] = "1.0-rc1"
