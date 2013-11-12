@@ -27,6 +27,7 @@ TBD - Version 7.x
     #2076051: New module: Honeypot
     #2122259: New module: Recaptcha
     #2123691: Module inclusion: GMap & Location
+    #2134093: New module: Administration Views
 
   * Upgraded modules:
     #2123477: Module upgrade: rules
