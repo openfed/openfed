@@ -56,7 +56,7 @@ projects[ofed_menu_dam][subdir] = contrib
 
 projects[ofed_switcher][download][type] = git
 projects[ofed_switcher][download][branch] = "7.x-1.x"
-projects[ofed_switcher][download][revision] = 442cd69
+projects[ofed_switcher][download][revision] = b137db9
 projects[ofed_switcher][subdir] = contrib
 
 projects[ofed_vmcd][version] = "1.0"
@@ -69,7 +69,7 @@ projects[ofed_theme_nerra][subdir] = contrib
 
 projects[ofed_theme_cms][download][type] = git
 projects[ofed_theme_cms][download][branch] = "7.x-1.x"
-projects[ofed_theme_cms][download][revision] = 1919886
+projects[ofed_theme_cms][download][revision] = 67d675e
 projects[ofed_theme_cms][subdir] = contrib
 
 projects[ofed_theme_maintenance][version] = "1.0"
@@ -90,11 +90,12 @@ projects[admin_language][subdir] = contrib
 
 projects[admin_menu][version] = "3.0-rc4"
 projects[admin_menu][subdir] = contrib
+projects[admin_menu][patch][2096789] = "http://drupal.org/files/issues/admin_menu-interface_language_is_mixed_instead_of_forced_EN-2096789-20.patch"
 
 projects[admin_theme][version] = "1.0"
 projects[admin_theme][subdir] = contrib
 
-projects[apachesolr][version] = "1.4"
+projects[apachesolr][version] = "1.5"
 projects[apachesolr][subdir] = contrib
 
 projects[apachesolr_attachments][version] = "1.3"
@@ -106,7 +107,7 @@ projects[apachesolr_autocomplete][subdir] = contrib
 projects[apachesolr_multilingual][version] = "1.0-beta2"
 projects[apachesolr_multilingual][subdir] = contrib
 
-projects[backup_migrate][version] = "2.7"
+projects[backup_migrate][version] = "2.8"
 projects[backup_migrate][subdir] = contrib
 
 projects[beididp][version] = "1.0-alpha2"
@@ -114,6 +115,9 @@ projects[beididp][subdir] = contrib
 
 projects[calendar][version] = "3.4"
 projects[calendar][subdir] = contrib
+
+projects[captcha][version] = "1.0"
+projects[captcha][subdir] = contrib
 
 projects[ckeditor][version] = "1.13"
 projects[ckeditor][subdir] = contrib
@@ -151,7 +155,7 @@ projects[draggableviews][subdir] = contrib
 projects[ds][version] = "2.6"
 projects[ds][subdir] = contrib
 
-projects[easy_breadcrumb][version] = "2.7"
+projects[easy_breadcrumb][version] = "2.9"
 projects[easy_breadcrumb][subdir] = contrib
 projects[easy_breadcrumb][patch][2071747] = "http://drupal.org/files/easy_breadcrumb-home-breadcrumb-does-not-get-translated-2071747-3.patch"
 
@@ -219,11 +223,17 @@ projects[flag][subdir] = contrib
 projects[globalredirect][version] = "1.5"
 projects[globalredirect][subdir] = contrib
 
+projects[gmap][version] = "2.8"
+projects[gmap][subdir] = contrib
+
 projects[google_analytics][version] = "1.4"
 projects[google_analytics][subdir] = contrib
 
 projects[hierarchical_select][version] = "3.0-alpha6"
 projects[hierarchical_select][subdir] = contrib
+
+projects[honeypot][version] = "1.15"
+projects[honeypot][subdir] = contrib
 
 projects[html5_tools][version] = "1.2"
 projects[html5_tools][subdir] = contrib
@@ -287,6 +297,9 @@ projects[link][patch][1914286] = "http://drupal.org/files/Fixed_title_value_in_l
 projects[linkchecker][version] = "1.1"
 projects[linkchecker][subdir] = contrib
 
+projects[location][version] = "3.1"
+projects[location][subdir] = contrib
+
 projects[logintoboggan][version] = "1.3"
 projects[logintoboggan][subdir] = contrib
 projects[logintoboggan][patch][1142808] = "http://drupal.org/files/logintoboggan-minpasswordlength-1142808-9.patch"
@@ -294,13 +307,10 @@ projects[logintoboggan][patch][1142808] = "http://drupal.org/files/logintoboggan
 projects[media][version] = "1.3"
 projects[media][subdir] = contrib
 
-projects[media_dailymotion][version] = "1.1"
-projects[media_dailymotion][subdir] = contrib
-
 projects[media_vimeo][version] = "1.0-beta5"
 projects[media_vimeo][subdir] = contrib
 
-projects[media_youtube][version] = "2.0-rc3"
+projects[media_youtube][version] = "2.0-rc4"
 projects[media_youtube][subdir] = contrib
 
 projects[menu_attributes][version] = "1.0-rc2"
@@ -317,9 +327,6 @@ projects[menu_position][subdir] = contrib
 
 projects[metatag][version] = "1.0-beta7"
 projects[metatag][subdir] = contrib
-
-projects[mollom][version] = "2.7"
-projects[mollom][subdir] = contrib
 
 projects[multiple_node_menu][version] = "1.0-beta1"
 projects[multiple_node_menu][subdir] = contrib
@@ -356,10 +363,13 @@ projects[pathauto][patch][1993462] = "http://drupal.org/files/pathauto-path_alia
 projects[print][version] = "1.2"
 projects[print][subdir] = contrib
 
-projects[quiz][version] = "4.0-beta1"
+projects[quiz][version] = "4.0-beta2"
 projects[quiz][subdir] = contrib
 ;projects[quiz][patch][1899654] = "http://drupal.org/files/quiz-cant_view_long_answer_questions-1899654-1.patch"
 projects[quiz][patch][1827880] = "http://drupal.org/files/undefined_index_group_by-1827880-7.patch"
+
+projects[recaptcha][version] = "1.1"
+projects[recaptcha][subdir] = contrib
 
 projects[redirect][version] = "1.0-rc1"
 projects[redirect][subdir] = contrib
@@ -368,13 +378,10 @@ projects[redirect][patch][1796596] = "http://drupal.org/files/redirect.circular-
 projects[registration][version] = "1.2"
 projects[registration][subdir] = contrib
 
-projects[robotstxt][version] = "1.1"
-projects[robotstxt][subdir] = contrib
-
 projects[role_delegation][version] = "1.1"
 projects[role_delegation][subdir] = contrib
 
-projects[rules][version] = "2.5"
+projects[rules][version] = "2.6"
 projects[rules][subdir] = contrib
 
 projects[scheduler][version] = "1.1"
@@ -405,6 +412,9 @@ projects[site_map][subdir] = contrib
 
 projects[site_verify][version] = "1.0"
 projects[site_verify][subdir] = contrib
+
+projects[smart_trim][version] = "1.4"
+projects[smart_trim][subdir] = contrib
 
 projects[special_menu_items][version] = "2.0"
 projects[special_menu_items][subdir] = contrib

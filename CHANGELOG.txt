@@ -15,13 +15,43 @@ CHANGELOG
     #2043085: Apache solr: use remote solr / tika instead of local tika
     Set up default site slogan
 
+TBD - Version 7.x
+-----------------
+  * Removed module:
+    #2123763: Remove module: robotstxt
+    #2122259: Remove module: Recaptcha
+    #2123811: Remove module: media_dailymotion
+
+  * New modules:
+    #2120401: New module: Smart Trim
+    #2076051: New module: Honeypot
+    #2122259: New module: Recaptcha
+    #2123691: Module inclusion: GMap & Location
+
+  * Upgraded modules:
+    #2123477: Module upgrade: rules
+    #2123479: Module upgrade: media_youtube
+    #2119423: Module upgrade: apachesolr
+    #2130763: Module upgrade: quiz
+    #2130765: Module upgrade: backup_migrate
+    #2130767: Module upgrade: easy_breadcrumb
+
+  * Issues:
+    #2095849: Order of language and title fields is switched for content type: webform
+    #2081591: Alternate text and title of a "banner image" are not mandatory, yet they're marked with an asterisk
+    #2118525: Add go to CMS button
+    #2043269: Menu link choice does not match language choice
+    #2096789: Interface language is mixed instead of forced EN
+    #2128833: Start Page: Add a show button for each content type
+
+
 28 October 2013 - Version 7.x-1.2-rc1
 -------------------------------------
   * New modules:
     #1980552: New modules: feeds and xpathparser
     #2069973: A splash page with language choice (language_selection_page) 
 
-  * Upgraded modules
+  * Upgraded modules:
     #2117741: simple google maps & SSL
     #2090401: Module upgrade: rules
     #2021377, #2088715: Module upgrade: openfed_switcher

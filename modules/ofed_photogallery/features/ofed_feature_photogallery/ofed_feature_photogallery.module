@@ -1,7 +1,0 @@
-<?php
-
-/**
- * @file
- * Code for the OpenFed Photos - Feature feature.
- */
-include_once 'ofed_feature_photogallery.features.inc';

@@ -328,3 +328,50 @@ function openfed_update_7108() {
   module_disable(array('locale_cookie'), FALSE);
 }
 
+/**
+ * Rebuild the features regarding the OpenFed content types.
+ */
+function openfed_update_7109() {
+  // Check if we still have the old features' structure
+  $modules = db_select('system', 's')
+    ->fields('s')
+    ->condition('name', db_like('ofed_feature') . '%', 'LIKE')
+    ->execute()
+    ->fetchAll();
+
+  if (!empty($modules)) {
+    // Loop through the features to upddate their module schema_version.
+    foreach ($modules as $module) {
+      $module_name = str_replace('ofed_feature_', 'ofed_', $module->name);
+      db_update('system')
+        ->fields(array(
+          'schema_version' => $module->schema_version,
+        ))
+        ->condition('name', $module_name)
+        ->execute();
+    }
+
+    // Rename the node_type's module name
+    db_update('node_type')
+      ->expression('module', 'REPLACE(`module`, :search, :replace)', array(':search' => 'ofed_feature_', ':replace' => 'ofed_'))
+      ->condition('module', db_like('ofed_feature') . '%', 'LIKE')
+      ->execute();
+
+    // Rename the rules_config's module name
+    db_update('rules_config')
+      ->expression('module', 'REPLACE(`module`, :search, :replace)', array(':search' => 'ofed_feature_', ':replace' => 'ofed_'))
+      ->condition('module', db_like('ofed_feature') . '%', 'LIKE')
+      ->execute();
+
+    // Reset the features_codecache variable (rebuild by features).
+    variable_del('features_codecache');
+
+    // Delete the features entires from the system table
+    db_delete('system')
+      ->condition('name', db_like('ofed_feature') . '%', 'LIKE')
+      ->execute();
+
+    // Clear the cache to rebuild the info field ot the system's table
+    cache_clear_all();
+  }
+}

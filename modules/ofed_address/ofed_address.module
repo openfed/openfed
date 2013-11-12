@@ -5,6 +5,8 @@
  * Module needed to manage address with the Openfed distribution.
  */
 
+include_once 'ofed_address.features.inc';
+
 /**
  * Implements hook_theme_registry_alter().
  */
@@ -42,7 +44,7 @@ function ofed_address_preprocess_node() {
 function ofed_address_ofed_user_default_permissions() {
   // Function used by the ofed_rerquirements module. The hook defined in the
   // required file hereunder is not available otherwise.
-  require_once drupal_get_path('module', 'ofed_address') . '/features/ofed_feature_address/ofed_feature_address.features.user_permission.inc';
+  require_once drupal_get_path('module', 'ofed_address') . '/ofed_address.features.user_permission.inc';
 
-  return ofed_feature_address_user_default_permissions();
+  return ofed_address_user_default_permissions();
 }

@@ -1,7 +1,0 @@
-<?php
-
-/**
- * @file
- * Code for the Slider feature.
- */
-include_once 'ofed_feature_slider.features.inc';
