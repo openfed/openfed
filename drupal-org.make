@@ -161,7 +161,7 @@ projects[ds][subdir] = contrib
 
 projects[easy_breadcrumb][version] = "2.9"
 projects[easy_breadcrumb][subdir] = contrib
-projects[easy_breadcrumb][patch][2071747] = "http://drupal.org/files/easy_breadcrumb-home-breadcrumb-does-not-get-translated-2071747-3.patch"
+projects[easy_breadcrumb][patch][2071747] = "http://drupal.org/files/issues/easy_breadcrumb-translation-2071747-14.patch"
 
 projects[elements][version] = "1.4"
 projects[elements][subdir] = contrib
