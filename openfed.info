@@ -151,7 +151,3 @@ core = 7.x
   dependencies[] = ofed_vmcd
   dependencies[] = ofed_switcher
 
-; OpenFed theme dependencies.
-; ---------------------------
-
-  dependencies[] = ofed_cms_theme
