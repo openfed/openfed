@@ -60,7 +60,7 @@ projects[ofed_menu_dam][subdir] = contrib
 
 projects[ofed_switcher][download][type] = git
 projects[ofed_switcher][download][branch] = "7.x-1.x"
-projects[ofed_switcher][download][revision] = b137db9
+projects[ofed_switcher][download][revision] = 83a3a42
 projects[ofed_switcher][subdir] = contrib
 
 projects[ofed_vmcd][version] = "1.0"
@@ -68,12 +68,12 @@ projects[ofed_vmcd][subdir] = contrib
 
 projects[ofed_theme_nerra][download][type] = git
 projects[ofed_theme_nerra][download][branch] = "7.x-1.x"
-projects[ofed_theme_nerra][download][revision] = df9a284
+projects[ofed_theme_nerra][download][revision] = 77d9c9125
 projects[ofed_theme_nerra][subdir] = contrib
 
 projects[ofed_theme_cms][download][type] = git
 projects[ofed_theme_cms][download][branch] = "7.x-1.x"
-projects[ofed_theme_cms][download][revision] = ada4235
+projects[ofed_theme_cms][download][revision] = 9b254a15
 projects[ofed_theme_cms][subdir] = contrib
 
 projects[ofed_theme_maintenance][version] = "1.0"
