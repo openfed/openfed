@@ -45,6 +45,7 @@ TBD - Version 7.x
     #2128833: Start Page: Add a show button for each content type
     #2116861: small correction in presentation of "publication date" and "last updated date" in CMS view
     #2134781: Administration theme module not enabled on installed/existing sites
+    #2134729: RTE - Bullet points not showing
 
 28 October 2013 - Version 7.x-1.2-rc1
 -------------------------------------
