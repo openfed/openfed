@@ -35,6 +35,7 @@ TBD - Version 7.x
     #2130763: Module upgrade: quiz
     #2130765: Module upgrade: backup_migrate
     #2130767: Module upgrade: easy_breadcrumb
+    #2133975: Module upgrade: hierarchical_select
 
   * Issues:
     #2095849: Order of language and title fields is switched for content type: webform
