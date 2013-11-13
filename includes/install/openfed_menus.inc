@@ -17,9 +17,3 @@ if (!isset($menus['menu-cms-menu'])) {
 
 // Update the menu router information.
 menu_rebuild();
-
-// Set the CMS path to use the admin theme.
-$admin_theme = variable_get('admin_theme_path', '');
-if (empty($admin_theme) || strpos('cms' . PHP_EOL . 'cms/*', $admin_theme) === FALSE) {
-  variable_set('admin_theme_path', $admin_theme . PHP_EOL . 'cms' . PHP_EOL . 'cms/*');
-}

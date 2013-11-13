@@ -44,12 +44,13 @@ TBD - Version 7.x
     #2096789: Interface language is mixed instead of forced EN
     #2128833: Start Page: Add a show button for each content type
     #2116861: small correction in presentation of "publication date" and "last updated date" in CMS view
+    #2134781: Administration theme module not enabled on installed/existing sites
 
 28 October 2013 - Version 7.x-1.2-rc1
 -------------------------------------
   * New modules:
     #1980552: New modules: feeds and xpathparser
-    #2069973: A splash page with language choice (language_selection_page) 
+    #2069973: A splash page with language choice (language_selection_page)
 
   * Upgraded modules:
     #2117741: simple google maps & SSL
@@ -60,7 +61,7 @@ TBD - Version 7.x
     #2114287: Module upgrade: features_override
     #2104183: Module upgrade: features
     #2115379: Module upgrade: beididp
- 
+
   * Upgraded theme:
     #2109685: Theme upgrade: change CSS import URL to HTTPS (ofed_theme_cms)
 
