@@ -1,22 +1,7 @@
 CHANGELOG
 =========
-5 November 2013 - Version 7.x-1.2-rc3
--------------------------------------
-  * Issues:
-    #2028697: Small corrections to changelog
-    #2112861: Added upgrade note to README.txt and small corrections
-    #2089895: RTE not loading, corrected css / js path to CKEditor
-    #2124701: Installer: directories for multisite environment
-
-29 October 2013 - Version 7.x-1.2-rc2
--------------------------------------
-  * Issues:
-    #2083437: Code quality improvements
-    #2043085: Apache solr: use remote solr / tika instead of local tika
-    Set up default site slogan
-
-TBD - Version 7.x
------------------
+TBD - Version 7.x-1.x
+---------------------
   * Removed module:
     #2123763: Remove module: robotstxt
     #2122259: Remove module: Recaptcha
@@ -47,6 +32,25 @@ TBD - Version 7.x
     #2116861: small correction in presentation of "publication date" and "last updated date" in CMS view
     #2134781: Administration theme module not enabled on installed/existing sites
     #2134729: RTE - Bullet points not showing
+
+6 November 2013 - Version 7.x-1.2
+---------------------------------
+No changes
+
+5 November 2013 - Version 7.x-1.2-rc3
+-------------------------------------
+  * Issues:
+    #2028697: Small corrections to changelog
+    #2112861: Added upgrade note to README.txt and small corrections
+    #2089895: RTE not loading, corrected css / js path to CKEditor
+    #2124701: Installer: directories for multisite environment
+
+29 October 2013 - Version 7.x-1.2-rc2
+-------------------------------------
+  * Issues:
+    #2083437: Code quality improvements
+    #2043085: Apache solr: use remote solr / tika instead of local tika
+    Set up default site slogan
 
 28 October 2013 - Version 7.x-1.2-rc1
 -------------------------------------
