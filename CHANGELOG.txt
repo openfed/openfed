@@ -35,6 +35,7 @@ TBD - Version 7.x-1.x
     #2116861: small correction in presentation of "publication date" and "last updated date" in CMS view
     #2134781: Administration theme module not enabled on installed/existing sites
     #2134729: RTE - Bullet points not showing
+    #2135783: Page disappearing from menu if node is edited
 
 6 November 2013 - Version 7.x-1.2
 ---------------------------------
