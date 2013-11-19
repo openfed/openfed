@@ -4,13 +4,11 @@ TBD - Version 7.x-1.x
 ---------------------
   * Removed modules:
     #2123763: Remove module: robotstxt
-    #2122259: Remove module: Recaptcha
     #2123811: Remove module: media_dailymotion
 
   * New modules:
     #2120401: New module: Smart Trim
     #2076051: New module: Honeypot
-    #2122259: New module: Recaptcha
     #2123691: Module inclusion: GMap & Location
 
   * Upgraded modules:
@@ -21,6 +19,7 @@ TBD - Version 7.x-1.x
     #2130765: Module upgrade: backup_migrate
     #2130767: Module upgrade: easy_breadcrumb
     #2133975: Module upgrade: hierarchical_select
+    #2122259: Module upgrade: mollom
 
   * Upgraded theme:
     Nerra: fix with contextual links
