@@ -56,7 +56,7 @@ projects[ofed_menu_dam][subdir] = contrib
 
 projects[ofed_switcher][download][type] = git
 projects[ofed_switcher][download][branch] = "7.x-1.x"
-projects[ofed_switcher][download][revision] = 83a3a42
+projects[ofed_switcher][download][revision] = aa9b434
 projects[ofed_switcher][subdir] = contrib
 
 projects[ofed_vmcd][version] = "1.0"
