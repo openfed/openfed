@@ -23,6 +23,7 @@ TBD - Version 7.x-1.x
     #2133975: Module upgrade: hierarchical_select
     #2138889: Module upgrade: seckit
     #2138891: Module upgrade: beididp
+    #2138893: Library upgrade: ckeditor
 
   * Upgraded theme:
     Nerra: fix with contextual links
