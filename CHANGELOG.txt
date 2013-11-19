@@ -21,6 +21,7 @@ TBD - Version 7.x-1.x
     #2130765: Module upgrade: backup_migrate
     #2130767: Module upgrade: easy_breadcrumb
     #2133975: Module upgrade: hierarchical_select
+    #2138889: Module upgrade: seckit
 
   * Upgraded theme:
     Nerra: fix with contextual links
