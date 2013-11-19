@@ -1,7 +1,7 @@
 CHANGELOG
 =========
-TBD - Version 7.x-1.x
----------------------
+19 November 2013 - Version 7.x-1.3-beta1
+----------------------------------------
   * Removed modules:
     #2123763: Remove module: robotstxt
     #2123811: Remove module: media_dailymotion
@@ -20,6 +20,9 @@ TBD - Version 7.x-1.x
     #2130767: Module upgrade: easy_breadcrumb
     #2133975: Module upgrade: hierarchical_select
     #2122259: Module upgrade: mollom
+    #2138889: Module upgrade: seckit
+    #2138891: Module upgrade: beididp
+    #2138893: Library upgrade: ckeditor
 
   * Upgraded theme:
     Nerra: fix with contextual links

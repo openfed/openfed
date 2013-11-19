@@ -1,10 +1,6 @@
 api = 2
 core = 7.x
 
-translations[] = nl
-translations[] = fr
-translations[] = de
-
 ;
 ; Libraries
 ; Please fill the following out. Type may be one of get, git, bzr or svn, and url is the url of the download.
@@ -12,7 +8,7 @@ translations[] = de
 
 ; CK Editor
 libraries[ckeditor][download][type] = "get"
-libraries[ckeditor][download][url] = "http://download.cksource.com/CKEditor/CKEditor/CKEditor%204.2.2/ckeditor_4.2.2_full.zip"
+libraries[ckeditor][download][url] = "http://download.cksource.com/CKEditor/CKEditor/CKEditor%204.2.3/ckeditor_4.2.3_full.zip"
 libraries[ckeditor][directory_name] = "ckeditor"
 libraries[ckeditor][type] = "library"
 
@@ -114,7 +110,7 @@ projects[apachesolr_multilingual][subdir] = contrib
 projects[backup_migrate][version] = "2.8"
 projects[backup_migrate][subdir] = contrib
 
-projects[beididp][version] = "1.0-alpha2"
+projects[beididp][version] = "1.0-alpha3"
 projects[beididp][subdir] = contrib
 
 projects[calendar][version] = "3.4"
@@ -399,7 +395,7 @@ projects[scheduler][subdir] = contrib
 projects[search_config][version] = "1.0"
 projects[search_config][subdir] = contrib
 
-projects[seckit][version] = "1.7"
+projects[seckit][version] = "1.8"
 projects[seckit][subdir] = contrib
 
 projects[securelogin][version] = "1.4"
