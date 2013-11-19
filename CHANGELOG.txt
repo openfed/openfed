@@ -10,7 +10,7 @@ Upcoming version
 ----------------------------------------
   * Removed modules:
     #2123763: Remove module: robotstxt
-    #2122259: Remove module: Mollom - remove the dependency in the nfo file
+    #2122259: Remove module: Mollom - remove the dependency in the info file
     #2123811: Remove module: media_dailymotion
 
   * New modules:
