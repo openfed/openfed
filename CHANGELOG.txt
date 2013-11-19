@@ -22,6 +22,7 @@ TBD - Version 7.x-1.x
     #2130767: Module upgrade: easy_breadcrumb
     #2133975: Module upgrade: hierarchical_select
     #2138889: Module upgrade: seckit
+    #2138891: Module upgrade: beididp
 
   * Upgraded theme:
     Nerra: fix with contextual links
