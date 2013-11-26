@@ -1,5 +1,11 @@
 CHANGELOG
 =========
+
+Upcoming version
+----------------
+  * Issues:
+    #2141427: Upgrade to Drupal Core 7.24
+
 19 November 2013 - Version 7.x-1.3-beta1
 ----------------------------------------
   * Removed modules:
