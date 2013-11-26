@@ -273,14 +273,6 @@ function _openfed_get_default_permissions() {
       'Content Manager',
     ),
 
-    // admin_theme
-    'access admin theme' => array(
-      'Builder',
-      'Configurator',
-      'Content Manager',
-      'User Manager',
-    ),
-
     // block
     'administer blocks' => array(
       'Builder',
@@ -599,15 +591,6 @@ function _openfed_get_default_permissions() {
       'Content Manager',
     ),
 
-    // mollom
-    'administer mollom' => array(
-      'Builder',
-    ),
-    'access mollom statistics' => array(
-      'Builder',
-      'Configurator',
-    ),
-
     // node
     'administer content types' => array(
       'Builder',
@@ -677,6 +660,14 @@ function _openfed_get_default_permissions() {
       'Builder',
       'Configurator',
       'Content Manager',
+    ),
+
+    // ofed_switcher
+    'access ofed_switcher content' => array(
+      'Builder',
+      'Configurator',
+      'Content Manager',
+      'User Manager',
     ),
 
     // ofed_vmcd

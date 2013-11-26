@@ -99,7 +99,6 @@ core = 7.x
   dependencies[] = menu_firstchild
   dependencies[] = menu_position
   dependencies[] = metatag
-  dependencies[] = mollom
   dependencies[] = multiselect
   dependencies[] = navigation404
   dependencies[] = override_node_options

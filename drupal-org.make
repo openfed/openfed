@@ -56,7 +56,7 @@ projects[ofed_menu_dam][subdir] = contrib
 
 projects[ofed_switcher][download][type] = git
 projects[ofed_switcher][download][branch] = "7.x-1.x"
-projects[ofed_switcher][download][revision] = 83a3a42
+projects[ofed_switcher][download][revision] = aa9b434
 projects[ofed_switcher][subdir] = contrib
 
 projects[ofed_vmcd][version] = "1.0"
@@ -95,7 +95,7 @@ projects[admin_menu][patch][2096789] = "http://drupal.org/files/issues/admin_men
 projects[admin_theme][version] = "1.0"
 projects[admin_theme][subdir] = contrib
 
-projects[apachesolr][version] = "1.5"
+projects[apachesolr][version] = "1.6"
 projects[apachesolr][subdir] = contrib
 
 projects[apachesolr_attachments][version] = "1.3"
