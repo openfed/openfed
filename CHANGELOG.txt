@@ -22,6 +22,7 @@ CHANGELOG
     #2120401: New module: Smart Trim
     #2076051: New module: Honeypot
     #2123691: Module inclusion: GMap & Location
+    #2134093: New module: Administration Views
 
   * Upgraded modules:
     #2123477: Module upgrade: rules

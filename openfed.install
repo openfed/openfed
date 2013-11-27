@@ -375,3 +375,12 @@ function openfed_update_7109() {
     cache_clear_all();
   }
 }
+
+/**
+ * Update hooks for 1.3
+ */
+function openfed_update_7301() {
+  if (!module_exists('admin_views')) {
+    module_enable(array('admin_views'));
+  }
+}
