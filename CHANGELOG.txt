@@ -9,6 +9,7 @@ CHANGELOG
 
   * Issues:
     #2135783: Page disappearing from menu if node is edited
+    #2145097: Drush build fails
     Fix permission issue during install
 
 19 November 2013 - Version 7.x-1.3-beta1

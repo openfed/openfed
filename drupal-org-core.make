@@ -7,7 +7,7 @@ projects[drupal][version] = 7.24
 
 ; Allow install profiles to change the system requirements
 ; see http://drupal.org/node/1772316
-projects[drupal][patch][1772316] = https://drupal.org/files/drupal7-allow_change_system-requirements-1772316-18.patch
+projects[drupal][patch][1772316] = http://drupal.org/files/drupal7-allow_change_system-requirements-1772316-18.patch
 
 ; Registry rebuild should not parse the same file twice in the same request
 ; see http://drupal.org/node/1470656
