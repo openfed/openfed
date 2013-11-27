@@ -107,7 +107,7 @@ projects[apachesolr_attachments][subdir] = contrib
 projects[apachesolr_autocomplete][version] = "1.3"
 projects[apachesolr_autocomplete][subdir] = contrib
 
-projects[apachesolr_multilingual][version] = "1.0-rc1
+projects[apachesolr_multilingual][version] = "1.0-rc1"
 projects[apachesolr_multilingual][subdir] = contrib
 
 projects[backup_migrate][version] = "2.8"
