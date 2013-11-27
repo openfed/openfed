@@ -298,7 +298,6 @@ projects[libraries][subdir] = contrib
 
 projects[link][version] = "1.2"
 projects[link][subdir] = contrib
-projects[link][patch][1914286] = "http://drupal.org/files/Fixed_title_value_in_link_field_update_instance_undefined-1914286-3.patch"
 
 projects[linkchecker][version] = "1.1"
 projects[linkchecker][subdir] = contrib

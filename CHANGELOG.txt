@@ -3,7 +3,8 @@ CHANGELOG
 
 27 November 2013 - Version 7.x-1.3-rc2
 --------------------------------------
-No changes, second attempt to build on drupal.org
+  * Issues:
+    #2145281: Remove patch from link (already in latest version)
 
 27 November 2013 - Version 7.x-1.3-rc2
 --------------------------------------
