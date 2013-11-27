@@ -1,17 +1,20 @@
 CHANGELOG
 =========
 
-Upcoming version
-----------------
-  * Issues:
+27 November 2013 - Version 7.x-1.3-rc1
+--------------------------------------
+  * Module upgrades:
     #2141427: Upgrade to Drupal Core 7.24
     #2119423: Module upgrade: apachesolr
+
+  * Issues:
+    #2135783: Page disappearing from menu if node is edited
+    Fix permission issue during install
 
 19 November 2013 - Version 7.x-1.3-beta1
 ----------------------------------------
   * Removed modules:
     #2123763: Remove module: robotstxt
-    #2122259: Remove module: Mollom - remove the dependency in the info file
     #2123811: Remove module: media_dailymotion
 
   * New modules:
@@ -46,7 +49,8 @@ Upcoming version
     #2134781: Administration theme module not enabled on installed/existing sites
     #2134729: RTE - Bullet points not showing
     #2135783: Page disappearing from menu if node is edited
-
+    #2122259: Mollom - remove the dependency in the info file
+  
 6 November 2013 - Version 7.x-1.2
 ---------------------------------
 No changes
