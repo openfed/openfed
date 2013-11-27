@@ -6,6 +6,9 @@ CHANGELOG
   * Module upgrades:
     #2141427: Upgrade to Drupal Core 7.24
     #2119423: Module upgrade: apachesolr
+    #2145281: Module upgrade: Link
+    #2145287: Module upgrade:Apache Solr Multilungual
+    #2145289: Module upgrade: Entity Reference
 
   * Issues:
     #2135783: Page disappearing from menu if node is edited

@@ -107,7 +107,7 @@ projects[apachesolr_attachments][subdir] = contrib
 projects[apachesolr_autocomplete][version] = "1.3"
 projects[apachesolr_autocomplete][subdir] = contrib
 
-projects[apachesolr_multilingual][version] = "1.0-beta2"
+projects[apachesolr_multilingual][version] = "1.0-rc1
 projects[apachesolr_multilingual][subdir] = contrib
 
 projects[backup_migrate][version] = "2.8"
@@ -174,7 +174,7 @@ projects[emfield][subdir] = contrib
 projects[entity][version] = "1.2"
 projects[entity][subdir] = contrib
 
-projects[entityreference][version] = "1.0"
+projects[entityreference][version] = "1.1"
 projects[entityreference][subdir] = contrib
 projects[entityreference][patch][1916376] = "http://drupal.org/files/entityreference-devel-generate-fix.diff"
 
@@ -296,7 +296,7 @@ projects[lexicon][subdir] = contrib
 projects[libraries][version] = "2.1"
 projects[libraries][subdir] = contrib
 
-projects[link][version] = "1.1"
+projects[link][version] = "1.2"
 projects[link][subdir] = contrib
 projects[link][patch][1914286] = "http://drupal.org/files/Fixed_title_value_in_link_field_update_instance_undefined-1914286-3.patch"
 
