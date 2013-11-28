@@ -176,7 +176,7 @@ projects[entity][subdir] = contrib
 
 projects[entityreference][version] = "1.1"
 projects[entityreference][subdir] = contrib
-projects[entityreference][patch][1916376] = "http://drupal.org/files/entityreference-devel-generate-fix.diff"
+projects[entityreference][patch][1852112] = "http://drupal.org/files/entityreference-devel_generate_fix-1852112-18.patch"
 
 projects[entity_translation][version] = "1.0-beta3"
 projects[entity_translation][subdir] = contrib

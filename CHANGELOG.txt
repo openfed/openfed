@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+28 November 2013 - Version 7.x-1.3-rc3
+--------------------------------------
+  * Issue:
+    #2145289: Entityreference: use different patch
+
 27 November 2013 - Version 7.x-1.3-rc2
 --------------------------------------
   * Issues:
