@@ -5,7 +5,6 @@
  * Sets up Secure Login during install.
  */
 
-variable_set('securelogin_base_url', 'https://' . $_SERVER['HTTP_HOST']);
 variable_set('securelogin_secure_forms', FALSE);
 variable_set('securelogin_all_forms', TRUE);
 variable_set('securelogin_form_user_login', TRUE);

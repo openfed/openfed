@@ -1,8 +1,13 @@
 CHANGELOG
 =========
 
-New release
------------
+Next release
+------------
+  * Issue:
+    #2148011: 404 in installer after regional step if installing from a subdirectory
+
+02 December 2013 - Version 7.x-1.3-rc4
+--------------------------------------
   * Issue:
     #2147927: Call to undefined function in update hooks apachesolr_multiligual_confgen
     #2123811: Remove module: media_dailymotion
