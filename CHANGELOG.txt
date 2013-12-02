@@ -1,8 +1,8 @@
 CHANGELOG
 =========
 
-Next release
-------------
+02 December 2013 - Version 7.x-1.3-rc5
+--------------------------------------
   * Issue:
     #2148011: 404 in installer after regional step if installing from a subdirectory
 
