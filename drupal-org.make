@@ -109,6 +109,7 @@ projects[apachesolr_autocomplete][subdir] = contrib
 
 projects[apachesolr_multilingual][version] = "1.0-rc1"
 projects[apachesolr_multilingual][subdir] = contrib
+projects[apachesolr_multilingual][patch][2147927] = "http://drupal.org/files/issues/apachesolr_multilingual-2147927-installer-1.patch"
 
 projects[backup_migrate][version] = "2.8"
 projects[backup_migrate][subdir] = contrib

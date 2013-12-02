@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+New release
+-----------
+  * Issue:
+    #2147927: Call to undefined function in update hooks apachesolr_multiligual_confgen
+
 28 November 2013 - Version 7.x-1.3-rc3
 --------------------------------------
   * Issue:
