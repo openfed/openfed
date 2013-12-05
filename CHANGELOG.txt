@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+Next release - Version 7.x-1.x
+------------------------------
+  * Module upgrades:
+    #2150369: Module upgrade: language_cookie
+ 
 04 December 2013 - Version 7.x-1.3-rc6
 --------------------------------------
   * Theme upgrades:

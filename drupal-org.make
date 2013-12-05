@@ -278,7 +278,7 @@ projects[l10n_update][download][revision] = 8c85a9f
 projects[l10n_update][subdir] = contrib
 projects[l10n_update][patch][1671570] = "http://drupal.org/files/l10n_update-fetch-module-update-1671570-18_0.patch"
 
-projects[language_cookie][version] = "1.7"
+projects[language_cookie][version] = "1.8"
 projects[language_cookie][subdir] = contrib
 
 projects[language_selection_page][download]type] = git
