@@ -5,6 +5,7 @@ Next release - Version 7.x-1.x
 ------------------------------
   * Issues:
     #2148107: Language selection page also running on update.php, install.php
+    #2152877: Language selection page also running on uncached images
 
   * Module upgrades:
     #2150369: Module upgrade: language_cookie
