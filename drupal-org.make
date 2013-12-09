@@ -62,9 +62,7 @@ projects[ofed_switcher][subdir] = contrib
 projects[ofed_vmcd][version] = "1.0"
 projects[ofed_vmcd][subdir] = contrib
 
-projects[ofed_theme_nerra][download][type] = git
-projects[ofed_theme_nerra][download][branch] = "7.x-1.x"
-projects[ofed_theme_nerra][download][revision] = 55d184f
+projects[ofed_theme_nerra][version] = "1.1-rc1"
 projects[ofed_theme_nerra][subdir] = contrib
 
 projects[ofed_theme_cms][download][type] = git
@@ -280,7 +278,7 @@ projects[l10n_update][download][revision] = 8c85a9f
 projects[l10n_update][subdir] = contrib
 projects[l10n_update][patch][1671570] = "http://drupal.org/files/l10n_update-fetch-module-update-1671570-18_0.patch"
 
-projects[language_cookie][version] = "1.7"
+projects[language_cookie][version] = "1.8"
 projects[language_cookie][subdir] = contrib
 
 projects[language_selection_page][download]type] = git
@@ -290,6 +288,7 @@ projects[language_selection_page][subdir] = contrib
 projects[language_selection_page][patch][2118689] = "http://drupal.org/files/expose_urls.patch"
 projects[language_selection_page][patch][2119463] = "http://drupal.org/files/language_selection_page.globalredirect.patch"
 projects[language_selection_page][patch][2119439] = "http://drupal.org/files/language_selection_page.emptypath.2119439.patch"
+projects[language_selection_page][patch][2148107] = "http://drupal.org/files/issues/language_selection_page-2148107-indexphp-1.patch"
 
 projects[lexicon][version] = "1.10"
 projects[lexicon][subdir] = contrib
