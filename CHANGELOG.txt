@@ -1,8 +1,8 @@
 CHANGELOG
 =========
 
-Next release - Version 7.x-1.x
-------------------------------
+09 December 2013 - Version 7.x-1.3-rc7
+--------------------------------------
   * Issues:
     #2148107: Language selection page also running on update.php, install.php
     #2152877: Language selection page also running on uncached images
