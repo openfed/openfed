@@ -105,15 +105,11 @@ projects[apachesolr_attachments][subdir] = contrib
 projects[apachesolr_autocomplete][version] = "1.3"
 projects[apachesolr_autocomplete][subdir] = contrib
 
-projects[apachesolr_multilingual][version] = "1.0-rc1"
+projects[apachesolr_multilingual][version] = "1.0-rc2"
 projects[apachesolr_multilingual][subdir] = contrib
-projects[apachesolr_multilingual][patch][2147927] = "http://drupal.org/files/issues/apachesolr_multilingual-2147927-installer-1.patch"
 
 projects[backup_migrate][version] = "2.8"
 projects[backup_migrate][subdir] = contrib
-
-projects[beididp][version] = "1.0-alpha3"
-projects[beididp][subdir] = contrib
 
 projects[calendar][version] = "3.4"
 projects[calendar][subdir] = contrib
