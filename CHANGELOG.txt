@@ -6,9 +6,11 @@ New version - Version 7.x-1.4-beta1
   * Module upgrades:
     #2152945: Module upgrade: Apache Solr Multilingual
     #2148055: Module upgrade: colorbox
+    #2145847: Module upgrade: views_slideshow
 
   * Removed module:
     #2153519: Remove module: beididp 
+    #2145847: 
 
 09 December 2013 - Version 7.x-1.3-rc7
 --------------------------------------
