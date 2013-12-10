@@ -5,6 +5,7 @@ New version - Version 7.x-1.4-beta1
 -----------------------------------
   * Module upgrades:
     #2152945: Module upgrade: Apache Solr Multilingual
+    #2148055: Module upgrade: colorbox
 
   * Removed module:
     #2153519: Remove module: beididp 
