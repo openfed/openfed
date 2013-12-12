@@ -105,15 +105,11 @@ projects[apachesolr_attachments][subdir] = contrib
 projects[apachesolr_autocomplete][version] = "1.3"
 projects[apachesolr_autocomplete][subdir] = contrib
 
-projects[apachesolr_multilingual][version] = "1.0-rc1"
+projects[apachesolr_multilingual][version] = "1.0-rc2"
 projects[apachesolr_multilingual][subdir] = contrib
-projects[apachesolr_multilingual][patch][2147927] = "http://drupal.org/files/issues/apachesolr_multilingual-2147927-installer-1.patch"
 
 projects[backup_migrate][version] = "2.8"
 projects[backup_migrate][subdir] = contrib
-
-projects[beididp][version] = "1.0-alpha3"
-projects[beididp][subdir] = contrib
 
 projects[calendar][version] = "3.4"
 projects[calendar][subdir] = contrib
@@ -127,7 +123,7 @@ projects[ckeditor][subdir] = contrib
 projects[ckeditor_link][version] = "2.3"
 projects[ckeditor_link][subdir] = contrib
 
-projects[colorbox][version] = "2.4"
+projects[colorbox][version] = "2.5"
 projects[colorbox][subdir] = contrib
 
 projects[comment_goodness][version] = "1.4"
@@ -473,7 +469,7 @@ projects[views_data_export][subdir] = contrib
 projects[views_bulk_operations][version] = "3.1"
 projects[views_bulk_operations][subdir] = contrib
 
-projects[views_slideshow][version] = "3.0"
+projects[views_slideshow][version] = "3.1"
 projects[views_slideshow][subdir] = contrib
 
 projects[webform][version] = "3.19"

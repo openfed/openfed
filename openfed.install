@@ -377,9 +377,9 @@ function openfed_update_7109() {
 }
 
 /**
- * Update hooks for 1.3
+ * Enable Administration Views
  */
-function openfed_update_7301() {
+function openfed_update_7110() {
   if (!module_exists('admin_views')) {
     module_enable(array('admin_views'));
   }
