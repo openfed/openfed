@@ -5,6 +5,7 @@ New version - Version 7.x-1.4-beta1
 -----------------------------------
   * Issues:
     #2138101: Administration Views not automatically enabled during install  
+    #2156083: Dependency between ofed feature modules and ds_ui
 
   * New modules:
     #2148015: New module: Title

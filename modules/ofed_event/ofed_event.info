@@ -14,7 +14,6 @@ dependencies[] = ds_extras
 dependencies[] = ds_format
 dependencies[] = ds_forms
 dependencies[] = ds_search
-dependencies[] = ds_ui
 dependencies[] = entity
 dependencies[] = entityreference
 dependencies[] = features
