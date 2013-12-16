@@ -18,6 +18,7 @@ New version - Version 7.x-1.4-beta1
     #2157375: Module upgrade: honeypot
     #2157373: Module upgrade: views_data_export
     #2157383: Library upgrade: ckeditor
+    #2157401: Library upgrade: jcarousel
 
   * Removed module:
     #2153519: Remove module: beididp 
