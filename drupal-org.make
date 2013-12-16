@@ -232,7 +232,7 @@ projects[hierarchical_select][download][branch] = "7.x-3.x"
 projects[hierarchical_select][download][revision] = b3e34d9
 projects[hierarchical_select][subdir] = contrib
 
-projects[honeypot][version] = "1.15"
+projects[honeypot][version] = "1.16"
 projects[honeypot][subdir] = contrib
 
 projects[html5_tools][version] = "1.2"
