@@ -16,6 +16,8 @@ New version - Version 7.x-1.4-beta1
     #2145847: Module upgrade: views_slideshow
     #2155241: Library upgrade: jquery.cycle
     #2157375: Module upgrade: honeypot
+    #2157373: Module upgrade: views_data_export
+    #2157383: Library upgrade: ckeditor
 
   * Removed module:
     #2153519: Remove module: beididp 
