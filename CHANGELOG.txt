@@ -8,6 +8,7 @@ New version - Version 7.x-1.4-beta1
     #2156083: Dependency between ofed feature modules and ds_ui
     #2158321: Can no longer create ofedslider after 1.3 update
     #2109869: refactor permissions functionality - implement drush command
+    #2109869: refactor permissions functionality - skip non-existing modules
 
   * New modules:
     #2148015: New module: Title

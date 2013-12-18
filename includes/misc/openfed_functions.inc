@@ -420,20 +420,6 @@ function _openfed_get_default_permissions() {
       'anonymous user',
     ),
 
-    // ds_ui
-    'admin_view_modes' => array(
-      'Builder',
-      'Configurator',
-    ),
-    'admin_fields' => array(
-      'Builder',
-      'Configurator',
-    ),
-    'admin_classes' => array(
-      'Builder',
-      'Configurator',
-    ),
-
     // features
     'administer features' => array(
       'Builder',
@@ -989,10 +975,13 @@ function _openfed_get_permissions_for_role($role_name) {
   // Initialize permissions.
   $permissions = _openfed_get_default_permissions();
 
+  // Get all available permissions.
+  $available = array_keys(module_invoke_all('permission'));
+
   // Return the permissions that apply to this role.
   $permissions_for_role = array();
   foreach ($permissions as $permission_name => $roles) {
-    if (in_array($role_name, $permissions[$permission_name])) {
+    if (in_array($permission_name, $available) && in_array($role_name, $permissions[$permission_name])) {
       $permissions_for_role[$permission_name] = TRUE;
     }
   }
