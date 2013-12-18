@@ -140,7 +140,7 @@ function drush_openfed_revert_ds_settings($type = '') {
 /**
  * Validates permissions array hard-coded in openfed_functions.inc.
  */
-function _openfed_drush_validate_permissions() {
+function drush_openfed_validate_openfed_permissions() {
   $permissions = _openfed_get_default_permissions();
   $default_roles = _openfed_get_roles_list_default();
   $modules = array_keys(user_permission_get_modules());
