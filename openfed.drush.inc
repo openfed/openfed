@@ -24,6 +24,11 @@ function openfed_drush_command() {
     'aliases' => array('rdss'),
   );
 
+  $items['validate-openfed-permissions'] = array(
+    'description' => "Validates permissions array hard-coded in openfed_functions.inc.",
+  );
+
+
   // Return.
   return $items;
 }

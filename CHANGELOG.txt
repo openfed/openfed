@@ -7,6 +7,7 @@ New version - Version 7.x-1.4-beta1
     #2138101: Administration Views not automatically enabled during install  
     #2156083: Dependency between ofed feature modules and ds_ui
     #2158321: Can no longer create ofedslider after 1.3 update
+    #2109869: refactor permissions functionality - implement drush command
 
   * New modules:
     #2148015: New module: Title
