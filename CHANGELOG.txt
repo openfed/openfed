@@ -24,6 +24,7 @@ New version - Version 7.x-1.4-beta1
     #2157401: Library upgrade: jcarousel
     #2167821: Module upgrade: views_bulk_operations
     #2167823: Module upgrade: simple_gmap
+    #2167825: Module upgrade: date
 
   * Removed module:
     #2153519: Remove module: beididp 
