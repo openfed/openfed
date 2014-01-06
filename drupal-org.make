@@ -299,7 +299,7 @@ projects[link][subdir] = contrib
 projects[linkchecker][version] = "1.1"
 projects[linkchecker][subdir] = contrib
 
-projects[location][version] = "3.1"
+projects[location][version] = "3.2-beta1"
 projects[location][subdir] = contrib
 
 projects[logintoboggan][version] = "1.3"
