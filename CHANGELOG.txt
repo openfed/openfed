@@ -22,6 +22,7 @@ New version - Version 7.x-1.4-beta1
     #2157373: Module upgrade: views_data_export
     #2157383: Library upgrade: ckeditor
     #2157401: Library upgrade: jcarousel
+    #2167821: Module upgrade: views_bulk_operations
 
   * Removed module:
     #2153519: Remove module: beididp 
