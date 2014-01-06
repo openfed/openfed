@@ -10,89 +10,6 @@
 function ofed_address_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_ofed_address_bus'
-  $field_bases['field_ofed_address_bus'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_ofed_address_bus',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
-    'indexes' => array(
-      'format' => array(
-        0 => 'format',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'text',
-    'settings' => array(
-      'max_length' => 255,
-    ),
-    'translatable' => 0,
-    'type' => 'text',
-  );
-
-  // Exported field_base: 'field_ofed_address_city'
-  $field_bases['field_ofed_address_city'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_ofed_address_city',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
-    'indexes' => array(
-      'format' => array(
-        0 => 'format',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'text',
-    'settings' => array(
-      'max_length' => 255,
-    ),
-    'translatable' => 0,
-    'type' => 'text',
-  );
-
-  // Exported field_base: 'field_ofed_address_country'
-  $field_bases['field_ofed_address_country'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_ofed_address_country',
-    'foreign keys' => array(),
-    'indexes' => array(
-      'iso2' => array(
-        0 => 'iso2',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'countries',
-    'settings' => array(
-      'continents' => array(),
-      'countries' => array(),
-      'enabled' => 1,
-      'size' => 5,
-    ),
-    'translatable' => 0,
-    'type' => 'country',
-  );
-
   // Exported field_base: 'field_ofed_address_directions'
   $field_bases['field_ofed_address_directions'] = array(
     'active' => 1,
@@ -151,89 +68,89 @@ function ofed_address_field_default_field_bases() {
     'type' => 'email',
   );
 
-  // Exported field_base: 'field_ofed_address_map'
-  $field_bases['field_ofed_address_map'] = array(
+  // Exported field_base: 'field_ofed_address_location'
+  $field_bases['field_ofed_address_location'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_ofed_address_map',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
+    'field_name' => 'field_ofed_address_location',
+    'foreign keys' => array(),
     'indexes' => array(
-      'format' => array(
-        0 => 'format',
+      'lid' => array(
+        0 => 'lid',
       ),
     ),
     'locked' => 0,
-    'module' => 'text',
+    'module' => 'location_cck',
     'settings' => array(
-      'max_length' => 256,
-    ),
-    'translatable' => 0,
-    'type' => 'text',
-  );
-
-  // Exported field_base: 'field_ofed_address_name'
-  $field_bases['field_ofed_address_name'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_ofed_address_name',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
+      'gmap_macro' => '[gmap zoom=15 |width=400px |height=300px]',
+      'gmap_marker' => 'blue',
+      'location_settings' => array(
+        'display' => array(
+          'hide' => array(
+            'additional' => 0,
+            'city' => 0,
+            'coords' => 'coords',
+            'country' => 0,
+            'country_name' => 0,
+            'locpick' => 'locpick',
+            'map_link' => 'map_link',
+            'name' => 0,
+            'postal_code' => 0,
+            'province' => 0,
+            'province_name' => 0,
+            'street' => 0,
+          ),
         ),
-        'table' => 'filter_format',
-      ),
-    ),
-    'indexes' => array(
-      'format' => array(
-        0 => 'format',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'text',
-    'settings' => array(),
-    'translatable' => 0,
-    'type' => 'text_long',
-  );
-
-  // Exported field_base: 'field_ofed_address_number'
-  $field_bases['field_ofed_address_number'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_ofed_address_number',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
+        'form' => array(
+          'fields' => array(
+            'additional' => array(
+              'collect' => 1,
+              'default' => '',
+              'weight' => -98,
+            ),
+            'city' => array(
+              'collect' => 1,
+              'default' => '',
+              'weight' => -96,
+            ),
+            'country' => array(
+              'collect' => 1,
+              'default' => 'be',
+              'weight' => -94,
+            ),
+            'locpick' => array(
+              'collect' => 0,
+              'weight' => -93,
+            ),
+            'name' => array(
+              'collect' => 2,
+              'default' => '',
+              'weight' => -100,
+            ),
+            'postal_code' => array(
+              'collect' => 1,
+              'default' => '',
+              'weight' => -97,
+            ),
+            'province' => array(
+              'collect' => 0,
+              'default' => '',
+              'weight' => -95,
+              'widget' => 'autocomplete',
+            ),
+            'street' => array(
+              'collect' => 1,
+              'default' => '',
+              'weight' => -99,
+            ),
+          ),
         ),
-        'table' => 'filter_format',
       ),
-    ),
-    'indexes' => array(
-      'format' => array(
-        0 => 'format',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'text',
-    'settings' => array(
-      'max_length' => 255,
     ),
     'translatable' => 0,
-    'type' => 'text',
+    'type' => 'location',
   );
 
   // Exported field_base: 'field_ofed_address_opening_hours'
@@ -322,35 +239,6 @@ function ofed_address_field_default_field_bases() {
     'type' => 'datetime',
   );
 
-  // Exported field_base: 'field_ofed_address_street'
-  $field_bases['field_ofed_address_street'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_ofed_address_street',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
-    'indexes' => array(
-      'format' => array(
-        0 => 'format',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'text',
-    'settings' => array(
-      'max_length' => 255,
-    ),
-    'translatable' => 0,
-    'type' => 'text',
-  );
-
   // Exported field_base: 'field_ofed_address_update'
   $field_bases['field_ofed_address_update'] = array(
     'active' => 1,
@@ -405,35 +293,6 @@ function ofed_address_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'list_boolean',
-  );
-
-  // Exported field_base: 'field_ofed_address_zip'
-  $field_bases['field_ofed_address_zip'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_ofed_address_zip',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
-    'indexes' => array(
-      'format' => array(
-        0 => 'format',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'text',
-    'settings' => array(
-      'max_length' => 255,
-    ),
-    'translatable' => 0,
-    'type' => 'text',
   );
 
   return $field_bases;

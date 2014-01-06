@@ -309,11 +309,11 @@ function ofed_address_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Page metadata',
-    'weight' => '14',
+    'weight' => '15',
     'children' => array(
-      0 => 'field_ofed_address_update',
-      1 => 'field_ofed_address_update_force',
-      2 => 'field_ofed_address_pubdate',
+      0 => 'field_ofed_address_pubdate',
+      1 => 'field_ofed_address_update',
+      2 => 'field_ofed_address_update_force',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(

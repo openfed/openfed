@@ -10,190 +10,6 @@
 function ofed_address_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-ofed_address-field_ofed_address_bus'
-  $field_instances['node-ofed_address-field_ofed_address_bus'] = array(
-    'bundle' => 'ofed_address',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'inline',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 4,
-      ),
-      'page_list' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 4,
-      ),
-      'references' => array(
-        'label' => 'inline',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 4,
-      ),
-      'short_reference' => array(
-        'label' => 'inline',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 4,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'ds_extras_field_template' => '',
-    'entity_type' => 'node',
-    'field_name' => 'field_ofed_address_bus',
-    'label' => 'Box',
-    'required' => 0,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 5,
-    ),
-  );
-
-  // Exported field_instance: 'node-ofed_address-field_ofed_address_city'
-  $field_instances['node-ofed_address-field_ofed_address_city'] = array(
-    'bundle' => 'ofed_address',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 4,
-      ),
-      'page_list' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 4,
-      ),
-      'references' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 7,
-      ),
-      'short_reference' => array(
-        'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 4,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'ds_extras_field_template' => '',
-    'entity_type' => 'node',
-    'field_name' => 'field_ofed_address_city',
-    'label' => 'City',
-    'required' => 0,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 7,
-    ),
-  );
-
-  // Exported field_instance: 'node-ofed_address-field_ofed_address_country'
-  $field_instances['node-ofed_address-field_ofed_address_country'] = array(
-    'bundle' => 'ofed_address',
-    'default_value' => array(
-      0 => array(
-        'iso2' => 'BE',
-      ),
-    ),
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'countries_i18n',
-        'settings' => array(),
-        'type' => 'country_default_i18n',
-        'weight' => 4,
-      ),
-      'page_list' => array(
-        'label' => 'hidden',
-        'module' => 'countries_i18n',
-        'settings' => array(),
-        'type' => 'country_default_i18n',
-        'weight' => 4,
-      ),
-      'references' => array(
-        'label' => 'hidden',
-        'module' => 'countries_i18n',
-        'settings' => array(),
-        'type' => 'country_default_i18n',
-        'weight' => 9,
-      ),
-      'short_reference' => array(
-        'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 4,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'ds_extras_field_template' => '',
-    'entity_type' => 'node',
-    'field_name' => 'field_ofed_address_country',
-    'label' => 'Country',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_select',
-      'weight' => 8,
-    ),
-  );
-
   // Exported field_instance: 'node-ofed_address-field_ofed_address_directions'
   $field_instances['node-ofed_address-field_ofed_address_directions'] = array(
     'bundle' => 'ofed_address',
@@ -209,7 +25,7 @@ function ofed_address_field_default_field_instances() {
           'view_mode' => 'references',
         ),
         'type' => 'entityreference_entity_view',
-        'weight' => 9,
+        'weight' => 5,
       ),
       'page_list' => array(
         'label' => 'hidden',
@@ -257,7 +73,7 @@ function ofed_address_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 13,
+      'weight' => 14,
     ),
   );
 
@@ -273,7 +89,7 @@ function ofed_address_field_default_field_instances() {
         'module' => 'email',
         'settings' => array(),
         'type' => 'email_default',
-        'weight' => 5,
+        'weight' => 1,
       ),
       'page_list' => array(
         'label' => 'hidden',
@@ -316,88 +132,12 @@ function ofed_address_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'email_textfield',
-      'weight' => 10,
+      'weight' => 11,
     ),
   );
 
-  // Exported field_instance: 'node-ofed_address-field_ofed_address_map'
-  $field_instances['node-ofed_address-field_ofed_address_map'] = array(
-    'bundle' => 'ofed_address',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'Copy paste the address search field from Google Maps here (Eg: "Rue de la loi 16, 1000 Bruxelles").',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'simple_gmap',
-        'settings' => array(
-          'iframe_height' => 350,
-          'iframe_width' => 425,
-          'include_link' => 0,
-          'include_map' => 1,
-          'include_text' => 0,
-          'information_bubble' => 0,
-          'langcode' => 'page',
-          'link_text' => 'View larger map',
-          'map_type' => 'm',
-          'zoom_level' => 14,
-        ),
-        'type' => 'simple_gmap',
-        'weight' => 8,
-      ),
-      'page_list' => array(
-        'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 15,
-      ),
-      'references' => array(
-        'label' => 'hidden',
-        'module' => 'simple_gmap',
-        'settings' => array(
-          'iframe_height' => 350,
-          'iframe_width' => 425,
-          'include_link' => 0,
-          'include_map' => 1,
-          'include_text' => 0,
-          'information_bubble' => 0,
-          'langcode' => 'page',
-          'link_text' => 'View larger map',
-          'map_type' => 'm',
-          'zoom_level' => 14,
-        ),
-        'type' => 'simple_gmap',
-        'weight' => 13,
-      ),
-      'short_reference' => array(
-        'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 8,
-      ),
-    ),
-    'ds_extras_field_template' => '',
-    'entity_type' => 'node',
-    'field_name' => 'field_ofed_address_map',
-    'label' => 'GoogleMap',
-    'required' => 0,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 120,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 12,
-    ),
-  );
-
-  // Exported field_instance: 'node-ofed_address-field_ofed_address_name'
-  $field_instances['node-ofed_address-field_ofed_address_name'] = array(
+  // Exported field_instance: 'node-ofed_address-field_ofed_address_location'
+  $field_instances['node-ofed_address-field_ofed_address_location'] = array(
     'bundle' => 'ofed_address',
     'default_value' => NULL,
     'deleted' => 0,
@@ -405,32 +145,18 @@ function ofed_address_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'text',
+        'module' => 'location_cck',
         'settings' => array(),
-        'type' => 'text_default',
+        'type' => 'location_all',
         'weight' => 0,
       ),
       'page_list' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 0,
-      ),
-      'references' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 0,
-      ),
-      'short_reference' => array(
-        'label' => 'hidden',
+        'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
       ),
-      'teaser' => array(
+      'references' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -439,82 +165,18 @@ function ofed_address_field_default_field_instances() {
     ),
     'ds_extras_field_template' => '',
     'entity_type' => 'node',
-    'field_name' => 'field_ofed_address_name',
-    'label' => 'Location name',
+    'field_name' => 'field_ofed_address_location',
+    'label' => 'Location',
     'required' => 1,
     'settings' => array(
-      'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 5,
-      ),
-      'type' => 'text_textarea',
+      'active' => 0,
+      'module' => 'location_cck',
+      'settings' => array(),
+      'type' => 'location',
       'weight' => 2,
-    ),
-  );
-
-  // Exported field_instance: 'node-ofed_address-field_ofed_address_number'
-  $field_instances['node-ofed_address-field_ofed_address_number'] = array(
-    'bundle' => 'ofed_address',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 3,
-      ),
-      'page_list' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 3,
-      ),
-      'references' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 3,
-      ),
-      'short_reference' => array(
-        'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 3,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'ds_extras_field_template' => '',
-    'entity_type' => 'node',
-    'field_name' => 'field_ofed_address_number',
-    'label' => 'Number',
-    'required' => 0,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 4,
     ),
   );
 
@@ -530,7 +192,7 @@ function ofed_address_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 7,
+        'weight' => 3,
       ),
       'page_list' => array(
         'label' => 'hidden',
@@ -574,7 +236,7 @@ function ofed_address_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 11,
+      'weight' => 12,
     ),
   );
 
@@ -590,7 +252,7 @@ function ofed_address_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 6,
+        'weight' => 2,
       ),
       'page_list' => array(
         'label' => 'hidden',
@@ -634,7 +296,7 @@ function ofed_address_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 9,
+      'weight' => 10,
     ),
   );
 
@@ -646,16 +308,9 @@ function ofed_address_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'date',
-        'settings' => array(
-          'format_type' => 'long',
-          'fromto' => 'both',
-          'multiple_from' => '',
-          'multiple_number' => '',
-          'multiple_to' => '',
-        ),
-        'type' => 'date_default',
-        'weight' => 18,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 16,
       ),
       'page_list' => array(
         'label' => 'above',
@@ -705,67 +360,6 @@ function ofed_address_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ofed_address-field_ofed_address_street'
-  $field_instances['node-ofed_address-field_ofed_address_street'] = array(
-    'bundle' => 'ofed_address',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 2,
-      ),
-      'page_list' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 2,
-      ),
-      'references' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 2,
-      ),
-      'short_reference' => array(
-        'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 2,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'ds_extras_field_template' => '',
-    'entity_type' => 'node',
-    'field_name' => 'field_ofed_address_street',
-    'label' => 'Street',
-    'required' => 0,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 3,
-    ),
-  );
-
   // Exported field_instance: 'node-ofed_address-field_ofed_address_update'
   $field_instances['node-ofed_address-field_ofed_address_update'] = array(
     'bundle' => 'ofed_address',
@@ -783,7 +377,7 @@ function ofed_address_field_default_field_instances() {
           'multiple_to' => '',
         ),
         'type' => 'date_default',
-        'weight' => 10,
+        'weight' => 6,
       ),
       'page_list' => array(
         'label' => 'inline',
@@ -854,7 +448,7 @@ function ofed_address_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 17,
+        'weight' => 14,
       ),
       'page_list' => array(
         'label' => 'above',
@@ -900,87 +494,18 @@ function ofed_address_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ofed_address-field_ofed_address_zip'
-  $field_instances['node-ofed_address-field_ofed_address_zip'] = array(
-    'bundle' => 'ofed_address',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 3,
-      ),
-      'page_list' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 3,
-      ),
-      'references' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 6,
-      ),
-      'short_reference' => array(
-        'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 3,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'ds_extras_field_template' => '',
-    'entity_type' => 'node',
-    'field_name' => 'field_ofed_address_zip',
-    'label' => 'Zip code',
-    'required' => 0,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 6,
-    ),
-  );
-
   // Translatables
   // Included for use with string extractors like potx.
-  t('Box');
   t('Check the box in order to use the system date as updated date for your content item.');
-  t('City');
-  t('Copy paste the address search field from Google Maps here (Eg: "Rue de la loi 16, 1000 Bruxelles").');
-  t('Country');
   t('Directions (points to "Download" items)');
   t('Email');
-  t('GoogleMap');
   t('Last updated date');
-  t('Location name');
-  t('Number');
+  t('Location');
   t('Opening hours (Free text)');
   t('Phone');
   t('Publication date');
-  t('Street');
   t('This date field is used to indicate when the content element was last modified.');
   t('This date typically refers to the moment the content element was released and is to be displayed without label next to the title of the content element in lists and pages. It is typically used to sort content.');
-  t('Zip code');
 
   return $field_instances;
 }

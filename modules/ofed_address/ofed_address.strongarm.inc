@@ -64,6 +64,9 @@ function ofed_address_strongarm() {
     'group_ofed_news_page_meta|node|ofed_news|form' => FALSE,
     'group_ofed_team_page_meta|node|ofed_team|form' => FALSE,
     'group_ofed_video_page_meta|node|ofed_video|form' => FALSE,
+    'group_address_line_1|node|ofed_address|default' => TRUE,
+    'group_address_line_2|node|ofed_address|default' => TRUE,
+    'group_address_line_3|node|ofed_address|default' => TRUE,
   );
   $export['default_field_group'] = $strongarm;
 
@@ -139,6 +142,9 @@ function ofed_address_strongarm() {
       'short_reference' => array(
         'custom_settings' => TRUE,
       ),
+      'short_references' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -146,25 +152,25 @@ function ofed_address_strongarm() {
           'weight' => '0',
         ),
         'metatags' => array(
-          'weight' => '18',
+          'weight' => '19',
         ),
         'title' => array(
           'weight' => '1',
         ),
         'path' => array(
-          'weight' => '17',
+          'weight' => '18',
         ),
         'redirect' => array(
-          'weight' => '16',
+          'weight' => '17',
         ),
         'xmlsitemap' => array(
-          'weight' => '15',
+          'weight' => '16',
         ),
       ),
       'display' => array(
         'language' => array(
           'default' => array(
-            'weight' => '18',
+            'weight' => '15',
             'visible' => FALSE,
           ),
           'teaser' => array(
@@ -268,6 +274,13 @@ function ofed_address_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_ofed_address_de_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_ofed_address_de_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_ofed_address_en_pattern';
   $strongarm->value = 'addresses/[node:title]';
   $export['pathauto_node_ofed_address_en_pattern'] = $strongarm;
@@ -289,13 +302,6 @@ function ofed_address_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'pathauto_node_ofed_address_de_pattern';
-  $strongarm->value = '';
-  $export['pathauto_node_ofed_address_de_pattern'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_ofed_address_pattern';
   $strongarm->value = 'addresses/[node:title]';
   $export['pathauto_node_ofed_address_pattern'] = $strongarm;
@@ -306,6 +312,13 @@ function ofed_address_strongarm() {
   $strongarm->name = 'pathauto_node_ofed_address_und_pattern';
   $strongarm->value = '';
   $export['pathauto_node_ofed_address_und_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_ofed_address_de_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_ofed_address_de_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -327,13 +340,6 @@ function ofed_address_strongarm() {
   $strongarm->name = 'pathauto_taxonomy_term_ofed_address_nl_pattern';
   $strongarm->value = 'adressen/[term:name]';
   $export['pathauto_taxonomy_term_ofed_address_nl_pattern'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'pathauto_taxonomy_term_ofed_address_de_pattern';
-  $strongarm->value = '';
-  $export['pathauto_taxonomy_term_ofed_address_de_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
