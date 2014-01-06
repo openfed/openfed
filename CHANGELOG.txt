@@ -27,6 +27,7 @@ New version - Version 7.x-1.4-beta1
     #2167823: Module upgrade: simple_gmap
     #2167825: Module upgrade: date
     #2159933: Module upgrade: addemar_subscription
+    #2167877: Upgrade drupal to 7.25
 
   * Removed module:
     #2153519: Remove module: beididp 
