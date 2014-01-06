@@ -9,6 +9,7 @@ New version - Version 7.x-1.4-beta1
     #2158321: Can no longer create ofedslider after 1.3 update
     #2109869: refactor permissions functionality - implement drush command
     #2109869: refactor permissions functionality - skip non-existing modules
+    #2157429: Login page does not have a title
 
   * New modules:
     #2148015: New module: Title

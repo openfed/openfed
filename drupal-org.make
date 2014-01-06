@@ -305,6 +305,7 @@ projects[location][subdir] = contrib
 projects[logintoboggan][version] = "1.3"
 projects[logintoboggan][subdir] = contrib
 projects[logintoboggan][patch][1142808] = "http://drupal.org/files/logintoboggan-minpasswordlength-1142808-9.patch"
+projects[logintoboggan][patch][1257572] = "http://drupal.org/files/account-page-title-1257572-15.patch"
 
 projects[media][version] = "1.3"
 projects[media][subdir] = contrib
