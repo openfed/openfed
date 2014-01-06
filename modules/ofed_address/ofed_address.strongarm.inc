@@ -170,7 +170,7 @@ function ofed_address_strongarm() {
       'display' => array(
         'language' => array(
           'default' => array(
-            'weight' => '15',
+            'weight' => '14',
             'visible' => FALSE,
           ),
           'teaser' => array(
@@ -221,6 +221,36 @@ function ofed_address_strongarm() {
   $strongarm->name = 'language_content_type_ofed_address';
   $strongarm->value = '2';
   $export['language_content_type_ofed_address'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'location_general_geocoders_in_use';
+  $strongarm->value = array(
+    'google' => 'google',
+  );
+  $export['location_general_geocoders_in_use'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'location_geocode_be';
+  $strongarm->value = 'google';
+  $export['location_geocode_be'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'location_geocode_be_google_accuracy_code';
+  $strongarm->value = '8';
+  $export['location_geocode_be_google_accuracy_code'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'location_geocode_google_minimum_accuracy';
+  $strongarm->value = '8';
+  $export['location_geocode_google_minimum_accuracy'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

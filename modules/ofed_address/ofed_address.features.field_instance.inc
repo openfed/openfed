@@ -25,7 +25,7 @@ function ofed_address_field_default_field_instances() {
           'view_mode' => 'references',
         ),
         'type' => 'entityreference_entity_view',
-        'weight' => 5,
+        'weight' => 4,
       ),
       'page_list' => array(
         'label' => 'hidden',
@@ -310,7 +310,7 @@ function ofed_address_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 16,
+        'weight' => 15,
       ),
       'page_list' => array(
         'label' => 'above',
@@ -377,7 +377,7 @@ function ofed_address_field_default_field_instances() {
           'multiple_to' => '',
         ),
         'type' => 'date_default',
-        'weight' => 6,
+        'weight' => 5,
       ),
       'page_list' => array(
         'label' => 'inline',
@@ -448,7 +448,7 @@ function ofed_address_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 14,
+        'weight' => 13,
       ),
       'page_list' => array(
         'label' => 'above',
