@@ -23,6 +23,7 @@ New version - Version 7.x-1.4-beta1
     #2157383: Library upgrade: ckeditor
     #2157401: Library upgrade: jcarousel
     #2167821: Module upgrade: views_bulk_operations
+    #2167823: Module upgrade: simple_gmap
 
   * Removed module:
     #2153519: Remove module: beididp 
