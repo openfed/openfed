@@ -260,6 +260,12 @@ function _openfed_get_default_permissions() {
       'authenticated user',
     ),
 
+    // addemar_subscription
+    'access addemar_subscription content' => array(
+      'authenticated user',
+      'anonymous user',
+    ),
+
     // admin_menu'
     'access administration menu' => array(
       'Builder',
