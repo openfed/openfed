@@ -30,6 +30,7 @@ New version - Version 7.x-1.4-beta1
     #2167877: Upgrade drupal to 7.25
     #2167943: Module upgrade: location
     #2170045: Module upgrade: entity
+    #2170049: Module upgrade: media
 
   * Removed module:
     #2153519: Remove module: beididp 
