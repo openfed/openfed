@@ -29,6 +29,7 @@ New version - Version 7.x-1.4-beta1
     #2159933: Module upgrade: addemar_subscription
     #2167877: Upgrade drupal to 7.25
     #2167943: Module upgrade: location
+    #2170045: Module upgrade: entity
 
   * Removed module:
     #2153519: Remove module: beididp 
