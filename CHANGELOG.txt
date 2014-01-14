@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+New version - Version 7.x-1.4-beta2
+-----------------------------------
+  * Upgraded theme:
+    #2173355: Theme upgrade: ofed_nerra
+
 14 January 2014 - Version 7.x-1.4-beta1
 ---------------------------------------
   * Issues:
