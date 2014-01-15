@@ -3,6 +3,9 @@ CHANGELOG
 
 New version - Version 7.x-1.4-beta2
 -----------------------------------
+  * Module upgrades:
+    #2167943: Module upgrade: location
+
   * Upgraded theme:
     #2173355: Theme upgrade: ofed_nerra
 
