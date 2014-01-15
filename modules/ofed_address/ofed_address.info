@@ -56,7 +56,6 @@ dependencies[] = variable_views
 dependencies[] = views
 dependencies[] = xmlsitemap
 dependencies[] = xmlsitemap_node
-datestamp = 1389026080
 features[ctools][] = ds:ds:1
 features[ctools][] = field_group:field_group:1
 features[ctools][] = strongarm:strongarm:1
