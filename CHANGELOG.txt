@@ -3,8 +3,12 @@ CHANGELOG
 
 New version - Version 7.x-1.4-beta2
 -----------------------------------
+  * Issues:
+    #2083437: Code quality: warnings in PAreview report
+
   * Module upgrades:
     #2167943: Module upgrade: location
+    #2174819: Upgrade drupal to 7.26
 
   * Upgraded theme:
     #2173355: Theme upgrade: ofed_nerra
