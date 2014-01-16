@@ -9,6 +9,7 @@ New version - Version 7.x-1.4-beta2
   * Module upgrades:
     #2167943: Module upgrade: location
     #2174819: Upgrade drupal to 7.26
+    #2175049: Module upgrade: metatag
 
   * Upgraded theme:
     #2173355: Theme upgrade: ofed_nerra
