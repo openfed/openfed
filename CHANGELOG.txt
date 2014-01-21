@@ -1,8 +1,8 @@
 CHANGELOG
 =========
 
-New version - Version 7.x-1.4-beta2
------------------------------------
+21 January 2014 - Version 7.x-1.4-rc1
+-------------------------------------
   * Issues:
     #2083437: Code quality: warnings in PAreview report
 
