@@ -52,7 +52,6 @@ function openfed_install_regional_form_validate($form, &$form_state) {
   if (empty($regional_enabled) && !empty($values['cookie_and_language_selection'])) {
     form_set_error('regional_list', st('You chose to enable the language cookie
       and language but did not select a regional language. Please choose at
-t
       least one regional language.'));
   }
 }
