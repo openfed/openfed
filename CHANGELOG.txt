@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+New version - Version 7.x-1.5-beta1
+-----------------------------------
+  * Module upgrades:
+    #2178903: Module upgrade: variable
+
 21 January 2014 - Version 7.x-1.4-rc1
 -------------------------------------
   * Issues:

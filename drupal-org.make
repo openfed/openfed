@@ -457,7 +457,7 @@ projects[twitter_block][subdir] = contrib
 projects[username_enumeration_prevention][version] = "1.0"
 projects[username_enumeration_prevention][subdir] = contrib
 
-projects[variable][version] = "2.3"
+projects[variable][version] = "2.4"
 projects[variable][subdir] = contrib
 
 projects[view_unpublished][version] = "1.1"
