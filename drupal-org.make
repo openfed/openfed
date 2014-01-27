@@ -108,6 +108,9 @@ projects[apachesolr_autocomplete][subdir] = contrib
 projects[apachesolr_multilingual][version] = "1.0-rc2"
 projects[apachesolr_multilingual][subdir] = contrib
 
+projects[back_to_top][version] = "1.4"
+projects[back_to_top][subdir] = contrib
+
 projects[backup_migrate][version] = "2.8"
 projects[backup_migrate][subdir] = contrib
 
