@@ -34,6 +34,7 @@ New version - Version 7.x-1.5-beta1
 
   * New modules:
     #2148015: New module: Title
+    #2168551: New module: Panels Extra Layouts
 
   * Module upgrades:
     #2152945: Module upgrade: Apache Solr Multilingual

@@ -355,6 +355,9 @@ projects[page_title][patch][1282564] = "http://drupal.org/files/issues/pass_by_v
 projects[panels][version] = "3.3"
 projects[panels][subdir] = contrib
 
+projects[panels_extra_layouts][version] = "2.0"
+projects[panels_extra_layouts][subdir] = contrib
+
 projects[partial_date][version] = "1.0-beta1"
 projects[partial_date][subdir] = contrib
 
