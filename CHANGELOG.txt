@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+28 January 2014 - Version 7.x-1.4
+---------------------------------
+No changes
+
 21 January 2014 - Version 7.x-1.4-rc1
 -------------------------------------
   * Issues:
