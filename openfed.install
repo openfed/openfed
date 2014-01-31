@@ -384,3 +384,14 @@ function openfed_update_7110() {
     module_enable(array('admin_views'));
   }
 }
+
+/**
+ * Enable Administration Views Language feature.
+ * This feature exposes the language filter by default on the content admin page.
+ */
+function openfed_update_7111() {
+  if (!module_exists('ofed_admin_views_language')) {
+    module_enable(array('ofed_admin_views_language'));
+  }
+}
+ 

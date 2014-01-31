@@ -35,6 +35,7 @@ core = 7.x
   dependencies[] = addanother
   dependencies[] = admin_menu
   dependencies[] = admin_menu_toolbar
+  dependencies[] = admin_views
   dependencies[] = ckeditor
   dependencies[] = ckeditor_link
   dependencies[] = ctools
@@ -144,6 +145,7 @@ core = 7.x
 ; OpenFed module dependencies.
 ; ----------------------------
 
+  dependencies[] = ofed_admin_views_language
   dependencies[] = ofed_download
   dependencies[] = ofed_page
   dependencies[] = ofed_vmcd

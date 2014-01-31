@@ -51,7 +51,7 @@ function openfed_install_functionalities_form_submit($form, &$form_state) {
     // If always functionalities...
     if (!empty($functionalities)) {
       // Enable modules (create array for batch process).
-      $module_list = array();
+      $modules_list = array();
       foreach ($functionalities as $key => $name) {
         if ($key === $name) {
           $modules_list[] = $name;

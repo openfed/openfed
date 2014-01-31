@@ -108,6 +108,9 @@ projects[apachesolr_autocomplete][subdir] = contrib
 projects[apachesolr_multilingual][version] = "1.0-rc2"
 projects[apachesolr_multilingual][subdir] = contrib
 
+projects[back_to_top][version] = "1.4"
+projects[back_to_top][subdir] = contrib
+
 projects[backup_migrate][version] = "2.8"
 projects[backup_migrate][subdir] = contrib
 
@@ -355,6 +358,9 @@ projects[page_title][patch][1282564] = "http://drupal.org/files/issues/pass_by_v
 projects[panels][version] = "3.3"
 projects[panels][subdir] = contrib
 
+projects[panels_extra_layouts][version] = "2.0"
+projects[panels_extra_layouts][subdir] = contrib
+
 projects[partial_date][version] = "1.0-beta1"
 projects[partial_date][subdir] = contrib
 
@@ -457,7 +463,7 @@ projects[twitter_block][subdir] = contrib
 projects[username_enumeration_prevention][version] = "1.0"
 projects[username_enumeration_prevention][subdir] = contrib
 
-projects[variable][version] = "2.3"
+projects[variable][version] = "2.4"
 projects[variable][subdir] = contrib
 
 projects[view_unpublished][version] = "1.1"

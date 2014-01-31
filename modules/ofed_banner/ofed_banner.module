@@ -15,7 +15,7 @@ function ofed_banner_menu() {
 
   $items['banner-counter/%'] = array(
     'title' => 'Banner click count',
-    'page callback' => array('_ofed_banner_counter'),
+    'page callback' => '_ofed_banner_counter',
     'page arguments' => array(1),
     'access callback' => 'user_access',
     'access arguments' => array('access content'),

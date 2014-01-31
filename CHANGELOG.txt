@@ -1,6 +1,19 @@
 CHANGELOG
 =========
 
+New version - Version 7.x-1.5-beta1
+-----------------------------------
+  * Issues:
+    #2180135: Notice: array to string conversion (postgresql)
+    #2158145: Missing language exposed filter in content admin
+
+  * New modules:
+    #2139857: New module: Back To Top
+    #2168551: New module: Panels Extra Layouts
+
+  * Module upgrades:
+    #2178903: Module upgrade: variable
+
 28 January 2014 - Version 7.x-1.4
 ---------------------------------
 No changes
@@ -30,6 +43,7 @@ No changes
 
   * New modules:
     #2148015: New module: Title
+    #2168551: New module: Panels Extra Layouts
 
   * Module upgrades:
     #2152945: Module upgrade: Apache Solr Multilingual

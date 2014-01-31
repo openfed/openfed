@@ -1,0 +1,10 @@
+name = Administration Views - With language filter
+description = Makes the language filter appear on the admin content management page.
+core = 7.x
+package = OpenFed
+dependencies[] = views
+dependencies[] = admin_views
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:2
+features[views_view][] = administration_nodes_language
+features_exclude[dependencies][ctools] = ctools
