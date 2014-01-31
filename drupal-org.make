@@ -395,7 +395,7 @@ projects[role_delegation][subdir] = contrib
 projects[rules][version] = "2.6"
 projects[rules][subdir] = contrib
 
-projects[scheduler][version] = "1.1"
+projects[scheduler][version] = "1.2"
 projects[scheduler][subdir] = contrib
 
 projects[search_config][version] = "1.0"
