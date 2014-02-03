@@ -4,7 +4,7 @@ core = 7.x
 ;
 ; Libraries
 ; Please fill the following out. Type may be one of get, git, bzr or svn, and url is the url of the download.
-;i
+;
 
 ; CK Editor
 libraries[ckeditor][download][type] = "get"
@@ -199,6 +199,7 @@ projects[features_override][subdir] = contrib
 
 projects[feeds][version] = "2.0-alpha8"
 projects[feeds][subdir] = contrib
+projects[feeds][patch][1183440] = "http://drupal.org/files/issues/feeds-field_translations-1183440-104.patch"
 
 projects[feeds_xpathparser][version] = "1.0-beta4"
 projects[feeds_xpathparser][subdir] = contrib
