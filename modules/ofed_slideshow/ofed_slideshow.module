@@ -4,6 +4,7 @@
  * @file
  * Module needed to manage slideshows with the Openfed distribution.
  */
+require_once 'includes/ofed_slideshow.features.inc';
 require_once 'includes/ofed_slideshow.misc.inc';
 require_once 'includes/ofed_slideshow.blocks.inc';
 
