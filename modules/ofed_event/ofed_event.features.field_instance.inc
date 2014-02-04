@@ -1169,7 +1169,7 @@ function ofed_event_field_default_field_instances() {
       'file_directory' => 'content/events/thumb',
       'file_extensions' => 'png jpg jpeg',
       'max_filesize' => '',
-      'max_resolution' => '',
+      'max_resolution' => '512x512',
       'min_resolution' => '',
       'title_field' => 1,
       'user_register_form' => FALSE,

@@ -1,4 +1,4 @@
-<?php
+?php
 /**
  * @file
  * ofed_news.features.field_instance.inc
@@ -837,7 +837,7 @@ function ofed_news_field_default_field_instances() {
       'file_directory' => 'content/news/thumb',
       'file_extensions' => 'png jpg jpeg',
       'max_filesize' => '',
-      'max_resolution' => '',
+      'max_resolution' => '512x512',
       'min_resolution' => '',
       'title_field' => 1,
       'user_register_form' => FALSE,
