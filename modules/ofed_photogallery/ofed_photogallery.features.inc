@@ -128,6 +128,30 @@ function ofed_photogallery_image_default_styles() {
     'label' => 'ofed_photogallery_images_slideshow_small',
   );
 
+  // Exported image style: ofed_photogallery_images_slideshow_medium.
+  $styles['ofed_photogallery_images_slideshow_medium'] = array(
+    'name' => 'ofed_photogallery_images_slideshow_medium',
+    'effects' => array(
+      6 => array(
+        'label' => 'Scale',
+        'help' => 'Scaling will maintain the aspect-ratio of the original image. If only a single dimension is specified, the other dimension will be calculated.',
+        'effect callback' => 'image_scale_effect',
+        'dimensions callback' => 'image_scale_dimensions',
+        'form callback' => 'image_scale_form',
+        'summary theme' => 'image_scale_summary',
+        'module' => 'image',
+        'name' => 'image_scale',
+        'data' => array(
+          'width' => 400,
+          'height' => 300,
+          'upscale' => 0,
+        ),
+        'weight' => 2,
+      ),
+    ),
+    'label' => 'ofed_photogallery_images_slideshow_medium',
+  );
+
   // Exported image style: ofed_photogallery_images_slideshow_thumb_block_column.
   $styles['ofed_photogallery_images_slideshow_thumb_block_column'] = array(
     'name' => 'ofed_photogallery_images_slideshow_thumb_block_column',
