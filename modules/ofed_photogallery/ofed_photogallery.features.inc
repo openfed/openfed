@@ -233,7 +233,7 @@ function ofed_photogallery_image_default_styles() {
 function ofed_photogallery_node_info() {
   $items = array(
     'ofed_photogallery' => array(
-      'name' => t('Photos gallery'),
+      'name' => t('Photo gallery'),
       'base' => 'node_content',
       'has_title' => '1',
       'title_label' => t('Title'),

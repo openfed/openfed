@@ -10,7 +10,7 @@
 function ofed_photogallery_taxonomy_default_vocabularies() {
   return array(
     'ofed_photogallery' => array(
-      'name' => 'Photos gallery',
+      'name' => 'Photo gallery',
       'machine_name' => 'ofed_photogallery',
       'description' => '',
       'hierarchy' => 0,
