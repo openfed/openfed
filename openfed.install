@@ -395,3 +395,18 @@ function openfed_update_7111() {
   }
 }
  
+/**
+ * Re-enable photogallery and slideshow content types so as to recover image
+ * styles.
+ */
+function openfed_update_7112() {
+  if (module_exists('ofed_photogallery')) {
+    module_disable(array('ofed_photogallery'));
+    module_enable(array('ofed_photogallery'));
+  }
+  if (module_exists('ofed_slideshow')) {
+    module_disable(array('ofed_slideshow'));
+    module_enable(array('ofed_slideshow'));
+  }
+}
+
