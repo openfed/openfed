@@ -486,6 +486,9 @@ projects[views_slideshow][subdir] = contrib
 projects[webform][version] = "3.19"
 projects[webform][subdir] = contrib
 
+projects[webform_clear][version] = "1.1"
+projects[webform_clear][subdir] = contrib
+
 projects[webform_rules][version] = "1.6"
 projects[webform_rules][subdir] = contrib
 
