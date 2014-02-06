@@ -17,6 +17,7 @@ New version - Version 7.x-1.5-beta1
   * Module upgrades:
     #2178903: Module upgrade: variable
     #2186095: Module upgrade: scheduler
+    #2190047: Module upgrade: devel
 
 28 January 2014 - Version 7.x-1.4
 ---------------------------------
