@@ -19,6 +19,9 @@ New version - Version 7.x-1.6-beta1
     #2186095: Module upgrade: scheduler
     #2190047: Module upgrade: devel
 
+  * Removed module:
+    #2190355: Remove module: ofed_admin_menu
+
 7 February 2014 - Version 7.x-1.5
 ---------------------------------
 No changes
