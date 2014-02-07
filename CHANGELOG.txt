@@ -18,6 +18,7 @@ New version - Version 7.x-1.6-beta1
     #2178903: Module upgrade: variable
     #2186095: Module upgrade: scheduler
     #2190047: Module upgrade: devel
+    #2190937: Module upgrade: reCAPTCHA
 
   * Removed module:
     #2190355: Remove module: ofed_admin_menu
