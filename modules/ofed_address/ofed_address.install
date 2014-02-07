@@ -265,3 +265,15 @@ function ofed_address_update_7102() {
     }
   }
 }
+
+/**
+ * Enable new dependencies
+ */
+function ofed_address_update_7103() {
+  $modules = array('location', 'location_cck', 'gmap');
+  foreach ($modules as $module) {
+    if (!module_exists($module)) {
+      module_enable(array($module));
+    }
+  }
+}

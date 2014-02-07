@@ -1,7 +1,7 @@
 CHANGELOG
 =========
 
-New version - Version 7.x-1.5-beta1
+New version - Version 7.x-1.6-beta1
 -----------------------------------
   * Issues:
     #2180135: Notice: array to string conversion (postgresql)
@@ -18,6 +18,20 @@ New version - Version 7.x-1.5-beta1
     #2178903: Module upgrade: variable
     #2186095: Module upgrade: scheduler
     #2190047: Module upgrade: devel
+
+7 February 2014 - Version 7.x-1.5
+---------------------------------
+No changes
+
+6 February 2014 - Version 7.x-1.5-rc2
+-------------------------------------
+  * Issues:
+    #2190251: Upgrade from 1.2 fails, location module
+
+6 February 2014 - Version 7.x-1.5-rc1
+-------------------------------------
+  * Issues:
+    #2190251: Upgrade from 1.2 fails, location module
 
 28 January 2014 - Version 7.x-1.4
 ---------------------------------
