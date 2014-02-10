@@ -289,7 +289,7 @@ projects[language_selection_page][patch][2152877] = "http://drupal.org/files/iss
 projects[lexicon][version] = "1.10"
 projects[lexicon][subdir] = contrib
 
-projects[libraries][version] = "2.1"
+projects[libraries][version] = "2.2"
 projects[libraries][subdir] = contrib
 
 projects[link][version] = "1.2"

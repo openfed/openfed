@@ -21,6 +21,7 @@ New version - Version 7.x-1.6-beta1
     #2190937: Module upgrade: reCAPTCHA
     #2190931: Module upgrade: Entity Registration
     #2180789: Theme upgrade: ofed_nerra
+    #2192567: Module upgrade: Libraries API
 
   * Removed module:
     #2190355: Remove module: ofed_admin_menu
