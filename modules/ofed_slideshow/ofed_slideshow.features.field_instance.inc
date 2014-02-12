@@ -46,7 +46,7 @@ function ofed_slideshow_field_default_field_instances() {
           'slideshow_pager' => '',
           'slideshow_pager_image_style' => '',
           'slideshow_pager_position' => 'after',
-          'slideshow_pause' => 0,
+          'slideshow_pause' => 1,
           'slideshow_speed' => 1000,
           'slideshow_start_on_hover' => 0,
           'slideshow_timeout' => 4000,

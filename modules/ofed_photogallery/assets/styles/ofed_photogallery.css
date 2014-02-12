@@ -102,6 +102,19 @@
 .view-mode-page_list .field-slideshow-controls .prev {
   left: -25px;
 }
+
+.field-slideshow-controls .pause {
+  background: url(../images/slideshow-pause.png) no-repeat 0px 0px;
+}
+.field-slideshow-controls .pause:hover {
+  background: url(../images/slideshow-pause-active.png) no-repeat 0px 0px;
+}
+.field-slideshow-controls a.play {
+  background: url(../images/slideshow-play.png) no-repeat 0px 0px;
+}
+.field-slideshow-controls a.play:hover {
+  background: url(../images/slideshow-play-active.png) no-repeat 0px 0px;
+}
 .field-slideshow-controls .prev {
   background: url(../images/arrow-carrousel-left.png) no-repeat 0px 0px;
 }
@@ -150,13 +163,31 @@
 .view-mode-full .field-slideshow-controls a,
 .page-list .field-slideshow-controls a {
   text-indent:-2000em; /* Masquer le texte et le remplancer par des icones de flèches*/
-  display: inline-block;
   width: 26px;
   height: 48px;
   z-index: 8000;
   font-size:0;
   line-height:0;
   text-shadow:0;
+}
+.view-mode-full .field-slideshow-controls a.play, 
+.view-mode-full .field-slideshow-controls a.pause,
+.page-list .field-slideshow-controls a.play,
+.page-list .field-slideshow-controls a.pause {
+  width: 32px;
+  height: 32px;
+  right: -5px;
+  top: 200px;
+  position: absolute;
+}
+
+.view-mode-full .field-slideshow-controls a.prev, 
+.view-mode-full .field-slideshow-controls a.next, 
+.view-mode-full .field-slideshow-controls a.pause, 
+.page-list .field-slideshow-controls a.prev, 
+.page-list .field-slideshow-controls a.next, 
+.page-list .field-slideshow-controls a.pause {
+  display: inline-block;
 }
 .view-mode-full .field-slideshow-controls .prev,
 .page-list .field-slideshow-controls .prev {
@@ -267,12 +298,6 @@
 }
 .view-ofed-photogallery .page-list .field-name-node-link {
   padding-top: 10px;
-}
-.field-slideshow-controls a.play,
-.field-slideshow-controls a.pause,
-.view-mode-full .field-slideshow-controls a.play,
-.view-mode-full .field-slideshow-controls a.pause {
-  display: none;
 }
 .pane-ofed-photogallery {
   background: #f4f4f3;
