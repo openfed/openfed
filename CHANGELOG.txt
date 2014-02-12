@@ -6,7 +6,6 @@ New version - Version 7.x-1.6-beta1
   * Issues:
     #2180135: Notice: array to string conversion (postgresql)
     #2158145: Missing language exposed filter in content admin
-    #2122959: Allow for mulitlingual feeds
     #2188689: Slideshow and Photo gallery content types not showing images
 
   * New modules:
