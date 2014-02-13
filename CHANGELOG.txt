@@ -23,6 +23,7 @@ New version - Version 7.x-1.6-beta1
     #2180789: Theme upgrade: ofed_nerra
     #2192567: Module upgrade: Libraries API
     #2195227: Module upgrade: Panels
+    #2195345: Module upgrade: metatag
 
   * Removed module:
     #2190355: Remove module: ofed_admin_menu
