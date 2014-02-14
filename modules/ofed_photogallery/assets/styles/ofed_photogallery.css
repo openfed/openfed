@@ -4,7 +4,7 @@
   color: #B0AEA4;
 }
 .view-mode-block_element .field-name-field-ofed-photog-images,
-.block-list .field-name-field-ofed-photog-images,
+..block-list .field-name-field-ofed-photog-images,
 .block-info .field-name-field-ofed-photog-images,
 .view-mode-teaser .field-name-field-ofed-photog-images,
 .view-mode-block_column .field-name-field-ofed-photog-images {
@@ -96,39 +96,39 @@
 .view-mode-block_column .field-slideshow-controls a {
   top: 5px;
 }
-.view-mode-page_list .field-slideshow-controls a {
+.node-ofed-photogallery .view-mode-page_list .field-slideshow-controls a {
   top: -20px;
 }
-.view-mode-page_list .field-slideshow-controls .prev {
+.node-ofed-photogallery .view-mode-page_list .field-slideshow-controls .prev {
   left: -25px;
 }
 
-.field-slideshow-controls .pause {
+.node-ofed-photogallery .field-slideshow-controls .pause {
   background: url(../images/slideshow-pause.png) no-repeat 0px 0px;
 }
-.field-slideshow-controls .pause:hover {
+.node-ofed-photogallery .field-slideshow-controls .pause:hover {
   background: url(../images/slideshow-pause-active.png) no-repeat 0px 0px;
 }
-.field-slideshow-controls a.play {
+.node-ofed-photogallery .field-slideshow-controls a.play {
   background: url(../images/slideshow-play.png) no-repeat 0px 0px;
 }
-.field-slideshow-controls a.play:hover {
+.node-ofed-photogallery .field-slideshow-controls a.play:hover {
   background: url(../images/slideshow-play-active.png) no-repeat 0px 0px;
 }
-.field-slideshow-controls .prev {
+.node-ofed-photogallery .field-slideshow-controls .prev {
   background: url(../images/arrow-carrousel-left.png) no-repeat 0px 0px;
 }
-.field-slideshow-controls .prev:hover {
+.node-ofed-photogallery .field-slideshow-controls .prev:hover {
   background: url(../images/arrow-carrousel-left-active.png) no-repeat 0px 0px;
 }
-.view-mode-page_list .field-slideshow-controls .next {
+.node-ofed-photogallery .view-mode-page_list .field-slideshow-controls .next {
   right: -45px;
 }
-.field-slideshow-controls .next {
+.node-ofed-photogallery .field-slideshow-controls .next {
   right: -20px;
   background: url(../images/arrow-carrousel-right.png) no-repeat 0px 0px;
 }
-.field-slideshow-controls .next:hover {
+.node-ofed-photogallery .field-slideshow-controls .next:hover {
   background: url(../images/arrow-carrousel-right-active.png) no-repeat 0px 0px;
 }
 .view-ofed-photogallery .more-link,
@@ -149,19 +149,19 @@
 }
 /*    PAGER de photo-gallery en full node     */
 
-.view-mode-full .field-slideshow-controls,
-.page-list .field-slideshow-controls {
+.view-mode-full.node-ofed-photogallery .field-slideshow-controls,
+.page-list.node-ofed-photogallery .field-slideshow-controls {
   width: 460px;
   height: 190px;
   margin: -190px auto 0 auto;
   z-index: 10000;
   position: relative;
 }
-.page-list .field-slideshow-controls {
+.page-list.node-ofed-photogallery .field-slideshow-controls {
   margin: -150px auto 0 auto;
 }
-.view-mode-full .field-slideshow-controls a,
-.page-list .field-slideshow-controls a {
+.view-mode-full.node-ofed-photogallery .field-slideshow-controls a,
+.page-list.node-ofed-photogallery .field-slideshow-controls a {
   text-indent:-2000em; /* Masquer le texte et le remplancer par des icones de flèches*/
   width: 26px;
   height: 48px;
@@ -170,27 +170,27 @@
   line-height:0;
   text-shadow:0;
 }
-.view-mode-full .field-slideshow-controls a.play, 
-.view-mode-full .field-slideshow-controls a.pause,
-.page-list .field-slideshow-controls a.play,
-.page-list .field-slideshow-controls a.pause {
-  width: 32px;
-  height: 32px;
-  right: -5px;
-  top: 200px;
+.view-mode-full.node-ofed-photogallery .field-slideshow-controls a.play, 
+.view-mode-full.node-ofed-photogallery .field-slideshow-controls a.pause,
+.page-list.node-ofed-photogallery .field-slideshow-controls a.play,
+.page-list.node-ofed-photogallery .field-slideshow-controls a.pause {
+  width: 16px;
+  height: 16px;
+  right: 35px;
+  top: -125px;
   position: absolute;
 }
 
-.view-mode-full .field-slideshow-controls a.prev, 
-.view-mode-full .field-slideshow-controls a.next, 
-.view-mode-full .field-slideshow-controls a.pause, 
-.page-list .field-slideshow-controls a.prev, 
-.page-list .field-slideshow-controls a.next, 
-.page-list .field-slideshow-controls a.pause {
+.view-mode-full.node-ofed-photogallery .field-slideshow-controls a.prev, 
+.view-mode-full.node-ofed-photogallery .field-slideshow-controls a.next, 
+.view-mode-full.node-ofed-photogallery .field-slideshow-controls a.pause, 
+.page-list.node-ofed-photogallery .field-slideshow-controls a.prev, 
+.page-list.node-ofed-photogallery .field-slideshow-controls a.next, 
+.page-list.node-ofed-photogallery .field-slideshow-controls a.pause {
   display: inline-block;
 }
-.view-mode-full .field-slideshow-controls .prev,
-.page-list .field-slideshow-controls .prev {
+.view-mode-full.node-ofed-photogallery .field-slideshow-controls .prev,
+.page-list.node-ofed-photogallery .field-slideshow-controls .prev {
   background: url(../images/arrow-slideshow-left.png) no-repeat 0px 0px;
 }
 .ie7 .view-mode-full .field-slideshow-controls .prev,
