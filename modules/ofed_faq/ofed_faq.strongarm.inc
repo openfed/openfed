@@ -248,6 +248,13 @@ function ofed_faq_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_ofed_faq_de_pattern';
+  $strongarm->value = 'faq/[node:title]';
+  $export['pathauto_node_ofed_faq_de_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_ofed_faq_en_pattern';
   $strongarm->value = 'faq/[node:title]';
   $export['pathauto_node_ofed_faq_en_pattern'] = $strongarm;
@@ -269,13 +276,6 @@ function ofed_faq_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'pathauto_node_ofed_faq_de_pattern';
-  $strongarm->value = 'faq/[node:title]';
-  $export['pathauto_node_ofed_faq_de_pattern'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_ofed_faq_pattern';
   $strongarm->value = 'faq/[node:title]';
   $export['pathauto_node_ofed_faq_pattern'] = $strongarm;
@@ -286,6 +286,13 @@ function ofed_faq_strongarm() {
   $strongarm->name = 'pathauto_node_ofed_faq_und_pattern';
   $strongarm->value = '';
   $export['pathauto_node_ofed_faq_und_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_ofed_faq_de_pattern';
+  $strongarm->value = 'faqs/[term:name]';
+  $export['pathauto_taxonomy_term_ofed_faq_de_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -307,13 +314,6 @@ function ofed_faq_strongarm() {
   $strongarm->name = 'pathauto_taxonomy_term_ofed_faq_nl_pattern';
   $strongarm->value = 'faqs/[term:name]';
   $export['pathauto_taxonomy_term_ofed_faq_nl_pattern'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'pathauto_taxonomy_term_ofed_faq_de_pattern';
-  $strongarm->value = 'faqs/[term:name]';
-  $export['pathauto_taxonomy_term_ofed_faq_de_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

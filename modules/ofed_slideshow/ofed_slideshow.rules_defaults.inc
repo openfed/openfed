@@ -12,8 +12,9 @@ function ofed_slideshow_default_rules_configuration() {
   $items['rules_force_update_slideshow_content'] = entity_import('rules_config', '{ "rules_force_update_slideshow_content" : {
       "LABEL" : "Force update slideshow content",
       "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
       "REQUIRES" : [ "rules" ],
-      "ON" : [ "node_presave" ],
+      "ON" : { "node_presave" : [] },
       "IF" : [
         { "node_is_of_type" : {
             "node" : [ "node" ],

@@ -55,7 +55,6 @@ function ofed_faq_views_default_views() {
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
-
   $translatables['ofed_faq'] = array(
     t('Master'),
     t('more'),
@@ -71,22 +70,6 @@ function ofed_faq_views_default_views() {
     t('‹ previous'),
     t('next ›'),
     t('last »'),
-    t('CMS'),
-    t('FAQ'),
-    t('author'),
-    t('Nid'),
-    t('Title'),
-    t('Author'),
-    t('Language'),
-    t('Updated date'),
-    t('Edit'),
-    t('Delete'),
-    t('Type'),
-    t('Published'),
-    t('Page: List'),
-    t('Page: List summary'),
-    t('FAQ Summary'),
-    t('<a href="#[nid]" class="faq-title-anchor">[title]</a>'),
   );
   $export['ofed_faq'] = $view;
 

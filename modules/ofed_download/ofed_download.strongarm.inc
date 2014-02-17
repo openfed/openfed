@@ -271,6 +271,13 @@ function ofed_download_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_ofed_download_de_pattern';
+  $strongarm->value = 'downloads/[node:title]';
+  $export['pathauto_node_ofed_download_de_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_ofed_download_en_pattern';
   $strongarm->value = 'downloads/[node:title]';
   $export['pathauto_node_ofed_download_en_pattern'] = $strongarm;
@@ -292,13 +299,6 @@ function ofed_download_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'pathauto_node_ofed_download_de_pattern';
-  $strongarm->value = 'downloads/[node:title]';
-  $export['pathauto_node_ofed_download_de_pattern'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_ofed_download_pattern';
   $strongarm->value = 'downloads/[node:title]';
   $export['pathauto_node_ofed_download_pattern'] = $strongarm;
@@ -309,6 +309,13 @@ function ofed_download_strongarm() {
   $strongarm->name = 'pathauto_node_ofed_download_und_pattern';
   $strongarm->value = '';
   $export['pathauto_node_ofed_download_und_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_ofed_download_de_pattern';
+  $strongarm->value = 'downloads/[term:name]';
+  $export['pathauto_taxonomy_term_ofed_download_de_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -330,13 +337,6 @@ function ofed_download_strongarm() {
   $strongarm->name = 'pathauto_taxonomy_term_ofed_download_nl_pattern';
   $strongarm->value = 'downloads/[term:name]';
   $export['pathauto_taxonomy_term_ofed_download_nl_pattern'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'pathauto_taxonomy_term_ofed_download_de_pattern';
-  $strongarm->value = 'downloads/[term:name]';
-  $export['pathauto_taxonomy_term_ofed_download_de_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
