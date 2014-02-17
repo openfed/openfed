@@ -1,4 +1,4 @@
-?php
+<?php
 /**
  * @file
  * ofed_news.features.field_instance.inc
