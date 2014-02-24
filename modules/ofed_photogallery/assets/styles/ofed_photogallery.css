@@ -4,7 +4,7 @@
   color: #B0AEA4;
 }
 .view-mode-block_element .field-name-field-ofed-photog-images,
-..block-list .field-name-field-ofed-photog-images,
+.block-list .field-name-field-ofed-photog-images,
 .block-info .field-name-field-ofed-photog-images,
 .view-mode-teaser .field-name-field-ofed-photog-images,
 .view-mode-block_column .field-name-field-ofed-photog-images {
@@ -170,7 +170,7 @@
   line-height:0;
   text-shadow:0;
 }
-.view-mode-full.node-ofed-photogallery .field-slideshow-controls a.play, 
+.view-mode-full.node-ofed-photogallery .field-slideshow-controls a.play,
 .view-mode-full.node-ofed-photogallery .field-slideshow-controls a.pause,
 .page-list.node-ofed-photogallery .field-slideshow-controls a.play,
 .page-list.node-ofed-photogallery .field-slideshow-controls a.pause {
@@ -181,11 +181,11 @@
   position: absolute;
 }
 
-.view-mode-full.node-ofed-photogallery .field-slideshow-controls a.prev, 
-.view-mode-full.node-ofed-photogallery .field-slideshow-controls a.next, 
-.view-mode-full.node-ofed-photogallery .field-slideshow-controls a.pause, 
-.page-list.node-ofed-photogallery .field-slideshow-controls a.prev, 
-.page-list.node-ofed-photogallery .field-slideshow-controls a.next, 
+.view-mode-full.node-ofed-photogallery .field-slideshow-controls a.prev,
+.view-mode-full.node-ofed-photogallery .field-slideshow-controls a.next,
+.view-mode-full.node-ofed-photogallery .field-slideshow-controls a.pause,
+.page-list.node-ofed-photogallery .field-slideshow-controls a.prev,
+.page-list.node-ofed-photogallery .field-slideshow-controls a.next,
 .page-list.node-ofed-photogallery .field-slideshow-controls a.pause {
   display: inline-block;
 }

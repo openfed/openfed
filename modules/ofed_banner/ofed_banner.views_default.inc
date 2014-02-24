@@ -60,7 +60,6 @@ function ofed_banner_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'ofed_banner' => 'ofed_banner',
   );
-
   $translatables['ofed_banner'] = array(
     t('Master'),
     t('Banners'),
@@ -71,23 +70,6 @@ function ofed_banner_views_default_views() {
     t('Asc'),
     t('Desc'),
     t('author'),
-    t('Items per page'),
-    t('- All -'),
-    t('Offset'),
-    t('« first'),
-    t('‹ previous'),
-    t('next ›'),
-    t('last »'),
-    t('Nid'),
-    t('Title'),
-    t('Type'),
-    t('Click(s)'),
-    t('Author'),
-    t('Language'),
-    t('Updated date'),
-    t('Edit'),
-    t('Delete'),
-    t('Published'),
   );
   $export['ofed_banner'] = $view;
 

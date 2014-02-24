@@ -58,9 +58,9 @@ function ofed_page_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'ofed_page' => 'ofed_page',
   );
-
   $translatables['ofed_page'] = array(
     t('Master'),
+    t('CMS'),
     t('more'),
     t('Apply'),
     t('Reset'),
@@ -75,16 +75,6 @@ function ofed_page_views_default_views() {
     t('next ›'),
     t('last »'),
     t('Title'),
-    t('Pages'),
-    t('author'),
-    t('Nid'),
-    t('Author'),
-    t('Language'),
-    t('Publication date'),
-    t('Updated date'),
-    t('Edit'),
-    t('Delete'),
-    t('Published'),
   );
   $export['ofed_page'] = $view;
 

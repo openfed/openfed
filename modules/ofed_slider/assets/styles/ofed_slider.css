@@ -5,6 +5,11 @@
 .node-ofed-slider																					{
 	padding: 15px 0;
 }
+/**
+ * Hide the previous and next controls. We are not interested in seeing these
+ * on the slideshow. We have to enable them in order to show the pause control
+ * because of field_slideshow.
+ */
 .view-mode-full.node-ofed-slider .field-slideshow-controls a.prev,
 .view-mode-full.node-ofed-slider .field-slideshow-controls a.next,
 .page-list.node-ofed-slider .field-slideshow-controls a.prev,

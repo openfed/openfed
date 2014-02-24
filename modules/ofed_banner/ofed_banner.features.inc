@@ -7,16 +7,13 @@
 /**
  * Implements hook_ctools_plugin_api().
  */
-function ofed_banner_ctools_plugin_api() {
-  list($module, $api) = func_get_args();
+function ofed_banner_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "ds" && $api == "ds") {
     return array("version" => "1");
   }
-  list($module, $api) = func_get_args();
   if ($module == "field_group" && $api == "field_group") {
     return array("version" => "1");
   }
-  list($module, $api) = func_get_args();
   if ($module == "strongarm" && $api == "strongarm") {
     return array("version" => "1");
   }
@@ -25,10 +22,9 @@ function ofed_banner_ctools_plugin_api() {
 /**
  * Implements hook_views_api().
  */
-function ofed_banner_views_api() {
+function ofed_banner_views_api($module = NULL, $api = NULL) {
   return array("api" => "3.0");
 }
-
 
 /**
  * Implements hook_image_default_styles().
@@ -36,10 +32,10 @@ function ofed_banner_views_api() {
 function ofed_banner_image_default_styles() {
   $styles = array();
 
-  // Exported image style: ofed_banner_leaderboard.
-  $styles['ofed_banner_leaderboard'] = array(
-    'name' => 'ofed_banner_leaderboard',
-    'label' => 'ofed_banner_leaderboard',
+  // Exported image style: ofed_banner_button.
+  $styles['ofed_banner_button'] = array(
+    'name' => 'ofed_banner_button',
+    'label' => 'ofed_banner_button',
     'effects' => array(
       7 => array(
         'label' => 'Scale',
@@ -51,8 +47,8 @@ function ofed_banner_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
-          'width' => 728,
-          'height' => 90,
+          'width' => 180,
+          'height' => 150,
           'upscale' => 0,
         ),
         'weight' => -8,
@@ -84,10 +80,10 @@ function ofed_banner_image_default_styles() {
     ),
   );
 
-  // Exported image style: ofed_banner_wide_skyscraper.
-  $styles['ofed_banner_wide_skyscraper'] = array(
-    'name' => 'ofed_banner_wide_skyscraper',
-    'label' => 'ofed_banner_wide_skyscraper',
+  // Exported image style: ofed_banner_leaderboard.
+  $styles['ofed_banner_leaderboard'] = array(
+    'name' => 'ofed_banner_leaderboard',
+    'label' => 'ofed_banner_leaderboard',
     'effects' => array(
       7 => array(
         'label' => 'Scale',
@@ -99,8 +95,8 @@ function ofed_banner_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
-          'width' => 160,
-          'height' => 600,
+          'width' => 728,
+          'height' => 90,
           'upscale' => 0,
         ),
         'weight' => -8,
@@ -156,10 +152,10 @@ function ofed_banner_image_default_styles() {
     ),
   );
 
-  // Exported image style: ofed_banner_button.
-  $styles['ofed_banner_button'] = array(
-    'name' => 'ofed_banner_button',
-    'label' => 'ofed_banner_button',
+  // Exported image style: ofed_banner_wide_skyscraper.
+  $styles['ofed_banner_wide_skyscraper'] = array(
+    'name' => 'ofed_banner_wide_skyscraper',
+    'label' => 'ofed_banner_wide_skyscraper',
     'effects' => array(
       7 => array(
         'label' => 'Scale',
@@ -171,8 +167,8 @@ function ofed_banner_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
-          'width' => 180,
-          'height' => 150,
+          'width' => 160,
+          'height' => 600,
           'upscale' => 0,
         ),
         'weight' => -8,
@@ -191,6 +187,7 @@ function ofed_banner_node_info() {
     'ofed_banner' => array(
       'name' => t('Banner'),
       'base' => 'node_content',
+      'description' => '',
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',

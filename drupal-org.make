@@ -133,7 +133,7 @@ projects[content_access][subdir] = contrib
 projects[countries][version] = "2.1"
 projects[countries][subdir] = contrib
 
-projects[ctools][version] = "1.3"
+projects[ctools][version] = "1.4"
 projects[ctools][subdir] = contrib
 
 projects[date][version] = "2.7"
@@ -477,7 +477,7 @@ projects[views_bulk_operations][subdir] = contrib
 projects[views_slideshow][version] = "3.1"
 projects[views_slideshow][subdir] = contrib
 
-projects[webform][version] = "3.19"
+projects[webform][version] = "3.20"
 projects[webform][subdir] = contrib
 
 projects[webform_clear][version] = "1.1"

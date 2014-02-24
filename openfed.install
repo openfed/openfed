@@ -396,17 +396,27 @@ function openfed_update_7111() {
 }
  
 /**
- * Re-enable photogallery and slideshow content types so as to recover image
- * styles.
+ * Revert field instances for the following features for 1.6 so as to
+ * import new field instance definitions for issues:
+ *
+ *  #2184291: Configure sensible maximum image dimensions for image upload
+ *  #2188573: Pause functionality for photo gallery, slider and slideshow
  */
 function openfed_update_7112() {
-  if (module_exists('ofed_photogallery')) {
-    module_disable(array('ofed_photogallery'));
-    module_enable(array('ofed_photogallery'));
-  }
-  if (module_exists('ofed_slideshow')) {
-    module_disable(array('ofed_slideshow'));
-    module_enable(array('ofed_slideshow'));
+  $modules = array(
+    'ofed_download',
+    'ofed_event',
+    'ofed_job',
+    'ofed_news',
+    'ofed_photogallery',
+    'ofed_press',
+    'ofed_slider',
+    'ofed_slideshow',
+    'ofed_team',
+  );
+  foreach ($modules as $module) {
+    if (module_exists($module)) {
+      features_revert(array($module => array('field_instance')));
+    }
   }
 }
-

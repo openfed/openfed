@@ -990,6 +990,7 @@ function ofed_video_field_default_field_instances() {
   t('Check the box in order to use the system date as updated date for your content item.');
   t('Description');
   t('Enter the first letters of the document that needs to be available on this content item. Make sure that your document is created as a download content item first.');
+  t('Fill the URL of this video (support YouTube, Vimeo and Dailymotion).');
   t('Last updated date');
   t('Link');
   t('Publication date');

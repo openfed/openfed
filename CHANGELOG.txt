@@ -9,6 +9,7 @@ New version - Version 7.x-1.6-beta1
     #2184291: Configure sensible maximum image dimensions for image upload
     #2188689: Slideshow and Photo gallery content types not showing images
     #2188573: Pause functionality for photo gallery, slider and slideshow
+    #2196447: Recreate openfed features
 
   * New modules:
     #2139857: New module: Back To Top
@@ -25,6 +26,8 @@ New version - Version 7.x-1.6-beta1
     #2192567: Module upgrade: Libraries API
     #2195227: Module upgrade: Panels
     #2195345: Module upgrade: metatag
+    #2198291: Module upgrade: ctools
+    #2198293: Module upgrade: webform
     #2203751: Module upgrade: flag
 
   * Removed module:

@@ -142,7 +142,7 @@ function ofed_team_user_default_permissions() {
     'module' => 'override_node_options',
   );
 
-  // Exported permission: override ofed_team sticky option.
+  // Exported permission: 'override ofed_team sticky option'.
   $permissions['override ofed_team sticky option'] = array(
     'name' => 'override ofed_team sticky option',
     'roles' => array(
