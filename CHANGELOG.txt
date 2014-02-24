@@ -25,6 +25,7 @@ New version - Version 7.x-1.6-beta1
     #2192567: Module upgrade: Libraries API
     #2195227: Module upgrade: Panels
     #2195345: Module upgrade: metatag
+    #2203751: Module upgrade: flag
 
   * Removed module:
     #2190355: Remove module: ofed_admin_menu
