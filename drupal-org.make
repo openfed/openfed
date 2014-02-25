@@ -276,15 +276,8 @@ projects[l10n_update][patch][1671570] = "http://drupal.org/files/l10n_update-fet
 projects[language_cookie][version] = "1.8"
 projects[language_cookie][subdir] = contrib
 
-projects[language_selection_page][download]type] = git
-projects[language_selection_page][download][branch] = "7.x-1.x"
-projects[language_selection_page][download][revision] = 1990c41
+projects[language_selection_page][version] = "1.6"
 projects[language_selection_page][subdir] = contrib
-projects[language_selection_page][patch][2118689] = "http://drupal.org/files/expose_urls.patch"
-projects[language_selection_page][patch][2119463] = "http://drupal.org/files/language_selection_page.globalredirect.patch"
-projects[language_selection_page][patch][2119439] = "http://drupal.org/files/language_selection_page.emptypath.2119439.patch"
-projects[language_selection_page][patch][2148107] = "http://drupal.org/files/issues/language_selection_page-2148107-indexphp-1.patch"
-projects[language_selection_page][patch][2152877] = "http://drupal.org/files/issues/language_selection_page-2148107-skip_images.patch"
 
 projects[lexicon][version] = "1.10"
 projects[lexicon][subdir] = contrib
