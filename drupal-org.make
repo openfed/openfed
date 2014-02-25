@@ -194,6 +194,7 @@ projects[features_override][subdir] = contrib
 
 projects[feeds][version] = "2.0-alpha8"
 projects[feeds][subdir] = contrib
+projects[feeds][patch][2168029] = "http://drupal.org/files/issues/unpublish-delete-entities-not-in-feed-2168029-5.patch"
 
 projects[feeds_xpathparser][version] = "1.0-beta4"
 projects[feeds_xpathparser][subdir] = contrib
@@ -359,7 +360,7 @@ projects[panels_extra_layouts][subdir] = contrib
 projects[partial_date][version] = "1.0-beta1"
 projects[partial_date][subdir] = contrib
 
-projects[path_breadcrumbs][version] = "2.0-beta17"
+projects[path_breadcrumbs][version] = "3.0-rc2"
 projects[path_breadcrumbs][subdir] = contrib
 
 projects[pathauto][version] = "1.2"

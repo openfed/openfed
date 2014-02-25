@@ -10,6 +10,7 @@ New version - Version 7.x-1.6-beta1
     #2188689: Slideshow and Photo gallery content types not showing images
     #2188573: Pause functionality for photo gallery, slider and slideshow
     #2196447: Recreate openfed features
+    #2168029: Feeds: delete "removed" feed items
 
   * New modules:
     #2139857: New module: Back To Top
@@ -29,6 +30,7 @@ New version - Version 7.x-1.6-beta1
     #2198291: Module upgrade: ctools
     #2198293: Module upgrade: webform
     #2203751: Module upgrade: flag
+    #2198309: Module upgrade: path_breadcrumbs
 
   * Removed module:
     #2190355: Remove module: ofed_admin_menu
