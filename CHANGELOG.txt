@@ -30,6 +30,7 @@ New version - Version 7.x-1.6-beta1
     #2198293: Module upgrade: webform
     #2203751: Module upgrade: flag
     #2204585: Module upgrade: language_selection_page
+    #2198309: Module upgrade: path_breadcrumbs
 
   * Removed module:
     #2190355: Remove module: ofed_admin_menu
