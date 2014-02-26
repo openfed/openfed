@@ -276,7 +276,7 @@ projects[l10n_update][patch][1671570] = "http://drupal.org/files/l10n_update-fet
 projects[language_cookie][version] = "1.8"
 projects[language_cookie][subdir] = contrib
 
-projects[language_selection_page][version] = "1.6"
+projects[language_selection_page][version] = "1.8"
 projects[language_selection_page][subdir] = contrib
 
 projects[lexicon][version] = "1.10"
