@@ -320,7 +320,7 @@ projects[menu_position][subdir] = contrib
 projects[metatag][version] = "1.0-beta9"
 projects[metatag][subdir] = contrib
 
-projects[mollom][version] = "2.8"
+projects[mollom][version] = "2.9"
 projects[mollom][subdir] = contrib
 
 projects[multiple_node_menu][version] = "1.0-beta1"
