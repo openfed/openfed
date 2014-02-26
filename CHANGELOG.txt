@@ -32,6 +32,7 @@ New version - Version 7.x-1.6-beta1
     #2203751: Module upgrade: flag
     #2204585: Module upgrade: language_selection_page
     #2198309: Module upgrade: path_breadcrumbs
+    #2205447: Module upgrade: l10n_update
 
   * Removed module:
     #2190355: Remove module: ofed_admin_menu
