@@ -11,6 +11,7 @@ New version - Version 7.x-1.6-beta1
     #2188573: Pause functionality for photo gallery, slider and slideshow
     #2196447: Recreate openfed features
     #2168029: Feeds: delete "removed" feed items
+    #2195283: Cover language-specific search URLs in robots.txt
 
   * New modules:
     #2139857: New module: Back To Top
