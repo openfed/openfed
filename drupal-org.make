@@ -404,7 +404,7 @@ projects[sharethis][patch][2044081] = "http://drupal.org/files/sharethis-2.5-204
 projects[simple_gmap][version] = "1.2"
 projects[simple_gmap][subdir] = contrib
 
-projects[site_map][version] = "1.0"
+projects[site_map][version] = "1.2"
 projects[site_map][subdir] = contrib
 
 projects[site_verify][version] = "1.0"

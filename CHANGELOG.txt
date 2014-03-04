@@ -35,6 +35,7 @@ New version - Version 7.x-1.6-beta1
     #2198309: Module upgrade: path_breadcrumbs
     #2205447: Module upgrade: l10n_update
     #2205445: Module upgrade: mollom
+    #2210165: Module upgrade: site_map
 
   * Removed module:
     #2190355: Remove module: ofed_admin_menu
