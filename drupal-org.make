@@ -192,9 +192,12 @@ projects[features_override][subdir] = contrib
 projects[features_override][version] = "2.0-rc1"
 projects[features_override][subdir] = contrib
 
-projects[feeds][version] = "2.0-alpha8"
+projects[feeds][download][type] = git
+projects[feeds][download][branch] = "7.x-2.x"
+projects[feeds][download][revision] = a8468ac
 projects[feeds][subdir] = contrib
-projects[feeds][patch][2168029] = "http://drupal.org/files/issues/unpublish-delete-entities-not-in-feed-2168029-5.patch"
+projects[feeds][patch][1470530] = "https://drupal.org/files/issues/unpublish-delete-entities-not-in-feed-1470530-145.patch"
+projects[feeds][patch][1183440] = "https://drupal.org/files/issues/feeds-field_translations-1183440-114.patch"
 
 projects[feeds_xpathparser][version] = "1.0-beta4"
 projects[feeds_xpathparser][subdir] = contrib
