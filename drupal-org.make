@@ -476,6 +476,7 @@ projects[webform][subdir] = contrib
 
 projects[webform_clear][version] = "1.1"
 projects[webform_clear][subdir] = contrib
+projects[webform_clear][patch][2057119] = "http://drupal.org/files/issues/webform_clear-selective-2057119-5.patch"
 
 projects[webform_rules][version] = "1.6"
 projects[webform_rules][subdir] = contrib
