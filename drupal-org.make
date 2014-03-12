@@ -62,7 +62,7 @@ projects[ofed_theme_nerra][subdir] = contrib
 
 projects[ofed_theme_cms][download][type] = git
 projects[ofed_theme_cms][download][branch] = "7.x-1.x"
-projects[ofed_theme_cms][download][revision] = fb53c1e
+projects[ofed_theme_cms][download][revision] = 3bf7626
 projects[ofed_theme_cms][subdir] = contrib
 
 projects[ofed_theme_maintenance][version] = "1.0"
@@ -223,7 +223,7 @@ projects[flag][subdir] = contrib
 projects[globalredirect][version] = "1.5"
 projects[globalredirect][subdir] = contrib
 
-projects[gmap][version] = "2.8"
+projects[gmap][version] = "2.9"
 projects[gmap][subdir] = contrib
 
 projects[google_analytics][version] = "1.4"

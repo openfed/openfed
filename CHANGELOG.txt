@@ -27,6 +27,7 @@ New version - Version 7.x-1.6-beta1
     #2190937: Module upgrade: reCAPTCHA
     #2190931: Module upgrade: Entity Registration
     #2180789: Theme upgrade: ofed_nerra
+    #2214857: Theme upgrade: ofed_cms
     #2192567: Module upgrade: Libraries API
     #2195227: Module upgrade: Panels
     #2195345: Module upgrade: metatag
@@ -39,6 +40,7 @@ New version - Version 7.x-1.6-beta1
     #2205445: Module upgrade: mollom
     #2210165: Module upgrade: site_map
     #2214709: Module upgrade: apachesolr_multilingual
+    #2216063: Module upgrade: gmap
 
   * Removed module:
     #2190355: Remove module: ofed_admin_menu
