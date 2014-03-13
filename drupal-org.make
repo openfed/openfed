@@ -308,6 +308,7 @@ projects[media_vimeo][subdir] = contrib
 
 projects[media_youtube][version] = "2.0-rc4"
 projects[media_youtube][subdir] = contrib
+projects[media_youtube][patch][1863788] = "http://drupal.org/files/issues/media_youtube_install_file_displays-1863788-9.patch"
 
 projects[menu_attributes][version] = "1.0-rc2"
 projects[menu_attributes][subdir] = contrib

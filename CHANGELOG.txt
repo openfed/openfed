@@ -15,6 +15,7 @@ New version - Version 7.x-1.6-beta1
     #2168029: Allow for multilingual feeds
     #2182643: Deleting old webform submissions
     #2171115: Receive error message when editing file entity display options
+    #1863788: File display settings not exported
 
   * New modules:
     #2139857: New module: Back To Top
