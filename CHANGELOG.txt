@@ -21,6 +21,7 @@ New version - Version 7.x-1.6-beta1
     #2139857: New module: Back To Top
     #2168551: New module: Panels Extra Layouts
     #2182643: New module: Webform Clear
+    #2199279: New module: Workbench Moderation
 
   * Module upgrades:
     #2178903: Module upgrade: variable
