@@ -301,6 +301,7 @@ projects[logintoboggan][patch][1257572] = "http://drupal.org/files/account-page-
 
 projects[media][version] = "1.4"
 projects[media][subdir] = contrib
+projects[media][patch][2171115] = "http://drupal.org/files/issues/media-error-message-when-editing-file-entity-display-options-2171115-1.patch"
 
 projects[media_vimeo][version] = "1.0-beta5"
 projects[media_vimeo][subdir] = contrib

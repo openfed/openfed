@@ -14,6 +14,7 @@ New version - Version 7.x-1.6-beta1
     #2195283: Cover language-specific search URLs in robots.txt
     #2168029: Allow for multilingual feeds
     #2182643: Deleting old webform submissions
+    #2171115: Receive error message when editing file entity display options
 
   * New modules:
     #2139857: New module: Back To Top
