@@ -45,6 +45,7 @@ New version - Version 7.x-1.6-beta1
     #2214709: Module upgrade: apachesolr_multilingual
     #2216063: Module upgrade: gmap
     #2216077: Module upgrade: location
+    #2217737: Module upgrade: field_collection
 
   * Removed module:
     #2190355: Remove module: ofed_admin_menu
