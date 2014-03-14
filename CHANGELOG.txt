@@ -24,31 +24,31 @@ New version - Version 7.x-1.6-beta1
     #2199279: New module: Workbench Moderation
 
   * Module upgrades:
-    #2178903: Module upgrade: variable
-    #2186095: Module upgrade: scheduler
-    #2190047: Module upgrade: devel
+    #2178903: Module upgrade: Variable
+    #2186095: Module upgrade: Scheduler
+    #2190047: Module upgrade: Devel
     #2190937: Module upgrade: reCAPTCHA
     #2190931: Module upgrade: Entity Registration
-    #2180789: Theme upgrade: ofed_nerra
-    #2214857: Theme upgrade: ofed_cms
+    #2180789: Theme upgrade: Openfed Nerra
+    #2214857: Theme upgrade: Openfed CMS Theme
     #2192567: Module upgrade: Libraries API
     #2195227: Module upgrade: Panels
-    #2195345: Module upgrade: metatag
-    #2198291: Module upgrade: ctools
-    #2198293: Module upgrade: webform
-    #2203751: Module upgrade: flag
-    #2204585: Module upgrade: language_selection_page
-    #2198309: Module upgrade: path_breadcrumbs
-    #2205447: Module upgrade: l10n_update
-    #2205445: Module upgrade: mollom
-    #2210165: Module upgrade: site_map
-    #2214709: Module upgrade: apachesolr_multilingual
-    #2216063: Module upgrade: gmap
-    #2216077: Module upgrade: location
-    #2217737: Module upgrade: field_collection
+    #2195345: Module upgrade: Metatag
+    #2198291: Module upgrade: Chaos tool suite (ctools)
+    #2198293: Module upgrade: Webform
+    #2203751: Module upgrade: Flag
+    #2204585: Module upgrade: Language Selection Page
+    #2198309: Module upgrade: Path Breadcrumbs
+    #2205447: Module upgrade: Localization update
+    #2205445: Module upgrade: Mollom
+    #2210165: Module upgrade: Site map
+    #2214709: Module upgrade: Apache Solr Multilingual
+    #2216063: Module upgrade: GMap Module
+    #2216077: Module upgrade: Location
+    #2217737: Module upgrade: Field Collection
 
   * Removed module:
-    #2190355: Remove module: ofed_admin_menu
+    #2190355: Remove module: OpenFed Administration Menu Translator
 
 7 February 2014 - Version 7.x-1.5
 ---------------------------------
@@ -74,12 +74,12 @@ No changes
     #2083437: Code quality: warnings in PAreview report
 
   * Module upgrades:
-    #2167943: Module upgrade: location
+    #2167943: Module upgrade: Location
     #2174819: Upgrade drupal to 7.26
-    #2175049: Module upgrade: metatag
+    #2175049: Module upgrade: Metatag
 
   * Upgraded theme:
-    #2173355: Theme upgrade: ofed_nerra
+    #2173355: Theme upgrade: Openfed Nerra
 
 14 January 2014 - Version 7.x-1.4-beta1
 ---------------------------------------
@@ -97,24 +97,24 @@ No changes
 
   * Module upgrades:
     #2152945: Module upgrade: Apache Solr Multilingual
-    #2148055: Module upgrade: colorbox
-    #2145847: Module upgrade: views_slideshow
-    #2155241: Library upgrade: jquery.cycle
-    #2157375: Module upgrade: honeypot
-    #2157373: Module upgrade: views_data_export
-    #2157383: Library upgrade: ckeditor
-    #2157401: Library upgrade: jcarousel
-    #2167821: Module upgrade: views_bulk_operations
-    #2167823: Module upgrade: simple_gmap
-    #2167825: Module upgrade: date
-    #2159933: Module upgrade: addemar_subscription
+    #2148055: Module upgrade: Colorbox
+    #2145847: Module upgrade: Views slideshow
+    #2155241: Library upgrade: jQuery Cycle
+    #2157375: Module upgrade: Honeypot
+    #2157373: Module upgrade: Views data export
+    #2157383: Library upgrade: CKEditor
+    #2157401: Library upgrade: jCarousel
+    #2167821: Module upgrade: Views Bulk Operations
+    #2167823: Module upgrade: Simple Gmap
+    #2167825: Module upgrade: Date
+    #2159933: Module upgrade: Addemar Subscription
     #2167877: Upgrade drupal to 7.25
-    #2167943: Module upgrade: location
-    #2170045: Module upgrade: entity
-    #2170049: Module upgrade: media
+    #2167943: Module upgrade: Location
+    #2170045: Module upgrade: Entity
+    #2170049: Module upgrade: Media
 
   * Removed module:
-    #2153519: Remove module: beididp 
+    #2153519: Remove module: Belgian eID IDP integration
 
 12 December 2013 - Version 7.x-1.3
 ----------------------------------
@@ -127,7 +127,7 @@ No changes
     #2152877: Language selection page also running on uncached images
 
   * Module upgrades:
-    #2150369: Module upgrade: language_cookie
+    #2150369: Module upgrade: Language Cookie
  
 04 December 2013 - Version 7.x-1.3-rc6
 --------------------------------------
@@ -162,10 +162,10 @@ No changes
 --------------------------------------
   * Module upgrades:
     #2141427: Upgrade to Drupal Core 7.24
-    #2119423: Module upgrade: apachesolr
-    #2145281: Module upgrade: link
-    #2145287: Module upgrade: apachesolr_multilingual
-    #2145289: Module upgrade: entityreference
+    #2119423: Module upgrade: Apache Solr
+    #2145281: Module upgrade: Link
+    #2145287: Module upgrade: Apache Solr Multilingual
+    #2145289: Module upgrade: Entity reference
 
   * Issues:
     #2135783: Page disappearing from menu if node is edited
@@ -175,8 +175,8 @@ No changes
 19 November 2013 - Version 7.x-1.3-beta1
 ----------------------------------------
   * Removed modules:
-    #2123763: Remove module: robotstxt
-    #2123811: Remove module: media_dailymotion
+    #2123763: Remove module: RobotsTxt
+    #2123811: Remove module: Media: Dailymotion
 
   * New modules:
     #2120401: New module: Smart Trim
@@ -185,17 +185,17 @@ No changes
     #2134093: New module: Administration Views
 
   * Upgraded modules:
-    #2123477: Module upgrade: rules
-    #2123479: Module upgrade: media_youtube
-    #2119423: Module upgrade: apachesolr
-    #2130763: Module upgrade: quiz
-    #2130765: Module upgrade: backup_migrate
-    #2130767: Module upgrade: easy_breadcrumb
-    #2133975: Module upgrade: hierarchical_select
-    #2122259: Module upgrade: mollom
-    #2138889: Module upgrade: seckit
-    #2138891: Module upgrade: beididp
-    #2138893: Library upgrade: ckeditor
+    #2123477: Module upgrade: Rules
+    #2123479: Module upgrade: Media: Youtube
+    #2119423: Module upgrade: Apache Solr
+    #2130763: Module upgrade: Quiz
+    #2130765: Module upgrade: Backup and Migrate
+    #2130767: Module upgrade: Easy Breadcrumb
+    #2133975: Module upgrade: Hierarchical Select
+    #2122259: Module upgrade: Mollom
+    #2138889: Module upgrade: Security Kit
+    #2138891: Module upgrade: Belgian eID IDP integration
+    #2138893: Library upgrade: CKEditor
 
   * Upgraded theme:
     Nerra: fix with contextual links
@@ -240,13 +240,13 @@ No changes
 
   * Upgraded modules:
     #2117741: simple google maps & SSL
-    #2090401: Module upgrade: rules
-    #2021377, #2088715: Module upgrade: openfed_switcher
-    #2114289: Module upgrade: google_analytics
-    #2111329: Module upgrade: media_dailymotion
-    #2114287: Module upgrade: features_override
-    #2104183: Module upgrade: features
-    #2115379: Module upgrade: beididp
+    #2090401: Module upgrade: Rules
+    #2021377, #2088715: Module upgrade: Openfed Switcher
+    #2114289: Module upgrade: Google Analytics
+    #2111329: Module upgrade: Media: Dailymotion
+    #2114287: Module upgrade: Features Override
+    #2104183: Module upgrade: Features
+    #2115379: Module upgrade: Belgian eID IDP integration
 
   * Upgraded theme:
     #2109685: Theme upgrade: change CSS import URL to HTTPS (ofed_theme_cms)
@@ -291,9 +291,9 @@ No changes
     #2089775: Why both admin_theme and admin_path (removed admin_path) ?
 
   * Upgraded modules and theme:
-    #2095803: Theme upgrade: ofed_theme_cms
-    #2107481: Module upgrade: field-conditional-state
-    #2107481: Module upgrade: field_group
+    #2095803: Theme upgrade: Openfed CMS Theme
+    #2107481: Module upgrade: Field Conditional State
+    #2107481: Module upgrade: Field Group
 
   * Issues:
     #2087831: Installer: use tmp by default
@@ -311,9 +311,9 @@ No changes
     #2091003: Re-added devel module
 
   * Upgraded modules:
-    #2099183: Module upgrade: security_review
-    #2095803, #2087513: Theme upgrade: ofed_theme_cms
-    #2088221: Theme upgrade: ofed_theme_nerra
+    #2099183: Module upgrade: Security Review
+    #2095803, #2087513: Theme upgrade: Openfed CMS Theme
+    #2088221: Theme upgrade: Openfed Nerra
     #2102011: Added exact (git) versions for modules in dev
 
   * Issues:
@@ -330,7 +330,7 @@ No changes
     #2095743: Replace module twitter with twitter_block
 
   * Upgraded theme:
-    #2095803: Theme upgrade: ofed_theme_cms
+    #2095803: Theme upgrade: Openfed CMS Theme
 
   * Issues:
     #2095699: Cleanup features so they are note overriden once installed
@@ -344,7 +344,7 @@ No changes
 23 September 2013 - Version 7.x-1.0-rc5
 ---------------------------------------
   * New module:
-    #2094967: New module: comment_goodness
+    #2094967: New module: Comment Goodness
 
   * Issues:
     #2037961: read locale_cookie to make file
@@ -353,8 +353,8 @@ No changes
 22 September 2013 - Version 7.x-1.0-rc4
 ---------------------------------------
   * Upgraded modules:
-    #2075093: Theme upgrade: ofed_theme_cms
-    #2092673: Module upgrade: seckit
+    #2075093: Theme upgrade: Openfed CMS Theme
+    #2092673: Module upgrade: Security Kit
 
   * Issues:
     #2095009: Added drupal-org-core.make file
@@ -401,16 +401,16 @@ No changes
 15 September 2013 - Version 7.x-1.0-rc3
 ---------------------------------------
  * New modules:
-    #2047599: New module: i18nviews
-    #2088527: New module: l10n_update
+    #2047599: New module: Internationalization Views
+    #2088527: New module: Localization update
 
  * Removed module:
-    #2089225: Remove module: ofed_maintenance_theme_selector
-    #2083133: Module removal: module_filter
+    #2089225: Remove module: Maintenance Theme Selector
+    #2083133: Module removal: Module Filter
 
  * Upgraded modules:
-    #2082233: Module upgrade: ofed_switcher (FAQ link)
-    #2087829: Theme upgrade: nerra
+    #2082233: Module upgrade: Openfed Switcher (FAQ link)
+    #2087829: Theme upgrade: Openfed Nerra
 
  * Issues:
     #2089211: Don't enable color by default
@@ -444,28 +444,28 @@ No changes
 05 September 2013 - Version 7.x-1.0-rc2
 ---------------------------------------
  * Issues:
-    #2082201: Module upgrade: entity_translation
-    #2082197: Module upgrade: registration
-    #2079357: Module upgrade: i18n
-    #2081929: Module upgrade: hierarchical_select
-    #2081935: Module upgrade: imagecache_actions
-    #2081955: Module upgrade: l10n_client
-    #2081941: Module upgrade: seckit
-    #2081947: Module upgrade: module_filter
+    #2082201: Module upgrade: Entity Translation
+    #2082197: Module upgrade: Entity Registration
+    #2079357: Module upgrade: Internationalization
+    #2081929: Module upgrade: Hierarchical Select
+    #2081935: Module upgrade: Imagecache Actions
+    #2081955: Module upgrade: Localization client
+    #2081941: Module upgrade: Security Kit
+    #2081947: Module upgrade: Module Filter
     #2080029: Included jquery.imagesloaded files (for now)
     #2042961: Promoted to full project
     #2079669: Changed jquery.cycle url in make file
     #2045841: All content types: read more
     #2045683: Jobs: review display
-    #2060535: Module upgrade: features
-    #2067785: Module upgrade: entity_api
-    #2064879: Module upgrade: weight
-    #2079359: Module upgrade: features
-    #2064877: Module upgrade: features_override
-    #2064873: Module upgrade: variable
-    #2079355: Module upgrade: field_group
+    #2060535: Module upgrade: Features
+    #2067785: Module upgrade: Entity API
+    #2064879: Module upgrade: Weight
+    #2079359: Module upgrade: Features
+    #2064877: Module upgrade: Features Override
+    #2064873: Module upgrade: Variable
+    #2079355: Module upgrade: Field Group
     #2036959: New module: username enumeration prevention
-    #2043079: Module upgrade: ds
+    #2043079: Module upgrade: Display Suite
     #2037961: Store language preference in cookie
     #2037919: add node id to CMS view content filter
     #2028401: Event is not always sticky on top of lists
@@ -502,10 +502,10 @@ No changes
     #2038017: Address: display of phone numbers
     #2045683: Jobs: review display
     #2044973: Photo gallery: review display
-    #2060531: Module upgrade: apachesolr_attachments
+    #2060531: Module upgrade: Apache Solr Attachments
     #2060535: Module upgrade: features
     #2056233: Module upgrade: extlink
-    #2056229: Module upgrade: apachesolr
+    #2056229: Module upgrade: Apache Solr Search
     #2044957: Photo gallery: column block
     #2060283: Photo Gallery : Overlay not themed
     #2060291: Photo Gallery: Portrait images are not centered
@@ -541,7 +541,7 @@ No changes
     #2048235: Library update: ckeditor
     #2025003: Enable user mail translation by default
     #2049959: Remove module: performance
-    #2050013: Remove module: devel
+    #2050013: Remove module: Devel
     #2045841: All content types: read more
     #2051121: Remove module: waia_integration
     #2045627: Download: review display
@@ -572,15 +572,15 @@ No changes
     #2039605: Role permissions are not applied when activating a content type/feature after initial setup
     #2036965: Enable secure login by default
     #2028655: Remove Sweaver module
-    #2048439: Module upgrade: easy_breadcrumb
-    #2048441: Module upgrade: libraries
-    #2048447: Module upgrade: mollom
-    #2044787: Module upgrade: apachesolr_multilingual
-    #2022211: Module upgrade: elements
-    #2022225: Module upgrade: entity
-    #2044793: Module upgrade: i18n
-    #2022221: Module upgrade: imagecache_actions
-    #2022209: Module upgrade: webform
+    #2048439: Module upgrade: Easy Breadcrumb
+    #2048441: Module upgrade: Libraries
+    #2048447: Module upgrade: Mollom
+    #2044787: Module upgrade: Apache Solr Multilingual
+    #2022211: Module upgrade: Elements
+    #2022225: Module upgrade: Entity
+    #2044793: Module upgrade: Internationalization
+    #2022221: Module upgrade: Imagecache Actions
+    #2022209: Module upgrade: Webform
     #Others :
       - Add the module and the feature who setup the Apache Solr for OpenFed (experimental).
       - Disable unused display suite view modes for news, download, page, photogallery, press, slideshow.
@@ -669,26 +669,26 @@ No changes
 07 June 2013
 ------------
   * Issues:
-    #2002578: New modules: facetapi etc
-    #2000554: New module: views_data_export
-    #2000544: New module: webform_rules
-    #1999268: New module: calendar
-    #1996582: New module: registration
-    #2005132: New module: entity_translation
-    #1968974: Module upgrade: views
-    #1968966: Module upgrade: features
-    #2006716: Module upgrade: securelogin
-    #2002588: Module upgrade: backup_migrate
-    #1999278: Module upgrade: performance
-    #1999276: Module upgrade: ds
-    #1968972: Module upgrade: jquery_update
-    #1968978: Module upgrade: text_resize
-    #1994938: Module upgrade: metatag
-    #1994940: Module upgrade: scheduler
-    #1994926: Module upgrade: flag
-    #1999272: Module upgrade: colorbox
-    #1994936: Module upgrade: ckeditor
-    #1994918: Library upgrade: ckeditor
+    #2002578: New modules: Facet API etc
+    #2000554: New module: Views Data Export
+    #2000544: New module: Webform Rules
+    #1999268: New module: Calendar
+    #1996582: New module: Entity Registration
+    #2005132: New module: Entity Translation
+    #1968974: Module upgrade: Views
+    #1968966: Module upgrade: Features
+    #2006716: Module upgrade: Secure Login
+    #2002588: Module upgrade: Backup and Migrate
+    #1999278: Module upgrade: Performance Logging and Monitoring
+    #1999276: Module upgrade: Display Suite
+    #1968972: Module upgrade: jQuery Update
+    #1968978: Module upgrade: Text Resize
+    #1994938: Module upgrade: Metatag
+    #1994940: Module upgrade: Scheduler
+    #1994926: Module upgrade: Flag
+    #1999272: Module upgrade: Colorbox
+    #1994936: Module upgrade: CKEditor
+    #1994918: Library upgrade: CKEditor
     #1968954: Colorbox plugin missing
     Fixing issues relative to an internal document and bug tracking
 
@@ -754,9 +754,9 @@ No changes
 -------------
 
   * Issues:
-    #1958960: Module upgrade: rules
-    #1958962: Module upgrade: views
-    #1960586: Module upgrade: ctools
+    #1958960: Module upgrade: Rules
+    #1958962: Module upgrade: Views
+    #1960586: Module upgrade: Chaos tool suite (ctools)
 
   * Features:
     - ofed_slider added
@@ -784,9 +784,9 @@ No changes
 -------------
 
   * Issues:
-    #1977862: Module upgrade: content_access
-    #1977858: Module upgrade: mollom
-    #1960628: Librabry upgrade: ckeditor
+    #1977862: Module upgrade: Content Access
+    #1977858: Module upgrade: Mollom
+    #1960628: Librabry upgrade: CKEditor
     #1965920: Patch: logintoboggan
     #1970480: Remove content type bar
     #1943270: Installation warning: file_put_contents permission denied
@@ -807,14 +807,14 @@ No changes
 
   * Issues:
     #1930914: Drupal core update
-    #1930916: Module upgrade: ds
-    #1930920: Module upgrade: token
-    #1930924: Module upgrade: linkchecker
-    #1930926: Module upgrade: link
-    #1933894: Module upgrade: media
-    #1934354: Module upgrade: features
-    #1935968: Module upgrade: weight
-    #1935972: Module upgrade: robotstxt
+    #1930916: Module upgrade: Display Suite
+    #1930920: Module upgrade: Token
+    #1930924: Module upgrade: Link checker
+    #1930926: Module upgrade: Link
+    #1933894: Module upgrade: Media
+    #1934354: Module upgrade: Features
+    #1935968: Module upgrade: Weight
+    #1935972: Module upgrade: RobotsTxt
     #1934062: JCarousel plugin not found
     #1887540: Theme key "metatag_twitter_cards" not found
     #1935966: Multilingual: make 404 variable translatable
@@ -906,15 +906,15 @@ No changes
 
   * Issues:
     #1852826: Library ckeditor not found by module
-    #1885022: Library update: ckeditor
+    #1885022: Library update: CKEditor
     #1886324: Document php memory_limit
-    #1886396: Module upgrade: entity
-    #1886400: Module upgrade: imagecache_actions
-    #1886406: Module upgrade: views_bulk_operations
-    #1886410: Module upgrade: xmlsitemap
+    #1886396: Module upgrade: Entity
+    #1886400: Module upgrade: Imagecache Actions
+    #1886406: Module upgrade: Views Bulk Operations
+    #1886410: Module upgrade: XML sitemap
     #1887552: Timeout when enabling all openfed modules
-    #1890012: Module upgrade: i18n
-    #1890016: Module upgrade: variable
+    #1890012: Module upgrade: Internationalization
+    #1890016: Module upgrade: Variable
     #1890524: Image slideshow error
     #1901896: Enable cron by default
 
@@ -966,7 +966,7 @@ No changes
 
   * Issues:
     #1885012: Core update: Drupal 7.18
-    #1885022: Library update: ckeditor
+    #1885022: Library update: CKEditor
     #1885124: Error: Column 'module' cannot be null
 
 09 January 2013
@@ -1008,11 +1008,11 @@ No changes
  * Issues:
     #1852770: Installation screen: translation of languages
     #1852774: Installation screen: setup roles
-    #1852804: Missing module: references
-    #1852820: Module upgrade: entityreference
-    #1852910: Module upgrade: countries
-    #1852918: Module upgrade: diff (2.0 is unsupported)
-    #1852920: Module upgrade: metatag
+    #1852804: Missing module: References
+    #1852820: Module upgrade: Entity Reference
+    #1852910: Module upgrade: Countries
+    #1852918: Module upgrade: Diff (2.0 is unsupported)
+    #1852920: Module upgrade: Metatag
 
  * Modules added:
     - sweaver (1.3)
