@@ -51,6 +51,9 @@ New version - Version 7.x-1.6-beta1
   * Removed module:
     #2190355: Remove module: OpenFed Administration Menu Translator
 
+  * Library upgrades:
+    #2219487: Library upgrade: CKEditor
+
 7 February 2014 - Version 7.x-1.5
 ---------------------------------
 No changes
