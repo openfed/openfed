@@ -29,8 +29,6 @@ CHANGELOG
     #2190047: Module upgrade: Devel
     #2190937: Module upgrade: reCAPTCHA
     #2190931: Module upgrade: Entity Registration
-    #2180789: Theme upgrade: Openfed Nerra
-    #2214857: Theme upgrade: Openfed CMS Theme
     #2192567: Module upgrade: Libraries API
     #2195227: Module upgrade: Panels
     #2195345: Module upgrade: Metatag
@@ -46,10 +44,14 @@ CHANGELOG
     #2216063: Module upgrade: GMap Module
     #2216077: Module upgrade: Location
     #2217737: Module upgrade: Field Collection
-    #2217737: Module upgrade: XML Sitemap
+    #2219283: Module upgrade: XML Sitemap
 
   * Removed module:
     #2190355: Remove module: OpenFed Administration Menu Translator
+
+  * Theme upgrades:
+    #2180789: Theme upgrade: Openfed Nerra
+    #2214857: Theme upgrade: Openfed CMS Theme
 
   * Library upgrades:
     #2219487: Library upgrade: CKEditor
