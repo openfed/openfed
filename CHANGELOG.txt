@@ -46,6 +46,7 @@ New version - Version 7.x-1.6-beta1
     #2216063: Module upgrade: GMap Module
     #2216077: Module upgrade: Location
     #2217737: Module upgrade: Field Collection
+    #2217737: Module upgrade: XML Sitemap
 
   * Removed module:
     #2190355: Remove module: OpenFed Administration Menu Translator

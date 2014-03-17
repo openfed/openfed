@@ -489,5 +489,5 @@ projects[weight][subdir] = contrib
 projects[workbench_moderation][version] = "1.3"
 projects[workbench_moderation][subdir] = contrib
 
-projects[xmlsitemap][version] = "2.0-rc2"
+projects[xmlsitemap][version] = "2.0"
 projects[xmlsitemap][subdir] = contrib
