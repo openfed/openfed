@@ -1,8 +1,8 @@
 CHANGELOG
 =========
 
-New version - Version 7.x-1.6-beta1
------------------------------------
+17 February 2014 - Version 7.x-1.6-beta1
+----------------------------------------
   * Issues:
     #2180135: Notice: array to string conversion (postgresql)
     #2158145: Missing language exposed filter in content admin
@@ -53,6 +53,7 @@ New version - Version 7.x-1.6-beta1
 
   * Library upgrades:
     #2219487: Library upgrade: CKEditor
+    #2219495: Library upgrade: Colorbox
 
 7 February 2014 - Version 7.x-1.5
 ---------------------------------
