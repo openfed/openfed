@@ -45,6 +45,7 @@ CHANGELOG
     #2216077: Module upgrade: Location
     #2217737: Module upgrade: Field Collection
     #2219283: Module upgrade: XML Sitemap
+    #2220095: Module upgrade: Transliteration
 
   * Removed module:
     #2190355: Remove module: OpenFed Administration Menu Translator

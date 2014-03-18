@@ -445,7 +445,7 @@ projects[translation_overview][subdir] = contrib
 projects[translation_table][version] = "1.0-beta1"
 projects[translation_table][subdir] = contrib
 
-projects[transliteration][version] = "3.1"
+projects[transliteration][version] = "3.2"
 projects[transliteration][subdir] = contrib
 
 projects[twitter_block][version] = "2.1"
