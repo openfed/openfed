@@ -412,7 +412,7 @@ projects[simple_gmap][subdir] = contrib
 projects[site_map][version] = "1.2"
 projects[site_map][subdir] = contrib
 
-projects[site_verify][version] = "1.0"
+projects[site_verify][version] = "1.1"
 projects[site_verify][subdir] = contrib
 
 projects[smart_trim][version] = "1.4"

@@ -6,6 +6,7 @@ Next version - Version 7.x-1.6
 ------------------------------
   * Module upgrades
     #2224557: Module upgrade: Entity API
+    #2224545: Module upgrade: Site verification
 
 17 February 2014 - Version 7.x-1.6-beta1
 ----------------------------------------
