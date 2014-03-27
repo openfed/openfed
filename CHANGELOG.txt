@@ -1,10 +1,12 @@
 CHANGELOG
 =========
 
+27 March 2014 - Version 7.x-1.6-rc1
+-----------------------------------
+  * Library upgrade:
+    #2227203: Library upgrade: CKeditor
 
-Next version - Version 7.x-1.6
-------------------------------
-  * Module upgrades
+  * Module upgrades:
     #2224557: Module upgrade: Entity API
     #2224545: Module upgrade: Site verification
 
