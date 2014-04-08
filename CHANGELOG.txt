@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+Next version - Version 7.x-1.7-beta1
+------------------------------------
+  * Module upgrades:
+    #2232231: Module upgrade: jQuery Update
+
 Next version - Version 7.x-1.6
 ------------------------------
   * Theme upgrade:
