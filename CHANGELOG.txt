@@ -6,6 +6,7 @@ Next version - Version 7.x-1.7-beta1
   * Module upgrades:
     #2232231: Module upgrade: jQuery Update
     #2232229: Module upgrade: Printer, email and PDF versions
+    #2230661: Module upgrade: Media: Vimeo
 
 Next version - Version 7.x-1.6
 ------------------------------
