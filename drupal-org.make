@@ -303,6 +303,9 @@ projects[media][version] = "1.4"
 projects[media][subdir] = contrib
 projects[media][patch][2171115] = "http://drupal.org/files/issues/media-error-message-when-editing-file-entity-display-options-2171115-1.patch"
 
+projects[media_soundcloud][version] = "1.0"
+projects[media_soundcloud][subdir] = contrib
+
 projects[media_vimeo][version] = "2.0"
 projects[media_vimeo][subdir] = contrib
 

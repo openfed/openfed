@@ -3,6 +3,9 @@ CHANGELOG
 
 Next version - Version 7.x-1.7-beta1
 ------------------------------------
+  * New modules:
+    #2223169: New module: Media: SoundCloud
+
   * Module upgrades:
     #2232231: Module upgrade: jQuery Update
     #2232229: Module upgrade: Printer, email and PDF versions
