@@ -264,7 +264,7 @@ projects[job_scheduler][subdir] = contrib
 projects[jquery_plugin][version] = "1.0"
 projects[jquery_plugin][subdir] = contrib
 
-projects[jquery_update][version] = "2.3"
+projects[jquery_update][version] = "2.4"
 projects[jquery_update][subdir] = contrib
 
 projects[l10n_client][version] = "1.3"
@@ -303,7 +303,7 @@ projects[media][version] = "1.4"
 projects[media][subdir] = contrib
 projects[media][patch][2171115] = "http://drupal.org/files/issues/media-error-message-when-editing-file-entity-display-options-2171115-1.patch"
 
-projects[media_vimeo][version] = "1.0-beta5"
+projects[media_vimeo][version] = "2.0"
 projects[media_vimeo][subdir] = contrib
 
 projects[media_youtube][version] = "2.0-rc4"
@@ -363,7 +363,7 @@ projects[pathauto][subdir] = contrib
 projects[pathauto][patch][290421] = "http://drupal.org/files/290421-pathauto-DRUPAL-7--1-x.patch"
 projects[pathauto][patch][1993462] = "http://drupal.org/files/pathauto-path_alias_for_taxonomy_terms_always_created_in_default_language-1993462-0.patch"
 
-projects[print][version] = "1.2"
+projects[print][version] = "1.3"
 projects[print][subdir] = contrib
 
 projects[quiz][version] = "4.0-beta2"
