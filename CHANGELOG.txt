@@ -1,8 +1,8 @@
 CHANGELOG
 =========
 
-Next version - Version 7.x-1.6
-------------------------------
+10 April 2014 - Version 7.x-1.6
+-------------------------------
   * Theme upgrade:
     #2230627: Theme upgrade: Openfed Nerra
 
