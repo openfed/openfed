@@ -158,7 +158,7 @@ projects[easy_breadcrumb][patch][2071747] = "http://drupal.org/files/issues/easy
 projects[elements][version] = "1.4"
 projects[elements][subdir] = contrib
 
-projects[email][version] = "1.2"
+projects[email][version] = "1.3"
 projects[email][subdir] = contrib
 
 projects[emfield][version] = "1.0-alpha2"
