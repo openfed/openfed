@@ -12,6 +12,7 @@ Next version - Version 7.x-1.7-beta1
     #2230661: Module upgrade: Media: Vimeo
     #2238385: Module upgrade: Email Field
     #2240251: Module upgrade: Localization update
+    #2240243: Module upgrade: Entity API
 
 10 April 2014 - Version 7.x-1.6
 -------------------------------
