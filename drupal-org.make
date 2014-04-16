@@ -366,7 +366,7 @@ projects[pathauto][subdir] = contrib
 projects[pathauto][patch][290421] = "http://drupal.org/files/290421-pathauto-DRUPAL-7--1-x.patch"
 projects[pathauto][patch][1993462] = "http://drupal.org/files/pathauto-path_alias_for_taxonomy_terms_always_created_in_default_language-1993462-0.patch"
 
-projects[print][version] = "1.3"
+projects[print][version] = "2.0"
 projects[print][subdir] = contrib
 
 projects[quiz][version] = "4.0-beta2"
