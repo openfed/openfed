@@ -204,6 +204,7 @@ projects[feeds_xpathparser][subdir] = contrib
 
 projects[field_collection][version] = "1.0-beta7"
 projects[field_collection][subdir] = contrib
+projects[field_collection[patch][2242751] = "http://drupal.org/files/issues/field-collection-drupal-7.27-2242751-1.patch"
 
 projects[field-conditional-state][version] = "1.1"
 projects[field-conditional-state][subdir] = contrib
@@ -232,6 +233,7 @@ projects[google_analytics][subdir] = contrib
 projects[hierarchical_select][download][type] = git
 projects[hierarchical_select][download][branch] = "7.x-3.x"
 projects[hierarchical_select][download][revision] = b3e34d9
+projects[hierarchical_select][patch][2242753] = "http://drupal.org/files/issues/hierarchical-select-drupal-7.27-2242753-1.patch"
 projects[hierarchical_select][subdir] = contrib
 
 projects[honeypot][version] = "1.16"
