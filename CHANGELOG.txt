@@ -15,6 +15,7 @@ Next version - Version 7.x-1.7-beta1
     #2240243: Module upgrade: Entity API
     #2241297: Module upgrade: ShareThis
     #2243103: Library upgrade: Colorbox
+    #2243167: Module upgrade: External links
 
 10 April 2014 - Version 7.x-1.6
 -------------------------------
