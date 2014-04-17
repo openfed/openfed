@@ -14,7 +14,7 @@ libraries[ckeditor][type] = "library"
 
 ; Colorbox
 libraries[colorbox][download][type] = "get"
-libraries[colorbox][download][url] = "https://github.com/jackmoore/colorbox/archive/1.4.37.zip"
+libraries[colorbox][download][url] = "https://github.com/jackmoore/colorbox/archive/1.5.8.zip"
 libraries[colorbox][directory_name] = "colorbox"
 libraries[colorbox][type] = "library"
 
