@@ -18,6 +18,7 @@ Next version - Version 7.x-1.7-beta1
     #2243167: Module upgrade: External links
     #2243171: Upgrade to Drupal Core 7.27
     #2247881: Module upgrade: Variable
+    #2247883: Module upgrade: Webform Clear
 
 10 April 2014 - Version 7.x-1.6
 -------------------------------

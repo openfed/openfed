@@ -480,9 +480,8 @@ projects[views_slideshow][subdir] = contrib
 projects[webform][version] = "3.20"
 projects[webform][subdir] = contrib
 
-projects[webform_clear][version] = "1.1"
+projects[webform_clear][version] = "2.0"
 projects[webform_clear][subdir] = contrib
-projects[webform_clear][patch][2057119] = "http://drupal.org/files/issues/webform_clear-selective-2057119-5.patch"
 
 projects[webform_rules][version] = "1.6"
 projects[webform_rules][subdir] = contrib
