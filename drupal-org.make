@@ -244,7 +244,7 @@ projects[honeypot][subdir] = contrib
 projects[html5_tools][version] = "1.2"
 projects[html5_tools][subdir] = contrib
 
-projects[i18n][version] = "1.10"
+projects[i18n][version] = "1.11"
 projects[i18n][subdir] = contrib
 projects[i18n][patch][2135783] = "http://drupal.org/files/issues/i18n-fix-for-disabled-menu-items-testandfix-1693074-38_0.patch"
 

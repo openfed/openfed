@@ -21,6 +21,7 @@ Next version - Version 7.x-1.7-beta1
     #2247883: Module upgrade: Webform Clear
     #2248023: Module upgrade: Security Kit
     #2248263: Theme upgrade: Openfed Nerra
+    #2248603: Module upgrade: Internationalization
 
 10 April 2014 - Version 7.x-1.6
 -------------------------------
