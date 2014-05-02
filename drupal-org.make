@@ -176,7 +176,7 @@ projects[entityreference][patch][1852112] = "http://drupal.org/files/entityrefer
 projects[entity_translation][version] = "1.0-beta3"
 projects[entity_translation][subdir] = contrib
 
-projects[extlink][version] = "1.16"
+projects[extlink][version] = "1.17"
 projects[extlink][subdir] = contrib
 
 projects[facetapi][version] = "1.3"
