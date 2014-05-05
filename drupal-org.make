@@ -319,7 +319,7 @@ projects[media_youtube][patch][1863788] = "http://drupal.org/files/issues/media_
 projects[menu_attributes][version] = "1.0-rc2"
 projects[menu_attributes][subdir] = contrib
 
-projects[menu_block][version] = "2.3"
+projects[menu_block][version] = "2.4"
 projects[menu_block][subdir] = contrib
 
 projects[menu_firstchild][version] = "1.1"

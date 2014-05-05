@@ -25,6 +25,7 @@ Next version - Version 7.x-1.7-beta1
     #2248715: Library upgrade: CKEditor
     #2256897: Module upgrade: Development
     #2257133: Module upgrade: Rules
+    #2258473: Module upgrade: Menu block
 
 10 April 2014 - Version 7.x-1.6
 -------------------------------
