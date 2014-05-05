@@ -395,7 +395,7 @@ projects[rules][subdir] = contrib
 projects[scheduler][version] = "1.2"
 projects[scheduler][subdir] = contrib
 
-projects[search_config][version] = "1.1-beta2"
+projects[search_config][version] = "1.1"
 projects[search_config][subdir] = contrib
 
 projects[seckit][version] = "1.9-rc1"
