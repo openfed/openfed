@@ -64,7 +64,7 @@ projects[ofed_theme_nerra][subdir] = contrib
 
 projects[ofed_theme_cms][download][type] = git
 projects[ofed_theme_cms][download][branch] = "7.x-1.x"
-projects[ofed_theme_cms][download][revision] = f4b5bd7
+projects[ofed_theme_cms][download][revision] = 5bd930c
 projects[ofed_theme_cms][subdir] = contrib
 
 projects[ofed_theme_maintenance][version] = "1.0"
