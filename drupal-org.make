@@ -331,9 +331,6 @@ projects[menu_position][subdir] = contrib
 projects[metatag][version] = "1.0-beta9"
 projects[metatag][subdir] = contrib
 
-projects[mollom][version] = "2.10"
-projects[mollom][subdir] = contrib
-
 projects[multiple_node_menu][version] = "1.0-beta1"
 projects[multiple_node_menu][subdir] = contrib
 

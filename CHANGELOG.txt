@@ -27,10 +27,10 @@ Next version - Version 7.x-1.7-beta1
     #2257133: Module upgrade: Rules
     #2258473: Module upgrade: Menu block
     #2258779: Module upgrade: Search configuration
-    #2259789: Module upgrade: Mollom
     #2260515: Theme upgrade: Openfed CMS
     #2261745: Upgrade to Drupal Core 7.28
     #2262013: Module upgrade: CKEditor
+    #2219649: Remove module: Mollom
 
 10 April 2014 - Version 7.x-1.6
 -------------------------------
