@@ -117,7 +117,7 @@ projects[calendar][subdir] = contrib
 projects[captcha][version] = "1.0"
 projects[captcha][subdir] = contrib
 
-projects[ckeditor][version] = "1.13"
+projects[ckeditor][version] = "1.14"
 projects[ckeditor][subdir] = contrib
 
 projects[ckeditor_link][version] = "2.3"
