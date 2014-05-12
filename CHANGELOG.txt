@@ -31,6 +31,7 @@ Next version - Version 7.x-1.7-beta1
     #2261745: Upgrade to Drupal Core 7.28
     #2262013: Module upgrade: CKEditor
     #2219649: Remove module: Mollom
+    #2265081: Module upgrade: Add another
 
 10 April 2014 - Version 7.x-1.6
 -------------------------------

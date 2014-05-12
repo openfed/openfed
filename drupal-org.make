@@ -75,7 +75,7 @@ projects[ofed_theme_maintenance][subdir] = contrib
 ; Please fill the following out. Type may be one of get, git, bzr or svn, and url is the url of the download.
 ;
 
-projects[addanother][version] = "2.1"
+projects[addanother][version] = "2.2"
 projects[addanother][subdir] = contrib
 
 projects[admin_language][download][type] = git
