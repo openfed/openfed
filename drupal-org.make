@@ -255,7 +255,7 @@ projects[i18nviews][subdir] = contrib
 projects[imagecache_actions][version] = "1.4"
 projects[imagecache_actions][subdir] = contrib
 
-projects[imce][version] = "1.8"
+projects[imce][version] = "1.9"
 projects[imce][subdir] = contrib
 
 projects[imce_mkdir][version] = "1.0"
