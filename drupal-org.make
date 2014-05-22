@@ -463,7 +463,7 @@ projects[view_unpublished][version] = "1.1"
 projects[view_unpublished][subdir] = contrib
 projects[view_unpublished][patch][1192074] = "http://drupal.org/files/view_unpublished_content_admin-1192074-57_1.patch"
 
-projects[views][version] = "3.7"
+projects[views][version] = "3.8"
 projects[views][subdir] = contrib
 
 projects[views_data_export][version] = "3.0-beta7"

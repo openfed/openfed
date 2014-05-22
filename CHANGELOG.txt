@@ -32,7 +32,8 @@ Next version - Version 7.x-1.7-beta1
     #2262013: Module upgrade: CKEditor
     #2219649: Remove module: Mollom
     #2265081: Module upgrade: Add another
-    #2270125: Moduleupgrade: IMCE
+    #2270125: Module upgrade: IMCE
+    #2272619: Module upgrade: Views
 
 10 April 2014 - Version 7.x-1.6
 -------------------------------
