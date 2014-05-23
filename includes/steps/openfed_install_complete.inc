@@ -74,6 +74,9 @@ function openfed_install_complete() {
 
   // Set up default site slogan (used on front page title).
   variable_set('site_slogan', 'OpenFed - General-purpose, multilingual Drupal distribution');
+
+  // Set default for "Who can register accounts?" to Admin only
+  variable_get('user_register', USER_REGISTER_ADMINISTRATORS_ONLY);
 }
 
 /**
