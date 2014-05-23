@@ -3,6 +3,9 @@ CHANGELOG
 
 Next version - Version 7.x-1.7-beta1
 ------------------------------------
+  * Issues:
+    #2272521: Set default for "Who can register accounts?" to Admin only
+
   * New modules:
     #2223169: New module: Media: SoundCloud
 
