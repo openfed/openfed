@@ -246,6 +246,7 @@ projects[html5_tools][subdir] = contrib
 
 projects[i18n][version] = "1.11"
 projects[i18n][subdir] = contrib
+projects[i18n][patch][2250501] = "https://drupal.org/files/issues/i18n-node_edit-2250501-8.patch"
 
 projects[i18nviews][download][type] = git
 projects[i18nviews][download][branch] = "7.x-3.x"
