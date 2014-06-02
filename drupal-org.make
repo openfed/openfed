@@ -238,7 +238,7 @@ projects[hierarchical_select][download][revision] = b3e34d9
 projects[hierarchical_select][patch][2242753] = "http://drupal.org/files/issues/hierarchical-select-drupal-7.27-2242753-1.patch"
 projects[hierarchical_select][subdir] = contrib
 
-projects[honeypot][version] = "1.16"
+projects[honeypot][version] = "1.17"
 projects[honeypot][subdir] = contrib
 
 projects[html5_tools][version] = "1.2"

@@ -38,6 +38,7 @@ Next version - Version 7.x-1.7-beta1
     #2270125: Module upgrade: IMCE
     #2272619: Module upgrade: Views
     #2275457: Module upgrade: Backup and Migrate
+    #2278285: Module upgrade: Honeypot
 
 10 April 2014 - Version 7.x-1.6
 -------------------------------
