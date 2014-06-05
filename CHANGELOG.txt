@@ -7,8 +7,15 @@ CHANGELOG
     #2272521: Set default for "Who can register accounts?" to Admin only
     #2279119: CKeditor file path misconfiguration
 
-  * New modules:
+  * Removed module:
+    #2219649: Remove module: Mollom
+ 
+  * New module:
     #2223169: New module: Media: SoundCloud
+
+  * Core upgrades:
+    #2243171: Upgrade to Drupal Core 7.27
+    #2261745: Upgrade to Drupal Core 7.28
 
   * Module upgrades:
     #2232231: Module upgrade: jQuery Update
@@ -18,23 +25,16 @@ CHANGELOG
     #2240251: Module upgrade: Localization update
     #2240243: Module upgrade: Entity API
     #2241297: Module upgrade: ShareThis
-    #2243103: Library upgrade: Colorbox
     #2243167: Module upgrade: External links
-    #2243171: Upgrade to Drupal Core 7.27
     #2247881: Module upgrade: Variable
     #2247883: Module upgrade: Webform Clear
     #2248023: Module upgrade: Security Kit
-    #2248263: Theme upgrade: Openfed Nerra
     #2248603: Module upgrade: Internationalization
-    #2248715: Library upgrade: CKEditor
     #2256897: Module upgrade: Development
     #2257133: Module upgrade: Rules
     #2258473: Module upgrade: Menu block
     #2258779: Module upgrade: Search configuration
-    #2260515: Theme upgrade: Openfed CMS
-    #2261745: Upgrade to Drupal Core 7.28
     #2262013: Module upgrade: CKEditor
-    #2219649: Remove module: Mollom
     #2265081: Module upgrade: Add another
     #2270125: Module upgrade: IMCE
     #2272619: Module upgrade: Views
@@ -44,6 +44,14 @@ CHANGELOG
     #2278279: Module upgrade: Administration Views
     #2279567: Module upgrade: Addemar subscription
 
+Library upgrades:
+    #2243103: Library upgrade: Colorbox
+    #2248715: Library upgrade: CKEditor
+ 
+Theme upgrades:
+    #2248263: Theme upgrade: Openfed Nerra
+    #2260515: Theme upgrade: Openfed CMS
+ 
 10 April 2014 - Version 7.x-1.6
 -------------------------------
   * Theme upgrade:
