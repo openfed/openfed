@@ -113,6 +113,12 @@ projects[back_to_top][subdir] = contrib
 projects[backup_migrate][version] = "3.0"
 projects[backup_migrate][subdir] = contrib
 
+projects[belgian_eid_mellon_integration][type] = module
+projects[belgian_eid_mellon_integration][download][type] = git
+projects[belgian_eid_mellon_integration][download][branch] = "7.x-1.x"
+projects[belgian_eid_mellon_integration][download][url] = http://git.drupal.org/sandbox/Taran2L/1848632.git
+projects[belgian_eid_mellon_integration][download][revision] = 43fdc8ca52feba4e35be7ca0c4fde096157ee6b9
+
 projects[calendar][version] = "3.4"
 projects[calendar][subdir] = contrib
 

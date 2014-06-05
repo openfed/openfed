@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+Next release
+------------
+  * New module:
+    #2182681: New module: Belgian eID Mellon Integration
+
 05 June 2014 - Version 7.x-1.7-alpha2
 -------------------------------------
   * Issues:
