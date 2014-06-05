@@ -1,8 +1,8 @@
 CHANGELOG
 =========
 
-Next version - Version 7.x-1.7-beta1
-------------------------------------
+05 June 2014 - Version 7.x-1.7-alpha1
+-------------------------------------
   * Issues:
     #2272521: Set default for "Who can register accounts?" to Admin only
     #2279119: CKeditor file path misconfiguration
