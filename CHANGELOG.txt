@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+05 June 2014 - Version 7.x-1.7-alpha2
+-------------------------------------
+  * Issues:
+    #2280603: Build for 1.7alpha1 fails
+
 05 June 2014 - Version 7.x-1.7-alpha1
 -------------------------------------
   * Issues:

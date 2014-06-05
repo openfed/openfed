@@ -45,7 +45,7 @@ libraries[jquery.jcarousel][type] = "library"
 
 projects[addemar_subscription][download][type] = git
 projects[addemar_subscription][download][branch] = "7.x-1.x"
-projects[addemar_subscription][download][revision] = aa9b434
+projects[addemar_subscription][download][revision] = 3d945fb
 projects[addemar_subscription][subdir] = contrib
 
 projects[ofed_menu_dam][version] = "1.0"
