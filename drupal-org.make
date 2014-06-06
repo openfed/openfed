@@ -113,11 +113,8 @@ projects[back_to_top][subdir] = contrib
 projects[backup_migrate][version] = "3.0"
 projects[backup_migrate][subdir] = contrib
 
-projects[belgian_eid_mellon_integration][type] = module
-projects[belgian_eid_mellon_integration][download][type] = git
-projects[belgian_eid_mellon_integration][download][branch] = "7.x-1.x"
-projects[belgian_eid_mellon_integration][download][url] = http://git.drupal.org/sandbox/bart.hanssens/2201151.git
-projects[belgian_eid_mellon_integration][download][revision] = 4772d39
+projects[beidmellon][version] = "1.0-beta1"
+projects[beidmellon][subdir] = contrib
 
 projects[calendar][version] = "3.4"
 projects[calendar][subdir] = contrib
