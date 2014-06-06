@@ -3,6 +3,9 @@ CHANGELOG
 
 Next release
 ------------
+  * Module upgrades:
+    #2281027: Module upgrade: Field group
+
   * New module:
     #2182681: New module: Belgian eID Mellon Integration
 
