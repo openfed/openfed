@@ -3,6 +3,9 @@ CHANGELOG
 
 Next release
 ------------
+  * Issues:
+    #2281319: Disable autocomplete on user login/registration forms
+
   * Module upgrades:
     #2281027: Module upgrade: Field group
     #2283377: Module upgrade: ShareThis

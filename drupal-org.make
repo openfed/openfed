@@ -403,6 +403,7 @@ projects[search_config][subdir] = contrib
 
 projects[seckit][version] = "1.9"
 projects[seckit][subdir] = contrib
+projects[seckit][patch][2281315] = "http://drupal.org/files/issues/seckit-disable_autocomplete-2281315-8.patch"
 
 projects[securelogin][version] = "1.4"
 projects[securelogin][subdir] = contrib
