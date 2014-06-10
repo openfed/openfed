@@ -5,6 +5,7 @@ Next release
 ------------
   * Issues:
     #2281319: Disable autocomplete on user login/registration forms
+    #2196447: Recreate openfed features
 
   * Module upgrades:
     #2281027: Module upgrade: Field group
