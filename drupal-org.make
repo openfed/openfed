@@ -411,7 +411,7 @@ projects[securelogin][subdir] = contrib
 projects[security_review][version] = "1.1"
 projects[security_review][subdir] = contrib
 
-projects[sharethis][version] = "2.6"
+projects[sharethis][version] = "2.8"
 projects[sharethis][subdir] = contrib
 
 projects[simple_gmap][version] = "1.2"
