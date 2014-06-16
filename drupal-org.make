@@ -48,7 +48,7 @@ projects[addemar_subscription][download][branch] = "7.x-1.x"
 projects[addemar_subscription][download][revision] = 3d945fb
 projects[addemar_subscription][subdir] = contrib
 
-projects[ofed_menu_dam][version] = "1.0"
+projects[ofed_menu_dam][version] = "1.1"
 projects[ofed_menu_dam][subdir] = contrib
 
 projects[ofed_switcher][download][type] = git
