@@ -109,7 +109,7 @@ projects[back_to_top][subdir] = contrib
 projects[backup_migrate][version] = "3.0"
 projects[backup_migrate][subdir] = contrib
 
-projects[beidmellon][version] = "1.0-beta1"
+projects[beidmellon][version] = "1.0-beta2"
 projects[beidmellon][subdir] = contrib
 
 projects[calendar][version] = "3.4"
