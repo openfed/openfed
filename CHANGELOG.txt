@@ -6,6 +6,7 @@ Next release
   * Issues:
     #2281319: Disable autocomplete on user login/registration forms
     #2196447: Recreate openfed features
+    #2281121: Dynamic breadcrumbs in search page
 
   * Module upgrades:
     #2281027: Module upgrade: Field group
