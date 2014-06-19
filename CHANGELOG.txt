@@ -14,6 +14,7 @@ Next release
     #2283375: Module upgrade: Link checker
     #2286889: Module upgrade: Menu Default Active Menus
     #2286891: Module upgrade: OpenFed Switcher
+    #2288979: Module upgrade: Easy Breadcrumb
 
   * New module:
     #2182681: New module: Belgian eID Mellon Integration
