@@ -155,7 +155,7 @@ projects[draggableviews][subdir] = contrib
 projects[ds][version] = "2.6"
 projects[ds][subdir] = contrib
 
-projects[easy_breadcrumb][version] = "2.10"
+projects[easy_breadcrumb][version] = "2.11"
 projects[easy_breadcrumb][subdir] = contrib
 
 projects[elements][version] = "1.4"
