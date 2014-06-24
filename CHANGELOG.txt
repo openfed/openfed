@@ -1,8 +1,8 @@
 CHANGELOG
 =========
 
-Next release
-------------
+24 June 2014 - Version 7.x-1.7-rc1
+----------------------------------
   * Issues:
     #2281319: Disable autocomplete on user login/registration forms
     #2196447: Recreate openfed features
