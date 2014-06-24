@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+24 June 2014 - Version 7.x-1.7-rc2
+----------------------------------
+  * Issues:
+    #2291595: Build fails, version on ofed_switcher
+
 24 June 2014 - Version 7.x-1.7-rc1
 ----------------------------------
   * Issues:
