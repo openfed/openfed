@@ -453,7 +453,7 @@ projects[translation_table][subdir] = contrib
 projects[transliteration][version] = "3.2"
 projects[transliteration][subdir] = contrib
 
-projects[twitter_block][version] = "2.1"
+projects[twitter_block][version] = "2.2"
 projects[twitter_block][subdir] = contrib
 
 projects[username_enumeration_prevention][version] = "1.0"
