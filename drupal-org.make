@@ -180,7 +180,7 @@ projects[entity_translation][subdir] = contrib
 projects[extlink][version] = "1.17"
 projects[extlink][subdir] = contrib
 
-projects[facetapi][version] = "1.3"
+projects[facetapi][version] = "1.5"
 projects[facetapi][subdir] = contrib
 
 projects[facetapi_i18n][version] = "1.0-beta2"
