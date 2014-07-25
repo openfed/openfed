@@ -8,6 +8,7 @@ xx xxxx 2014 - Version 7.x-1.8-dev
   * Module upgrades:
     #2309815: Module upgrade: LoginToboggan
     #2309817: Module upgrade: CKEditor 
+    #2309821: Module upgrade: Path Breadcrumbs 
 
   * Library upgrades:
     #2308113: Library upgrade: CKEditor
