@@ -5,6 +5,9 @@ xx xxxx 2014 - Version 7.x-1.8-dev
   * Core upgrade:
     #2308031: Upgraded to Drupal Core 7.30
 
+  * Module upgrades:
+    #2309815: Module upgrade: LoginToboggan
+
   * Library upgrades:
     #2308113: Library upgrade: CKEditor
  
