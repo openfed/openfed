@@ -5,6 +5,9 @@ xx xxxx 2014 - Version 7.x-1.8-dev
   * Core upgrade:
     #2308031: Upgraded to Drupal Core 7.30
 
+  * Library upgrades:
+    #2308113: Library upgrade: CKEditor
+ 
 01 July 2014 - Version 7.x-1.7
 ------------------------------
 No changes
@@ -80,11 +83,11 @@ No changes
     #2278279: Module upgrade: Administration Views
     #2279567: Module upgrade: Addemar subscription
 
-Library upgrades:
+  * Library upgrades:
     #2243103: Library upgrade: Colorbox
     #2248715: Library upgrade: CKEditor
  
-Theme upgrades:
+  * Theme upgrades:
     #2248263: Theme upgrade: Openfed Nerra
     #2260515: Theme upgrade: Openfed CMS
  
