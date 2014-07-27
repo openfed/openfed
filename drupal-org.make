@@ -98,7 +98,7 @@ projects[apachesolr][patch][1314664] = "http://drupal.org/files/issues/apachesol
 projects[apachesolr_attachments][version] = "1.3"
 projects[apachesolr_attachments][subdir] = contrib
 
-projects[apachesolr_autocomplete][version] = "1.3"
+projects[apachesolr_autocomplete][version] = "1.4"
 projects[apachesolr_autocomplete][subdir] = contrib
 
 projects[apachesolr_multilingual][version] = "1.0"
