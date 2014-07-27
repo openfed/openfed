@@ -12,7 +12,8 @@ xx xxxx 2014 - Version 7.x-1.8-dev
     #2309827: Module upgrade: Twitter Block
     #2309839: Module upgrade: Facet API
     #2310651: Module upgrade: Apache Solr Autocomplete
-    #2310653: Module upgrade: Easy Breadcrumb 
+    #2310653: Module upgrade: Easy Breadcrumb
+    #2310655: Module upgrade: External Links
 
   * Library upgrades:
     #2308113: Library upgrade: CKEditor
