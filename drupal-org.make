@@ -125,7 +125,7 @@ projects[ckeditor][subdir] = contrib
 projects[ckeditor_link][version] = "2.3"
 projects[ckeditor_link][subdir] = contrib
 
-projects[colorbox][version] = "2.6"
+projects[colorbox][version] = "2.7"
 projects[colorbox][subdir] = contrib
 
 projects[comment_goodness][version] = "1.4"
