@@ -17,6 +17,7 @@ xx xxxx 2014 - Version 7.x-1.8-dev
     #2311319: Module upgrade: Location
     #2311321: Module upgrade: Metatag 
     #2311327: Module upgrade: Colorbox 
+    #2312719: Module upgrade: Features
 
   * Library upgrades:
     #2308113: Library upgrade: CKEditor
