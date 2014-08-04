@@ -1,7 +1,7 @@
 CHANGELOG
 =========
-xx xxxx 2014 - Version 7.x-1.8-dev
-----------------------------------
+04 August 2014 - Version 7.x-1.8-alpha1
+---------------------------------------
   * Core upgrade:
     #2308031: Upgraded to Drupal Core 7.30
 
@@ -25,6 +25,7 @@ xx xxxx 2014 - Version 7.x-1.8-dev
 
   * Library upgrades:
     #2308113: Library upgrade: CKEditor
+    #2311331: Library upgrade: Colorbox
  
 01 July 2014 - Version 7.x-1.7
 ------------------------------
