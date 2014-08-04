@@ -189,7 +189,7 @@ projects[facetapi_i18n][subdir] = contrib
 projects[features][version] = "2.1"
 projects[features][subdir] = contrib
 
-projects[features_override][version] = "2.0-rc1"
+projects[features_override][version] = "2.0-rc2"
 projects[features_override][subdir] = contrib
 
 projects[features_override][version] = "2.0-rc1"
