@@ -140,7 +140,7 @@ projects[countries][subdir] = contrib
 projects[ctools][version] = "1.4"
 projects[ctools][subdir] = contrib
 
-projects[date][version] = "2.7"
+projects[date][version] = "2.8"
 projects[date][subdir] = contrib
 
 projects[devel][version] = "1.5"
