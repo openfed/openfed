@@ -4,6 +4,9 @@ xx August 2014 - Version 7.x-1.8-beta1
 --------------------------------------
   * Removed modules:
     #2311343: Remove modules: Captcha and Recaptcha 
+
+  * Module upgrades:
+    #2315277: Module upgrade: Apache Solr Multilingual
  
 04 August 2014 - Version 7.x-1.8-alpha1
 ---------------------------------------
