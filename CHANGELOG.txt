@@ -8,6 +8,7 @@ xx August 2014 - Version 7.x-1.8-beta1
   * Module upgrades:
     #2315277: Module upgrade: Apache Solr Multilingual
     #2312719: Module upgrade: Features
+    #2311321: Module upgrade: Metatag 
  
 04 August 2014 - Version 7.x-1.8-alpha1
 ---------------------------------------

@@ -324,7 +324,7 @@ projects[menu_firstchild][subdir] = contrib
 projects[menu_position][version] = "1.1"
 projects[menu_position][subdir] = contrib
 
-projects[metatag][version] = "1.0-rc1"
+projects[metatag][version] = "1.0-rc2"
 projects[metatag][subdir] = contrib
 
 projects[multiple_node_menu][version] = "1.0-beta1"
