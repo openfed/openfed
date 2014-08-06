@@ -189,9 +189,6 @@ projects[features][subdir] = contrib
 projects[features_override][version] = "2.0-rc2"
 projects[features_override][subdir] = contrib
 
-projects[features_override][version] = "2.0-rc1"
-projects[features_override][subdir] = contrib
-
 projects[feeds][download][type] = git
 projects[feeds][download][branch] = "7.x-2.x"
 projects[feeds][download][revision] = 47872f1
