@@ -1,5 +1,10 @@
 CHANGELOG
 =========
+xx August 2014 - Version 7.x-1.8-beta2
+--------------------------------------
+  * Core upgrade:
+    #2317197: Core update: Drupal 7.31
+
 06 August 2014 - Version 7.x-1.8-beta1
 --------------------------------------
   * Removed modules:
