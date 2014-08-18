@@ -215,7 +215,7 @@ projects[field_permissions][subdir] = contrib
 projects[field_slideshow][version] = "1.82"
 projects[field_slideshow][subdir] = contrib
 
-projects[flag][version] = "2.2"
+projects[flag][version] = "3.5"
 projects[flag][subdir] = contrib
 
 projects[globalredirect][version] = "1.5"

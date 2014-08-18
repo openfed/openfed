@@ -5,6 +5,7 @@ Next version
 ------------
  * Module upgrades:
    #2311333: Module upgrade: Google Analytics
+   #2292389: Module upgrade: Flag
 
  * Issues:
    #2321239: i18n requires a patch to avoid a WSOD when translating a context-free string
