@@ -4,7 +4,6 @@ CHANGELOG
 Next version
 ------------
  * Module upgrades:
-   #2311333: Module upgrade: Google Analytics
    #2292389: Module upgrade: Flag
    #2290899: Module upgrade: GMap 
 
