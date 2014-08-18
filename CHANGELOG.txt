@@ -1,5 +1,11 @@
 CHANGELOG
 =========
+
+Next version
+------------
+ * Issues:
+   #2321239: i18n requires a patch to avoid a WSOD when translating a context-free string
+
 11 August 2014 - Version 7.x-1.8
 --------------------------------
   * Core upgrade:
