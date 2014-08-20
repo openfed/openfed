@@ -12,9 +12,11 @@ Next version
    #2324433: Module upgrade: Location
    #2324435: Module upgrade: Date
    #2324533: Module upgrade: Feeds
+   #2324655: Module upgrade: OpenFed Switcher
 
  * Issues:
    #2321239: i18n requires a patch to avoid a WSOD when translating a context-free string
+   #2319151: Startpage - "Show" not filtering content types
 
 11 August 2014 - Version 7.x-1.8
 --------------------------------
