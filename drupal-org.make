@@ -137,7 +137,7 @@ projects[countries][subdir] = contrib
 projects[ctools][version] = "1.4"
 projects[ctools][subdir] = contrib
 
-projects[date][version] = "2.8"
+projects[date][version] = "2.9-alpha1"
 projects[date][subdir] = contrib
 
 projects[devel][version] = "1.5"
@@ -191,10 +191,10 @@ projects[features_override][subdir] = contrib
 
 projects[feeds][download][type] = git
 projects[feeds][download][branch] = "7.x-2.x"
-projects[feeds][download][revision] = 47872f1
+projects[feeds][download][revision] = a6abe50
 projects[feeds][subdir] = contrib
-projects[feeds][patch][1470530] =  "http://drupal.org/files/issues/feeds-unpublish-delete-entities-not-in-feed-1470530-178.patch"
-projects[feeds][patch][1183440] = "http://drupal.org/files/issues/feeds-field_translations-1183440-134.patch"
+projects[feeds][patch][1470530] =  "http://drupal.org/files/issues/feeds-unpublish-delete-entities-not-in-feed-1470530-203.patch"
+projects[feeds][patch][1183440] = "http://drupal.org/files/issues/feeds-field_translations-1183440-148.patch"
 
 projects[feeds_xpathparser][version] = "1.0-beta4"
 projects[feeds_xpathparser][subdir] = contrib

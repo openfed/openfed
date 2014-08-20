@@ -10,6 +10,8 @@ Next version
    #2323205: Module upgrade: Media: SoundCloud
    #2324427: Library upgrade: Colorbox
    #2324433: Module upgrade: Location
+   #2324435: Module upgrade: Date
+   #2324533: Module upgrade: Feeds
 
  * Issues:
    #2321239: i18n requires a patch to avoid a WSOD when translating a context-free string
