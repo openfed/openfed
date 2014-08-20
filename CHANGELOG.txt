@@ -8,6 +8,7 @@ Next version
    #2290899: Module upgrade: GMap 
    #2323201: Module upgrade: Localization update
    #2323205: Module upgrade: Media: SoundCloud
+   #2324427: Library upgrade: Colorbox
 
  * Issues:
    #2321239: i18n requires a patch to avoid a WSOD when translating a context-free string
