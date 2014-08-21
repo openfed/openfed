@@ -424,7 +424,7 @@ projects[strongarm][subdir] = contrib
 projects[table_altrow][version] = "1.2"
 projects[table_altrow][subdir] = contrib
 
-projects[text_resize][version] = "1.8"
+projects[text_resize][version] = "1.9"
 projects[text_resize][subdir] = contrib
 
 projects[title][version] = "1.0-alpha7"
