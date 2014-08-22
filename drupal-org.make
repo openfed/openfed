@@ -214,6 +214,7 @@ projects[field_permissions][subdir] = contrib
 
 projects[field_slideshow][version] = "1.82"
 projects[field_slideshow][subdir] = contrib
+projects[field_slideshow][patch][2326155] = "http://www.drupal.org/files/issues/field_slideshow-swipe-2326155-1.patch"
 
 projects[flag][version] = "3.5"
 projects[flag][subdir] = contrib
@@ -469,6 +470,7 @@ projects[views_bulk_operations][subdir] = contrib
 
 projects[views_slideshow][version] = "3.1"
 projects[views_slideshow][subdir] = contrib
+projects[views_slideshow][patch][974482] = "http://www.drupal.org/files/issues/views_slideshow-974482-23.patch"
 
 projects[webform][version] = "3.20"
 projects[webform][subdir] = contrib
