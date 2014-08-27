@@ -17,6 +17,7 @@ Next version
     #2324533: Module upgrade: Feeds
     #2324655: Module upgrade: OpenFed Switcher
     #2325351: Module upgrade: Text Resize
+    #2328425: Module upgrade: Views Data Export
 
   * Issues:
     #2321239: i18n requires a patch to avoid a WSOD when translating a context-free string
