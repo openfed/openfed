@@ -57,7 +57,7 @@ projects[ofed_vmcd][subdir] = contrib
 
 projects[ofed_theme_nerra][download][type] = git
 projects[ofed_theme_nerra][download][branch] = "7.x-1.x"
-projects[ofed_theme_nerra][download][revision] = 1d2a6f7
+projects[ofed_theme_nerra][download][revision] = 3e701fa
 projects[ofed_theme_nerra][subdir] = contrib
 
 projects[ofed_theme_cms][download][type] = git
