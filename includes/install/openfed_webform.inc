@@ -27,8 +27,6 @@ variable_set('menu_parent_webform', 'main-menu:0');
 variable_set('node_options_webform', array());
 variable_set('node_preview_webform', '1');
 variable_set('node_submitted_webform', TRUE);
-variable_set('page_title_type_webform', '');
-variable_set('page_title_type_webform_showfield', FALSE);
 variable_set('pathauto_node_webform_pattern', '[node:menu-link:parents:join-path]/[node:title]');
 variable_set('print_display_urllist_webform', TRUE);
 variable_set('print_display_webform', TRUE);

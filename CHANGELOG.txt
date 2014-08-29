@@ -5,6 +5,7 @@ Next version
 ------------
   * Removed modules:
     #2316391: Remove module: Draggable Views
+    #2329145: Remove module: Page Title
 
   * Module upgrades:
     #2292389: Module upgrade: Flag

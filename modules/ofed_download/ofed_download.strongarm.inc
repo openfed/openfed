@@ -257,20 +257,6 @@ function ofed_download_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'page_title_type_ofed_download';
-  $strongarm->value = '';
-  $export['page_title_type_ofed_download'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'page_title_type_ofed_download_showfield';
-  $strongarm->value = 1;
-  $export['page_title_type_ofed_download_showfield'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_ofed_download_de_pattern';
   $strongarm->value = 'downloads/[node:title]';
   $export['pathauto_node_ofed_download_de_pattern'] = $strongarm;

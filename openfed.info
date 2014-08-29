@@ -102,7 +102,6 @@ core = 7.x
   dependencies[] = multiselect
   dependencies[] = navigation404
   dependencies[] = override_node_options
-  dependencies[] = page_title
   dependencies[] = partial_date
   dependencies[] = path_breadcrumbs
   dependencies[] = path_breadcrumbs_ui

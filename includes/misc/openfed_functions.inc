@@ -709,18 +709,6 @@ function _openfed_get_default_permissions() {
       'Configurator',
     ),
 
-    // page_title
-    'set page title' => array(
-      'Builder',
-      'Configurator',
-      'Content Manager',
-    ),
-    'administer page titles' => array(
-      'Builder',
-      'Configurator',
-      'Content Manager',
-    ),
-
     // path
     'administer url aliases' => array(
       'Builder',
@@ -834,17 +822,6 @@ function _openfed_get_default_permissions() {
     'run security checks' => array(
       'Builder',
       'Configurator',
-    ),
-
-    // site_map
-    'access site map' => array(
-      'Builder',
-      'Configurator',
-      'Content Manager',
-      'User Manager',
-      'Authenticated Visitor',
-      'authenticated user',
-      'anonymous user',
     ),
 
     // system

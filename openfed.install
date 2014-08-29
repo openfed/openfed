@@ -434,3 +434,132 @@ function openfed_update_7113() {
     variable_set('seckit_various', $options['seckit_various']);
   }
 }
+
+/**
+ * Migrate data from the page_title module, if available.
+ */
+function openfed_update_7114() {
+  if (db_table_exists('page_title')) {
+    module_enable('metatag');
+    $converted = 0;
+    $page_titles = db_select('page_title', 'pt')
+      ->fields('pt', array('type', 'id', 'page_title'))
+      ->execute();
+
+    // Get general metatag config settings.
+    $metatag_config_global = metatag_config_load('global');
+    $metatag_config_node = metatag_config_load('node');
+    $metatag_config_taxonomy_term = metatag_config_load('taxonomy_term');
+    $metatag_config_user = metatag_config_load('user');
+
+    // Loop over each of the page_title records.
+    while ($pt_data = $page_titles->fetchObject()) {
+      // Load any possible existing meta tags for this object.
+      $existing_data = metatag_metatags_load_multiple($pt_data->type, array($pt_data->id));
+      if (!empty($existing_data)) {
+        foreach ($existing_data[$pt_data->id] as $tag => $value) {
+          $existing_data[$pt_data->id] = array(
+            $tag => array(
+              'value' => $value,
+            ),
+          );
+        }
+      }
+
+      // Set metatag page title as per settings.
+      $entity = entity_load($pt_data->type, array($pt_data->id));
+
+      switch ($pt_data->type) {
+        case 'node':
+          $metatag_config_node_type = metatag_config_load('node:' . $entity[$pt_data->id]->type);
+
+          if (!empty($metatag_config_node_type) && isset($metatag_config_node_type->config['title'])) {
+            $title_setting = $metatag_config_node_type->config['title']['value'];
+            $metatag_title = str_replace('[current-page:title]', trim($pt_data->page_title), $title_setting);
+          }
+          else if (isset($metatag_config_node->config['title'])) {
+            $title_setting = $metatag_config_node->config['title']['value'];
+            $metatag_title = str_replace('[current-page:title]', trim($pt_data->page_title), $title_setting);
+          }
+          else {
+            $title_setting = $metatag_config_global->config['title']['value'];
+            $metatag_title = str_replace('[current-page:title]', trim($pt_data->page_title), $title_setting);
+          }
+          break;
+
+        case 'taxonomy_term':
+          $metatag_config_vocabulary_type = metatag_config_load('taxonomy_term:' . $entity[$pt_data->id]->vocabulary_machine_name);
+
+          if (!empty($metatag_config_vocabulary_type) && isset($metatag_config_vocabulary_type->config['title'])) {
+            $title_setting = $metatag_config_vocabulary_type->config['title']['value'];
+            $metatag_title = str_replace('[current-page:title]', trim($pt_data->page_title), $title_setting);
+          }
+          else if (isset($metatag_config_taxonomy_term->config['title'])) {
+            $title_setting = $metatag_config_taxonomy_term->config['title']['value'];
+            $metatag_title = str_replace('[current-page:title]', trim($pt_data->page_title), $title_setting);
+          }
+          else {
+            $title_setting = $metatag_config_global->config['title']['value'];
+            $metatag_title = str_replace('[current-page:title]', trim($pt_data->page_title), $title_setting);
+          }
+          break;
+
+        case 'user':
+          if (isset($metatag_config_user->config['title'])) {
+            $title_setting = $metatag_config_user->config['title']['value'];
+            $metatag_title = str_replace('[current-page:title]', trim($pt_data->page_title), $title_setting);
+          }
+          else {
+            $title_setting = $metatag_config_global->config['title']['value'];
+            $metatag_title = str_replace('[current-page:title]', trim($pt_data->page_title), $title_setting);
+          }
+          break;
+      }
+      $existing_data[$pt_data->id]['title']['value'] = $metatag_title;
+      metatag_metatags_save($pt_data->type, $pt_data->id, $existing_data[$pt_data->id]);
+      $converted += db_delete('page_title')
+        ->condition('type', $pt_data->type)
+        ->condition('id', $pt_data->id)
+        ->execute();
+    }
+    drupal_set_message(t('Meta tag: Migrated !count record(s) from the Page Title module.', array('!count' => $converted)));
+  }
+}
+
+/**
+ * Uninstall Page Title module.
+ */
+function openfed_update_7114() {
+  // Clear variables
+  variable_del('page_title_default');
+  variable_del('page_title_individual');
+  variable_del('page_title_front');
+  variable_del('page_title_blog');
+  variable_del('page_title_user');
+  variable_del('page_title_user_showfield');
+  variable_del('page_title_pager_pattern');
+  variable_del('page_title_forum_root_title');
+  variable_del('page_title_comment_reply');
+  variable_del('page_title_comment_child_reply');
+
+  // Clear the node specific variables
+  $types = node_type_get_names();
+  foreach ($types as $type => $name) {
+    variable_del("page_title_type_{$type}");
+    variable_del("page_title_type_{$type}_showfield");
+  }
+
+  // Clear the vocab specific variables
+  if (module_exists('taxonomy')) {
+    $vocabs = taxonomy_get_vocabularies();
+    foreach ($vocabs as $vid => $vocab) {
+      variable_del("page_title_vocab_{$vocab->machine_name}");
+      variable_del("page_title_vocab_{$vocab->machine_name}_showfield");
+
+      // Legacy delete - just in case the uninstall is happening befoer update 7200
+      variable_del("page_title_vocab_{$vid}");
+      variable_del("page_title_vocab_{$vid}_showfield");
+    }
+  }
+}
+

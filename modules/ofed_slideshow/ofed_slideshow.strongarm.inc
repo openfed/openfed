@@ -246,20 +246,6 @@ function ofed_slideshow_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'page_title_type_ofed_slideshow';
-  $strongarm->value = '';
-  $export['page_title_type_ofed_slideshow'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'page_title_type_ofed_slideshow_showfield';
-  $strongarm->value = 1;
-  $export['page_title_type_ofed_slideshow_showfield'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_ofed_slideshow_de_pattern';
   $strongarm->value = 'slideshows/[node:title]';
   $export['pathauto_node_ofed_slideshow_de_pattern'] = $strongarm;
