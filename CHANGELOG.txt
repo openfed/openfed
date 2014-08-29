@@ -18,9 +18,10 @@ Next version
     #2324655: Module upgrade: OpenFed Switcher
     #2325351: Module upgrade: Text Resize
     #2328425: Module upgrade: Views Data Export
+    #2329597: Module upgrade: Countries
   
   * Theme upgrades:
-    #2248263: Theme upgrade: Openfed Nerra
+    #2329161: Theme upgrade: Openfed Nerra
 
   * Issues:
     #2321239: i18n requires a patch to avoid a WSOD when translating a context-free string
