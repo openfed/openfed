@@ -824,6 +824,17 @@ function _openfed_get_default_permissions() {
       'Configurator',
     ),
 
+    // site_map
+    'access site map' => array(
+      'Builder',
+      'Configurator',
+      'Content Manager',
+      'User Manager',
+      'Authenticated Visitor',
+      'authenticated user',
+      'anonymous user',
+    ),
+
     // system
     'administer actions' => array(
       'Builder',
