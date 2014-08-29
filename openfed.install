@@ -395,7 +395,7 @@ function openfed_update_7111() {
     module_enable(array('ofed_admin_views_language'));
   }
 }
- 
+
 /**
  * Revert field instances for the following features for 1.6 so as to
  * import new field instance definitions for issues:
@@ -440,7 +440,9 @@ function openfed_update_7113() {
  */
 function openfed_update_7114() {
   if (db_table_exists('page_title')) {
-    module_enable('metatag');
+    if (!module_exists('metatag')) {
+      module_enable(array('metatag'));
+    }
     $converted = 0;
     $page_titles = db_select('page_title', 'pt')
       ->fields('pt', array('type', 'id', 'page_title'))
@@ -469,22 +471,27 @@ function openfed_update_7114() {
       // Set metatag page title as per settings.
       $entity = entity_load($pt_data->type, array($pt_data->id));
 
+      $revision_id = NULL;
+      $langcode = NULL;
+
       switch ($pt_data->type) {
         case 'node':
           $metatag_config_node_type = metatag_config_load('node:' . $entity[$pt_data->id]->type);
 
           if (!empty($metatag_config_node_type) && isset($metatag_config_node_type->config['title'])) {
             $title_setting = $metatag_config_node_type->config['title']['value'];
-            $metatag_title = str_replace('[current-page:title]', trim($pt_data->page_title), $title_setting);
           }
           else if (isset($metatag_config_node->config['title'])) {
             $title_setting = $metatag_config_node->config['title']['value'];
-            $metatag_title = str_replace('[current-page:title]', trim($pt_data->page_title), $title_setting);
           }
           else {
             $title_setting = $metatag_config_global->config['title']['value'];
-            $metatag_title = str_replace('[current-page:title]', trim($pt_data->page_title), $title_setting);
           }
+          $metatag_title = str_replace('[current-page:title]', trim($pt_data->page_title), $title_setting);
+          $metatag_title = str_replace('[node:title]', trim($pt_data->page_title), $metatag_title);
+          $node = node_load($pt_data->id);
+          $revision_id = $node->vid;
+          $langcode = $node->language;
           break;
 
         case 'taxonomy_term':
@@ -492,31 +499,31 @@ function openfed_update_7114() {
 
           if (!empty($metatag_config_vocabulary_type) && isset($metatag_config_vocabulary_type->config['title'])) {
             $title_setting = $metatag_config_vocabulary_type->config['title']['value'];
-            $metatag_title = str_replace('[current-page:title]', trim($pt_data->page_title), $title_setting);
           }
           else if (isset($metatag_config_taxonomy_term->config['title'])) {
             $title_setting = $metatag_config_taxonomy_term->config['title']['value'];
-            $metatag_title = str_replace('[current-page:title]', trim($pt_data->page_title), $title_setting);
           }
           else {
             $title_setting = $metatag_config_global->config['title']['value'];
-            $metatag_title = str_replace('[current-page:title]', trim($pt_data->page_title), $title_setting);
           }
+          $metatag_title = str_replace('[current-page:title]', trim($pt_data->page_title), $title_setting);
+          $metatag_title = str_replace('[term:name]', trim($pt_data->page_title), $metatag_title);
           break;
 
         case 'user':
           if (isset($metatag_config_user->config['title'])) {
             $title_setting = $metatag_config_user->config['title']['value'];
-            $metatag_title = str_replace('[current-page:title]', trim($pt_data->page_title), $title_setting);
           }
           else {
             $title_setting = $metatag_config_global->config['title']['value'];
-            $metatag_title = str_replace('[current-page:title]', trim($pt_data->page_title), $title_setting);
           }
+          $metatag_title = str_replace('[current-page:title]', trim($pt_data->page_title), $title_setting);
+          $metatag_title = str_replace('[user:name]', trim($pt_data->page_title), $metatag_title);
           break;
       }
       $existing_data[$pt_data->id]['title']['value'] = $metatag_title;
-      metatag_metatags_save($pt_data->type, $pt_data->id, $existing_data[$pt_data->id]);
+
+      metatag_metatags_save($pt_data->type, $pt_data->id, $revision_id, $existing_data[$pt_data->id], $langcode);
       $converted += db_delete('page_title')
         ->condition('type', $pt_data->type)
         ->condition('id', $pt_data->id)
