@@ -93,6 +93,7 @@ projects[admin_views][subdir] = contrib
 
 projects[apachesolr][version] = "1.7"
 projects[apachesolr][subdir] = contrib
+projects[apachesolr][patch][2315173] = "http://www.drupal.org/files/issues/apachesolr-indexing_teaser-2315173-10.patch"
 
 projects[apachesolr_attachments][version] = "1.3"
 projects[apachesolr_attachments][subdir] = contrib

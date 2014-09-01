@@ -26,10 +26,13 @@ Next version
     #2329161: Theme upgrade: Openfed Nerra
 
   * Issues:
-    #2321239: i18n requires a patch to avoid a WSOD when translating a context-free string
+    #2321239: i18n requires a patch to avoid a WSOD when translating a context-
+              free string
     #2319151: Startpage - "Show" not filtering content types
     #2302859: Support for swipe on slideshows
     #2330787: Incorrect Openfed schema version for update hooks
+    #2315173: Node teasers aren't indexed if body field language is different
+              than node language
 
 11 August 2014 - Version 7.x-1.8
 --------------------------------
