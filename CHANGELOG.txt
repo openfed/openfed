@@ -28,6 +28,7 @@ Next version
     #2321239: i18n requires a patch to avoid a WSOD when translating a context-free string
     #2319151: Startpage - "Show" not filtering content types
     #2302859: Support for swipe on slideshows
+    #2330787: Incorrect Openfed schema version for update hooks
 
 11 August 2014 - Version 7.x-1.8
 --------------------------------

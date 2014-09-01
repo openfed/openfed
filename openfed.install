@@ -404,9 +404,7 @@ function openfed_update_7111() {
  *  #2188573: Pause functionality for photo gallery, slider and slideshow
  */
 function openfed_update_7112() {
-  $modules = array(
-    'ofed_download',
-    'ofed_event',
+  $modules = array( 'ofed_download', 'ofed_event',
     'ofed_job',
     'ofed_news',
     'ofed_photogallery',
@@ -436,9 +434,19 @@ function openfed_update_7113() {
 }
 
 /**
+ * Re-run previously run update hooks as the openfed profile is
+ * at version 7301 on certain sites.
+ */
+function openfed_update_7302() {
+  openfed_update_7111();
+  openfed_update_7112();
+  openfed_update_7113();
+}
+
+/**
  * Migrate data from the page_title module, if available.
  */
-function openfed_update_7114() {
+function openfed_update_7303() {
   if (db_table_exists('page_title')) {
     if (!module_exists('metatag')) {
       module_enable(array('metatag'));
@@ -536,7 +544,7 @@ function openfed_update_7114() {
 /**
  * Uninstall Page Title module.
  */
-function openfed_update_7115() {
+function openfed_update_7304() {
   // Clear variables
   variable_del('page_title_default');
   variable_del('page_title_individual');
