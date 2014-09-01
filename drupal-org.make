@@ -131,7 +131,7 @@ projects[comment_goodness][subdir] = contrib
 projects[content_access][version] = "1.2-beta2"
 projects[content_access][subdir] = contrib
 
-projects[countries][version] = "2.2"
+projects[countries][version] = "2.3"
 projects[countries][subdir] = contrib
 
 projects[ctools][version] = "1.4"
