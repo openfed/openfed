@@ -536,7 +536,7 @@ function openfed_update_7114() {
 /**
  * Uninstall Page Title module.
  */
-function openfed_update_7114() {
+function openfed_update_7115() {
   // Clear variables
   variable_del('page_title_default');
   variable_del('page_title_individual');
