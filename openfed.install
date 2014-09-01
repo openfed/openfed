@@ -404,7 +404,9 @@ function openfed_update_7111() {
  *  #2188573: Pause functionality for photo gallery, slider and slideshow
  */
 function openfed_update_7112() {
-  $modules = array( 'ofed_download', 'ofed_event',
+  $modules = array(
+    'ofed_download',
+    'ofed_event',
     'ofed_job',
     'ofed_news',
     'ofed_photogallery',
