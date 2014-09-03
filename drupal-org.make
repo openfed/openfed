@@ -329,7 +329,7 @@ projects[metatag][subdir] = contrib
 projects[multiple_node_menu][version] = "1.0-beta1"
 projects[multiple_node_menu][subdir] = contrib
 
-projects[multiselect][version] = "1.9"
+projects[multiselect][version] = "1.10"
 projects[multiselect][subdir] = contrib
 
 projects[navigation404][version] = "1.0"
