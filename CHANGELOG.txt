@@ -34,6 +34,7 @@ Next version
     #2330787: Incorrect Openfed schema version for update hooks
     #2315173: Node teasers aren't indexed if body field language is different
               than node language
+    #2332691: AJAX doesn't work in views glossary mode
 
 11 August 2014 - Version 7.x-1.8
 --------------------------------

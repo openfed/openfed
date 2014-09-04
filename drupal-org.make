@@ -453,6 +453,7 @@ projects[view_unpublished][patch][1192074] = "http://drupal.org/files/view_unpub
 
 projects[views][version] = "3.8"
 projects[views][subdir] = contrib
+projects[views][patch][1803758] = "http://www.drupal.org/files/views-language_prefix_for_ajax-1803758-1.patch"
 
 projects[views_data_export][version] = "3.0-beta8"
 projects[views_data_export][subdir] = contrib
