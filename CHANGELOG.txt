@@ -25,6 +25,7 @@ Next version
 
   * Theme upgrades:
     #2329161: Theme upgrade: Openfed Nerra
+    #2333387: Theme upgrade: Openfed CMS
 
   * Issues:
     #2321239: i18n requires a patch to avoid a WSOD when translating a context-
