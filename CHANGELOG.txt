@@ -23,6 +23,7 @@ Next version
     #2330845: Module upgrade: Apache Solr Search
     #2331925: Module upgrade: Multiselect
     #2334671: Module upgrade: Location
+    #2334665: Module upgrade: Security Review
 
   * Theme upgrades:
     #2329161: Theme upgrade: Openfed Nerra
