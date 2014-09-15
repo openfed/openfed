@@ -213,7 +213,6 @@ function _openfed_get_functionalities_list() {
     'ofed_address' => $tr('Address'),
     'ofed_banner' => $tr('Banner'),
     'blog' => $tr('Blog'),
-    'ofed_download' => $tr('Download'),
     'ofed_event' => $tr('Event'),
     'ofed_faq' => $tr('FAQ'),
     'forum' => $tr('Forum'),
