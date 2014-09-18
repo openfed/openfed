@@ -27,6 +27,9 @@ Next version
     #2338521: Module upgrade: Colorbox
     #2340583: Module upgrade: Metatag
 
+  * Library upgrades:
+    #2308113: Library upgrade: CKEditor
+
   * Theme upgrades:
     #2329161: Theme upgrade: Openfed Nerra
     #2333387: Theme upgrade: Openfed CMS
