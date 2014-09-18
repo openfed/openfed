@@ -25,6 +25,7 @@ Next version
     #2334671: Module upgrade: Location
     #2334665: Module upgrade: Security Review
     #2338521: Module upgrade: Colorbox
+    #2340583: Module upgrade: Metatag
 
   * Theme upgrades:
     #2329161: Theme upgrade: Openfed Nerra
