@@ -48,15 +48,17 @@ function ofed_download_flag_default_flags() {
     'unflag_denied_text' => '',
     'link_type' => 'toggle',
     'weight' => 0,
+    'show_in_links' => array(),
+    'show_as_field' => FALSE,
     'show_on_form' => 1,
     'access_author' => '',
-    'show_on_page' => 0,
-    'show_on_teaser' => 0,
     'show_contextual_link' => 0,
     'i18n' => 0,
+    'show_on_page' => 0,
+    'show_on_teaser' => 0,
     'module' => 'ofed_download',
     'locked' => array(
-      'name' => 'name',
+      0 => 'name',
     ),
     'api_version' => 3,
     'status' => FALSE,
@@ -77,10 +79,10 @@ function ofed_download_flag_default_flags() {
       ),
     ),
   );
-
   return $flags;
+
 }
-  
+
 /**
  * Implements hook_image_default_styles().
  */
@@ -110,7 +112,7 @@ function ofed_download_image_default_styles() {
       ),
     ),
   );
-  
+
   return $styles;
 }
 
@@ -128,5 +130,6 @@ function ofed_download_node_info() {
       'help' => '',
     ),
   );
+  drupal_alter('node_info', $items);
   return $items;
 }
