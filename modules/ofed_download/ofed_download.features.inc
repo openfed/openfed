@@ -33,7 +33,7 @@ function ofed_download_flag_default_flags() {
   $flags = array();
   // Exported flag: "Download: Hide item from lists and blocks".
   $flags['download_hide'] = array(
-    'content_type' => 'node',
+    'entity_type' => 'node',
     'title' => 'Download: Hide item from lists and blocks',
     'global' => 0,
     'types' => array(
@@ -47,7 +47,20 @@ function ofed_download_flag_default_flags() {
     'unflag_message' => '',
     'unflag_denied_text' => '',
     'link_type' => 'toggle',
-    'roles' => array(
+    'weight' => 0,
+    'show_on_form' => 1,
+    'access_author' => '',
+    'show_on_page' => 0,
+    'show_on_teaser' => 0,
+    'show_contextual_link' => 0,
+    'i18n' => 0,
+    'module' => 'ofed_download',
+    'locked' => array(
+      'name' => 'name',
+    ),
+    'api_version' => 3,
+    'status' => FALSE,
+    'import_roles' => array(
       'flag' => array(
         0 => 2,
         1 => 3,
@@ -63,53 +76,39 @@ function ofed_download_flag_default_flags() {
         4 => 6,
       ),
     ),
-    'weight' => 0,
-    'show_on_form' => 1,
-    'access_author' => '',
-    'show_on_page' => 0,
-    'show_on_teaser' => 0,
-    'show_contextual_link' => 0,
-    'i18n' => 0,
-    'module' => 'ofed_download',
-    'locked' => array(
-      0 => 'name',
-    ),
-    'api_version' => 2,
-  );
-  return $flags;
-
-}
-
-/**
- * Implements hook_image_default_styles().
- */
-function ofed_download_image_default_styles() {
-  $styles = array();
-
-  // Exported image style: ofed_download_thumb.
-  $styles['ofed_download_thumb'] = array(
-    'name' => 'ofed_download_thumb',
-    'label' => 'ofed_download_thumb',
-    'effects' => array(
-      1 => array(
-        'label' => 'Scale and crop',
-        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
-        'effect callback' => 'image_scale_and_crop_effect',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'image_resize_form',
-        'summary theme' => 'image_resize_summary',
-        'module' => 'image',
-        'name' => 'image_scale_and_crop',
-        'data' => array(
-          'width' => 150,
-          'height' => 150,
-          'upscale' => 0,
+    return $flags;
+  }
+  
+  /**
+   * Implements hook_image_default_styles().
+   */
+  function ofed_download_image_default_styles() {
+    $styles = array();
+  
+    // Exported image style: ofed_download_thumb.
+    $styles['ofed_download_thumb'] = array(
+      'name' => 'ofed_download_thumb',
+      'label' => 'ofed_download_thumb',
+      'effects' => array(
+        1 => array(
+          'label' => 'Scale and crop',
+          'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
+          'effect callback' => 'image_scale_and_crop_effect',
+          'dimensions callback' => 'image_resize_dimensions',
+          'form callback' => 'image_resize_form',
+          'summary theme' => 'image_resize_summary',
+          'module' => 'image',
+          'name' => 'image_scale_and_crop',
+          'data' => array(
+            'width' => 150,
+            'height' => 150,
+            'upscale' => 0,
+          ),
+          'weight' => -8,
         ),
-        'weight' => -8,
       ),
-    ),
-  );
-
+    );
+  
   return $styles;
 }
 
