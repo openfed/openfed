@@ -336,7 +336,7 @@ projects[navigation404][version] = "1.0"
 projects[navigation404][subdir] = contrib
 projects[navigation404][patch][1844830] = "http://drupal.org/files/navigation404-undefined_index_site_404-1844830-0.patch"
 
-projects[override_node_options][version] = "1.12"
+projects[override_node_options][version] = "1.13"
 projects[override_node_options][subdir] = contrib
 
 projects[panels][version] = "3.4"
