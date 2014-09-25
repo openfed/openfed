@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+Next version
+------------
+  * Module upgrades:
+    #2344711: Moudle upgrade: Metatag
+
 23 September 2014 - Version 1.9-beta1
 -------------------------------------
   * Removed modules:
