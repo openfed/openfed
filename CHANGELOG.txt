@@ -9,6 +9,7 @@ Next version
 
   * Library upgrades:
     #2308113: Library upgrade: CKEditor
+    #2324427: Library upgrade: Colorbox
 
 25 September 2014 - Version 1.9-beta2
 -------------------------------------
