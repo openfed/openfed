@@ -7,6 +7,9 @@ Next version
     #2341691: Module upgrade: Override Node Options
     #2344769: Module upgrade: Date
 
+  * Library upgrades:
+    #2308113: Library upgrade: CKEditor
+
 25 September 2014 - Version 1.9-beta2
 -------------------------------------
   * Module upgrades:
