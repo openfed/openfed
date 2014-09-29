@@ -6,6 +6,7 @@ Next version
   * Module upgrades:
     #2341691: Module upgrade: Override Node Options
     #2344769: Module upgrade: Date
+    #2346693: Module upgrade: Media: YouTube
 
   * Library upgrades:
     #2308113: Library upgrade: CKEditor

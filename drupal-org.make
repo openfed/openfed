@@ -307,9 +307,10 @@ projects[media_soundcloud][subdir] = contrib
 projects[media_vimeo][version] = "2.0"
 projects[media_vimeo][subdir] = contrib
 
-projects[media_youtube][version] = "2.0-rc4"
+projects[media_youtube][download][type] = git
+projects[media_youtube][download][branch] = "7.x-2.x"
+projects[media_youtube][download][revision] = 83894fd
 projects[media_youtube][subdir] = contrib
-projects[media_youtube][patch][1863788] = "http://drupal.org/files/issues/media_youtube_install_file_displays-1863788-9.patch"
 
 projects[menu_attributes][version] = "1.0-rc2"
 projects[menu_attributes][subdir] = contrib
