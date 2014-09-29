@@ -310,6 +310,7 @@ projects[media_vimeo][subdir] = contrib
 projects[media_youtube][download][type] = git
 projects[media_youtube][download][branch] = "7.x-2.x"
 projects[media_youtube][download][revision] = 83894fd
+projects[media_youtube][patch][2129317] = "http://www.drupal.org/files/issues/media_youtube.iframe-accessibility.patch"
 projects[media_youtube][subdir] = contrib
 
 projects[menu_attributes][version] = "1.0-rc2"
