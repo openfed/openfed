@@ -12,6 +12,9 @@ Next version
     #2308113: Library upgrade: CKEditor
     #2324427: Library upgrade: Colorbox
 
+  * Theme upgrades:
+    #2329161: Theme upgrade: Openfed Nerra
+
   * Issues:
     #2309667: Youtube embedded support for title and name tags
     #2309659: Accessible controls for Flash/Youtube embedded videos
