@@ -14,6 +14,7 @@ Next version
 
   * Issues:
     #2309667: Youtube embedded support for title and name tags
+    #2309659: Accessible controls for Flash/Youtube embedded videos
 
 25 September 2014 - Version 1.9-beta2
 -------------------------------------
