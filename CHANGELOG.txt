@@ -8,6 +8,7 @@ Next version
     #2344769: Module upgrade: Date
     #2346693: Module upgrade: Media: YouTube
     #2351215: Module upgrade: Metatag
+    #2351213: Module upgrade: Localization update
 
   * Library upgrades:
     #2308113: Library upgrade: CKEditor
