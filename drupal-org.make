@@ -398,6 +398,7 @@ projects[security_review][subdir] = contrib
 
 projects[sharethis][version] = "2.9"
 projects[sharethis][subdir] = contrib
+projects[sharethis][patch][2353369] = "https://www.drupal.org/files/issues/sharethis-link_accessibility-1289054-41.patch"
 
 projects[simple_gmap][version] = "1.2"
 projects[simple_gmap][subdir] = contrib
