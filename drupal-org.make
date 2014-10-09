@@ -200,8 +200,8 @@ projects[field_collection][version] = "1.0-beta7"
 projects[field_collection][subdir] = contrib
 projects[field_collection[patch][2242751] = "http://drupal.org/files/issues/field-collection-drupal-7.27-2242751-1.patch"
 
-projects[field-conditional-state][version] = "1.1"
-projects[field-conditional-state][subdir] = contrib
+projects[field_conditional_state][version] = "2.1"
+projects[field_conditional_state][subdir] = contrib
 
 projects[field_group][version] = "1.4"
 projects[field_group][subdir] = contrib
