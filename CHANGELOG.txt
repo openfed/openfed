@@ -9,6 +9,7 @@ Next version
     #2346693: Module upgrade: Media: YouTube
     #2351215: Module upgrade: Metatag
     #2351213: Module upgrade: Localization update
+    #2352879: Module upgrade: Webform
 
   * Library upgrades:
     #2308113: Library upgrade: CKEditor
