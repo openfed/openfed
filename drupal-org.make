@@ -116,7 +116,7 @@ projects[beidmellon][subdir] = contrib
 projects[calendar][version] = "3.4"
 projects[calendar][subdir] = contrib
 
-projects[ckeditor][version] = "1.15"
+projects[ckeditor][version] = "1.16"
 projects[ckeditor][subdir] = contrib
 
 projects[ckeditor_link][version] = "2.3"
