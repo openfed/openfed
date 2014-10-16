@@ -3,9 +3,6 @@ CHANGELOG
 
 Next version
 ------------
-  * Core upgrade:
-    #2317197: Core update: Drupal 7.32
-
   * Module upgrades:
     #2341691: Module upgrade: Override Node Options
     #2344769: Module upgrade: Date
@@ -15,7 +12,6 @@ Next version
     #2352879: Module upgrade: Webform
     #2338637: Module upgrade: Field Conditional State
     #2357507: Module upgrade: CKEditor
-    #2357331: Module upgrade: Calendar
 
   * Library upgrades:
     #2308113: Library upgrade: CKEditor
