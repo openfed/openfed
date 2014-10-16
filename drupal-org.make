@@ -375,6 +375,7 @@ projects[registration][subdir] = contrib
 
 projects[role_delegation][version] = "1.1"
 projects[role_delegation][subdir] = contrib
+projects[role_delegation][patch][1156414] = "http://www.drupal.org/files/issues/1156414-prevent-editing-of-certain-users-16.patch"
 
 projects[rules][version] = "2.7"
 projects[rules][subdir] = contrib

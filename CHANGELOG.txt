@@ -3,6 +3,9 @@ CHANGELOG
 
 Next version
 ------------
+  * Core upgrade:
+    #2317197: Core update: Drupal 7.32
+
   * Module upgrades:
     #2341691: Module upgrade: Override Node Options
     #2344769: Module upgrade: Date
@@ -12,6 +15,7 @@ Next version
     #2352879: Module upgrade: Webform
     #2338637: Module upgrade: Field Conditional State
     #2357507: Module upgrade: CKEditor
+    #2357331: Module upgrade: Calendar
 
   * Library upgrades:
     #2308113: Library upgrade: CKEditor
@@ -24,6 +28,8 @@ Next version
     #2309667: Youtube embedded support for title and name tags
     #2309659: Accessible controls for Flash/Youtube embedded videos
     #2353369: Improve accessibility of ShareThis links
+    #2358133: Role delegation: Forbid editing of accounts that have higher
+              permission than current user 
 
 25 September 2014 - Version 1.9-beta2
 -------------------------------------
