@@ -3,9 +3,6 @@ CHANGELOG
 
 Next version
 ------------
-  * Core upgrade:
-    #2317197: Core update: Drupal 7.32
-
   * Module upgrades:
     #2341691: Module upgrade: Override Node Options
     #2344769: Module upgrade: Date
