@@ -1,8 +1,8 @@
 CHANGELOG
 =========
 
-Next version
-------------
+20 October 2014 - Version 1.9-rc2
+---------------------------------
   * Module upgrade:
     #2359883: Module upgrade: Menu Attributes
 
