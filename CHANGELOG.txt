@@ -6,6 +6,9 @@ Next version
   * Module upgrade:
     #2359883: Module upgrade: Menu Attributes
 
+  * Issues:
+    #2196447: Recreate openfed features
+
 17 October 2014 - Version 1.9-rc1
 ---------------------------------
   * Core upgrade:

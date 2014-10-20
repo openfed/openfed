@@ -143,6 +143,12 @@ function _openfed_install_functionalities_batch_finished($success, $results, $op
     variable_del('openfed_content_types_batch_run');
     variable_del('openfed_content_types_batch_functionalities');
   }
+  else {
+    // An error occurred.
+    $error_operation = reset($operations);
+    $message = t('An error occurred while processing %error_operation with arguments: @arguments', array('%error_operation' => $error_operation[0], '@arguments' => print_r($error_operation[1], TRUE)));
+    drupal_set_message($message, 'error');
+  }
 
   // Flush all caches to complete the module installation process. Subsequent
   // installation tasks will now have full access to the profile's modules.

@@ -115,151 +115,178 @@ function ofed_banner_install() {
     }
   }
 
-  // Add the settings to set the conditionnal fields.
-  _ofed_banner_install_conditionnal_fields();
+  // Add the settings to set the conditional fields.
+  _ofed_banner_install_conditional_fields();
 }
 
 /**
  * Install the conditional fields settings.
+ *
+ * Assumes FCS 2.x is installed (as required in the .info file).
  */
-function _ofed_banner_install_conditionnal_fields() {
-  if (module_exists('field_conditional_state')) {
-    // Insert for field leaderboard.
-    db_insert('field_conditional_state')
-    ->fields(array(
+function _ofed_banner_install_conditional_fields() {
+  // Export of 1.x fields.
+  $fields = array(
+    // Leaderboard.
+    (object) array(
       'field_name' => 'field_ofed_banner_img_leadboard',
       'control_field' => 'field_ofed_banner_type',
       'state' => 'visible',
       'bundle' => 'ofed_banner',
-      'trigger_values' => serialize(array('leadboard' => 'leadboard')),
-      'condition_type' => 'or',
-    ))
-    ->execute();
-    db_insert('field_conditional_state')
-    ->fields(array(
+      'trigger_values' => 'a:1:{s:9:"leadboard";s:9:"leadboard";}',
+      'condition_type' => 'or'
+    ),
+    (object) array(
       'field_name' => 'field_ofed_banner_img_leadboard',
       'control_field' => 'field_ofed_banner_type',
       'state' => 'required',
       'bundle' => 'ofed_banner',
-      'trigger_values' => serialize(array('leadboard' => 'leadboard')),
-      'condition_type' => 'or',
-    ))
-    ->execute();
+      'trigger_values' => 'a:1:{s:9:"leadboard";s:9:"leadboard";}',
+      'condition_type' => 'or'
+    ),
 
-    // Insert for field full.
-    db_insert('field_conditional_state')
-    ->fields(array(
+    // Full.
+    (object) array(
       'field_name' => 'field_ofed_banner_img_full',
       'control_field' => 'field_ofed_banner_type',
       'state' => 'visible',
       'bundle' => 'ofed_banner',
-      'trigger_values' => serialize(array('full' => 'full')),
-      'condition_type' => 'or',
-    ))
-    ->execute();
-    db_insert('field_conditional_state')
-    ->fields(array(
+      'trigger_values' => 'a:1:{s:4:"full";s:4:"full";}',
+      'condition_type' => 'or'
+    ),
+    (object) array(
       'field_name' => 'field_ofed_banner_img_full',
       'control_field' => 'field_ofed_banner_type',
       'state' => 'required',
       'bundle' => 'ofed_banner',
-      'trigger_values' => serialize(array('full' => 'full')),
-      'condition_type' => 'or',
-    ))
-    ->execute();
+      'trigger_values' => 'a:1:{s:4:"full";s:4:"full";}',
+      'condition_type' => 'or'
+    ),
 
-    // Insert for field skyscraper.
-    db_insert('field_conditional_state')
-    ->fields(array(
+    // Skyscraper.
+    (object) array(
       'field_name' => 'field_ofed_banner_img_skyscraper',
       'control_field' => 'field_ofed_banner_type',
       'state' => 'visible',
       'bundle' => 'ofed_banner',
-      'trigger_values' => serialize(array('skyscraper' => 'skyscraper')),
-      'condition_type' => 'or',
-    ))
-    ->execute();
-    db_insert('field_conditional_state')
-    ->fields(array(
+      'trigger_values' => 'a:1:{s:10:"skyscraper";s:10:"skyscraper";}',
+      'condition_type' => 'or'
+    ),
+    (object) array(
       'field_name' => 'field_ofed_banner_img_skyscraper',
       'control_field' => 'field_ofed_banner_type',
       'state' => 'required',
       'bundle' => 'ofed_banner',
-      'trigger_values' => serialize(array('skyscraper' => 'skyscraper')),
-      'condition_type' => 'or',
-    ))
-    ->execute();
+      'trigger_values' => 'a:1:{s:10:"skyscraper";s:10:"skyscraper";}',
+      'condition_type' => 'or'
+    ),
 
-    // Insert for field medium rectangle.
-    db_insert('field_conditional_state')
-    ->fields(array(
+    // Medium rectangle.
+    (object) array(
       'field_name' => 'field_ofed_banner_img_mrectangle',
       'control_field' => 'field_ofed_banner_type',
       'state' => 'visible',
       'bundle' => 'ofed_banner',
-      'trigger_values' => serialize(array('mrectangle' => 'mrectangle')),
-      'condition_type' => 'or',
-    ))
-    ->execute();
-    db_insert('field_conditional_state')
-    ->fields(array(
+      'trigger_values' => 'a:1:{s:10:"mrectangle";s:10:"mrectangle";}',
+      'condition_type' => 'or'
+    ),
+    (object) array(
       'field_name' => 'field_ofed_banner_img_mrectangle',
       'control_field' => 'field_ofed_banner_type',
       'state' => 'required',
       'bundle' => 'ofed_banner',
-      'trigger_values' => serialize(array('mrectangle' => 'mrectangle')),
-      'condition_type' => 'or',
-    ))
-    ->execute();
+      'trigger_values' => 'a:1:{s:10:"mrectangle";s:10:"mrectangle";}',
+      'condition_type' => 'or'
+    ),
 
-    // Insert for field square rectangle.
-    db_insert('field_conditional_state')
-    ->fields(array(
+    // Square rectangle.
+    (object) array(
       'field_name' => 'field_ofed_banner_img_srectangle',
       'control_field' => 'field_ofed_banner_type',
       'state' => 'visible',
       'bundle' => 'ofed_banner',
-      'trigger_values' => serialize(array('srectangle' => 'srectangle')),
-      'condition_type' => 'or',
-    ))
-    ->execute();
-    db_insert('field_conditional_state')
-    ->fields(array(
+      'trigger_values' => 'a:1:{s:10:"srectangle";s:10:"srectangle";}',
+      'condition_type' => 'or'
+    ),
+    (object) array(
       'field_name' => 'field_ofed_banner_img_srectangle',
       'control_field' => 'field_ofed_banner_type',
       'state' => 'required',
       'bundle' => 'ofed_banner',
-      'trigger_values' => serialize(array('srectangle' => 'srectangle')),
-      'condition_type' => 'or',
-    ))
-    ->execute();
+      'trigger_values' => 'a:1:{s:10:"srectangle";s:10:"srectangle";}',
+      'condition_type' => 'or'
+    ),
 
-    // Insert for field button.
-    db_insert('field_conditional_state')
-    ->fields(array(
+    // Button.
+    (object) array(
       'field_name' => 'field_ofed_banner_img_button',
       'control_field' => 'field_ofed_banner_type',
       'state' => 'visible',
       'bundle' => 'ofed_banner',
-      'trigger_values' => serialize(array('button' => 'button')),
-      'condition_type' => 'or',
-    ))
-    ->execute();
-    db_insert('field_conditional_state')
-    ->fields(array(
+      'trigger_values' => 'a:1:{s:6:"button";s:6:"button";}',
+      'condition_type' => 'or'
+    ),
+    (object) array(
       'field_name' => 'field_ofed_banner_img_button',
       'control_field' => 'field_ofed_banner_type',
       'state' => 'required',
       'bundle' => 'ofed_banner',
-      'trigger_values' => serialize(array('button' => 'button')),
-      'condition_type' => 'or',
-    ))
-    ->execute();
+      'trigger_values' => 'a:1:{s:6:"button";s:6:"button";}',
+      'condition_type' => 'or'
+    )
+  );
+  _ofed_banner_migrate_fcs_fields($fields);
+}
+
+/**
+ * Installs field_conditional_state 1.x fields.
+ *
+ * @see field_conditional_state_update_7200
+ */
+function _ofed_banner_migrate_fcs_fields($fields) {
+  foreach ($fields as $field) {
+    // In case FCS was used for a non-node we have to use the right entity type
+    // so we have to search for the bundle within the existing entity types
+    // if more than one entity type has a bundle with the same name
+    // we can't decide which one is the right bundle
+    //(so we'll simply take the first found entity type).
+    $entity_type = 'node';
+    foreach ($bundle_data as $type => $bundles) {
+      if (isset($bundles[$field->bundle])){
+        $entity_type = $type;
+        break;
+      }
+    }
+
+    $group_id = db_insert('field_conditional_states_group')->fields(array(
+      'state' => $field->state,
+      'entity_type' => $entity_type,
+      'bundle' => $field->bundle,
+      'field_name' => $field->field_name,
+      'type' => $field->condition_type
+    ))->execute();
+
+    $control_field_info = field_info_field($field->control_field);
+
+    $trigger_values = array_keys(unserialize($field->trigger_values));
+    foreach ($trigger_values as $trigger_value) {
+      $trigger_state = 'value';
+      if ($control_field_info['type'] == 'list_boolean') {
+        $trigger_state = ($trigger_value ? 'checked' : 'unchecked');
+      }
+
+      db_insert('field_conditional_state')->fields(array(
+        'group_id' => $group_id,
+        'control_field' => $field->control_field,
+        'trigger_state' => $trigger_state,
+        'trigger_value' => $trigger_value,
+      ))->execute();
+    }
   }
 }
 
 /**
- * Create the missing paths alias for each languages.
+ * Create the missing path aliases for each language.
  */
 function ofed_banner_update_7100() {
   $module = db_select('system', 's')
