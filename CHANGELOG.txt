@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+Next version
+------------
+  * Module upgrade:
+    #2359883: Module upgrade: Menu Attributes
+
 17 October 2014 - Version 1.9-rc1
 ---------------------------------
   * Core upgrade:
