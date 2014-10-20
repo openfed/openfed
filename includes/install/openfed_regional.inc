@@ -1,4 +1,4 @@
-<?php
+e?php
 
 /**
  * @file
@@ -97,3 +97,6 @@ variable_set('locale_cookie_language_negotiation_cookie_path', '/');
 variable_set('locale_cookie_language_negotiation_cookie_domain', '');
 variable_set('locale_cookie_language_negotiation_cookie_secure', 0);
 variable_set('locale_cookie_language_negotiation_cookie_http_only', 0);
+
+// See https://www.drupal.org/node/2210161
+variable_set('admin_menu_force_language', 'en');

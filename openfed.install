@@ -590,3 +590,9 @@ function openfed_update_7305() {
   features_revert(array('ofed_admin_views_language' => $components)); 
 }
 
+/**
+ * Force admin menu language to english.
+ */
+function openfed_udpate_7306() {
+  variable_set('admin_menu_force_language', 'en');
+}
