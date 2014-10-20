@@ -584,7 +584,7 @@ function openfed_update_7304() {
  * Revert Administration Views Feature with custom content administration
  * page in order to show Language and Nid filters. 
  */
-function openfed_update_7304() {
+function openfed_update_7305() {
   $feature = features_get_features('ofed_admin_views_language');
   $components = array_keys($feature->info['features']);
   features_revert(array('ofed_admin_views_language' => $components)); 
