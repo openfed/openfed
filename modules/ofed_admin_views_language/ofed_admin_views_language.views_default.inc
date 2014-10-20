@@ -12,10 +12,10 @@ function ofed_admin_views_language_views_default_views() {
 
   $view = new view();
   $view->name = 'administration_nodes_language';
-  $view->description = 'Find and manage content.';
+  $view->description = 'Find and manage content. Includes custom node ID and language filters.';
   $view->tag = 'admin';
   $view->base_table = 'node';
-  $view->human_name = 'Administration: Nodes (with Language filter)';
+  $view->human_name = 'Administration: Nodes (Openfed)';
   $view->core = 0;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -258,10 +258,18 @@ function ofed_admin_views_language_views_default_views() {
       'postpone_processing' => 0,
     ),
   );
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
+  /* Field: Content: Language */
+  $handler->display->display_options['fields']['language']['id'] = 'language';
+  $handler->display->display_options['fields']['language']['table'] = 'node';
+  $handler->display->display_options['fields']['language']['field'] = 'language';
   /* Field: Content: Has new content */
   $handler->display->display_options['fields']['timestamp']['id'] = 'timestamp';
   $handler->display->display_options['fields']['timestamp']['table'] = 'history';
@@ -363,6 +371,24 @@ function ofed_admin_views_language_views_default_views() {
     7 => 0,
     8 => 0,
   );
+  /* Filter criterion: Content: Nid */
+  $handler->display->display_options['filters']['nid']['id'] = 'nid';
+  $handler->display->display_options['filters']['nid']['table'] = 'node';
+  $handler->display->display_options['filters']['nid']['field'] = 'nid';
+  $handler->display->display_options['filters']['nid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['nid']['expose']['operator_id'] = 'nid_op';
+  $handler->display->display_options['filters']['nid']['expose']['label'] = 'Nid';
+  $handler->display->display_options['filters']['nid']['expose']['operator'] = 'nid_op';
+  $handler->display->display_options['filters']['nid']['expose']['identifier'] = 'nid';
+  $handler->display->display_options['filters']['nid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    5 => 0,
+    6 => 0,
+    7 => 0,
+  );
 
   /* Display: System */
   $handler = $view->new_display('system', 'System', 'system_1');
@@ -399,13 +425,14 @@ function ofed_admin_views_language_views_default_views() {
     t('Publish'),
     t('Demote from front page'),
     t('Unpublish'),
+    t('Nid'),
     t('Title'),
+    t('Language'),
     t('Type'),
     t('Author'),
     t('Published'),
     t('Updated'),
     t('Operations'),
-    t('Language'),
     t('System'),
   );
   $export['administration_nodes_language'] = $view;

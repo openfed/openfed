@@ -8,6 +8,8 @@ Next version
 
   * Issues:
     #2196447: Recreate openfed features
+    #2358589: Add language to CMS view content filter
+    #2037919: Add node id to CMS view content filter
 
 17 October 2014 - Version 1.9-rc1
 ---------------------------------
