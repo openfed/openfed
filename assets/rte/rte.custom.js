@@ -11,17 +11,15 @@ if(typeof(CKEDITOR) !== 'undefined') {
     CKEDITOR.addStylesSet('drupal',
     [
         /* Block Styles */
-        { name : 'Summary'      , element : 'p', attributes : { 'class' : 'summary' } },
-        { name : 'Paragraph'		, element : 'p', attributes : { 'class' : '' } },
-        { name : 'Heading 2'		, element : 'h2', attributes : { 'class' : '' } },
-        { name : 'Heading 3'		, element : 'h3', attributes : { 'class' : '' } },
-        { name : 'Heading 4'		, element : 'h4', attributes : { 'class' : '' } },
-        { name : 'Heading 5'		, element : 'h5', attributes : { 'class' : '' } },
-        { name : 'Heading 6'		, element : 'h6', attributes : { 'class' : '' } },
-
-        { name : 'Div'		, element : 'div', attributes : { 'class' : '' } },
-        { name : 'Message Status' , element : 'div', attributes : { 'class' : 'messages status' } },
-        { name : 'Message Warning' , element : 'div', attributes : { 'class' : 'messages warning' } },
-        { name : 'Message Error' , element : 'div', attributes : { 'class' : 'messages error' } }
+        { name : 'Summary', element : 'p', attributes : { 'class' : 'summary' } },
+        { name : 'Paragraph', element : 'p' },
+        { name : 'Heading 2', element : 'h2' },
+        { name : 'Heading 3', element : 'h3' },
+        { name : 'Heading 4', element : 'h4' },
+        { name : 'Heading 5', element : 'h5' },
+        { name : 'Heading 6', element : 'h6' },
+        { name : 'Div', element : 'div' },
+        { name : 'Message Status', element : 'div', attributes : { 'class' : 'messages status' } },
+        { name : 'Message Warning', element : 'div', attributes : { 'class' : 'messages warning' } },
+        { name : 'Message Error', element : 'div', attributes : { 'class' : 'messages error' } }
     ]);
-}
