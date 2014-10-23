@@ -23,3 +23,4 @@ if(typeof(CKEDITOR) !== 'undefined') {
         { name : 'Message Warning', element : 'div', attributes : { 'class' : 'messages warning' } },
         { name : 'Message Error', element : 'div', attributes : { 'class' : 'messages error' } }
     ]);
+}
