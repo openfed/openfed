@@ -1,6 +1,14 @@
 CHANGELOG
 =========
 
+Next version - Version 2.x
+--------------------------
+  * Module upgrades:
+    #2364167: Module upgrade: Language Selection Page 
+    
+  * Issues:
+    #2362245: Heading, paragraph, div styles gone from CKEditor
+
 20 October 2014 - Version 1.9-rc2
 ---------------------------------
   * Module upgrade:
