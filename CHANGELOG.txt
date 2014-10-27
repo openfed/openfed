@@ -6,6 +6,7 @@ Next version - Version 2.x
   * Module upgrades:
     #2364167: Module upgrade: Language Selection Page 
     #2361341: Module upgrade: Link
+    #2364041: Module upgrade: Internationalization Views 
     
   * Issues:
     #2362245: Heading, paragraph, div styles gone from CKEditor

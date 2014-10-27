@@ -244,7 +244,7 @@ projects[i18n][patch][2227523] = "http://drupal.org/files/issues/i18n_string-222
 
 projects[i18nviews][download][type] = git
 projects[i18nviews][download][branch] = "7.x-3.x"
-projects[i18nviews][download][revision] = 26bd52c
+projects[i18nviews][download][revision] = 27e9809
 projects[i18nviews][subdir] = contrib
 
 projects[imagecache_actions][version] = "1.4"
