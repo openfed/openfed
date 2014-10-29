@@ -5,6 +5,7 @@ CHANGELOG
 ---------------------------------
   * Issues:
     #2353369: Improve accessibility of ShareThis links
+    #2362245: Heading, paragraph, div styles gone from CKEditor
 
 20 October 2014 - Version 1.9-rc2
 ---------------------------------
