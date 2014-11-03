@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+03 November 2014 - Version 1.9
+------------------------------
+No changes
+ 
 29 October 2014 - Version 1.9-rc3
 ---------------------------------
   * Issues:
