@@ -23,6 +23,7 @@ xx February 2014 - Version 1.10-beta1
     #2427865: Module upgrade: Path Breadcrumbs
     #2427869: Module upgrade: Rules 
     #2427879: Module upgrade: Scheduler 
+    #2427927: Module upgrade: Secure Login
  
   * Library upgrade:
     #2427695: Library upgrade: CKEditor
