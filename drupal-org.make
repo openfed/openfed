@@ -134,7 +134,7 @@ projects[content_access][subdir] = contrib
 projects[countries][version] = "2.3"
 projects[countries][subdir] = contrib
 
-projects[ctools][version] = "1.4"
+projects[ctools][version] = "1.6"
 projects[ctools][subdir] = contrib
 
 projects[date][version] = "2.9-alpha2"

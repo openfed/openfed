@@ -8,6 +8,7 @@ xx February 2014 - Version 1.10-beta1
 
   * Library upgrade:
     #2427695: Library upgrade: CKEditor
+    #2427699: Module upgrade: Chaos tool suite (ctools)
  
 03 November 2014 - Version 1.9
 ------------------------------
