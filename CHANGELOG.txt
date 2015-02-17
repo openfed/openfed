@@ -9,6 +9,7 @@ xx February 2014 - Version 1.10-beta1
   * Module upgrades:
     #2427699: Module upgrade: Chaos tool suite (ctools)
     #2427701: Module upgrade: Display Suite
+    #2427705: Module upgrade: Features
  
   * Library upgrade:
     #2427695: Library upgrade: CKEditor
