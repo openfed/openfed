@@ -18,6 +18,7 @@ xx February 2014 - Version 1.10-beta1
     #2427729: Module upgrade: Link
     #2427733: Module upgrade: Location
     #2427745: Module upgrade: Menu Block
+    #2427747: Module upgrade: Multiple Node Menu
  
   * Library upgrade:
     #2427695: Library upgrade: CKEditor
