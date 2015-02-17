@@ -341,7 +341,7 @@ projects[navigation404][patch][1844830] = "http://drupal.org/files/navigation404
 projects[override_node_options][version] = "1.13"
 projects[override_node_options][subdir] = contrib
 
-projects[panels][version] = "3.4"
+projects[panels][version] = "3.5"
 projects[panels][subdir] = contrib
 
 projects[panels_extra_layouts][version] = "2.0"
