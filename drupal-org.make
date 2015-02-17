@@ -193,7 +193,7 @@ projects[feeds][subdir] = contrib
 projects[feeds][patch][1470530] =  "http://drupal.org/files/issues/feeds-unpublish-delete-entities-not-in-feed-1470530-203.patch"
 projects[feeds][patch][1183440] = "http://drupal.org/files/issues/feeds-field_translations-1183440-148.patch"
 
-projects[feeds_xpathparser][version] = "1.0-beta4"
+projects[feeds_xpathparser][version] = "1.0"
 projects[feeds_xpathparser][subdir] = contrib
 
 projects[field_collection][version] = "1.0-beta7"
