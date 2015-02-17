@@ -15,7 +15,8 @@ xx February 2014 - Version 1.10-beta1
     #2427717: Module upgrade: Imagecache Actions
     #2427719: Module upgrade: jQuery Update 
     #2427725: Module upgrade: Localization Update 
-    #2427729: Module upgrade: Link 
+    #2427729: Module upgrade: Link
+    #2427733: Module upgrade: Location
  
   * Library upgrade:
     #2427695: Library upgrade: CKEditor
