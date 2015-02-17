@@ -1,7 +1,7 @@
 CHANGELOG
 =========
 
-xx February 2014 - Version 1.10-beta1
+17 February 2014 - Version 1.10-beta1
 -------------------------------------
   * Core upgrade:
     #2427691: Drupal core update
