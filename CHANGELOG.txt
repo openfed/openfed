@@ -6,6 +6,9 @@ xx February 2014 - Version 1.10-beta1
   * Core upgrade:
     #2427691: Drupal core update
 
+  * Library upgrade:
+    #2427695: Library upgrade: CKEditor
+ 
 03 November 2014 - Version 1.9
 ------------------------------
 No changes
