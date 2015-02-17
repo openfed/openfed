@@ -454,7 +454,7 @@ projects[variable][subdir] = contrib
 projects[view_unpublished][version] = "1.2"
 projects[view_unpublished][subdir] = contrib
 
-projects[views][version] = "3.8"
+projects[views][version] = "3.10"
 projects[views][subdir] = contrib
 projects[views][patch][1803758] = "http://www.drupal.org/files/views-language_prefix_for_ajax-1803758-1.patch"
 
