@@ -6,10 +6,13 @@ xx February 2014 - Version 1.10-beta1
   * Core upgrade:
     #2427691: Drupal core update
 
+  * Module upgrades:
+    #2427699: Module upgrade: Chaos tool suite (ctools)
+    #2427701: Module upgrade: Display Suite
+ 
   * Library upgrade:
     #2427695: Library upgrade: CKEditor
-    #2427699: Module upgrade: Chaos tool suite (ctools)
- 
+
 03 November 2014 - Version 1.9
 ------------------------------
 No changes
