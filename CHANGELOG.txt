@@ -27,6 +27,7 @@ xx February 2014 - Version 1.10-beta1
 	#2427945: Module upgrade: View Unpublished
 	#2427953: Module upgrade: Views 
     #2427959: Module upgrade: Weight
+    #2427963: Module upgrade: XML Sitemap
 
   * Library upgrade:
     #2427695: Library upgrade: CKEditor
