@@ -12,6 +12,7 @@ xx February 2014 - Version 1.10-beta1
     #2427705: Module upgrade: Features
     #2427707: Module upgrade: Feeds XPath Parser
     #2427709: Module upgrade: field collection
+    #2427717: Module upgrade: Imagecache Actions
  
   * Library upgrade:
     #2427695: Library upgrade: CKEditor

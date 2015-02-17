@@ -246,7 +246,7 @@ projects[i18nviews][download][branch] = "7.x-3.x"
 projects[i18nviews][download][revision] = 26bd52c
 projects[i18nviews][subdir] = contrib
 
-projects[imagecache_actions][version] = "1.4"
+projects[imagecache_actions][version] = "1.5"
 projects[imagecache_actions][subdir] = contrib
 
 projects[imce][version] = "1.9"
