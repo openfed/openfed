@@ -350,7 +350,7 @@ projects[panels_extra_layouts][subdir] = contrib
 projects[partial_date][version] = "1.0-beta1"
 projects[partial_date][subdir] = contrib
 
-projects[path_breadcrumbs][version] = "3.0"
+projects[path_breadcrumbs][version] = "3.2"
 projects[path_breadcrumbs][subdir] = contrib
 
 projects[pathauto][version] = "1.2"

@@ -20,6 +20,7 @@ xx February 2014 - Version 1.10-beta1
     #2427745: Module upgrade: Menu Block
     #2427747: Module upgrade: Multiple Node Menu
     #2427855: Module upgrade: Panels
+    #2427865: Module upgrade: Path Breadcrumbs
  
   * Library upgrade:
     #2427695: Library upgrade: CKEditor
