@@ -261,7 +261,7 @@ projects[job_scheduler][subdir] = contrib
 projects[jquery_plugin][version] = "1.0"
 projects[jquery_plugin][subdir] = contrib
 
-projects[jquery_update][version] = "2.4"
+projects[jquery_update][version] = "2.5"
 projects[jquery_update][subdir] = contrib
 
 projects[l10n_client][version] = "1.3"
