@@ -1,7 +1,13 @@
 CHANGELOG
 =========
 
-17 February 2014 - Version 1.10-beta1
+xx February 2015 - Version 1.10-beta2
+-------------------------------------
+  * Module upgrades:
+    #2429853: Module upgrade: Language Selection Page
+ 
+
+17 February 2015 - Version 1.10-beta1
 -------------------------------------
   * Core upgrade:
     #2427691: Drupal core update
