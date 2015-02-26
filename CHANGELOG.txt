@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+xx February 2015 - Version 1.10-rc1
+-----------------------------------
+  * Module upgrades:
+    #2442245: Module upgrade: Administration Views 
+ 
 26 February 2015 - Version 1.10-beta2
 -------------------------------------
   * Module upgrades:

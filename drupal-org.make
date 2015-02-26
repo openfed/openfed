@@ -88,7 +88,7 @@ projects[admin_menu][patch][2096789] = "http://drupal.org/files/issues/admin_men
 projects[admin_theme][version] = "1.0"
 projects[admin_theme][subdir] = contrib
 
-projects[admin_views][version] = "1.3"
+projects[admin_views][version] = "1.4"
 projects[admin_views][subdir] = contrib
 
 projects[apachesolr][version] = "1.7"
