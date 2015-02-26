@@ -6,6 +6,7 @@ xx February 2015 - Version 1.10-beta2
   * Module upgrades:
     #2429853: Module upgrade: Language Selection Page
     #2440781: Module upgrade: Entity API 
+    #2442217: Module upgrade: Administration Menu 
 
 17 February 2015 - Version 1.10-beta1
 -------------------------------------
