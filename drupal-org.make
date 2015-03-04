@@ -192,9 +192,8 @@ projects[feeds][patch][1183440] = "http://drupal.org/files/issues/feeds-field_tr
 projects[feeds_xpathparser][version] = "1.0-beta4"
 projects[feeds_xpathparser][subdir] = contrib
 
-projects[field_collection][version] = "1.0-beta7"
+projects[field_collection][version] = "1.0-beta8"
 projects[field_collection][subdir] = contrib
-projects[field_collection[patch][2242751] = "http://drupal.org/files/issues/field-collection-drupal-7.27-2242751-1.patch"
 
 projects[field_conditional_state][version] = "2.1"
 projects[field_conditional_state][subdir] = contrib

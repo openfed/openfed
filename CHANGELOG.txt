@@ -5,6 +5,7 @@ New version
 -----------
  * Issues:
    #2446035: Tag releases for Nerra and CMS themes
+   #2446037: Fix field_collection upgrade error: "Cannot add index to table"
 
 03 November 2014 - Version 1.9
 ------------------------------
