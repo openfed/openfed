@@ -1,6 +1,14 @@
 CHANGELOG
 =========
 
+Next version - Version 2.x
+--------------------------
+  * Module upgrades:
+    #2364167: Module upgrade: Language Selection Page 
+    #2361341: Module upgrade: Link
+    #2364041: Module upgrade: Internationalization Views 
+    #2364167: Module upgrade: Media: YouTube
+    
 xx March 2015 - Version 1.10-rc1
 --------------------------------
   * Module upgrades:

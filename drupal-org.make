@@ -243,7 +243,7 @@ projects[i18n][patch][2227523] = "http://drupal.org/files/issues/i18n_string-222
 
 projects[i18nviews][download][type] = git
 projects[i18nviews][download][branch] = "7.x-3.x"
-projects[i18nviews][download][revision] = 26bd52c
+projects[i18nviews][download][revision] = 27e9809
 projects[i18nviews][subdir] = contrib
 
 projects[imagecache_actions][version] = "1.5"
@@ -308,7 +308,7 @@ projects[media_vimeo][subdir] = contrib
 
 projects[media_youtube][download][type] = git
 projects[media_youtube][download][branch] = "7.x-2.x"
-projects[media_youtube][download][revision] = 83894fd
+projects[media_youtube][download][revision] = 54b5cf5
 projects[media_youtube][patch][2129317] = "http://www.drupal.org/files/issues/media_youtube.iframe-accessibility.patch"
 projects[media_youtube][patch][1660980] = "http://www.drupal.org/files/issues/media_youtube-force_html5-1660980-12.patch"
 projects[media_youtube][subdir] = contrib
