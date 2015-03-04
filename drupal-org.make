@@ -210,6 +210,7 @@ projects[field_slideshow][patch][2326155] = "http://www.drupal.org/files/issues/
 
 projects[flag][version] = "3.5"
 projects[flag][subdir] = contrib
+projects[flag][patch][1870300] = "https://www.drupal.org/files/schema_check-1870300-1.patch"
 
 projects[globalredirect][version] = "1.5"
 projects[globalredirect][subdir] = contrib
