@@ -266,7 +266,7 @@ projects[l10n_client][subdir] = contrib
 
 projects[l10n_update][version] = "2.0-rc2"
 projects[l10n_update][subdir] = contrib
-projects[l10_update][patch][2167585] = "http://www.drupal.org/files/issues/l10n_update-installation-directory-2167585-24.patch"
+projects[l10n_update][patch][2167585] = "http://www.drupal.org/files/issues/l10n_update-installation-directory-2167585-24.patch"
 
 projects[language_cookie][version] = "1.8"
 projects[language_cookie][subdir] = contrib
