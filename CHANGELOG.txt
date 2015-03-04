@@ -9,6 +9,7 @@ New version
    #2446043: Fix l10n_update upgrade error: "sites/all/translations does not exist"
    #2446047: Fix flag upgrade error: "Base table or view not found: Table flag doesn't exist"
    #2446055: Don't revert field instances for Openfed features
+   #2446063: Pages with exposed date filters don't show all results by default
 
 03 November 2014 - Version 1.9
 ------------------------------
