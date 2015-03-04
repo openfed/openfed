@@ -8,7 +8,7 @@ core = 7.x
 
 ; CK Editor
 libraries[ckeditor][download][type] = "get"
-libraries[ckeditor][download][url] = "http://download.cksource.com/CKEditor/CKEditor/CKEditor%204.4.7/ckeditor_4.4.7_full.zip"
+libraries[ckeditor][download][url] = "http://download.cksource.com/CKEditor/CKEditor/CKEditor%204.4.5/ckeditor_4.4.5_full.zip"
 libraries[ckeditor][directory_name] = "ckeditor"
 libraries[ckeditor][type] = "library"
 
@@ -81,14 +81,14 @@ projects[admin_language][download][branch] = "7.x-1.x"
 projects[admin_language][download][revision] = 6f0a6e5
 projects[admin_language][subdir] = contrib
 
-projects[admin_menu][version] = "3.0-rc5"
+projects[admin_menu][version] = "3.0-rc4"
 projects[admin_menu][subdir] = contrib
 projects[admin_menu][patch][2096789] = "http://drupal.org/files/issues/admin_menu-interface_language_is_mixed_instead_of_forced_EN-2096789-20.patch"
 
 projects[admin_theme][version] = "1.0"
 projects[admin_theme][subdir] = contrib
 
-projects[admin_views][version] = "1.4"
+projects[admin_views][version] = "1.3"
 projects[admin_views][subdir] = contrib
 
 projects[apachesolr][version] = "1.7"
@@ -134,7 +134,7 @@ projects[content_access][subdir] = contrib
 projects[countries][version] = "2.3"
 projects[countries][subdir] = contrib
 
-projects[ctools][version] = "1.6"
+projects[ctools][version] = "1.4"
 projects[ctools][subdir] = contrib
 
 projects[date][version] = "2.9-alpha2"
@@ -146,7 +146,7 @@ projects[devel][subdir] = contrib
 projects[diff][version] = "3.2"
 projects[diff][subdir] = contrib
 
-projects[ds][version] = "2.7"
+projects[ds][version] = "2.6"
 projects[ds][subdir] = contrib
 
 projects[easy_breadcrumb][version] = "2.12"
@@ -161,7 +161,7 @@ projects[email][subdir] = contrib
 projects[emfield][version] = "1.0-alpha2"
 projects[emfield][subdir] = contrib
 
-projects[entity][version] = "1.6"
+projects[entity][version] = "1.5"
 projects[entity][subdir] = contrib
 
 projects[entityreference][version] = "1.1"
@@ -180,7 +180,7 @@ projects[facetapi][subdir] = contrib
 projects[facetapi_i18n][version] = "1.0-beta2"
 projects[facetapi_i18n][subdir] = contrib
 
-projects[features][version] = "2.3"
+projects[features][version] = "2.2"
 projects[features][subdir] = contrib
 
 projects[features_override][version] = "2.0-rc2"
@@ -193,11 +193,12 @@ projects[feeds][subdir] = contrib
 projects[feeds][patch][1470530] =  "http://drupal.org/files/issues/feeds-unpublish-delete-entities-not-in-feed-1470530-203.patch"
 projects[feeds][patch][1183440] = "http://drupal.org/files/issues/feeds-field_translations-1183440-148.patch"
 
-projects[feeds_xpathparser][version] = "1.0"
+projects[feeds_xpathparser][version] = "1.0-beta4"
 projects[feeds_xpathparser][subdir] = contrib
 
-projects[field_collection][version] = "1.0-beta8"
+projects[field_collection][version] = "1.0-beta7"
 projects[field_collection][subdir] = contrib
+projects[field_collection[patch][2242751] = "http://drupal.org/files/issues/field-collection-drupal-7.27-2242751-1.patch"
 
 projects[field_conditional_state][version] = "2.1"
 projects[field_conditional_state][subdir] = contrib
@@ -212,7 +213,7 @@ projects[field_slideshow][version] = "1.82"
 projects[field_slideshow][subdir] = contrib
 projects[field_slideshow][patch][2326155] = "http://www.drupal.org/files/issues/field_slideshow-swipe-2326155-1.patch"
 
-projects[flag][version] = "3.6"
+projects[flag][version] = "3.5"
 projects[flag][subdir] = contrib
 
 projects[globalredirect][version] = "1.5"
@@ -246,7 +247,7 @@ projects[i18nviews][download][branch] = "7.x-3.x"
 projects[i18nviews][download][revision] = 26bd52c
 projects[i18nviews][subdir] = contrib
 
-projects[imagecache_actions][version] = "1.5"
+projects[imagecache_actions][version] = "1.4"
 projects[imagecache_actions][subdir] = contrib
 
 projects[imce][version] = "1.9"
@@ -261,19 +262,19 @@ projects[job_scheduler][subdir] = contrib
 projects[jquery_plugin][version] = "1.0"
 projects[jquery_plugin][subdir] = contrib
 
-projects[jquery_update][version] = "2.5"
+projects[jquery_update][version] = "2.4"
 projects[jquery_update][subdir] = contrib
 
 projects[l10n_client][version] = "1.3"
 projects[l10n_client][subdir] = contrib
 
-projects[l10n_update][version] = "2.0"
+projects[l10n_update][version] = "2.0-rc2"
 projects[l10n_update][subdir] = contrib
 
 projects[language_cookie][version] = "1.8"
 projects[language_cookie][subdir] = contrib
 
-projects[language_selection_page][version] = "2.0-beta3"
+projects[language_selection_page][version] = "2.0-beta2"
 projects[language_selection_page][subdir] = contrib
 
 projects[lexicon][version] = "1.10"
@@ -282,13 +283,13 @@ projects[lexicon][subdir] = contrib
 projects[libraries][version] = "2.2"
 projects[libraries][subdir] = contrib
 
-projects[link][version] = "1.3"
+projects[link][version] = "1.2"
 projects[link][subdir] = contrib
 
 projects[linkchecker][version] = "1.2"
 projects[linkchecker][subdir] = contrib
 
-projects[location][version] = "3.6"
+projects[location][version] = "3.4"
 projects[location][subdir] = contrib
 
 projects[logintoboggan][version] = "1.4"
@@ -316,7 +317,7 @@ projects[media_youtube][subdir] = contrib
 projects[menu_attributes][version] = "1.0-rc3"
 projects[menu_attributes][subdir] = contrib
 
-projects[menu_block][version] = "2.5"
+projects[menu_block][version] = "2.4"
 projects[menu_block][subdir] = contrib
 
 projects[menu_firstchild][version] = "1.1"
@@ -328,7 +329,7 @@ projects[menu_position][subdir] = contrib
 projects[metatag][version] = "1.4"
 projects[metatag][subdir] = contrib
 
-projects[multiple_node_menu][version] = "1.0-beta2"
+projects[multiple_node_menu][version] = "1.0-beta1"
 projects[multiple_node_menu][subdir] = contrib
 
 projects[multiselect][version] = "1.10"
@@ -341,7 +342,7 @@ projects[navigation404][patch][1844830] = "http://drupal.org/files/navigation404
 projects[override_node_options][version] = "1.13"
 projects[override_node_options][subdir] = contrib
 
-projects[panels][version] = "3.5"
+projects[panels][version] = "3.4"
 projects[panels][subdir] = contrib
 
 projects[panels_extra_layouts][version] = "2.0"
@@ -350,7 +351,7 @@ projects[panels_extra_layouts][subdir] = contrib
 projects[partial_date][version] = "1.0-beta1"
 projects[partial_date][subdir] = contrib
 
-projects[path_breadcrumbs][version] = "3.2"
+projects[path_breadcrumbs][version] = "3.0"
 projects[path_breadcrumbs][subdir] = contrib
 
 projects[pathauto][version] = "1.2"
@@ -376,10 +377,10 @@ projects[role_delegation][version] = "1.1"
 projects[role_delegation][subdir] = contrib
 projects[role_delegation][patch][1156414] = "http://www.drupal.org/files/issues/1156414-prevent-editing-of-certain-users-16.patch"
 
-projects[rules][version] = "2.8"
+projects[rules][version] = "2.7"
 projects[rules][subdir] = contrib
 
-projects[scheduler][version] = "1.3"
+projects[scheduler][version] = "1.2"
 projects[scheduler][subdir] = contrib
 
 projects[search_config][version] = "1.1"
@@ -389,7 +390,7 @@ projects[seckit][version] = "1.9"
 projects[seckit][subdir] = contrib
 projects[seckit][patch][2281315] = "http://drupal.org/files/issues/seckit-disable_autocomplete-2281315-13.patch"
 
-projects[securelogin][version] = "1.5"
+projects[securelogin][version] = "1.4"
 projects[securelogin][subdir] = contrib
 ;projects[securelogin][patch][2044839] = "http://drupal.org/files/securelogin-access_denied_during_install_process_when_installed_with_profile-2044839-0.patch"
 
@@ -451,10 +452,11 @@ projects[username_enumeration_prevention][subdir] = contrib
 projects[variable][version] = "2.5"
 projects[variable][subdir] = contrib
 
-projects[view_unpublished][version] = "1.2"
+projects[view_unpublished][version] = "1.1"
 projects[view_unpublished][subdir] = contrib
+projects[view_unpublished][patch][1192074] = "http://drupal.org/files/view_unpublished_content_admin-1192074-57_1.patch"
 
-projects[views][version] = "3.10"
+projects[views][version] = "3.8"
 projects[views][subdir] = contrib
 projects[views][patch][1803758] = "http://www.drupal.org/files/views-language_prefix_for_ajax-1803758-1.patch"
 
@@ -478,11 +480,12 @@ projects[webform_clear][patch][2250027] = "http://drupal.org/files/issues/webfor
 projects[webform_rules][version] = "1.6"
 projects[webform_rules][subdir] = contrib
 
-projects[weight][version] = "2.4"
+projects[weight][version] = "2.3"
 projects[weight][subdir] = contrib
 
 projects[workbench_moderation][version] = "1.3"
 projects[workbench_moderation][subdir] = contrib
 
-projects[xmlsitemap][version] = "2.2"
+projects[xmlsitemap][version] = "2.0"
 projects[xmlsitemap][subdir] = contrib
+projects[xmlsitemap][patch][2223911] = "http://www.drupal.org/files/issues/xmlsitemap_menu_module-2223911-14.patch"

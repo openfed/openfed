@@ -1,50 +1,6 @@
 CHANGELOG
 =========
 
-xx March 2015 - Version 1.10-rc1
---------------------------------
-  * Module upgrades:
-    #2442245: Module upgrade: Administration Views
-    #2445331: Module upgrade: Flag
- 
-26 February 2015 - Version 1.10-beta2
--------------------------------------
-  * Module upgrades:
-    #2429853: Module upgrade: Language Selection Page
-    #2440781: Module upgrade: Entity API 
-    #2442217: Module upgrade: Administration Menu 
-
-17 February 2015 - Version 1.10-beta1
--------------------------------------
-  * Core upgrade:
-    #2427691: Drupal core update
-
-  * Module upgrades:
-    #2427699: Module upgrade: Chaos tool suite (ctools)
-    #2427701: Module upgrade: Display Suite
-    #2427705: Module upgrade: Features
-    #2427707: Module upgrade: Feeds XPath Parser
-    #2427709: Module upgrade: field collection
-    #2427717: Module upgrade: Imagecache Actions
-    #2427719: Module upgrade: jQuery Update 
-    #2427725: Module upgrade: Localization Update 
-    #2427729: Module upgrade: Link
-    #2427733: Module upgrade: Location
-    #2427745: Module upgrade: Menu Block
-    #2427747: Module upgrade: Multiple Node Menu
-    #2427855: Module upgrade: Panels
-    #2427865: Module upgrade: Path Breadcrumbs
-    #2427869: Module upgrade: Rules 
-    #2427879: Module upgrade: Scheduler 
-    #2427927: Module upgrade: Secure Login
-	#2427945: Module upgrade: View Unpublished
-	#2427953: Module upgrade: Views 
-    #2427959: Module upgrade: Weight
-    #2427963: Module upgrade: XML Sitemap
-
-  * Library upgrade:
-    #2427695: Library upgrade: CKEditor
-
 03 November 2014 - Version 1.9
 ------------------------------
 No changes
