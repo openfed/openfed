@@ -55,14 +55,10 @@ projects[ofed_switcher][subdir] = contrib
 projects[ofed_vmcd][version] = "1.0"
 projects[ofed_vmcd][subdir] = contrib
 
-projects[ofed_theme_nerra][download][type] = git
-projects[ofed_theme_nerra][download][branch] = "7.x-1.x"
-projects[ofed_theme_nerra][download][revision] = 7ca7fe4
+projects[ofed_theme_nerra][version] = "7.x-1.2-beta5"
 projects[ofed_theme_nerra][subdir] = contrib
 
-projects[ofed_theme_cms][download][type] = git
-projects[ofed_theme_cms][download][branch] = "7.x-1.x"
-projects[ofed_theme_cms][download][revision] = 6a88b25
+projects[ofed_theme_cms][version] = "7.x-1.3-rc2"
 projects[ofed_theme_cms][subdir] = contrib
 
 projects[ofed_theme_maintenance][version] = "1.0"

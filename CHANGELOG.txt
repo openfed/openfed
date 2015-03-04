@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+New version
+-----------
+ * Issues:
+   #2446035: Tag releases for Nerra and CMS themes
+
 03 November 2014 - Version 1.9
 ------------------------------
 No changes
