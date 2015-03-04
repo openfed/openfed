@@ -6,6 +6,7 @@ New version
  * Issues:
    #2446035: Tag releases for Nerra and CMS themes
    #2446037: Fix field_collection upgrade error: "Cannot add index to table"
+   #2446043: Fix l10n_update upgrade error: "sites/all/translations does not exist"
 
 03 November 2014 - Version 1.9
 ------------------------------
