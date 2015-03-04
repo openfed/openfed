@@ -397,29 +397,10 @@ function openfed_update_7111() {
 }
 
 /**
- * Revert field instances for the following features for 1.6 so as to
- * import new field instance definitions for issues:
- *
- *  #2184291: Configure sensible maximum image dimensions for image upload
- *  #2188573: Pause functionality for photo gallery, slider and slideshow
+ * Do nothing.
  */
 function openfed_update_7112() {
-  $modules = array(
-    'ofed_download',
-    'ofed_event',
-    'ofed_job',
-    'ofed_news',
-    'ofed_photogallery',
-    'ofed_press',
-    'ofed_slider',
-    'ofed_slideshow',
-    'ofed_team',
-  );
-  foreach ($modules as $module) {
-    if (module_exists($module)) {
-      features_revert(array($module => array('field_instance')));
-    }
-  }
+  // See https://www.drupal.org/node/2446055
 }
 
 /**
