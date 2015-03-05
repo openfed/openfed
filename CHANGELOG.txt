@@ -1,8 +1,8 @@
 CHANGELOG
 =========
 
-New version
------------
+06 March 2015 - Version 1.10-rc1
+--------------------------------
  * Issues:
    #2446035: Tag releases for Nerra and CMS themes
    #2446037: Fix field_collection upgrade error: "Cannot add index to table"
