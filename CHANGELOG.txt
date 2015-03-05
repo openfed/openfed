@@ -11,6 +11,7 @@ New version
    #2446055: Don't revert field instances for Openfed features
    #2446063: Pages with exposed date filters don't show all results by default
    #2389259: date_popup_process_date_part(): Notice
+   #2446939: Fix print_pdf upgrade error: "Unknown column 'size' in 'field list'"
 
 03 November 2014 - Version 1.9
 ------------------------------

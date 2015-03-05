@@ -360,6 +360,7 @@ projects[pathauto][patch][1993462] = "http://drupal.org/files/pathauto-path_alia
 
 projects[print][version] = "2.0"
 projects[print][subdir] = contrib
+projects[print][patch][2446693] = "http://www.drupal.org/files/issues/print-2446939-1.patch"
 
 projects[quiz][version] = "4.0-beta2"
 projects[quiz][subdir] = contrib
