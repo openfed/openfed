@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+18 March 2018 - Version 1.10
+----------------------------
+No changes
+
 06 March 2015 - Version 1.10-rc1
 --------------------------------
  * Issues:
