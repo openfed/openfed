@@ -15,4 +15,8 @@ projects[drupal][patch][1470656] = http://drupal.org/files/drupal-1470656-14.pat
 
 ; Cover language-specific search URLs in robots.txt 
 ; see http://drupal.org/node/2195283
-projects[drupal][patch][2195283] = https://drupal.org/files/issues/drupal-robotstxt-2195283-3.patch
+projects[drupal][patch][2195283] = http://drupal.org/files/issues/drupal-robotstxt-2195283-3.patch
+
+; One time patch to cover possible issue in upgrade to >=7.34
+; see https://www.drupal.org/node/2378561#comment-9736487
+projects[drupal][patch][2378561] = http://www.drupal.org/files/issues/2378561-blocktitle-11.patch

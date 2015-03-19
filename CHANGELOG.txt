@@ -1,12 +1,17 @@
 CHANGELOG
 =========
 
-19 March 2018 - Version 1.11-rc1
+19 March 2015 - Version 1.11-rc2
+--------------------------------
+ * Issues:
+   #2378561: block_update_7009 fails with Warning: 1265 Data truncated for column 'title' at row 75
+
+19 March 2015 - Version 1.11-rc1
 --------------------------------
  * Core upgrade:
    #2455353: Core update: Drupal 7.35
 
-18 March 2018 - Version 1.10
+18 March 2015 - Version 1.10
 ----------------------------
 No changes
 
