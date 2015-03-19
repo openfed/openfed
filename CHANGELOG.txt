@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+19 March 2015 - Version 1.11-rc3
+--------------------------------
+ * Issues:
+   #2378561: block_update_7009 fails with Warning: 1265 Data truncated for column 'title' at row 75
+
 19 March 2015 - Version 1.11-rc2
 --------------------------------
  * Issues:

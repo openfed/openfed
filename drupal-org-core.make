@@ -19,4 +19,4 @@ projects[drupal][patch][2195283] = http://drupal.org/files/issues/drupal-robotst
 
 ; One time patch to cover possible issue in upgrade to >=7.34
 ; see https://www.drupal.org/node/2378561#comment-9736487
-projects[drupal][patch][2378561] = http://www.drupal.org/files/issues/2378561-blocktitle-11.patch
+projects[drupal][patch][2378561] = http://www.drupal.org/files/issues/2378561-blocktitle-12.patch
