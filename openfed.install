@@ -579,7 +579,7 @@ function openfed_update_7306() {
 }
 
 /**
- * Fix for issue #2378561: 
+ * Fix for issue #2378561:
  *
  * "block_update_7009 fails with Warning: 1265 Data truncated for column 'title'
  * at row 75".
@@ -587,4 +587,3 @@ function openfed_update_7306() {
 function openfed_update_7307() {
   db_query("UPDATE block SET title = '' WHERE title IS NULL");
 }
-
