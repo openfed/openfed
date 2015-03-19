@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+19 March 2018 - Version 1.11-rc1
+--------------------------------
+ * Core upgrade:
+   #2455353: Core update: Drupal 7.35
+
 18 March 2018 - Version 1.10
 ----------------------------
 No changes
