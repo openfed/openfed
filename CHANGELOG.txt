@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+20 March 2015 - Version 1.11
+----------------------------
+No changes
+
 19 March 2015 - Version 1.11-rc3
 --------------------------------
  * Issues:
