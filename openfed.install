@@ -577,3 +577,10 @@ function openfed_update_7305() {
 function openfed_update_7306() {
   variable_set('admin_menu_force_language', 'en');
 }
+
+/**
+ * Force admin jquery version to 1.5 to prevent jquery error on node edit pages.
+ */
+function openfed_update_7307() {
+  variable_set('jquery_update_jquery_admin_version', '1.5');
+}

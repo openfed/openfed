@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+30 March 2015 - Version 1.12-rc1
+--------------------------------
+ * Issues:
+   #2462161: Set jQuery Update to 1.5 in admin theme
+
 20 March 2015 - Version 1.11
 ----------------------------
 No changes
