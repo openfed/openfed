@@ -5,6 +5,7 @@ CHANGELOG
 --------------------------------
  * Issues:
    #2462161: Set jQuery Update to 1.5 in admin theme
+   #2462183: Fix ".browser.msie is undefined" error in Admin Menu
 
 20 March 2015 - Version 1.11
 ----------------------------
