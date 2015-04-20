@@ -298,7 +298,7 @@ projects[logintoboggan][version] = "1.4"
 projects[logintoboggan][subdir] = contrib
 projects[logintoboggan][patch][1142808] = "http://drupal.org/files/logintoboggan-minpasswordlength-1142808-9.patch"
 projects[logintoboggan][patch][1257572] = "http://drupal.org/files/account-page-title-1257572-15.patch"
-projects[logintoboggan][patch][2455049] = "http:/drupal.org/files/issues/logintoboggan-drupal-7.35-compatibility-2455049-1.patch"
+projects[logintoboggan][patch][2455049] = "http://drupal.org/files/issues/logintoboggan-drupal-7.35-compatibility-2455049-1.patch"
 
 projects[media][version] = "1.4"
 projects[media][subdir] = contrib
