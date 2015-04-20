@@ -241,6 +241,7 @@ projects[i18n][version] = "1.11"
 projects[i18n][subdir] = contrib
 projects[i18n][patch][2250501] = "http://drupal.org/files/issues/i18n-node_edit-2250501-8.patch"
 projects[i18n][patch][2227523] = "http://drupal.org/files/issues/i18n_string-2227523-20.patch"
+projects[i18n][patch][2455093] = "http://www.drupal.org/files/issues/2455093_drupal735-1.patch"
 
 projects[i18nviews][download][type] = git
 projects[i18nviews][download][branch] = "7.x-3.x"
@@ -297,6 +298,7 @@ projects[logintoboggan][version] = "1.4"
 projects[logintoboggan][subdir] = contrib
 projects[logintoboggan][patch][1142808] = "http://drupal.org/files/logintoboggan-minpasswordlength-1142808-9.patch"
 projects[logintoboggan][patch][1257572] = "http://drupal.org/files/account-page-title-1257572-15.patch"
+projects[logintoboggan][patch][2455049] = "http:/drupal.org/files/issues/logintoboggan-drupal-7.35-compatibility-2455049-1.patch"
 
 projects[media][version] = "1.4"
 projects[media][subdir] = contrib

@@ -1,6 +1,15 @@
 CHANGELOG
 =========
 
+20 April 2015- Version 1.13-rc1
+-------------------------------
+ * Issue:
+   #2473125: Drupal API changed for user_pass_rehash()
+
+30 March 2015 - Version 1.12
+----------------------------
+No changes
+
 30 March 2015 - Version 1.12-rc1
 --------------------------------
  * Issues:
