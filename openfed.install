@@ -584,3 +584,10 @@ function openfed_update_7306() {
 function openfed_update_7307() {
   variable_set('jquery_update_jquery_admin_version', '1.5');
 }
+
+/**
+ * Disable footer by default in print v2.0 to preserve backward compatibility.
+ */
+function openfed_update_7308() {
+  variable_set('print_footer_options', 0);
+}

@@ -1,7 +1,12 @@
 CHANGELOG
 =========
 
-20 April 2015- Version 1.13-rc1
+23 April 2015 - Version 1.13-rc2
+--------------------------------
+ * Issue:
+   #2476611: Update Print template to version 2.0
+
+20 April 2015 - Version 1.13-rc1
 -------------------------------
  * Issue:
    #2473125: Drupal API changed for user_pass_rehash()
