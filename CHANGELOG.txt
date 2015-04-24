@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+24 April 2015 - Version 1.13-rc3
+--------------------------------
+ * Issue:
+   #2476893: ShareThis breaks Javascript if using an ad blocker
+
 23 April 2015 - Version 1.13-rc2
 --------------------------------
  * Issue:
