@@ -28,8 +28,31 @@ function openfed_form_install_configure_form_alter(&$form, $form_state) {
   $form['site_information']['site_name']['#default_value'] = 'OpenFed';
   $form['server_settings']['site_default_country']['#default_value'] = 'BE';
 
+  // Add an option to disble HTTPS.
+  $form['server_settings']['disable_https_fieldset'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Development settings'),
+    '#weight' => 10,
+    '#collapsible' => TRUE, // Added
+    '#collapsed' => TRUE,  // Added
+  );
+  $form['server_settings']['disable_https_fieldset']['disable_https_checkbox'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Disable HTTPS (for development only!)'),
+  );
+
   // Only check for updates, no need for email notifications
   $form['update_notifications']['update_status_module']['#default_value'] = array(0, 0);
+  $form['#submit'][] = 'openfed_form_install_configure_https';
+}
+
+/**
+ * Submit hook to set up HTTPS.
+ */
+function openfed_form_install_configure_https($form, &$form_state) {
+  if ($form_state['values']['disable_https_checkbox'] != 1) {
+    require_once('includes/install/openfed_securelogin.inc');
+  }
 }
 
 /**

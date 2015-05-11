@@ -5,6 +5,7 @@ Next version
 ------------
  * Issue:
    #2476893: ShareThis breaks Javascript if using an ad blocker
+   #2483757: Add checkbox to disable HTTPS
 
 24 April 2015 - Version 1.13
 ----------------------------
