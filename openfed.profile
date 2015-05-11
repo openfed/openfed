@@ -28,13 +28,13 @@ function openfed_form_install_configure_form_alter(&$form, $form_state) {
   $form['site_information']['site_name']['#default_value'] = 'OpenFed';
   $form['server_settings']['site_default_country']['#default_value'] = 'BE';
 
-  // Add an option to disble HTTPS.
+  // Add an option to disable HTTPS.
   $form['server_settings']['disable_https_fieldset'] = array(
     '#type' => 'fieldset',
     '#title' => t('Development settings'),
     '#weight' => 10,
-    '#collapsible' => TRUE, // Added
-    '#collapsed' => TRUE,  // Added
+    '#collapsible' => TRUE,
+    '#collapsed' => TRUE,
   );
   $form['server_settings']['disable_https_fieldset']['disable_https_checkbox'] = array(
     '#type' => 'checkbox',
