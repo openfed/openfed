@@ -404,6 +404,7 @@ projects[security_review][subdir] = contrib
 projects[sharethis][version] = "2.9"
 projects[sharethis][subdir] = contrib
 projects[sharethis][patch][2353369] = "http://www.drupal.org/files/issues/sharethis-link_accessibility-1289054-43.patch"
+projects[sharethis][patch][2339561] = "http://www.drupal.org/files/issues/sharethis-n2339561-1.patch"
 
 projects[simple_gmap][version] = "1.2"
 projects[simple_gmap][subdir] = contrib
