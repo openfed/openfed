@@ -42,6 +42,7 @@ function openfed_install() {
   require_once('includes/install/openfed_sharethis.inc');
   require_once('includes/install/openfed_sitemap.inc');
   require_once('includes/install/openfed_seckit.inc');
+  require_once('includes/install/openfed_securelogin.inc');
   require_once('includes/install/openfed_text_resize.inc');
   require_once('includes/install/openfed_views.inc');
   require_once('includes/install/openfed_webform.inc');
