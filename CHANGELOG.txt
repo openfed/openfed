@@ -1,10 +1,13 @@
 CHANGELOG
 =========
 
-Next version
-------------
+22 June 2015 - Version 1.14-rc1
+-------------------------------
  * Issue:
    #2476893: ShareThis breaks Javascript if using an ad blocker
+
+ * Module upgrades:
+   #2509886: Module upgrade: Belgian eID Mellon integration
 
 24 April 2015 - Version 1.13
 ----------------------------
