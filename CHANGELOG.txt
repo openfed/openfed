@@ -8,6 +8,7 @@ CHANGELOG
 
  * Module upgrades:
    #2509886: Module upgrade: Belgian eID Mellon integration
+   #2509888: Module upgrade: Views
 
 24 April 2015 - Version 1.13
 ----------------------------

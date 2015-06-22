@@ -461,7 +461,7 @@ projects[view_unpublished][version] = "1.1"
 projects[view_unpublished][subdir] = contrib
 projects[view_unpublished][patch][1192074] = "http://drupal.org/files/view_unpublished_content_admin-1192074-57_1.patch"
 
-projects[views][version] = "3.8"
+projects[views][version] = "3.11"
 projects[views][subdir] = contrib
 projects[views][patch][1803758] = "http://www.drupal.org/files/views-language_prefix_for_ajax-1803758-1.patch"
 
