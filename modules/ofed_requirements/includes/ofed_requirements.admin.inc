@@ -413,10 +413,10 @@ function _ofed_requirements_check_perms() {
         // Added by media install script
         'view media' => array('anonymous user', 'authenticated user'),
         // Added in openfed_install_role_form_submit().
-        'assign Builder role' => array('Configurator'),
-        'assign Configurator role' => array('Configurator'),
-        'assign Content Manager role' => array('Configurator'),
-        'assign User Manager role' => array('Configurator'),
+        'assign Builder role' => array('Configurator', 'Builder', 'User Manager'),
+        'assign Configurator role' => array('Configurator', 'Builder', 'User Manager'),
+        'assign Content Manager role' => array('Configurator', 'Builder', 'User Manager'),
+        'assign User Manager role' => array('Configurator', 'Builder', 'User Manager'),
         'manage de translation overview priorities' => array('Builder', 'Configurator', 'Content Manager'),
         'manage en translation overview priorities' => array('Builder', 'Configurator', 'Content Manager'),
         'manage fr translation overview priorities' => array('Builder', 'Configurator', 'Content Manager'),
@@ -433,7 +433,6 @@ function _ofed_requirements_check_perms() {
           $perms_default = array_merge($perms_default, array($permission_name => TRUE));
         }
       }
-echo var_dump($perms_default);
 
       // Compare the both perms list.
       if ($role_current_name != 'Administrator') {
