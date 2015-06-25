@@ -382,49 +382,76 @@ function _ofed_requirements_check_perms() {
 
   // Get the default roles names.
   $roles_default = _openfed_get_roles_list_default();
-  // Get the actual role names.
-  $roles_actuals = user_roles();
+  // Get the current role names.
+  $roles_currents = user_roles();
 
   $featured_default_perms = module_invoke_all('ofed_user_default_permissions');
   $featured_roles = array();
 
   foreach($featured_default_perms as $perm) {
-
     foreach($perm['roles'] as $role) {
       $featured_roles[$role][$perm['name']] = TRUE;
     }
   }
 
+  $all_permissions = array_keys(module_invoke_all('permission'));
   // Check only for used roles included by default in the distribution.
-  foreach ($roles_actuals as $role_actual_id => $role_actual_name) {
-    if (in_array($role_actual_name, $roles_default)) {
+  foreach ($roles_currents as $role_current_id => $role_current_name) {
+    if (in_array($role_current_name, $roles_default)) {
       // Get the default perms for the current role.
-      $perms_default = _openfed_get_permissions_for_role($role_actual_name);
+      $perms_default = _openfed_get_permissions_for_role($role_current_name);
 
-      if (!empty($featured_roles[$role_actual_name])) {
-        $perms_default = array_merge($perms_default, $featured_roles[$role_actual_name]);
+      if (!empty($featured_roles[$role_current_name])) {
+        $perms_default = array_merge($perms_default, $featured_roles[$role_current_name]);
       }
-      // Get actuals perms.
-      $perms_actuals = user_role_permissions(array($role_actual_id => $role_actual_name));
-      $perms_actuals = $perms_actuals[$role_actual_id];
+      // Get currents perms.
+      $perms_currents = user_role_permissions(array($role_current_id => $role_current_name));
+      $perms_currents = $perms_currents[$role_current_id];
+
+      // Hardcoded exceptions
+      $added_permissions = array(
+        // Added by media install script
+        'view media' => array('anonymous user', 'authenticated user'),
+        // Added in openfed_install_role_form_submit().
+        'assign Builder role' => array('Configurator'),
+        'assign Configurator role' => array('Configurator'),
+        'assign Content Manager role' => array('Configurator'),
+        'assign User Manager role' => array('Configurator'),
+        'manage de translation overview priorities' => array('Builder', 'Configurator', 'Content Manager'),
+        'manage en translation overview priorities' => array('Builder', 'Configurator', 'Content Manager'),
+        'manage fr translation overview priorities' => array('Builder', 'Configurator', 'Content Manager'),
+        'manage nl translation overview priorities' => array('Builder', 'Configurator', 'Content Manager'),
+        'delete revisions' => array('Content Manager'),
+      );
+      $vocabularies = taxonomy_vocabulary_machine_name_load('categories');
+      if ($vocabularies != FALSE) {
+        $added_permissions['edit terms in ' . $vocabularies->vid] = array('Builder', 'Configurator', 'Content Manager');
+        $added_permissions['delete terms in ' . $vocabularies->vid] = array('Builder', 'Configurator', 'Content Manager');
+      }
+      foreach ($added_permissions as $permission_name => $role_names) {
+        if (in_array($role_current_name, $role_names) && in_array($permission_name, $all_permissions)) {
+          $perms_default = array_merge($perms_default, array($permission_name => TRUE));
+        }
+      }
+echo var_dump($perms_default);
 
       // Compare the both perms list.
-      if ($role_actual_name != 'Administrator') {
+      if ($role_current_name != 'Administrator') {
         // Get the removed perms.
         foreach ($perms_default as $perm_default_key => $perm_default_value) {
           // Check if the perms is in the array.
-          if (!in_array($perm_default_key, $perms_actuals)) {
-            $errors[] = t('The permission "!perm_name" was removed for the user role "!user_role".', array('!user_role' => strtolower($role_actual_name), '!perm_name' => $perm_default_key));
+          if (!in_array($perm_default_key, $perms_currents)) {
+            $errors[] = t('The permission "!perm_name" was removed for the user role "!user_role".', array('!user_role' => strtolower($role_current_name), '!perm_name' => $perm_default_key));
           }
 
           // Get the difference by deliting exiting.
-          if (isset($perms_actuals[$perm_default_key])) {
-            unset($perms_actuals[$perm_default_key]);
+          if (isset($perms_currents[$perm_default_key])) {
+            unset($perms_currents[$perm_default_key]);
           }
         }
         // Get the added perms.
-        foreach ($perms_actuals as $perm_actual_key => $perm_actual_value) {
-          $errors[] = t('The permission "!perm_name" was added to the user role "!user_role".', array('!user_role' => strtolower($role_actual_name), '!perm_name' => $perm_actual_key));
+        foreach ($perms_currents as $perm_current_key => $perm_current_value) {
+          $errors[] = t('The permission "!perm_name" was added to the user role "!user_role".', array('!user_role' => strtolower($role_current_name), '!perm_name' => $perm_current_key));
         }
       }
     }
@@ -432,7 +459,7 @@ function _ofed_requirements_check_perms() {
 
   // Count errors.
   if (!empty($errors)) {
-    array_unshift($errors, t('!count error(s) found !', array('!count' => count($errors))));
+    array_unshift($errors, t('!count error(s) found!', array('!count' => count($errors))));
   }
 
   // Return.
@@ -453,19 +480,19 @@ function _ofed_requirements_check_roles() {
 
   // Get the default roles names.
   $roles_default = _openfed_get_roles_list_default();
-  // Get the actual role names.
-  $roles_actuals = user_roles();
+  // Get the current role names.
+  $roles_currents = user_roles();
 
   // Check which roles are not included by default in the distribution.
-  foreach ($roles_actuals as $role_actual) {
-    if (!in_array($role_actual, $roles_default)) {
-      $errors[] = t('The user role "!user_role" is not include by default.', array('!user_role' => $role_actual));
+  foreach ($roles_currents as $role_current) {
+    if (!in_array($role_current, $roles_default)) {
+      $errors[] = t('The user role "!user_role" is not include by default.', array('!user_role' => $role_current));
     }
   }
 
   // Count errors.
   if (!empty($errors)) {
-    array_unshift($errors, t('!count error(s) found !', array('!count' => count($errors))));
+    array_unshift($errors, t('!count error(s) found!', array('!count' => count($errors))));
   }
 
   // Return.
@@ -488,7 +515,7 @@ function _ofed_requirements_check_modules_enabled() {
 
   // Count errors.
   if (!empty($errors)) {
-    array_unshift($errors, t('!count error(s) found !', array('!count' => count($errors))));
+    array_unshift($errors, t('!count error(s) found!', array('!count' => count($errors))));
   }
 
   // Return.
@@ -516,18 +543,17 @@ function _ofed_requirements_check_modules_version() {
 
       // Get module versions.
       $info_version_base = $info_base['version'];
-      $info_version_file = '7.x-' . $project_infos['version'];
 
-        // Check module versions.
-        if ((!isset($project_infos['download']['type']) || $project_infos['download']['type'] != 'git') && $info_version_base != $info_version_file) {
-          $errors[] = t('The actual version (!version_database) of module "!module_name" is not the same than the default version (!version_file) of this module.', array('!module_name' => $project_name, '!version_database' => $info_version_base, '!version_file' => $info_version_file));
-        }
+      // Check module versions.
+      if ((!isset($project_infos['download']['type']) || $project_infos['download']['type'] != 'git') && $info_version_base != '7.x-' . $project_infos['version']) {
+        $errors[] = t('The current version (!version_database) of module "!module_name" is not the same as the default version (!version_file) of this module.', array('!module_name' => $project_name, '!version_database' => $info_version_base, '!version_file' => '7.x-' . $project_infos['version']));
+      }
     }
   }
 
   // Count errors.
   if (!empty($errors)) {
-    array_unshift($errors, t('!count error(s) found !', array('!count' => count($errors))));
+    array_unshift($errors, t('!count error(s) found!', array('!count' => count($errors))));
   }
 
   // Return.
@@ -547,7 +573,7 @@ function _ofed_requirements_check_variables() {
   // Smile :)
   // Count errors.
   if (!empty($errors)) {
-    array_unshift($errors, t('!count error(s) found !', array('!count' => count($errors))));
+    array_unshift($errors, t('!count error(s) found!', array('!count' => count($errors))));
   }
 
   // Return.
@@ -639,7 +665,7 @@ function _ofed_requirements_check_feature($feature_key, $feature_name) {
 
   // Count errors.
   if (!empty($errors)) {
-    array_unshift($errors, t('!count error(s) found !', array('!count' => count($errors))));
+    array_unshift($errors, t('!count error(s) found!', array('!count' => count($errors))));
   }
 
   // Return.

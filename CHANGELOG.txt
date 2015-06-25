@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+Next version
+-----------
+ * Issues:
+   #2512090: Fix the permissions check in ofed_requirements
+
 24 June 2015 - Version 1.14
 ---------------------------
 No changes
