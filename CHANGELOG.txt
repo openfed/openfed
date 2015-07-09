@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+9 July 2015 - Version 1.15
+--------------------------
+No changes
+
 9 July 2015 - Version 1.15-rc1
 ------------------------------
  * Module upgrades
