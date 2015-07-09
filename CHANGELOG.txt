@@ -9,6 +9,7 @@ No changes
 ------------------------------
  * Module upgrades
    #2529878: Module upgrade: Administration Views
+   #2512090: Fix the permissions check in ofed_requirements
 
 24 June 2015 - Version 1.14
 ---------------------------
