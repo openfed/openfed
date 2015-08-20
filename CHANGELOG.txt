@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+20 August 2015 - Version 1.16
+-----------------------------
+No changes
+
 20 August 2015 - Version 1.16-rc1
 ---------------------------------
  * Core upgrade:
