@@ -16,6 +16,7 @@ Next version - Version 1.17-rc1
    #2603546: Module upgrade: ctools
    #2603554: Module upgrade: Display Suite
    #2603604: Module upgrade: Colorbox
+   #2603624: Module upgrade: jQuery Update
 
  * Core upgrade:
    #2603490: Upgrade to Drupal Core 7.41
