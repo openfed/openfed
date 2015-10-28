@@ -385,7 +385,7 @@ projects[rules][version] = "2.7"
 projects[rules][subdir] = contrib
 projects[rules][patch] = "http://www.drupal.org/files/issues/rules-2161847-22-Unsupported-operand-types.patch"
 
-projects[scheduler][version] = "1.2"
+projects[scheduler][version] = "1.3"
 projects[scheduler][subdir] = contrib
 
 projects[search_config][version] = "1.1"
@@ -476,7 +476,7 @@ projects[views_slideshow][version] = "3.1"
 projects[views_slideshow][subdir] = contrib
 projects[views_slideshow][patch][974482] = "http://www.drupal.org/files/issues/views_slideshow-974482-23.patch"
 
-projects[webform][version] = "3.21"
+projects[webform][version] = "3.24"
 projects[webform][subdir] = contrib
 
 projects[webform_clear][version] = "2.0"

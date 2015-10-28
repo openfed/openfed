@@ -5,6 +5,8 @@ Next version - Version 1.17-rc1
 -------------------------------
  * Module upgrades:
    #2603494: Module upgrade: Views Bulk Operations (VBO)
+   #2603508: Module upgrade: Scheduler
+   #2603512: Module upgrade: Webform
 
  * Core upgrade:
    #2603490: Upgrade to Drupal Core 7.41
