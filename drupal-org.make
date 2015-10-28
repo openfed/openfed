@@ -225,10 +225,7 @@ projects[gmap][subdir] = contrib
 projects[google_analytics][version] = "1.4"
 projects[google_analytics][subdir] = contrib
 
-projects[hierarchical_select][download][type] = git
-projects[hierarchical_select][download][branch] = "7.x-3.x"
-projects[hierarchical_select][download][revision] = b3e34d9
-projects[hierarchical_select][patch][2242753] = "http://drupal.org/files/issues/hierarchical-select-drupal-7.27-2242753-1.patch"
+projects[hierarchical_select][version] = "3.0-beta2"
 projects[hierarchical_select][subdir] = contrib
 
 projects[honeypot][version] = "1.17"
