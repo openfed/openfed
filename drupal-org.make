@@ -413,7 +413,7 @@ projects[site_map][subdir] = contrib
 projects[site_verify][version] = "1.1"
 projects[site_verify][subdir] = contrib
 
-projects[smart_trim][version] = "1.4"
+projects[smart_trim][version] = "1.5"
 projects[smart_trim][subdir] = contrib
 
 projects[special_menu_items][version] = "2.0"
