@@ -8,6 +8,7 @@ Next version - Version 1.17-rc1
    #2603508: Module upgrade: Scheduler
    #2603512: Module upgrade: Webform
    #2603524: Module upgrade: Path Breadcrumbs
+   #2603530: Module upgrade: Hierarchical Select
 
  * Core upgrade:
    #2603490: Upgrade to Drupal Core 7.41
