@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+Next version - Version 1.17-rc1
+-------------------------------
+ * Core upgrade:
+   #2603490: Upgrade to Drupal Core 7.41
+
 20 August 2015 - Version 1.16
 -----------------------------
 No changes
