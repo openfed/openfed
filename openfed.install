@@ -33,7 +33,6 @@ function openfed_install() {
   require_once('includes/install/openfed_globalredirect.inc');
   require_once('includes/install/openfed_html5_tools.inc');
   require_once('includes/install/openfed_imce.inc');
-  require_once('includes/install/openfed_linkchecker.inc');
   require_once('includes/install/openfed_logintoboggan.inc');
   require_once('includes/install/openfed_pathauto.inc');
   require_once('includes/install/openfed_path_breadcrumbs.inc');
