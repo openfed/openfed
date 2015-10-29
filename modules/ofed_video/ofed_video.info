@@ -28,7 +28,6 @@ dependencies[] = i18n_translation
 dependencies[] = image
 dependencies[] = imagecache_actions
 dependencies[] = link
-dependencies[] = linkchecker
 dependencies[] = list
 dependencies[] = locale
 dependencies[] = media

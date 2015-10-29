@@ -281,9 +281,6 @@ projects[libraries][subdir] = contrib
 projects[link][version] = "1.3"
 projects[link][subdir] = contrib
 
-projects[linkchecker][version] = "1.2"
-projects[linkchecker][subdir] = contrib
-
 projects[location][version] = "3.4"
 projects[location][subdir] = contrib
 

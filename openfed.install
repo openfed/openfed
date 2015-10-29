@@ -591,3 +591,35 @@ function openfed_update_7307() {
 function openfed_update_7308() {
   variable_set('print_footer_options', 0);
 }
+
+/**
+ * Remove linkchecker module (if enabled).
+ */
+function openfed_update_7309() {
+  if (module_exists('linkchecker')) {
+    module_disable(array('linkchecker'));
+    drupal_uninstall_modules(array('linkchecker'));
+    variable_del('linkchecker_action_status_code_301');
+    variable_del('linkchecker_action_status_code_404');
+    variable_del('linkchecker_check_connections_max');
+    variable_del('linkchecker_check_library');
+    variable_del('linkchecker_check_links_interval');
+    variable_del('linkchecker_check_links_types');
+    variable_del('linkchecker_check_useragent');
+    variable_del('linkchecker_cleanup_links_last');
+    variable_del('linkchecker_disable_link_check_for_urls');
+    variable_del('linkchecker_extract_from_a');
+    variable_del('linkchecker_extract_from_audio');
+    variable_del('linkchecker_extract_from_embed');
+    variable_del('linkchecker_extract_from_iframe');
+    variable_del('linkchecker_extract_from_img');
+    variable_del('linkchecker_extract_from_object');
+    variable_del('linkchecker_extract_from_video');
+    variable_del('linkchecker_filter_blacklist');
+    variable_del('linkchecker_ignore_response_codes');
+    variable_del('linkchecker_impersonate_user');
+    variable_del('linkchecker_scan_blocks');
+    variable_del('linkchecker_scan_comments');
+    variable_del('linkchecker_scan_nodetypes');
+  }
+}

@@ -21,7 +21,6 @@ dependencies[] = i18n_string
 dependencies[] = i18n_translation
 dependencies[] = image
 dependencies[] = link
-dependencies[] = linkchecker
 dependencies[] = list
 dependencies[] = locale
 dependencies[] = menu
