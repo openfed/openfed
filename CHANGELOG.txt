@@ -21,6 +21,7 @@ Next version - Version 1.17-rc1
    #2603638: Module upgrade: Smart Trim
    #2603632: Module upgrade: Feeds
    #2603660: Module upgrade: Link
+   #2604378: Module upgrade: Apache Solr Attachments
 
  * Removed module:
    #2603658: Remove module: Link Checker
