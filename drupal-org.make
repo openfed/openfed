@@ -373,7 +373,7 @@ projects[role_delegation][patch][1156414] = "http://www.drupal.org/files/issues/
 
 projects[rules][version] = "2.7"
 projects[rules][subdir] = contrib
-projects[rules][patch] = "http://www.drupal.org/files/issues/rules-2161847-22-Unsupported-operand-types.patch"
+projects[rules][patch][2161847] = "http://www.drupal.org/files/issues/rules-2161847-22-Unsupported-operand-types.patch"
 
 projects[scheduler][version] = "1.3"
 projects[scheduler][subdir] = contrib
