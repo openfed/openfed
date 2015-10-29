@@ -3,7 +3,6 @@ CHANGELOG
 
 29 October 2015 - Version 1.17-rc1
 ----------------------------------
-
  * Library upgrade:
    #2603620: Library upgrade: Colorbox
 
