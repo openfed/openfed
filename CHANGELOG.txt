@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+30 October 2015 - Version 1.17-rc2
+----------------------------------
+ * Removed module:
+   #2603658: Remove module: Link Checker
+
 29 October 2015 - Version 1.17-rc1
 ----------------------------------
  * Library upgrade:

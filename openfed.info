@@ -87,7 +87,6 @@ core = 7.x
   dependencies[] = jquery_plugin
   dependencies[] = libraries
   dependencies[] = link
-  dependencies[] = linkchecker
   dependencies[] = language_cookie
   dependencies[] = logintoboggan
   dependencies[] = logintoboggan_variable
