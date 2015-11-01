@@ -98,6 +98,7 @@ projects[apachesolr_attachments][subdir] = contrib
 
 projects[apachesolr_autocomplete][version] = "1.4"
 projects[apachesolr_autocomplete][subdir] = contrib
+projects[apachesolr_autocomplete][patch][2138429] = "http://www.drupal.org/files/issues/2138429-18.patch"
 
 projects[apachesolr_multilingual][version] = "1.2"
 projects[apachesolr_multilingual][subdir] = contrib
