@@ -496,25 +496,6 @@ function _openfed_get_default_permissions() {
       'Builder',
     ),
 
-    // linkchecker
-    'access broken links report' => array(
-      'Builder',
-      'Configurator',
-      'Content Manager',
-    ),
-    'access own broken links report' => array(
-      'Builder',
-      'Configurator',
-      'Content Manager',
-    ),
-    'administer linkchecker' => array(
-      'Builder',
-    ),
-    'edit link settings' => array(
-      'Builder',
-      'Configurator',
-    ),
-
     // locale
     'administer languages' => array(
       'Builder',
