@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+2 November 2105 - Version 1.17-rc4
+----------------------------------
+ * Issue:
+   #2603658: Remove module: Link Checker
+
 1 November 2015 - Version 1.17-rc3
 ----------------------------------
  * Issue:
