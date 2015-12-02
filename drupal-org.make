@@ -361,9 +361,8 @@ projects[quiz][version] = "4.0-beta2"
 projects[quiz][subdir] = contrib
 ;projects[quiz][patch][1899654] = "http://drupal.org/files/quiz-cant_view_long_answer_questions-1899654-1.patch"
 
-projects[redirect][version] = "1.0-rc1"
+projects[redirect][version] = "1.0-rc3"
 projects[redirect][subdir] = contrib
-projects[redirect][patch][1796596] = "http://drupal.org/files/redirect.circular-loops.1796596-104.patch"
 
 projects[registration][version] = "1.6"
 projects[registration][subdir] = contrib

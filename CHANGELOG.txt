@@ -1,7 +1,12 @@
 CHANGELOG
 =========
 
-2 November 2105 - Version 1.17-rc4
+2 December 2015 - Version 1.17-rc5
+----------------------------------
+ * Module upgrade:
+   #2627324: Module upgrade: Redirect
+
+2 November 2015 - Version 1.17-rc4
 ----------------------------------
  * Issue:
    #2603658: Remove module: Link Checker
