@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+New release
+-----------
+ * Module upgrade:
+   #2628048: Module upgrade: Apache Solr Search
+
 2 December 2015 - Version 1.17-rc5
 ----------------------------------
  * Module upgrade:
