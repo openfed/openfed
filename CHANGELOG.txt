@@ -1,10 +1,13 @@
 CHANGELOG
 =========
 
-New release
------------
+3 December 2015 - Version 1.17-rc6
+----------------------------------
  * Module upgrade:
    #2628048: Module upgrade: Apache Solr Search
+
+ * Issue:
+   #2628192: Content type facet labels are not translated
 
 2 December 2015 - Version 1.17-rc5
 ----------------------------------
