@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+17 December 2015 - Version 1.17
+-------------------------------
+No changes
+
 3 December 2015 - Version 1.17-rc6
 ----------------------------------
  * Module upgrade:
@@ -61,7 +65,7 @@ CHANGELOG
    #2603484: Fatal error in Rules: Fatal error: Unsupported operand types in rules.module on line 227
    #2604376: Regenerate ofed_page feature
 
-2r August 2015 - Version 1.16
+20 August 2015 - Version 1.16
 -----------------------------
 No changes
 
