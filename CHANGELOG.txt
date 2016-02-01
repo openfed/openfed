@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+01 February 2016 - Version 1.18
+-------------------------------
+ * Module upgrade
+   #2660302: Module upgrade: Addemar Subscription
+
 17 December 2015 - Version 1.17
 -------------------------------
 No changes
