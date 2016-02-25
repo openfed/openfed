@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+25 February 2016 - Version 1.19-rc2
+-----------------------------------
+ * Issue:
+   #2638660: Views: using custom "More link" with query params
+
 24 February 2016 - Version 1.19-rc1
 -----------------------------------
  * Core upgrade
