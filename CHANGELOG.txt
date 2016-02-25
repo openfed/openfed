@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+26 February 2016 - Version 1.19-rc3
+-----------------------------------
+ * Module upgrade
+   #2666488: Module upgrade: Field Group
+
 25 February 2016 - Version 1.19-rc2
 -----------------------------------
  * Issue:
