@@ -200,7 +200,7 @@ projects[field_collection][subdir] = contrib
 projects[field_conditional_state][version] = "2.1"
 projects[field_conditional_state][subdir] = contrib
 
-projects[field_group][version] = "1.4"
+projects[field_group][version] = "1.5"
 projects[field_group][subdir] = contrib
 
 projects[field_permissions][version] = "1.0-beta2"

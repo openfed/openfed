@@ -6,6 +6,9 @@ CHANGELOG
  * Issue:
    #2638660: Views: using custom "More link" with query params
 
+ * Module upgrade
+   #2666488: Module upgrade: Field Group
+
 24 February 2016 - Version 1.19-rc1
 -----------------------------------
  * Core upgrade
