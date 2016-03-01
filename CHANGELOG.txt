@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+1 March 2016 - Version 1.19
+---------------------------
+No changes
+
 1 March 2016 - Version 1.19-rc4
 -------------------------------
  * Core upgrade
