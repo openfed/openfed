@@ -57,6 +57,7 @@ projects[ofed_vmcd][subdir] = contrib
 
 projects[ofed_theme_nerra][version] = "1.2-beta6"
 projects[ofed_theme_nerra][subdir] = contrib
+projects[ofed_theme_nerra][patch][2678724] = "https://www.drupal.org/files/issues/2678724-4.patch"
 
 projects[ofed_theme_cms][version] = "1.3-rc2"
 projects[ofed_theme_cms][subdir] = contrib

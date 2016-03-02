@@ -6,6 +6,9 @@ xx 2016 - Version 1.20-rc1
    #2666520: Module upgrade: Openfed Switcher
    #2666536: Module upgrade: Backup and Migrate
 
+ * Issues:
+   #2679321: Patch for language selection page
+
 1 March 2016 - Version 1.19
 ---------------------------
 No changes
