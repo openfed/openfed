@@ -106,7 +106,7 @@ projects[apachesolr_multilingual][subdir] = contrib
 projects[back_to_top][version] = "1.4"
 projects[back_to_top][subdir] = contrib
 
-projects[backup_migrate][version] = "3.0"
+projects[backup_migrate][version] = "3.1"
 projects[backup_migrate][subdir] = contrib
 
 projects[beidmellon][version] = "1.0-rc1"

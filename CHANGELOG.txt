@@ -2,8 +2,9 @@ CHANGELOG
 =========
 xx 2016 - Version 1.20-rc1
 --------------------------
- * Module upgrade:
+ * Module upgrades:
    #2666520: Module upgrade: Openfed Switcher
+   #2666536: Module upgrade: Backup and Migrate
 
 1 March 2016 - Version 1.19
 ---------------------------
