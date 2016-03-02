@@ -487,6 +487,5 @@ projects[weight][subdir] = contrib
 projects[workbench_moderation][version] = "1.3"
 projects[workbench_moderation][subdir] = contrib
 
-projects[xmlsitemap][version] = "2.0"
+projects[xmlsitemap][version] = "2.2"
 projects[xmlsitemap][subdir] = contrib
-projects[xmlsitemap][patch][2223911] = "http://www.drupal.org/files/issues/xmlsitemap_menu_module-2223911-14.patch"
