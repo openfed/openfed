@@ -128,6 +128,18 @@ foreach ($frontend_blocks as $block) {
 
 // Set backend blocks.
 $backend_blocks = array(
+  // Tools.
+  array(
+    'module' => 'locale',
+    'delta' => 'language',
+    'theme' => _openfed_get_theme_backend(),
+    'status' => 1,
+    'weight' => 0,
+    'region' => 'tools',
+    'pages' => '',
+    'title' => '<none>',
+    'cache' => -1,
+  ),
   // Header.
   // Navigation.
   // Main Menu.

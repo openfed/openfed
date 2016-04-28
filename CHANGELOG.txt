@@ -5,6 +5,7 @@ Next - Version 2.0-beta1
 ------------------------
  * Issues:
    #2675476: Use https URLs in makefile
+   #2715601: Implement language switching solution
 
  * New modules
    #2710241: Add module: Node Edit Redirect
