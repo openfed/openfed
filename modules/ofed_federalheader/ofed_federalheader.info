@@ -1,4 +1,0 @@
-name = Federal header
-description = Provide the official Belgian Federal Authorities header.
-package = OpenFed
-core = 7.x
