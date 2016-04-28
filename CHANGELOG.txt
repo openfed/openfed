@@ -5,6 +5,7 @@ Next - Version 2.0-beta1
 ------------------------
  * New modules
    #2710241: Add module: Node Edit Redirect
+   #2713873: Add module: Administration menu - Content languages
 
  * Theme upgrade
    #2715261: Theme upgrade: CMS theme
