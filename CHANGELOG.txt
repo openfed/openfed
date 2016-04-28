@@ -6,6 +6,9 @@ Next - Version 2.0-beta1
  * Theme upgrade
    #2715261: Theme upgrade: CMS theme
 
+ * Module upgrade:
+   #2713877: Module upgrade: Openfed switcher
+
 1 March 2016 - Version 1.19
 ---------------------------
 No changes

@@ -49,7 +49,7 @@ projects[addemar_subscription][subdir] = contrib
 projects[ofed_menu_dam][version] = "1.1"
 projects[ofed_menu_dam][subdir] = contrib
 
-projects[ofed_switcher][version] = "1.1-rc2"
+projects[ofed_switcher][version] = "1.2"
 projects[ofed_switcher][subdir] = contrib
 
 projects[ofed_vmcd][version] = "1.0"
