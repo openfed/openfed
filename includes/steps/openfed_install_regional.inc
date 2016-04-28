@@ -202,9 +202,11 @@ function _openfed_install_regional_set_content_for_language($lang) {
         );
         _openfed_install_regional_localize_date_format($date_format);
 
-        // Add prefix for english language.
+        // Add prefix for english language, and update native name that is used
+        // in language switcher.
         $query = db_update('languages')
           ->fields(array(
+            'native' => 'en',
             'prefix' => 'en',
           ))
           ->condition('language', 'en', '=')
@@ -271,6 +273,15 @@ function _openfed_install_regional_set_content_for_language($lang) {
 
         // Set the menu in the navigation region.
         _openfed_set_block_into_region('menu', $menu_name, 'navigation');
+
+        // Update native name that is used in language switcher.
+        $query = db_update('languages')
+          ->fields(array(
+            'native' => 'fr',
+          ))
+          ->condition('language', 'fr', '=')
+          ->execute();
+
         break;
 
       // Dutch.
@@ -327,6 +338,15 @@ function _openfed_install_regional_set_content_for_language($lang) {
 
         // Set the menu in the navigation region.
         _openfed_set_block_into_region('menu', $menu_name, 'navigation');
+
+        // Update native name that is used in language switcher.
+        $query = db_update('languages')
+          ->fields(array(
+            'native' => 'nl',
+          ))
+          ->condition('language', 'nl', '=')
+          ->execute();
+
         break;
 
       // German.
@@ -383,6 +403,15 @@ function _openfed_install_regional_set_content_for_language($lang) {
 
         // Set the menu in the navigation region.
         _openfed_set_block_into_region('menu', $menu_name, 'navigation');
+
+        // Update native name that is used in language switcher.
+        $query = db_update('languages')
+          ->fields(array(
+            'native' => 'de',
+          ))
+          ->condition('language', 'de', '=')
+          ->execute();
+
         break;
     }
 
