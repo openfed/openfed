@@ -622,3 +622,15 @@ function openfed_update_7309() {
     variable_del('linkchecker_scan_nodetypes');
   }
 }
+
+/**
+ * Enable admin_menu_content_languages and node_edit_redirect modules.
+ */
+function openfed_update_7310() {
+  if (!module_exists('admin_menu_content_languages')) {
+    module_enable(array('admin_menu_content_languages'));
+  }
+  if (!module_exists('node_edit_redirect')) {
+    module_enable(array('node_edit_redirect'));
+  }
+}

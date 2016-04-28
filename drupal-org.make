@@ -8,7 +8,7 @@ core = 7.x
 
 ; CK Editor
 libraries[ckeditor][download][type] = "get"
-libraries[ckeditor][download][url] = "http://download.cksource.com/CKEditor/CKEditor/CKEditor%204.4.5/ckeditor_4.4.5_full.zip"
+libraries[ckeditor][download][url] = "https://download.cksource.com/CKEditor/CKEditor/CKEditor%204.4.5/ckeditor_4.4.5_full.zip"
 libraries[ckeditor][directory_name] = "ckeditor"
 libraries[ckeditor][type] = "library"
 
@@ -79,8 +79,8 @@ projects[admin_language][subdir] = contrib
 
 projects[admin_menu][version] = "3.0-rc4"
 projects[admin_menu][subdir] = contrib
-projects[admin_menu][patch][2096789] = "http://drupal.org/files/issues/admin_menu-interface_language_is_mixed_instead_of_forced_EN-2096789-20.patch"
-projects[admin_menu][patch][1892074] = "http://www.drupal.org/files/issues/admin_menu-remove-ie6-support-1892074-5.patch"
+projects[admin_menu][patch][2096789] = "https://www.drupal.org/files/issues/admin_menu-interface_language_is_mixed_instead_of_forced_EN-2096789-20.patch"
+projects[admin_menu][patch][1892074] = "https://www.drupal.org/files/issues/admin_menu-remove-ie6-support-1892074-5.patch"
 
 projects[admin_menu_content_languages][version] = "1.0-rc2"
 projects[admin_menu_content_languages][subdir] = contrib
@@ -93,14 +93,14 @@ projects[admin_views][subdir] = contrib
 
 projects[apachesolr][version] = "1.8"
 projects[apachesolr][subdir] = contrib
-projects[apachesolr][patch][2315173] = "http://www.drupal.org/files/issues/apachesolr-indexing_teaser-2315173-10.patch"
+projects[apachesolr][patch][2315173] = "https://www.drupal.org/files/issues/apachesolr-indexing_teaser-2315173-10.patch"
 
 projects[apachesolr_attachments][version] = "1.4"
 projects[apachesolr_attachments][subdir] = contrib
 
 projects[apachesolr_autocomplete][version] = "1.4"
 projects[apachesolr_autocomplete][subdir] = contrib
-projects[apachesolr_autocomplete][patch][2138429] = "http://www.drupal.org/files/issues/2138429-18.patch"
+projects[apachesolr_autocomplete][patch][2138429] = "https://www.drupal.org/files/issues/2138429-18.patch"
 
 projects[apachesolr_multilingual][version] = "1.2"
 projects[apachesolr_multilingual][subdir] = contrib
@@ -140,8 +140,8 @@ projects[ctools][subdir] = contrib
 
 projects[date][version] = "2.9-alpha2"
 projects[date][subdir] = contrib
-projects[date][patch][2420323] = "http://www.drupal.org/files/issues/date-remove-unneeded-default-2420323-1.patch"
-projects[date][patch][2389259] = "http://www.drupal.org/files/issues/date-undefined_index_notices_in_date_popup.module-1437892-16.patch"
+projects[date][patch][2420323] = "https://www.drupal.org/files/issues/date-remove-unneeded-default-2420323-1.patch"
+projects[date][patch][2389259] = "https://www.drupal.org/files/issues/date-undefined_index_notices_in_date_popup.module-1437892-16.patch"
 
 projects[devel][version] = "1.5"
 projects[devel][subdir] = contrib
@@ -169,7 +169,7 @@ projects[entity][subdir] = contrib
 
 projects[entityreference][version] = "1.1"
 projects[entityreference][subdir] = contrib
-projects[entityreference][patch][1852112] = "http://drupal.org/files/entityreference-devel_generate_fix-1852112-18.patch"
+projects[entityreference][patch][1852112] = "https://www.drupal.org/files/entityreference-devel_generate_fix-1852112-18.patch"
 
 projects[entity_translation][version] = "1.0-beta3"
 projects[entity_translation][subdir] = contrib
@@ -182,7 +182,7 @@ projects[facetapi][subdir] = contrib
 
 projects[facetapi_i18n][version] = "1.0-beta2"
 projects[facetapi_i18n][subdir] = contrib
-projects[facetapi_i18n][patch][2404953] = "http://www.drupal.org/files/issues/2404953-5.patch"
+projects[facetapi_i18n][patch][2404953] = "https://www.drupal.org/files/issues/2404953-5.patch"
 
 projects[features][version] = "2.2"
 projects[features][subdir] = contrib
@@ -204,14 +204,14 @@ projects[field_conditional_state][subdir] = contrib
 
 projects[field_group][version] = "1.4"
 projects[field_group][subdir] = contrib
-projects[field_group][patch][2666488] = "http://www.drupal.org/files/issues/2645350.patch"
+projects[field_group][patch][2666488] = "https://www.drupal.org/files/issues/2645350.patch"
 
 projects[field_permissions][version] = "1.0-beta2"
 projects[field_permissions][subdir] = contrib
 
 projects[field_slideshow][version] = "1.82"
 projects[field_slideshow][subdir] = contrib
-projects[field_slideshow][patch][2326155] = "http://www.drupal.org/files/issues/field_slideshow-swipe-2326155-1.patch"
+projects[field_slideshow][patch][2326155] = "https://www.drupal.org/files/issues/field_slideshow-swipe-2326155-1.patch"
 
 projects[flag][version] = "3.5"
 projects[flag][subdir] = contrib
@@ -237,9 +237,9 @@ projects[html5_tools][subdir] = contrib
 
 projects[i18n][version] = "1.11"
 projects[i18n][subdir] = contrib
-projects[i18n][patch][2250501] = "http://drupal.org/files/issues/i18n-node_edit-2250501-8.patch"
-projects[i18n][patch][2227523] = "http://drupal.org/files/issues/i18n_string-2227523-20.patch"
-projects[i18n][patch][2455093] = "http://www.drupal.org/files/issues/2455093_drupal735-1.patch"
+projects[i18n][patch][2250501] = "https://www.drupal.org/files/issues/i18n-node_edit-2250501-8.patch"
+projects[i18n][patch][2227523] = "https://www.drupal.org/files/issues/i18n_string-2227523-20.patch"
+projects[i18n][patch][2455093] = "https://www.drupal.org/files/issues/2455093_drupal735-1.patch"
 
 projects[i18nviews][download][type] = git
 projects[i18nviews][download][branch] = "7.x-3.x"
@@ -269,7 +269,7 @@ projects[l10n_client][subdir] = contrib
 
 projects[l10n_update][version] = "2.0-rc2"
 projects[l10n_update][subdir] = contrib
-projects[l10n_update][patch][2167585] = "http://www.drupal.org/files/issues/l10n_update-installation-directory-2167585-24.patch"
+projects[l10n_update][patch][2167585] = "https://www.drupal.org/files/issues/l10n_update-installation-directory-2167585-24.patch"
 
 projects[language_cookie][version] = "1.8"
 projects[language_cookie][subdir] = contrib
@@ -291,13 +291,13 @@ projects[location][subdir] = contrib
 
 projects[logintoboggan][version] = "1.4"
 projects[logintoboggan][subdir] = contrib
-projects[logintoboggan][patch][1142808] = "http://drupal.org/files/logintoboggan-minpasswordlength-1142808-9.patch"
-projects[logintoboggan][patch][1257572] = "http://drupal.org/files/account-page-title-1257572-15.patch"
-projects[logintoboggan][patch][2455049] = "http://drupal.org/files/issues/logintoboggan-drupal-7.35-compatibility-2455049-1.patch"
+projects[logintoboggan][patch][1142808] = "https://www.drupal.org/files/logintoboggan-minpasswordlength-1142808-9.patch"
+projects[logintoboggan][patch][1257572] = "https://www.drupal.org/files/account-page-title-1257572-15.patch"
+projects[logintoboggan][patch][2455049] = "https://www.drupal.org/files/issues/logintoboggan-drupal-7.35-compatibility-2455049-1.patch"
 
 projects[media][version] = "1.4"
 projects[media][subdir] = contrib
-projects[media][patch][2171115] = "http://drupal.org/files/issues/media-error-message-when-editing-file-entity-display-options-2171115-1.patch"
+projects[media][patch][2171115] = "https://www.drupal.org/files/issues/media-error-message-when-editing-file-entity-display-options-2171115-1.patch"
 
 projects[media_soundcloud][version] = "2.1"
 projects[media_soundcloud][subdir] = contrib
@@ -308,8 +308,8 @@ projects[media_vimeo][subdir] = contrib
 projects[media_youtube][download][type] = git
 projects[media_youtube][download][branch] = "7.x-2.x"
 projects[media_youtube][download][revision] = 83894fd
-projects[media_youtube][patch][2129317] = "http://www.drupal.org/files/issues/media_youtube.iframe-accessibility.patch"
-projects[media_youtube][patch][1660980] = "http://www.drupal.org/files/issues/media_youtube-force_html5-1660980-12.patch"
+projects[media_youtube][patch][2129317] = "https://www.drupal.org/files/issues/media_youtube.iframe-accessibility.patch"
+projects[media_youtube][patch][1660980] = "https://www.drupal.org/files/issues/media_youtube-force_html5-1660980-12.patch"
 projects[media_youtube][subdir] = contrib
 
 projects[menu_attributes][version] = "1.0-rc3"
@@ -335,7 +335,7 @@ projects[multiselect][subdir] = contrib
 
 projects[navigation404][version] = "1.0"
 projects[navigation404][subdir] = contrib
-projects[navigation404][patch][1844830] = "http://drupal.org/files/navigation404-undefined_index_site_404-1844830-0.patch"
+projects[navigation404][patch][1844830] = "https://www.drupal.org/files/navigation404-undefined_index_site_404-1844830-0.patch"
 
 projects[node_edit_redirect][version] = "1.0-rc2"
 projects[node_edit_redirect][subdir] = contrib
@@ -357,16 +357,16 @@ projects[path_breadcrumbs][subdir] = contrib
 
 projects[pathauto][version] = "1.2"
 projects[pathauto][subdir] = contrib
-projects[pathauto][patch][290421] = "http://drupal.org/files/290421-pathauto-DRUPAL-7--1-x.patch"
-projects[pathauto][patch][1993462] = "http://drupal.org/files/pathauto-path_alias_for_taxonomy_terms_always_created_in_default_language-1993462-0.patch"
+projects[pathauto][patch][290421] = "https://www.drupal.org/files/290421-pathauto-DRUPAL-7--1-x.patch"
+projects[pathauto][patch][1993462] = "https://www.drupal.org/files/pathauto-path_alias_for_taxonomy_terms_always_created_in_default_language-1993462-0.patch"
 
 projects[print][version] = "2.0"
 projects[print][subdir] = contrib
-projects[print][patch][2446693] = "http://www.drupal.org/files/issues/print-2446939-1.patch"
+projects[print][patch][2446693] = "https://www.drupal.org/files/issues/print-2446939-1.patch"
 
 projects[quiz][version] = "4.0-beta2"
 projects[quiz][subdir] = contrib
-;projects[quiz][patch][1899654] = "http://drupal.org/files/quiz-cant_view_long_answer_questions-1899654-1.patch"
+;projects[quiz][patch][1899654] = "https://www.drupal.org/files/quiz-cant_view_long_answer_questions-1899654-1.patch"
 
 projects[redirect][version] = "1.0-rc3"
 projects[redirect][subdir] = contrib
@@ -376,11 +376,11 @@ projects[registration][subdir] = contrib
 
 projects[role_delegation][version] = "1.1"
 projects[role_delegation][subdir] = contrib
-projects[role_delegation][patch][1156414] = "http://www.drupal.org/files/issues/1156414-prevent-editing-of-certain-users-16.patch"
+projects[role_delegation][patch][1156414] = "https://www.drupal.org/files/issues/1156414-prevent-editing-of-certain-users-16.patch"
 
 projects[rules][version] = "2.7"
 projects[rules][subdir] = contrib
-projects[rules][patch][2161847] = "http://www.drupal.org/files/issues/rules-2161847-22-Unsupported-operand-types.patch"
+projects[rules][patch][2161847] = "https://www.drupal.org/files/issues/rules-2161847-22-Unsupported-operand-types.patch"
 
 projects[scheduler][version] = "1.3"
 projects[scheduler][subdir] = contrib
@@ -390,19 +390,19 @@ projects[search_config][subdir] = contrib
 
 projects[seckit][version] = "1.9"
 projects[seckit][subdir] = contrib
-projects[seckit][patch][2281315] = "http://drupal.org/files/issues/seckit-disable_autocomplete-2281315-13.patch"
+projects[seckit][patch][2281315] = "https://www.drupal.org/files/issues/seckit-disable_autocomplete-2281315-13.patch"
 
 projects[securelogin][version] = "1.4"
 projects[securelogin][subdir] = contrib
-;projects[securelogin][patch][2044839] = "http://drupal.org/files/securelogin-access_denied_during_install_process_when_installed_with_profile-2044839-0.patch"
+;projects[securelogin][patch][2044839] = "https://www.drupal.org/files/securelogin-access_denied_during_install_process_when_installed_with_profile-2044839-0.patch"
 
 projects[security_review][version] = "1.2"
 projects[security_review][subdir] = contrib
 
 projects[sharethis][version] = "2.9"
 projects[sharethis][subdir] = contrib
-projects[sharethis][patch][2353369] = "http://www.drupal.org/files/issues/sharethis-link_accessibility-1289054-43.patch"
-projects[sharethis][patch][2339561] = "http://www.drupal.org/files/issues/sharethis-n2339561-1.patch"
+projects[sharethis][patch][2353369] = "https://www.drupal.org/files/issues/sharethis-link_accessibility-1289054-43.patch"
+projects[sharethis][patch][2339561] = "https://www.drupal.org/files/issues/sharethis-n2339561-1.patch"
 
 projects[simple_gmap][version] = "1.2"
 projects[simple_gmap][subdir] = contrib
@@ -457,12 +457,12 @@ projects[variable][subdir] = contrib
 
 projects[view_unpublished][version] = "1.1"
 projects[view_unpublished][subdir] = contrib
-projects[view_unpublished][patch][1192074] = "http://drupal.org/files/view_unpublished_content_admin-1192074-57_1.patch"
+projects[view_unpublished][patch][1192074] = "https://www.drupal.org/files/view_unpublished_content_admin-1192074-57_1.patch"
 
 projects[views][version] = "3.11"
 projects[views][subdir] = contrib
-projects[views][patch][1803758] = "http://www.drupal.org/files/views-language_prefix_for_ajax-1803758-1.patch"
-projects[views][patch][564106] = "http://www.drupal.org/files/issues/views-custom-url-query-for-more-link-564106-84.patch"
+projects[views][patch][1803758] = "https://www.drupal.org/files/views-language_prefix_for_ajax-1803758-1.patch"
+projects[views][patch][564106] = "https://www.drupal.org/files/issues/views-custom-url-query-for-more-link-564106-84.patch"
 
 projects[views_data_export][version] = "3.0-beta8"
 projects[views_data_export][subdir] = contrib
@@ -472,7 +472,7 @@ projects[views_bulk_operations][subdir] = contrib
 
 projects[views_slideshow][version] = "3.1"
 projects[views_slideshow][subdir] = contrib
-projects[views_slideshow][patch][974482] = "http://www.drupal.org/files/issues/views_slideshow-974482-23.patch"
+projects[views_slideshow][patch][974482] = "https://www.drupal.org/files/issues/views_slideshow-974482-23.patch"
 
 projects[webform][version] = "3.24"
 projects[webform][subdir] = contrib
@@ -480,7 +480,7 @@ projects[webform][patch][2675108] = "https://www.drupal.org/files/issues/2675170
 
 projects[webform_clear][version] = "2.0"
 projects[webform_clear][subdir] = contrib
-projects[webform_clear][patch][2250027] = "http://drupal.org/files/issues/webform_clear-2250027-testfix-2.patch"
+projects[webform_clear][patch][2250027] = "https://www.drupal.org/files/issues/webform_clear-2250027-testfix-2.patch"
 
 projects[webform_rules][version] = "1.6"
 projects[webform_rules][subdir] = contrib
@@ -493,4 +493,4 @@ projects[workbench_moderation][subdir] = contrib
 
 projects[xmlsitemap][version] = "2.0"
 projects[xmlsitemap][subdir] = contrib
-projects[xmlsitemap][patch][2223911] = "http://www.drupal.org/files/issues/xmlsitemap_menu_module-2223911-14.patch"
+projects[xmlsitemap][patch][2223911] = "https://www.drupal.org/files/issues/xmlsitemap_menu_module-2223911-14.patch"

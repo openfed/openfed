@@ -34,6 +34,7 @@ core = 7.x
 ; ----------------------------
   dependencies[] = addanother
   dependencies[] = admin_menu
+  dependencies[] = admin_menu_content_languages
   dependencies[] = admin_menu_toolbar
   dependencies[] = admin_views
   dependencies[] = ckeditor
@@ -100,6 +101,7 @@ core = 7.x
   dependencies[] = metatag
   dependencies[] = multiselect
   dependencies[] = navigation404
+  dependencies[] = node_edit_redirect
   dependencies[] = override_node_options
   dependencies[] = partial_date
   dependencies[] = path_breadcrumbs

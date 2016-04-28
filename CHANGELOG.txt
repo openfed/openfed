@@ -3,6 +3,9 @@ CHANGELOG
 
 Next - Version 2.0-beta1
 ------------------------
+ * Issues:
+   #2675476: Use https URLs in makefile
+
  * New modules
    #2710241: Add module: Node Edit Redirect
    #2713873: Add module: Administration menu - Content languages
