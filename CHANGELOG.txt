@@ -11,6 +11,9 @@ Next - Version 2.0-beta1
    #2710241: Add module: Node Edit Redirect
    #2713873: Add module: Administration menu - Content languages
 
+ * Library upgrade
+   #2722323: Library upgrade: CKEditor
+
  * Theme upgrade
    #2715261: Theme upgrade: CMS theme
 
@@ -19,7 +22,7 @@ Next - Version 2.0-beta1
    #2722229: Module upgrade: Field Group
    #2722235: Module upgrade: Features
    #2666476: Module upgrade: Administration Menu
-   #2722297: Module upgrade: CKEditor 
+   #2722297: Module upgrade: CKEditor
 
 1 March 2016 - Version 1.19
 ---------------------------
