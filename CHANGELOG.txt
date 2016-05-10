@@ -25,6 +25,7 @@ Next - Version 2.0-beta1
    #2666476: Module upgrade: Administration Menu
    #2722297: Module upgrade: CKEditor
    #2659266: Module upgrade: CKEditor Link
+   #2722367: Module upgrade: Display Suite
 
 1 March 2016 - Version 1.19
 ---------------------------

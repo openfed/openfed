@@ -146,7 +146,7 @@ projects[devel][subdir] = contrib
 projects[diff][version] = "3.2"
 projects[diff][subdir] = contrib
 
-projects[ds][version] = "2.11"
+projects[ds][version] = "2.14"
 projects[ds][subdir] = contrib
 
 projects[easy_breadcrumb][version] = "2.12"
