@@ -119,7 +119,7 @@ projects[calendar][subdir] = contrib
 projects[ckeditor][version] = "1.17"
 projects[ckeditor][subdir] = contrib
 
-projects[ckeditor_link][version] = "2.3"
+projects[ckeditor_link][version] = "2.4"
 projects[ckeditor_link][subdir] = contrib
 
 projects[colorbox][version] = "2.10"
