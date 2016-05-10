@@ -221,7 +221,7 @@ projects[gmap][subdir] = contrib
 projects[google_analytics][version] = "1.4"
 projects[google_analytics][subdir] = contrib
 
-projects[hierarchical_select][version] = "3.0-beta2"
+projects[hierarchical_select][version] = "3.0-beta5"
 projects[hierarchical_select][subdir] = contrib
 
 projects[honeypot][version] = "1.17"
