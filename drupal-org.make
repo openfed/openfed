@@ -227,7 +227,7 @@ projects[hierarchical_select][subdir] = contrib
 projects[honeypot][version] = "1.17"
 projects[honeypot][subdir] = contrib
 
-projects[html5_tools][version] = "1.2"
+projects[html5_tools][version] = "1.3"
 projects[html5_tools][subdir] = contrib
 
 projects[i18n][version] = "1.11"
