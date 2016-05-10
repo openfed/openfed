@@ -24,7 +24,7 @@ Next - Version 2.0-beta1
    #2722235: Module upgrade: Features
    #2666476: Module upgrade: Administration Menu
    #2722297: Module upgrade: CKEditor
-   #2659266: Module upgrade: CKEditor Link
+   #2722331: Module upgrade: CKEditor Link
    #2722367: Module upgrade: Display Suite
    #2722375: Module upgrade: Entity API
    #2722389: Module upgrade: Features Override
