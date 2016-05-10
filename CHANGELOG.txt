@@ -17,6 +17,7 @@ Next - Version 2.0-beta1
  * Module upgrade:
    #2713877: Module upgrade: Openfed switcher
    #2722229: Module upgrade: Field Group
+   #2722235: Module upgrade: Features
 
 1 March 2016 - Version 1.19
 ---------------------------

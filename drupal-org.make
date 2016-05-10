@@ -184,7 +184,7 @@ projects[facetapi_i18n][version] = "1.0-beta2"
 projects[facetapi_i18n][subdir] = contrib
 projects[facetapi_i18n][patch][2404953] = "https://www.drupal.org/files/issues/2404953-5.patch"
 
-projects[features][version] = "2.2"
+projects[features][version] = "2.10"
 projects[features][subdir] = contrib
 
 projects[features_override][version] = "2.0-rc2"
