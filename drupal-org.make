@@ -230,11 +230,8 @@ projects[honeypot][subdir] = contrib
 projects[html5_tools][version] = "1.3"
 projects[html5_tools][subdir] = contrib
 
-projects[i18n][version] = "1.11"
+projects[i18n][version] = "1.13"
 projects[i18n][subdir] = contrib
-projects[i18n][patch][2250501] = "https://www.drupal.org/files/issues/i18n-node_edit-2250501-8.patch"
-projects[i18n][patch][2227523] = "https://www.drupal.org/files/issues/i18n_string-2227523-20.patch"
-projects[i18n][patch][2455093] = "https://www.drupal.org/files/issues/2455093_drupal735-1.patch"
 
 projects[i18nviews][download][type] = git
 projects[i18nviews][download][branch] = "7.x-3.x"
