@@ -209,9 +209,8 @@ projects[field_slideshow][version] = "1.82"
 projects[field_slideshow][subdir] = contrib
 projects[field_slideshow][patch][2326155] = "https://www.drupal.org/files/issues/field_slideshow-swipe-2326155-1.patch"
 
-projects[flag][version] = "3.5"
+projects[flag][version] = "3.7"
 projects[flag][subdir] = contrib
-projects[flag][patch][1870300] = "https://www.drupal.org/files/schema_check-1870300-1.patch"
 
 projects[globalredirect][version] = "1.5"
 projects[globalredirect][subdir] = contrib
@@ -291,9 +290,8 @@ projects[logintoboggan][patch][1142808] = "https://www.drupal.org/files/logintob
 projects[logintoboggan][patch][1257572] = "https://www.drupal.org/files/account-page-title-1257572-15.patch"
 projects[logintoboggan][patch][2455049] = "https://www.drupal.org/files/issues/logintoboggan-drupal-7.35-compatibility-2455049-1.patch"
 
-projects[media][version] = "1.4"
+projects[media][version] = "1.5"
 projects[media][subdir] = contrib
-projects[media][patch][2171115] = "https://www.drupal.org/files/issues/media-error-message-when-editing-file-entity-display-options-2171115-1.patch"
 
 projects[media_soundcloud][version] = "2.1"
 projects[media_soundcloud][subdir] = contrib
