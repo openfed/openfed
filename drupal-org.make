@@ -137,10 +137,8 @@ projects[countries][subdir] = contrib
 projects[ctools][version] = "1.9"
 projects[ctools][subdir] = contrib
 
-projects[date][version] = "2.9-alpha2"
+projects[date][version] = "2.9"
 projects[date][subdir] = contrib
-projects[date][patch][2420323] = "https://www.drupal.org/files/issues/date-remove-unneeded-default-2420323-1.patch"
-projects[date][patch][2389259] = "https://www.drupal.org/files/issues/date-undefined_index_notices_in_date_popup.module-1437892-16.patch"
 
 projects[devel][version] = "1.5"
 projects[devel][subdir] = contrib
