@@ -26,6 +26,7 @@ Next - Version 2.0-beta1
    #2722297: Module upgrade: CKEditor
    #2659266: Module upgrade: CKEditor Link
    #2722367: Module upgrade: Display Suite
+   #2722375: Module upgrade: Entity API
 
 1 March 2016 - Version 1.19
 ---------------------------
