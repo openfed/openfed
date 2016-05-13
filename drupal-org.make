@@ -275,7 +275,7 @@ projects[lexicon][subdir] = contrib
 projects[libraries][version] = "2.2"
 projects[libraries][subdir] = contrib
 
-projects[link][version] = "1.3"
+projects[link][version] = "1.4"
 projects[link][subdir] = contrib
 
 projects[location][version] = "3.4"

@@ -36,6 +36,7 @@ Next - Version 2.0-beta1
    #2722483: Module upgrade: IMCE
    #2666500: Module upgrade: Language Cookie
    #2666502: Module upgrade: Language Selection Page
+   #2724947: Module upgrade: Link
 
 1 March 2016 - Version 1.19
 ---------------------------
