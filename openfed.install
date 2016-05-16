@@ -686,13 +686,24 @@ function openfed_update_7312() {
 }
 
 /**
- * Remove permission from User Manager and Builder.
+ * Set up role delegation.
  */
 function openfed_update_7313() {
-  $updated_roles = array('Builder', 'User Manager');
-  foreach ($updated_roles as $role) {
-    $web_role = user_role_load_by_name($role);
-    $permissions['administer permissions'] = FALSE;
-    user_role_change_permissions($web_role->rid, $permissions);
+  // Set up roles delegation module permission.
+  if (module_enable(array('role_delegation'))) {
+    $roles = _role_delegation_roles();
+    $permissions = array();
+    foreach ($roles as $rid => $role) {
+      $permissions["assign $role role"] = TRUE;
+    }
+
+    $updated_roles = array('Builder', 'Configurator', 'User Manager');
+    foreach ($updated_roles as $role) {
+      $web_role = user_role_load_by_name($role);
+      if (!empty($web_role)) {
+        $permissions['administer permissions'] = FALSE;
+        user_role_change_permissions($web_role->rid, $permissions);
+      }
+    }
   }
 }
