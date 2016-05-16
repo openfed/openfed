@@ -67,6 +67,7 @@ Next - Version 2.0-beta1
    #2726693: Module upgrade: GMap Module
    #2726695: Module upgrade: Honeypot
    #2726701: Module upgrade: Panels
+   #2726713: Module upgrade: Localization update
 
 1 March 2016 - Version 1.19
 ---------------------------

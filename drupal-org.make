@@ -258,9 +258,8 @@ projects[jquery_update][subdir] = contrib
 projects[l10n_client][version] = "1.3"
 projects[l10n_client][subdir] = contrib
 
-projects[l10n_update][version] = "2.0-rc2"
+projects[l10n_update][version] = "2.0"
 projects[l10n_update][subdir] = contrib
-projects[l10n_update][patch][2167585] = "https://www.drupal.org/files/issues/l10n_update-installation-directory-2167585-24.patch"
 
 projects[language_cookie][version] = "2.0"
 projects[language_cookie][subdir] = contrib
@@ -331,7 +330,7 @@ projects[node_edit_redirect][subdir] = contrib
 projects[override_node_options][version] = "1.13"
 projects[override_node_options][subdir] = contrib
 
-projects[panels][version] = "3.4"
+projects[panels][version] = "3.5"
 projects[panels][subdir] = contrib
 
 projects[panels_extra_layouts][version] = "2.0"
