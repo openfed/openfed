@@ -72,6 +72,7 @@ Next - Version 2.0-beta1
    #2726717: Module upgrade: Media: Vimeo
    #2726719: Module upgrade: Multiple Node Menu
    #2726723: Module upgrade: Title
+   #2726729: Module upgrade: Twitter Block
 
 1 March 2016 - Version 1.19
 ---------------------------
