@@ -276,7 +276,6 @@ function _openfed_get_default_permissions() {
     'flush caches' => array(
       'Builder',
       'Configurator',
-      'Content Manager',
     ),
 
     // block
