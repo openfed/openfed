@@ -41,6 +41,7 @@ Next - Version 2.0-beta1
    #2726463: Module upgrade: Menu Attributes
    #2726467: Module upgrade: Menu block
    #2726475: Module upgrade: Menu position
+   #2726489: Module upgrade: Metatag
 
 1 March 2016 - Version 1.19
 ---------------------------
