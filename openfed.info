@@ -31,6 +31,7 @@ core = 7.x
 
 ; Contrib module dependencies.
 ; ----------------------------
+  dependencies[] = admin_language
   dependencies[] = admin_menu
   dependencies[] = admin_menu_content_languages
   dependencies[] = admin_menu_toolbar

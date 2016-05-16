@@ -680,6 +680,7 @@ function openfed_update_7312() {
    'module_filter',
    'node_edit_redirect',
    'admin_menu_languages',
+   'admin_language',
   ));
   module_disable(array('backup_migrate'), FALSE);
 }
