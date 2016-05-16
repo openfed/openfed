@@ -276,7 +276,7 @@ projects[libraries][subdir] = contrib
 projects[link][version] = "1.4"
 projects[link][subdir] = contrib
 
-projects[location][version] = "3.4"
+projects[location][version] = "3.7"
 projects[location][subdir] = contrib
 
 projects[logintoboggan][version] = "1.5"
