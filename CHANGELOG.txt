@@ -9,6 +9,7 @@ Next - Version 2.0-beta1
    #2484705: Default to role_delegation for User Manager role
    #2511426: Remove the "Flush all caches" permission for Content managers
    #2726823: Remove unnecessary dependencies
+   #2483757: Add checkbox to disable HTTPS
 
  * New modules
    #2710241: Add module: Node Edit Redirect
