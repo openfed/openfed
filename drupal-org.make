@@ -289,7 +289,7 @@ projects[media][subdir] = contrib
 projects[media_soundcloud][version] = "2.1"
 projects[media_soundcloud][subdir] = contrib
 
-projects[media_vimeo][version] = "2.0"
+projects[media_vimeo][version] = "2.1"
 projects[media_vimeo][subdir] = contrib
 
 projects[media_youtube][download][type] = git
