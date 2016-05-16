@@ -370,7 +370,7 @@ projects[role_delegation][patch][1156414] = "https://www.drupal.org/files/issues
 projects[rules][version] = "2.9"
 projects[rules][subdir] = contrib
 
-projects[scheduler][version] = "1.3"
+projects[scheduler][version] = "1.4"
 projects[scheduler][subdir] = contrib
 
 projects[search_config][version] = "1.1"
