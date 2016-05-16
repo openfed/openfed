@@ -37,6 +37,7 @@ Next - Version 2.0-beta1
    #2666500: Module upgrade: Language Cookie
    #2666502: Module upgrade: Language Selection Page
    #2724947: Module upgrade: Link
+   #2666504: Module upgrade: Logintoboggan
 
 1 March 2016 - Version 1.19
 ---------------------------

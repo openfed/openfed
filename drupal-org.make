@@ -281,11 +281,9 @@ projects[link][subdir] = contrib
 projects[location][version] = "3.4"
 projects[location][subdir] = contrib
 
-projects[logintoboggan][version] = "1.4"
+projects[logintoboggan][version] = "1.5"
 projects[logintoboggan][subdir] = contrib
 projects[logintoboggan][patch][1142808] = "https://www.drupal.org/files/logintoboggan-minpasswordlength-1142808-9.patch"
-projects[logintoboggan][patch][1257572] = "https://www.drupal.org/files/account-page-title-1257572-15.patch"
-projects[logintoboggan][patch][2455049] = "https://www.drupal.org/files/issues/logintoboggan-drupal-7.35-compatibility-2455049-1.patch"
 
 projects[media][version] = "1.5"
 projects[media][subdir] = contrib
