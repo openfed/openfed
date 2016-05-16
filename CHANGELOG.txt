@@ -13,6 +13,7 @@ Next - Version 2.0-beta1
    #2427949: Add module: Menu to taxonomy
    #2715077: Add module: Entityreference Views Widget
    #2715073: Add module: Views tree
+   #2267479: Add module: Inline Entity Form
 
  * Library upgrade
    #2722323: Library upgrade: CKEditor

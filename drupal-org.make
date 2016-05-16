@@ -243,6 +243,9 @@ projects[i18nviews][subdir] = contrib
 projects[imagecache_actions][version] = "1.7"
 projects[imagecache_actions][subdir] = contrib
 
+projects[inline_entity_form][version] = "1.8"
+projects[inline_entity_form][subdir] = contrib
+
 projects[imce][version] = "1.10"
 projects[imce][subdir] = contrib
 
