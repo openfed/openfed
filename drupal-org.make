@@ -453,7 +453,7 @@ projects[username_enumeration_prevention][subdir] = contrib
 projects[variable][version] = "2.5"
 projects[variable][subdir] = contrib
 
-projects[view_unpublished][version] = "1.3"
+projects[view_unpublished][version] = "1.2"
 projects[view_unpublished][subdir] = contrib
 
 projects[views][version] = "3.13"
