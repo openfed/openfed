@@ -411,7 +411,7 @@ projects[table_altrow][subdir] = contrib
 projects[text_resize][version] = "1.9"
 projects[text_resize][subdir] = contrib
 
-projects[title][version] = "1.0-alpha7"
+projects[title][version] = "1.0-alpha8"
 projects[title][subdir] = contrib
 
 projects[token][version] = "1.6"
