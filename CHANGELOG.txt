@@ -59,6 +59,8 @@ Next - Version 2.0-beta1
    #2726657: Module upgrade: Quiz
    #2138429: Module upgrade: Apache Solr Autocomplete
    #2726663: Module upgrade: Apache Solr Multilingual
+   #2726669: Module upgrade: Back To Top
+   #2726677: Module upgrade: Backup and Migrate
 
 1 March 2016 - Version 1.19
 ---------------------------
