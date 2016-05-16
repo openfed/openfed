@@ -380,9 +380,8 @@ projects[seckit][version] = "1.9"
 projects[seckit][subdir] = contrib
 projects[seckit][patch][2281315] = "https://www.drupal.org/files/issues/seckit-disable_autocomplete-2281315-13.patch"
 
-projects[securelogin][version] = "1.4"
+projects[securelogin][version] = "1.6"
 projects[securelogin][subdir] = contrib
-;projects[securelogin][patch][2044839] = "https://www.drupal.org/files/securelogin-access_denied_during_install_process_when_installed_with_profile-2044839-0.patch"
 
 projects[security_review][version] = "1.2"
 projects[security_review][subdir] = contrib
