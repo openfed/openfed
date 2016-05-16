@@ -279,7 +279,7 @@ projects[language_selection_page][subdir] = contrib
 projects[lexicon][version] = "1.10"
 projects[lexicon][subdir] = contrib
 
-projects[libraries][version] = "2.2"
+projects[libraries][version] = "2.3"
 projects[libraries][subdir] = contrib
 
 projects[link][version] = "1.4"

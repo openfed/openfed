@@ -46,6 +46,7 @@ Next - Version 2.0-beta1
    #2722483: Module upgrade: IMCE
    #2666500: Module upgrade: Language Cookie
    #2666502: Module upgrade: Language Selection Page
+   #2726787: Module upgrade: Libraries API
    #2724947: Module upgrade: Link
    #2666504: Module upgrade: Logintoboggan
    #2726463: Module upgrade: Menu Attributes
