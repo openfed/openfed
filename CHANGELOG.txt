@@ -53,6 +53,7 @@ Next - Version 2.0-beta1
    #2666528: Module upgrade: Username Enumeration Prevention
    #2726633: Module upgrade: view_unpublished
    #2726639: Module upgrade: Views
+   #2726641: Module upgrade: XML Sitemap
 
 1 March 2016 - Version 1.19
 ---------------------------
