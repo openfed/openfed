@@ -223,7 +223,7 @@ projects[google_analytics][subdir] = contrib
 projects[hierarchical_select][version] = "3.0-beta5"
 projects[hierarchical_select][subdir] = contrib
 
-projects[honeypot][version] = "1.17"
+projects[honeypot][version] = "1.22"
 projects[honeypot][subdir] = contrib
 
 projects[html5_tools][version] = "1.3"
