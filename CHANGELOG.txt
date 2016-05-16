@@ -16,6 +16,9 @@ Next - Version 2.0-beta1
    #2267479: Add module: Inline Entity Form
    #2618796: Add module: module_filter
 
+ * Remove module:
+   #2446629: Remove module: Backup and migrate
+
  * Library upgrade
    #2722323: Library upgrade: CKEditor
 
@@ -66,7 +69,6 @@ Next - Version 2.0-beta1
    #2138429: Module upgrade: Apache Solr Autocomplete
    #2726663: Module upgrade: Apache Solr Multilingual
    #2726669: Module upgrade: Back To Top
-   #2726677: Module upgrade: Backup and Migrate
    #2726679: Module upgrade: Feeds
    #2726683: Module upgrade: Feeds XPath Parser
    #2726689: Module upgrade: Field collection

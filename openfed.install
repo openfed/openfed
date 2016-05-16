@@ -674,7 +674,7 @@ function openfed_update_7311() {
 }
 
 /**
- * Enable helper modules.
+ * Enable/disable helper modules.
  */
 function openfed_update_7312() {
   module_enable(array(
@@ -682,4 +682,5 @@ function openfed_update_7312() {
    'node_edit_redirect',
    'admin_menu_languages',
   ));
+  module_disable(array('backup_migrate'), FALSE);
 }
