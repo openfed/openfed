@@ -684,3 +684,15 @@ function openfed_update_7312() {
   ));
   module_disable(array('backup_migrate'), FALSE);
 }
+
+/**
+ * Remove permission from User Manager and Builder.
+ */
+function openfed_update_7313() {
+  $updated_roles = array('Builder', 'User Manager');
+  foreach ($updated_roles as $role) {
+    $web_role = user_role_load_by_name($role);
+    $permissions['administer permissions'] = FALSE;
+    user_role_change_permissions($web_role->rid, $permissions);
+  }
+}

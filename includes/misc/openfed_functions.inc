@@ -865,10 +865,6 @@ function _openfed_get_default_permissions() {
     ),
 
     // user
-    'administer permissions' => array(
-      'Builder',
-      'User Manager',
-    ),
     'administer users' => array(
       'Builder',
       'User Manager',

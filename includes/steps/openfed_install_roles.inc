@@ -167,9 +167,7 @@ function openfed_install_role_form_submit($form, &$form_state) {
     $updated_roles = array_intersect($updated_roles, array_map('ucfirst', array_values(array_filter($values['role_list']))));
     foreach ($updated_roles as $role) {
       $web_role = user_role_load_by_name($role);
-      if ($role !== 'User Manager') {
-        $permissions['administer permissions'] = FALSE;
-      }
+      $permissions['administer permissions'] = FALSE;
       user_role_change_permissions($web_role->rid, $permissions);
     }
   }
