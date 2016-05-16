@@ -435,7 +435,7 @@ projects[transliteration][subdir] = contrib
 projects[twitter_block][version] = "2.2"
 projects[twitter_block][subdir] = contrib
 
-projects[username_enumeration_prevention][version] = "1.0"
+projects[username_enumeration_prevention][version] = "1.2"
 projects[username_enumeration_prevention][subdir] = contrib
 
 projects[variable][version] = "2.5"

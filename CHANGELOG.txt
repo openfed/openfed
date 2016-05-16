@@ -50,6 +50,7 @@ Next - Version 2.0-beta1
    #2726623: Module upgrade: Site map
    #2726629: Module upgrade: Token
    #2691513: Module upgrade: Translation Overview
+   #2666528: Module upgrade: Username Enumeration Prevention
 
 1 March 2016 - Version 1.19
 ---------------------------
