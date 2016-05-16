@@ -423,7 +423,7 @@ projects[token][subdir] = contrib
 projects[translation_helpers][version] = "1.0"
 projects[translation_helpers][subdir] = contrib
 
-projects[translation_overview][version] = "2.0-beta1"
+projects[translation_overview][version] = "2.0-beta2"
 projects[translation_overview][subdir] = contrib
 
 projects[translation_table][version] = "1.0-beta1"
