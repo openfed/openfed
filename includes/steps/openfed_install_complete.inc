@@ -132,4 +132,7 @@ function _openfed_install_complete_grant_permissions() {
       }
     }
   }
+
+  // Enable module filter module.
+  module_enable(array('module_filter'));
 }

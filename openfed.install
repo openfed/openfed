@@ -672,3 +672,14 @@ function openfed_update_7311() {
   }
   $query->execute();
 }
+
+/**
+ * Enable helper modules.
+ */
+function openfed_update_7312() {
+  module_enable(array(
+   'module_filter',
+   'node_edit_redirect',
+   'admin_menu_languages',
+  ));
+}

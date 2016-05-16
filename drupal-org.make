@@ -320,6 +320,9 @@ projects[menu_position][subdir] = contrib
 projects[menu_to_taxonomy][version] = "1.0-beta9"
 projects[menu_to_taxonomy][subdir] = contrib
 
+projects[module_filter][version] = "2.0"
+projects[module_filter][subdir] = contrib
+
 projects[metatag][version] = "1.14"
 projects[metatag][subdir] = contrib
 
