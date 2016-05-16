@@ -218,7 +218,7 @@ projects[globalredirect][subdir] = contrib
 projects[gmap][version] = "2.10-beta1"
 projects[gmap][subdir] = contrib
 
-projects[google_analytics][version] = "1.4"
+projects[google_analytics][version] = "2.2"
 projects[google_analytics][subdir] = contrib
 
 projects[hierarchical_select][version] = "3.0-beta5"
