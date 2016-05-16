@@ -42,6 +42,8 @@ Next - Version 2.0-beta1
    #2726467: Module upgrade: Menu block
    #2726475: Module upgrade: Menu position
    #2726489: Module upgrade: Metatag
+   #2726491: Module upgrade: Multiselect
+   #2726493: Module upgrade: Pathauto
 
 1 March 2016 - Version 1.19
 ---------------------------
