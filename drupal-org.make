@@ -314,7 +314,7 @@ projects[menu_position][subdir] = contrib
 projects[metatag][version] = "1.14"
 projects[metatag][subdir] = contrib
 
-projects[multiple_node_menu][version] = "1.0-beta1"
+projects[multiple_node_menu][version] = "1.0-beta2"
 projects[multiple_node_menu][subdir] = contrib
 
 projects[multiselect][version] = "1.11"

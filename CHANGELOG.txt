@@ -70,6 +70,7 @@ Next - Version 2.0-beta1
    #2726713: Module upgrade: Localization update
    #2726715: Module upgrade: Location
    #2726717: Module upgrade: Media: Vimeo
+   #2726719: Module upgrade: Multiple Node Menu
 
 1 March 2016 - Version 1.19
 ---------------------------
