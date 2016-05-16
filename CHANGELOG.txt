@@ -65,6 +65,7 @@ Next - Version 2.0-beta1
    #2726683: Module upgrade: Feeds XPath Parser
    #2726689: Module upgrade: Field collection
    #2726693: Module upgrade: GMap Module
+   #2726695: Module upgrade: Honeypot
 
 1 March 2016 - Version 1.19
 ---------------------------
