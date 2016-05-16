@@ -167,6 +167,9 @@ projects[entityreference][version] = "1.1"
 projects[entityreference][subdir] = contrib
 projects[entityreference][patch][1852112] = "https://www.drupal.org/files/entityreference-devel_generate_fix-1852112-18.patch"
 
+projects[entityreference_view_widget][version] = "2.0-rc6"
+projects[entityreference_view_widget][subdir] = contrib
+
 projects[entity_translation][version] = "1.0-beta5"
 projects[entity_translation][subdir] = contrib
 
