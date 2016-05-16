@@ -214,7 +214,7 @@ projects[flag][subdir] = contrib
 projects[globalredirect][version] = "1.5"
 projects[globalredirect][subdir] = contrib
 
-projects[gmap][version] = "2.10-beta1"
+projects[gmap][version] = "2.11"
 projects[gmap][subdir] = contrib
 
 projects[google_analytics][version] = "2.2"
