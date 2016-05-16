@@ -46,6 +46,8 @@ Next - Version 2.0-beta1
    #2726493: Module upgrade: Pathauto
    #2726605: Module upgrade: Rules
    #2726617: Module upgrade: Secure Login
+   #2666524: Module upgrade: ShareThis
+   #2726623: Module upgrade: Site map
 
 1 March 2016 - Version 1.19
 ---------------------------
