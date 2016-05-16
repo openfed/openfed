@@ -429,7 +429,7 @@ projects[translation_table][subdir] = contrib
 projects[transliteration][version] = "3.2"
 projects[transliteration][subdir] = contrib
 
-projects[twitter_block][version] = "2.2"
+projects[twitter_block][version] = "2.3"
 projects[twitter_block][subdir] = contrib
 
 projects[username_enumeration_prevention][version] = "1.2"
@@ -446,7 +446,7 @@ projects[views][subdir] = contrib
 projects[views][patch][1803758] = "https://www.drupal.org/files/views-language_prefix_for_ajax-1803758-1.patch"
 projects[views][patch][564106] = "https://www.drupal.org/files/issues/views-custom-url-query-for-more-link-564106-84.patch"
 
-projects[views_data_export][version] = "3.0-beta8"
+projects[views_data_export][version] = "3.0-beta9"
 projects[views_data_export][subdir] = contrib
 
 projects[views_bulk_operations][version] = "3.3"
