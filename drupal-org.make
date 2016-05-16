@@ -198,6 +198,9 @@ projects[field_collection][subdir] = contrib
 projects[field_conditional_state][version] = "2.1"
 projects[field_conditional_state][subdir] = contrib
 
+projects[field_default_token][version] = "1.3"
+projects[field_default_token][subdir] = contrib
+
 projects[field_group][version] = "1.5"
 projects[field_group][subdir] = contrib
 

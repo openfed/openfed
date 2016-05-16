@@ -15,6 +15,7 @@ Next - Version 2.0-beta1
    #2715073: Add module: Views tree
    #2267479: Add module: Inline Entity Form
    #2618796: Add module: module_filter
+   #2392249: Add module: Field default token
 
  * Remove module:
    #2446629: Remove module: Backup and migrate
