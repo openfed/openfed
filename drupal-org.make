@@ -367,9 +367,8 @@ projects[role_delegation][version] = "1.1"
 projects[role_delegation][subdir] = contrib
 projects[role_delegation][patch][1156414] = "https://www.drupal.org/files/issues/1156414-prevent-editing-of-certain-users-16.patch"
 
-projects[rules][version] = "2.7"
+projects[rules][version] = "2.9"
 projects[rules][subdir] = contrib
-projects[rules][patch][2161847] = "https://www.drupal.org/files/issues/rules-2161847-22-Unsupported-operand-types.patch"
 
 projects[scheduler][version] = "1.3"
 projects[scheduler][subdir] = contrib
