@@ -10,21 +10,13 @@
 function ofed_address_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_ofed_address_directions'
+  // Exported field_base: 'field_ofed_address_directions'.
   $field_bases['field_ofed_address_directions'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_ofed_address_directions',
-    'foreign keys' => array(
-      'node' => array(
-        'columns' => array(
-          'target_id' => 'nid',
-        ),
-        'table' => 'node',
-      ),
-    ),
     'indexes' => array(
       'target_id' => array(
         0 => 'target_id',
@@ -52,14 +44,13 @@ function ofed_address_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_ofed_address_email'
+  // Exported field_base: 'field_ofed_address_email'.
   $field_bases['field_ofed_address_email'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_ofed_address_email',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'email',
@@ -68,14 +59,13 @@ function ofed_address_field_default_field_bases() {
     'type' => 'email',
   );
 
-  // Exported field_base: 'field_ofed_address_location'
+  // Exported field_base: 'field_ofed_address_location'.
   $field_bases['field_ofed_address_location'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_ofed_address_location',
-    'foreign keys' => array(),
     'indexes' => array(
       'lid' => array(
         0 => 'lid',
@@ -153,21 +143,13 @@ function ofed_address_field_default_field_bases() {
     'type' => 'location',
   );
 
-  // Exported field_base: 'field_ofed_address_opening_hours'
+  // Exported field_base: 'field_ofed_address_opening_hours'.
   $field_bases['field_ofed_address_opening_hours'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_ofed_address_opening_hours',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -180,21 +162,13 @@ function ofed_address_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_ofed_address_phone'
+  // Exported field_base: 'field_ofed_address_phone'.
   $field_bases['field_ofed_address_phone'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_ofed_address_phone',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -209,14 +183,13 @@ function ofed_address_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_ofed_address_pubdate'
+  // Exported field_base: 'field_ofed_address_pubdate'.
   $field_bases['field_ofed_address_pubdate'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_ofed_address_pubdate',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'date',
@@ -239,14 +212,13 @@ function ofed_address_field_default_field_bases() {
     'type' => 'datetime',
   );
 
-  // Exported field_base: 'field_ofed_address_update'
+  // Exported field_base: 'field_ofed_address_update'.
   $field_bases['field_ofed_address_update'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_ofed_address_update',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'date',
@@ -269,14 +241,13 @@ function ofed_address_field_default_field_bases() {
     'type' => 'datetime',
   );
 
-  // Exported field_base: 'field_ofed_address_update_force'
+  // Exported field_base: 'field_ofed_address_update_force'.
   $field_bases['field_ofed_address_update_force'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_ofed_address_update_force',
-    'foreign keys' => array(),
     'indexes' => array(
       'value' => array(
         0 => 'value',

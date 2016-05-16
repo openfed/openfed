@@ -10,21 +10,13 @@
 function ofed_job_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_ofed_job_body'
+  // Exported field_base: 'field_ofed_job_body'.
   $field_bases['field_ofed_job_body'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_ofed_job_body',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -37,21 +29,13 @@ function ofed_job_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_ofed_job_description'
+  // Exported field_base: 'field_ofed_job_description'.
   $field_bases['field_ofed_job_description'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_ofed_job_description',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -64,21 +48,13 @@ function ofed_job_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_ofed_job_diplomas'
+  // Exported field_base: 'field_ofed_job_diplomas'.
   $field_bases['field_ofed_job_diplomas'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_ofed_job_diplomas',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -93,21 +69,13 @@ function ofed_job_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_ofed_job_docs'
+  // Exported field_base: 'field_ofed_job_docs'.
   $field_bases['field_ofed_job_docs'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_ofed_job_docs',
-    'foreign keys' => array(
-      'node' => array(
-        'columns' => array(
-          'target_id' => 'nid',
-        ),
-        'table' => 'node',
-      ),
-    ),
     'indexes' => array(
       'target_id' => array(
         0 => 'target_id',
@@ -135,21 +103,13 @@ function ofed_job_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_ofed_job_experience'
+  // Exported field_base: 'field_ofed_job_experience'.
   $field_bases['field_ofed_job_experience'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_ofed_job_experience',
-    'foreign keys' => array(
-      'tid' => array(
-        'columns' => array(
-          'tid' => 'tid',
-        ),
-        'table' => 'taxonomy_term_data',
-      ),
-    ),
     'indexes' => array(
       'tid' => array(
         0 => 'tid',
@@ -170,21 +130,13 @@ function ofed_job_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_ofed_job_languages'
+  // Exported field_base: 'field_ofed_job_languages'.
   $field_bases['field_ofed_job_languages'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_ofed_job_languages',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -199,21 +151,13 @@ function ofed_job_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_ofed_job_occupation'
+  // Exported field_base: 'field_ofed_job_occupation'.
   $field_bases['field_ofed_job_occupation'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_ofed_job_occupation',
-    'foreign keys' => array(
-      'tid' => array(
-        'columns' => array(
-          'tid' => 'tid',
-        ),
-        'table' => 'taxonomy_term_data',
-      ),
-    ),
     'indexes' => array(
       'tid' => array(
         0 => 'tid',
@@ -234,21 +178,13 @@ function ofed_job_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_ofed_job_process'
+  // Exported field_base: 'field_ofed_job_process'.
   $field_bases['field_ofed_job_process'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_ofed_job_process',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -261,21 +197,13 @@ function ofed_job_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_ofed_job_profile'
+  // Exported field_base: 'field_ofed_job_profile'.
   $field_bases['field_ofed_job_profile'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_ofed_job_profile',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -288,14 +216,13 @@ function ofed_job_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_ofed_job_pubdate'
+  // Exported field_base: 'field_ofed_job_pubdate'.
   $field_bases['field_ofed_job_pubdate'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_ofed_job_pubdate',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'date',
@@ -318,21 +245,13 @@ function ofed_job_field_default_field_bases() {
     'type' => 'datetime',
   );
 
-  // Exported field_base: 'field_ofed_job_reference'
+  // Exported field_base: 'field_ofed_job_reference'.
   $field_bases['field_ofed_job_reference'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_ofed_job_reference',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -347,21 +266,13 @@ function ofed_job_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_ofed_job_sector'
+  // Exported field_base: 'field_ofed_job_sector'.
   $field_bases['field_ofed_job_sector'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_ofed_job_sector',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -376,21 +287,13 @@ function ofed_job_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_ofed_job_study_level'
+  // Exported field_base: 'field_ofed_job_study_level'.
   $field_bases['field_ofed_job_study_level'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_ofed_job_study_level',
-    'foreign keys' => array(
-      'tid' => array(
-        'columns' => array(
-          'tid' => 'tid',
-        ),
-        'table' => 'taxonomy_term_data',
-      ),
-    ),
     'indexes' => array(
       'tid' => array(
         0 => 'tid',
@@ -411,21 +314,13 @@ function ofed_job_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_ofed_job_summary'
+  // Exported field_base: 'field_ofed_job_summary'.
   $field_bases['field_ofed_job_summary'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_ofed_job_summary',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -438,21 +333,13 @@ function ofed_job_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_ofed_job_thumb'
+  // Exported field_base: 'field_ofed_job_thumb'.
   $field_bases['field_ofed_job_thumb'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_ofed_job_thumb',
-    'foreign keys' => array(
-      'fid' => array(
-        'columns' => array(
-          'fid' => 'fid',
-        ),
-        'table' => 'file_managed',
-      ),
-    ),
     'indexes' => array(
       'fid' => array(
         0 => 'fid',
@@ -468,14 +355,13 @@ function ofed_job_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_ofed_job_update'
+  // Exported field_base: 'field_ofed_job_update'.
   $field_bases['field_ofed_job_update'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_ofed_job_update',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'date',
@@ -498,14 +384,13 @@ function ofed_job_field_default_field_bases() {
     'type' => 'datetime',
   );
 
-  // Exported field_base: 'field_ofed_job_update_force'
+  // Exported field_base: 'field_ofed_job_update_force'.
   $field_bases['field_ofed_job_update_force'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_ofed_job_update_force',
-    'foreign keys' => array(),
     'indexes' => array(
       'value' => array(
         0 => 'value',
@@ -524,21 +409,13 @@ function ofed_job_field_default_field_bases() {
     'type' => 'list_boolean',
   );
 
-  // Exported field_base: 'field_ofed_job_work_location'
+  // Exported field_base: 'field_ofed_job_work_location'.
   $field_bases['field_ofed_job_work_location'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_ofed_job_work_location',
-    'foreign keys' => array(
-      'node' => array(
-        'columns' => array(
-          'target_id' => 'nid',
-        ),
-        'table' => 'node',
-      ),
-    ),
     'indexes' => array(
       'target_id' => array(
         0 => 'target_id',

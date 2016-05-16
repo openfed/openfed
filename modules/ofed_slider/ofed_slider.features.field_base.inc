@@ -10,21 +10,13 @@
 function ofed_slider_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_ofed_slider_image'
+  // Exported field_base: 'field_ofed_slider_image'.
   $field_bases['field_ofed_slider_image'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_ofed_slider_image',
-    'foreign keys' => array(
-      'fid' => array(
-        'columns' => array(
-          'fid' => 'fid',
-        ),
-        'table' => 'file_managed',
-      ),
-    ),
     'indexes' => array(
       'fid' => array(
         0 => 'fid',
@@ -40,14 +32,13 @@ function ofed_slider_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_ofed_slider_image_collec'
+  // Exported field_base: 'field_ofed_slider_image_collec'.
   $field_bases['field_ofed_slider_image_collec'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_ofed_slider_image_collec',
-    'foreign keys' => array(),
     'indexes' => array(
       'revision_id' => array(
         0 => 'revision_id',
@@ -63,21 +54,13 @@ function ofed_slider_field_default_field_bases() {
     'type' => 'field_collection',
   );
 
-  // Exported field_base: 'field_ofed_slider_image_title'
+  // Exported field_base: 'field_ofed_slider_image_title'.
   $field_bases['field_ofed_slider_image_title'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_ofed_slider_image_title',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -92,14 +75,13 @@ function ofed_slider_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_ofed_slider_link'
+  // Exported field_base: 'field_ofed_slider_link'.
   $field_bases['field_ofed_slider_link'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_ofed_slider_link',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'link',
@@ -122,14 +104,13 @@ function ofed_slider_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_ofed_slider_pubdate'
+  // Exported field_base: 'field_ofed_slider_pubdate'.
   $field_bases['field_ofed_slider_pubdate'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_ofed_slider_pubdate',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'date',
@@ -152,14 +133,13 @@ function ofed_slider_field_default_field_bases() {
     'type' => 'datetime',
   );
 
-  // Exported field_base: 'field_ofed_slider_update'
+  // Exported field_base: 'field_ofed_slider_update'.
   $field_bases['field_ofed_slider_update'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_ofed_slider_update',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'date',
@@ -182,14 +162,13 @@ function ofed_slider_field_default_field_bases() {
     'type' => 'datetime',
   );
 
-  // Exported field_base: 'field_ofed_slider_update_force'
+  // Exported field_base: 'field_ofed_slider_update_force'.
   $field_bases['field_ofed_slider_update_force'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_ofed_slider_update_force',
-    'foreign keys' => array(),
     'indexes' => array(
       'value' => array(
         0 => 'value',

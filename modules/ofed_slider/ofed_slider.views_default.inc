@@ -56,7 +56,6 @@ function ofed_slider_views_default_views() {
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-
   $translatables['ofed_sliders'] = array(
     t('Master'),
     t('Sliders'),
@@ -74,16 +73,6 @@ function ofed_slider_views_default_views() {
     t('next ›'),
     t('last »'),
     t('author'),
-    t('Nid'),
-    t('Content'),
-    t('Title'),
-    t('Published'),
-    t('Author'),
-    t('Language'),
-    t('Publication date'),
-    t('Updated date'),
-    t('Edit'),
-    t('Delete'),
   );
   $export['ofed_sliders'] = $view;
 

@@ -10,7 +10,7 @@
 function ofed_video_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-ofed_video-field_ofed_video_body'
+  // Exported field_instance: 'node-ofed_video-field_ofed_video_body'.
   $field_instances['node-ofed_video-field_ofed_video_body'] = array(
     'bundle' => 'ofed_video',
     'default_value' => NULL,
@@ -107,7 +107,7 @@ function ofed_video_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ofed_video-field_ofed_video_desc'
+  // Exported field_instance: 'node-ofed_video-field_ofed_video_desc'.
   $field_instances['node-ofed_video-field_ofed_video_desc'] = array(
     'bundle' => 'ofed_video',
     'default_value' => NULL,
@@ -214,7 +214,7 @@ function ofed_video_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ofed_video-field_ofed_video_embed'
+  // Exported field_instance: 'node-ofed_video-field_ofed_video_embed'.
   $field_instances['node-ofed_video-field_ofed_video_embed'] = array(
     'bundle' => 'ofed_video',
     'default_value' => NULL,
@@ -329,7 +329,7 @@ function ofed_video_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ofed_video-field_ofed_video_link'
+  // Exported field_instance: 'node-ofed_video-field_ofed_video_link'.
   $field_instances['node-ofed_video-field_ofed_video_link'] = array(
     'bundle' => 'ofed_video',
     'default_value' => NULL,
@@ -412,6 +412,7 @@ function ofed_video_field_default_field_instances() {
     'label' => 'Link',
     'required' => 0,
     'settings' => array(
+      'absolute_url' => 1,
       'attributes' => array(
         'class' => '',
         'configurable_title' => 0,
@@ -425,6 +426,7 @@ function ofed_video_field_default_field_instances() {
       'enable_tokens' => 1,
       'rel_remove' => 'default',
       'title' => 'optional',
+      'title_label_use_field_label' => FALSE,
       'title_maxlength' => 128,
       'title_value' => '',
       'url' => 0,
@@ -440,7 +442,7 @@ function ofed_video_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ofed_video-field_ofed_video_pubdate'
+  // Exported field_instance: 'node-ofed_video-field_ofed_video_pubdate'.
   $field_instances['node-ofed_video-field_ofed_video_pubdate'] = array(
     'bundle' => 'ofed_video',
     'deleted' => 0,
@@ -455,6 +457,7 @@ function ofed_video_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 1,
@@ -468,6 +471,7 @@ function ofed_video_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 1,
@@ -481,6 +485,7 @@ function ofed_video_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 1,
@@ -494,6 +499,7 @@ function ofed_video_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 0,
@@ -507,6 +513,7 @@ function ofed_video_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 0,
@@ -520,6 +527,7 @@ function ofed_video_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 2,
@@ -533,6 +541,7 @@ function ofed_video_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 2,
@@ -552,6 +561,7 @@ function ofed_video_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 1,
@@ -565,6 +575,7 @@ function ofed_video_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 1,
@@ -578,6 +589,7 @@ function ofed_video_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 1,
@@ -612,7 +624,7 @@ function ofed_video_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ofed_video-field_ofed_video_summary'
+  // Exported field_instance: 'node-ofed_video-field_ofed_video_summary'.
   $field_instances['node-ofed_video-field_ofed_video_summary'] = array(
     'bundle' => 'ofed_video',
     'default_value' => NULL,
@@ -715,7 +727,7 @@ function ofed_video_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ofed_video-field_ofed_video_update'
+  // Exported field_instance: 'node-ofed_video-field_ofed_video_update'.
   $field_instances['node-ofed_video-field_ofed_video_update'] = array(
     'bundle' => 'ofed_video',
     'deleted' => 0,
@@ -730,6 +742,7 @@ function ofed_video_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 2,
@@ -743,6 +756,7 @@ function ofed_video_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 2,
@@ -756,6 +770,7 @@ function ofed_video_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 2,
@@ -769,6 +784,7 @@ function ofed_video_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 1,
@@ -782,6 +798,7 @@ function ofed_video_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 1,
@@ -795,6 +812,7 @@ function ofed_video_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 3,
@@ -808,6 +826,7 @@ function ofed_video_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 3,
@@ -827,6 +846,7 @@ function ofed_video_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 3,
@@ -840,6 +860,7 @@ function ofed_video_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 2,
@@ -853,6 +874,7 @@ function ofed_video_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 2,
@@ -887,7 +909,7 @@ function ofed_video_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ofed_video-field_ofed_video_update_force'
+  // Exported field_instance: 'node-ofed_video-field_ofed_video_update_force'.
   $field_instances['node-ofed_video-field_ofed_video_update_force'] = array(
     'bundle' => 'ofed_video',
     'default_value' => array(

@@ -10,21 +10,13 @@
 function ofed_video_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_ofed_video_body'
+  // Exported field_base: 'field_ofed_video_body'.
   $field_bases['field_ofed_video_body'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_ofed_video_body',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -37,21 +29,13 @@ function ofed_video_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_ofed_video_desc'
+  // Exported field_base: 'field_ofed_video_desc'.
   $field_bases['field_ofed_video_desc'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_ofed_video_desc',
-    'foreign keys' => array(
-      'node' => array(
-        'columns' => array(
-          'target_id' => 'nid',
-        ),
-        'table' => 'node',
-      ),
-    ),
     'indexes' => array(
       'target_id' => array(
         0 => 'target_id',
@@ -80,21 +64,13 @@ function ofed_video_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_ofed_video_embed'
+  // Exported field_base: 'field_ofed_video_embed'.
   $field_bases['field_ofed_video_embed'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_ofed_video_embed',
-    'foreign keys' => array(
-      'fid' => array(
-        'columns' => array(
-          'fid' => 'fid',
-        ),
-        'table' => 'file_managed',
-      ),
-    ),
     'indexes' => array(
       'fid' => array(
         0 => 'fid',
@@ -111,14 +87,13 @@ function ofed_video_field_default_field_bases() {
     'type' => 'file',
   );
 
-  // Exported field_base: 'field_ofed_video_link'
+  // Exported field_base: 'field_ofed_video_link'.
   $field_bases['field_ofed_video_link'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_ofed_video_link',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'link',
@@ -141,14 +116,13 @@ function ofed_video_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_ofed_video_pubdate'
+  // Exported field_base: 'field_ofed_video_pubdate'.
   $field_bases['field_ofed_video_pubdate'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_ofed_video_pubdate',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'date',
@@ -171,21 +145,13 @@ function ofed_video_field_default_field_bases() {
     'type' => 'datetime',
   );
 
-  // Exported field_base: 'field_ofed_video_summary'
+  // Exported field_base: 'field_ofed_video_summary'.
   $field_bases['field_ofed_video_summary'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_ofed_video_summary',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -198,14 +164,13 @@ function ofed_video_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_ofed_video_update'
+  // Exported field_base: 'field_ofed_video_update'.
   $field_bases['field_ofed_video_update'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_ofed_video_update',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'date',
@@ -228,14 +193,13 @@ function ofed_video_field_default_field_bases() {
     'type' => 'datetime',
   );
 
-  // Exported field_base: 'field_ofed_video_update_force'
+  // Exported field_base: 'field_ofed_video_update_force'.
   $field_bases['field_ofed_video_update_force'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_ofed_video_update_force',
-    'foreign keys' => array(),
     'indexes' => array(
       'value' => array(
         0 => 'value',

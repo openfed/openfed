@@ -10,7 +10,7 @@
 function ofed_faq_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-ofed_faq-field_ofed_faq_answer'
+  // Exported field_instance: 'node-ofed_faq-field_ofed_faq_answer'.
   $field_instances['node-ofed_faq-field_ofed_faq_answer'] = array(
     'bundle' => 'ofed_faq',
     'default_value' => NULL,
@@ -78,7 +78,7 @@ function ofed_faq_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ofed_faq-field_ofed_faq_pubdate'
+  // Exported field_instance: 'node-ofed_faq-field_ofed_faq_pubdate'.
   $field_instances['node-ofed_faq-field_ofed_faq_pubdate'] = array(
     'bundle' => 'ofed_faq',
     'deleted' => 0,
@@ -93,6 +93,7 @@ function ofed_faq_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 12,
@@ -157,7 +158,7 @@ function ofed_faq_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ofed_faq-field_ofed_faq_update'
+  // Exported field_instance: 'node-ofed_faq-field_ofed_faq_update'.
   $field_instances['node-ofed_faq-field_ofed_faq_update'] = array(
     'bundle' => 'ofed_faq',
     'deleted' => 0,
@@ -229,7 +230,7 @@ function ofed_faq_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ofed_faq-field_ofed_faq_update_force'
+  // Exported field_instance: 'node-ofed_faq-field_ofed_faq_update_force'.
   $field_instances['node-ofed_faq-field_ofed_faq_update_force'] = array(
     'bundle' => 'ofed_faq',
     'default_value' => array(

@@ -10,21 +10,13 @@
 function ofed_download_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_ofed_download_author'
+  // Exported field_base: 'field_ofed_download_author'.
   $field_bases['field_ofed_download_author'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_ofed_download_author',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -39,21 +31,13 @@ function ofed_download_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_ofed_download_body'
+  // Exported field_base: 'field_ofed_download_body'.
   $field_bases['field_ofed_download_body'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_ofed_download_body',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -66,21 +50,13 @@ function ofed_download_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_ofed_download_file'
+  // Exported field_base: 'field_ofed_download_file'.
   $field_bases['field_ofed_download_file'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_ofed_download_file',
-    'foreign keys' => array(
-      'fid' => array(
-        'columns' => array(
-          'fid' => 'fid',
-        ),
-        'table' => 'file_managed',
-      ),
-    ),
     'indexes' => array(
       'fid' => array(
         0 => 'fid',
@@ -97,14 +73,13 @@ function ofed_download_field_default_field_bases() {
     'type' => 'file',
   );
 
-  // Exported field_base: 'field_ofed_download_pubdate'
+  // Exported field_base: 'field_ofed_download_pubdate'.
   $field_bases['field_ofed_download_pubdate'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_ofed_download_pubdate',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'date',
@@ -127,21 +102,13 @@ function ofed_download_field_default_field_bases() {
     'type' => 'datetime',
   );
 
-  // Exported field_base: 'field_ofed_download_summary'
+  // Exported field_base: 'field_ofed_download_summary'.
   $field_bases['field_ofed_download_summary'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_ofed_download_summary',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -154,21 +121,13 @@ function ofed_download_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_ofed_download_thumb'
+  // Exported field_base: 'field_ofed_download_thumb'.
   $field_bases['field_ofed_download_thumb'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_ofed_download_thumb',
-    'foreign keys' => array(
-      'fid' => array(
-        'columns' => array(
-          'fid' => 'fid',
-        ),
-        'table' => 'file_managed',
-      ),
-    ),
     'indexes' => array(
       'fid' => array(
         0 => 'fid',
@@ -184,14 +143,13 @@ function ofed_download_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_ofed_download_update'
+  // Exported field_base: 'field_ofed_download_update'.
   $field_bases['field_ofed_download_update'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_ofed_download_update',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'date',
@@ -214,14 +172,13 @@ function ofed_download_field_default_field_bases() {
     'type' => 'datetime',
   );
 
-  // Exported field_base: 'field_ofed_download_update_force'
+  // Exported field_base: 'field_ofed_download_update_force'.
   $field_bases['field_ofed_download_update_force'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_ofed_download_update_force',
-    'foreign keys' => array(),
     'indexes' => array(
       'value' => array(
         0 => 'value',

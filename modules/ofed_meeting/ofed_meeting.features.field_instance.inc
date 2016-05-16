@@ -10,7 +10,7 @@
 function ofed_meeting_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-ofed_meeting-field_ofed_meeting_address'
+  // Exported field_instance: 'node-ofed_meeting-field_ofed_meeting_address'.
   $field_instances['node-ofed_meeting-field_ofed_meeting_address'] = array(
     'bundle' => 'ofed_meeting',
     'default_value' => NULL,
@@ -121,7 +121,7 @@ function ofed_meeting_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ofed_meeting-field_ofed_meeting_body'
+  // Exported field_instance: 'node-ofed_meeting-field_ofed_meeting_body'.
   $field_instances['node-ofed_meeting-field_ofed_meeting_body'] = array(
     'bundle' => 'ofed_meeting',
     'default_value' => NULL,
@@ -219,7 +219,7 @@ function ofed_meeting_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ofed_meeting-field_ofed_meeting_date'
+  // Exported field_instance: 'node-ofed_meeting-field_ofed_meeting_date'.
   $field_instances['node-ofed_meeting-field_ofed_meeting_date'] = array(
     'bundle' => 'ofed_meeting',
     'deleted' => 0,
@@ -234,6 +234,7 @@ function ofed_meeting_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 1,
@@ -247,6 +248,7 @@ function ofed_meeting_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 1,
@@ -260,6 +262,7 @@ function ofed_meeting_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 1,
@@ -273,6 +276,7 @@ function ofed_meeting_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 0,
@@ -286,6 +290,7 @@ function ofed_meeting_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 2,
@@ -299,6 +304,7 @@ function ofed_meeting_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 1,
@@ -312,6 +318,7 @@ function ofed_meeting_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 3,
@@ -325,6 +332,7 @@ function ofed_meeting_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 3,
@@ -338,6 +346,7 @@ function ofed_meeting_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 3,
@@ -351,6 +360,7 @@ function ofed_meeting_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 3,
@@ -364,6 +374,7 @@ function ofed_meeting_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 1,
@@ -398,7 +409,7 @@ function ofed_meeting_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ofed_meeting-field_ofed_meeting_docs'
+  // Exported field_instance: 'node-ofed_meeting-field_ofed_meeting_docs'.
   $field_instances['node-ofed_meeting-field_ofed_meeting_docs'] = array(
     'bundle' => 'ofed_meeting',
     'default_value' => NULL,
@@ -505,7 +516,7 @@ function ofed_meeting_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ofed_meeting-field_ofed_meeting_organizer'
+  // Exported field_instance: 'node-ofed_meeting-field_ofed_meeting_organizer'.
   $field_instances['node-ofed_meeting-field_ofed_meeting_organizer'] = array(
     'bundle' => 'ofed_meeting',
     'default_value' => NULL,
@@ -602,7 +613,7 @@ function ofed_meeting_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ofed_meeting-field_ofed_meeting_pubdate'
+  // Exported field_instance: 'node-ofed_meeting-field_ofed_meeting_pubdate'.
   $field_instances['node-ofed_meeting-field_ofed_meeting_pubdate'] = array(
     'bundle' => 'ofed_meeting',
     'deleted' => 0,
@@ -635,6 +646,7 @@ function ofed_meeting_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 6,
@@ -648,6 +660,7 @@ function ofed_meeting_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 7,
@@ -667,6 +680,7 @@ function ofed_meeting_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 1,
@@ -680,6 +694,7 @@ function ofed_meeting_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 1,
@@ -693,6 +708,7 @@ function ofed_meeting_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 1,
@@ -706,6 +722,7 @@ function ofed_meeting_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 1,
@@ -746,7 +763,7 @@ function ofed_meeting_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ofed_meeting-field_ofed_meeting_summary'
+  // Exported field_instance: 'node-ofed_meeting-field_ofed_meeting_summary'.
   $field_instances['node-ofed_meeting-field_ofed_meeting_summary'] = array(
     'bundle' => 'ofed_meeting',
     'default_value' => NULL,
@@ -850,7 +867,7 @@ function ofed_meeting_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ofed_meeting-field_ofed_meeting_update'
+  // Exported field_instance: 'node-ofed_meeting-field_ofed_meeting_update'.
   $field_instances['node-ofed_meeting-field_ofed_meeting_update'] = array(
     'bundle' => 'ofed_meeting',
     'deleted' => 0,
@@ -883,6 +900,7 @@ function ofed_meeting_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 7,
@@ -896,6 +914,7 @@ function ofed_meeting_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 8,
@@ -915,6 +934,7 @@ function ofed_meeting_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 2,
@@ -928,6 +948,7 @@ function ofed_meeting_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 2,
@@ -941,6 +962,7 @@ function ofed_meeting_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 2,
@@ -954,6 +976,7 @@ function ofed_meeting_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 2,
@@ -994,7 +1017,8 @@ function ofed_meeting_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ofed_meeting-field_ofed_meeting_update_force'
+  // Exported field_instance:
+  // 'node-ofed_meeting-field_ofed_meeting_update_force'.
   $field_instances['node-ofed_meeting-field_ofed_meeting_update_force'] = array(
     'bundle' => 'ofed_meeting',
     'default_value' => array(

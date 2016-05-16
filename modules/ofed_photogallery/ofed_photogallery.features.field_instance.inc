@@ -10,7 +10,7 @@
 function ofed_photogallery_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-ofed_photogallery-field_ofed_photog_body'
+  // Exported field_instance: 'node-ofed_photogallery-field_ofed_photog_body'.
   $field_instances['node-ofed_photogallery-field_ofed_photog_body'] = array(
     'bundle' => 'ofed_photogallery',
     'default_value' => NULL,
@@ -127,7 +127,7 @@ function ofed_photogallery_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ofed_photogallery-field_ofed_photog_images'
+  // Exported field_instance: 'node-ofed_photogallery-field_ofed_photog_images'.
   $field_instances['node-ofed_photogallery-field_ofed_photog_images'] = array(
     'bundle' => 'ofed_photogallery',
     'deleted' => 0,
@@ -446,7 +446,8 @@ function ofed_photogallery_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ofed_photogallery-field_ofed_photog_pubdate'
+  // Exported field_instance:
+  // 'node-ofed_photogallery-field_ofed_photog_pubdate'.
   $field_instances['node-ofed_photogallery-field_ofed_photog_pubdate'] = array(
     'bundle' => 'ofed_photogallery',
     'deleted' => 0,
@@ -479,6 +480,7 @@ function ofed_photogallery_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 13,
@@ -549,7 +551,8 @@ function ofed_photogallery_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ofed_photogallery-field_ofed_photog_summary'
+  // Exported field_instance:
+  // 'node-ofed_photogallery-field_ofed_photog_summary'.
   $field_instances['node-ofed_photogallery-field_ofed_photog_summary'] = array(
     'bundle' => 'ofed_photogallery',
     'default_value' => NULL,
@@ -671,7 +674,7 @@ function ofed_photogallery_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ofed_photogallery-field_ofed_photog_update'
+  // Exported field_instance: 'node-ofed_photogallery-field_ofed_photog_update'.
   $field_instances['node-ofed_photogallery-field_ofed_photog_update'] = array(
     'bundle' => 'ofed_photogallery',
     'deleted' => 0,
@@ -704,6 +707,7 @@ function ofed_photogallery_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 4,
@@ -717,6 +721,7 @@ function ofed_photogallery_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 3,
@@ -736,6 +741,7 @@ function ofed_photogallery_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 2,
@@ -749,6 +755,7 @@ function ofed_photogallery_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 2,
@@ -762,6 +769,7 @@ function ofed_photogallery_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 2,
@@ -802,7 +810,8 @@ function ofed_photogallery_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ofed_photogallery-field_ofed_photog_update_force'
+  // Exported field_instance:
+  // 'node-ofed_photogallery-field_ofed_photog_update_force'.
   $field_instances['node-ofed_photogallery-field_ofed_photog_update_force'] = array(
     'bundle' => 'ofed_photogallery',
     'default_value' => array(

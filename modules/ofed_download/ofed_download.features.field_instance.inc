@@ -10,7 +10,7 @@
 function ofed_download_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-ofed_download-field_ofed_download_author'
+  // Exported field_instance: 'node-ofed_download-field_ofed_download_author'.
   $field_instances['node-ofed_download-field_ofed_download_author'] = array(
     'bundle' => 'ofed_download',
     'default_value' => NULL,
@@ -107,7 +107,7 @@ function ofed_download_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ofed_download-field_ofed_download_body'
+  // Exported field_instance: 'node-ofed_download-field_ofed_download_body'.
   $field_instances['node-ofed_download-field_ofed_download_body'] = array(
     'bundle' => 'ofed_download',
     'default_value' => NULL,
@@ -203,7 +203,7 @@ function ofed_download_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ofed_download-field_ofed_download_file'
+  // Exported field_instance: 'node-ofed_download-field_ofed_download_file'.
   $field_instances['node-ofed_download-field_ofed_download_file'] = array(
     'bundle' => 'ofed_download',
     'deleted' => 0,
@@ -308,7 +308,7 @@ function ofed_download_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ofed_download-field_ofed_download_pubdate'
+  // Exported field_instance: 'node-ofed_download-field_ofed_download_pubdate'.
   $field_instances['node-ofed_download-field_ofed_download_pubdate'] = array(
     'bundle' => 'ofed_download',
     'deleted' => 0,
@@ -323,6 +323,7 @@ function ofed_download_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 2,
@@ -342,6 +343,7 @@ function ofed_download_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 1,
@@ -355,6 +357,7 @@ function ofed_download_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 5,
@@ -368,6 +371,7 @@ function ofed_download_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 0,
@@ -381,6 +385,7 @@ function ofed_download_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 4,
@@ -394,6 +399,7 @@ function ofed_download_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 6,
@@ -413,6 +419,7 @@ function ofed_download_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 3,
@@ -426,6 +433,7 @@ function ofed_download_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 2,
@@ -439,6 +447,7 @@ function ofed_download_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 2,
@@ -473,7 +482,7 @@ function ofed_download_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ofed_download-field_ofed_download_summary'
+  // Exported field_instance: 'node-ofed_download-field_ofed_download_summary'.
   $field_instances['node-ofed_download-field_ofed_download_summary'] = array(
     'bundle' => 'ofed_download',
     'default_value' => NULL,
@@ -579,7 +588,7 @@ function ofed_download_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ofed_download-field_ofed_download_thumb'
+  // Exported field_instance: 'node-ofed_download-field_ofed_download_thumb'.
   $field_instances['node-ofed_download-field_ofed_download_thumb'] = array(
     'bundle' => 'ofed_download',
     'deleted' => 0,
@@ -695,7 +704,7 @@ function ofed_download_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ofed_download-field_ofed_download_update'
+  // Exported field_instance: 'node-ofed_download-field_ofed_download_update'.
   $field_instances['node-ofed_download-field_ofed_download_update'] = array(
     'bundle' => 'ofed_download',
     'deleted' => 0,
@@ -728,6 +737,7 @@ function ofed_download_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 6,
@@ -741,6 +751,7 @@ function ofed_download_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 6,
@@ -760,6 +771,7 @@ function ofed_download_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 7,
@@ -779,6 +791,7 @@ function ofed_download_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 4,
@@ -792,6 +805,7 @@ function ofed_download_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 3,
@@ -832,7 +846,8 @@ function ofed_download_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ofed_download-field_ofed_download_update_force'
+  // Exported field_instance:
+  // 'node-ofed_download-field_ofed_download_update_force'.
   $field_instances['node-ofed_download-field_ofed_download_update_force'] = array(
     'bundle' => 'ofed_download',
     'default_value' => array(

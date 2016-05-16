@@ -10,7 +10,7 @@
 function ofed_banner_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-ofed_banner-field_ofed_banner_click_count'
+  // Exported field_instance: 'node-ofed_banner-field_ofed_banner_click_count'.
   $field_instances['node-ofed_banner-field_ofed_banner_click_count'] = array(
     'bundle' => 'ofed_banner',
     'default_value' => array(
@@ -56,7 +56,7 @@ You can change this value to fit your needs and you can also reset it by putting
     ),
   );
 
-  // Exported field_instance: 'node-ofed_banner-field_ofed_banner_img_button'
+  // Exported field_instance: 'node-ofed_banner-field_ofed_banner_img_button'.
   $field_instances['node-ofed_banner-field_ofed_banner_img_button'] = array(
     'bundle' => 'ofed_banner',
     'deleted' => 0,
@@ -101,7 +101,7 @@ You can change this value to fit your needs and you can also reset it by putting
     ),
   );
 
-  // Exported field_instance: 'node-ofed_banner-field_ofed_banner_img_full'
+  // Exported field_instance: 'node-ofed_banner-field_ofed_banner_img_full'.
   $field_instances['node-ofed_banner-field_ofed_banner_img_full'] = array(
     'bundle' => 'ofed_banner',
     'deleted' => 0,
@@ -146,7 +146,8 @@ You can change this value to fit your needs and you can also reset it by putting
     ),
   );
 
-  // Exported field_instance: 'node-ofed_banner-field_ofed_banner_img_leadboard'
+  // Exported field_instance:
+  // 'node-ofed_banner-field_ofed_banner_img_leadboard'.
   $field_instances['node-ofed_banner-field_ofed_banner_img_leadboard'] = array(
     'bundle' => 'ofed_banner',
     'deleted' => 0,
@@ -191,7 +192,8 @@ You can change this value to fit your needs and you can also reset it by putting
     ),
   );
 
-  // Exported field_instance: 'node-ofed_banner-field_ofed_banner_img_mrectangle'
+  // Exported field_instance:
+  // 'node-ofed_banner-field_ofed_banner_img_mrectangle'.
   $field_instances['node-ofed_banner-field_ofed_banner_img_mrectangle'] = array(
     'bundle' => 'ofed_banner',
     'deleted' => 0,
@@ -236,7 +238,8 @@ You can change this value to fit your needs and you can also reset it by putting
     ),
   );
 
-  // Exported field_instance: 'node-ofed_banner-field_ofed_banner_img_skyscraper'
+  // Exported field_instance:
+  // 'node-ofed_banner-field_ofed_banner_img_skyscraper'.
   $field_instances['node-ofed_banner-field_ofed_banner_img_skyscraper'] = array(
     'bundle' => 'ofed_banner',
     'deleted' => 0,
@@ -281,7 +284,8 @@ You can change this value to fit your needs and you can also reset it by putting
     ),
   );
 
-  // Exported field_instance: 'node-ofed_banner-field_ofed_banner_img_srectangle'
+  // Exported field_instance:
+  // 'node-ofed_banner-field_ofed_banner_img_srectangle'.
   $field_instances['node-ofed_banner-field_ofed_banner_img_srectangle'] = array(
     'bundle' => 'ofed_banner',
     'deleted' => 0,
@@ -326,7 +330,7 @@ You can change this value to fit your needs and you can also reset it by putting
     ),
   );
 
-  // Exported field_instance: 'node-ofed_banner-field_ofed_banner_link'
+  // Exported field_instance: 'node-ofed_banner-field_ofed_banner_link'.
   $field_instances['node-ofed_banner-field_ofed_banner_link'] = array(
     'bundle' => 'ofed_banner',
     'default_value' => NULL,
@@ -347,6 +351,7 @@ You can change this value to fit your needs and you can also reset it by putting
     'label' => 'Link',
     'required' => 0,
     'settings' => array(
+      'absolute_url' => 1,
       'attributes' => array(
         'class' => '',
         'configurable_title' => 0,
@@ -360,6 +365,7 @@ You can change this value to fit your needs and you can also reset it by putting
       'enable_tokens' => 1,
       'rel_remove' => 'default',
       'title' => 'optional',
+      'title_label_use_field_label' => FALSE,
       'title_maxlength' => 128,
       'title_value' => '',
       'url' => 0,
@@ -375,7 +381,7 @@ You can change this value to fit your needs and you can also reset it by putting
     ),
   );
 
-  // Exported field_instance: 'node-ofed_banner-field_ofed_banner_pubdate'
+  // Exported field_instance: 'node-ofed_banner-field_ofed_banner_pubdate'.
   $field_instances['node-ofed_banner-field_ofed_banner_pubdate'] = array(
     'bundle' => 'ofed_banner',
     'deleted' => 0,
@@ -390,6 +396,7 @@ You can change this value to fit your needs and you can also reset it by putting
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 21,
@@ -424,7 +431,7 @@ You can change this value to fit your needs and you can also reset it by putting
     ),
   );
 
-  // Exported field_instance: 'node-ofed_banner-field_ofed_banner_type'
+  // Exported field_instance: 'node-ofed_banner-field_ofed_banner_type'.
   $field_instances['node-ofed_banner-field_ofed_banner_type'] = array(
     'bundle' => 'ofed_banner',
     'default_value' => NULL,
@@ -455,7 +462,7 @@ You can change this value to fit your needs and you can also reset it by putting
     ),
   );
 
-  // Exported field_instance: 'node-ofed_banner-field_ofed_banner_update'
+  // Exported field_instance: 'node-ofed_banner-field_ofed_banner_update'.
   $field_instances['node-ofed_banner-field_ofed_banner_update'] = array(
     'bundle' => 'ofed_banner',
     'deleted' => 0,
@@ -470,6 +477,7 @@ You can change this value to fit your needs and you can also reset it by putting
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 2,
@@ -483,6 +491,7 @@ You can change this value to fit your needs and you can also reset it by putting
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 2,
@@ -496,6 +505,7 @@ You can change this value to fit your needs and you can also reset it by putting
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 2,
@@ -509,6 +519,7 @@ You can change this value to fit your needs and you can also reset it by putting
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 9,
@@ -522,6 +533,7 @@ You can change this value to fit your needs and you can also reset it by putting
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 1,
@@ -535,6 +547,7 @@ You can change this value to fit your needs and you can also reset it by putting
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 2,
@@ -548,6 +561,7 @@ You can change this value to fit your needs and you can also reset it by putting
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 2,
@@ -561,6 +575,7 @@ You can change this value to fit your needs and you can also reset it by putting
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 2,
@@ -574,6 +589,7 @@ You can change this value to fit your needs and you can also reset it by putting
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 2,
@@ -587,6 +603,7 @@ You can change this value to fit your needs and you can also reset it by putting
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 2,
@@ -600,6 +617,7 @@ You can change this value to fit your needs and you can also reset it by putting
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 2,
@@ -634,7 +652,7 @@ You can change this value to fit your needs and you can also reset it by putting
     ),
   );
 
-  // Exported field_instance: 'node-ofed_banner-field_ofed_banner_update_force'
+  // Exported field_instance: 'node-ofed_banner-field_ofed_banner_update_force'.
   $field_instances['node-ofed_banner-field_ofed_banner_update_force'] = array(
     'bundle' => 'ofed_banner',
     'default_value' => array(

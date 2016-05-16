@@ -10,7 +10,8 @@
 function ofed_team_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'field_collection_item-field_ofed_team_social-field_ofed_team_social_link'
+  // Exported field_instance:
+  // 'field_collection_item-field_ofed_team_social-field_ofed_team_social_link'.
   $field_instances['field_collection_item-field_ofed_team_social-field_ofed_team_social_link'] = array(
     'bundle' => 'field_ofed_team_social',
     'default_value' => NULL,
@@ -31,6 +32,7 @@ function ofed_team_field_default_field_instances() {
     'label' => 'Social media link ',
     'required' => 0,
     'settings' => array(
+      'absolute_url' => 1,
       'attributes' => array(
         'class' => '',
         'configurable_title' => 0,
@@ -44,6 +46,7 @@ function ofed_team_field_default_field_instances() {
       'enable_tokens' => 1,
       'rel_remove' => 'default',
       'title' => 'none',
+      'title_label_use_field_label' => FALSE,
       'title_maxlength' => 255,
       'title_value' => '',
       'url' => 0,
@@ -59,7 +62,8 @@ function ofed_team_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'field_collection_item-field_ofed_team_social-field_ofed_team_social_name'
+  // Exported field_instance:
+  // 'field_collection_item-field_ofed_team_social-field_ofed_team_social_name'.
   $field_instances['field_collection_item-field_ofed_team_social-field_ofed_team_social_name'] = array(
     'bundle' => 'field_ofed_team_social',
     'default_value' => NULL,
@@ -90,7 +94,7 @@ function ofed_team_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ofed_team-field_ofed_team_body'
+  // Exported field_instance: 'node-ofed_team-field_ofed_team_body'.
   $field_instances['node-ofed_team-field_ofed_team_body'] = array(
     'bundle' => 'ofed_team',
     'default_value' => NULL,
@@ -176,7 +180,7 @@ function ofed_team_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ofed_team-field_ofed_team_civility'
+  // Exported field_instance: 'node-ofed_team-field_ofed_team_civility'.
   $field_instances['node-ofed_team-field_ofed_team_civility'] = array(
     'bundle' => 'ofed_team',
     'default_value' => NULL,
@@ -264,7 +268,7 @@ function ofed_team_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ofed_team-field_ofed_team_contact'
+  // Exported field_instance: 'node-ofed_team-field_ofed_team_contact'.
   $field_instances['node-ofed_team-field_ofed_team_contact'] = array(
     'bundle' => 'ofed_team',
     'default_value' => NULL,
@@ -359,7 +363,7 @@ function ofed_team_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ofed_team-field_ofed_team_email'
+  // Exported field_instance: 'node-ofed_team-field_ofed_team_email'.
   $field_instances['node-ofed_team-field_ofed_team_email'] = array(
     'bundle' => 'ofed_team',
     'default_value' => NULL,
@@ -443,7 +447,7 @@ function ofed_team_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ofed_team-field_ofed_team_first_name'
+  // Exported field_instance: 'node-ofed_team-field_ofed_team_first_name'.
   $field_instances['node-ofed_team-field_ofed_team_first_name'] = array(
     'bundle' => 'ofed_team',
     'default_value' => NULL,
@@ -534,7 +538,7 @@ function ofed_team_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ofed_team-field_ofed_team_function'
+  // Exported field_instance: 'node-ofed_team-field_ofed_team_function'.
   $field_instances['node-ofed_team-field_ofed_team_function'] = array(
     'bundle' => 'ofed_team',
     'default_value' => NULL,
@@ -624,7 +628,7 @@ function ofed_team_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ofed_team-field_ofed_team_gender'
+  // Exported field_instance: 'node-ofed_team-field_ofed_team_gender'.
   $field_instances['node-ofed_team-field_ofed_team_gender'] = array(
     'bundle' => 'ofed_team',
     'default_value' => NULL,
@@ -706,7 +710,7 @@ function ofed_team_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ofed_team-field_ofed_team_last_name'
+  // Exported field_instance: 'node-ofed_team-field_ofed_team_last_name'.
   $field_instances['node-ofed_team-field_ofed_team_last_name'] = array(
     'bundle' => 'ofed_team',
     'default_value' => NULL,
@@ -797,7 +801,7 @@ function ofed_team_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ofed_team-field_ofed_team_phone'
+  // Exported field_instance: 'node-ofed_team-field_ofed_team_phone'.
   $field_instances['node-ofed_team-field_ofed_team_phone'] = array(
     'bundle' => 'ofed_team',
     'default_value' => NULL,
@@ -880,7 +884,7 @@ function ofed_team_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ofed_team-field_ofed_team_picture'
+  // Exported field_instance: 'node-ofed_team-field_ofed_team_picture'.
   $field_instances['node-ofed_team-field_ofed_team_picture'] = array(
     'bundle' => 'ofed_team',
     'deleted' => 0,
@@ -993,7 +997,7 @@ function ofed_team_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ofed_team-field_ofed_team_pubdate'
+  // Exported field_instance: 'node-ofed_team-field_ofed_team_pubdate'.
   $field_instances['node-ofed_team-field_ofed_team_pubdate'] = array(
     'bundle' => 'ofed_team',
     'deleted' => 0,
@@ -1008,6 +1012,7 @@ function ofed_team_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 5,
@@ -1021,6 +1026,7 @@ function ofed_team_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 1,
@@ -1034,6 +1040,7 @@ function ofed_team_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 4,
@@ -1047,6 +1054,7 @@ function ofed_team_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 11,
@@ -1060,6 +1068,7 @@ function ofed_team_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 12,
@@ -1073,6 +1082,7 @@ function ofed_team_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 6,
@@ -1086,6 +1096,7 @@ function ofed_team_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 11,
@@ -1099,6 +1110,7 @@ function ofed_team_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 1,
@@ -1112,6 +1124,7 @@ function ofed_team_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 3,
@@ -1125,6 +1138,7 @@ function ofed_team_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 4,
@@ -1138,6 +1152,7 @@ function ofed_team_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 6,
@@ -1172,7 +1187,7 @@ function ofed_team_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ofed_team-field_ofed_team_social'
+  // Exported field_instance: 'node-ofed_team-field_ofed_team_social'.
   $field_instances['node-ofed_team-field_ofed_team_social'] = array(
     'bundle' => 'ofed_team',
     'default_value' => NULL,
@@ -1260,7 +1275,7 @@ function ofed_team_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ofed_team-field_ofed_team_update'
+  // Exported field_instance: 'node-ofed_team-field_ofed_team_update'.
   $field_instances['node-ofed_team-field_ofed_team_update'] = array(
     'bundle' => 'ofed_team',
     'deleted' => 0,
@@ -1275,6 +1290,7 @@ function ofed_team_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 6,
@@ -1288,6 +1304,7 @@ function ofed_team_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 2,
@@ -1301,6 +1318,7 @@ function ofed_team_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 5,
@@ -1314,6 +1332,7 @@ function ofed_team_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 12,
@@ -1327,6 +1346,7 @@ function ofed_team_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 11,
@@ -1340,6 +1360,7 @@ function ofed_team_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 7,
@@ -1353,6 +1374,7 @@ function ofed_team_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 12,
@@ -1366,6 +1388,7 @@ function ofed_team_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 2,
@@ -1379,6 +1402,7 @@ function ofed_team_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 4,
@@ -1392,6 +1416,7 @@ function ofed_team_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 5,
@@ -1405,6 +1430,7 @@ function ofed_team_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 7,
@@ -1439,7 +1465,7 @@ function ofed_team_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ofed_team-field_ofed_team_update_force'
+  // Exported field_instance: 'node-ofed_team-field_ofed_team_update_force'.
   $field_instances['node-ofed_team-field_ofed_team_update_force'] = array(
     'bundle' => 'ofed_team',
     'default_value' => array(

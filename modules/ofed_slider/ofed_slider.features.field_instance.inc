@@ -10,7 +10,8 @@
 function ofed_slider_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'field_collection_item-field_ofed_slider_image_collec-field_ofed_slider_image'
+  // Exported field_instance:
+  // 'field_collection_item-field_ofed_slider_image_collec-field_ofed_slider_image'.
   $field_instances['field_collection_item-field_ofed_slider_image_collec-field_ofed_slider_image'] = array(
     'bundle' => 'field_ofed_slider_image_collec',
     'deleted' => 0,
@@ -55,7 +56,8 @@ function ofed_slider_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'field_collection_item-field_ofed_slider_image_collec-field_ofed_slider_image_title'
+  // Exported field_instance:
+  // 'field_collection_item-field_ofed_slider_image_collec-field_ofed_slider_image_title'.
   $field_instances['field_collection_item-field_ofed_slider_image_collec-field_ofed_slider_image_title'] = array(
     'bundle' => 'field_ofed_slider_image_collec',
     'default_value' => NULL,
@@ -90,7 +92,8 @@ function ofed_slider_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'field_collection_item-field_ofed_slider_image_collec-field_ofed_slider_link'
+  // Exported field_instance:
+  // 'field_collection_item-field_ofed_slider_image_collec-field_ofed_slider_link'.
   $field_instances['field_collection_item-field_ofed_slider_image_collec-field_ofed_slider_link'] = array(
     'bundle' => 'field_ofed_slider_image_collec',
     'default_value' => NULL,
@@ -110,6 +113,7 @@ function ofed_slider_field_default_field_instances() {
     'label' => 'Link',
     'required' => 0,
     'settings' => array(
+      'absolute_url' => 1,
       'attributes' => array(
         'class' => '',
         'configurable_title' => 0,
@@ -123,6 +127,7 @@ function ofed_slider_field_default_field_instances() {
       'enable_tokens' => 1,
       'rel_remove' => 'default',
       'title' => 'none',
+      'title_label_use_field_label' => FALSE,
       'title_maxlength' => 128,
       'title_value' => '',
       'url' => 0,
@@ -138,7 +143,7 @@ function ofed_slider_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ofed_slider-field_ofed_slider_image_collec'
+  // Exported field_instance: 'node-ofed_slider-field_ofed_slider_image_collec'.
   $field_instances['node-ofed_slider-field_ofed_slider_image_collec'] = array(
     'bundle' => 'ofed_slider',
     'default_value' => NULL,
@@ -201,7 +206,7 @@ function ofed_slider_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ofed_slider-field_ofed_slider_pubdate'
+  // Exported field_instance: 'node-ofed_slider-field_ofed_slider_pubdate'.
   $field_instances['node-ofed_slider-field_ofed_slider_pubdate'] = array(
     'bundle' => 'ofed_slider',
     'deleted' => 0,
@@ -216,6 +221,7 @@ function ofed_slider_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 12,
@@ -250,7 +256,7 @@ function ofed_slider_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ofed_slider-field_ofed_slider_update'
+  // Exported field_instance: 'node-ofed_slider-field_ofed_slider_update'.
   $field_instances['node-ofed_slider-field_ofed_slider_update'] = array(
     'bundle' => 'ofed_slider',
     'deleted' => 0,
@@ -292,7 +298,7 @@ function ofed_slider_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ofed_slider-field_ofed_slider_update_force'
+  // Exported field_instance: 'node-ofed_slider-field_ofed_slider_update_force'.
   $field_instances['node-ofed_slider-field_ofed_slider_update_force'] = array(
     'bundle' => 'ofed_slider',
     'default_value' => array(

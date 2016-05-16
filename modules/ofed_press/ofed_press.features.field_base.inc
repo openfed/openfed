@@ -10,21 +10,13 @@
 function ofed_press_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_ofed_press_author'
+  // Exported field_base: 'field_ofed_press_author'.
   $field_bases['field_ofed_press_author'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_ofed_press_author',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -39,21 +31,13 @@ function ofed_press_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_ofed_press_body'
+  // Exported field_base: 'field_ofed_press_body'.
   $field_bases['field_ofed_press_body'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_ofed_press_body',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -66,21 +50,13 @@ function ofed_press_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_ofed_press_contact'
+  // Exported field_base: 'field_ofed_press_contact'.
   $field_bases['field_ofed_press_contact'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_ofed_press_contact',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -93,21 +69,13 @@ function ofed_press_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_ofed_press_docs'
+  // Exported field_base: 'field_ofed_press_docs'.
   $field_bases['field_ofed_press_docs'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_ofed_press_docs',
-    'foreign keys' => array(
-      'node' => array(
-        'columns' => array(
-          'target_id' => 'nid',
-        ),
-        'table' => 'node',
-      ),
-    ),
     'indexes' => array(
       'target_id' => array(
         0 => 'target_id',
@@ -136,14 +104,13 @@ function ofed_press_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_ofed_press_links'
+  // Exported field_base: 'field_ofed_press_links'.
   $field_bases['field_ofed_press_links'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_ofed_press_links',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'link',
@@ -166,14 +133,13 @@ function ofed_press_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_ofed_press_pubdate'
+  // Exported field_base: 'field_ofed_press_pubdate'.
   $field_bases['field_ofed_press_pubdate'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_ofed_press_pubdate',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'date',
@@ -196,21 +162,13 @@ function ofed_press_field_default_field_bases() {
     'type' => 'datetime',
   );
 
-  // Exported field_base: 'field_ofed_press_source'
+  // Exported field_base: 'field_ofed_press_source'.
   $field_bases['field_ofed_press_source'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_ofed_press_source',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -225,21 +183,13 @@ function ofed_press_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_ofed_press_summary'
+  // Exported field_base: 'field_ofed_press_summary'.
   $field_bases['field_ofed_press_summary'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_ofed_press_summary',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -252,21 +202,13 @@ function ofed_press_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_ofed_press_thumb'
+  // Exported field_base: 'field_ofed_press_thumb'.
   $field_bases['field_ofed_press_thumb'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_ofed_press_thumb',
-    'foreign keys' => array(
-      'fid' => array(
-        'columns' => array(
-          'fid' => 'fid',
-        ),
-        'table' => 'file_managed',
-      ),
-    ),
     'indexes' => array(
       'fid' => array(
         0 => 'fid',
@@ -282,14 +224,13 @@ function ofed_press_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_ofed_press_update'
+  // Exported field_base: 'field_ofed_press_update'.
   $field_bases['field_ofed_press_update'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_ofed_press_update',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'date',
@@ -312,14 +253,13 @@ function ofed_press_field_default_field_bases() {
     'type' => 'datetime',
   );
 
-  // Exported field_base: 'field_ofed_press_update_force'
+  // Exported field_base: 'field_ofed_press_update_force'.
   $field_bases['field_ofed_press_update_force'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_ofed_press_update_force',
-    'foreign keys' => array(),
     'indexes' => array(
       'value' => array(
         0 => 'value',

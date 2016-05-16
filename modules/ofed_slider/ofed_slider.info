@@ -1,8 +1,8 @@
 name = Slider
 description = Manage slider
-package = OpenFed - Content Types
 core = 7.x
-
+package = OpenFed - Content Types
+project = openfed
 dependencies[] = addanother
 dependencies[] = ctools
 dependencies[] = date
@@ -50,6 +50,7 @@ dependencies[] = variable_views
 dependencies[] = views
 dependencies[] = xmlsitemap
 dependencies[] = xmlsitemap_node
+datestamp = 1463418641
 features[ctools][] = ds:ds:1
 features[ctools][] = field_group:field_group:1
 features[ctools][] = strongarm:strongarm:1
@@ -71,8 +72,6 @@ features[field_instance][] = node-ofed_slider-field_ofed_slider_pubdate
 features[field_instance][] = node-ofed_slider-field_ofed_slider_update
 features[field_instance][] = node-ofed_slider-field_ofed_slider_update_force
 features[image][] = ofed_slider_default
-features[metatag][] = field_collection_item:field_ofed_slider_image_collec
-features[metatag][] = node:ofed_slider
 features[node][] = ofed_slider
 features[user_permission][] = create ofed_slider content
 features[user_permission][] = delete any ofed_slider content

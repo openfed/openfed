@@ -34,17 +34,9 @@ function ofed_banner_image_default_styles() {
 
   // Exported image style: ofed_banner_button.
   $styles['ofed_banner_button'] = array(
-    'name' => 'ofed_banner_button',
     'label' => 'ofed_banner_button',
     'effects' => array(
       7 => array(
-        'label' => 'Scale',
-        'help' => 'Scaling will maintain the aspect-ratio of the original image. If only a single dimension is specified, the other dimension will be calculated.',
-        'effect callback' => 'image_scale_effect',
-        'dimensions callback' => 'image_scale_dimensions',
-        'form callback' => 'image_scale_form',
-        'summary theme' => 'image_scale_summary',
-        'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
           'width' => 180,
@@ -58,17 +50,9 @@ function ofed_banner_image_default_styles() {
 
   // Exported image style: ofed_banner_full.
   $styles['ofed_banner_full'] = array(
-    'name' => 'ofed_banner_full',
     'label' => 'ofed_banner_full',
     'effects' => array(
       7 => array(
-        'label' => 'Scale',
-        'help' => 'Scaling will maintain the aspect-ratio of the original image. If only a single dimension is specified, the other dimension will be calculated.',
-        'effect callback' => 'image_scale_effect',
-        'dimensions callback' => 'image_scale_dimensions',
-        'form callback' => 'image_scale_form',
-        'summary theme' => 'image_scale_summary',
-        'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
           'width' => 420,
@@ -82,17 +66,9 @@ function ofed_banner_image_default_styles() {
 
   // Exported image style: ofed_banner_leaderboard.
   $styles['ofed_banner_leaderboard'] = array(
-    'name' => 'ofed_banner_leaderboard',
     'label' => 'ofed_banner_leaderboard',
     'effects' => array(
       7 => array(
-        'label' => 'Scale',
-        'help' => 'Scaling will maintain the aspect-ratio of the original image. If only a single dimension is specified, the other dimension will be calculated.',
-        'effect callback' => 'image_scale_effect',
-        'dimensions callback' => 'image_scale_dimensions',
-        'form callback' => 'image_scale_form',
-        'summary theme' => 'image_scale_summary',
-        'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
           'width' => 728,
@@ -106,17 +82,9 @@ function ofed_banner_image_default_styles() {
 
   // Exported image style: ofed_banner_medium_rectangle.
   $styles['ofed_banner_medium_rectangle'] = array(
-    'name' => 'ofed_banner_medium_rectangle',
     'label' => 'ofed_banner_medium_rectangle',
     'effects' => array(
       7 => array(
-        'label' => 'Scale',
-        'help' => 'Scaling will maintain the aspect-ratio of the original image. If only a single dimension is specified, the other dimension will be calculated.',
-        'effect callback' => 'image_scale_effect',
-        'dimensions callback' => 'image_scale_dimensions',
-        'form callback' => 'image_scale_form',
-        'summary theme' => 'image_scale_summary',
-        'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
           'width' => 300,
@@ -130,17 +98,9 @@ function ofed_banner_image_default_styles() {
 
   // Exported image style: ofed_banner_square_rectangle.
   $styles['ofed_banner_square_rectangle'] = array(
-    'name' => 'ofed_banner_square_rectangle',
     'label' => 'ofed_banner_square_rectangle',
     'effects' => array(
       7 => array(
-        'label' => 'Scale',
-        'help' => 'Scaling will maintain the aspect-ratio of the original image. If only a single dimension is specified, the other dimension will be calculated.',
-        'effect callback' => 'image_scale_effect',
-        'dimensions callback' => 'image_scale_dimensions',
-        'form callback' => 'image_scale_form',
-        'summary theme' => 'image_scale_summary',
-        'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
           'width' => 250,
@@ -154,17 +114,9 @@ function ofed_banner_image_default_styles() {
 
   // Exported image style: ofed_banner_wide_skyscraper.
   $styles['ofed_banner_wide_skyscraper'] = array(
-    'name' => 'ofed_banner_wide_skyscraper',
     'label' => 'ofed_banner_wide_skyscraper',
     'effects' => array(
       7 => array(
-        'label' => 'Scale',
-        'help' => 'Scaling will maintain the aspect-ratio of the original image. If only a single dimension is specified, the other dimension will be calculated.',
-        'effect callback' => 'image_scale_effect',
-        'dimensions callback' => 'image_scale_dimensions',
-        'form callback' => 'image_scale_form',
-        'summary theme' => 'image_scale_summary',
-        'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
           'width' => 160,
@@ -193,5 +145,6 @@ function ofed_banner_node_info() {
       'help' => '',
     ),
   );
+  drupal_alter('node_info', $items);
   return $items;
 }

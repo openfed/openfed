@@ -10,7 +10,7 @@
 function ofed_address_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-ofed_address-field_ofed_address_directions'
+  // Exported field_instance: 'node-ofed_address-field_ofed_address_directions'.
   $field_instances['node-ofed_address-field_ofed_address_directions'] = array(
     'bundle' => 'ofed_address',
     'default_value' => NULL,
@@ -77,7 +77,7 @@ function ofed_address_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ofed_address-field_ofed_address_email'
+  // Exported field_instance: 'node-ofed_address-field_ofed_address_email'.
   $field_instances['node-ofed_address-field_ofed_address_email'] = array(
     'bundle' => 'ofed_address',
     'default_value' => NULL,
@@ -136,7 +136,7 @@ function ofed_address_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ofed_address-field_ofed_address_location'
+  // Exported field_instance: 'node-ofed_address-field_ofed_address_location'.
   $field_instances['node-ofed_address-field_ofed_address_location'] = array(
     'bundle' => 'ofed_address',
     'default_value' => NULL,
@@ -180,7 +180,8 @@ function ofed_address_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ofed_address-field_ofed_address_opening_hours'
+  // Exported field_instance:
+  // 'node-ofed_address-field_ofed_address_opening_hours'.
   $field_instances['node-ofed_address-field_ofed_address_opening_hours'] = array(
     'bundle' => 'ofed_address',
     'default_value' => NULL,
@@ -240,7 +241,7 @@ function ofed_address_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ofed_address-field_ofed_address_phone'
+  // Exported field_instance: 'node-ofed_address-field_ofed_address_phone'.
   $field_instances['node-ofed_address-field_ofed_address_phone'] = array(
     'bundle' => 'ofed_address',
     'default_value' => NULL,
@@ -300,7 +301,7 @@ function ofed_address_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ofed_address-field_ofed_address_pubdate'
+  // Exported field_instance: 'node-ofed_address-field_ofed_address_pubdate'.
   $field_instances['node-ofed_address-field_ofed_address_pubdate'] = array(
     'bundle' => 'ofed_address',
     'deleted' => 0,
@@ -360,7 +361,7 @@ function ofed_address_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ofed_address-field_ofed_address_update'
+  // Exported field_instance: 'node-ofed_address-field_ofed_address_update'.
   $field_instances['node-ofed_address-field_ofed_address_update'] = array(
     'bundle' => 'ofed_address',
     'deleted' => 0,
@@ -375,6 +376,7 @@ function ofed_address_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 5,
@@ -433,7 +435,8 @@ function ofed_address_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ofed_address-field_ofed_address_update_force'
+  // Exported field_instance:
+  // 'node-ofed_address-field_ofed_address_update_force'.
   $field_instances['node-ofed_address-field_ofed_address_update_force'] = array(
     'bundle' => 'ofed_address',
     'default_value' => array(

@@ -10,21 +10,13 @@
 function ofed_faq_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_ofed_faq_answer'
+  // Exported field_base: 'field_ofed_faq_answer'.
   $field_bases['field_ofed_faq_answer'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_ofed_faq_answer',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -37,14 +29,13 @@ function ofed_faq_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_ofed_faq_pubdate'
+  // Exported field_base: 'field_ofed_faq_pubdate'.
   $field_bases['field_ofed_faq_pubdate'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_ofed_faq_pubdate',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'date',
@@ -67,14 +58,13 @@ function ofed_faq_field_default_field_bases() {
     'type' => 'datetime',
   );
 
-  // Exported field_base: 'field_ofed_faq_update'
+  // Exported field_base: 'field_ofed_faq_update'.
   $field_bases['field_ofed_faq_update'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_ofed_faq_update',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'date',
@@ -97,14 +87,13 @@ function ofed_faq_field_default_field_bases() {
     'type' => 'datetime',
   );
 
-  // Exported field_base: 'field_ofed_faq_update_force'
+  // Exported field_base: 'field_ofed_faq_update_force'.
   $field_bases['field_ofed_faq_update_force'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_ofed_faq_update_force',
-    'foreign keys' => array(),
     'indexes' => array(
       'value' => array(
         0 => 'value',

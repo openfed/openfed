@@ -10,7 +10,7 @@
 function ofed_job_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-ofed_job-field_ofed_job_body'
+  // Exported field_instance: 'node-ofed_job-field_ofed_job_body'.
   $field_instances['node-ofed_job-field_ofed_job_body'] = array(
     'bundle' => 'ofed_job',
     'default_value' => NULL,
@@ -108,7 +108,7 @@ function ofed_job_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ofed_job-field_ofed_job_description'
+  // Exported field_instance: 'node-ofed_job-field_ofed_job_description'.
   $field_instances['node-ofed_job-field_ofed_job_description'] = array(
     'bundle' => 'ofed_job',
     'default_value' => NULL,
@@ -206,7 +206,7 @@ function ofed_job_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ofed_job-field_ofed_job_diplomas'
+  // Exported field_instance: 'node-ofed_job-field_ofed_job_diplomas'.
   $field_instances['node-ofed_job-field_ofed_job_diplomas'] = array(
     'bundle' => 'ofed_job',
     'default_value' => NULL,
@@ -295,7 +295,7 @@ function ofed_job_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ofed_job-field_ofed_job_docs'
+  // Exported field_instance: 'node-ofed_job-field_ofed_job_docs'.
   $field_instances['node-ofed_job-field_ofed_job_docs'] = array(
     'bundle' => 'ofed_job',
     'default_value' => NULL,
@@ -406,7 +406,7 @@ function ofed_job_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ofed_job-field_ofed_job_experience'
+  // Exported field_instance: 'node-ofed_job-field_ofed_job_experience'.
   $field_instances['node-ofed_job-field_ofed_job_experience'] = array(
     'bundle' => 'ofed_job',
     'default_value' => NULL,
@@ -501,7 +501,7 @@ function ofed_job_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ofed_job-field_ofed_job_languages'
+  // Exported field_instance: 'node-ofed_job-field_ofed_job_languages'.
   $field_instances['node-ofed_job-field_ofed_job_languages'] = array(
     'bundle' => 'ofed_job',
     'default_value' => NULL,
@@ -600,7 +600,7 @@ function ofed_job_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ofed_job-field_ofed_job_occupation'
+  // Exported field_instance: 'node-ofed_job-field_ofed_job_occupation'.
   $field_instances['node-ofed_job-field_ofed_job_occupation'] = array(
     'bundle' => 'ofed_job',
     'default_value' => NULL,
@@ -695,7 +695,7 @@ function ofed_job_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ofed_job-field_ofed_job_process'
+  // Exported field_instance: 'node-ofed_job-field_ofed_job_process'.
   $field_instances['node-ofed_job-field_ofed_job_process'] = array(
     'bundle' => 'ofed_job',
     'default_value' => NULL,
@@ -793,7 +793,7 @@ function ofed_job_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ofed_job-field_ofed_job_profile'
+  // Exported field_instance: 'node-ofed_job-field_ofed_job_profile'.
   $field_instances['node-ofed_job-field_ofed_job_profile'] = array(
     'bundle' => 'ofed_job',
     'default_value' => NULL,
@@ -891,7 +891,7 @@ function ofed_job_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ofed_job-field_ofed_job_pubdate'
+  // Exported field_instance: 'node-ofed_job-field_ofed_job_pubdate'.
   $field_instances['node-ofed_job-field_ofed_job_pubdate'] = array(
     'bundle' => 'ofed_job',
     'deleted' => 0,
@@ -906,6 +906,7 @@ function ofed_job_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 1,
@@ -919,6 +920,7 @@ function ofed_job_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 1,
@@ -932,6 +934,7 @@ function ofed_job_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 1,
@@ -945,6 +948,7 @@ function ofed_job_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 1,
@@ -958,6 +962,7 @@ function ofed_job_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 0,
@@ -971,6 +976,7 @@ function ofed_job_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 3,
@@ -984,6 +990,7 @@ function ofed_job_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 1,
@@ -997,6 +1004,7 @@ function ofed_job_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 1,
@@ -1010,6 +1018,7 @@ function ofed_job_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 1,
@@ -1023,6 +1032,7 @@ function ofed_job_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 1,
@@ -1036,6 +1046,7 @@ function ofed_job_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 1,
@@ -1070,7 +1081,7 @@ function ofed_job_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ofed_job-field_ofed_job_reference'
+  // Exported field_instance: 'node-ofed_job-field_ofed_job_reference'.
   $field_instances['node-ofed_job-field_ofed_job_reference'] = array(
     'bundle' => 'ofed_job',
     'default_value' => NULL,
@@ -1169,7 +1180,7 @@ function ofed_job_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ofed_job-field_ofed_job_sector'
+  // Exported field_instance: 'node-ofed_job-field_ofed_job_sector'.
   $field_instances['node-ofed_job-field_ofed_job_sector'] = array(
     'bundle' => 'ofed_job',
     'default_value' => NULL,
@@ -1267,7 +1278,7 @@ function ofed_job_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ofed_job-field_ofed_job_study_level'
+  // Exported field_instance: 'node-ofed_job-field_ofed_job_study_level'.
   $field_instances['node-ofed_job-field_ofed_job_study_level'] = array(
     'bundle' => 'ofed_job',
     'default_value' => NULL,
@@ -1366,7 +1377,7 @@ function ofed_job_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ofed_job-field_ofed_job_summary'
+  // Exported field_instance: 'node-ofed_job-field_ofed_job_summary'.
   $field_instances['node-ofed_job-field_ofed_job_summary'] = array(
     'bundle' => 'ofed_job',
     'default_value' => NULL,
@@ -1470,7 +1481,7 @@ function ofed_job_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ofed_job-field_ofed_job_thumb'
+  // Exported field_instance: 'node-ofed_job-field_ofed_job_thumb'.
   $field_instances['node-ofed_job-field_ofed_job_thumb'] = array(
     'bundle' => 'ofed_job',
     'deleted' => 0,
@@ -1591,7 +1602,7 @@ function ofed_job_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ofed_job-field_ofed_job_update'
+  // Exported field_instance: 'node-ofed_job-field_ofed_job_update'.
   $field_instances['node-ofed_job-field_ofed_job_update'] = array(
     'bundle' => 'ofed_job',
     'deleted' => 0,
@@ -1606,6 +1617,7 @@ function ofed_job_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 2,
@@ -1619,6 +1631,7 @@ function ofed_job_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 2,
@@ -1632,6 +1645,7 @@ function ofed_job_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 2,
@@ -1645,6 +1659,7 @@ function ofed_job_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 2,
@@ -1658,6 +1673,7 @@ function ofed_job_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 1,
@@ -1671,6 +1687,7 @@ function ofed_job_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 4,
@@ -1684,6 +1701,7 @@ function ofed_job_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 2,
@@ -1697,6 +1715,7 @@ function ofed_job_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 2,
@@ -1710,6 +1729,7 @@ function ofed_job_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 2,
@@ -1723,6 +1743,7 @@ function ofed_job_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 2,
@@ -1736,6 +1757,7 @@ function ofed_job_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 2,
@@ -1770,7 +1792,7 @@ function ofed_job_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ofed_job-field_ofed_job_update_force'
+  // Exported field_instance: 'node-ofed_job-field_ofed_job_update_force'.
   $field_instances['node-ofed_job-field_ofed_job_update_force'] = array(
     'bundle' => 'ofed_job',
     'default_value' => array(
@@ -1867,7 +1889,7 @@ function ofed_job_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ofed_job-field_ofed_job_work_location'
+  // Exported field_instance: 'node-ofed_job-field_ofed_job_work_location'.
   $field_instances['node-ofed_job-field_ofed_job_work_location'] = array(
     'bundle' => 'ofed_job',
     'default_value' => NULL,

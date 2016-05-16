@@ -10,7 +10,7 @@
 function ofed_page_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-ofed_page-field_ofed_page_body'
+  // Exported field_instance: 'node-ofed_page-field_ofed_page_body'.
   $field_instances['node-ofed_page-field_ofed_page_body'] = array(
     'bundle' => 'ofed_page',
     'default_value' => NULL,
@@ -70,7 +70,7 @@ function ofed_page_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ofed_page-field_ofed_page_docs'
+  // Exported field_instance: 'node-ofed_page-field_ofed_page_docs'.
   $field_instances['node-ofed_page-field_ofed_page_docs'] = array(
     'bundle' => 'ofed_page',
     'default_value' => NULL,
@@ -137,7 +137,7 @@ function ofed_page_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ofed_page-field_ofed_page_pubdate'
+  // Exported field_instance: 'node-ofed_page-field_ofed_page_pubdate'.
   $field_instances['node-ofed_page-field_ofed_page_pubdate'] = array(
     'bundle' => 'ofed_page',
     'deleted' => 0,
@@ -152,6 +152,7 @@ function ofed_page_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 3,
@@ -165,6 +166,7 @@ function ofed_page_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 3,
@@ -178,6 +180,7 @@ function ofed_page_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 2,
@@ -191,6 +194,7 @@ function ofed_page_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 2,
@@ -204,6 +208,7 @@ function ofed_page_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 2,
@@ -238,7 +243,7 @@ function ofed_page_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ofed_page-field_ofed_page_summary'
+  // Exported field_instance: 'node-ofed_page-field_ofed_page_summary'.
   $field_instances['node-ofed_page-field_ofed_page_summary'] = array(
     'bundle' => 'ofed_page',
     'default_value' => NULL,
@@ -301,7 +306,7 @@ function ofed_page_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ofed_page-field_ofed_page_update'
+  // Exported field_instance: 'node-ofed_page-field_ofed_page_update'.
   $field_instances['node-ofed_page-field_ofed_page_update'] = array(
     'bundle' => 'ofed_page',
     'deleted' => 0,
@@ -316,6 +321,7 @@ function ofed_page_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 4,
@@ -329,6 +335,7 @@ function ofed_page_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 4,
@@ -342,6 +349,7 @@ function ofed_page_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 3,
@@ -355,6 +363,7 @@ function ofed_page_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 3,
@@ -368,6 +377,7 @@ function ofed_page_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 3,
@@ -402,7 +412,7 @@ function ofed_page_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ofed_page-field_ofed_page_update_force'
+  // Exported field_instance: 'node-ofed_page-field_ofed_page_update_force'.
   $field_instances['node-ofed_page-field_ofed_page_update_force'] = array(
     'bundle' => 'ofed_page',
     'default_value' => array(

@@ -10,7 +10,7 @@
 function ofed_news_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-ofed_news-field_ofed_news_author'
+  // Exported field_instance: 'node-ofed_news-field_ofed_news_author'.
   $field_instances['node-ofed_news-field_ofed_news_author'] = array(
     'bundle' => 'ofed_news',
     'default_value' => NULL,
@@ -122,7 +122,7 @@ function ofed_news_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ofed_news-field_ofed_news_body'
+  // Exported field_instance: 'node-ofed_news-field_ofed_news_body'.
   $field_instances['node-ofed_news-field_ofed_news_body'] = array(
     'bundle' => 'ofed_news',
     'default_value' => NULL,
@@ -233,7 +233,7 @@ function ofed_news_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ofed_news-field_ofed_news_docs'
+  // Exported field_instance: 'node-ofed_news-field_ofed_news_docs'.
   $field_instances['node-ofed_news-field_ofed_news_docs'] = array(
     'bundle' => 'ofed_news',
     'default_value' => NULL,
@@ -324,7 +324,7 @@ function ofed_news_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ofed_news-field_ofed_news_links'
+  // Exported field_instance: 'node-ofed_news-field_ofed_news_links'.
   $field_instances['node-ofed_news-field_ofed_news_links'] = array(
     'bundle' => 'ofed_news',
     'default_value' => NULL,
@@ -393,6 +393,7 @@ function ofed_news_field_default_field_instances() {
     'label' => 'Link(s)',
     'required' => 0,
     'settings' => array(
+      'absolute_url' => 1,
       'attributes' => array(
         'class' => '',
         'configurable_title' => 0,
@@ -405,6 +406,7 @@ function ofed_news_field_default_field_instances() {
       ),
       'enable_tokens' => 1,
       'title' => 'optional',
+      'title_label_use_field_label' => FALSE,
       'title_maxlength' => 128,
       'title_value' => '',
       'url' => 0,
@@ -420,7 +422,7 @@ function ofed_news_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ofed_news-field_ofed_news_pubdate'
+  // Exported field_instance: 'node-ofed_news-field_ofed_news_pubdate'.
   $field_instances['node-ofed_news-field_ofed_news_pubdate'] = array(
     'bundle' => 'ofed_news',
     'deleted' => 0,
@@ -435,6 +437,7 @@ function ofed_news_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 1,
@@ -448,6 +451,7 @@ function ofed_news_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 1,
@@ -461,6 +465,7 @@ function ofed_news_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 1,
@@ -474,6 +479,7 @@ function ofed_news_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 0,
@@ -487,6 +493,7 @@ function ofed_news_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 1,
@@ -500,6 +507,7 @@ function ofed_news_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 1,
@@ -513,6 +521,7 @@ function ofed_news_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 1,
@@ -526,6 +535,7 @@ function ofed_news_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 1,
@@ -539,6 +549,7 @@ function ofed_news_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 1,
@@ -573,7 +584,7 @@ function ofed_news_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ofed_news-field_ofed_news_source'
+  // Exported field_instance: 'node-ofed_news-field_ofed_news_source'.
   $field_instances['node-ofed_news-field_ofed_news_source'] = array(
     'bundle' => 'ofed_news',
     'default_value' => NULL,
@@ -657,7 +668,7 @@ function ofed_news_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ofed_news-field_ofed_news_summary'
+  // Exported field_instance: 'node-ofed_news-field_ofed_news_summary'.
   $field_instances['node-ofed_news-field_ofed_news_summary'] = array(
     'bundle' => 'ofed_news',
     'default_value' => NULL,
@@ -745,7 +756,7 @@ function ofed_news_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ofed_news-field_ofed_news_thumb'
+  // Exported field_instance: 'node-ofed_news-field_ofed_news_thumb'.
   $field_instances['node-ofed_news-field_ofed_news_thumb'] = array(
     'bundle' => 'ofed_news',
     'deleted' => 0,
@@ -854,7 +865,7 @@ function ofed_news_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ofed_news-field_ofed_news_update'
+  // Exported field_instance: 'node-ofed_news-field_ofed_news_update'.
   $field_instances['node-ofed_news-field_ofed_news_update'] = array(
     'bundle' => 'ofed_news',
     'deleted' => 0,
@@ -869,6 +880,7 @@ function ofed_news_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 2,
@@ -882,6 +894,7 @@ function ofed_news_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 2,
@@ -895,6 +908,7 @@ function ofed_news_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 2,
@@ -908,6 +922,7 @@ function ofed_news_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 1,
@@ -921,6 +936,7 @@ function ofed_news_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 2,
@@ -934,6 +950,7 @@ function ofed_news_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 2,
@@ -947,6 +964,7 @@ function ofed_news_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 2,
@@ -960,6 +978,7 @@ function ofed_news_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 2,
@@ -973,6 +992,7 @@ function ofed_news_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 2,
@@ -1007,7 +1027,7 @@ function ofed_news_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-ofed_news-field_ofed_news_update_force'
+  // Exported field_instance: 'node-ofed_news-field_ofed_news_update_force'.
   $field_instances['node-ofed_news-field_ofed_news_update_force'] = array(
     'bundle' => 'ofed_news',
     'default_value' => array(
