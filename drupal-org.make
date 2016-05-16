@@ -189,7 +189,7 @@ projects[features_override][subdir] = contrib
 projects[feeds][version] = "2.0-beta2"
 projects[feeds][subdir] = contrib
 
-projects[feeds_xpathparser][version] = "1.0-beta4"
+projects[feeds_xpathparser][version] = "1.1"
 projects[feeds_xpathparser][subdir] = contrib
 
 projects[field_collection][version] = "1.0-beta8"

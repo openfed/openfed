@@ -61,6 +61,8 @@ Next - Version 2.0-beta1
    #2726663: Module upgrade: Apache Solr Multilingual
    #2726669: Module upgrade: Back To Top
    #2726677: Module upgrade: Backup and Migrate
+   #2726679: Module upgrade: Feeds
+   #2726683: Module upgrade: Feeds XPath Parser
 
 1 March 2016 - Version 1.19
 ---------------------------
