@@ -63,6 +63,7 @@ Next - Version 2.0-beta1
    #2726677: Module upgrade: Backup and Migrate
    #2726679: Module upgrade: Feeds
    #2726683: Module upgrade: Feeds XPath Parser
+   #2726689: Module upgrade: Field collection
 
 1 March 2016 - Version 1.19
 ---------------------------
