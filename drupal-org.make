@@ -353,9 +353,8 @@ projects[print][version] = "2.0"
 projects[print][subdir] = contrib
 projects[print][patch][2446693] = "https://www.drupal.org/files/issues/print-2446939-1.patch"
 
-projects[quiz][version] = "4.0-beta2"
+projects[quiz][version] = "4.0-rc2"
 projects[quiz][subdir] = contrib
-;projects[quiz][patch][1899654] = "https://www.drupal.org/files/quiz-cant_view_long_answer_questions-1899654-1.patch"
 
 projects[redirect][version] = "1.0-rc3"
 projects[redirect][subdir] = contrib
