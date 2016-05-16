@@ -301,7 +301,7 @@ projects[media_youtube][patch][2129317] = "https://www.drupal.org/files/issues/m
 projects[media_youtube][patch][1660980] = "https://www.drupal.org/files/issues/media_youtube-force_html5-1660980-12.patch"
 projects[media_youtube][subdir] = contrib
 
-projects[menu_attributes][version] = "1.0-rc3"
+projects[menu_attributes][version] = "1.0"
 projects[menu_attributes][subdir] = contrib
 
 projects[menu_block][version] = "2.4"
