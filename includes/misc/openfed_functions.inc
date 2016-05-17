@@ -1060,6 +1060,15 @@ function _openfed_workbench_moderation_setup() {
       'moderate content from published to draft' => TRUE,
       'moderate content from draft to published' => TRUE,
     );
+    if (module_exists('override_node_options')) {
+      $perms = array_keys(override_node_options_permission());
+      foreach ($perms as $perm) {
+        if (strpos($perm, 'published' !== FALSE)) {
+          // Allow "override published option" for all content types.
+          $permissions[$perm] = TRUE;
+        }
+      } 
+    }
     user_role_change_permissions($web_role->rid, $permissions);
   }
 }
