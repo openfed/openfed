@@ -117,6 +117,7 @@ projects[calendar][subdir] = contrib
 
 projects[ckeditor][version] = "1.17"
 projects[ckeditor][subdir] = contrib
+projects[ckeditor][patch][2355733] = "https://www.drupal.org/files/issues/2355733-ckeditor-customize-default-3.patch"
 
 projects[ckeditor_link][version] = "2.4"
 projects[ckeditor_link][subdir] = contrib
@@ -301,8 +302,8 @@ projects[logintoboggan][version] = "1.5"
 projects[logintoboggan][subdir] = contrib
 projects[logintoboggan][patch][1142808] = "https://www.drupal.org/files/logintoboggan-minpasswordlength-1142808-9.patch"
 
-projects[m3042404][version] = "1.0-beta2"
-projects[m3042404][subdir] = contrib
+projects[m4032404][version] = "1.0-beta2"
+projects[m4032404][subdir] = contrib
 
 projects[media][version] = "2.0-beta1"
 projects[media][subdir] = contrib

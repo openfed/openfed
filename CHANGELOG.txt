@@ -11,6 +11,7 @@ Next - Version 2.0-beta1
    #2726823: Remove unnecessary dependencies
    #2483757: Add checkbox to disable HTTPS
    #2550893: CMS forces Language EN
+   #2354323: CKeditor width
 
  * New modules
    #2710241: Add module: Node Edit Redirect
