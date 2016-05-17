@@ -37,6 +37,7 @@ Next - Version 2.0-beta1
 
  * Theme upgrade
    #2715261: Theme upgrade: CMS theme
+   #2727675: Theme upgrade: Openfed Nerra
 
  * Module upgrade:
    #2666484: Module upgrade: Date
