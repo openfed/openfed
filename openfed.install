@@ -673,10 +673,12 @@ function openfed_update_7311() {
 }
 
 /**
- * Enable/disable helper modules.
+ * Enable/disable newly added required modules.
  */
 function openfed_update_7312() {
   module_enable(array(
+   'metatag_twitter_cards',
+   'metatag_opengraph',
    'module_filter',
    'node_edit_redirect',
    'admin_menu_languages',

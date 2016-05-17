@@ -12,6 +12,8 @@ Next - Version 2.0-beta1
    #2483757: Add checkbox to disable HTTPS
    #2550893: CMS forces Language EN
    #2354323: CKeditor width
+   #2703861: Enable recommended Metatag submodules metatag_opengraph and
+             metatag_twitter_cards
 
  * New modules
    #2710241: Add module: Node Edit Redirect
