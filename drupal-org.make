@@ -306,11 +306,8 @@ projects[media_soundcloud][subdir] = contrib
 projects[media_vimeo][version] = "2.1"
 projects[media_vimeo][subdir] = contrib
 
-projects[media_youtube][download][type] = git
-projects[media_youtube][download][branch] = "7.x-2.x"
-projects[media_youtube][download][revision] = 83894fd
-projects[media_youtube][patch][2129317] = "https://www.drupal.org/files/issues/media_youtube.iframe-accessibility.patch"
-projects[media_youtube][patch][1660980] = "https://www.drupal.org/files/issues/media_youtube-force_html5-1660980-12.patch"
+projects[media_youtube][version] = "3.0"
+projects[media_youtube][patch][2129317] = "https://www.drupal.org/files/issues/2129317-13.patch"
 projects[media_youtube][subdir] = contrib
 
 projects[menu_attributes][version] = "1.0"

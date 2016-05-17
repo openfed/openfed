@@ -44,6 +44,7 @@ Next - Version 2.0-beta1
    #2722375: Module upgrade: Entity API
    #2722389: Module upgrade: Features Override
    #2727401: Module upgrade: Media
+   #2726795: Module upgrade: Media: Youtube
    #2666490: Module upgrade: Hierarchical Select
    #2666494: Module upgrade: HTML5 Tools
    #2722471: Module upgrade: Internationalization
