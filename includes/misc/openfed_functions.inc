@@ -924,6 +924,20 @@ function _openfed_get_default_permissions() {
       'Content Manager',
     ),
 
+    // workbench_moderation
+    'view all unpublished content' => array(
+       'Content Manager',
+    ),
+    'view moderation history' => array(
+       'Content Manager',
+    ),
+    'view moderation messages' => array(
+       'Content Manager',
+    ),
+    'use workbench_moderation my drafts tab' => array(
+       'Content Manager',
+    ),
+
     // xmlsitemap
     'administer xmlsitemap' => array(
       'Builder',
@@ -957,4 +971,65 @@ function _openfed_get_permissions_for_role($role_name) {
   }
 
   return $permissions_for_role;
+}
+
+/**
+ * Set up Workbench Moderation.
+ *
+ * Used in installation and in update hooks.
+ */
+function _openfed_workbench_moderation_setup() {
+  module_enable(array('workbench_moderation'));
+
+  // Set up states (Published/Unpublished).
+  db_delete('workbench_moderation_states')
+    ->execute();
+  db_delete('workbench_moderation_transitions')
+    ->execute();
+  $states = array(
+    array(
+      'name' => 'draft',
+      'label' => 'Unpublished',
+      'description' => 'Work in progress',
+      'weight' => -99,
+    ),
+    array(
+      'name' => 'published',
+      'label' => 'Published',
+      'description' => 'Make this version live',
+      'weight' => 99,
+    ),
+  );
+  $query = db_insert('workbench_moderation_states')
+    ->fields(array('name', 'label', 'description', 'weight'));
+  foreach ($states as $state) {
+    $query->values($state);
+  }
+  $query->execute();
+
+  // Loop through all content types.
+  foreach (array_keys(node_type_get_names()) as $content_type) {
+    // Enable revisioning and moderation.
+    $settings = variable_get('node_options_' . $content_type, array());
+    variable_set('node_options_' . $content_type, $settings + array('moderation', 'revision'));
+
+    // Set the default state based on the default published/unpublished setting.
+    if (isset($settings['status'])) {
+      variable_set('workbench_moderation_default_state_ofed_page', 'published');
+    }
+    else {
+      variable_set('workbench_moderation_default_state_ofed_page', 'draft');
+    }
+  }
+  // Set up permissions.
+  $web_role = user_role_load_by_name('Content Manager');
+  if (!empty($web_role)) {
+    $permissions = array(
+      'view all unpublished content' => TRUE,
+      'view moderation history' => TRUE,
+      'view moderation messages' => TRUE,
+      'use workbench_moderation my drafts tab' => TRUE,
+    );
+    user_role_change_permissions($web_role->rid, $permissions);
+  }
 }

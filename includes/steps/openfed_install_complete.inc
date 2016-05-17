@@ -138,4 +138,8 @@ function _openfed_install_complete_grant_permissions() {
   // Enable 403 to 404 module.
   module_enable(array('m4032404'));
   variable_set('site_403', 'm4032404');
+
+  // Set up workbench moderation.
+  require_once('includes/misc/openfed_functions.inc');
+  _openfed_workbench_moderation_setup();
 }

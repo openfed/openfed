@@ -718,3 +718,13 @@ function openfed_update_7313() {
 function openfed_update_7314() {
   variable_set('site_403', 'm4032404');
 }
+
+/**
+ * Enable moderation and revisioning for all content types.
+ */
+function openfed_update_7315() {
+  require_once('includes/misc/openfed_functions.inc');
+  if (!module_exists('workbench_moderation')) {
+    _openfed_workbench_moderation_setup();
+  }
+}
