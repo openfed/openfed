@@ -1032,6 +1032,7 @@ function _openfed_workbench_moderation_setup() {
     $query->values($transition);
   }
   $query->execute();
+  drupal_static_reset('workbench_moderation_transitions');
 
   // Loop through all content types.
   foreach (array_keys(node_type_get_names()) as $content_type) {
@@ -1047,6 +1048,7 @@ function _openfed_workbench_moderation_setup() {
       variable_set('workbench_moderation_default_state_ofed_page', 'draft');
     }
   }
+
   // Set up permissions.
   $web_role = user_role_load_by_name('Content Manager');
   if (!empty($web_role)) {
