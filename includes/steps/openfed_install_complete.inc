@@ -135,4 +135,7 @@ function _openfed_install_complete_grant_permissions() {
 
   // Enable module filter module.
   module_enable(array('module_filter'));
+  // Enable 403 to 404 module.
+  module_enable(array(m4032404'));
+  variable_set('site_403', 'm4032404');
 }

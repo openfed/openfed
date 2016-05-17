@@ -681,6 +681,8 @@ function openfed_update_7312() {
    'node_edit_redirect',
    'admin_menu_languages',
    'admin_language',
+   // Enable "404 to 403" module.
+   'm4032404',
   ));
   module_disable(array('backup_migrate'), FALSE);
 }
@@ -706,4 +708,11 @@ function openfed_update_7313() {
       }
     }
   }
+}
+
+/**
+ * Set up 404 to 403.
+ */
+function openfed_update_7314() {
+  variable_set('site_403', 'm4032404');
 }

@@ -301,6 +301,9 @@ projects[logintoboggan][version] = "1.5"
 projects[logintoboggan][subdir] = contrib
 projects[logintoboggan][patch][1142808] = "https://www.drupal.org/files/logintoboggan-minpasswordlength-1142808-9.patch"
 
+projects[m3042404][version] = "1.0-beta2"
+projects[m3042404][subdir] = contrib
+
 projects[media][version] = "2.0-beta1"
 projects[media][subdir] = contrib
 projects[media][patch][2534724] = "https://www.drupal.org/files/issues/media-browser_opens_twice-2534724-53.patch"
