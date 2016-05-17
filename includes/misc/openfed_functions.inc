@@ -266,7 +266,17 @@ function _openfed_get_default_permissions() {
       'anonymous user',
     ),
 
-    // admin_menu'
+    // admin_language
+    'display admin pages in another language' => array(
+      'Builder',
+      'Configurator',
+      'Content Manager',
+      'User Manager',
+      'Authenticated Visitor',
+      'authenticated user',
+    ),
+
+    // admin_menu
     'access administration menu' => array(
       'Builder',
       'Configurator',

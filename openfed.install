@@ -682,7 +682,6 @@ function openfed_update_7312() {
    'module_filter',
    'node_edit_redirect',
    'admin_menu_content_languages',
-   'admin_language',
    // Enable "404 to 403" module.
    'm4032404',
   ));
@@ -727,5 +726,17 @@ function openfed_update_7315() {
   if (!module_exists('workbench_moderation')) {
     _openfed_workbench_moderation_setup();
     node_access_rebuild(TRUE);
+  }
+}
+
+/**
+ * Set up admin_language.
+ */
+function openfed_update_7316() {
+  module_enable(array('admin_language'));
+  // Get all roles.
+  $roles = user_roles(TRUE);
+  foreach ($roles as $role) {
+    user_role_change_permissions(array_key($role), array('display admin pages in another language' => TRUE));
   }
 }
