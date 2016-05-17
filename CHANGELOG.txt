@@ -14,6 +14,7 @@ Next - Version 2.0-beta1
    #2354323: CKeditor width
    #2703861: Enable recommended Metatag submodules metatag_opengraph and
              metatag_twitter_cards
+   #2389207: Fix conflict between I18n_sync and Workbench
 
  * New modules
    #2710241: Add module: Node Edit Redirect

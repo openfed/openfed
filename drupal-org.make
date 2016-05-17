@@ -501,6 +501,7 @@ projects[weight][subdir] = contrib
 
 projects[workbench_moderation][version] = "1.4"
 projects[workbench_moderation][subdir] = contrib
+projects[workbench_moderation][patch][1372500] = "https://www.drupal.org/files/issues/1372500-26.patch"
 
 projects[xmlsitemap][version] = "2.2"
 projects[xmlsitemap][subdir] = contrib
