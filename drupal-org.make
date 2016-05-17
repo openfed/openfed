@@ -309,6 +309,7 @@ projects[media][version] = "2.0-beta1"
 projects[media][subdir] = contrib
 projects[media][patch][2534724] = "https://www.drupal.org/files/issues/media-browser_opens_twice-2534724-53.patch"
 projects[media][patch][2017647] = "https://www.drupal.org/files/issues/media-popup_translations-2017647-15.patch"
+projects[media][patch][2612190] = "https://www.drupal.org/files/issues/media-array_merge_error_in_update_7208-2612190-3-D7.patch"
 
 projects[media_soundcloud][version] = "2.1"
 projects[media_soundcloud][subdir] = contrib
