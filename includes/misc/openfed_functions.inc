@@ -937,6 +937,12 @@ function _openfed_get_default_permissions() {
     'use workbench_moderation my drafts tab' => array(
        'Content Manager',
     ),
+    'moderate content from published to draft' => array(
+       'Content Manager',
+    ),
+    'moderate content from draft to published' => array(
+       'Content Manager',
+    ),
 
     // xmlsitemap
     'administer xmlsitemap' => array(
@@ -1007,6 +1013,26 @@ function _openfed_workbench_moderation_setup() {
   }
   $query->execute();
 
+  // Default transitions.
+  $transitions = array(
+    array(
+      'name' => 'Publish',
+      'from_name' => 'draft',
+      'to_name' => 'published',
+    ),
+    array(
+      'name' => 'Unpublish',
+      'from_name' => 'published',
+      'to_name' => 'draft',
+    ),
+  );
+  $query = db_insert('workbench_moderation_transitions')
+    ->fields(array('name', 'from_name', 'to_name'));
+  foreach ($transitions as $transition) {
+    $query->values($transition);
+  }
+  $query->execute();
+
   // Loop through all content types.
   foreach (array_keys(node_type_get_names()) as $content_type) {
     // Enable revisioning and moderation.
@@ -1029,6 +1055,8 @@ function _openfed_workbench_moderation_setup() {
       'view moderation history' => TRUE,
       'view moderation messages' => TRUE,
       'use workbench_moderation my drafts tab' => TRUE,
+      'moderate content from published to draft' => TRUE,
+      'moderate content from draft to published' => TRUE,
     );
     user_role_change_permissions($web_role->rid, $permissions);
   }

@@ -726,5 +726,6 @@ function openfed_update_7315() {
   require_once('includes/misc/openfed_functions.inc');
   if (!module_exists('workbench_moderation')) {
     _openfed_workbench_moderation_setup();
+    node_access_rebuild(TRUE);
   }
 }
