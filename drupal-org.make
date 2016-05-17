@@ -232,6 +232,9 @@ projects[gmap][subdir] = contrib
 projects[google_analytics][version] = "2.2"
 projects[google_analytics][subdir] = contrib
 
+projects[google_tags][version] = "1.0"
+projects[google_tags][subdir] = contrib
+
 projects[hierarchical_select][version] = "3.0-beta5"
 projects[hierarchical_select][subdir] = contrib
 
