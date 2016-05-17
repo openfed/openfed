@@ -22,6 +22,7 @@ Next - Version 2.0-beta1
    #2618796: Add module: module_filter
    #2392249: Add module: Field default token
    #2278161: Add module: Bean
+   #2278157: Add module: Context
 
  * Remove module:
    #2446629: Remove module: Backup and migrate

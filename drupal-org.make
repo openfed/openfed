@@ -130,6 +130,9 @@ projects[comment_goodness][subdir] = contrib
 projects[content_access][version] = "1.2-beta2"
 projects[content_access][subdir] = contrib
 
+projects[context][version] = "3.6"
+projects[context][subdir] = contrib
+
 projects[countries][version] = "2.3"
 projects[countries][subdir] = contrib
 
