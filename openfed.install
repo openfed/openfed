@@ -681,7 +681,7 @@ function openfed_update_7312() {
    'metatag_opengraph',
    'module_filter',
    'node_edit_redirect',
-   'admin_menu_languages',
+   'admin_menu_content_languages',
    'admin_language',
    // Enable "404 to 403" module.
    'm4032404',
