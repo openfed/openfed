@@ -1,8 +1,8 @@
 CHANGELOG
 =========
 
-Next - Version 2.0-beta1
-------------------------
+18 May 2016 - Version 2.0-beta1
+-------------------------------
  * Issues:
    #2675476: Use https URLs in makefile
    #2715601: Implement language switching solution
