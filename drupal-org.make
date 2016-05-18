@@ -287,7 +287,7 @@ projects[l10n_update][subdir] = contrib
 projects[language_cookie][version] = "2.0"
 projects[language_cookie][subdir] = contrib
 
-projects[language_selection_page][version] = "2.0-beta4"
+projects[language_selection_page][version] = "2.0"
 projects[language_selection_page][subdir] = contrib
 
 projects[lexicon][version] = "1.10"
