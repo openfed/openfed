@@ -115,6 +115,10 @@ projects[beidmellon][subdir] = contrib
 projects[calendar][version] = "3.5"
 projects[calendar][subdir] = contrib
 
+; Dependency for menu_to_taxonomy.
+projects[combined_termref][version] = "1.0-beta2"
+projects[combined_termref][subdir] = contrib
+
 projects[ckeditor][version] = "1.17"
 projects[ckeditor][subdir] = contrib
 projects[ckeditor][patch][2355733] = "https://www.drupal.org/files/issues/2355733-ckeditor-customize-default-3.patch"
