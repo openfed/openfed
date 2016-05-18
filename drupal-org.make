@@ -504,7 +504,7 @@ projects[webform_clear][patch][2250027] = "https://www.drupal.org/files/issues/w
 projects[webform_rules][version] = "1.6"
 projects[webform_rules][subdir] = contrib
 
-projects[weight][version] = "2.5"
+projects[weight][version] = "3.1"
 projects[weight][subdir] = contrib
 
 projects[workbench_moderation][download][type] = git
