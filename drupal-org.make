@@ -150,9 +150,7 @@ projects[diff][version] = "3.2"
 projects[diff][subdir] = contrib
 
 ; Dependency for Workbench Moderation
-projects[drafty][download][type] = git
-projects[drafty][download][branch] = "7.x-1.x"
-projects[drafty][download][revision] = 8047da3
+projects[drafty][version] = "1.0-beta3"
 projects[drafty][subdir] = contrib
 
 projects[ds][version] = "2.14"
