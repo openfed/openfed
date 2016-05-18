@@ -64,6 +64,7 @@ core = 7.x
   dependencies[] = flag
   dependencies[] = globalredirect
   dependencies[] = hierarchical_select
+  dependencies[] = hs_menu
   dependencies[] = hs_taxonomy
   dependencies[] = html5_tools
   dependencies[] = i18n
