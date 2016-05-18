@@ -248,9 +248,7 @@ projects[html5_tools][subdir] = contrib
 projects[i18n][version] = "1.13"
 projects[i18n][subdir] = contrib
 
-projects[i18nviews][download][type] = git
-projects[i18nviews][download][branch] = "7.x-3.x"
-projects[i18nviews][download][revision] = 26bd52c
+projects[i18nviews][version] = "3.0-alpha1"
 projects[i18nviews][subdir] = contrib
 
 projects[imagecache_actions][version] = "1.7"
