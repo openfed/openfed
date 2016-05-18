@@ -74,7 +74,7 @@ projects[addanother][subdir] = contrib
 
 projects[admin_language][download][type] = git
 projects[admin_language][download][branch] = "7.x-1.x"
-projects[admin_language][download][revision] = 6f0a6e5
+projects[admin_language][download][revision] = e3ef352
 projects[admin_language][subdir] = contrib
 
 projects[admin_menu][version] = "3.0-rc5"
