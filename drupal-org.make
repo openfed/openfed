@@ -339,6 +339,9 @@ projects[menu_firstchild][subdir] = contrib
 projects[menu_link_weight][version] = "1.2"
 projects[menu_link_weight][subdir] = contrib
 
+projects[menu_node][version] = "1.2"
+projects[menu_node][subdir] = contrib
+
 projects[menu_position][version] = "1.2"
 projects[menu_position][subdir] = contrib
 
