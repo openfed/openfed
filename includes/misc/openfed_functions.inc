@@ -1051,7 +1051,7 @@ function _openfed_workbench_moderation_setup() {
     variable_set('node_options_' . $content_type, array_unique(array_merge($settings, array('moderation', 'revision'))));
 
     // Set the default state based on the default published/unpublished setting.
-    if (isset($settings['status'])) {
+    if (in_array('status', $settings)) {
       variable_set('workbench_moderation_default_state_' . $content_type, 'published');
     }
     else {
