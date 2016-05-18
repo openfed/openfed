@@ -1048,14 +1048,14 @@ function _openfed_workbench_moderation_setup() {
   foreach (array_keys(node_type_get_names()) as $content_type) {
     // Enable revisioning and moderation.
     $settings = variable_get('node_options_' . $content_type, array());
-    variable_set('node_options_' . $content_type, $settings + array('moderation', 'revision'));
+    variable_set('node_options_' . $content_type, array_unique(array_merge($settings, array('moderation', 'revision'))));
 
     // Set the default state based on the default published/unpublished setting.
     if (isset($settings['status'])) {
-      variable_set('workbench_moderation_default_state_ofed_page', 'published');
+      variable_set('workbench_moderation_default_state_' . $content_type, 'published');
     }
     else {
-      variable_set('workbench_moderation_default_state_ofed_page', 'draft');
+      variable_set('workbench_moderation_default_state_' . $content_type, 'draft');
     }
   }
 
