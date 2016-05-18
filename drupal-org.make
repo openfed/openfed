@@ -149,6 +149,12 @@ projects[devel][subdir] = contrib
 projects[diff][version] = "3.2"
 projects[diff][subdir] = contrib
 
+; Dependency for Workbench Moderation
+projects[drafty][download][type] = git
+projects[drafty][download][branch] = "7.x-1.x"
+projects[drafty][download][revision] = 8047da3
+projects[drafty][subdir] = contrib
+
 projects[ds][version] = "2.14"
 projects[ds][subdir] = contrib
 
@@ -501,9 +507,11 @@ projects[webform_rules][subdir] = contrib
 projects[weight][version] = "2.5"
 projects[weight][subdir] = contrib
 
-projects[workbench_moderation][version] = "1.4"
+projects[workbench_moderation][download][type] = git
+projects[workbench_moderation][download][branch] = "7.x-1.x"
+projects[workbench_moderation][download][revision] = 2c91211
 projects[workbench_moderation][subdir] = contrib
-projects[workbench_moderation][patch][1372500] = "https://www.drupal.org/files/issues/2389207-10.patch"
+projects[workbench_moderation][patch][1372500] = "https://www.drupal.org/files/issues/workbench_moderation_sync_infinite_loop-1372500-16.patch"
 
 projects[xmlsitemap][version] = "2.2"
 projects[xmlsitemap][subdir] = contrib
