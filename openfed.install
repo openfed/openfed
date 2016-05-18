@@ -682,9 +682,11 @@ function openfed_update_7312() {
    'module_filter',
    'node_edit_redirect',
    'admin_menu_content_languages',
+   'menu_link_weight',
+   'hs_menu',
    // Enable "404 to 403" module.
    'm4032404',
-  ));
+  ), TRUE);
   module_disable(array('backup_migrate'), FALSE);
 }
 

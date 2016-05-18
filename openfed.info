@@ -92,6 +92,7 @@ core = 7.x
   dependencies[] = menu_block
   dependencies[] = menu_dam
   dependencies[] = menu_firstchild
+  dependencies[] = menu_link_weight
   dependencies[] = menu_position
   dependencies[] = metatag
   dependencies[] = metatag_opengraph

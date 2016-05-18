@@ -328,6 +328,9 @@ projects[menu_block][subdir] = contrib
 projects[menu_firstchild][version] = "1.1"
 projects[menu_firstchild][subdir] = contrib
 
+projects[menu_link_weight][version] = "1.2"
+projects[menu_link_weight][subdir] = contrib
+
 projects[menu_position][version] = "1.2"
 projects[menu_position][subdir] = contrib
 
