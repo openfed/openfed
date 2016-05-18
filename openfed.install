@@ -737,6 +737,6 @@ function openfed_update_7316() {
   // Get all roles.
   $roles = user_roles(TRUE);
   foreach ($roles as $role) {
-    user_role_change_permissions(array_key($role), array('display admin pages in another language' => TRUE));
+    user_role_change_permissions(key($role), array('display admin pages in another language' => TRUE));
   }
 }
