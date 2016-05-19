@@ -43,7 +43,7 @@ libraries[jquery.jcarousel][type] = "library"
 ; Please fill the following out. Type may be one of get, git, bzr or svn, and url is the url of the download.
 ;
 
-projects[addemar_subscription][version] = "1.1"
+projects[addemar_subscription][version] = "1.2-rc3"
 projects[addemar_subscription][subdir] = contrib
 
 projects[ofed_menu_dam][version] = "1.1"
