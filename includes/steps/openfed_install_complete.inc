@@ -140,6 +140,6 @@ function _openfed_install_complete_grant_permissions() {
   variable_set('site_403', 'm4032404');
 
   // Set up workbench moderation.
-  require_once('includes/misc/openfed_functions.inc');
+  require_once(DRUPAL_ROOT . '/' . drupal_get_path('profile', 'openfed') . '/includes/misc/openfed_functions.inc');
   _openfed_workbench_moderation_setup();
 }

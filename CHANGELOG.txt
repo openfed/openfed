@@ -1,9 +1,14 @@
 CHANGELOG
 =========
 
+19 May 2016 - Version 2.0-beta2
+-------------------------------
+ * Issue:
+   #2729449: Fix installation error
+
 18 May 2016 - Version 2.0-beta1
 -------------------------------
- * Issues:
+ * Issues
    #2675476: Use https URLs in makefile
    #2715601: Implement language switching solution
    #2484705: Default to role_delegation for User Manager role
@@ -32,17 +37,17 @@ CHANGELOG
    #2587901: Add module: 403 to 404
    #2728499: Add module: Menu link weight
 
- * Remove module:
+ * Remove module
    #2446629: Remove module: Backup and migrate
 
  * Library upgrade
    #2722323: Library upgrade: CKEditor
 
- * Theme upgrade
+ * Theme upgrades
    #2715261: Theme upgrade: CMS theme
    #2727675: Theme upgrade: Openfed Nerra
 
- * Module upgrade:
+ * Module upgrades
    #2666484: Module upgrade: Date
    #2713877: Module upgrade: Openfed switcher
    #2722229: Module upgrade: Field Group
