@@ -49,7 +49,7 @@ projects[addemar_subscription][subdir] = contrib
 projects[ofed_menu_dam][version] = "1.1"
 projects[ofed_menu_dam][subdir] = contrib
 
-projects[ofed_switcher][version] = "1.1-rc4"
+projects[ofed_switcher][version] = "1.1-rc2"
 projects[ofed_switcher][subdir] = contrib
 
 projects[ofed_vmcd][version] = "1.0"
@@ -57,7 +57,6 @@ projects[ofed_vmcd][subdir] = contrib
 
 projects[ofed_theme_nerra][version] = "1.2-beta6"
 projects[ofed_theme_nerra][subdir] = contrib
-projects[ofed_theme_nerra][patch][2678724] = "https://www.drupal.org/files/issues/2678724-4.patch"
 
 projects[ofed_theme_cms][version] = "1.3-rc2"
 projects[ofed_theme_cms][subdir] = contrib
@@ -107,7 +106,7 @@ projects[apachesolr_multilingual][subdir] = contrib
 projects[back_to_top][version] = "1.4"
 projects[back_to_top][subdir] = contrib
 
-projects[backup_migrate][version] = "3.1"
+projects[backup_migrate][version] = "3.0"
 projects[backup_migrate][subdir] = contrib
 
 projects[beidmellon][version] = "1.0-rc1"
@@ -487,5 +486,6 @@ projects[weight][subdir] = contrib
 projects[workbench_moderation][version] = "1.3"
 projects[workbench_moderation][subdir] = contrib
 
-projects[xmlsitemap][version] = "2.2"
+projects[xmlsitemap][version] = "2.0"
 projects[xmlsitemap][subdir] = contrib
+projects[xmlsitemap][patch][2223911] = "http://www.drupal.org/files/issues/xmlsitemap_menu_module-2223911-14.patch"

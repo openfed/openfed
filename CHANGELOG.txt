@@ -1,14 +1,10 @@
 CHANGELOG
 =========
-xx 2016 - Version 1.20-rc1
---------------------------
- * Module upgrades:
-   #2666520: Module upgrade: Openfed Switcher
-   #2666536: Module upgrade: Backup and Migrate
-   #2666530: Module upgrade: XML Sitemap
 
- * Issues:
-   #2679321: Patch for language selection page
+24 May 2016 - Version 1.20-rc1
+------------------------------
+ * Module upgrade
+   #2732045: Module upgrade: Rules
 
 1 March 2016 - Version 1.19
 ---------------------------
@@ -16,12 +12,12 @@ No changes
 
 1 March 2016 - Version 1.19-rc4
 -------------------------------
- * Core upgrade:
+ * Core upgrade
    #2675108: Upgrade to Drupal Core 7.43
 
 26 February 2016 - Version 1.19-rc3
 -----------------------------------
- * Module upgrade:
+ * Module upgrade
    #2666488: Module upgrade: Field Group
 
 25 February 2016 - Version 1.19-rc2
