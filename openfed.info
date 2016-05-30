@@ -49,7 +49,6 @@ core = 7.x
   dependencies[] = ds_extras
   dependencies[] = ds_format
   dependencies[] = ds_forms
-  dependencies[] = ds_search
   dependencies[] = easy_breadcrumb
   dependencies[] = elements
   dependencies[] = email
