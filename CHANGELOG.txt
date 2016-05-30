@@ -113,6 +113,15 @@ CHANGELOG
    #2726733: Module upgrade: Weight
    #2726737: Module upgrade: Workbench moderation
 
+24 May 2016 - Version 1.20
+--------------------------
+No changes
+
+24 May 2016 - Version 1.20-rc1
+------------------------------
+ * Module upgrade
+   #2732045: Module upgrade: Rules
+
 1 March 2016 - Version 1.19
 ---------------------------
 No changes
