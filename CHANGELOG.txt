@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+2 June 2016 - Version 1.21-rc1
+------------------------------
+* Issue:
+  #2740739: Support SMTP module in Webform
+
 24 May 2016 - Version 1.20
 --------------------------
 No changes

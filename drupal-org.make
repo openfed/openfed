@@ -472,6 +472,7 @@ projects[views_slideshow][patch][974482] = "http://www.drupal.org/files/issues/v
 projects[webform][version] = "3.24"
 projects[webform][subdir] = contrib
 projects[webform][patch][2675108] = "https://www.drupal.org/files/issues/2675170-24.patch"
+projects[webform][patch][2740739] = "https://www.drupal.org/files/issues/2738755-1.patch"
 
 projects[webform_clear][version] = "2.0"
 projects[webform_clear][subdir] = contrib
