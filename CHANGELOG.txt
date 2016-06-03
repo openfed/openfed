@@ -12,6 +12,7 @@ Next version
    #2726641: Module upgrade: XML Sitemap
    #2727401: Module upgrade: Media
    #2726489: Module upgrade: Metatag
+   #2742239: Module upgrade: Colorbox
 
  * Added modules
    #2278157: Add module: Context

@@ -127,7 +127,7 @@ projects[ckeditor][patch][2355733] = "https://www.drupal.org/files/issues/235573
 projects[ckeditor_link][version] = "2.4"
 projects[ckeditor_link][subdir] = contrib
 
-projects[colorbox][version] = "2.10"
+projects[colorbox][version] = "2.11"
 projects[colorbox][subdir] = contrib
 
 projects[comment_goodness][version] = "1.4"
