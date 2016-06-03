@@ -497,7 +497,6 @@ function _openfed_get_default_permissions() {
     'administer image styles' => array(
       'Builder',
       'Configurator',
-      'Content Manager',
     ),
 
     // imce
