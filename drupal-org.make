@@ -520,5 +520,5 @@ projects[workbench_moderation][download][revision] = 2c91211
 projects[workbench_moderation][subdir] = contrib
 projects[workbench_moderation][patch][1372500] = "https://www.drupal.org/files/issues/workbench_moderation_sync_infinite_loop-1372500-16.patch"
 
-projects[xmlsitemap][version] = "2.2"
+projects[xmlsitemap][version] = "2.3"
 projects[xmlsitemap][subdir] = contrib
