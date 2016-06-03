@@ -8,6 +8,7 @@ Next version
    #2738525: Site update fails when rules is disabled
    #2666490: Module upgrade: Hierarchical Select
    #2726641: Module upgrade: XML Sitemap
+   #2727401: Module upgrade: Media
 
 19 May 2016 - Version 2.0-beta2
 -------------------------------

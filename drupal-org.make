@@ -227,7 +227,7 @@ projects[field_slideshow][version] = "1.82"
 projects[field_slideshow][subdir] = contrib
 projects[field_slideshow][patch][2326155] = "https://www.drupal.org/files/issues/field_slideshow-swipe-2326155-1.patch"
 
-projects[file_entity][version] = "2.0-beta2"
+projects[file_entity][version] = "2.0-beta3"
 projects[file_entity][subdir] = contrib
 
 projects[flag][version] = "3.7"
@@ -312,7 +312,7 @@ projects[logintoboggan][patch][1142808] = "https://www.drupal.org/files/logintob
 projects[m4032404][version] = "1.0-beta2"
 projects[m4032404][subdir] = contrib
 
-projects[media][version] = "2.0-beta1"
+projects[media][version] = "2.0-beta2"
 projects[media][subdir] = contrib
 projects[media][patch][2534724] = "https://www.drupal.org/files/issues/media-browser_opens_twice-2534724-53.patch"
 projects[media][patch][2017647] = "https://www.drupal.org/files/issues/media-popup_translations-2017647-15.patch"
