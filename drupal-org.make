@@ -407,6 +407,7 @@ projects[role_delegation][patch][1156414] = "https://www.drupal.org/files/issues
 
 projects[rules][version] = "2.9"
 projects[rules][subdir] = contrib
+projects[rules][patch][2738525] = "https://www.drupal.org/files/issues/rules-2449513-24.patch"
 
 projects[scheduler][version] = "1.4"
 projects[scheduler][subdir] = contrib

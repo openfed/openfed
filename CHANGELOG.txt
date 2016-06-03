@@ -5,6 +5,7 @@ Next version
 ------------
  * Issue
    #2741941: Fix Apachesolr notice during indexing
+   #2738525: Site update fails when rules is disabled
 
 19 May 2016 - Version 2.0-beta2
 -------------------------------
