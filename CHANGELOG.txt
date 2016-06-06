@@ -7,6 +7,7 @@ Next version
    #2741941: Fix Apachesolr notice during indexing
    #2738525: Site update fails when rules is disabled
    #2741867: Disable 'administer image styles' permission for content managers
+   #2743437: Download link is not translatable 
 
  * Module upgrades
    #2666490: Module upgrade: Hierarchical Select
