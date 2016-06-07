@@ -741,4 +741,11 @@ function openfed_update_7316() {
   foreach (array_keys($roles) as $role) {
     user_role_change_permissions($role, array('display admin pages in another language' => TRUE));
   }
+  $admin_language_pages = variable_get('admin_language_pages', FALSE);
+  if ($admin_language_pages) {
+    variable_set('admin_language_pages', $admin_language_pages . '\nmedia/ajax/*');
+  }
+  else {
+    variable_set('admin_language_pages', 'admin_menu/*\nfile/ajax/*\nsystem/ajax\nmedia/ajax/*');
+  }
 }

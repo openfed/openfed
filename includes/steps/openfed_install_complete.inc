@@ -142,4 +142,7 @@ function _openfed_install_complete_grant_permissions() {
   // Set up workbench moderation.
   require_once(DRUPAL_ROOT . '/' . drupal_get_path('profile', 'openfed') . '/includes/misc/openfed_functions.inc');
   _openfed_workbench_moderation_setup();
+
+  // Set up admin language.
+  variable_set('admin_language_pages', 'admin_menu/*\nfile/ajax/*\nsystem/ajax\nmedia/ajax/*');
 }
