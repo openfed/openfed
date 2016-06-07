@@ -15,7 +15,7 @@ function _openfed_get_theme_frontend() {
  * Gets the name of the theme backend.
  */
 function _openfed_get_theme_backend() {
-  return 'cms_theme';
+  return 'ofed_adminimal_cms';
 }
 /**
  * Gets the name of the theme maintenance.
