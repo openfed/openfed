@@ -16,8 +16,11 @@ Next version
    #2726489: Module upgrade: Metatag
    #2742239: Module upgrade: Colorbox
 
- * Added modules
+ * New module
    #2278157: Add module: Context
+
+ * New theme
+   #2744261: Add theme: Openfed CMS Adminimal Theme
 
 19 May 2016 - Version 2.0-beta2
 -------------------------------

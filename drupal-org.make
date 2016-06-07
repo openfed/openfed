@@ -64,6 +64,19 @@ projects[ofed_theme_cms][subdir] = contrib
 projects[ofed_theme_maintenance][version] = "1.0"
 projects[ofed_theme_maintenance][subdir] = contrib
 
+projects[ofed_cms_adminimal_theme][download][type] = git
+projects[ofed_cms_adminimal_theme][download][branch] = "7.x-1.x"
+projects[ofed_cms_adminimal_theme][download][revision] = 113d4fd
+projects[ofed_cms_adminimal_theme][subdir] = contrib
+
+;
+; Themes
+; Please fill the following out. Type may be one of get, git, bzr or svn, and url is the url of the download.
+;
+
+projects[adminimal_theme][version] = "1.24"
+projects[adminimal_theme][subdir] = contrib
+
 ;
 ; Modules
 ; Please fill the following out. Type may be one of get, git, bzr or svn, and url is the url of the download.
