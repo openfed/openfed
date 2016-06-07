@@ -68,6 +68,7 @@ core = 7.x
   dependencies[] = html5_tools
   dependencies[] = i18n
   dependencies[] = i18n_block
+  dependencies[] = i18n_field
   dependencies[] = i18n_node
   dependencies[] = i18n_path
   dependencies[] = i18n_redirect
