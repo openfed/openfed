@@ -109,7 +109,6 @@ core = 7.x
   dependencies[] = rules_scheduler
   dependencies[] = scheduler
   dependencies[] = seckit
-  dependencies[] = securelogin
   dependencies[] = security_review
   dependencies[] = sharethis
   dependencies[] = special_menu_items

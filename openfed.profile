@@ -52,7 +52,7 @@ function openfed_form_install_configure_form_alter(&$form, $form_state) {
  */
 function openfed_form_install_configure_https($form, &$form_state) {
   if ($form_state['values']['disable_https_checkbox'] != 1) {
-    require_once('includes/install/openfed_securelogin.inc');
+    module_enable(array('securelogin'));
   }
 }
 
