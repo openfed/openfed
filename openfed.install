@@ -755,6 +755,7 @@ function openfed_update_7316() {
  * Set up Openfed CMS Adminimal Theme.
  */
 function openfed_update_7317() {
+  theme_disable(array('cms_theme'));
   theme_enable(array('adminimal', 'ofed_cms_adminimal'));
   variable_set('admin_theme', 'ofed_cms_adminimal');
 }
