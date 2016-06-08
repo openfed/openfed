@@ -20,3 +20,8 @@ projects[drupal][patch][2195283] = http://drupal.org/files/issues/drupal-robotst
 ; One time patch to cover possible issue in upgrade to >=7.34
 ; see https://www.drupal.org/node/2378561#comment-9736487
 projects[drupal][patch][2378561] = http://www.drupal.org/files/issues/2378561-blocktitle-12.patch
+
+; Drupal 7.43 / 8.0.4 regression: When an anonymous user submits a form with an
+; un-uploaded file that leads to a validation error, the file is lost on the
+; next correct submission
+https://www.drupal.org/files/issues/drupal-n2678822-22.patch
