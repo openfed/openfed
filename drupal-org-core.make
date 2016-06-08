@@ -24,4 +24,4 @@ projects[drupal][patch][2378561] = http://www.drupal.org/files/issues/2378561-bl
 ; Drupal 7.43 / 8.0.4 regression: When an anonymous user submits a form with an
 ; un-uploaded file that leads to a validation error, the file is lost on the
 ; next correct submission
-https://www.drupal.org/files/issues/drupal-n2678822-22.patch
+projects[drupal][patch][2678822] = https://www.drupal.org/files/issues/drupal-n2678822-22.patch
