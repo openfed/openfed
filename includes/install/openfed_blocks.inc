@@ -135,34 +135,7 @@ $backend_blocks = array(
     'theme' => _openfed_get_theme_backend(),
     'status' => 1,
     'weight' => 0,
-    'region' => 'tools',
-    'pages' => '',
-    'title' => '<none>',
-    'cache' => -1,
-  ),
-  // Header.
-  // Navigation.
-  // Main Menu.
-  array(
-    'module' => 'menu',
-    'delta' => 'menu-cms-menu',
-    'theme' => _openfed_get_theme_backend(),
-    'status' => 1,
-    'weight' => 0,
-    'region' => 'navigation',
-    'pages' => '',
-    'title' => '<none>',
-    'cache' => -1,
-  ),
-  // Top.
-  // Breadcrumb.
-  array(
-    'module' => 'easy_breadcrumb',
-    'delta' => 'easy_breadcrumb',
-    'theme' => _openfed_get_theme_backend(),
-    'status' => 1,
-    'weight' => 0,
-    'region' => 'breadcrumb',
+    'region' => 'before_content',
     'pages' => '',
     'title' => '<none>',
     'cache' => -1,
