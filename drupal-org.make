@@ -242,7 +242,7 @@ projects[field_slideshow][patch][2326155] = "https://www.drupal.org/files/issues
 
 projects[file_entity][version] = "2.0-beta3"
 projects[file_entity][subdir] = contrib
-projects[file_entity][patch][2097261] = "https://www.drupal.org/files/file_entity-download_link_i18n-2097261-1.patch"
+projects[file_entity][patch][2097261] = "https://www.drupal.org/files/file_entity-download_link_i18n-2097261-4.patch"
 
 projects[flag][version] = "3.7"
 projects[flag][subdir] = contrib
@@ -328,7 +328,6 @@ projects[m4032404][subdir] = contrib
 
 projects[media][version] = "2.0-beta2"
 projects[media][subdir] = contrib
-projects[media][patch][2534724] = "https://www.drupal.org/files/issues/media-browser_opens_twice-2534724-53.patch"
 projects[media][patch][2017647] = "https://www.drupal.org/files/issues/media-popup_translations-2017647-15.patch"
 projects[media][patch][2612190] = "https://www.drupal.org/files/issues/media-array_merge_error_in_update_7208-2612190-3-D7.patch"
 
