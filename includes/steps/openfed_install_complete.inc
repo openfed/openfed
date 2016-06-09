@@ -16,6 +16,7 @@ function openfed_install_complete() {
   $enable = array(
     'theme_default' => _openfed_get_theme_frontend(),
     'admin_theme' => _openfed_get_theme_backend(),
+    'admin_theme_base' => 'adminimal',
     'maintenance_theme' => _openfed_get_theme_maintenance(),
   );
   theme_enable($enable);
