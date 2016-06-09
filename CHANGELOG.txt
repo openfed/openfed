@@ -1,8 +1,8 @@
 CHANGELOG
 =========
 
-Next version
-------------
+9 June 2016 - Version 2.0-rc1
+-----------------------------
  * Issues
    #2741941: Fix Apachesolr notice during indexing
    #2738525: Site update fails when rules is disabled
