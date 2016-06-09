@@ -64,9 +64,7 @@ projects[ofed_theme_cms][subdir] = contrib
 projects[ofed_theme_maintenance][version] = "1.0"
 projects[ofed_theme_maintenance][subdir] = contrib
 
-projects[ofed_cms_adminimal_theme][download][type] = git
-projects[ofed_cms_adminimal_theme][download][branch] = "7.x-1.x"
-projects[ofed_cms_adminimal_theme][download][revision] = 113d4fd
+projects[ofed_cms_adminimal_theme][version] = "1.0-beta1"
 projects[ofed_cms_adminimal_theme][subdir] = contrib
 
 ;
