@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+New release
+-----------
+ * Issues
+   #2521138: Breadcrumb shows escaped HTML tags on core admin pages
+
 9 June 2016 - Version 2.0-rc1
 -----------------------------
  * Issues

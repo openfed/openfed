@@ -174,6 +174,7 @@ projects[ds][subdir] = contrib
 
 projects[easy_breadcrumb][version] = "2.12"
 projects[easy_breadcrumb][subdir] = contrib
+projects[easy_breadcrumb][patch][2521138] = "https://www.drupal.org/files/issues/check-plain-vs-filter-xss_0_1.patch"
 
 projects[elements][version] = "1.4"
 projects[elements][subdir] = contrib
