@@ -1,8 +1,8 @@
 CHANGELOG
 =========
 
-New release
------------
+16 June 2016 - Version 2.0-rc2
+------------------------------
  * Issues
    #2521138: Breadcrumb shows escaped HTML tags on core admin pages
    #2726639: Module upgrade: Views
