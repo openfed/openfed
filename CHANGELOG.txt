@@ -6,6 +6,7 @@ New release
  * Issues
    #2521138: Breadcrumb shows escaped HTML tags on core admin pages
    #2726639: Module upgrade: Views
+   #2750273: Update Drupal core to 7.44
 
 9 June 2016 - Version 2.0-rc1
 -----------------------------

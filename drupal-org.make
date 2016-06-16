@@ -495,10 +495,9 @@ projects[variable][subdir] = contrib
 projects[view_unpublished][version] = "1.2"
 projects[view_unpublished][subdir] = contrib
 
-projects[views][version] = "3.13"
+projects[views][version] = "3.14"
 projects[views][subdir] = contrib
 projects[views][patch][1803758] = "https://www.drupal.org/files/views-language_prefix_for_ajax-1803758-1.patch"
-projects[views][patch][564106] = "https://www.drupal.org/files/issues/views-custom-url-query-for-more-link-564106-84.patch"
 
 projects[views_data_export][version] = "3.0-beta9"
 projects[views_data_export][subdir] = contrib
