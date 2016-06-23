@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+23 June 2016 - Version 2.0
+--------------------------
+No changes
+
 16 June 2016 - Version 2.0-rc2
 ------------------------------
  * Issues
