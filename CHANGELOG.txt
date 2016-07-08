@@ -1,8 +1,8 @@
 CHANGELOG
 =========
 
-New version
------------
+8 July 2016 - Version 2.1-rc1
+-----------------------------
  * Issues
    #2762671: Upgrade Drupal core to 7.50
 
