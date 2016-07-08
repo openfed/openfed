@@ -8,6 +8,7 @@ New version
 
  * Module upgrades:
    #2762809: Module upgrade: Entityreference View Widget
+   #2762807: Module upgrade: Metatag
 
 23 June 2016 - Version 2.0
 --------------------------
