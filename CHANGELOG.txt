@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+New version
+-----------
+ * Issues
+   #2762671: Upgrade Drupal core to 7.50
+
 23 June 2016 - Version 2.0
 --------------------------
 No changes
