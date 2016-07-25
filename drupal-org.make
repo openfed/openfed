@@ -83,9 +83,7 @@ projects[adminimal_theme][subdir] = contrib
 projects[addanother][version] = "2.2"
 projects[addanother][subdir] = contrib
 
-projects[admin_language][download][type] = git
-projects[admin_language][download][branch] = "7.x-1.x"
-projects[admin_language][download][revision] = e3ef352
+projects[admin_language][version] = "1.0-beta2"
 projects[admin_language][subdir] = contrib
 
 projects[admin_menu][version] = "3.0-rc5"
