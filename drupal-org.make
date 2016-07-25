@@ -437,7 +437,7 @@ projects[securelogin][subdir] = contrib
 projects[security_review][version] = "1.2"
 projects[security_review][subdir] = contrib
 
-projects[sharethis][version] = "2.12"
+projects[sharethis][version] = "2.13"
 projects[sharethis][subdir] = contrib
 projects[sharethis][patch][2353369] = "https://www.drupal.org/files/issues/sharethis-link_accessibility-1289054-43.patch"
 
