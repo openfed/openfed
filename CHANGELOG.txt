@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+25 July 2016 - Version 2.2-rc2
+------------------------------
+ * Module upgrade:
+   #2772221: Module upgrade: ShareThis
+
 25 July 2016 - Version 2.2-rc1
 ------------------------------
  * Module upgrades:
@@ -9,6 +14,7 @@ CHANGELOG
    #2772223: Module upgrade: Webform
    #2772221: Module upgrade: ShareThis
    #2772227: Module upgrade: Addemar Subscription
+   #2764789: Module upgrade: Administration Language
 
 8 July 2016 - Version 2.1
 -------------------------
