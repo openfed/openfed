@@ -5,6 +5,7 @@ CHANGELOG
 ------------------------------
  * Module upgrades:
    #2772209: Module upgrade: Multiselect
+   #2772213: Module upgrade: Scheduler
 
 8 July 2016 - Version 2.1
 -------------------------

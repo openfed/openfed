@@ -370,7 +370,7 @@ projects[metatag][subdir] = contrib
 projects[multiple_node_menu][version] = "1.0-beta2"
 projects[multiple_node_menu][subdir] = contrib
 
-projects[multiselect][version] = "1.11"
+projects[multiselect][version] = "1.12"
 projects[multiselect][subdir] = contrib
 
 projects[navigation404][version] = "1.0"
@@ -421,7 +421,7 @@ projects[rules][version] = "2.9"
 projects[rules][subdir] = contrib
 projects[rules][patch][2738525] = "https://www.drupal.org/files/issues/rules-2449513-24.patch"
 
-projects[scheduler][version] = "1.4"
+projects[scheduler][version] = "1.5"
 projects[scheduler][subdir] = contrib
 
 projects[search_config][version] = "1.1"
