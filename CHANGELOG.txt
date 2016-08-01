@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+1 August 2016 - Version 2.3
+---------------------------
+No changes
+
 1 August 2016 - Version 2.3-rc1
 -------------------------------
  * Module upgrade:
