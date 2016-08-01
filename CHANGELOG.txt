@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+1 August 2016 - Version 2.3-rc1
+-------------------------------
+ * Module upgrade:
+   #2764789: Module upgrade: Administration Language
+
 25 July 2016 - Version 2.2
 --------------------------
 No changes
