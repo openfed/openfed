@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+4 August 2016 - Version 2.4-rc1
+-------------------------------
+ * Module upgrade:
+   #2779033: Administration Views
+
 1 August 2016 - Version 2.3
 ---------------------------
 No changes
