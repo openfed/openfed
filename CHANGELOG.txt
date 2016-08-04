@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+4 August 2016 - Version 2.4
+---------------------------
+No changes
+
 4 August 2016 - Version 2.4-rc1
 -------------------------------
  * Module upgrade:

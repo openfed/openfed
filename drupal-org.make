@@ -96,7 +96,7 @@ projects[admin_menu_content_languages][subdir] = contrib
 projects[admin_theme][version] = "1.0"
 projects[admin_theme][subdir] = contrib
 
-projects[admin_views][version] = "1.5"
+projects[admin_views][version] = "1.6"
 projects[admin_views][subdir] = contrib
 
 projects[apachesolr][version] = "1.8"
