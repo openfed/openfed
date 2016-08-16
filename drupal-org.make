@@ -113,6 +113,9 @@ projects[apachesolr_multilingual][version] = "1.3"
 projects[apachesolr_multilingual][subdir] = contrib
 projects[apachesolr_multilingual][patch][2293203] = "https://www.drupal.org/files/issues/2293203.apachesolr_multilingual.apachesolr_multilingual_apachesolr_index_documents_alter-language.patch"
 
+projects[apachesolr_views][version] = "1.1-beta1"
+projects[apachesolr_views][subdir] = contrib
+
 projects[back_to_top][version] = "1.5"
 projects[back_to_top][subdir] = contrib
 

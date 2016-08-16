@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+Next version
+------------
+ * Added module:
+   #2783175: Module addition - Apachesolr_views
+
 4 August 2016 - Version 2.4
 ---------------------------
 No changes
