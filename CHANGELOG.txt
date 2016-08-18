@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+18 August 2016 - Version 2.5
+----------------------------
+No changes
+
 18 August 2016 - Version 2.5-rc1
 --------------------------------
  * Added module:
