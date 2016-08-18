@@ -384,7 +384,7 @@ projects[node_edit_redirect][subdir] = contrib
 projects[override_node_options][version] = "1.13"
 projects[override_node_options][subdir] = contrib
 
-projects[panels][version] = "3.5"
+projects[panels][version] = "3.6"
 projects[panels][subdir] = contrib
 
 projects[panels_extra_layouts][version] = "2.0"
