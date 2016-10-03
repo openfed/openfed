@@ -6,6 +6,9 @@ Next release - Version 2.6-rc1
  * Drupal core upgrade:
    #2810607: Update Drupal core to 7.51
 
+ * Issue:
+   #1399506: Language Path Checking should only redirect when viewing the node
+
 18 August 2016 - Version 2.5
 ----------------------------
 No changes

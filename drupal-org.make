@@ -249,6 +249,7 @@ projects[flag][subdir] = contrib
 
 projects[globalredirect][version] = "1.5"
 projects[globalredirect][subdir] = contrib
+projects[globalredirect][patch][2810609] = "https://www.drupal.org/files/language_redirect_view_node-1399506-2.patch"
 
 projects[gmap][version] = "2.11"
 projects[gmap][subdir] = contrib
