@@ -9,6 +9,9 @@ Next release - Version 2.6-rc1
  * Issue:
    #1399506: Language Path Checking should only redirect when viewing the node
 
+ * Added module:
+   #2797637: Add module: termstatus
+
 18 August 2016 - Version 2.5
 ----------------------------
 No changes
