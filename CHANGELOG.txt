@@ -8,6 +8,7 @@ CHANGELOG
 
  * Issue:
    #1399506: Language Path Checking should only redirect when viewing the node
+   #2812975: Support links to entity translated nodes in CKEditor link
 
  * Added module:
    #2797637: Add module: termstatus
