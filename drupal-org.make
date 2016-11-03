@@ -531,11 +531,8 @@ projects[webform_rules][subdir] = contrib
 projects[weight][version] = "2.5"
 projects[weight][subdir] = contrib
 
-projects[workbench_moderation][download][type] = git
-projects[workbench_moderation][download][branch] = "7.x-1.x"
-projects[workbench_moderation][download][revision] = 2c91211
+projects[workbench_moderation][version] = "3.0"
 projects[workbench_moderation][subdir] = contrib
-projects[workbench_moderation][patch][1372500] = "https://www.drupal.org/files/issues/workbench_moderation_sync_infinite_loop-1372500-16.patch"
 
 projects[xmlsitemap][version] = "2.3"
 projects[xmlsitemap][subdir] = contrib
