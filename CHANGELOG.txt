@@ -1,6 +1,10 @@
 CHANGELOG
 =========
-17 November 2016 - Version 2.7-rc2
+17 November 2016 - Version 2.7
+----------------------------
+No changes
+
+17 November 2016 - Version 2.7-rc3
 ------------------------------
  * Drupal core upgrade:
    #2810607: Update Drupal core to 7.52
