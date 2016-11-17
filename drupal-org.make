@@ -83,7 +83,7 @@ projects[adminimal_theme][subdir] = contrib
 projects[addanother][version] = "2.2"
 projects[addanother][subdir] = contrib
 
-projects[admin_language][version] = "1.0-beta3"
+projects[admin_language][version] = "1.0-beta4"
 projects[admin_language][subdir] = contrib
 
 projects[admin_menu][version] = "3.0-rc5"
@@ -531,7 +531,7 @@ projects[webform_rules][subdir] = contrib
 projects[weight][version] = "2.5"
 projects[weight][subdir] = contrib
 
-projects[workbench_moderation][version] = "3.0"
+projects[workbench_moderation][version] = "1.4"
 projects[workbench_moderation][subdir] = contrib
 
 projects[xmlsitemap][version] = "2.3"
