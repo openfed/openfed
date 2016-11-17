@@ -1,5 +1,16 @@
 CHANGELOG
 =========
+17 November 2016 - Version 2.7-rc2
+------------------------------
+ * Drupal core upgrade:
+   #2810607: Update Drupal core to 7.52
+
+ * Module upgrade:
+   #2820408: Module upgrade: Administration Language
+
+ * Module downgrade:
+   #2824607: Module upgrade: Workbench Moderation
+
 3 November 2016 - Version 2.7-rc2
 ------------------------------
  * Module upgrade:
@@ -105,7 +116,7 @@ No changes
    #2741941: Fix Apachesolr notice during indexing
    #2738525: Site update fails when rules is disabled
    #2741867: Disable 'administer image styles' permission for content managers
-   #2743437: Download link is not translatable 
+   #2743437: Download link is not translatable
 
  * Module upgrades
    #2666490: Module upgrade: Hierarchical Select
@@ -436,7 +447,7 @@ No changes
 03 November 2014 - Version 1.9
 ------------------------------
 No changes
- 
+
 29 October 2014 - Version 1.9-rc3
 ---------------------------------
   * Issues:
@@ -482,7 +493,7 @@ No changes
     #2309659: Accessible controls for Flash/Youtube embedded videos
     #2353369: Improve accessibility of ShareThis links
     #2358133: Role delegation: Forbid editing of accounts that have higher
-              permission than current user 
+              permission than current user
 
 25 September 2014 - Version 1.9-beta2
 -------------------------------------
@@ -497,7 +508,7 @@ No changes
 
   * Module upgrades:
     #2292389: Module upgrade: Flag
-    #2290899: Module upgrade: GMap 
+    #2290899: Module upgrade: GMap
     #2323201: Module upgrade: Localization update
     #2323205: Module upgrade: Media: SoundCloud
     #2324433: Module upgrade: Location
@@ -517,7 +528,7 @@ No changes
   * Library upgrades:
     #2308113: Library upgrade: CKEditor
     #2324427: Library upgrade: Colorbox
- 
+
   * Theme upgrades:
     #2329161: Theme upgrade: Openfed Nerra
     #2333387: Theme upgrade: Openfed CMS
@@ -540,13 +551,13 @@ No changes
 06 August 2014 - Version 7.x-1.8-beta1
 --------------------------------------
   * Removed modules:
-    #2311343: Remove modules: Captcha and Recaptcha 
+    #2311343: Remove modules: Captcha and Recaptcha
 
   * Module upgrades:
     #2315277: Module upgrade: Apache Solr Multilingual
     #2312719: Module upgrade: Features
-    #2311321: Module upgrade: Metatag 
- 
+    #2311321: Module upgrade: Metatag
+
 04 August 2014 - Version 7.x-1.8-alpha1
 ---------------------------------------
   * Core upgrade:
@@ -554,26 +565,26 @@ No changes
 
   * Module upgrades:
     #2309815: Module upgrade: LoginToboggan
-    #2309817: Module upgrade: CKEditor 
-    #2309821: Module upgrade: Path Breadcrumbs 
+    #2309817: Module upgrade: CKEditor
+    #2309821: Module upgrade: Path Breadcrumbs
     #2309827: Module upgrade: Twitter Block
     #2309839: Module upgrade: Facet API
     #2310651: Module upgrade: Apache Solr Autocomplete
     #2310653: Module upgrade: Easy Breadcrumb
     #2310655: Module upgrade: External Links
     #2311319: Module upgrade: Location
-    #2311321: Module upgrade: Metatag 
-    #2311327: Module upgrade: Colorbox 
+    #2311321: Module upgrade: Metatag
+    #2311327: Module upgrade: Colorbox
     #2312719: Module upgrade: Features
     #2315273: Module upgrade: Date
     #2315277: Module upgrade: Apache Solr Multilingual
     #2315281: Module upgrade: Features Override
-    #2315287: Module upgrade: ShareThis 
+    #2315287: Module upgrade: ShareThis
 
   * Library upgrades:
     #2308113: Library upgrade: CKEditor
     #2311331: Library upgrade: Colorbox
- 
+
 01 July 2014 - Version 7.x-1.7
 ------------------------------
 No changes
@@ -614,7 +625,7 @@ No changes
 
   * Removed module:
     #2219649: Remove module: Mollom
- 
+
   * New module:
     #2223169: New module: Media: SoundCloud
 
@@ -652,11 +663,11 @@ No changes
   * Library upgrades:
     #2243103: Library upgrade: Colorbox
     #2248715: Library upgrade: CKEditor
- 
+
   * Theme upgrades:
     #2248263: Theme upgrade: Openfed Nerra
     #2260515: Theme upgrade: Openfed CMS
- 
+
 10 April 2014 - Version 7.x-1.6
 -------------------------------
   * Theme upgrade:
@@ -763,7 +774,7 @@ No changes
 14 January 2014 - Version 7.x-1.4-beta1
 ---------------------------------------
   * Issues:
-    #2148101: Administration Views not automatically enabled during install  
+    #2148101: Administration Views not automatically enabled during install
     #2156083: Dependency between ofed feature modules and ds_ui
     #2158321: Can no longer create ofedslider after 1.3 update
     #2109869: refactor permissions functionality - implement drush command
@@ -807,7 +818,7 @@ No changes
 
   * Module upgrades:
     #2150369: Module upgrade: Language Cookie
- 
+
 04 December 2013 - Version 7.x-1.3-rc6
 --------------------------------------
   * Theme upgrades:
@@ -891,7 +902,7 @@ No changes
     #2134729: RTE - Bullet points not showing
     #2135783: Page disappearing from menu if node is edited
     #2122259: Mollom - remove the dependency in the info file
-  
+
 6 November 2013 - Version 7.x-1.2
 ---------------------------------
 No changes
