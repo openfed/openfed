@@ -1,5 +1,10 @@
 CHANGELOG
 =========
+3 February 2017 - Version 2.8
+------------------------------
+ * Drupal core upgrade:
+   #2848430: Update Drupal core to 7.54
+
 17 November 2016 - Version 2.7
 ----------------------------
 No changes
