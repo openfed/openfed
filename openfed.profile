@@ -2,196 +2,119 @@
 
 /**
  * @file
- * Openfed profile file for Openfed distribution.
+ * Profile file of Openfed that modifies the install form.
  */
 
-/**
- * Includes.
- */
-// Include all custom functions.
-require_once('includes/misc/openfed_functions.inc');
-require_once('includes/steps/openfed_install_files_and_folders.inc');
-require_once('includes/steps/openfed_install_regional.inc');
-require_once('includes/steps/openfed_install_menus.inc');
-require_once('includes/steps/openfed_install_roles.inc');
-require_once('includes/steps/openfed_install_taxonomy.inc');
-require_once('includes/steps/openfed_install_functionalities.inc');
-require_once('includes/steps/openfed_install_complete.inc');
+use Drupal\openfed\Form\SetupLanguagesForm;
+use Drupal\openfed\Form\SetupMenusForm;
+use Drupal\openfed\Form\SetupRolesForm;
+use Drupal\Core\Form\FormStateInterface;
 
 /**
- * Implements hook_form_FORM_ID_alter() for install_configure_form().
+ * Implements hook_install_tasks().
+ */
+function openfed_install_tasks(array &$install_state) {
+  return [
+    'openfed_setup_languages' => [
+      'display_name' => t('Set up languages'),
+      'display' => TRUE,
+      'type' => 'form',
+      'function' => SetupLanguagesForm::class,
+    ],
+//    'openfed_setup_languages_batch_processing' => [
+//      'display_name' => t('Import enabled languages'),
+//      'display' => TRUE,
+//      'type' => 'batch',
+//      'run' => INSTALL_TASK_RUN_IF_NOT_COMPLETED,
+//    ],
+
+    // Step to choose which menus to pre-install.
+    'openfed_install_menu_form' => [
+      'display_name' => t('Set up menus'),
+      'display' => TRUE,
+      'type' => 'form',
+      'function' => SetupMenusForm::class,
+    ],
+
+    // Step to choose which roles to pre-install.
+    'openfed_install_role_form' => [
+      'display_name' => t('Set up roles'),
+      'display' => TRUE,
+      'type' => 'form',
+      'function' => SetupRolesForm::class,
+    ],
+  ];
+}
+
+/**
+ * Implements hook_install_tasks_alter().
+ */
+function openfed_install_tasks_alter(array &$tasks, array $install_state) {
+  // We'll ignore the language selection task since English will be our default.
+  $tasks['install_select_language'] = [
+    'function' => 'openfed_install_select_language',
+    'display' => FALSE,
+    'run' => INSTALL_TASK_SKIP,
+  ];
+
+  // Run post-installation tasks.
+  $tasks['install_finished']['function'] = 'openfed_post_install';
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter() for the install_configure_form() form.
  *
- * Allows the profile to alter the site configuration form.
+ * @param array $form
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ * @param string $form_id
  */
-function openfed_form_install_configure_form_alter(&$form, $form_state) {
+function openfed_form_install_configure_form_alter(array &$form, FormStateInterface $form_state, $form_id) {
   // Pre-populate the site name with the server name.
   $form['site_information']['site_name']['#default_value'] = 'OpenFed';
-  $form['server_settings']['site_default_country']['#default_value'] = 'BE';
+  $form['regional_settings']['site_default_country']['#default_value'] = 'BE';
+  $form['regional_settings']['date_default_timezone']['#default_value'] = 'Europe/Brussels';
 
- 
+  // Don't check for updates and no need for email notifications
+  $form['update_notifications']['update_status_module']['#default_value'] = [];
+
+
   // Add an option to disable HTTPS.
-  $form['server_settings']['disable_https_fieldset'] = array(
+  $form['regional_settings']['disable_https_fieldset'] = [
     '#type' => 'fieldset',
     '#title' => t('Development settings'),
     '#weight' => 10,
     '#collapsible' => TRUE,
     '#collapsed' => TRUE,
-  );
-  $form['server_settings']['disable_https_fieldset']['disable_https_checkbox'] = array(
+  ];
+  $form['regional_settings']['disable_https_fieldset']['disable_https_checkbox'] = [
     '#type' => 'checkbox',
     '#title' => t('Disable HTTPS (for development only!)'),
-  );
+  ];
 
   // Only check for updates, no need for email notifications
-  $form['update_notifications']['update_status_module']['#default_value'] = array(0, 0);
+  $form['update_notifications']['update_status_module']['#default_value'] = [
+    0,
+    0,
+  ];
+
   $form['#submit'][] = 'openfed_form_install_configure_https';
+
+
 }
 
 /**
  * Submit hook to set up HTTPS.
  */
-function openfed_form_install_configure_https($form, &$form_state) {
-  if ($form_state['values']['disable_https_checkbox'] != 1) {
-    module_enable(array('securelogin'));
+function openfed_form_install_configure_https(array &$form, FormStateInterface $form_state) {
+  if ($form_state->getValue('disable_https_checkbox') != 1) {
+    \Drupal::service('module_installer')->install(['securelogin']);
   }
 }
 
 /**
- * Implements hook_install_tasks().
- *
- * Sets up tasks that can be accomplished within the installation process.
+ * Defines things to do after installation.
  */
-function openfed_install_tasks_alter(&$tasks, $install_state) {
-  // Insert js and css to be able to change the layout.
-  // Load js for custom layout.
-  $file_js = drupal_get_path('theme', 'maintenance') . '/assets/scripts/script.js';
-  if (is_file($file_js)){
-    drupal_add_js($file_js);
-  }
-  // Load css for custom layout.
-  $file_css = drupal_get_path('theme', 'maintenance') . '/assets/styles/design.css';
-  if (is_file($file_css)){
-    drupal_add_css($file_css);
-  }
-
-  // Set the title.
-  drupal_set_title('OpenFed : ' .  drupal_get_title());
-
-  // Rewrite the tasks array as this is the only way to reorder all steps.
-  $task_temp = array();
-
-  if (isset($tasks['install_select_profile'])) {
-    $task_temp['install_select_profile'] = $tasks['install_select_profile'];
-  }
-
-  if (isset($tasks['install_select_locale'])) {
-    $task_temp['install_select_locale'] = $tasks['install_select_locale'];
-  }
-
-  if (isset($tasks['install_load_profile'])) {
-    $task_temp['install_load_profile'] = $tasks['install_load_profile'];
-  }
-
-  if (isset($tasks['install_verify_requirements'])) {
-    $task_temp['install_verify_requirements'] = $tasks['install_verify_requirements'];
-  }
-
-  if (isset($tasks['install_settings_form'])) {
-    $task_temp['install_settings_form'] = $tasks['install_settings_form'];
-  }
-
-  if (isset($tasks['install_system_module'])) {
-    $task_temp['install_system_module'] = $tasks['install_system_module'];
-  }
-
-  if (isset($tasks['install_bootstrap_full'])) {
-    $task_temp['install_bootstrap_full'] = $tasks['install_bootstrap_full'];
-  }
-
-  // Install files and folders.
-  $task_temp['openfed_install_files_and_folders'] = array(
-    'run' => variable_get('openfed_install_files_and_folders_done', FALSE) ? INSTALL_TASK_SKIP : INSTALL_TASK_RUN_IF_NOT_COMPLETED,
-  );
-
-  if (isset($tasks['install_profile_modules'])) {
-    $task_temp['install_profile_modules'] = $tasks['install_profile_modules'];
-  }
-
-  if (isset($tasks['install_import_locales'])) {
-    $task_temp['install_import_locales'] = $tasks['install_import_locales'];
-  }
-
-  // Place Openfed tasks here.
-  // Step to choose which language to pre-install.
-  $task_temp['openfed_install_regional_form'] = array(
-    'display_name' => st('Set up regional'),
-    'display' => TRUE,
-    'type' => 'form',
-  );
-
-  // Batch the process of language activation if a language must be pre-installed.
-  $task_temp['openfed_install_regional_batch'] = array(
-    'display_name' => st('Import internalization'),
-    'display' => variable_get('openfed_regional_batch_run', FALSE),
-    'type' => 'batch',
-    'run' => variable_get('openfed_regional_batch_run', FALSE) ? INSTALL_TASK_RUN_IF_NOT_COMPLETED : INSTALL_TASK_SKIP,
-  );
-
-  // Step to choose which menus to pre-install.
-  $task_temp['openfed_install_menu_form'] = array(
-    'display_name' => st('Set up menus'),
-    'display' => TRUE,
-    'type' => 'form',
-  );
-
-  // Step to choose which taxonomy vocabularies to pre-install.
-  $task_temp['openfed_install_taxonomy_form'] = array(
-    'display_name' => st('Set up taxonomy'),
-    'display' => TRUE,
-    'type' => 'form',
-  );
-
-  // Step to choose which roles to pre-install.
-  $task_temp['openfed_install_role_form'] = array(
-    'display_name' => st('Set up roles'),
-    'display' => TRUE,
-    'type' => 'form',
-  );
-
-  // Step to choose which additional functionalities to add.
-  $task_temp['openfed_install_functionalities_form'] = array(
-    'display_name' => st('Enable content types'),
-    'display' => TRUE,
-    'type' => 'form',
-  );
-
-  // Batch the process of functionalities activation if a functionality must be
-  // pre-installed.
-  $task_temp['openfed_install_functionalities_batch'] = array(
-    'display_name' => st('Import content types'),
-    'display' => variable_get('openfed_content_types_batch_run', FALSE),
-    'type' => 'batch',
-    'run' => variable_get('openfed_content_types_batch_run', FALSE) ? INSTALL_TASK_RUN_IF_NOT_COMPLETED : INSTALL_TASK_SKIP,
-  );
-
-  // Step to rebuild permissions.
-  $task_temp['openfed_install_complete'] = array(
-    'display_name' => st('Setup complete'),
-    'display' => FALSE,
-  );
-
-  if (isset($tasks['install_configure_form'])) {
-    $task_temp['install_configure_form'] = $tasks['install_configure_form'];
-  }
-
-  if (isset($tasks['install_import_locales_remaining'])) {
-    $task_temp['install_import_locales_remaining'] = $tasks['install_import_locales_remaining'];
-  }
-
-  if (isset($tasks['install_finished'])) {
-    $task_temp['install_finished'] = $tasks['install_finished'];
-  }
-
-  // Reset tasks with the newest.
-  $tasks = $task_temp;
+function openfed_post_install() {
+  // Get rid of "The content access permissions need to be rebuilt" message.
+  node_access_rebuild();
 }
