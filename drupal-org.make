@@ -98,6 +98,7 @@ projects[video_embed_field][version] = "1.3"
 projects[views_slideshow][version] = "4.0"
 projects[weight][download][type] = git
 projects[weight][download][revision] = 0b710388b2033793be066e88a9bcd078aa01edb6
+projects[weight][download][branch] = 8.x-3.x
 projects[workbench_access][version] = "1.0-alpha2"
 projects[workbench_moderation][version] = "1.2"
 projects[yamlform][version] = "1.0-beta21"
