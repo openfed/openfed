@@ -58,7 +58,7 @@
     "drupal/ds": "8.2.6",
     "drupal/embed": "8.1.0-rc3",
     "drupal/entity": "8.1.0-alpha4",
-    "drupal/entity_browser": "8.1.0-rc1",
+    "drupal/entity_browser": "8.1.0-beta2",
     "drupal/entity_embed": "8.1.0-beta2",
     "drupal/entityqueue": "8.1.0-alpha6",
     "drupal/eu_cookie_compliance": "8.1.0-beta7",
