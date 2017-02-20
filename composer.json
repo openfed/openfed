@@ -17,7 +17,19 @@
     {
       "type": "composer",
       "url": "https://packages.drupal.org/8"
-    }
+    },
+    {
+       "type": "package",
+       "package": {
+         "name": "jackmoore/colorbox",
+         "version": "master",
+         "type": "drupal-library",
+         "dist": {
+           "url": "https://github.com/jackmoore/colorbox/archive/master.zip",
+           "type": "zip"
+         }
+       }
+     }
   ],
   "require": {
     "composer/installers": "^1.0.20",
