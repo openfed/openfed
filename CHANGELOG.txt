@@ -14,6 +14,7 @@ CHANGELOG
    #2855333: Module upgrade: Entityreference
    #2855336: Module upgrade: Feeds
    #2855338: Module upgrade: Flag
+   #2855340: Module upgrade: Google analytics
 
 3 February 2017 - Version 2.8
 ------------------------------

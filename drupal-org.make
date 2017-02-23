@@ -254,7 +254,7 @@ projects[globalredirect][patch][2810609] = "https://www.drupal.org/files/languag
 projects[gmap][version] = "2.11"
 projects[gmap][subdir] = contrib
 
-projects[google_analytics][version] = "2.2"
+projects[google_analytics][version] = "2.3"
 projects[google_analytics][subdir] = contrib
 
 projects[google_tag][version] = "1.0"
