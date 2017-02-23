@@ -221,7 +221,7 @@ projects[feeds][subdir] = contrib
 projects[feeds_xpathparser][version] = "1.1"
 projects[feeds_xpathparser][subdir] = contrib
 
-projects[field_collection][version] = "1.0-beta12"
+projects[field_collection][version] = "1.0-beta11"
 projects[field_collection][subdir] = contrib
 
 projects[field_conditional_state][version] = "2.1"
