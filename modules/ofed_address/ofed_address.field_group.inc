@@ -11,7 +11,7 @@ function ofed_address_field_group_info() {
   $field_groups = array();
 
   $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->disabled = TRUE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
   $field_group->identifier = 'group_address_line_1|node|ofed_address|default';
   $field_group->group_name = 'group_address_line_1';
@@ -41,7 +41,7 @@ function ofed_address_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $field_groups['group_address_line_1|node|ofed_address|default'] = $field_group;
+  $field_groups[''] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -74,7 +74,7 @@ function ofed_address_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $field_groups['group_address_line_1|node|ofed_address|page_list'] = $field_group;
+  $field_groups[''] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -107,10 +107,10 @@ function ofed_address_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $field_groups['group_address_line_1|node|ofed_address|references'] = $field_group;
+  $field_groups[''] = $field_group;
 
   $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->disabled = TRUE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
   $field_group->identifier = 'group_address_line_2|node|ofed_address|default';
   $field_group->group_name = 'group_address_line_2';
@@ -139,7 +139,7 @@ function ofed_address_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $field_groups['group_address_line_2|node|ofed_address|default'] = $field_group;
+  $field_groups[''] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -171,7 +171,7 @@ function ofed_address_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $field_groups['group_address_line_2|node|ofed_address|page_list'] = $field_group;
+  $field_groups[''] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -203,10 +203,10 @@ function ofed_address_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $field_groups['group_address_line_2|node|ofed_address|references'] = $field_group;
+  $field_groups[''] = $field_group;
 
   $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->disabled = TRUE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
   $field_group->identifier = 'group_address_line_3|node|ofed_address|default';
   $field_group->group_name = 'group_address_line_3';
@@ -234,7 +234,7 @@ function ofed_address_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $field_groups['group_address_line_3|node|ofed_address|default'] = $field_group;
+  $field_groups[''] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -265,7 +265,7 @@ function ofed_address_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $field_groups['group_address_line_3|node|ofed_address|page_list'] = $field_group;
+  $field_groups[''] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -296,7 +296,7 @@ function ofed_address_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $field_groups['group_address_line_3|node|ofed_address|references'] = $field_group;
+  $field_groups[''] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -326,7 +326,7 @@ function ofed_address_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $field_groups['group_ofed_address_page_meta|node|ofed_address|form'] = $field_group;
+  $field_groups[''] = $field_group;
 
   // Translatables
   // Included for use with string extractors like potx.

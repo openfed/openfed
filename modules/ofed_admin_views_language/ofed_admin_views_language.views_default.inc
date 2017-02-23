@@ -127,7 +127,7 @@ function ofed_admin_views_language_views_default_views() {
   );
   /* Field: Bulk operations: Content */
   $handler->display->display_options['fields']['views_bulk_operations']['id'] = 'views_bulk_operations';
-  $handler->display->display_options['fields']['views_bulk_operations']['table'] = 'node';
+  $handler->display->display_options['fields']['views_bulk_operations']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['views_bulk_operations']['field'] = 'views_bulk_operations';
   $handler->display->display_options['fields']['views_bulk_operations']['label'] = '';
   $handler->display->display_options['fields']['views_bulk_operations']['element_label_colon'] = FALSE;
@@ -164,20 +164,6 @@ function ofed_admin_views_language_views_default_views() {
       ),
       'postpone_processing' => 0,
     ),
-    'action::system_message_action' => array(
-      'selected' => 0,
-      'skip_confirmation' => 0,
-      'override_label' => 0,
-      'label' => '',
-      'postpone_processing' => 0,
-    ),
-    'action::views_bulk_operations_script_action' => array(
-      'selected' => 0,
-      'skip_confirmation' => 0,
-      'override_label' => 0,
-      'label' => '',
-      'postpone_processing' => 0,
-    ),
     'action::node_make_sticky_action' => array(
       'selected' => 1,
       'skip_confirmation' => 1,
@@ -191,15 +177,6 @@ function ofed_admin_views_language_views_default_views() {
       'override_label' => 1,
       'label' => 'Unstick',
       'postpone_processing' => 0,
-    ),
-    'action::views_bulk_operations_argument_selector_action' => array(
-      'selected' => 0,
-      'skip_confirmation' => 0,
-      'override_label' => 0,
-      'label' => '',
-      'settings' => array(
-        'url' => '',
-      ),
     ),
     'action::node_promote_action' => array(
       'selected' => 1,
@@ -215,13 +192,6 @@ function ofed_admin_views_language_views_default_views() {
       'label' => 'Publish',
       'postpone_processing' => 0,
     ),
-    'action::system_goto_action' => array(
-      'selected' => 0,
-      'skip_confirmation' => 0,
-      'override_label' => 0,
-      'label' => '',
-      'postpone_processing' => 0,
-    ),
     'action::node_unpromote_action' => array(
       'selected' => 1,
       'skip_confirmation' => 1,
@@ -229,32 +199,11 @@ function ofed_admin_views_language_views_default_views() {
       'label' => 'Demote from front page',
       'postpone_processing' => 0,
     ),
-    'action::node_save_action' => array(
-      'selected' => 0,
-      'skip_confirmation' => 0,
-      'override_label' => 0,
-      'label' => '',
-      'postpone_processing' => 0,
-    ),
-    'action::system_send_email_action' => array(
-      'selected' => 0,
-      'skip_confirmation' => 0,
-      'override_label' => 0,
-      'label' => '',
-      'postpone_processing' => 0,
-    ),
     'action::node_unpublish_action' => array(
       'selected' => 1,
       'skip_confirmation' => 1,
       'override_label' => 1,
       'label' => 'Unpublish',
-      'postpone_processing' => 0,
-    ),
-    'action::node_unpublish_by_keyword_action' => array(
-      'selected' => 0,
-      'skip_confirmation' => 0,
-      'override_label' => 0,
-      'label' => '',
       'postpone_processing' => 0,
     ),
   );

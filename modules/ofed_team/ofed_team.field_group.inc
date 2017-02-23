@@ -38,7 +38,7 @@ function ofed_team_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $field_groups['group_ofed_team_page_meta|node|ofed_team|form'] = $field_group;
+  $field_groups[''] = $field_group;
 
   // Translatables
   // Included for use with string extractors like potx.

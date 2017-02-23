@@ -38,7 +38,7 @@ function ofed_faq_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $field_groups['group_ofed_faq_page_meta|node|ofed_faq|form'] = $field_group;
+  $field_groups[''] = $field_group;
 
   // Translatables
   // Included for use with string extractors like potx.

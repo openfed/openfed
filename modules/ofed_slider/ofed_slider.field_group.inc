@@ -38,7 +38,7 @@ function ofed_slider_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $field_groups['group_ofed_slider_page_meta|node|ofed_slider|form'] = $field_group;
+  $field_groups[''] = $field_group;
 
   // Translatables
   // Included for use with string extractors like potx.

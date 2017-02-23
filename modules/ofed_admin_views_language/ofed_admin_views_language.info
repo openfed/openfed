@@ -5,8 +5,8 @@ package = OpenFed
 project = openfed
 dependencies[] = admin_views
 dependencies[] = views
+datestamp = 1487863191
 features[ctools][] = views:views_default:3.0
 features[features_api][] = api:2
 features[views_view][] = administration_nodes_language
 features_exclude[dependencies][ctools] = ctools
-

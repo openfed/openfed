@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+23 February 2017 - Version 2.9-rc2
+----------------------------------
+ * Issue
+   #2196447: Recreate openfed features
+
 23 February 2017 - Version 2.9-rc1
 ----------------------------------
  * Issue:

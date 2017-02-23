@@ -38,7 +38,7 @@ function ofed_job_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $field_groups['group_ofed_job_page_meta|node|ofed_job|form'] = $field_group;
+  $field_groups[''] = $field_group;
 
   // Translatables
   // Included for use with string extractors like potx.
