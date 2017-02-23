@@ -299,7 +299,7 @@ projects[jquery_update][subdir] = contrib
 projects[l10n_client][version] = "1.3"
 projects[l10n_client][subdir] = contrib
 
-projects[l10n_update][version] = "2.0"
+projects[l10n_update][version] = "2.1"
 projects[l10n_update][subdir] = contrib
 
 projects[language_cookie][version] = "2.0"
