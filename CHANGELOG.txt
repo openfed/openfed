@@ -5,6 +5,7 @@ CHANGELOG
 ----------------------------------
  * Issue
    #2196447: Recreate openfed features
+   #2855354: Module upgrade: Metatag
 
 23 February 2017 - Version 2.9-rc1
 ----------------------------------
@@ -24,7 +25,6 @@ CHANGELOG
    #2855345: Module upgrade: Internationalization
    #2855348: Module upgrade: Media
    #2855351: Module upgrade: Menu link weight
-   #2855354: Module upgrade: Metatag
    #2855359: Module upgrade: Token
    #2855361: Module upgrade: Views Bulk Operations
    #2855362: Module upgrade: Views Data Export
