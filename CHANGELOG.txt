@@ -22,6 +22,7 @@ CHANGELOG
    #2855354: Module upgrade: Metatag
    #2855359: Module upgrade: Token
    #2855361: Module upgrade: Views Bulk Operations
+   #2855362: Module upgrade: Views Data Export
 
 3 February 2017 - Version 2.8
 ------------------------------

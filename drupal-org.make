@@ -502,7 +502,7 @@ projects[view_unpublished][subdir] = contrib
 projects[views][version] = "3.15"
 projects[views][subdir] = contrib
 
-projects[views_data_export][version] = "3.0-beta9"
+projects[views_data_export][version] = "3.1"
 projects[views_data_export][subdir] = contrib
 
 projects[views_bulk_operations][version] = "3.3"
