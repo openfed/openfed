@@ -23,7 +23,8 @@ CHANGELOG
    #2855359: Module upgrade: Token
    #2855361: Module upgrade: Views Bulk Operations
    #2855362: Module upgrade: Views Data Export
-   #2855366: Module upgrade: Views slideshow
+   #2855366: Module upgrade: Views Slideshow
+   #2855369: Module upgrade: Webform
 
 3 February 2017 - Version 2.8
 ------------------------------
