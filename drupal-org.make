@@ -327,9 +327,8 @@ projects[logintoboggan][patch][1142808] = "https://www.drupal.org/files/logintob
 projects[m4032404][version] = "1.0-beta2"
 projects[m4032404][subdir] = contrib
 
-projects[media][version] = "2.0-beta2"
+projects[media][version] = "2.0-rc5"
 projects[media][subdir] = contrib
-projects[media][patch][2017647] = "https://www.drupal.org/files/issues/media-popup_translations-2017647-15.patch"
 projects[media][patch][2612190] = "https://www.drupal.org/files/issues/media-array_merge_error_in_update_7208-2612190-3-D7.patch"
 
 projects[media_soundcloud][version] = "2.1"
