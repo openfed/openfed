@@ -442,7 +442,7 @@ projects[sharethis][version] = "2.13"
 projects[sharethis][subdir] = contrib
 projects[sharethis][patch][2353369] = "https://www.drupal.org/files/issues/1289054-72.patch"
 
-projects[simple_gmap][version] = "1.2"
+projects[simple_gmap][version] = "1.4"
 projects[simple_gmap][subdir] = contrib
 
 projects[site_map][version] = "1.3"

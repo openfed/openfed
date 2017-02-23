@@ -12,6 +12,7 @@ CHANGELOG
    #2855401: Module upgrade: Bean
    #2855404: Module upgrade: Field Permissions
    #2855405: Module upgrade: GoogleTagManager
+   #2855409: Module upgrade: Simple Google Maps
 
 23 February 2017 - Version 2.9-rc1
 ----------------------------------
