@@ -536,6 +536,7 @@ projects[workbench_moderation][download][branch] = "7.x-1.x"
 projects[workbench_moderation][download][revision] = 2c91211
 projects[workbench_moderation][subdir] = contrib
 projects[workbench_moderation][patch][1372500] = "https://www.drupal.org/files/issues/workbench_moderation_sync_infinite_loop-1372500-16.patch"
+projects[workbench_moderation][patch][2855262] = "https://www.drupal.org/files/issues/upgrade_from_1x3_to_3x_fails-2428371-45.patch"
 
 projects[xmlsitemap][version] = "2.3"
 projects[xmlsitemap][subdir] = contrib
