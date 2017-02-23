@@ -6,6 +6,9 @@ CHANGELOG
  * Issue:
    #2855262: Upgrade from Workbench Moderation 1.3 to newer (1.4, 1.5, 3.x) with drush fails.
 
+ * Module upgrade:
+   #2855273: Module upgrade: Views
+
 3 February 2017 - Version 2.8
 ------------------------------
  * Drupal core upgrade:
