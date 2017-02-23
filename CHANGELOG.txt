@@ -16,6 +16,7 @@ CHANGELOG
    #2855338: Module upgrade: Flag
    #2855340: Module upgrade: Google analytics
    #2855342: Module upgrade: Hierarchical Select
+   #2855345: Module upgrade: Internationalization
 
 3 February 2017 - Version 2.8
 ------------------------------
