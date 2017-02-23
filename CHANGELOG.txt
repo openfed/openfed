@@ -11,6 +11,7 @@ CHANGELOG
    #2855285: Module upgrade: CTools
    #2855286: Module upgrade: Diff
    #2855288: Module upgrade: Entity API
+   #2855333: Module upgrade: Entityreference
 
 3 February 2017 - Version 2.8
 ------------------------------

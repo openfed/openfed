@@ -190,9 +190,8 @@ projects[emfield][subdir] = contrib
 projects[entity][version] = "1.8"
 projects[entity][subdir] = contrib
 
-projects[entityreference][version] = "1.1"
+projects[entityreference][version] = "1.2"
 projects[entityreference][subdir] = contrib
-projects[entityreference][patch][1852112] = "https://www.drupal.org/files/entityreference-devel_generate_fix-1852112-18.patch"
 
 projects[entityreference_view_widget][version] = "2.0-rc7"
 projects[entityreference_view_widget][subdir] = contrib
