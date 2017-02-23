@@ -5,6 +5,8 @@ CHANGELOG
 ----------------------------------
  * Issue
    #2196447: Recreate openfed features
+
+ * Module upgrade:
    #2855354: Module upgrade: Metatag
    #2855397: Module upgrade: Title
    #2855399: Module upgrade: Field collection
