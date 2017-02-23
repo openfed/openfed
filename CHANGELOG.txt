@@ -19,6 +19,7 @@ CHANGELOG
    #2855345: Module upgrade: Internationalization
    #2855348: Module upgrade: Media
    #2855351: Module upgrade: Menu link weight
+   #2855354: Module upgrade: Metatag
 
 3 February 2017 - Version 2.8
 ------------------------------
