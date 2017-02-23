@@ -164,7 +164,7 @@ projects[date][subdir] = contrib
 projects[devel][version] = "1.5"
 projects[devel][subdir] = contrib
 
-projects[diff][version] = "3.2"
+projects[diff][version] = "3.3"
 projects[diff][subdir] = contrib
 
 ; Dependency for Workbench Moderation
