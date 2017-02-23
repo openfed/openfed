@@ -9,6 +9,7 @@ CHANGELOG
    #2855397: Module upgrade: Title
    #2855399: Module upgrade: Field collection
    #2855400: Module upgrade: Quiz
+   #2855401: Module upgrade: Bean
 
 23 February 2017 - Version 2.9-rc1
 ----------------------------------

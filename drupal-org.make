@@ -119,7 +119,7 @@ projects[apachesolr_views][subdir] = contrib
 projects[back_to_top][version] = "1.5"
 projects[back_to_top][subdir] = contrib
 
-projects[bean][version] = "1.9"
+projects[bean][version] = "1.11"
 projects[bean][subdir] = contrib
 
 projects[beidmellon][version] = "1.0-rc1"
