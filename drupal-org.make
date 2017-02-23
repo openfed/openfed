@@ -233,7 +233,7 @@ projects[field_default_token][subdir] = contrib
 projects[field_group][version] = "1.5"
 projects[field_group][subdir] = contrib
 
-projects[field_permissions][version] = "1.0-beta2"
+projects[field_permissions][version] = "1.0"
 projects[field_permissions][subdir] = contrib
 
 projects[field_slideshow][version] = "1.82"
