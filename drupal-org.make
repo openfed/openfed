@@ -472,7 +472,7 @@ projects[text_resize][subdir] = contrib
 projects[title][version] = "1.0-alpha8"
 projects[title][subdir] = contrib
 
-projects[token][version] = "1.6"
+projects[token][version] = "1.7"
 projects[token][subdir] = contrib
 
 projects[translation_helpers][version] = "1.0"
