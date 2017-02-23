@@ -260,7 +260,7 @@ projects[google_analytics][subdir] = contrib
 projects[google_tag][version] = "1.0"
 projects[google_tag][subdir] = contrib
 
-projects[hierarchical_select][version] = "3.0-beta7"
+projects[hierarchical_select][version] = "3.0-beta8"
 projects[hierarchical_select][subdir] = contrib
 
 projects[honeypot][version] = "1.22"
