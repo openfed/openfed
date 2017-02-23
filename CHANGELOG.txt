@@ -8,6 +8,7 @@ CHANGELOG
 
  * Module upgrade:
    #2855273: Module upgrade: Views
+   #2855285: Module upgrade: CTools
 
 3 February 2017 - Version 2.8
 ------------------------------
