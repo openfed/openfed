@@ -2,10 +2,10 @@ langcode: en
 status: true
 dependencies:
   config:
+    - workbench_moderation.moderation_state.archived
     - workbench_moderation.moderation_state.draft
-    - openfed_workflow.workbench_moderation.moderation_state.needs_review
-id: needs_review_draft
+id: send_back_to_draft
 label: 'Send Back to Draft'
-stateFrom: needs_review
+stateFrom: archived
 stateTo: draft
-weight: -6
+weight: -1
