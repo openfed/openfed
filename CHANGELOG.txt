@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+Next version
+------------
+ * Issue
+   #2857046: Search files attached to field collection items
+
 23 February 2017 - Version 2.9-rc3
 ----------------------------------
  * Module upgrade:
