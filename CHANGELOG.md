@@ -1,6 +1,14 @@
 CHANGELOG
 =========
-17 February 2017 - Version beta1
+2 March 2017 - Version 1.0-rc2
+----------------------------
+  Release candidate.
+
+1 March 2017 - Version 1.0-rc1
+----------------------------
+  Release candidate.
+
+17 February 2017 - Version 1.0-beta1
 ----------------------------
   Beta release.
 
