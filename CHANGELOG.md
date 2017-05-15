@@ -1,5 +1,19 @@
 CHANGELOG
 =========
+15 May 2017 - Version 1.0-rc9
+----------------------------
+  Added allowed_formats module
+  Added content_translation_workflow module
+  Updated display suite module to 3.x version
+
+14 May 2017 - Version 1.0-rc8
+----------------------------
+  --
+
+14 May 2017 - Version 1.0-rc7
+----------------------------
+  Upgraded Drupal modules and Drupal core to 8.3.2
+  Added anchor_link module
 
 20 April 2017 - Version 1.0-rc6
 ----------------------------
