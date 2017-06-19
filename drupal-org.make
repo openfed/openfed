@@ -103,8 +103,9 @@ projects[apachesolr][version] = "1.8"
 projects[apachesolr][subdir] = contrib
 projects[apachesolr][patch][2315173] = "https://www.drupal.org/files/issues/apachesolr-indexing_teaser-2315173-10.patch"
 
-projects[apachesolr_attachments][version] = "1.4"
-projects[apachesolr_attachments][subdir] = contrib
+projects[apachesolr_attachments][download][type] = git
+projects[apachesolr_attachments][download][branch] = "7.x-1.x"
+projects[apachesolr_attachments][download][revision] = 43a8f96
 projects[apachesolr_attachments][patch][2134703] = "https://www.drupal.org/files/issues/field_collection_files-2134703-5.patch"
 
 projects[apachesolr_autocomplete][version] = "1.6"

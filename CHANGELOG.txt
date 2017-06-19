@@ -1,18 +1,24 @@
 CHANGELOG
 =========
 
+19 June 2017 - Version 2.10-rc2
+-------------------------------
+ * Issue
+   #2857046: Search files attached to field collection items
+
 19 June 2017 - Version 2.10-rc1
 -------------------------------
  * Core upgrade:
    #2885407: Update Drupal Core to 7.55
+
+ * Issue
    #2882825: Combined patch for menu_block_settings_override doormats
    #2858500: Twitter Block module is broken
 
 23 February 2017 - Version 2.9
 ------------------------------
- * Issue
-   #2857046: Search files attached to field collection items
-
+No changes
+   
 23 February 2017 - Version 2.9-rc3
 ----------------------------------
  * Module upgrade:
