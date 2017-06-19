@@ -1,8 +1,13 @@
 CHANGELOG
 =========
 
-Next version
-------------
+19 June 2017 - Version 2.10-rc1
+-------------------------------
+ * Core upgrade:
+   #2885407: Update Drupal Core to 7.55
+
+23 February 2017 - Version 2.9
+------------------------------
  * Issue
    #2857046: Search files attached to field collection items
 
