@@ -347,6 +347,7 @@ projects[menu_attributes][subdir] = contrib
 
 projects[menu_block][version] = "2.7"
 projects[menu_block][subdir] = contrib
+projects[menu_block][patch][2882825] = "https://www.drupal.org/files/issues/menu_block_27.patch"
 
 projects[menu_firstchild][version] = "1.1"
 projects[menu_firstchild][subdir] = contrib
