@@ -491,6 +491,7 @@ projects[transliteration][subdir] = contrib
 
 projects[twitter_block][version] = "2.3"
 projects[twitter_block][subdir] = contrib
+projects[twitter_block][patch][2858500] = "https://www.drupal.org/files/issues/twitter_block-2751845-5.patch"
 
 projects[username_enumeration_prevention][version] = "1.2"
 projects[username_enumeration_prevention][subdir] = contrib
