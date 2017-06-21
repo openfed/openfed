@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+21 June 2017 - Version 2.10
+---------------------------
+No changes
+
 21 June 2017 - Version 2.10-rc3
 -------------------------------
  * Core upgrade:
