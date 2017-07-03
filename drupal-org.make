@@ -107,6 +107,7 @@ projects[apachesolr_attachments][download][type] = git
 projects[apachesolr_attachments][download][branch] = "7.x-1.x"
 projects[apachesolr_attachments][download][revision] = 43a8f96
 projects[apachesolr_attachments][patch][2134703] = "https://www.drupal.org/files/issues/field_collection_files-2134703-5.patch"
+projects[apachesolr_attachments][subdir] = contrib
 
 projects[apachesolr_autocomplete][version] = "1.6"
 projects[apachesolr_autocomplete][subdir] = contrib
