@@ -5,6 +5,7 @@ CHANGELOG
 ---------------------------------
  * Module upgrade:
    #2902835: Module upgrade: Views
+   #2902837: Module upgrade: Entity Reference
 
 21 June 2017 - Version 2.10
 ---------------------------

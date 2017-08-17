@@ -193,7 +193,7 @@ projects[emfield][subdir] = contrib
 projects[entity][version] = "1.8"
 projects[entity][subdir] = contrib
 
-projects[entityreference][version] = "1.2"
+projects[entityreference][version] = "1.5"
 projects[entityreference][subdir] = contrib
 
 projects[entityreference_view_widget][version] = "2.0-rc7"
