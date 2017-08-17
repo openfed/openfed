@@ -504,7 +504,7 @@ projects[variable][subdir] = contrib
 projects[view_unpublished][version] = "1.2"
 projects[view_unpublished][subdir] = contrib
 
-projects[views][version] = "3.15"
+projects[views][version] = "3.17"
 projects[views][subdir] = contrib
 
 projects[views_data_export][version] = "3.1"
