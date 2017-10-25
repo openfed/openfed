@@ -38,11 +38,6 @@ libraries[notificationaggregator][download][url] = "http://download.ckeditor.com
 libraries[notificationaggregator][directory_name] = "notificationaggregator"
 libraries[notificationaggregator][destination] = "libraries/ckeditor/plugins"
 
-libraries[templates][download][type] = "get"
-libraries[templates][download][url] = "http://download.ckeditor.com/templates/releases/templates_4.6.2.zip"
-libraries[templates][directory_name] = "templates"
-libraries[templates][destination] = "libraries"
-
 ;
 ; Themes
 ; Please fill the following out. Type may be one of get, git, bzr or svn, and url is the url of the download.
