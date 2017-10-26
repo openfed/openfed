@@ -159,5 +159,5 @@ projects[views_slideshow][version] = "4.5"
 projects[webform][version] = "5.0-beta19"
 projects[weight][version] = "3.1-alpha1"
 projects[workbench_access][version] = "1.0-alpha5"
-projects[workbench_moderation][version] = "1.2"qwwq
+projects[workbench_moderation][version] = "1.2"
 projects[xmlrpc][version] = "1.0-beta1"
