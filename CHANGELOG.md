@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+02 January 2018 - Version 4.3
+----------------------------
+  Updated Redirect module to a stable version
+  Updated Moderation states for Embeddables
+  Added openfed_svg_file module and Embeddable SVG configuration
+
 19 December 2017 - Version 4.2
 ----------------------------
   Update installation procedure.
