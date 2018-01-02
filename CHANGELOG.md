@@ -4,6 +4,7 @@ CHANGELOG
 02 January 2018 - Version 4.3
 ----------------------------
   Updated Redirect module to a stable version
+  Uptated Context module to the recommended version - no update path provided
   Updated Moderation states for Embeddables
   Added openfed_svg_file module and Embeddable SVG configuration
 
