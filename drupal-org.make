@@ -99,7 +99,7 @@ projects[admin_theme][subdir] = contrib
 projects[admin_views][version] = "1.6"
 projects[admin_views][subdir] = contrib
 
-projects[apachesolr][version] = "1.8"
+projects[apachesolr][version] = "1.9"
 projects[apachesolr][subdir] = contrib
 projects[apachesolr][patch][2315173] = "https://www.drupal.org/files/issues/apachesolr-indexing_teaser-2315173-10.patch"
 
@@ -135,7 +135,7 @@ projects[calendar][subdir] = contrib
 projects[combined_termref][version] = "1.0-beta2"
 projects[combined_termref][subdir] = contrib
 
-projects[ckeditor][version] = "1.17"
+projects[ckeditor][version] = "1.18"
 projects[ckeditor][subdir] = contrib
 projects[ckeditor][patch][2355733] = "https://www.drupal.org/files/issues/2355733-ckeditor-customize-default-3.patch"
 
@@ -143,7 +143,7 @@ projects[ckeditor_link][version] = "2.4"
 projects[ckeditor_link][subdir] = contrib
 projects[ckeditor_link][patch] = "https://www.drupal.org/files/issues/ckeditor_link-entity-translation-1875720-42-D7.patch"
 
-projects[colorbox][version] = "2.12"
+projects[colorbox][version] = "2.13"
 projects[colorbox][subdir] = contrib
 
 projects[comment_goodness][version] = "1.4"
@@ -161,7 +161,7 @@ projects[countries][subdir] = contrib
 projects[ctools][version] = "1.12"
 projects[ctools][subdir] = contrib
 
-projects[date][version] = "2.10-rc1"
+projects[date][version] = "2.10"
 projects[date][subdir] = contrib
 
 projects[devel][version] = "1.5"
@@ -171,7 +171,7 @@ projects[diff][version] = "3.3"
 projects[diff][subdir] = contrib
 
 ; Dependency for Workbench Moderation
-projects[drafty][version] = "1.0-beta3"
+projects[drafty][version] = "1.0-rc1"
 projects[drafty][subdir] = contrib
 
 projects[ds][version] = "2.14"
@@ -196,10 +196,10 @@ projects[entity][subdir] = contrib
 projects[entityreference][version] = "1.5"
 projects[entityreference][subdir] = contrib
 
-projects[entityreference_view_widget][version] = "2.0-rc7"
+projects[entityreference_view_widget][version] = "2.1"
 projects[entityreference_view_widget][subdir] = contrib
 
-projects[entity_translation][version] = "1.0-beta5"
+projects[entity_translation][version] = "1.0-beta7"
 projects[entity_translation][subdir] = contrib
 
 projects[extlink][version] = "1.18"
@@ -218,7 +218,7 @@ projects[features][subdir] = contrib
 projects[features_override][version] = "2.0-rc3"
 projects[features_override][subdir] = contrib
 
-projects[feeds][version] = "2.0-beta3"
+projects[feeds][version] = "2.0-beta4"
 projects[feeds][subdir] = contrib
 
 projects[feeds_xpathparser][version] = "1.1"
@@ -233,7 +233,7 @@ projects[field_conditional_state][subdir] = contrib
 projects[field_default_token][version] = "1.3"
 projects[field_default_token][subdir] = contrib
 
-projects[field_group][version] = "1.5"
+projects[field_group][version] = "1.6"
 projects[field_group][subdir] = contrib
 
 projects[field_permissions][version] = "1.0"
@@ -257,34 +257,34 @@ projects[globalredirect][patch][2810609] = "https://www.drupal.org/files/languag
 projects[gmap][version] = "2.11"
 projects[gmap][subdir] = contrib
 
-projects[google_analytics][version] = "2.3"
+projects[google_analytics][version] = "2.4"
 projects[google_analytics][subdir] = contrib
 
-projects[google_tag][version] = "1.1"
+projects[google_tag][version] = "1.3"
 projects[google_tag][subdir] = contrib
 
 projects[hierarchical_select][version] = "3.0-beta8"
 projects[hierarchical_select][subdir] = contrib
 
-projects[honeypot][version] = "1.22"
+projects[honeypot][version] = "1.23"
 projects[honeypot][subdir] = contrib
 
 projects[html5_tools][version] = "1.3"
 projects[html5_tools][subdir] = contrib
 
-projects[i18n][version] = "1.15"
+projects[i18n][version] = "1.22"
 projects[i18n][subdir] = contrib
 
 projects[i18nviews][version] = "3.0-alpha1"
 projects[i18nviews][subdir] = contrib
 
-projects[imagecache_actions][version] = "1.7"
+projects[imagecache_actions][version] = "1.8"
 projects[imagecache_actions][subdir] = contrib
 
 projects[inline_entity_form][version] = "1.8"
 projects[inline_entity_form][subdir] = contrib
 
-projects[imce][version] = "1.10"
+projects[imce][version] = "1.11"
 projects[imce][subdir] = contrib
 
 projects[imce_mkdir][version] = "1.0"
@@ -302,7 +302,7 @@ projects[jquery_update][subdir] = contrib
 projects[l10n_client][version] = "1.3"
 projects[l10n_client][subdir] = contrib
 
-projects[l10n_update][version] = "2.1"
+projects[l10n_update][version] = "2.2"
 projects[l10n_update][subdir] = contrib
 
 projects[language_cookie][version] = "2.0"
@@ -330,9 +330,8 @@ projects[logintoboggan][patch][1142808] = "https://www.drupal.org/files/logintob
 projects[m4032404][version] = "1.0-beta2"
 projects[m4032404][subdir] = contrib
 
-projects[media][version] = "2.0-rc5"
+projects[media][version] = "2.14"
 projects[media][subdir] = contrib
-projects[media][patch][2612190] = "https://www.drupal.org/files/issues/media-array_merge_error_in_update_7208-2612190-3-D7.patch"
 
 projects[media_soundcloud][version] = "2.1"
 projects[media_soundcloud][subdir] = contrib
@@ -340,8 +339,7 @@ projects[media_soundcloud][subdir] = contrib
 projects[media_vimeo][version] = "2.1"
 projects[media_vimeo][subdir] = contrib
 
-projects[media_youtube][version] = "3.0"
-projects[media_youtube][patch][2129317] = "https://www.drupal.org/files/issues/2129317-13.patch"
+projects[media_youtube][version] = "3.6"
 projects[media_youtube][subdir] = contrib
 
 projects[menu_attributes][version] = "1.0"
@@ -366,16 +364,16 @@ projects[menu_position][subdir] = contrib
 projects[menu_to_taxonomy][version] = "1.0-beta9"
 projects[menu_to_taxonomy][subdir] = contrib
 
-projects[module_filter][version] = "2.0"
+projects[module_filter][version] = "2.1"
 projects[module_filter][subdir] = contrib
 
-projects[metatag][version] = "1.21"
+projects[metatag][version] = "1.22"
 projects[metatag][subdir] = contrib
 
 projects[multiple_node_menu][version] = "1.0-beta2"
 projects[multiple_node_menu][subdir] = contrib
 
-projects[multiselect][version] = "1.12"
+projects[multiselect][version] = "1.13"
 projects[multiselect][subdir] = contrib
 
 projects[navigation404][version] = "1.0"
@@ -409,7 +407,7 @@ projects[print][version] = "2.0"
 projects[print][subdir] = contrib
 projects[print][patch][2446693] = "https://www.drupal.org/files/issues/print-2446939-1.patch"
 
-projects[quiz][version] = "4.0-rc7"
+projects[quiz][version] = "4.0-rc8"
 projects[quiz][subdir] = contrib
 
 projects[redirect][version] = "1.0-rc3"
@@ -422,7 +420,7 @@ projects[role_delegation][version] = "1.1"
 projects[role_delegation][subdir] = contrib
 projects[role_delegation][patch][1156414] = "https://www.drupal.org/files/issues/1156414-prevent-editing-of-certain-users-16.patch"
 
-projects[rules][version] = "2.9"
+projects[rules][version] = "2.10"
 projects[rules][subdir] = contrib
 projects[rules][patch][2738525] = "https://www.drupal.org/files/issues/rules-2449513-24.patch"
 
@@ -436,10 +434,10 @@ projects[seckit][version] = "1.9"
 projects[seckit][subdir] = contrib
 projects[seckit][patch][2281315] = "https://www.drupal.org/files/issues/seckit-disable_autocomplete-2281315-13.patch"
 
-projects[securelogin][version] = "1.6"
+projects[securelogin][version] = "1.7"
 projects[securelogin][subdir] = contrib
 
-projects[security_review][version] = "1.2"
+projects[security_review][version] = "1.3"
 projects[security_review][subdir] = contrib
 
 projects[sharethis][version] = "2.13"
@@ -452,7 +450,7 @@ projects[simple_gmap][subdir] = contrib
 projects[site_map][version] = "1.3"
 projects[site_map][subdir] = contrib
 
-projects[site_verify][version] = "1.1"
+projects[site_verify][version] = "1.2"
 projects[site_verify][subdir] = contrib
 
 projects[smart_trim][version] = "1.5"
@@ -504,22 +502,22 @@ projects[variable][subdir] = contrib
 projects[view_unpublished][version] = "1.2"
 projects[view_unpublished][subdir] = contrib
 
-projects[views][version] = "3.17"
+projects[views][version] = "3.18"
 projects[views][subdir] = contrib
 
-projects[views_data_export][version] = "3.1"
+projects[views_data_export][version] = "3.2"
 projects[views_data_export][subdir] = contrib
 
 projects[views_bulk_operations][version] = "3.4"
 projects[views_bulk_operations][subdir] = contrib
 
-projects[views_slideshow][version] = "3.6"
+projects[views_slideshow][version] = "3.9"
 projects[views_slideshow][subdir] = contrib
 
 projects[views_tree][version] = "2.0"
 projects[views_tree][subdir] = contrib
 
-projects[webform][version] = "4.14"
+projects[webform][version] = "4.16"
 projects[webform][subdir] = contrib
 
 projects[webform_clear][version] = "2.0"
