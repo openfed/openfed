@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "fb5a7e1584ca6f2792fd2086005fd923",
+    "content-hash": "becc938bb2a6a972c4d125a36e2599bc",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -5434,6 +5434,9 @@
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
                     }
+                },
+                "patches_applied": {
+                    "Issue #2870738: Wrong active trail with multiple menu items with the same path": "https://www.drupal.org/files/issues/multiple-menu-links-2870738-6.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
