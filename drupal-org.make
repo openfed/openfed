@@ -317,7 +317,7 @@ projects[lexicon][subdir] = contrib
 projects[libraries][version] = "2.3"
 projects[libraries][subdir] = contrib
 
-projects[link][version] = "1.4"
+projects[link][version] = "1.5-beta2"
 projects[link][subdir] = contrib
 
 projects[location][version] = "3.8-beta2"
