@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+01 February 2018 - Version 2.12-rc1
+---------------------------------
+ * Module updates
+ * Issue #2940690: updated Link module version.
+
 17 August 2017 - Version 2.11
 -----------------------------
 No changes
@@ -37,7 +42,7 @@ No changes
 23 February 2017 - Version 2.9
 ------------------------------
 No changes
-   
+
 23 February 2017 - Version 2.9-rc3
 ----------------------------------
  * Module upgrade:
