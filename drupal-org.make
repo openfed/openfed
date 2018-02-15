@@ -190,7 +190,7 @@ projects[email][subdir] = contrib
 projects[emfield][version] = "1.0-alpha2"
 projects[emfield][subdir] = contrib
 
-projects[entity][version] = "1.8"
+projects[entity][version] = "1.9"
 projects[entity][subdir] = contrib
 
 projects[entityreference][version] = "1.5"
