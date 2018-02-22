@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+22 February 2018 - Version 2.12
+---------------------------------
+ * Update to Drupal Core 7.57
+
 15 February 2018 - Version 2.12-rc2
 ---------------------------------
  * Updated Entity API module due to SA-CONTRIB-2018-013
