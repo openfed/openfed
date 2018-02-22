@@ -158,7 +158,7 @@ projects[context][subdir] = contrib
 projects[countries][version] = "2.3"
 projects[countries][subdir] = contrib
 
-projects[ctools][version] = "1.12"
+projects[ctools][version] = "1.13"
 projects[ctools][subdir] = contrib
 
 projects[date][version] = "2.10"
@@ -250,9 +250,8 @@ projects[file_entity][patch][2097261] = "https://www.drupal.org/files/issues/fil
 projects[flag][version] = "3.9"
 projects[flag][subdir] = contrib
 
-projects[globalredirect][version] = "1.5"
+projects[globalredirect][version] = "1.6"
 projects[globalredirect][subdir] = contrib
-projects[globalredirect][patch][2810609] = "https://www.drupal.org/files/language_redirect_view_node-1399506-2.patch"
 
 projects[gmap][version] = "2.11"
 projects[gmap][subdir] = contrib
@@ -290,7 +289,7 @@ projects[imce][subdir] = contrib
 projects[imce_mkdir][version] = "1.0"
 projects[imce_mkdir][subdir] = contrib
 
-projects[job_scheduler][version] = "2.0-alpha3"
+projects[job_scheduler][version] = "2.0"
 projects[job_scheduler][subdir] = contrib
 
 projects[jquery_plugin][version] = "1.0"
@@ -317,7 +316,7 @@ projects[lexicon][subdir] = contrib
 projects[libraries][version] = "2.3"
 projects[libraries][subdir] = contrib
 
-projects[link][version] = "1.5-beta2"
+projects[link][version] = "1.5-beta3"
 projects[link][subdir] = contrib
 
 projects[location][version] = "3.8-beta2"
@@ -330,7 +329,7 @@ projects[logintoboggan][patch][1142808] = "https://www.drupal.org/files/logintob
 projects[m4032404][version] = "1.0-beta2"
 projects[m4032404][subdir] = contrib
 
-projects[media][version] = "2.14"
+projects[media][version] = "2.16"
 projects[media][subdir] = contrib
 
 projects[media_soundcloud][version] = "2.1"
@@ -339,7 +338,7 @@ projects[media_soundcloud][subdir] = contrib
 projects[media_vimeo][version] = "2.1"
 projects[media_vimeo][subdir] = contrib
 
-projects[media_youtube][version] = "3.6"
+projects[media_youtube][version] = "3.7"
 projects[media_youtube][subdir] = contrib
 
 projects[menu_attributes][version] = "1.0"
@@ -407,7 +406,7 @@ projects[print][version] = "2.0"
 projects[print][subdir] = contrib
 projects[print][patch][2446693] = "https://www.drupal.org/files/issues/print-2446939-1.patch"
 
-projects[quiz][version] = "4.0-rc8"
+projects[quiz][version] = "4.0-rc9"
 projects[quiz][subdir] = contrib
 
 projects[redirect][version] = "1.0-rc3"
