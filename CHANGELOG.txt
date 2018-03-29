@@ -1,6 +1,21 @@
 CHANGELOG
 =========
 
+29 March 2018 - Version 2.14
+----------------------------
+ * Update to Drupal Core 7.58 (SA-CORE-2018-002)
+
+22 February 2018 - Version 2.13
+---------------------------------
+ * Updated modules:
+   ctools
+   globalredirect
+   job_scheduler
+   link
+   media
+   media_youtube
+   quiz
+
 22 February 2018 - Version 2.12
 ---------------------------------
  * Update to Drupal Core 7.57
