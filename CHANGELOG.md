@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+30 April 2018 - Version 5.0
+----------------------------
+  First release of Openfed 5.x
+
 30 April 2018 - Version 4.8
 ----------------------------
   Update to Drupal Core 8.4.8 (SA-CORE-2018-004)
