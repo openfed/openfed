@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+30 April 2018 - Version 2.15
+----------------------------
+ * Update to Drupal Core 7.59 (SA-CORE-2018-004)
+ * Security updates for Display Suite and Media modules.
+
 29 March 2018 - Version 2.14
 ----------------------------
  * Update to Drupal Core 7.58 (SA-CORE-2018-002)

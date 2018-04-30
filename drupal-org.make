@@ -174,7 +174,7 @@ projects[diff][subdir] = contrib
 projects[drafty][version] = "1.0-rc1"
 projects[drafty][subdir] = contrib
 
-projects[ds][version] = "2.14"
+projects[ds][version] = "2.15"
 projects[ds][subdir] = contrib
 
 projects[easy_breadcrumb][version] = "2.12"
@@ -329,7 +329,7 @@ projects[logintoboggan][patch][1142808] = "https://www.drupal.org/files/logintob
 projects[m4032404][version] = "1.0-beta2"
 projects[m4032404][subdir] = contrib
 
-projects[media][version] = "2.16"
+projects[media][version] = "2.19"
 projects[media][subdir] = contrib
 
 projects[media_soundcloud][version] = "2.1"
