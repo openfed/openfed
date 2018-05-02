@@ -243,7 +243,7 @@ projects[field_slideshow][version] = "1.82"
 projects[field_slideshow][subdir] = contrib
 projects[field_slideshow][patch][2326155] = "https://www.drupal.org/files/issues/field_slideshow-swipe-2326155-1.patch"
 
-projects[file_entity][version] = "2.0-beta3"
+projects[file_entity][version] = "2.20"
 projects[file_entity][subdir] = contrib
 projects[file_entity][patch][2097261] = "https://www.drupal.org/files/issues/file_entity-download_link_i18n-2097261-4.patch"
 
