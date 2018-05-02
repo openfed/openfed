@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+02 May 2018 - Version 2.16
+----------------------------
+ * Update File Entity module due to Media requirements.
+
 30 April 2018 - Version 2.15
 ----------------------------
  * Update to Drupal Core 7.59 (SA-CORE-2018-004)
