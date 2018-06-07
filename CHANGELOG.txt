@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+07 June 2018 - Version 2.17
+----------------------------
+ * Update OpenFed Nerra Theme, which includes an accessibility library.
+
 02 May 2018 - Version 2.16
 ----------------------------
  * Update File Entity module due to Media requirements.
