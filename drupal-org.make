@@ -402,9 +402,8 @@ projects[pathauto][subdir] = contrib
 projects[pathauto][patch][290421] = "https://www.drupal.org/files/issues/pathauto-support_localized_and_entity_translated_taxonomy-290421-156-d7.patch"
 projects[pathauto][patch][1993462] = "https://www.drupal.org/files/pathauto-path_alias_for_taxonomy_terms_always_created_in_default_language-1993462-0.patch"
 
-projects[print][version] = "2.0"
+projects[print][version] = "2.2"
 projects[print][subdir] = contrib
-projects[print][patch][2446693] = "https://www.drupal.org/files/issues/print-2446939-1.patch"
 
 projects[quiz][version] = "4.0-rc9"
 projects[quiz][subdir] = contrib
@@ -536,5 +535,5 @@ projects[workbench_moderation][subdir] = contrib
 projects[workbench_moderation][patch][1372500] = "https://www.drupal.org/files/issues/workbench_moderation_sync_infinite_loop-1372500-16.patch"
 projects[workbench_moderation][patch][2855262] = "https://www.drupal.org/files/issues/upgrade_from_1x3_to_3x_fails-2428371-45.patch"
 
-projects[xmlsitemap][version] = "2.3"
+projects[xmlsitemap][version] = "2.6"
 projects[xmlsitemap][subdir] = contrib
