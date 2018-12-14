@@ -2,7 +2,7 @@ name: Openfed
 type: profile
 description: 'OpenFed base installation with modules and configurations needed for Fast2Web offer by Fedict.'
 core: 8.x
-version: '8.x-6.0-beta2'
+version: '8.x-6.0-beta3'
 
 distribution:
   name: Openfed
@@ -40,12 +40,15 @@ dependencies:
   - user
   - views
   - views_ui
+  - media
   # contrib
   - admin_toolbar
   - admin_toolbar_tools
   - admin_toolbar_links_access_filter
   - admin_toolbar_content_languages
   - allowed_formats
+  - ckeditor_abbreviation
+  - ckeditor_codemirror
   - ckeditor_uploadimage
   - ctools
   - diff
@@ -63,9 +66,7 @@ dependencies:
   - link_attributes
   - linkit
   - m4032404
-  - media_entity
-  - media_entity_document
-  - media_entity_image
+  - media_entity_generic
   - menu_breadcrumb
   - menu_trail_by_path
   - metatag
