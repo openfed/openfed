@@ -245,9 +245,11 @@
       "drupal/content_translation_workflow": {
         "Issue #2878504: fix a problem when publishing translations": "https://www.drupal.org/files/issues/2878504-1.patch"
       },
+      "drupal/ckeditor_codemirror": {
+        "Issue #3026647: hook_requirements return FALSE, should return array instead": "https://www.drupal.org/files/issues/2019-01-17/fix_installation_requirements_issue-3026647-2.patch"
+      },
       "drupal/core": {
-        "Issue #2325899: UI fatal caused by views argument handlers no longer can provide their own default argument handling": "https://www.drupal.org/files/issues/2325899-106.patch",
-        "Issue #2597830: View contextual filter error when using date": "https://www.drupal.org/files/issues/datetime_needs_an-2597830-6.patch",
+        "Issue #2325899: UI fatal caused by views argument handlers no longer can provide their own default argument handling": "https://www.drupal.org/files/issues/2018-04-22/2325899-111.patch",
         "Issue #2737619: Views entity reference relationships must join on langcode for translatable entities": "https://www.drupal.org/files/issues/language_aware_relationship-2737619-19.patch",
         "Issue #2877994: Entity Links fields does not have translation support": "https://www.drupal.org/files/issues/2018-05-23/2877994-42.patch"
       },
@@ -299,6 +301,9 @@
         "Issue #2891765: Core Publish/Unpublish actions are deleted on install, but not re-created on uninstall": "https://www.drupal.org/files/issues/restore_publish_actions_after_uninstall-2891765-10.patch"
       }
     },
+    "patchLevel": {
+       "drupal/core": "-p2"
+    },
     "enable-patching": true
   },
   "require": {
@@ -306,7 +311,7 @@
     "oomphinc/composer-installers-extender": "^1.1",
     "drupal-composer/drupal-scaffold": "^2.0.1",
     "cweagans/composer-patches": "~1.0",
-    "drupal/core": "8.6.4",
+    "drupal/core": "8.6.7",
     "drush/drush": "~8.0",
     "drupal/console": "~1.0",
     "drupal/addanother": "1.0-rc1",
@@ -368,6 +373,7 @@
     "drupal/m4032404": "1.0-alpha4",
     "drupal/media_entity": "1.7",
     "drupal/media_entity_document": "1.1",
+    "drupal/media_entity_generic": "1.0-alpha1",
     "drupal/media_entity_image": "1.2",
     "drupal/menu_block": "1.5",
     "drupal/menu_breadcrumb": "1.7",
