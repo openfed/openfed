@@ -152,7 +152,7 @@ projects[comment_goodness][subdir] = contrib
 projects[content_access][version] = "1.2-beta2"
 projects[content_access][subdir] = contrib
 
-projects[context][version] = "3.7"
+projects[context][version] = "3.10"
 projects[context][subdir] = contrib
 
 projects[countries][version] = "2.3"
@@ -316,7 +316,7 @@ projects[lexicon][subdir] = contrib
 projects[libraries][version] = "2.3"
 projects[libraries][subdir] = contrib
 
-projects[link][version] = "1.5-beta3"
+projects[link][version] = "1.6"
 projects[link][subdir] = contrib
 
 projects[location][version] = "3.8-beta2"
@@ -394,7 +394,7 @@ projects[panels_extra_layouts][subdir] = contrib
 projects[partial_date][version] = "1.0-beta1"
 projects[partial_date][subdir] = contrib
 
-projects[path_breadcrumbs][version] = "3.3"
+projects[path_breadcrumbs][version] = "3.4"
 projects[path_breadcrumbs][subdir] = contrib
 
 projects[pathauto][version] = "1.3"
@@ -411,7 +411,7 @@ projects[quiz][subdir] = contrib
 projects[redirect][version] = "1.0-rc3"
 projects[redirect][subdir] = contrib
 
-projects[registration][version] = "1.6"
+projects[registration][version] = "1.7"
 projects[registration][subdir] = contrib
 
 projects[role_delegation][version] = "1.1"
