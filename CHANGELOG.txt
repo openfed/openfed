@@ -1,6 +1,20 @@
 CHANGELOG
 =========
 
+28 February 2019 - Version 2.20
+----------------------------
+  Security updates:
+    Update to Drupal Core 7.64
+    Update to Context 7.x-3.10 due to SA-CONTRIB-2019-028
+    Update to Entity Registration 7.x-1.7 due to SA-CONTRIB-2019-017
+    Update to Link 7.x-1.6 due to SA-CONTRIB-2019-020
+    Update to Path Breadcrumbs 7.x-3.4 due to SA-CONTRIB-2019-027
+
+  Fixed issues: 
+    Issue #3016356: Update Federal header belgium.be link to https
+    Issue #3016077: Entity view CTools plugin doesn't load the correct revision
+    Issue #2976383: Patch for CKeditor Link doesn't seem to be applied
+
 17 January 2019 - Version 2.19
 ----------------------------
   Update to Drupal Core 7.63 (SA-CORE-2019-001 and SA-CORE-2019-002)
