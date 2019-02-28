@@ -160,6 +160,7 @@ projects[countries][subdir] = contrib
 
 projects[ctools][version] = "1.13"
 projects[ctools][subdir] = contrib
+projects[ctools][patch] = "https://www.drupal.org/files/issues/entity-ctools-content-type-from-context-2020325-38.patch"
 
 projects[date][version] = "2.10"
 projects[date][subdir] = contrib
