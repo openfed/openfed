@@ -141,7 +141,7 @@ projects[ckeditor][patch][2355733] = "https://www.drupal.org/files/issues/235573
 
 projects[ckeditor_link][version] = "2.4"
 projects[ckeditor_link][subdir] = contrib
-projects[ckeditor_link][patch] = "https://www.drupal.org/files/issues/ckeditor_link-entity-translation-1875720-42-D7.patch"
+projects[ckeditor_link][patch][1875720] = "https://www.drupal.org/files/issues/ckeditor_link-entity-translation-1875720-42-D7.patch"
 
 projects[colorbox][version] = "2.13"
 projects[colorbox][subdir] = contrib
@@ -160,7 +160,7 @@ projects[countries][subdir] = contrib
 
 projects[ctools][version] = "1.13"
 projects[ctools][subdir] = contrib
-projects[ctools][patch] = "https://www.drupal.org/files/issues/entity-ctools-content-type-from-context-2020325-38.patch"
+projects[ctools][patch][2020325] = "https://www.drupal.org/files/issues/entity-ctools-content-type-from-context-2020325-38.patch"
 
 projects[date][version] = "2.10"
 projects[date][subdir] = contrib
