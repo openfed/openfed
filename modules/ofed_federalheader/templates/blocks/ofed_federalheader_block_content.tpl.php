@@ -3,7 +3,7 @@
     <?php
     // Generate the link.
     global $language;
-    $link = l(t('www.belgium.be'), 'http://www.belgium.be/' . $language->language, array('HTML' => TRUE));
+    $link = l(t('www.belgium.be'), 'https://www.belgium.be/' . $language->language, array('HTML' => TRUE));
     $link = '<span>' . $link . '</span>';
     // Display the text.
     print t('Other official information and services: !link', array('!link' => $link)); 
