@@ -119,7 +119,7 @@ projects[apachesolr_multilingual][patch][2293203] = "https://www.drupal.org/file
 projects[apachesolr_views][version] = "1.1-beta1"
 projects[apachesolr_views][subdir] = contrib
 
-projects[back_to_top][version] = "1.5"
+projects[back_to_top][version] = "1.6"
 projects[back_to_top][subdir] = contrib
 
 projects[bean][version] = "1.11"
@@ -501,7 +501,7 @@ projects[variable][subdir] = contrib
 projects[view_unpublished][version] = "1.2"
 projects[view_unpublished][subdir] = contrib
 
-projects[views][version] = "3.18"
+projects[views][version] = "3.21"
 projects[views][subdir] = contrib
 
 projects[views_data_export][version] = "3.2"

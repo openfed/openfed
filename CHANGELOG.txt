@@ -1,6 +1,13 @@
 CHANGELOG
 =========
 
+21 March 2019 - Version 2.21
+----------------------------
+  Security updates:
+    Update to Drupal Core 7.65 due to SA-CORE-2019-004
+    Update to Back To Top 7.x-1.6 due to SA-CONTRIB-2019-040
+    Update to Views 7.x-3.21 due to SA-CONTRIB-2019-034 - SA-CONTRIB-2019-036
+
 28 February 2019 - Version 2.20
 ----------------------------
   Security updates:
