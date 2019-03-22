@@ -82,7 +82,7 @@ class SetupRolesForm extends FormBase {
 
     // Check selected workflow options to enable role and set configuration.
     if (!empty($workflow_option) && $workflow_option == Helper::WORKFLOW_ADVANCED_CONFIG) {
-      // Enable Content Editor role.
+      // Enable Content Author role.
       $content_author_role_id = Helper::CONTENT_AUTHOR_ROLE_ID;
       $content_author_role = [
         'id' => $content_author_role_id,
@@ -99,13 +99,6 @@ class SetupRolesForm extends FormBase {
 
       // Enable Advanced Workflow configuration.
       \Drupal::service('module_installer')->install(['openfed_workflow']);
-    }
-    else {
-      // We don't need to keep the default Archive and Need Review state.
-      $mod_state = \Drupal::entityTypeManager()->getStorage('moderation_state');
-      if ($needs_review = $mod_state->load('needs_review')) {
-        $needs_review->delete();
-      }
     }
 
     // It's required that user 1 is set with Administratior role.
