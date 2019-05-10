@@ -364,7 +364,7 @@ projects[menu_position][subdir] = contrib
 projects[menu_to_taxonomy][version] = "1.0-beta9"
 projects[menu_to_taxonomy][subdir] = contrib
 
-projects[module_filter][version] = "2.1"
+projects[module_filter][version] = "2.2"
 projects[module_filter][subdir] = contrib
 
 projects[metatag][version] = "1.22"
@@ -419,9 +419,8 @@ projects[role_delegation][version] = "1.1"
 projects[role_delegation][subdir] = contrib
 projects[role_delegation][patch][1156414] = "https://www.drupal.org/files/issues/1156414-prevent-editing-of-certain-users-16.patch"
 
-projects[rules][version] = "2.10"
+projects[rules][version] = "2.12"
 projects[rules][subdir] = contrib
-projects[rules][patch][2738525] = "https://www.drupal.org/files/issues/rules-2449513-24.patch"
 
 projects[scheduler][version] = "1.5"
 projects[scheduler][subdir] = contrib
