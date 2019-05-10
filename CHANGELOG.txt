@@ -1,6 +1,14 @@
 CHANGELOG
 =========
 
+10 May 2019 - Version 2.22
+----------------------------
+  Security updates:
+    Update to Drupal Core 7.67 due to SA-CORE-2019-007
+    Update to Module Filter 7.x-2.2 due to SA-CONTRIB-2019-042
+  Other updates:
+    Update to Rules 7.x-2.12 to fix, amongst others, PHP7.2 compatibility issues
+
 21 March 2019 - Version 2.21
 ----------------------------
   Security updates:
