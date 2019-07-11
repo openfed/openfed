@@ -137,6 +137,7 @@ core = 7.x
 
   dependencies[] = ofed_admin_views_language
   dependencies[] = ofed_download
+  dependencies[] = ofed_easy_breadcrumb_alter
   dependencies[] = ofed_page
   dependencies[] = ofed_vmcd
   dependencies[] = ofed_switcher

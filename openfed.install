@@ -792,3 +792,13 @@ function openfed_update_7317() {
   }
   $query->execute();
 }
+
+/**
+ * Enable ofed_easy_breadcrumb_alter, if easy_breadcrumb is being used.
+ */
+function openfed_update_7318() {
+  if (module_exists('easy_breadcrumb')) {
+    module_enable(array('ofed_easy_breadcrumb_alter'));
+    cache_clear_all();
+  }
+}

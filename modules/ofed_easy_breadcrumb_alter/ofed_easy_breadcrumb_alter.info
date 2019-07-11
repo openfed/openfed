@@ -1,0 +1,5 @@
+name = Openfed Easy Breadcrumb Replacement
+description = Openfed implementation of Easy Breadcrumb version 2.12.
+dependencies[] = easy_breadcrumb:easy_breadcrumb (>= 7.x-2.17)
+
+core = 7.x

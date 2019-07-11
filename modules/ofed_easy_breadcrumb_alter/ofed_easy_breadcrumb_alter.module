@@ -1,0 +1,28 @@
+<?php
+
+/**
+ * Implements hook_theme_registry_alter().
+ */
+function ofed_easy_breadcrumb_alter_theme_registry_alter(&$theme_registry) {
+  if (isset($theme_registry['easy_breadcrumb'])) {
+    $theme_registry['easy_breadcrumb']['path'] = drupal_get_path('module', 'ofed_easy_breadcrumb_alter') . '/templates';
+    foreach ($theme_registry['easy_breadcrumb']['preprocess functions'] as $key => $value) {
+      if ($value == 'template_preprocess_easy_breadcrumb') {
+        unset($theme_registry['easy_breadcrumb']['preprocess functions'][$key]);
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_block_view_alter().
+ */
+function ofed_easy_breadcrumb_alter_block_view_alter(&$data, $block) {
+
+  if ($block->delta == 'easy_breadcrumb') {
+      module_load_include('inc', 'ofed_easy_breadcrumb_alter', 'includes/easy_breadcrumb.block');
+      $data['subject'] = NULL;
+      $data['content'] = _easy_breadcrumb_block();
+  }
+
+} 
