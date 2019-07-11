@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+11 July 2019 - Version 2.23-rc1
+----------------------------
+  Added a easy_breadcrumb alter module, to override functionality in new version and make it retro-compatible.
+
 10 May 2019 - Version 2.22
 ----------------------------
   Security updates:
