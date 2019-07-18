@@ -277,7 +277,7 @@ projects[i18n][subdir] = contrib
 projects[i18nviews][version] = "3.0-alpha1"
 projects[i18nviews][subdir] = contrib
 
-projects[imagecache_actions][version] = "1.8"
+projects[imagecache_actions][version] = "1.10"
 projects[imagecache_actions][subdir] = contrib
 
 projects[inline_entity_form][version] = "1.8"
