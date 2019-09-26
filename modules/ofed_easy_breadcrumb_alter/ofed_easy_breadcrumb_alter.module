@@ -18,11 +18,27 @@ function ofed_easy_breadcrumb_alter_theme_registry_alter(&$theme_registry) {
  * Implements hook_block_view_alter().
  */
 function ofed_easy_breadcrumb_alter_block_view_alter(&$data, $block) {
-
   if ($block->delta == 'easy_breadcrumb') {
       module_load_include('inc', 'ofed_easy_breadcrumb_alter', 'includes/easy_breadcrumb.block');
       $data['subject'] = NULL;
       $data['content'] = _easy_breadcrumb_block();
   }
-
 } 
+
+/**
+ * Implements hook_block_view().
+ *
+ * This provides a function to be used by Ofed CMS Adminimal Theme for backward
+ * compatibility with easy_breadcrumbs.
+ */
+function ofed_easy_breadcrumb_block_view($delta = NULL) {
+  $block = array();
+  switch ($delta) {
+    case 'easy_breadcrumb':
+      module_load_include('inc', 'ofed_easy_breadcrumb_alter', 'includes/easy_breadcrumb.block');
+      $block['subject'] = NULL;
+      $block['content'] = _easy_breadcrumb_block();
+      break;
+  }
+  return $block;
+}
