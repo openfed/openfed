@@ -66,6 +66,7 @@ projects[ofed_theme_maintenance][subdir] = contrib
 
 projects[ofed_cms_adminimal_theme][version] = "1.0-beta1"
 projects[ofed_cms_adminimal_theme][subdir] = contrib
+projects[ofed_cms_adminimal_theme][patch][3083842] = "https://www.drupal.org/files/issues/2019-09-26/backward_compatibility_w_easy_breadcrumb-3083842-2.patch"
 
 ;
 ; Themes
