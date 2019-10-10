@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+10 October 2019 - Version 2.25
+----------------------------
+  Updated l10n_update module due to SA-CONTRIB-2019-072.
+
 26 September 2019 - Version 2.24
 ----------------------------
   This version fixes an issue with Ofed CMS Adminimal Theme which breaks administration.
