@@ -97,7 +97,7 @@ projects[admin_menu_content_languages][subdir] = contrib
 projects[admin_theme][version] = "1.0"
 projects[admin_theme][subdir] = contrib
 
-projects[admin_views][version] = "1.6"
+projects[admin_views][version] = "1.7"
 projects[admin_views][subdir] = contrib
 
 projects[apachesolr][version] = "1.9"
@@ -240,7 +240,7 @@ projects[field_group][subdir] = contrib
 projects[field_permissions][version] = "1.0"
 projects[field_permissions][subdir] = contrib
 
-projects[field_slideshow][version] = "1.82"
+projects[field_slideshow][version] = "1.83"
 projects[field_slideshow][subdir] = contrib
 projects[field_slideshow][patch][2326155] = "https://www.drupal.org/files/issues/field_slideshow-swipe-2326155-1.patch"
 
@@ -515,7 +515,7 @@ projects[views_slideshow][subdir] = contrib
 projects[views_tree][version] = "2.0"
 projects[views_tree][subdir] = contrib
 
-projects[webform][version] = "4.16"
+projects[webform][version] = "4.21"
 projects[webform][subdir] = contrib
 
 projects[webform_clear][version] = "2.0"

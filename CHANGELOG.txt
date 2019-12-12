@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+12 December 2019 - Version 2.26
+----------------------------
+  Updated admin_views module due to SA-CONTRIB-2019-076.
+  Updated field_slideshow module due to SA-CONTRIB-2019-082.
+  Updated webform module due to SA-CONTRIB-2019-096.
+
 10 October 2019 - Version 2.25
 ----------------------------
   Updated l10n_update module due to SA-CONTRIB-2019-072.
