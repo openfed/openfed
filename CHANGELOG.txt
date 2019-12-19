@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+19 December 2019 - Version 2.27
+----------------------------
+  Update to Drupal Core 7.69 due to SA-CORE-2019-012
+
 12 December 2019 - Version 2.26
 ----------------------------
   Updated admin_views module due to SA-CONTRIB-2019-076.
