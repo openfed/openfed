@@ -247,11 +247,10 @@
       },
       "drupal/core": {
         "Issue #2325899: UI fatal caused by views argument handlers no longer can provide their own default argument handling": "https://www.drupal.org/files/issues/2019-03-02/2325899-124.patch",
-        "Issue #2664016: Adding a new batch set while the batch is running breaks batch order": "https://www.drupal.org/files/issues/2018-06-06/2664016-58.patch",
+        "Issue #2649268: Entity Field Query throws QueryException when querying all revisions and setting condition on entity reference field": "https://www.drupal.org/files/issues/2019-09-12/2649268-32.patch",
         "Issue #2730631: Node revision routes don't convert {node} param": "https://www.drupal.org/files/issues/2019-04-04/2730631_85_0.patch",
         "Issue #2737619: Views entity reference relationships must join on langcode for translatable entities": "https://www.drupal.org/files/issues/language_aware_relationship-2737619-19.patch",
-        "Issue #2771837: drupalimage CKEditor plugin should not require data-entity-uuid and data-entity-type when image upload is disabled": "https://www.drupal.org/files/issues/2018-09-13/drupalimage_ckeditor-2771837-34.patch",
-        "Issue #2877994: Entity Links fields does not have translation support": "https://www.drupal.org/files/issues/2019-05-29/2877994-140.patch"
+        "Issue #2771837: drupalimage CKEditor plugin should not require data-entity-uuid and data-entity-type when image upload is disabled": "https://www.drupal.org/files/issues/2018-09-13/drupalimage_ckeditor-2771837-34.patch"
       },
       "drupal/cshs": {
         "Issue #2912428: Illegal offset": "https://www.drupal.org/files/issues/cshs-illegal_value_errors-2912428.patch"
@@ -264,9 +263,6 @@
       },
       "drupal/field_default_token": {
         "Issue #2860580: Apply field_default_token patches 2841292 and 2854384": "https://www.drupal.org/files/issues/2841292-7-and-2854384-4.patch"
-      },
-      "drupal/field_group": {
-        "Issue #2986704: Incompatibility with inline entity form": "https://www.drupal.org/files/issues/2018-10-30/field_group-inline_entity_form_compatibility-2986704-3.patch"
       },
       "drupal/imce": {
         "Issue #2858430: no browser tab in user profile in drupal 8": "https://www.drupal.org/files/issues/imce_no_browser_tab-2858430-4.patch"
@@ -283,7 +279,7 @@
         "Issue #2907989: Problem creating pathauto joined paths": "https://www.drupal.org/files/issues/wrong_joined_paths-2907989-4.patch"
       },
       "drupal/menu_trail_by_path": {
-        "Issue #2870738: Wrong active trail with multiple menu items with the same path": "https://www.drupal.org/files/issues/multiple-menu-links-2870738-6.patch"
+        "Issue #3099308: Menu Trail by Path: several issues": "https://www.drupal.org/files/issues/2019-12-10/menu_trail_by_path_issues-3099308-6.patch"
       },
       "drupal/page_manager": {
         "Issue #2820218: Page manager does not respect existing route defaults for title callbacks": "https://www.drupal.org/files/issues/2018-03-21/2820218-50.patch",
@@ -295,8 +291,10 @@
         "Issue #2938850: Add Block visibility conditions": "https://www.drupal.org/files/issues/panels-block_visibility_conditions_apply_after_issue_2869412_2-2938850-2.patch"
       },
       "drupal/paragraphs": {
-        "Issue #2461695: Support translatable paragraph entity reference revision field": "https://www.drupal.org/files/issues/2018-12-06/2461695-263.patch",
-        "Issue #2907094: Make paragraphs module working with field_group version 3.x with support for the field_layout module": "https://www.drupal.org/files/issues/2019-07-05/2907094_65_0.patch"
+        "Issue #2461695: Support translatable paragraph entity reference revision field": "https://www.drupal.org/files/issues/2019-11-16/2461695-273.patch"
+      },
+      "drupal/paragraphs_asymmetric_translation_widgets": {
+        "Issue #2992777: Implement a migration path": "https://www.drupal.org/files/issues/2019-05-24/2992777-implement_migration_path-15.patch"
       },
       "drupal/soundcloudfield": {
         "Issue #2760787: Fix fatal error occurs on all pages": "https://www.drupal.org/files/issues/soundcloudfield-fatal_error_occurs_on_all_pages-2760787-3.patch"
@@ -325,7 +323,7 @@
     "drupal-composer/drupal-scaffold": "^2.0.1",
     "cweagans/composer-patches": "~1.0",
     "openfed/kiso": "2.3",
-    "drupal/core": "8.7.11",
+    "drupal/core": "8.8.1",
     "drush/drush": "~9.0",
     "drupal/console": "~1.0",
     "drupal/addanother": "1.0-rc1",
@@ -333,11 +331,11 @@
     "drupal/admin_toolbar_content_languages": "1.0-beta2",
     "drupal/adminimal_theme": "1.5",
     "drupal/alertbox": "1.0-beta8",
-    "drupal/allowed_formats": "1.1",
+    "drupal/allowed_formats": "1.2",
     "drupal/anchor_link": "2.0-alpha2",
     "drupal/append_file_info": "1.0-rc2",
     "drupal/back_to_top": "1.0",
-    "drupal/bootstrap": "3.20",
+    "drupal/bootstrap": "3.21",
     "drupal/ckeditor_abbreviation": "1.5",
     "drupal/ckeditor_codemirror": "2.2",
     "drupal/ckeditor_find": "1.0-beta1",
@@ -361,7 +359,7 @@
     "drupal/entity": "1.0-rc3",
     "drupal/entity_browser": "1.8",
     "drupal/entity_embed": "1.0",
-    "drupal/entity_reference_revisions": "1.6",
+    "drupal/entity_reference_revisions": "1.7",
     "drupal/entityqueue": "1.0-beta5",
     "drupal/eu_cookie_compliance": "1.8",
     "drupal/extlink": "1.1",
@@ -371,10 +369,10 @@
     "drupal/fences": "2.0-alpha2",
     "drupal/field_default_token": "dev-1.x#cec380512962857e62a1c050fde77eb8d27652dc",
     "drupal/field_formatter": "1.2",
-    "drupal/field_group": "3.0-rc1",
+    "drupal/field_group": "3.0-rc2",
     "drupal/file_entity": "2.0-beta7",
     "drupal/focal_point": "1.2",
-    "drupal/geofield": "1.3",
+    "drupal/geofield": "1.7",
     "drupal/google_analytics": "2.4",
     "drupal/honeypot": "1.29",
     "drupal/image_effects": "1.3",
@@ -383,8 +381,8 @@
     "drupal/l10n_client": "1.0-alpha1",
     "drupal/language_cookie": "1.0-beta1",
     "drupal/language_selection_page": "2.3",
-    "drupal/leaflet": "1.19",
-    "drupal/leaflet_maptiler": "1.0-beta4",
+    "drupal/leaflet": "1.23",
+    "drupal/leaflet_maptiler": "1.0-beta5",
     "drupal/link_attributes": "1.9",
     "drupal/linkit": "5.0-beta9",
     "drupal/m4032404": "1.0-alpha4",
@@ -403,9 +401,9 @@
     "drupal/override_node_options": "2.4",
     "drupal/page_manager": "4.0-beta3",
     "drupal/panels": "4.2",
-    "drupal/paragraphs": "1.6",
+    "drupal/paragraphs": "1.10",
     "drupal/paragraphs_asymmetric_translation_widgets": "1.0-beta2",
-    "drupal/pathauto": "1.4",
+    "drupal/pathauto": "1.6",
     "drupal/redirect": "1.4",
     "drupal/role_delegation": "1.0",
     "drupal/rules": "3.0-alpha5",

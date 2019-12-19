@@ -1,11 +1,26 @@
 CHANGELOG
 =========
 
-19 December 2019 - Version 7.4
+19 December 2019 - Version 8.0-rc4
 ----------------------------
   Update to Drupal Core due to SA-CORE-2019-0[09 to 12]
   Update to Smart Trim due to SA-CONTRIB-2019-092
   Update to Taxonomy Access Fix due to SA-CONTRIB-2019-093
+
+11 December 2019 - Version 8.0-rc3
+----------------------------
+  Update Menu Trail by Path patch to fix compatibility errors.
+  Update Field Group, Leaflet, Leaflet Maptiler and Pathauto.
+
+06 December 2019 - Version 8.0-rc2
+----------------------------
+  Update Drupal Core to version 8.x-8.0
+  Update Entity Reference Revisions to 8.x-1.7-rc2
+
+27 November 2019 - Version 8.0-rc1
+----------------------------
+  Update Drupal Core to version 8.x-8.0-rc1
+  Update Pathauto to 8.x-1.6-beta1
 
 19 November 2019 - Version 7.3
 ----------------------------

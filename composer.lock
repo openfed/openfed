@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "7048a4e93871d0a6c78071811c4b1950",
+    "content-hash": "662d6f9233c2aa03afe73e427618ace6",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -121,42 +121,6 @@
                 "stack"
             ],
             "time": "2017-12-20T14:37:45+00:00"
-        },
-        {
-            "name": "brumann/polyfill-unserialize",
-            "version": "v1.0.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/dbrumann/polyfill-unserialize.git",
-                "reference": "8ed1cd343ddc134a7ef649aca0aa0fe2a1b45008"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/dbrumann/polyfill-unserialize/zipball/8ed1cd343ddc134a7ef649aca0aa0fe2a1b45008",
-                "reference": "8ed1cd343ddc134a7ef649aca0aa0fe2a1b45008",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^5.3|^7.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Brumann\\Polyfill\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Denis Brumann",
-                    "email": "denis.brumann@sensiolabs.de"
-                }
-            ],
-            "description": "Backports unserialize options introduced in PHP 7.0 to older PHP versions.",
-            "time": "2019-07-14T23:16:24+00:00"
         },
         {
             "name": "caxy/php-htmldiff",
@@ -2664,17 +2628,17 @@
         },
         {
             "name": "drupal/allowed_formats",
-            "version": "1.1.0",
+            "version": "1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/allowed_formats.git",
-                "reference": "8.x-1.1"
+                "reference": "8.x-1.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/allowed_formats-8.x-1.1.zip",
-                "reference": "8.x-1.1",
-                "shasum": "b7bfc78d7e64f1df37ca6cad118a1ff8f7228b64"
+                "url": "https://ftp.drupal.org/files/projects/allowed_formats-8.x-1.2.zip",
+                "reference": "8.x-1.2",
+                "shasum": "50f8f80cf3326382c968521d34d3a113b37e32b3"
             },
             "require": {
                 "drupal/core": "*"
@@ -2685,7 +2649,7 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.1",
+                    "version": "8.x-1.2",
                     "datestamp": "1573747386",
                     "security-coverage": {
                         "status": "covered",
@@ -2884,17 +2848,17 @@
         },
         {
             "name": "drupal/bootstrap",
-            "version": "3.20.0",
+            "version": "3.21.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/bootstrap.git",
-                "reference": "8.x-3.20"
+                "reference": "8.x-3.21"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/bootstrap-8.x-3.20.zip",
-                "reference": "8.x-3.20",
-                "shasum": "dc8ecfca0b8e8e3598ba611e056f850f2ab497cb"
+                "url": "https://ftp.drupal.org/files/projects/bootstrap-8.x-3.21.zip",
+                "reference": "8.x-3.21",
+                "shasum": "e431093eb4f64712b02e691660a85cfa4fb49c88"
             },
             "require": {
                 "drupal/core": "~8.0"
@@ -2905,7 +2869,7 @@
                     "dev-3.x": "3.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-3.20",
+                    "version": "8.x-3.21",
                     "datestamp": "1574417581",
                     "security-coverage": {
                         "status": "covered",
@@ -3899,23 +3863,23 @@
         },
         {
             "name": "drupal/core",
-            "version": "8.7.11",
+            "version": "8.8.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drupal/core.git",
-                "reference": "a691876294fadc2795a8add96359b5ffc109d7f2"
+                "reference": "d339279f4c4b89477e0f4a8b775eb5dcb86b3087"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drupal/core/zipball/a691876294fadc2795a8add96359b5ffc109d7f2",
-                "reference": "a691876294fadc2795a8add96359b5ffc109d7f2",
+                "url": "https://api.github.com/repos/drupal/core/zipball/d339279f4c4b89477e0f4a8b775eb5dcb86b3087",
+                "reference": "d339279f4c4b89477e0f4a8b775eb5dcb86b3087",
                 "shasum": ""
             },
             "require": {
                 "asm89/stack-cors": "^1.1",
                 "composer/semver": "^1.0",
-                "doctrine/annotations": "^1.2",
-                "doctrine/common": "^2.5",
+                "doctrine/annotations": "^1.4",
+                "doctrine/common": "^2.7",
                 "easyrdf/easyrdf": "^0.9",
                 "egulias/email-validator": "^2.0",
                 "ext-date": "*",
@@ -3931,11 +3895,10 @@
                 "ext-spl": "*",
                 "ext-tokenizer": "*",
                 "ext-xml": "*",
-                "guzzlehttp/guzzle": "^6.2.1",
+                "guzzlehttp/guzzle": "^6.3",
                 "masterminds/html5": "^2.1",
-                "paragonie/random_compat": "^1.0|^2.0|^9.99.99",
                 "pear/archive_tar": "^1.4.9",
-                "php": "^5.5.9|>=7.0.8",
+                "php": ">=7.0.8",
                 "stack/builder": "^1.0",
                 "symfony-cmf/routing": "^1.4",
                 "symfony/class-loader": "~3.4.0",
@@ -3953,13 +3916,13 @@
                 "symfony/validator": "~3.4.0",
                 "symfony/yaml": "~3.4.5",
                 "twig/twig": "^1.38.2",
-                "typo3/phar-stream-wrapper": "^2.1.1",
-                "zendframework/zend-diactoros": "^1.1",
-                "zendframework/zend-feed": "^2.4"
+                "typo3/phar-stream-wrapper": "^3.1.3",
+                "zendframework/zend-diactoros": "^1.8",
+                "zendframework/zend-feed": "^2.12"
             },
             "conflict": {
-                "drush/drush": "<8.1.10",
-                "symfony/dom-crawler": ">=4"
+                "drupal/pathauto": "<1.6",
+                "drush/drush": "<8.1.10"
             },
             "replace": {
                 "drupal/action": "self.version",
@@ -3975,6 +3938,7 @@
                 "drupal/book": "self.version",
                 "drupal/breakpoint": "self.version",
                 "drupal/ckeditor": "self.version",
+                "drupal/claro": "self.version",
                 "drupal/classy": "self.version",
                 "drupal/color": "self.version",
                 "drupal/comment": "self.version",
@@ -3994,6 +3958,7 @@
                 "drupal/core-discovery": "self.version",
                 "drupal/core-event-dispatcher": "self.version",
                 "drupal/core-file-cache": "self.version",
+                "drupal/core-file-security": "self.version",
                 "drupal/core-filesystem": "self.version",
                 "drupal/core-gettext": "self.version",
                 "drupal/core-graph": "self.version",
@@ -4021,6 +3986,7 @@
                 "drupal/forum": "self.version",
                 "drupal/hal": "self.version",
                 "drupal/help": "self.version",
+                "drupal/help_topics": "self.version",
                 "drupal/history": "self.version",
                 "drupal/image": "self.version",
                 "drupal/inline_form_errors": "self.version",
@@ -4043,6 +4009,7 @@
                 "drupal/options": "self.version",
                 "drupal/page_cache": "self.version",
                 "drupal/path": "self.version",
+                "drupal/path_alias": "self.version",
                 "drupal/quickedit": "self.version",
                 "drupal/rdf": "self.version",
                 "drupal/responsive_image": "self.version",
@@ -4071,60 +4038,41 @@
                 "drupal/workflows": "self.version",
                 "drupal/workspaces": "self.version"
             },
-            "require-dev": {
-                "behat/mink": "1.7.x-dev",
-                "behat/mink-goutte-driver": "^1.2",
-                "behat/mink-selenium2-driver": "1.3.x-dev",
-                "drupal/coder": "^8.3.1",
-                "jcalderonzumba/gastonjs": "^1.0.2",
-                "jcalderonzumba/mink-phantomjs-driver": "^0.3.1",
-                "justinrainbow/json-schema": "^5.2",
-                "mikey179/vfsstream": "^1.2",
-                "phpspec/prophecy": "^1.7",
-                "phpunit/phpunit": "^4.8.35 || ^6.5",
-                "symfony/css-selector": "^3.4.0",
-                "symfony/debug": "^3.4.0",
-                "symfony/phpunit-bridge": "^3.4.3"
-            },
             "type": "drupal-core",
             "extra": {
-                "merge-plugin": {
-                    "require": [
-                        "core/lib/Drupal/Component/Annotation/composer.json",
-                        "core/lib/Drupal/Component/Assertion/composer.json",
-                        "core/lib/Drupal/Component/Bridge/composer.json",
-                        "core/lib/Drupal/Component/ClassFinder/composer.json",
-                        "core/lib/Drupal/Component/Datetime/composer.json",
-                        "core/lib/Drupal/Component/DependencyInjection/composer.json",
-                        "core/lib/Drupal/Component/Diff/composer.json",
-                        "core/lib/Drupal/Component/Discovery/composer.json",
-                        "core/lib/Drupal/Component/EventDispatcher/composer.json",
-                        "core/lib/Drupal/Component/FileCache/composer.json",
-                        "core/lib/Drupal/Component/FileSystem/composer.json",
-                        "core/lib/Drupal/Component/Gettext/composer.json",
-                        "core/lib/Drupal/Component/Graph/composer.json",
-                        "core/lib/Drupal/Component/HttpFoundation/composer.json",
-                        "core/lib/Drupal/Component/PhpStorage/composer.json",
-                        "core/lib/Drupal/Component/Plugin/composer.json",
-                        "core/lib/Drupal/Component/ProxyBuilder/composer.json",
-                        "core/lib/Drupal/Component/Render/composer.json",
-                        "core/lib/Drupal/Component/Serialization/composer.json",
-                        "core/lib/Drupal/Component/Transliteration/composer.json",
-                        "core/lib/Drupal/Component/Utility/composer.json",
-                        "core/lib/Drupal/Component/Uuid/composer.json",
-                        "core/lib/Drupal/Component/Version/composer.json"
-                    ],
-                    "recurse": false,
-                    "replace": false,
-                    "merge-extra": false
+                "drupal-scaffold": {
+                    "file-mapping": {
+                        "[project-root]/.editorconfig": "assets/scaffold/files/editorconfig",
+                        "[project-root]/.gitattributes": "assets/scaffold/files/gitattributes",
+                        "[web-root]/.csslintrc": "assets/scaffold/files/csslintrc",
+                        "[web-root]/.eslintignore": "assets/scaffold/files/eslintignore",
+                        "[web-root]/.eslintrc.json": "assets/scaffold/files/eslintrc.json",
+                        "[web-root]/.ht.router.php": "assets/scaffold/files/ht.router.php",
+                        "[web-root]/.htaccess": "assets/scaffold/files/htaccess",
+                        "[web-root]/example.gitignore": "assets/scaffold/files/example.gitignore",
+                        "[web-root]/index.php": "assets/scaffold/files/index.php",
+                        "[web-root]/INSTALL.txt": "assets/scaffold/files/drupal.INSTALL.txt",
+                        "[web-root]/README.txt": "assets/scaffold/files/drupal.README.txt",
+                        "[web-root]/robots.txt": "assets/scaffold/files/robots.txt",
+                        "[web-root]/update.php": "assets/scaffold/files/update.php",
+                        "[web-root]/web.config": "assets/scaffold/files/web.config",
+                        "[web-root]/sites/README.txt": "assets/scaffold/files/sites.README.txt",
+                        "[web-root]/sites/development.services.yml": "assets/scaffold/files/development.services.yml",
+                        "[web-root]/sites/example.settings.local.php": "assets/scaffold/files/example.settings.local.php",
+                        "[web-root]/sites/example.sites.php": "assets/scaffold/files/example.sites.php",
+                        "[web-root]/sites/default/default.services.yml": "assets/scaffold/files/default.services.yml",
+                        "[web-root]/sites/default/default.settings.php": "assets/scaffold/files/default.settings.php",
+                        "[web-root]/modules/README.txt": "assets/scaffold/files/modules.README.txt",
+                        "[web-root]/profiles/README.txt": "assets/scaffold/files/profiles.README.txt",
+                        "[web-root]/themes/README.txt": "assets/scaffold/files/themes.README.txt"
+                    }
                 },
                 "patches_applied": {
                     "Issue #2325899: UI fatal caused by views argument handlers no longer can provide their own default argument handling": "https://www.drupal.org/files/issues/2019-03-02/2325899-124.patch",
-                    "Issue #2664016: Adding a new batch set while the batch is running breaks batch order": "https://www.drupal.org/files/issues/2018-06-06/2664016-58.patch",
+                    "Issue #2649268: Entity Field Query throws QueryException when querying all revisions and setting condition on entity reference field": "https://www.drupal.org/files/issues/2019-09-12/2649268-32.patch",
                     "Issue #2730631: Node revision routes don't convert {node} param": "https://www.drupal.org/files/issues/2019-04-04/2730631_85_0.patch",
                     "Issue #2737619: Views entity reference relationships must join on langcode for translatable entities": "https://www.drupal.org/files/issues/language_aware_relationship-2737619-19.patch",
-                    "Issue #2771837: drupalimage CKEditor plugin should not require data-entity-uuid and data-entity-type when image upload is disabled": "https://www.drupal.org/files/issues/2018-09-13/drupalimage_ckeditor-2771837-34.patch",
-                    "Issue #2877994: Entity Links fields does not have translation support": "https://www.drupal.org/files/issues/2019-05-29/2877994-140.patch"
+                    "Issue #2771837: drupalimage CKEditor plugin should not require data-entity-uuid and data-entity-type when image upload is disabled": "https://www.drupal.org/files/issues/2018-09-13/drupalimage_ckeditor-2771837-34.patch"
                 }
             },
             "autoload": {
@@ -4148,7 +4096,7 @@
                 "GPL-2.0-or-later"
             ],
             "description": "Drupal is an open source content management platform powering millions of websites and applications.",
-            "time": "2019-12-18T08:55:29+00:00"
+            "time": "2019-12-18T10:34:03+00:00"
         },
         {
             "name": "drupal/country",
@@ -4932,17 +4880,17 @@
         },
         {
             "name": "drupal/entity_reference_revisions",
-            "version": "1.6.0",
+            "version": "1.7.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/entity_reference_revisions.git",
-                "reference": "8.x-1.6"
+                "reference": "8.x-1.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/entity_reference_revisions-8.x-1.6.zip",
-                "reference": "8.x-1.6",
-                "shasum": "82d515de04d3a75fb677ed82241a6aff3f54ab47"
+                "url": "https://ftp.drupal.org/files/projects/entity_reference_revisions-8.x-1.7.zip",
+                "reference": "8.x-1.7",
+                "shasum": "4e3b849b0d984cd3c0a4330c9aa4cb16bf1f79f6"
             },
             "require": {
                 "drupal/core": "~8.0"
@@ -4956,7 +4904,7 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.6",
+                    "version": "8.x-1.7",
                     "datestamp": "1570284187",
                     "security-coverage": {
                         "status": "covered",
@@ -5560,17 +5508,17 @@
         },
         {
             "name": "drupal/field_group",
-            "version": "3.0.0-rc1",
+            "version": "3.0.0-rc2",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/field_group.git",
-                "reference": "8.x-3.0-rc1"
+                "reference": "8.x-3.0-rc2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/field_group-8.x-3.0-rc1.zip",
-                "reference": "8.x-3.0-rc1",
-                "shasum": "e291b5468c834a344e9aa6cafd3a76171d473a22"
+                "url": "https://ftp.drupal.org/files/projects/field_group-8.x-3.0-rc2.zip",
+                "reference": "8.x-3.0-rc2",
+                "shasum": "53a9f55fa579b881a5fe12a3c84702e52a3d0737"
             },
             "require": {
                 "drupal/core": "*"
@@ -5581,15 +5529,12 @@
                     "dev-3.x": "3.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-3.0-rc1",
-                    "datestamp": "1574200085",
+                    "version": "8.x-3.0-rc2",
+                    "datestamp": "1574279719",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "RC releases are not covered by Drupal security advisories."
                     }
-                },
-                "patches_applied": {
-                    "Issue #2986704: Incompatibility with inline entity form": "https://www.drupal.org/files/issues/2018-10-30/field_group-inline_entity_form_compatibility-2986704-3.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -5800,17 +5745,17 @@
         },
         {
             "name": "drupal/geofield",
-            "version": "1.3.0",
+            "version": "1.7.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/geofield.git",
-                "reference": "8.x-1.3"
+                "reference": "8.x-1.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/geofield-8.x-1.3.zip",
-                "reference": "8.x-1.3",
-                "shasum": "ab9691a959dd4e4ad48e7138f96a500caabb43a9"
+                "url": "https://ftp.drupal.org/files/projects/geofield-8.x-1.7.zip",
+                "reference": "8.x-1.7",
+                "shasum": "98a30341df6b4c8f8776c1f3db46798a1ee859fa"
             },
             "require": {
                 "drupal/core": "~8.0",
@@ -5822,8 +5767,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.3",
-                    "datestamp": "1569251888",
+                    "version": "8.x-1.7",
+                    "datestamp": "1575405480",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -6368,17 +6313,17 @@
         },
         {
             "name": "drupal/leaflet",
-            "version": "1.19.0",
+            "version": "1.23.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/leaflet.git",
-                "reference": "8.x-1.19"
+                "reference": "8.x-1.23"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/leaflet-8.x-1.19.zip",
-                "reference": "8.x-1.19",
-                "shasum": "d409f9978a8ab153ab1bc15be0d3d4a1be378a38"
+                "url": "https://ftp.drupal.org/files/projects/leaflet-8.x-1.23.zip",
+                "reference": "8.x-1.23",
+                "shasum": "909837d6b879bb129daaa9d6c555a32831405679"
             },
             "require": {
                 "drupal/core": "~8.0",
@@ -6390,8 +6335,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.19",
-                    "datestamp": "1568051586",
+                    "version": "8.x-1.23",
+                    "datestamp": "1574825586",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -6443,17 +6388,17 @@
         },
         {
             "name": "drupal/leaflet_maptiler",
-            "version": "1.0.0-beta4",
+            "version": "1.0.0-beta5",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/leaflet_maptiler.git",
-                "reference": "8.x-1.0-beta4"
+                "reference": "8.x-1.0-beta5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/leaflet_maptiler-8.x-1.0-beta4.zip",
-                "reference": "8.x-1.0-beta4",
-                "shasum": "0558c04d2c7cf0844c1f1d8d321e87eb734401d9"
+                "url": "https://ftp.drupal.org/files/projects/leaflet_maptiler-8.x-1.0-beta5.zip",
+                "reference": "8.x-1.0-beta5",
+                "shasum": "014cbbd08e7ec7ec5e054b307f471991ac19d643"
             },
             "require": {
                 "drupal/core": "~8.0",
@@ -6468,7 +6413,7 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.0-beta4",
+                    "version": "8.x-1.0-beta5",
                     "datestamp": "1571214786",
                     "security-coverage": {
                         "status": "not-covered",
@@ -7167,7 +7112,7 @@
                     }
                 },
                 "patches_applied": {
-                    "Issue #2870738: Wrong active trail with multiple menu items with the same path": "https://www.drupal.org/files/issues/multiple-menu-links-2870738-6.patch"
+                    "Issue #3099308: Menu Trail by Path: several issues": "https://www.drupal.org/files/issues/2019-12-10/menu_trail_by_path_issues-3099308-6.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -7647,17 +7592,17 @@
         },
         {
             "name": "drupal/paragraphs",
-            "version": "1.6.0",
+            "version": "1.10.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/paragraphs.git",
-                "reference": "8.x-1.6"
+                "reference": "8.x-1.10"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/paragraphs-8.x-1.6.zip",
-                "reference": "8.x-1.6",
-                "shasum": "cd93e244f3a78dabdcf362adc31e59aad25b3fae"
+                "url": "https://ftp.drupal.org/files/projects/paragraphs-8.x-1.10.zip",
+                "reference": "8.x-1.10",
+                "shasum": "12f96d90940df1c870bbe4cb97a8260169045911"
             },
             "require": {
                 "drupal/core": "~8",
@@ -7667,9 +7612,9 @@
                 "drupal/block_field": "~1.0",
                 "drupal/ctools": "3.x-dev",
                 "drupal/diff": "~1.0",
-                "drupal/entity_browser": "1.x-dev",
+                "drupal/entity_browser": "2.x-dev",
                 "drupal/entity_usage": "2.x-dev",
-                "drupal/field_group": "~1.0",
+                "drupal/field_group": "3.x-dev",
                 "drupal/inline_entity_form": "~1.0",
                 "drupal/paragraphs-paragraphs_library": "*",
                 "drupal/replicate": "~1.0",
@@ -7685,16 +7630,15 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.6",
-                    "datestamp": "1553087589",
+                    "version": "8.x-1.10",
+                    "datestamp": "1572617586",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
                     }
                 },
                 "patches_applied": {
-                    "Issue #2461695: Support translatable paragraph entity reference revision field": "https://www.drupal.org/files/issues/2018-12-06/2461695-263.patch",
-                    "Issue #2907094: Make paragraphs module working with field_group version 3.x with support for the field_layout module": "https://www.drupal.org/files/issues/2019-07-05/2907094_65_0.patch"
+                    "Issue #2461695: Support translatable paragraph entity reference revision field": "https://www.drupal.org/files/issues/2019-11-16/2461695-273.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -7763,6 +7707,9 @@
                         "status": "not-covered",
                         "message": "Beta releases are not covered by Drupal security advisories."
                     }
+                },
+                "patches_applied": {
+                    "Issue #2992777: Implement a migration path": "https://www.drupal.org/files/issues/2019-05-24/2992777-implement_migration_path-15.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -7791,20 +7738,20 @@
         },
         {
             "name": "drupal/pathauto",
-            "version": "1.4.0",
+            "version": "1.6.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/pathauto.git",
-                "reference": "8.x-1.4"
+                "reference": "8.x-1.6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/pathauto-8.x-1.4.zip",
-                "reference": "8.x-1.4",
-                "shasum": "ddfb047ae04ca2ddf475d65f6c09bceb44169e25"
+                "url": "https://ftp.drupal.org/files/projects/pathauto-8.x-1.6.zip",
+                "reference": "8.x-1.6",
+                "shasum": "eb976ae110d73c06fafb1b657adb967dd2cb8246"
             },
             "require": {
-                "drupal/core": "^8.5",
+                "drupal/core": "^8.6",
                 "drupal/ctools": "*",
                 "drupal/token": "*"
             },
@@ -7814,8 +7761,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.4",
-                    "datestamp": "1570828084",
+                    "version": "8.x-1.6",
+                    "datestamp": "1575467285",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -13748,31 +13695,35 @@
         },
         {
             "name": "typo3/phar-stream-wrapper",
-            "version": "v2.1.3",
+            "version": "v3.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/TYPO3/phar-stream-wrapper.git",
-                "reference": "e8a656d72028b97ab9f61ed993734f3cded02eeb"
+                "reference": "586ff60beea128e069a5dc271d3d8133a9bc460a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/TYPO3/phar-stream-wrapper/zipball/e8a656d72028b97ab9f61ed993734f3cded02eeb",
-                "reference": "e8a656d72028b97ab9f61ed993734f3cded02eeb",
+                "url": "https://api.github.com/repos/TYPO3/phar-stream-wrapper/zipball/586ff60beea128e069a5dc271d3d8133a9bc460a",
+                "reference": "586ff60beea128e069a5dc271d3d8133a9bc460a",
                 "shasum": ""
             },
             "require": {
-                "brumann/polyfill-unserialize": "^1.0",
                 "ext-json": "*",
-                "php": "^5.3.3|^7.0"
+                "php": "^7.0"
             },
             "require-dev": {
                 "ext-xdebug": "*",
-                "phpunit/phpunit": "^4.8.36"
+                "phpunit/phpunit": "^6.5"
             },
             "suggest": {
                 "ext-fileinfo": "For PHP builtin file type guessing, otherwise uses internal processing"
             },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "v3.x-dev"
+                }
+            },
             "autoload": {
                 "psr-4": {
                     "TYPO3\\PharStreamWrapper\\": "src/"
@@ -13790,7 +13741,7 @@
                 "security",
                 "stream-wrapper"
             ],
-            "time": "2019-10-18T11:59:10+00:00"
+            "time": "2019-10-18T11:57:16+00:00"
         },
         {
             "name": "w8tcha/codemirror",
