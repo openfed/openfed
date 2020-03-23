@@ -136,7 +136,7 @@ projects[calendar][subdir] = contrib
 projects[combined_termref][version] = "1.0-beta2"
 projects[combined_termref][subdir] = contrib
 
-projects[ckeditor][version] = "1.18"
+projects[ckeditor][version] = "1.19"
 projects[ckeditor][subdir] = contrib
 projects[ckeditor][patch][2355733] = "https://www.drupal.org/files/issues/2355733-ckeditor-customize-default-3.patch"
 
