@@ -1,6 +1,14 @@
 CHANGELOG
 =========
 
+19 December 2019 - Version 2.29
+----------------------------
+  Update Drupal Core due to SA-CORE-2020-002 and SA-CORE-2020-003
+
+23 March 2020 - Version 2.28
+----------------------------
+  Update CKEditor module due to SA-CONTRIB-2020-007
+
 19 December 2019 - Version 2.27
 ----------------------------
   Update to Drupal Core 7.69 due to SA-CORE-2019-012
