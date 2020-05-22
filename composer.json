@@ -275,6 +275,9 @@
       "drupal/field_group": {
         "Issue #3100829: Migrate Html Element field group format type": "https://www.drupal.org/files/issues/2019-12-13/migrate-html-element-field-group-format-type-3100829-2.patch"
       },
+      "drupal/file_entity": {
+        "Issue #2866851: Wrong encoded Content-Disposition header": "https://www.drupal.org/files/issues/2866851-content-disposition-3.patch"
+      },
       "drupal/focal_point": {
         "Issue #3106445: Referential Integrity": "https://www.drupal.org/files/issues/2020-01-23/Focal_point-Referential_Integrity-3106445-4.patch"
       },
@@ -338,13 +341,13 @@
     "oomphinc/composer-installers-extender": "^1.1",
     "drupal-composer/drupal-scaffold": "^2.0.1",
     "cweagans/composer-patches": "~1.0",
-    "openfed/kiso": "2.4",
+    "openfed/kiso": "2.5",
     "drupal/core": "8.8.6",
     "drush/drush": "~9.0",
     "drupal/console": "~1.0",
     "drupal/addanother": "1.0-rc1",
     "drupal/admin_toolbar": "2.0",
-    "drupal/admin_toolbar_content_languages": "1.0-beta2",
+    "drupal/admin_toolbar_content_languages": "1.0-beta3",
     "drupal/adminimal_theme": "1.5",
     "drupal/alertbox": "1.0-beta8",
     "drupal/allowed_formats": "1.2",
@@ -423,6 +426,7 @@
     "drupal/redirect": "1.5",
     "drupal/role_delegation": "1.1",
     "drupal/rules": "3.0-alpha5",
+    "drupal/scheduled_updates": "1.0-alpha7",
     "drupal/search_api": "1.13",
     "drupal/search_api_attachments": "1.0-beta15",
     "drupal/search_api_autocomplete": "1.2",
@@ -430,10 +434,10 @@
     "drupal/search_api_solr_multilingual": "1.1",
     "drupal/seckit": "1.2",
     "drupal/securelogin": "1.8",
-    "drupal/scheduled_updates": "1.0-alpha7",
     "drupal/sharemessage": "1.0-beta2",
     "drupal/simple_gmap": "2.0",
     "drupal/simple_sitemap": "3.5",
+    "drupal/simplesamlphp_auth": "3.2",
     "drupal/smart_trim": "1.2",
     "drupal/soundcloudfield": "1.0-alpha1",
     "drupal/super_login": "1.3",
