@@ -272,7 +272,7 @@ projects[honeypot][subdir] = contrib
 projects[html5_tools][version] = "1.3"
 projects[html5_tools][subdir] = contrib
 
-projects[i18n][version] = "1.22"
+projects[i18n][version] = "1.27"
 projects[i18n][subdir] = contrib
 
 projects[i18nviews][version] = "3.0-alpha1"
