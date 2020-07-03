@@ -139,6 +139,7 @@ projects[combined_termref][subdir] = contrib
 projects[ckeditor][version] = "1.19"
 projects[ckeditor][subdir] = contrib
 projects[ckeditor][patch][2355733] = "https://www.drupal.org/files/issues/2355733-ckeditor-customize-default-3.patch"
+projects[ckeditor][patch][3120705] = "https://www.drupal.org/files/issues/2020-07-02/ckeditor-parsing-custom-js-3120705-82.patch"
 
 projects[ckeditor_link][version] = "2.4"
 projects[ckeditor_link][subdir] = contrib
