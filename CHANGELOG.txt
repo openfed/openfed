@@ -1,7 +1,7 @@
 CHANGELOG
 =========
 
-26 November 2020 - Version 2.30
+26 November 2020 - Version 2.30-rc1
 ----------------------------
   Update Drupal Core due to SA-CORE-2020-012 and SA-CORE-2020-013
   Update contrib modules: addanother, adminimal_theme, admin_language, admin_menu, admin_theme, apachesolr, apachesolr_views, back_to_top
