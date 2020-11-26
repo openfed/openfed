@@ -258,16 +258,16 @@ projects[globalredirect][subdir] = contrib
 projects[gmap][version] = "2.11"
 projects[gmap][subdir] = contrib
 
-projects[google_analytics][version] = "2.4"
+projects[google_analytics][version] = "2.6"
 projects[google_analytics][subdir] = contrib
 
-projects[google_tag][version] = "1.3"
+projects[google_tag][version] = "1.6"
 projects[google_tag][subdir] = contrib
 
-projects[hierarchical_select][version] = "3.0-beta8"
+projects[hierarchical_select][version] = "3.0-beta9"
 projects[hierarchical_select][subdir] = contrib
 
-projects[honeypot][version] = "1.23"
+projects[honeypot][version] = "1.26"
 projects[honeypot][subdir] = contrib
 
 projects[html5_tools][version] = "1.3"
@@ -279,10 +279,10 @@ projects[i18n][subdir] = contrib
 projects[i18nviews][version] = "3.0-alpha1"
 projects[i18nviews][subdir] = contrib
 
-projects[imagecache_actions][version] = "1.10"
+projects[imagecache_actions][version] = "1.12"
 projects[imagecache_actions][subdir] = contrib
 
-projects[inline_entity_form][version] = "1.8"
+projects[inline_entity_form][version] = "1.9"
 projects[inline_entity_form][subdir] = contrib
 
 projects[imce][version] = "1.11"
@@ -309,7 +309,7 @@ projects[l10n_update][subdir] = contrib
 projects[language_cookie][version] = "2.0"
 projects[language_cookie][subdir] = contrib
 
-projects[language_selection_page][version] = "2.0"
+projects[language_selection_page][version] = "2.1"
 projects[language_selection_page][subdir] = contrib
 
 projects[lexicon][version] = "1.10"
