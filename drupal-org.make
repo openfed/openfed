@@ -423,15 +423,14 @@ projects[role_delegation][patch][1156414] = "https://www.drupal.org/files/issues
 projects[rules][version] = "2.12"
 projects[rules][subdir] = contrib
 
-projects[scheduler][version] = "1.5"
+projects[scheduler][version] = "1.6"
 projects[scheduler][subdir] = contrib
 
 projects[search_config][version] = "1.1"
 projects[search_config][subdir] = contrib
 
-projects[seckit][version] = "1.9"
+projects[seckit][version] = "1.11"
 projects[seckit][subdir] = contrib
-projects[seckit][patch][2281315] = "https://www.drupal.org/files/issues/seckit-disable_autocomplete-2281315-13.patch"
 
 projects[securelogin][version] = "1.7"
 projects[securelogin][subdir] = contrib
@@ -452,10 +451,10 @@ projects[site_map][subdir] = contrib
 projects[site_verify][version] = "1.2"
 projects[site_verify][subdir] = contrib
 
-projects[smart_trim][version] = "1.5"
+projects[smart_trim][version] = "1.6"
 projects[smart_trim][subdir] = contrib
 
-projects[special_menu_items][version] = "2.0"
+projects[special_menu_items][version] = "2.1"
 projects[special_menu_items][subdir] = contrib
 
 projects[strongarm][version] = "2.0"
@@ -470,7 +469,7 @@ projects[termstatus][subdir] = contrib
 projects[text_resize][version] = "1.9"
 projects[text_resize][subdir] = contrib
 
-projects[title][version] = "1.0-alpha9"
+projects[title][version] = "1.0-beta3"
 projects[title][subdir] = contrib
 
 projects[token][version] = "1.7"
@@ -492,7 +491,7 @@ projects[twitter_block][version] = "2.3"
 projects[twitter_block][subdir] = contrib
 projects[twitter_block][patch][2858500] = "https://www.drupal.org/files/issues/twitter_block-2751845-5.patch"
 
-projects[username_enumeration_prevention][version] = "1.2"
+projects[username_enumeration_prevention][version] = "1.3"
 projects[username_enumeration_prevention][subdir] = contrib
 
 projects[variable][version] = "2.5"
@@ -501,22 +500,22 @@ projects[variable][subdir] = contrib
 projects[view_unpublished][version] = "1.2"
 projects[view_unpublished][subdir] = contrib
 
-projects[views][version] = "3.21"
+projects[views][version] = "3.24"
 projects[views][subdir] = contrib
 
 projects[views_data_export][version] = "3.2"
 projects[views_data_export][subdir] = contrib
 
-projects[views_bulk_operations][version] = "3.4"
+projects[views_bulk_operations][version] = "3.6"
 projects[views_bulk_operations][subdir] = contrib
 
-projects[views_slideshow][version] = "3.9"
+projects[views_slideshow][version] = "3.10"
 projects[views_slideshow][subdir] = contrib
 
 projects[views_tree][version] = "2.0"
 projects[views_tree][subdir] = contrib
 
-projects[webform][version] = "4.21"
+projects[webform][version] = "4.23"
 projects[webform][subdir] = contrib
 
 projects[webform_clear][version] = "2.0"

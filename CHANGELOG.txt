@@ -8,7 +8,8 @@ CHANGELOG
   Update contrib modules: bean, calendar, ctools, colorbox, content_access, media, devel, diff, ds, elements
   Update contrib modules: extlink, facetapi, features, field_collection, field_permissions, file_entity
   Update contrib modules: google_analytics, google_tag, hierarchical_select, honeypot, imagecache_actions, inline_entity_form, language_selection_page
-  Update contrib modules: libraries, link, l10n_update, media_youtube, menu_attributes, metatag, ofed_theme_nerra, 
+  Update contrib modules: libraries, link, l10n_update, media_youtube, menu_attributes, metatag, ofed_theme_nerra, override_node_options, quiz
+  Update contrib modules: scheduler, seckit, smart_trim, special_menu_items, title, username_enumeration_prevention, views, views_bulk_operations, views_slideshow, webform
 
 22 May 2020 - Version 2.29
 ----------------------------
