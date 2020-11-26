@@ -123,13 +123,13 @@ projects[apachesolr_views][subdir] = contrib
 projects[back_to_top][version] = "1.7"
 projects[back_to_top][subdir] = contrib
 
-projects[bean][version] = "1.11"
+projects[bean][version] = "1.13"
 projects[bean][subdir] = contrib
 
 projects[beidmellon][version] = "1.0-rc1"
 projects[beidmellon][subdir] = contrib
 
-projects[calendar][version] = "3.5"
+projects[calendar][version] = "3.6"
 projects[calendar][subdir] = contrib
 
 ; Dependency for menu_to_taxonomy.
@@ -145,13 +145,13 @@ projects[ckeditor_link][version] = "2.4"
 projects[ckeditor_link][subdir] = contrib
 projects[ckeditor_link][patch][1875720] = "https://www.drupal.org/files/issues/ckeditor_link-entity-translation-1875720-42-D7.patch"
 
-projects[colorbox][version] = "2.13"
+projects[colorbox][version] = "2.15"
 projects[colorbox][subdir] = contrib
 
 projects[comment_goodness][version] = "1.4"
 projects[comment_goodness][subdir] = contrib
 
-projects[content_access][version] = "1.2-beta2"
+projects[content_access][version] = "1.2-beta3"
 projects[content_access][subdir] = contrib
 
 projects[context][version] = "3.10"
@@ -160,29 +160,29 @@ projects[context][subdir] = contrib
 projects[countries][version] = "2.3"
 projects[countries][subdir] = contrib
 
-projects[ctools][version] = "1.13"
+projects[ctools][version] = "1.17"
 projects[ctools][subdir] = contrib
 
 projects[date][version] = "2.10"
 projects[date][subdir] = contrib
 
-projects[devel][version] = "1.5"
+projects[devel][version] = "1.7"
 projects[devel][subdir] = contrib
 
-projects[diff][version] = "3.3"
+projects[diff][version] = "3.4"
 projects[diff][subdir] = contrib
 
 ; Dependency for Workbench Moderation
 projects[drafty][version] = "1.0-rc1"
 projects[drafty][subdir] = contrib
 
-projects[ds][version] = "2.15"
+projects[ds][version] = "2.16"
 projects[ds][subdir] = contrib
 
 projects[easy_breadcrumb][version] = "2.17"
 projects[easy_breadcrumb][subdir] = contrib
 
-projects[elements][version] = "1.4"
+projects[elements][version] = "1.5"
 projects[elements][subdir] = contrib
 
 projects[email][version] = "1.3"
@@ -331,7 +331,7 @@ projects[logintoboggan][patch][1142808] = "https://www.drupal.org/files/logintob
 projects[m4032404][version] = "1.0-beta2"
 projects[m4032404][subdir] = contrib
 
-projects[media][version] = "2.19"
+projects[media][version] = "2.26"
 projects[media][subdir] = contrib
 
 projects[media_soundcloud][version] = "2.1"

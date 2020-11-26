@@ -5,7 +5,7 @@ CHANGELOG
 ----------------------------
   Update Drupal Core due to SA-CORE-2020-012 and SA-CORE-2020-013
   Update contrib modules: addanother, adminimal_theme, admin_language, admin_menu, admin_theme, apachesolr, apachesolr_views, back_to_top
-
+  Update contrib modules: bean, calendar, ctools, colorbox, content_access, media, devel, diff, ds, elements
 
 22 May 2020 - Version 2.29
 ----------------------------
