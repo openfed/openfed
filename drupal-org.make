@@ -73,7 +73,7 @@ projects[ofed_cms_adminimal_theme][patch][3083842] = "https://www.drupal.org/fil
 ; Please fill the following out. Type may be one of get, git, bzr or svn, and url is the url of the download.
 ;
 
-projects[adminimal_theme][version] = "1.24"
+projects[adminimal_theme][version] = "1.26"
 projects[adminimal_theme][subdir] = contrib
 
 ;
@@ -81,26 +81,26 @@ projects[adminimal_theme][subdir] = contrib
 ; Please fill the following out. Type may be one of get, git, bzr or svn, and url is the url of the download.
 ;
 
-projects[addanother][version] = "2.2"
+projects[addanother][version] = "2.3"
 projects[addanother][subdir] = contrib
 
-projects[admin_language][version] = "1.0-beta4"
+projects[admin_language][version] = "1.0"
 projects[admin_language][subdir] = contrib
 
-projects[admin_menu][version] = "3.0-rc5"
+projects[admin_menu][version] = "3.0-rc6"
 projects[admin_menu][subdir] = contrib
 projects[admin_menu][patch][2096789] = "https://www.drupal.org/files/issues/admin_menu-interface_language_is_mixed_instead_of_forced_EN-2096789-20.patch"
 
 projects[admin_menu_content_languages][version] = "1.0-rc2"
 projects[admin_menu_content_languages][subdir] = contrib
 
-projects[admin_theme][version] = "1.0"
+projects[admin_theme][version] = "1.1"
 projects[admin_theme][subdir] = contrib
 
 projects[admin_views][version] = "1.7"
 projects[admin_views][subdir] = contrib
 
-projects[apachesolr][version] = "1.9"
+projects[apachesolr][version] = "1.11"
 projects[apachesolr][subdir] = contrib
 projects[apachesolr][patch][2315173] = "https://www.drupal.org/files/issues/apachesolr-indexing_teaser-2315173-10.patch"
 
@@ -117,10 +117,10 @@ projects[apachesolr_multilingual][version] = "1.3"
 projects[apachesolr_multilingual][subdir] = contrib
 projects[apachesolr_multilingual][patch][2293203] = "https://www.drupal.org/files/issues/2293203.apachesolr_multilingual.apachesolr_multilingual_apachesolr_index_documents_alter-language.patch"
 
-projects[apachesolr_views][version] = "1.1-beta1"
+projects[apachesolr_views][version] = "1.1-beta3"
 projects[apachesolr_views][subdir] = contrib
 
-projects[back_to_top][version] = "1.6"
+projects[back_to_top][version] = "1.7"
 projects[back_to_top][subdir] = contrib
 
 projects[bean][version] = "1.11"
