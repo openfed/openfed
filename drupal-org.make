@@ -55,7 +55,7 @@ projects[ofed_switcher][subdir] = contrib
 projects[ofed_vmcd][version] = "1.0"
 projects[ofed_vmcd][subdir] = contrib
 
-projects[ofed_theme_nerra][version] = "1.2"
+projects[ofed_theme_nerra][version] = "1.3"
 projects[ofed_theme_nerra][subdir] = contrib
 
 projects[ofed_theme_cms][version] = "1.3-rc4"
@@ -303,7 +303,7 @@ projects[jquery_update][subdir] = contrib
 projects[l10n_client][version] = "1.3"
 projects[l10n_client][subdir] = contrib
 
-projects[l10n_update][version] = "2.3"
+projects[l10n_update][version] = "2.4"
 projects[l10n_update][subdir] = contrib
 
 projects[language_cookie][version] = "2.0"
@@ -315,10 +315,10 @@ projects[language_selection_page][subdir] = contrib
 projects[lexicon][version] = "1.10"
 projects[lexicon][subdir] = contrib
 
-projects[libraries][version] = "2.3"
+projects[libraries][version] = "2.5"
 projects[libraries][subdir] = contrib
 
-projects[link][version] = "1.6"
+projects[link][version] = "1.7"
 projects[link][subdir] = contrib
 
 projects[location][version] = "3.8-beta2"
@@ -340,10 +340,10 @@ projects[media_soundcloud][subdir] = contrib
 projects[media_vimeo][version] = "2.1"
 projects[media_vimeo][subdir] = contrib
 
-projects[media_youtube][version] = "3.7"
+projects[media_youtube][version] = "3.9"
 projects[media_youtube][subdir] = contrib
 
-projects[menu_attributes][version] = "1.0"
+projects[menu_attributes][version] = "1.1"
 projects[menu_attributes][subdir] = contrib
 
 projects[menu_block][version] = "2.7"
@@ -368,7 +368,7 @@ projects[menu_to_taxonomy][subdir] = contrib
 projects[module_filter][version] = "2.2"
 projects[module_filter][subdir] = contrib
 
-projects[metatag][version] = "1.22"
+projects[metatag][version] = "1.27"
 projects[metatag][subdir] = contrib
 
 projects[multiple_node_menu][version] = "1.0-beta2"
@@ -384,7 +384,7 @@ projects[navigation404][patch][1844830] = "https://www.drupal.org/files/navigati
 projects[node_edit_redirect][version] = "1.0-rc2"
 projects[node_edit_redirect][subdir] = contrib
 
-projects[override_node_options][version] = "1.13"
+projects[override_node_options][version] = "1.14"
 projects[override_node_options][subdir] = contrib
 
 projects[panels][version] = "3.9"
@@ -407,7 +407,7 @@ projects[pathauto][patch][1993462] = "https://www.drupal.org/files/pathauto-path
 projects[print][version] = "2.2"
 projects[print][subdir] = contrib
 
-projects[quiz][version] = "4.0-rc9"
+projects[quiz][version] = "4.0-rc11"
 projects[quiz][subdir] = contrib
 
 projects[redirect][version] = "1.0-rc3"
