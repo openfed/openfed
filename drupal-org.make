@@ -204,17 +204,17 @@ projects[entityreference_view_widget][subdir] = contrib
 projects[entity_translation][version] = "1.0-beta7"
 projects[entity_translation][subdir] = contrib
 
-projects[extlink][version] = "1.18"
+projects[extlink][version] = "1.21"
 projects[extlink][subdir] = contrib
 
-projects[facetapi][version] = "1.5"
+projects[facetapi][version] = "1.6"
 projects[facetapi][subdir] = contrib
 
 projects[facetapi_i18n][version] = "1.0-beta2"
 projects[facetapi_i18n][subdir] = contrib
 projects[facetapi_i18n][patch][2404953] = "https://www.drupal.org/files/issues/2404953-5.patch"
 
-projects[features][version] = "2.10"
+projects[features][version] = "2.13"
 projects[features][subdir] = contrib
 
 projects[features_override][version] = "2.0-rc3"
@@ -226,7 +226,7 @@ projects[feeds][subdir] = contrib
 projects[feeds_xpathparser][version] = "1.1"
 projects[feeds_xpathparser][subdir] = contrib
 
-projects[field_collection][version] = "1.0-beta12"
+projects[field_collection][version] = "1.1"
 projects[field_collection][subdir] = contrib
 
 projects[field_conditional_state][version] = "2.1"
@@ -238,16 +238,16 @@ projects[field_default_token][subdir] = contrib
 projects[field_group][version] = "1.6"
 projects[field_group][subdir] = contrib
 
-projects[field_permissions][version] = "1.0"
+projects[field_permissions][version] = "1.1"
 projects[field_permissions][subdir] = contrib
 
 projects[field_slideshow][version] = "1.83"
 projects[field_slideshow][subdir] = contrib
 projects[field_slideshow][patch][2326155] = "https://www.drupal.org/files/issues/field_slideshow-swipe-2326155-1.patch"
 
-projects[file_entity][version] = "2.20"
+projects[file_entity][version] = "2.30"
 projects[file_entity][subdir] = contrib
-projects[file_entity][patch][2097261] = "https://www.drupal.org/files/issues/file_entity-download_link_i18n-2097261-4.patch"
+projects[file_entity][patch][2097261] = "https://www.drupal.org/files/issues/file_entity-download_link_i18n-2097261-7.patch"
 
 projects[flag][version] = "3.9"
 projects[flag][subdir] = contrib
