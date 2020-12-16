@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+16 December 2020 - Version 2.32
+----------------------------
+  Core update to version 7.77
+  Issue #3188679: Add Matomo module
+
 26 November 2020 - Version 2.31
 ----------------------------
   No differences to 7.x-2.31-rc1
