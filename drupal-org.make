@@ -331,6 +331,9 @@ projects[logintoboggan][patch][1142808] = "https://www.drupal.org/files/logintob
 projects[m4032404][version] = "1.0-beta2"
 projects[m4032404][subdir] = contrib
 
+projects[matomo][version] = "2.12"
+projects[matomo][subdir] = contrib
+
 projects[media][version] = "2.26"
 projects[media][subdir] = contrib
 
