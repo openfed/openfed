@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+21 January 2021 - Version 2.33
+----------------------------
+  Update to Drupal Core 7.78 due to SA-CORE-2021-001
+
 16 December 2020 - Version 2.32
 ----------------------------
   Core update to version 7.77
