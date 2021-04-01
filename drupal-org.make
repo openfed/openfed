@@ -100,6 +100,9 @@ projects[admin_theme][subdir] = contrib
 projects[admin_views][version] = "1.7"
 projects[admin_views][subdir] = contrib
 
+projects[antibot][version] = "1.2"
+projects[antibot][subdir] = contrib
+
 projects[apachesolr][version] = "1.11"
 projects[apachesolr][subdir] = contrib
 projects[apachesolr][patch][2315173] = "https://www.drupal.org/files/issues/apachesolr-indexing_teaser-2315173-10.patch"

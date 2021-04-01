@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+01 April 2021 - Version 2.34
+----------------------------
+  Added Antibot module
+
 21 January 2021 - Version 2.33
 ----------------------------
   Update to Drupal Core 7.78 due to SA-CORE-2021-001
