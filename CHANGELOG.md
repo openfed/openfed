@@ -1,13 +1,20 @@
 CHANGELOG
 =========
 
-01 April 2021 - Version 9.5
+20 April 2021 - Version 10.0-alpha1
 ----------------------------
-- Added Antibot module
-
-29 March 2021 - Version 9.4
-----------------------------
-- Update Webform module due to sa-contrib-2021-004
+This version is intended to be fully compatible with Drupal 9. It includes:
+- Several module updates.
+- Remove scheduled_updates
+- Remove sharemessage
+- Remove simple_gmap
+- Remove toolbar_themes
+- Remove field_default_token
+- Remove Openfed contact_storage_clear module
+- Remove Openfed yamlform_clear
+- Remove features --dev
+- Remove drupal/drupal-extension --dev
+- Set PHP version to 7.3
 
 02 February 2021 - Version 9.3
 ----------------------------
