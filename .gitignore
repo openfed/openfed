@@ -5,3 +5,5 @@ vendor/
 .settings
 .settings/
 .project
+/.editorconfig
+/.gitattributes
