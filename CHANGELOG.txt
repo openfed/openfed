@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+30 August 2021 - Version 2.37
+----------------------------
+  Update Drupal core
+
 31 May 2021 - Version 2.36
 ----------------------------
   Update Ckeditor library due to security issue.
