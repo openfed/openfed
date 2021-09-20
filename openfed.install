@@ -5,9 +5,10 @@
  */
 
 /**
- * Implements hook_install().
+ * Minimum 9.11 schema version to allow upgrading from.
  */
-function openfed_install() {
+function openfed_update_last_removed() {
+  return 8900;
 }
 
 /**
@@ -369,4 +370,17 @@ function openfed_update_8800(&$sandbox) {
   }
 
   return $message;
+}
+
+/**
+ * Fix long lost modules are missing from the filesystem.
+ */
+function openfed_update_81000(&$sandbox) {
+  $modules = [
+    'media_entity',
+  ];
+  \Drupal::database()->delete('key_value')
+    ->condition('collection', 'system.schema')
+    ->condition('name', $modules, 'IN')
+    ->execute();
 }
