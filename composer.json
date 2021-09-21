@@ -1,5 +1,5 @@
 {
-    "name": "openfed/openfed8",
+    "name": "openfed/openfed",
     "description": "OpenFed base installation with modules and configurations needed for Fast2Web service",
     "type": "drupal-profile",
     "license": "GPL-2.0-or-later",
