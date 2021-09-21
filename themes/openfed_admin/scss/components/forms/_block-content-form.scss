@@ -1,0 +1,22 @@
+//
+// @file
+// "Block Content Form" form.
+//
+
+form.block-content-form {
+
+  #{$fields} {
+
+    &--widget-multiselect {
+      clear: both;
+      overflow: hidden;
+
+      .description {
+        clear:both;
+      }
+    }
+    &--name-body {
+      clear: both;
+    }
+  }
+}

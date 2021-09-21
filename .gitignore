@@ -1,0 +1,9 @@
+LICENSE.txt
+libraries/
+docroot/
+vendor/
+modules/
+.idea
+/autoload.php
+/.editorconfig
+/.gitattributes

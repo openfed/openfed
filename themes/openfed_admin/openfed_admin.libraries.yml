@@ -1,0 +1,6 @@
+# These lines define your THEMENAME/global-styling (CSS) library.
+global-styling:
+  css:
+    component:
+      css/components/forms.css: {}
+      css/components/views.css: {}
