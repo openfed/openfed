@@ -302,7 +302,7 @@
         "ckeditor/link": "4.17.1",
         "ckeditor/fakeobjects": "4.17.1",
         "w8tcha/codemirror": "1.17.12",
-        "smillart/wai-aria-patterns-and-widgets": "^1.0"
+        "smillart/wai-aria-patterns-and-widgets": "~1.0.0"
     },
     "require-dev": {
         "drupal/coder": "8.*",
