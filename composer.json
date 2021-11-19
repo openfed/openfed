@@ -40,7 +40,9 @@
     "extra": {
         "installer-types": [
             "openfed-ckeditor-plugin",
-            "openfed-ckeditor-template"
+            "openfed-ckeditor-template",
+            "simplesamlphp-module",
+            "theme-library"
         ],
         "installer-paths": {
             "docroot/core": [
@@ -48,7 +50,8 @@
             ],
             "docroot/libraries/{$name}": [
                 "type:drupal-library",
-                "type:openfed-ckeditor-template"
+                "type:openfed-ckeditor-template",
+                "type:theme-library"
             ],
             "docroot/modules/contrib/{$name}": [
                 "type:drupal-module"
@@ -159,7 +162,7 @@
         "cweagans/composer-patches": "^1.6.5",
         "openfed/kiso": "~2.7.1",
         "drush/drush": "^10.0",
-        "drupal/core-recommended": "^9.2",
+        "drupal/core-recommended": "~9.2.0",
         "drupal/core-composer-scaffold": "*",
         "drupal/console": "~1.0",
         "drupal/addanother": "1.1",
@@ -289,16 +292,17 @@
         "drupal/workbench_moderation_actions": "dev-1.x",
         "drupal/xmlrpc": "1.0-beta3",
         "jackmoore/colorbox": "1.6.4",
-        "ckeditor/uploadwidget": "4.16.1",
-        "ckeditor/uploadimage": "4.16.1",
-        "ckeditor/filetools": "4.16.1",
-        "ckeditor/notification": "4.16.1",
-        "ckeditor/notificationaggregator": "4.16.1",
-        "ckeditor/templates": "4.16.1",
-        "ckeditor/find": "4.16.1",
-        "ckeditor/link": "4.16.1",
-        "ckeditor/fakeobjects": "4.16.1",
-        "w8tcha/codemirror": "1.17.8"
+        "ckeditor/uploadwidget": "4.17.1",
+        "ckeditor/uploadimage": "4.17.1",
+        "ckeditor/filetools": "4.17.1",
+        "ckeditor/notification": "4.17.1",
+        "ckeditor/notificationaggregator": "4.17.1",
+        "ckeditor/templates": "4.17.1",
+        "ckeditor/find": "4.17.1",
+        "ckeditor/link": "4.17.1",
+        "ckeditor/fakeobjects": "4.17.1",
+        "w8tcha/codemirror": "1.17.12",
+        "smillart/wai-aria-patterns-and-widgets": "^1.0"
     },
     "require-dev": {
         "drupal/coder": "8.*",
