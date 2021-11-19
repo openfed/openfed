@@ -237,7 +237,7 @@
         "drupal/linkit": "6.0.0-beta2",
         "drupal/m4032404": "1.0-alpha5",
         "drupal/matomo": "1.11",
-        "drupal/measuremail": "1.0-beta5",
+        "drupal/measuremail": "1.0-beta6",
         "drupal/media_entity_generic": "1.1",
         "drupal/memcache": "2.3",
         "drupal/menu_block": "1.7",
