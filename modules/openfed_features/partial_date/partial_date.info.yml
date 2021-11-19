@@ -1,9 +1,8 @@
 name: Partial Date
-type: module
 description: 'Simple datetime field that allows partial dates.'
+type: module
 package: Field types
-version: '8.x-10.0'
-core_version_requirement: ^8 || ^9
+core_version_requirement: ^9
 dependencies:
-  - field
+  - drupal:field
 
