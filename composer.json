@@ -116,6 +116,9 @@
             "drupal/inline_entity_form": {
                 "Issue #2822764: Support adding new entities when translating": "https://www.drupal.org/files/issues/2020-05-16/2822764-57.patch"
             },
+            "drupal/l10n_client": {
+                "Issue #2575401: Localization UI submodule does not work": "https://www.drupal.org/files/issues/2021-10-11/2575401-47.patch"
+            },
             "drupal/menu_block": {
                 "Issue #3089134: Ability to display the menu selected by the page": "https://www.drupal.org/files/issues/2020-08-12/multi-menu-block-3089134-15.patch"
             },
@@ -211,7 +214,7 @@
         "drupal/extlink": "1.6",
         "drupal/facets": "1.8",
         "drupal/fakeobjects": "1.1",
-        "drupal/fast_404": "dev-2.x",
+        "drupal/fast_404": "2.0-alpha6",
         "drupal/fences": "2.0-rc1",
         "drupal/field_formatter": "3.0.0-alpha2",
         "drupal/field_group": "3.2",
