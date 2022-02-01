@@ -162,9 +162,9 @@
         "enable-patching": true
     },
     "require": {
-        "composer/installers": "^1.2",
-        "oomphinc/composer-installers-extender": "^2.0",
-        "cweagans/composer-patches": "^1.6.5",
+        "composer/installers": "*",
+        "oomphinc/composer-installers-extender": "*",
+        "cweagans/composer-patches": "*",
         "openfed/kiso": "~2.7.1",
         "drush/drush": "^10.0",
         "drupal/core-recommended": "~9.3.0",
