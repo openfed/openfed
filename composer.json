@@ -93,7 +93,7 @@
             },
             "drupal/core": {
                 "Issue #2321071: BaseFieldOverride fails": "https://www.drupal.org/files/issues/2019-12-24/2321071-39.patch",
-                "Issue #2325899: UI fatal caused by views argument handlers no longer can provide their own default argument handling": "https://www.drupal.org/files/issues/2019-03-02/2325899-124.patch",
+                "Issue #2325899: UI fatal caused by views argument handlers no longer can provide their own default argument handling": "https://www.drupal.org/files/issues/2021-06-28/2325899-169-9.3-169.patch",
                 "Issue #2457999: Cannot use relationship for rendered entity on Views": "https://www.drupal.org/files/issues/2021-05-13/9.2.x-2457999-267-views-relationship-rendered-entity.patch",
                 "Issue #2649268: Entity Field Query throws QueryException when querying all revisions and setting condition on entity reference field": "https://www.drupal.org/files/issues/2019-09-12/2649268-32.patch",
                 "Issue #2737619: Views entity reference relationships must join on langcode for translatable entities": "https://www.drupal.org/files/issues/2021-11-22/language_aware_relationship-2737619-28.patch",
