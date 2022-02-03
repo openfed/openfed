@@ -148,7 +148,7 @@ projects[ckeditor_link][version] = "2.4"
 projects[ckeditor_link][subdir] = contrib
 projects[ckeditor_link][patch][1875720] = "https://www.drupal.org/files/issues/ckeditor_link-entity-translation-1875720-42-D7.patch"
 
-projects[colorbox][version] = "2.15"
+projects[colorbox][version] = "2.16"
 projects[colorbox][subdir] = contrib
 
 projects[comment_goodness][version] = "1.4"
