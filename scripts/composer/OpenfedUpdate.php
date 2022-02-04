@@ -12,12 +12,12 @@ class OpenfedUpdate {
   /**
    * @var string
    */
-  protected static $openfed8Repo = 'https://github.com/openfed/openfed8-project';
+  protected static $openfedRepo = 'https://github.com/openfed/openfed-project';
 
   /**
    * @var string
    */
-  protected static $openfed8Zip = 'https://github.com/openfed/openfed8-project/archive/refs/tags/';
+  protected static $openfedZip = 'https://github.com/openfed/openfed-project/archive/refs/tags/';
 
   /**
    * @var string
@@ -25,7 +25,7 @@ class OpenfedUpdate {
   protected static $latestOpenfedVersion;
 
   /**
-   * Update current Openfed8 project files.
+   * Update current openfed project files.
    *
    * @param \Composer\Script\Event $event
    */
@@ -36,7 +36,7 @@ class OpenfedUpdate {
     if (self::_newVersionExists()) {
       echo "\n\n---- Project files will be updated to Openfed version " . self::$latestOpenfedVersion . "\n";
 
-      $url = self::$openfed8Zip . self::$latestOpenfedVersion . '.zip';
+      $url = self::$openfedZip . self::$latestOpenfedVersion . '.zip';
       $zipFile = self::$latestOpenfedVersion . '.zip';
       $extractPath = self::$latestOpenfedVersion;
 
@@ -47,7 +47,7 @@ class OpenfedUpdate {
       $response = \Drupal::httpClient()->get($url, ['sink' => $zip_resource]);
 
       if (!$response) {
-        echo "Error :- ";
+        echo "Error :- No connection to the repo.";
       }
 
       $zip = new ZipArchive;
@@ -60,11 +60,11 @@ class OpenfedUpdate {
 
       unlink($zipFile);
       unlink('./composer.libraries.json');
-      unlink($extractPath . DIRECTORY_SEPARATOR . 'openfed8-project-' . self::$latestOpenfedVersion . DIRECTORY_SEPARATOR . 'composer.json');
-      unlink($extractPath . DIRECTORY_SEPARATOR . 'openfed8-project-' . self::$latestOpenfedVersion . DIRECTORY_SEPARATOR . '.gitignore');
-      unlink($extractPath . DIRECTORY_SEPARATOR . 'openfed8-project-' . self::$latestOpenfedVersion . DIRECTORY_SEPARATOR . 'README.md');
+      unlink($extractPath . DIRECTORY_SEPARATOR . 'openfed-project-' . self::$latestOpenfedVersion . DIRECTORY_SEPARATOR . 'composer.json');
+      unlink($extractPath . DIRECTORY_SEPARATOR . 'openfed-project-' . self::$latestOpenfedVersion . DIRECTORY_SEPARATOR . '.gitignore');
+      unlink($extractPath . DIRECTORY_SEPARATOR . 'openfed-project-' . self::$latestOpenfedVersion . DIRECTORY_SEPARATOR . 'README.md');
 
-      self::_recurseCopy($extractPath . DIRECTORY_SEPARATOR . 'openfed8-project-' . self::$latestOpenfedVersion, '.');
+      self::_recurseCopy($extractPath . DIRECTORY_SEPARATOR . 'openfed-project-' . self::$latestOpenfedVersion, '.');
       self::_deleteDirectory($extractPath);
 
       echo "---- Files updated. You still have to check your composer.json manually.\n\n";
@@ -130,7 +130,7 @@ class OpenfedUpdate {
    */
   private static function _newVersionExists() {
     $composer_openfed = json_decode(file_get_contents('composer.openfed.json'), TRUE);
-    $current_version = $composer_openfed['require']['openfed/openfed8'];
+    $current_version = $composer_openfed['require']['openfed/openfed'];
 
     // If current version is dev, we don't need to check if there's a newer
     // version.
@@ -142,10 +142,10 @@ class OpenfedUpdate {
   }
 
   /**
-   * Set the latest Openfed8 version variable.
+   * Set the latest openfed version variable.
    */
   private static function _setLatestOpenfedVersion() {
-    $latest_openfed_version = explode("\n", trim(shell_exec("git -c 'versionsort.suffix=-' ls-remote --tags --sort='-v:refname' " . self::$openfed8Repo . " | cut --delimiter='/' --fields=3 | grep -v -")));
+    $latest_openfed_version = explode("\n", trim(shell_exec("git -c 'versionsort.suffix=-' ls-remote --tags --sort='-v:refname' " . self::$openfedRepo . " | cut --delimiter='/' --fields=3 | grep -v -")));
     self::$latestOpenfedVersion = $latest_openfed_version[0];
   }
 
