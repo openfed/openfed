@@ -206,6 +206,7 @@
         "drupal/diff": "1.0",
         "drupal/disable_route_normalizer": "1.0-alpha5",
         "drupal/ds": "3.13",
+        "drupal/editor_advanced_link": "2.0",
         "drupal/embed": "1.4",
         "drupal/entity": "1.2",
         "drupal/entity_browser": "2.6",
