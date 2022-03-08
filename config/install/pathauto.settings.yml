@@ -50,4 +50,3 @@ safe_tokens:
   - url
   - url-brief
   - 'node:field_menulink:join-parents-path'
-  

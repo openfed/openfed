@@ -1,6 +1,10 @@
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  config:
+    - filter.format.flexible_html
+  module:
+    - filter
 id: administrator
 label: Administrator
 weight: 2

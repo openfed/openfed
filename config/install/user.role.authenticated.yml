@@ -1,6 +1,14 @@
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  config:
+    - filter.format.embeddable_text
+    - filter.format.flexible_html
+  module:
+    - file_entity
+    - filter
+    - media
+    - system
 id: authenticated
 label: 'Authenticated user'
 weight: 1

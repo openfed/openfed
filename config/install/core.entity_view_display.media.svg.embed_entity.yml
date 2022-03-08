@@ -45,6 +45,7 @@ hidden:
   field_media_generic_2: true
   langcode: true
   name: true
+  search_api_excerpt: true
   thumbnail: true
   uid: true
   workbench_moderation_control: true

@@ -1,6 +1,22 @@
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  config:
+    - filter.format.embeddable_text
+    - filter.format.flexible_html
+    - node.type.page
+  module:
+    - content_moderation
+    - contextual
+    - file
+    - file_entity
+    - filter
+    - media
+    - node
+    - override_node_options
+    - path
+    - system
+    - toolbar
 id: content_editor
 label: 'Content Editor'
 weight: 4
@@ -35,6 +51,7 @@ permissions:
   - 'use openfed_workflow transition archive'
   - 'use openfed_workflow transition drafting'
   - 'use openfed_workflow transition publish'
+  - 'use openfed_workflow transition review'
   - 'use text format embeddable_text'
   - 'use text format flexible_html'
   - 'view all revisions'
