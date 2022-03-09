@@ -10,3 +10,25 @@
 function openfed_update_last_removed() {
   return 81002;
 }
+
+/**
+ * This will content management view, unsetting broken bulk actions.
+ */
+function openfed_update_91101() {
+  $config_factory = \Drupal::configFactory();
+  $config = $config_factory->getEditable('views.view.content');
+  $original_config = $config->get('display.default.display_options.fields.node_bulk_form');
+
+  if ($original_config['include_exclude'] == 'exclude' && empty($original_config['selected_actions'])) {
+    $actions = [
+      'node_publish_action',
+      'node_save_action',
+      'node_unpublish_action',
+      'pin',
+      'unpin',
+    ];
+    $config->set('display.default.display_options.fields.node_bulk_form.selected_actions', $actions);
+    $config->save(TRUE);
+  }
+}
+
