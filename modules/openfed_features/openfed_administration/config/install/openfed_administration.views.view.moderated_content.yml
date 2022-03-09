@@ -2,8 +2,6 @@ target: views.view.moderated_content
 langcode: en
 status: true
 dependencies:
-  config:
-    - workflows.workflow.openfed_workflow
   module:
     - content_moderation
     - node
