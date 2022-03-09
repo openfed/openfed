@@ -944,5 +944,3 @@ display:
         - url.query_args
         - user.permissions
       tags: {  }
-target: views.view.media
-core: 8.x
