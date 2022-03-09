@@ -349,15 +349,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        uid:
-          id: uid
-          table: node_field_revision
-          field: uid
+        revision_uid:
+          id: revision_uid
+          table: node_revision
+          field: revision_uid
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: node
-          entity_field: uid
+          entity_field: revision_uid
           plugin_id: field
           label: 'Revisioned by'
           exclude: false
@@ -777,6 +777,45 @@ display:
                 title: Unpublished
                 operator: '='
                 value: '0'
+        latest_revision:
+          id: latest_revision
+          table: node_revision
+          field: latest_revision
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          plugin_id: latest_revision
+          operator: '='
+          value: ''
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
       filter_groups:
         operator: AND
         groups:
@@ -792,8 +831,9 @@ display:
             nid: nid
             title: title
             langcode: langcode
+            entity_translations: entity_translations
             type: type
-            name: name
+            revision_uid: revision_uid
             status: status
             changed: changed
             operations: operations
@@ -825,6 +865,13 @@ display:
               separator: ''
               empty_column: false
               responsive: ''
+            entity_translations:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
             type:
               sortable: true
               default_sort_order: asc
@@ -832,13 +879,13 @@ display:
               separator: ''
               empty_column: false
               responsive: ''
-            name:
+            revision_uid:
               sortable: true
               default_sort_order: asc
               align: ''
               separator: ''
               empty_column: false
-              responsive: priority-low
+              responsive: ''
             status:
               sortable: true
               default_sort_order: asc
@@ -854,8 +901,6 @@ display:
               empty_column: false
               responsive: priority-low
             operations:
-              sortable: false
-              default_sort_order: asc
               align: ''
               separator: ''
               empty_column: false
