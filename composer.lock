@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4f537a86979b80a97d449041ec008b47",
+    "content-hash": "8d5686fb02fd98f562af31f5c46b6d00",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -9950,17 +9950,17 @@
         },
         {
             "name": "drupal/simple_sitemap",
-            "version": "4.1.0",
+            "version": "4.1.1",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/simple_sitemap.git",
-                "reference": "4.1.0"
+                "reference": "4.1.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/simple_sitemap-4.1.0.zip",
-                "reference": "4.1.0",
-                "shasum": "820a37dcdda25371a98c08703c2887894fc2919e"
+                "url": "https://ftp.drupal.org/files/projects/simple_sitemap-4.1.1.zip",
+                "reference": "4.1.1",
+                "shasum": "ac23939364505d2e6b9d8c741b306c1b84059dfc"
             },
             "require": {
                 "drupal/core": "^8.7.7 || ^9",
@@ -9969,8 +9969,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "4.1.0",
-                    "datestamp": "1644396909",
+                    "version": "4.1.1",
+                    "datestamp": "1645003699",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -10193,17 +10193,17 @@
         },
         {
             "name": "drupal/soundcloudfield",
-            "version": "2.0.0",
+            "version": "2.0.5",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/soundcloudfield.git",
-                "reference": "2.0.0"
+                "reference": "2.0.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/soundcloudfield-2.0.0.zip",
-                "reference": "2.0.0",
-                "shasum": "86c6f32742f1537d8d2108aada496996d69df612"
+                "url": "https://ftp.drupal.org/files/projects/soundcloudfield-2.0.5.zip",
+                "reference": "2.0.5",
+                "shasum": "7ab7c86914026e635716d676013bd4f4ba49c3fd"
             },
             "require": {
                 "drupal/core": "^8.8 || ^9"
@@ -10211,8 +10211,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.0.0",
-                    "datestamp": "1634266259",
+                    "version": "2.0.5",
+                    "datestamp": "1643775320",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -20912,17 +20912,17 @@
         },
         {
             "name": "drupal/devel",
-            "version": "4.1.1",
+            "version": "4.1.5",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/devel.git",
-                "reference": "4.1.1"
+                "reference": "4.1.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/devel-4.1.1.zip",
-                "reference": "4.1.1",
-                "shasum": "88e5d49dda26a3136291ecd97bc6c8e897b24198"
+                "url": "https://ftp.drupal.org/files/projects/devel-4.1.5.zip",
+                "reference": "4.1.5",
+                "shasum": "7d0b4397215f615a67ba80aab777e93918d497f9"
             },
             "require": {
                 "doctrine/common": "^2.7",
@@ -20941,8 +20941,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "4.1.1",
-                    "datestamp": "1631968537",
+                    "version": "4.1.5",
+                    "datestamp": "1646072825",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
