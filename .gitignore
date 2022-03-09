@@ -7,3 +7,4 @@ modules/
 /autoload.php
 /.editorconfig
 /.gitattributes
+!modules/openfed_features
