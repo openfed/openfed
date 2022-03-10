@@ -113,7 +113,7 @@ class OpenfedValidations {
       'features',
     ];
     foreach ($modules_to_check as $module) {
-      $output = trim(shell_exec('drush pml --field="status" --filter="' . $module . '"'));
+      $output = trim(shell_exec('drush pml --field="status" --filter="name~=#(' . $module . ')#i"'));
       if ($output == 'Enabled') {
         throw new \ErrorException("You can't proceed with Openfed update until you uninstall $module. See Openfed 8x-10.0 release notes.");
       }
