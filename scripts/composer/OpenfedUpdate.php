@@ -30,7 +30,7 @@ class OpenfedUpdate {
    * @param \Composer\Script\Event $event
    */
   public static function update(Event $event) {
-    self::_setLatestOpenfedVersion();
+    self::_setLatestOpenfedVersion(self::$openfedRepo);
 
     // Check if there's a new Openfed version and update if so.
     if (self::_newVersionExists()) {
@@ -47,7 +47,7 @@ class OpenfedUpdate {
       $response = \Drupal::httpClient()->get($url, ['sink' => $zip_resource]);
 
       if (!$response) {
-        echo "Error :- No connection to the repo.";
+        echo "Error :- Cannot connect.";
       }
 
       $zip = new ZipArchive;
@@ -58,17 +58,41 @@ class OpenfedUpdate {
       $zip->extractTo($extractPath);
       $zip->close();
 
+      // We'll merge the contents of the zip archive, but we'll ignore some
+      // files. Those files will be removed/unlink.
       unlink($zipFile);
-      unlink('./composer.libraries.json');
-      unlink($extractPath . DIRECTORY_SEPARATOR . 'openfed-project-' . self::$latestOpenfedVersion . DIRECTORY_SEPARATOR . 'composer.json');
+      unlink('./composer.patches.json');
       unlink($extractPath . DIRECTORY_SEPARATOR . 'openfed-project-' . self::$latestOpenfedVersion . DIRECTORY_SEPARATOR . '.gitignore');
       unlink($extractPath . DIRECTORY_SEPARATOR . 'openfed-project-' . self::$latestOpenfedVersion . DIRECTORY_SEPARATOR . 'README.md');
 
+      // Composer.json will be merged.
+      // This is a best effort merge and should be manually confirmed.
+      self::_mergeComposer($extractPath . DIRECTORY_SEPARATOR . 'openfed-project-' . self::$latestOpenfedVersion . DIRECTORY_SEPARATOR . 'composer.json', '.' . DIRECTORY_SEPARATOR . 'composer.json');
+      unlink($extractPath . DIRECTORY_SEPARATOR . 'openfed-project-' . self::$latestOpenfedVersion . DIRECTORY_SEPARATOR . 'composer.json');
+
+      // All the remaining files will be copied as is (i.e.
+      // composer.openfed.json)
       self::_recurseCopy($extractPath . DIRECTORY_SEPARATOR . 'openfed-project-' . self::$latestOpenfedVersion, '.');
       self::_deleteDirectory($extractPath);
 
       echo "---- Files updated. You still have to check your composer.json manually.\n\n";
     }
+  }
+
+  /**
+   * Merge composer files, keeping existing values.
+   *
+   * @param $new
+   *  New composer file, from github repo.
+   * @param $old
+   *  Old composer file, the one in the filesystem.
+   */
+  private static function _mergeComposer($new, $old) {
+    $new_composer = json_decode(file_get_contents($new), TRUE);
+    $old_composer = json_decode(file_get_contents($old), TRUE);
+
+    $updated_composer= NestedArray::mergeDeepArray([$old_composer, $new_composer], TRUE);
+    file_put_contents($old, json_encode($updated_composer, JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES));
   }
 
   /**
