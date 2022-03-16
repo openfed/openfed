@@ -131,6 +131,9 @@
             "drupal/menu_trail_by_path": {
                 "Issue #3099308: Menu Trail by Path: several issues": "https://www.drupal.org/files/issues/2021-06-02/menu_trail_by_path_issues-3099308-13.patch"
             },
+            "drupal/moderated_content_bulk_publish": {
+                "Issue #3185848: Make optional the node edit form confirmation dialog": "https://www.drupal.org/files/issues/2021-07-27/moderated_content_bulk_publish-optional-dialogs-3185848-6.patch"
+            },
             "drupal/page_manager": {
                 "Issue #2820218: Page manager does not respect existing route defaults for title callbacks": "https://www.drupal.org/files/issues/2018-03-21/2820218-50.patch",
                 "Issue #2858877: Allow for block visibility rules": "https://www.drupal.org/files/issues/2020-06-24/page_manager-block_visibility_conditions-2858877-66.patch"
