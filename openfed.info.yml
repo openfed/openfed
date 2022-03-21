@@ -18,7 +18,6 @@ dependencies:
   - drupal:content_moderation
   - drupal:contextual
   - drupal:datetime
-  - drupal:dblog
   - drupal:dynamic_page_cache
   - drupal:editor
   - drupal:field_ui
