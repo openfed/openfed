@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+21 March 2022 - Version 11.0.2
+------------------------------
+  Set a fixed module version to avoid versioning issues
+  Remove unsuported moderated_content_bulk_publish patch until there's a new version of it
+
 21 March 2022 - Version 11.0.1
 ------------------------------
   Remove dblog from the default modules as this shouldn't be there on live sites
