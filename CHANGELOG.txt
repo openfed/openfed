@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+28 March 2022 - Version 2.39
+----------------------------
+  Update Drupal core due to SA-CORE-2022-003
+
 03 February 2022 - Version 2.38
 ----------------------------
   Update Drupal core due to SA-CORE-2022-001 and SA-CORE-2022-002

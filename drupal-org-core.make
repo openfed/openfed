@@ -3,7 +3,7 @@ core = 7.x
 
 ; Drupal core
 projects[drupal][type] = core
-projects[drupal][version] = 7.87
+projects[drupal][version] = 7.89
 
 ; Allow install profiles to change the system requirements
 ; see http://drupal.org/node/1772316
