@@ -32,3 +32,26 @@ function openfed_update_91101() {
   }
 }
 
+/**
+ * Fix newly added documents & images not set with the correct mime type.
+ */
+function openfed_update_91102() {
+  // Load file entity handling functions.
+  module_load_include('inc', 'file_entity', 'file_entity.file');
+
+  // Load all files.
+  /** @var \Drupal\file\FileInterface[] $files */
+  $files = \Drupal::entityTypeManager()
+    ->getStorage('file')
+    ->loadByProperties(['type' => 'other']);
+  //$file = reset($files) ?: NULL;
+
+  // For each file, get the correct file type and re-save it.
+  /** @var \Drupal\file\FileInterface|null $file */
+  foreach ($files as $file) {
+    $types = file_entity_file_type($file);
+    $type = reset($types);
+    $file->set('type', $type);
+    $file->save();
+  }
+}
