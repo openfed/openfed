@@ -61,6 +61,8 @@ class Helper {
   function _openfed_get_menus_list() {
     $menu_list = [
       'menu-tools-menu' => t('Tools Menu: placed at the very top of the screen.'),
+      'menu-header-menu' => t('Header Menu: placed at the header of the screen.'),
+      'menu-main-menu' => t('Main Menu: placed as the primary menu of the site.'),
       'menu-footer-menu' => t('Footer Menu: placed at the very bottom of the screen.'),
     ];
     return $menu_list;
