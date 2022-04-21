@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+21 April 2022 - Version 2.40
+----------------------------
+  Update colorbox module
+  Update role_delegation module
+
 28 March 2022 - Version 2.39
 ----------------------------
   Update Drupal core due to SA-CORE-2022-003
