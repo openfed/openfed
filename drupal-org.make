@@ -148,7 +148,7 @@ projects[ckeditor_link][version] = "2.4"
 projects[ckeditor_link][subdir] = contrib
 projects[ckeditor_link][patch][1875720] = "https://www.drupal.org/files/issues/ckeditor_link-entity-translation-1875720-42-D7.patch"
 
-projects[colorbox][version] = "2.16"
+projects[colorbox][version] = "2.17"
 projects[colorbox][subdir] = contrib
 
 projects[comment_goodness][version] = "1.4"
@@ -422,7 +422,7 @@ projects[redirect][subdir] = contrib
 projects[registration][version] = "1.7"
 projects[registration][subdir] = contrib
 
-projects[role_delegation][version] = "1.1"
+projects[role_delegation][version] = "1.3"
 projects[role_delegation][subdir] = contrib
 projects[role_delegation][patch][1156414] = "https://www.drupal.org/files/issues/1156414-prevent-editing-of-certain-users-16.patch"
 
