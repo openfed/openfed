@@ -3,6 +3,7 @@
 namespace OpenfedProject\composer;
 
 use Composer\Script\Event;
+use Drupal\Component\Utility\NestedArray;
 use Drupal\Core\DrupalKernel;
 use Symfony\Component\HttpFoundation\Request;
 use ZipArchive;
@@ -91,8 +92,11 @@ class OpenfedUpdate {
     $new_composer = json_decode(file_get_contents($new), TRUE);
     $old_composer = json_decode(file_get_contents($old), TRUE);
 
-    $updated_composer= NestedArray::mergeDeepArray([$old_composer, $new_composer], TRUE);
-    file_put_contents($old, json_encode($updated_composer, JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES));
+    $updated_composer = NestedArray::mergeDeepArray([
+      $old_composer,
+      $new_composer,
+    ], TRUE);
+    file_put_contents($old, json_encode($updated_composer, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));
   }
 
   /**
@@ -109,7 +113,7 @@ class OpenfedUpdate {
     while (FALSE !== ($file = readdir($dir))) {
       if (($file != '.') && ($file != '..')) {
         if (is_dir($src . DIRECTORY_SEPARATOR . $file)) {
-          recurse_copy($src . DIRECTORY_SEPARATOR . $file, $dst . DIRECTORY_SEPARATOR . $file);
+          self::_recurseCopy($src . DIRECTORY_SEPARATOR . $file, $dst . DIRECTORY_SEPARATOR . $file);
         }
         else {
           copy($src . DIRECTORY_SEPARATOR . $file, $dst . DIRECTORY_SEPARATOR . $file);
@@ -188,4 +192,6 @@ class OpenfedUpdate {
       $request->setSession($kernel->getContainer()->get('session'));
     }
   }
+
 }
+
