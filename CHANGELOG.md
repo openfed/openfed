@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+26 April 2022 - Version 11.0.3
+------------------------------
+  Issue #16: Fix file entity 'Other' mime types.
+  Issue #15: Create default menus for main and header navigation.
+  Fix bug in the update script
+
 21 March 2022 - Version 11.0.2
 ------------------------------
   Set a fixed module version to avoid versioning issues
