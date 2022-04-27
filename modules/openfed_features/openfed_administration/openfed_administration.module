@@ -1,0 +1,136 @@
+<?php
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\user\Entity\Role;
+use Drupal\user\RoleInterface;
+use Drupal\workflows\Entity\Workflow;
+use Drupal\workflows\WorkflowInterface;
+
+/**
+ * @file
+ * Contains openfed_administration.module.
+ */
+
+/**
+ * Implements hook_form_alter().
+ *
+ * This will add a checkbox to the add content type form. When checked, Content
+ * Moderation, default language settings and permissions are added when
+ * creating the new Content Type.
+ */
+function openfed_administration_form_alter(array &$form, FormStateInterface $form_state, string $form_id) {
+  if ($form_id === 'node_type_add_form') {
+
+    $form['name'] += [
+      '#weight' => 0,
+    ];
+
+    $form['type'] += [
+      '#weight' => 1,
+    ];
+
+    $form['description'] += [
+      '#weight' => 2,
+    ];
+
+    $form['copy_default_config'] = [
+      '#type' => 'checkbox',
+      '#title' => t('Apply the default config to the content type.'),
+      '#description' => t('Content moderation settings and permissions will be applied to the content type.'),
+      '#weight' => 3,
+    ];
+
+    $form['additional_settings'] += [
+      '#weight' => 10,
+    ];
+
+    if ($form['language']) {
+
+      $form['language'] += [
+        '#description' => "<i>" . t('Field(s) will be/are disabled when the "Apply default config" checkbox is set.') . "</i>",
+        '#states' => [
+          'disabled' => [
+            ':input[name="copy_default_config"]' => ['checked' => TRUE],
+          ],
+        ],
+      ];
+
+    }
+
+    array_unshift($form['actions']['save_continue']['#submit'], 'openfed_administration_callback_form_submit');
+  }
+
+}
+
+function openfed_administration_callback_form_submit(array &$form, FormStateInterface $form_state) {
+
+  $copyDefaultConfig = $form_state->getValue('copy_default_config');
+
+  if (!$copyDefaultConfig) {
+    return;
+  }
+
+  $bundle = $form_state->getFormObject()->getEntity();
+
+  //Create the content type for the installed languages
+  $form_state->setValue([
+    'language_configuration',
+    'langcode',
+  ], 'current_interface');
+  $form_state->setValue([
+    'language_configuration',
+    'content_translation',
+  ], TRUE);
+  $bundle->save();
+
+  //Add content moderation to the new content type
+  addWorkflowToBundle($bundle->id());
+
+  //Add Permissions to the roles
+  assignPermissionsToRoles($bundle->id());
+}
+
+function addWorkflowToBundle(string $bundleId) {
+  $workflow = Workflow::load('openfed_workflow');
+
+  if (!$workflow instanceof WorkflowInterface) {
+    return;
+  }
+
+  $workflow->getTypePlugin()->addEntityTypeAndBundle('node', $bundleId);
+  $workflow->save();
+}
+
+function assignPermissionsToRoles(string $contentTypeName) {
+  $roles = Role::loadMultiple([
+    'content_editor',
+    'content_author',
+  ]);
+
+  if (!$roles['content_editor'] instanceof RoleInterface || !$roles['content_author'] instanceof RoleInterface) {
+    return;
+  }
+
+  $issueAccessPermissions = [
+    "translate $contentTypeName node",
+    "create $contentTypeName content",
+    "delete any $contentTypeName content",
+    "edit any $contentTypeName content",
+    "view $contentTypeName revisions",
+    "override $contentTypeName authored by option",
+    "override $contentTypeName authored on option",
+    "override $contentTypeName published option",
+    "override $contentTypeName revision option",
+  ];
+
+  foreach ($issueAccessPermissions as $permission) {
+    $roles['content_editor']->grantPermission($permission);
+    $roles['content_author']->grantPermission($permission);
+  }
+
+  $roles['content_editor']->grantPermission("revert $contentTypeName revisions");
+
+  $roles['content_editor']->save();
+  $roles['content_author']->save();
+
+}
