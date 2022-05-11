@@ -1,6 +1,13 @@
 CHANGELOG
 =========
 
+11 May 2022 - Version 11.0.4
+------------------------------
+  Fix Openfed Update script to make it work with old versions of 'cut'
+  Fix Openfed Update script to include composer.patches.json in the merge
+  Update menu_link to fix some known issues
+  Update facets
+
 26 April 2022 - Version 11.0.3
 ------------------------------
   Issue #16: Fix file entity 'Other' mime types.
