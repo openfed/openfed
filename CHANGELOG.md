@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+03 June 2022 - Version 11.0.5
+------------------------------
+  Update lock file with latest core version
+  Update embed due to SA-CONTRIB-2022-042
+  Update allowed_formats, cshs, field_formatter, honeypot, inline_entity_form, menu_block, moderated_content_bulk_publish, paragraphs, pathauto and scheduler_content_moderation_integration
+
 11 May 2022 - Version 11.0.4
 ------------------------------
   Fix Openfed Update script to make it work with old versions of 'cut'
