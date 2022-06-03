@@ -141,9 +141,6 @@
             "drupal/paragraphs_asymmetric_translation_widgets": {
                 "Issue #2992777: Implement a migration path": "https://www.drupal.org/files/issues/2020-08-13/2992777_28.patch"
             },
-            "drupal/pathauto": {
-                "Issue #3116452: Entity Update when using file_entity module": "https://www.drupal.org/files/issues/2020-02-28/entity_update_when_using_file_entity-3116452-4.patch"
-            },
             "drupal/token": {
                 "Issue #2945272: Bulk generating nodes with [node:content-type]/[node:title]": "https://www.drupal.org/files/issues/2019-03-14/2945272-8-token-language.patch"
             },
