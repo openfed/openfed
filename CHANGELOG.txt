@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+07 June 2022 - Version 2.41
+----------------------------
+  Update drupal core
+  Update link module
+
 21 April 2022 - Version 2.40
 ----------------------------
   Update colorbox module
