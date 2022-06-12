@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+03 June 2022 - Version 11.0.6
+------------------------------
+  Fix an issue with pathauto update hook
+
 03 June 2022 - Version 11.0.5
 ------------------------------
   Update lock file with latest core version
