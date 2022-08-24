@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+24 August 2022 - Version 11.0.8
+------------------------------
+  Update Address module to fix drupal.org issue 2949352
+
 12 June 2022 - Version 11.0.7
 ------------------------------
   Update Drupal core due to SA-CORE-2022-011
