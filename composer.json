@@ -164,7 +164,7 @@
         "drupal/core-composer-scaffold": "*",
         "drupal/console": "~1.0",
         "drupal/addanother": "1.1",
-        "drupal/address": "1.10",
+        "drupal/address": "1.11",
         "drupal/admin_toolbar": "3.1",
         "drupal/admin_toolbar_content_languages": "1.0-beta4",
         "drupal/adminimal_theme": "1.6",
