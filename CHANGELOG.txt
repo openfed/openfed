@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+03 October 2022 - Version 2.42
+----------------------------
+  Update drupal core
+  Update context module
+
 07 June 2022 - Version 2.41
 ----------------------------
   Update drupal core
