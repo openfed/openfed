@@ -40,6 +40,19 @@ function openfed_administration_form_alter(array &$form, FormStateInterface $for
       '#weight' => 10,
     ];
 
+    // Disable preview by default.
+    $form['submission']['preview_mode']['#default_value'] = DRUPAL_DISABLED;
+    // Disable "Display author and date information" by default.
+    $form['display']['display_submitted']['#default_value'] = FALSE;
+    // Disable the promote option by default.
+    if (isset($form['workflow']['options']['#default_value']['promote'])) {
+      unset($form['workflow']['options']['#default_value']['promote']);
+    }
+    // Disable menus by default.
+    if (isset($form['menu']['menu_options'])) {
+      $form['menu']['menu_options']['#default_value'] = [];
+    }
+
     if ($form['language']) {
 
       $form['language'] += [
