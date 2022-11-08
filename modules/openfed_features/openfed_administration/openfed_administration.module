@@ -57,22 +57,22 @@ function openfed_administration_form_alter(array &$form, FormStateInterface $for
 
     }
 
-    array_unshift($form['actions']['save_continue']['#submit'], 'openfed_administration_callback_form_submit');
+    array_unshift($form['actions']['save_continue']['#submit'], 'openfed_administration_node_type_add_form_submit');
   }
 
 }
 
-function openfed_administration_callback_form_submit(array &$form, FormStateInterface $form_state) {
-
-  $copyDefaultConfig = $form_state->getValue('copy_default_config');
-
-  if (!$copyDefaultConfig) {
+/**
+ * Custom submit callback for node_type_add_form forms.
+ */
+function openfed_administration_node_type_add_form_submit(array &$form, FormStateInterface $form_state) {
+  if (!$form_state->getValue('copy_default_config')) {
     return;
   }
 
   $bundle = $form_state->getFormObject()->getEntity();
 
-  //Create the content type for the installed languages
+  // Create the content type for the installed languages.
   $form_state->setValue([
     'language_configuration',
     'langcode',
@@ -83,25 +83,25 @@ function openfed_administration_callback_form_submit(array &$form, FormStateInte
   ], TRUE);
   $bundle->save();
 
-  //Add content moderation to the new content type
+  // Add content moderation to the new content type.
   addWorkflowToBundle($bundle->id());
 
-  //Add Permissions to the roles
+  // Add Permissions to the roles.
   assignPermissionsToRoles($bundle->id());
 }
 
-function addWorkflowToBundle(string $bundleId) {
+function addWorkflowToBundle(string $bundle_id) {
   $workflow = Workflow::load('openfed_workflow');
 
   if (!$workflow instanceof WorkflowInterface) {
     return;
   }
 
-  $workflow->getTypePlugin()->addEntityTypeAndBundle('node', $bundleId);
+  $workflow->getTypePlugin()->addEntityTypeAndBundle('node', $bundle_id);
   $workflow->save();
 }
 
-function assignPermissionsToRoles(string $contentTypeName) {
+function assignPermissionsToRoles(string $content_type_name) {
   $roles = Role::loadMultiple([
     'content_editor',
     'content_author',
@@ -111,24 +111,24 @@ function assignPermissionsToRoles(string $contentTypeName) {
     return;
   }
 
-  $issueAccessPermissions = [
-    "translate $contentTypeName node",
-    "create $contentTypeName content",
-    "delete any $contentTypeName content",
-    "edit any $contentTypeName content",
-    "view $contentTypeName revisions",
-    "override $contentTypeName authored by option",
-    "override $contentTypeName authored on option",
-    "override $contentTypeName published option",
-    "override $contentTypeName revision option",
+  $issue_access_permissions = [
+    "translate $content_type_name node",
+    "create $content_type_name content",
+    "delete any $content_type_name content",
+    "edit any $content_type_name content",
+    "view $content_type_name revisions",
+    "override $content_type_name authored by option",
+    "override $content_type_name authored on option",
+    "override $content_type_name published option",
+    "override $content_type_name revision option",
   ];
 
-  foreach ($issueAccessPermissions as $permission) {
+  foreach ($issue_access_permissions as $permission) {
     $roles['content_editor']->grantPermission($permission);
     $roles['content_author']->grantPermission($permission);
   }
 
-  $roles['content_editor']->grantPermission("revert $contentTypeName revisions");
+  $roles['content_editor']->grantPermission("revert $content_type_name revisions");
 
   $roles['content_editor']->save();
   $roles['content_author']->save();
