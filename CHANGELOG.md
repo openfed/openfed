@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+20 December 2022 - Version 11.1.0
+------------------------------
+  Initial Openfed 11.1 release, using Drupal Core 9.4
+
 24 August 2022 - Version 11.0.8
 ------------------------------
   Update Address module to fix drupal.org issue 2949352
