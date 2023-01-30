@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b998208d84c32223470d89933bd91a78",
+    "content-hash": "33efbba85657a50406466f0c9eb1e2e6",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -9023,17 +9023,17 @@
         },
         {
             "name": "drupal/openfed_social",
-            "version": "1.3.0",
+            "version": "1.4.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/openfed_social.git",
-                "reference": "8.x-1.3"
+                "reference": "8.x-1.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/openfed_social-8.x-1.3.zip",
-                "reference": "8.x-1.3",
-                "shasum": "4f193bc14dc2730483565b8198627c47f221fc54"
+                "url": "https://ftp.drupal.org/files/projects/openfed_social-8.x-1.4.zip",
+                "reference": "8.x-1.4",
+                "shasum": "50c100a7a560b56a5be54bc7e981b726ce9b375b"
             },
             "require": {
                 "drupal/core": "^8 || ^9"
@@ -9041,8 +9041,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.3",
-                    "datestamp": "1643794809",
+                    "version": "8.x-1.4",
+                    "datestamp": "1672910037",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
@@ -9054,6 +9054,10 @@
                 "GPL-2.0-or-later"
             ],
             "authors": [
+                {
+                    "name": "bernardopaulino",
+                    "homepage": "https://www.drupal.org/user/3303389"
+                },
                 {
                     "name": "Ludo.R",
                     "homepage": "https://www.drupal.org/user/374670"

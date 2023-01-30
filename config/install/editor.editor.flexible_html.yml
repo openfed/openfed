@@ -16,7 +16,6 @@ settings:
           items:
             - Bold
             - Italic
-            - Underline
             - Strike
             - '-'
             - Superscript
@@ -27,7 +26,6 @@ settings:
             - JustifyLeft
             - JustifyCenter
             - JustifyRight
-            - JustifyBlock
         -
           name: Links
           items:
