@@ -126,10 +126,10 @@
             },
             "drupal/page_manager": {
                 "Issue #2820218: Page manager does not respect existing route defaults for title callbacks": "https://www.drupal.org/files/issues/2018-03-21/2820218-50.patch",
-                "Issue #2858877: Allow for block visibility rules": "https://www.drupal.org/files/issues/2020-06-24/page_manager-block_visibility_conditions-2858877-66.patch"
+                "Issue #2858877: Allow for block visibility rules": "https://www.drupal.org/files/issues/2022-11-15/page_manager-block_visibility_conditions-2858877-71.patch"
             },
             "drupal/panels": {
-                "Issue #3214070: Add Block visibility conditions and fix title display": "https://www.drupal.org/files/issues/2021-05-14/panels_issues-3214070-2.patch"
+                "Issue #3183258: Block visibility conditions and Custom attributes combined patch for composer": "https://www.drupal.org/files/issues/2022-12-08/combined-6.patch"
             },
             "drupal/paragraphs": {
                 "Issue #2461695: Support translatable paragraph entity reference revision field": "https://www.drupal.org/files/issues/2020-03-06/2461695-276.patch"

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "30c652aa6772ee315cce6412507ef463",
+    "content-hash": "d30e095f97b94c74765f13258d39e5e6",
     "packages": [
         {
             "name": "alchemy/resource-component",
