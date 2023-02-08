@@ -128,6 +128,9 @@
             "drupal/menu_trail_by_path": {
                 "Issue #3099308: Menu Trail by Path: several issues": "https://www.drupal.org/files/issues/2021-06-02/menu_trail_by_path_issues-3099308-13.patch"
             },
+            "drupal/onomasticon": {
+                "Issue #3340245: Enhance accessibility on Onomasticon module": "https://www.drupal.org/files/issues/2023-02-08/onomasticon-enhance-accessibility-3340245-3.patch"
+            },
             "drupal/page_manager": {
                 "Issue #2820218: Page manager does not respect existing route defaults for title callbacks": "https://www.drupal.org/files/issues/2018-03-21/2820218-50.patch",
                 "Issue #2858877: Allow for block visibility rules": "https://www.drupal.org/files/issues/2020-06-24/page_manager-block_visibility_conditions-2858877-66.patch"
@@ -253,6 +256,7 @@
         "drupal/node_edit_redirect": "1.0-rc3",
         "drupal/ofed_switcher": "1.7",
         "drupal/office_hours": "1.5",
+        "drupal/onomasticon": "^2.0",
         "drupal/openfed_social": "1.4",
         "drupal/optional_end_date": "1.2",
         "drupal/override_node_options": "2.6",
