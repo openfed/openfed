@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+20 March 2023 - Version 11.1.2
+------------------------------
+  Downgrade smart_trim due to PHP compatibility.
+
 20 March 2023 - Version 11.1.1
 ------------------------------
   Update several contrib modules to their latest version.
