@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+20 March 2023 - Version 11.1.1
+------------------------------
+  Update several contrib modules to their latest version.
+
 20 December 2022 - Version 11.1.0
 ------------------------------
   Initial Openfed 11.1 release, using Drupal Core 9.4
