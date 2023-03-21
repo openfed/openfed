@@ -410,7 +410,7 @@ projects[pathauto][subdir] = contrib
 projects[pathauto][patch][290421] = "https://www.drupal.org/files/issues/pathauto-support_localized_and_entity_translated_taxonomy-290421-156-d7.patch"
 projects[pathauto][patch][1993462] = "https://www.drupal.org/files/pathauto-path_alias_for_taxonomy_terms_always_created_in_default_language-1993462-0.patch"
 
-projects[print][version] = "2.2"
+projects[print][version] = "2.4"
 projects[print][subdir] = contrib
 
 projects[quiz][version] = "4.0-rc11"
