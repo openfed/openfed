@@ -34,6 +34,15 @@ use Drupal\Core\Config\Entity\ConfigEntityBase;
  *     "edit-form" = "/admin/config/regional/partial-date-format/manage/{partial_date_format}",
  *     "delete-form" = "/admin/config/regional/partial-date-format/manage/{partial_date_format}/delete",
  *   },
+ *   config_export = {
+ *     "id",
+ *     label",
+ *     meridiem",
+ *     year_designation",
+ *     display",
+ *     components",
+ *     separator",
+ *   }
  * )
  *
  * @author CosminFr
