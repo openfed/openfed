@@ -91,7 +91,7 @@ class CheckboxWithOptionsElement extends FormElement {
       return $element['#default_value'];
     }
     if (empty($input['master'])) {
-      $cbValue = $element['#checkbox_value'] ?? FALSE;
+      $cbValue = isset($element['#checkbox_value']) ? $element['#checkbox_value'] : FALSE;
       return $cbValue;
     }
     elseif (is_array($input['details']['options'])) {
