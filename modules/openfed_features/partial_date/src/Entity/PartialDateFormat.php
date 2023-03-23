@@ -36,12 +36,12 @@ use Drupal\Core\Config\Entity\ConfigEntityBase;
  *   },
  *   config_export = {
  *     "id",
- *     label",
- *     meridiem",
- *     year_designation",
- *     display",
- *     components",
- *     separator",
+ *     "label",
+ *     "meridiem",
+ *     "year_designation",
+ *     "display",
+ *     "components",
+ *     "separator",
  *   }
  * )
  *
