@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "05298464d63e2e6fb35faefefc535553",
+    "content-hash": "7229deacc7bd74e5de73ac9aeb47bffe",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -8012,20 +8012,20 @@
         },
         {
             "name": "drupal/leaflet_maptiler",
-            "version": "1.0.0-beta9",
+            "version": "1.0.0-beta10",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/leaflet_maptiler.git",
-                "reference": "8.x-1.0-beta9"
+                "reference": "8.x-1.0-beta10"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/leaflet_maptiler-8.x-1.0-beta9.zip",
-                "reference": "8.x-1.0-beta9",
-                "shasum": "37a501f31ce15cc347673c81e97b54fd3f5ed10b"
+                "url": "https://ftp.drupal.org/files/projects/leaflet_maptiler-8.x-1.0-beta10.zip",
+                "reference": "8.x-1.0-beta10",
+                "shasum": "6718d798844518ba049940d71752919f756ba41e"
             },
             "require": {
-                "drupal/core": "^8 || ^9",
+                "drupal/core": "^8 || ^9 || ^10",
                 "drupal/leaflet": "^1.0 || ^2.0"
             },
             "conflict": {
@@ -8037,8 +8037,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.0-beta9",
-                    "datestamp": "1617124088",
+                    "version": "8.x-1.0-beta10",
+                    "datestamp": "1675773955",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Beta releases are not covered by Drupal security advisories."

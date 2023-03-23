@@ -98,7 +98,8 @@
                 "Issue #2649268: Entity Field Query throws QueryException when querying all revisions and setting condition on entity reference field": "https://www.drupal.org/files/issues/2019-09-12/2649268-32.patch",
                 "Issue #2737619: Views entity reference relationships must join on langcode for translatable entities": "https://www.drupal.org/files/issues/2021-11-22/language_aware_relationship-2737619-28.patch",
                 "Issue #2771837: drupalimage CKEditor plugin should not require data-entity-uuid and data-entity-type when image upload is disabled": "https://www.drupal.org/files/issues/2021-09-15/2771837-78.patch",
-                "Issue #3071446: Remove invalid iframe attributes from oembed":"https://www.drupal.org/files/issues/2019-07-31/remove-iframe-attributes-3071446-4.patch"
+                "Issue #3071446: Remove invalid iframe attributes from oembed":"https://www.drupal.org/files/issues/2019-07-31/remove-iframe-attributes-3071446-4.patch",
+                "Issue #3260652: Feature Remember the last selection for views exposed filters doesn't work anymore": "https://git.drupalcode.org/project/drupal/-/commit/61da2367415ba1427939ef47e2ddb413f35a36f4.patch"
             },
             "drupal/entity_embed": {
                 "Issue #2882866: Provide a preview display setting for use in WYSIWYG editors": "https://www.drupal.org/files/issues/2019-09-18/entity_embed-preview_display_plugin-2882866-28.patch"
@@ -233,7 +234,7 @@
         "drupal/language_cookie": "2.0.1",
         "drupal/language_selection_page": "2.11",
         "drupal/leaflet": "2.1.20",
-        "drupal/leaflet_maptiler": "1.0-beta9",
+        "drupal/leaflet_maptiler": "1.0-beta10",
         "drupal/link_attributes": "1.13",
         "drupal/linkit": "6.0.0-beta4",
         "drupal/m4032404": "1.0-alpha5",
