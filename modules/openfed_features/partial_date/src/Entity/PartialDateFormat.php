@@ -36,12 +36,21 @@ use Drupal\Core\Config\Entity\ConfigEntityBase;
  *   },
  *   config_export = {
  *     "id",
+<<<<<<< HEAD
  *     "label",
  *     "meridiem",
  *     "year_designation",
  *     "display",
  *     "components",
  *     "separator",
+=======
+ *     label",
+ *     meridiem",
+ *     year_designation",
+ *     display",
+ *     components",
+ *     separator",
+>>>>>>> 7af03ee (Fix partial_date D9 Entity config compatibility)
  *   }
  * )
  *
