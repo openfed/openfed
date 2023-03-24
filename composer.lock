@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "05298464d63e2e6fb35faefefc535553",
+    "content-hash": "f16aadb2ef56aaa355a96573072c934c",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -8012,20 +8012,20 @@
         },
         {
             "name": "drupal/leaflet_maptiler",
-            "version": "1.0.0-beta9",
+            "version": "1.0.0-beta10",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/leaflet_maptiler.git",
-                "reference": "8.x-1.0-beta9"
+                "reference": "8.x-1.0-beta10"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/leaflet_maptiler-8.x-1.0-beta9.zip",
-                "reference": "8.x-1.0-beta9",
-                "shasum": "37a501f31ce15cc347673c81e97b54fd3f5ed10b"
+                "url": "https://ftp.drupal.org/files/projects/leaflet_maptiler-8.x-1.0-beta10.zip",
+                "reference": "8.x-1.0-beta10",
+                "shasum": "6718d798844518ba049940d71752919f756ba41e"
             },
             "require": {
-                "drupal/core": "^8 || ^9",
+                "drupal/core": "^8 || ^9 || ^10",
                 "drupal/leaflet": "^1.0 || ^2.0"
             },
             "conflict": {
@@ -8037,8 +8037,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.0-beta9",
-                    "datestamp": "1617124088",
+                    "version": "8.x-1.0-beta10",
+                    "datestamp": "1675773955",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Beta releases are not covered by Drupal security advisories."
@@ -8234,17 +8234,17 @@
         },
         {
             "name": "drupal/matomo",
-            "version": "1.16.0",
+            "version": "1.17.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/matomo.git",
-                "reference": "8.x-1.16"
+                "reference": "8.x-1.17"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/matomo-8.x-1.16.zip",
-                "reference": "8.x-1.16",
-                "shasum": "0b9fa0bb01afca0821d0233d99b710c004b45039"
+                "url": "https://ftp.drupal.org/files/projects/matomo-8.x-1.17.zip",
+                "reference": "8.x-1.17",
+                "shasum": "091f946ec7a09d6b4463e5d75adca9cdcdff2918"
             },
             "require": {
                 "drupal/core": "^8.8.0 || ^9.0.0"
@@ -8260,8 +8260,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.16",
-                    "datestamp": "1646049531",
+                    "version": "8.x-1.17",
+                    "datestamp": "1647206848",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -11569,32 +11569,32 @@
         },
         {
             "name": "drupal/views_bulk_operations",
-            "version": "4.2.0",
+            "version": "4.1.6",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/views_bulk_operations.git",
-                "reference": "4.2.0"
+                "reference": "4.1.6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/views_bulk_operations-4.2.0.zip",
-                "reference": "4.2.0",
-                "shasum": "b18fd9a43c47ffaf20f5f888871ff801b6f9f99f"
+                "url": "https://ftp.drupal.org/files/projects/views_bulk_operations-4.1.6.zip",
+                "reference": "4.1.6",
+                "shasum": "79d7ef0260c507af066cb8c06fdbf4321b840d8a"
             },
             "require": {
-                "drupal/core": "^9.4 || ^10"
+                "drupal/core": "^8 || ^9"
             },
             "require-dev": {
-                "drush/drush": "^11"
+                "drush/drush": "^10"
             },
             "suggest": {
-                "drush/drush": "^10 || ^11"
+                "drush/drush": "^9 || ^10"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "4.2.0",
-                    "datestamp": "1664360435",
+                    "version": "4.1.6",
+                    "datestamp": "1664354501",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -11602,7 +11602,7 @@
                 },
                 "drush": {
                     "services": {
-                        "drush.services.yml": "^10 || ^11"
+                        "drush.services.yml": "^9 || ^10"
                     }
                 }
             },
