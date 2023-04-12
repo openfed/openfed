@@ -1,10 +1,10 @@
 CHANGELOG
 =========
 
-23 March 2023 - Version 11.1.4
+12 April 2023 - Version 11.1.5
 ------------------------------
-  Force the version of views_bulk_operations, a dependency of moderated_content_bulk_publish, to be compatible with PHP7.3
-  Update matomo to fix PHP7.3 compatibility issue
+  Update Core
+  Update Alertbox module to fix D9/D10 compatibility
 
 23 March 2023 - Version 11.1.3
 ------------------------------
