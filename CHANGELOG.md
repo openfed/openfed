@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+20 April 2023 - Version 11.1.7
+------------------------------
+  Revert update for smart_trim module due to PHP7.3 incompatibilities
+
 20 April 2023 - Version 11.1.6
 ------------------------------
   Update bootstrap theme
