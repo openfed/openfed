@@ -1,6 +1,15 @@
 CHANGELOG
 =========
 
+20 April 2023 - Version 11.1.6
+------------------------------
+  Update bootstrap theme
+  Update editor_advanced_link module
+  Update field_encrypt module
+  Update leaflet module
+  Update smart_trim module
+  Update twig_field_value module
+
 12 April 2023 - Version 11.1.5
 ------------------------------
   Update Core
