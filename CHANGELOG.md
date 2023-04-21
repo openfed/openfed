@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+21 April 2023 - Version 11.1.8
+------------------------------
+  Update leaflet_maptiler due to incompatibilities with new version
+
 20 April 2023 - Version 11.1.7
 ------------------------------
   Revert update for smart_trim module due to PHP7.3 incompatibilities
