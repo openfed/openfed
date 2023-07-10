@@ -87,9 +87,8 @@ projects[addanother][subdir] = contrib
 projects[admin_language][version] = "1.0"
 projects[admin_language][subdir] = contrib
 
-projects[admin_menu][version] = "3.0-rc6"
+projects[admin_menu][version] = "3.0-rc7"
 projects[admin_menu][subdir] = contrib
-projects[admin_menu][patch][2096789] = "https://www.drupal.org/files/issues/admin_menu-interface_language_is_mixed_instead_of_forced_EN-2096789-20.patch"
 
 projects[admin_menu_content_languages][version] = "1.0-rc2"
 projects[admin_menu_content_languages][subdir] = contrib
@@ -97,7 +96,7 @@ projects[admin_menu_content_languages][subdir] = contrib
 projects[admin_theme][version] = "1.1"
 projects[admin_theme][subdir] = contrib
 
-projects[admin_views][version] = "1.7"
+projects[admin_views][version] = "1.8"
 projects[admin_views][subdir] = contrib
 
 projects[antibot][version] = "1.2"
@@ -166,7 +165,7 @@ projects[countries][subdir] = contrib
 projects[ctools][version] = "1.17"
 projects[ctools][subdir] = contrib
 
-projects[date][version] = "2.10"
+projects[date][version] = "2.14"
 projects[date][subdir] = contrib
 
 projects[devel][version] = "1.7"
@@ -194,11 +193,11 @@ projects[email][subdir] = contrib
 projects[emfield][version] = "1.0-alpha2"
 projects[emfield][subdir] = contrib
 
-projects[entity][version] = "1.9"
+projects[entity][version] = "1.10"
 projects[entity][subdir] = contrib
 projects[entity][patch][2020325] = "https://www.drupal.org/files/issues/entity-ctools-content-type-from-context-2020325-38.patch"
 
-projects[entityreference][version] = "1.5"
+projects[entityreference][version] = "1.9"
 projects[entityreference][subdir] = contrib
 
 projects[entityreference_view_widget][version] = "2.1"
@@ -217,7 +216,7 @@ projects[facetapi_i18n][version] = "1.0-beta2"
 projects[facetapi_i18n][subdir] = contrib
 projects[facetapi_i18n][patch][2404953] = "https://www.drupal.org/files/issues/2404953-5.patch"
 
-projects[features][version] = "2.13"
+projects[features][version] = "2.14"
 projects[features][subdir] = contrib
 
 projects[features_override][version] = "2.0-rc3"
@@ -238,7 +237,7 @@ projects[field_conditional_state][subdir] = contrib
 projects[field_default_token][version] = "1.3"
 projects[field_default_token][subdir] = contrib
 
-projects[field_group][version] = "1.6"
+projects[field_group][version] = "1.8"
 projects[field_group][subdir] = contrib
 
 projects[field_permissions][version] = "1.1"
@@ -248,9 +247,8 @@ projects[field_slideshow][version] = "1.83"
 projects[field_slideshow][subdir] = contrib
 projects[field_slideshow][patch][2326155] = "https://www.drupal.org/files/issues/field_slideshow-swipe-2326155-1.patch"
 
-projects[file_entity][version] = "2.30"
+projects[file_entity][version] = "2.37"
 projects[file_entity][subdir] = contrib
-projects[file_entity][patch][2097261] = "https://www.drupal.org/files/issues/file_entity-download_link_i18n-2097261-7.patch"
 
 projects[flag][version] = "3.9"
 projects[flag][subdir] = contrib
@@ -276,13 +274,13 @@ projects[honeypot][subdir] = contrib
 projects[html5_tools][version] = "1.3"
 projects[html5_tools][subdir] = contrib
 
-projects[i18n][version] = "1.27"
+projects[i18n][version] = "1.34"
 projects[i18n][subdir] = contrib
 
 projects[i18nviews][version] = "3.0-alpha1"
 projects[i18nviews][subdir] = contrib
 
-projects[imagecache_actions][version] = "1.12"
+projects[imagecache_actions][version] = "1.13"
 projects[imagecache_actions][subdir] = contrib
 
 projects[inline_entity_form][version] = "1.9"
@@ -337,7 +335,7 @@ projects[m4032404][subdir] = contrib
 projects[matomo][version] = "2.12"
 projects[matomo][subdir] = contrib
 
-projects[media][version] = "2.26"
+projects[media][version] = "2.30"
 projects[media][subdir] = contrib
 
 projects[media_soundcloud][version] = "2.1"
@@ -349,12 +347,11 @@ projects[media_vimeo][subdir] = contrib
 projects[media_youtube][version] = "3.10"
 projects[media_youtube][subdir] = contrib
 
-projects[menu_attributes][version] = "1.1"
+projects[menu_attributes][version] = "1.2"
 projects[menu_attributes][subdir] = contrib
 
-projects[menu_block][version] = "2.7"
+projects[menu_block][version] = "2.9"
 projects[menu_block][subdir] = contrib
-projects[menu_block][patch][2882825] = "https://www.drupal.org/files/issues/menu_block_27.patch"
 
 projects[menu_firstchild][version] = "1.1"
 projects[menu_firstchild][subdir] = contrib
@@ -374,7 +371,7 @@ projects[menu_to_taxonomy][subdir] = contrib
 projects[module_filter][version] = "2.2"
 projects[module_filter][subdir] = contrib
 
-projects[metatag][version] = "1.27"
+projects[metatag][version] = "1.32"
 projects[metatag][subdir] = contrib
 
 projects[multiple_node_menu][version] = "1.0-beta2"
@@ -390,7 +387,7 @@ projects[navigation404][patch][1844830] = "https://www.drupal.org/files/navigati
 projects[node_edit_redirect][version] = "1.0-rc2"
 projects[node_edit_redirect][subdir] = contrib
 
-projects[override_node_options][version] = "1.14"
+projects[override_node_options][version] = "1.15"
 projects[override_node_options][subdir] = contrib
 
 projects[panels][version] = "3.9"
@@ -401,6 +398,7 @@ projects[panels_extra_layouts][subdir] = contrib
 
 projects[partial_date][version] = "1.0-beta1"
 projects[partial_date][subdir] = contrib
+projects[partial_date][patch][3101980] = "https://www.drupal.org/files/issues/2020-01-16/partial_date-php_73_compat.patch"
 
 projects[path_breadcrumbs][version] = "3.4"
 projects[path_breadcrumbs][subdir] = contrib
@@ -416,7 +414,7 @@ projects[print][subdir] = contrib
 projects[quiz][version] = "4.0-rc11"
 projects[quiz][subdir] = contrib
 
-projects[redirect][version] = "1.0-rc3"
+projects[redirect][version] = "1.0-rc4"
 projects[redirect][subdir] = contrib
 
 projects[registration][version] = "1.7"
@@ -426,7 +424,7 @@ projects[role_delegation][version] = "1.3"
 projects[role_delegation][subdir] = contrib
 projects[role_delegation][patch][1156414] = "https://www.drupal.org/files/issues/1156414-prevent-editing-of-certain-users-16.patch"
 
-projects[rules][version] = "2.12"
+projects[rules][version] = "2.13"
 projects[rules][subdir] = contrib
 
 projects[scheduler][version] = "1.6"
@@ -444,9 +442,10 @@ projects[securelogin][subdir] = contrib
 projects[security_review][version] = "1.3"
 projects[security_review][subdir] = contrib
 
-projects[sharethis][version] = "2.13"
+projects[sharethis][version] = "2.14"
 projects[sharethis][subdir] = contrib
-projects[sharethis][patch][2353369] = "https://www.drupal.org/files/issues/1289054-72.patch"
+projects[sharethis][patch][3346192] = "https://www.drupal.org/files/issues/2023-03-06/3346192-remove-null-coalescing-operator-for-php-5.patch"
+projects[sharethis][patch][1289054] = "https://www.drupal.org/files/issues/1289054-72.patch"
 
 projects[simple_gmap][version] = "1.4"
 projects[simple_gmap][subdir] = contrib
@@ -460,7 +459,7 @@ projects[site_verify][subdir] = contrib
 projects[smart_trim][version] = "1.6"
 projects[smart_trim][subdir] = contrib
 
-projects[special_menu_items][version] = "2.1"
+projects[special_menu_items][version] = "2.2"
 projects[special_menu_items][subdir] = contrib
 
 projects[strongarm][version] = "2.0"
@@ -478,7 +477,7 @@ projects[text_resize][subdir] = contrib
 projects[title][version] = "1.0-beta3"
 projects[title][subdir] = contrib
 
-projects[token][version] = "1.7"
+projects[token][version] = "1.9"
 projects[token][subdir] = contrib
 
 projects[translation_helpers][version] = "1.0"
@@ -506,13 +505,13 @@ projects[variable][subdir] = contrib
 projects[view_unpublished][version] = "1.2"
 projects[view_unpublished][subdir] = contrib
 
-projects[views][version] = "3.24"
+projects[views][version] = "3.29"
 projects[views][subdir] = contrib
 
 projects[views_data_export][version] = "3.2"
 projects[views_data_export][subdir] = contrib
 
-projects[views_bulk_operations][version] = "3.6"
+projects[views_bulk_operations][version] = "3.7"
 projects[views_bulk_operations][subdir] = contrib
 
 projects[views_slideshow][version] = "3.10"
@@ -521,7 +520,7 @@ projects[views_slideshow][subdir] = contrib
 projects[views_tree][version] = "2.0"
 projects[views_tree][subdir] = contrib
 
-projects[webform][version] = "4.23"
+projects[webform][version] = "4.25"
 projects[webform][subdir] = contrib
 
 projects[webform_clear][version] = "2.0"
@@ -541,5 +540,5 @@ projects[workbench_moderation][subdir] = contrib
 projects[workbench_moderation][patch][1372500] = "https://www.drupal.org/files/issues/workbench_moderation_sync_infinite_loop-1372500-16.patch"
 projects[workbench_moderation][patch][2855262] = "https://www.drupal.org/files/issues/upgrade_from_1x3_to_3x_fails-2428371-45.patch"
 
-projects[xmlsitemap][version] = "2.6"
+projects[xmlsitemap][version] = "2.7"
 projects[xmlsitemap][subdir] = contrib

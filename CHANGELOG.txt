@@ -1,6 +1,35 @@
 CHANGELOG
 =========
 
+10 July 2023 - Version 2.44
+----------------------------
+  Update Drupal core due to SA-CORE-2023-005
+  Update admin_menu module
+  Update admin_views module
+  Update ckeditor module
+  Update media module
+  Update date module
+  Update entity module
+  Update entity_reference module
+  Update features module
+  Update field_group module
+  Update file_entity module
+  Update imagecache_actions module
+  Update i18n module
+  Update menu_attributes module
+  Update menu_block module
+  Update metatag module
+  Update override_node_options module
+  Update redirect module
+  Update rules module
+  Update sharethis module
+  Update special_menu_items module
+  Update token module
+  Update views module
+  Update views_bulk_operations module
+  Update webform module
+  Update xmlsitemap module
+
 21 March 2023 - Version 2.43
 ----------------------------
   Update drupal core
