@@ -23,7 +23,7 @@ After that you can just install Openfed like any other distribution.
 
 ### Server requirements
 
-Openfed 11.x requires PHP 7.3.
+Openfed 11.x requires PHP 8.1.
 
 ## Bug Report
 
