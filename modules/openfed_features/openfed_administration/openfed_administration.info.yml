@@ -3,7 +3,7 @@ description: 'Improvements to the content administration overview, making it eas
 package: Openfed
 
 type: module
-core_version_requirement: ^9
+core_version_requirement: ^9 || ^10
 
 dependencies:
   - drupal:views

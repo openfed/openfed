@@ -2,7 +2,7 @@ name: Partial Date
 description: 'Simple datetime field that allows partial dates.'
 type: module
 package: Field types
-core_version_requirement: ^9
+core_version_requirement: ^9 || ^10
 dependencies:
   - drupal:field
 

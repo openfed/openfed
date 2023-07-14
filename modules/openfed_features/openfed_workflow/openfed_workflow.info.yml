@@ -2,7 +2,7 @@ name: Openfed Workflow
 description: Tools to improve content workflow.
 package: Openfed
 type: module
-core_version_requirement: ^9
+core_version_requirement: ^9 || ^10
 
 dependencies:
   - drupal:content_moderation
