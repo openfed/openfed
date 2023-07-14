@@ -82,5 +82,4 @@ dependencies:
   - username_enumeration_prevention:username_enumeration_prevention
 
 themes:
-  - openfed_admin
   - kiso
