@@ -4,6 +4,7 @@ dependencies:
   config:
     - filter.format.embeddable_text
     - filter.format.flexible_html
+    - user.role.content_editor
   module:
     - filter
     - role_delegation
@@ -19,7 +20,6 @@ permissions:
   - 'access user profiles'
   - 'administer users'
   - 'assign content_editor role'
-  - 'assign user_manager role'
   - 'use text format embeddable_text'
   - 'use text format flexible_html'
   - 'view the administration theme'

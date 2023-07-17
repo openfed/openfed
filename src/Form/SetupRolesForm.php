@@ -101,6 +101,19 @@ class SetupRolesForm extends FormBase {
       \Drupal::service('module_installer')->install(['openfed_workflow']);
     }
 
+    // For user managers, we just need to add a new permission to assign user
+    // manager roles.
+    $user_manager_role_conf = 'user.role.user_manager';
+    $user_manager_new_permissions = array(
+      'assign user_manager role',
+    );
+    $config = \Drupal::configFactory()->getEditable($user_manager_role_conf);
+    $config->set(
+      'permissions',
+      array_merge($config->get('permissions'), $user_manager_new_permissions)
+    );
+    $config->save();
+
     // It's required that user 1 is set with Administratior role.
     $user_admin = User::load(1);
     $user_admin->addRole(Helper::ADMINISTRATOR_ROLE_ID);
