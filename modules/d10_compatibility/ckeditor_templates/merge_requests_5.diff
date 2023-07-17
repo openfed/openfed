@@ -1,0 +1,55 @@
+diff --git a/ckeditor_templates.info.yml b/ckeditor_templates.info.yml
+index 19bbf569841e7c9aab6ecea76925737436e71d8f..454133bbbf2ba7619de1cc3f2322036aa35faf2a 100644
+--- a/ckeditor_templates.info.yml
++++ b/ckeditor_templates.info.yml
+@@ -2,7 +2,6 @@ name: CKEditor Templates
+ description: 'Integrates the CKEditor templates plugin.'
+ package: CKEditor
+ type: module
+-core: 8.x
+-core_version_requirement: ^8 || ^9
++core_version_requirement: ^9.3 || ^10
+ dependencies:
+ - drupal:ckeditor
+diff --git a/composer.json b/composer.json
+new file mode 100644
+index 0000000000000000000000000000000000000000..6842d42ff828d87ddb7fbfcaa7fd2973644190e3
+--- /dev/null
++++ b/composer.json
+@@ -0,0 +1,20 @@
++{
++  "name": "drupal/ckeditor_templates",
++  "description": "This module integrates the CKEditor templates plugin.",
++  "type": "drupal-module",
++  "homepage": "https://www.drupal.org/project/ckeditor_templates",
++  "authors": [
++    {
++      "name": "Lucas Le Goff",
++      "homepage": "https://www.drupal.org/u/lucaslg",
++      "role": "Maintainer"
++    }
++  ],
++  "support": {
++    "issues": "https://www.drupal.org/project/ckeditor_templates",
++    "source": "https://cgit.drupalcode.org/ckeditor_templates"
++  },
++  "license": "GPL-2.0-or-later",
++  "require": {
++  }
++}
+diff --git a/src/Plugin/CKEditorPlugin/CkeditorTemplates.php b/src/Plugin/CKEditorPlugin/CkeditorTemplates.php
+index 79e178981508c1c041d4a1a2dcbc418faa4f837c..2b9688fe7de8731afe2cf0af0b6466142497da82 100644
+--- a/src/Plugin/CKEditorPlugin/CkeditorTemplates.php
++++ b/src/Plugin/CKEditorPlugin/CkeditorTemplates.php
+@@ -172,9 +172,9 @@ class CkeditorTemplates extends CKEditorPluginBase implements CKEditorPluginConf
+     $defaultThemConfig = $this->configFactoryService->get('system.theme');
+     $defaultThemeName = $defaultThemConfig->get('default');
+ 
+-    $defaultThemeFileAbsolutePath = DRUPAL_ROOT . '/' . drupal_get_path('theme', $defaultThemeName) . '/templates/ckeditor_templates.js';
++    $defaultThemeFileAbsolutePath = DRUPAL_ROOT . '/' . \Drupal::service('extension.list.theme')->getPath($defaultThemeName) . '/templates/ckeditor_templates.js';
+     if (file_exists($defaultThemeFileAbsolutePath)) {
+-      $defaultPath = base_path() . drupal_get_path('theme', $defaultThemeName) . '/templates/ckeditor_templates.js';
++      $defaultPath = base_path() . \Drupal::service('extension.list.theme')->getPath($defaultThemeName) . '/templates/ckeditor_templates.js';
+     }
+ 
+     return [$defaultPath];

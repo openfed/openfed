@@ -1,0 +1,12 @@
+diff --git a/soundcloudfield.info.yml b/soundcloudfield.info.yml
+index a4813b8..f8888f1 100644
+--- a/soundcloudfield.info.yml
++++ b/soundcloudfield.info.yml
+@@ -2,6 +2,6 @@ name: SoundCloud Field
+ type: module
+ description: 'Field for SoundCloud tracks and sets.'
+ package: SoundCloud
+-core_version_requirement: ^8.8 || ^9
++core_version_requirement: ^8.8 || ^9 || ^10
+ dependencies:
+  - drupal:field

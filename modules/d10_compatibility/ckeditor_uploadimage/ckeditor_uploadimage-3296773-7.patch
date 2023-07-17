@@ -1,0 +1,104 @@
+diff --git a/ckeditor_uploadimage.info.yml b/ckeditor_uploadimage.info.yml
+index f102111..7e047b0 100644
+--- a/ckeditor_uploadimage.info.yml
++++ b/ckeditor_uploadimage.info.yml
+@@ -1,7 +1,7 @@
+ name: CKEditor Upload Image
+ type: module
+ description: Integrates CKEditor's Upload Image plugin to Drupal.
+-core_version_requirement: ^8.7.7 || ^9
++core_version_requirement: ^8.7.7 || ^9 || ^10
+ package: CKEditor
+ dependencies:
+   - drupal:ckeditor
+\ No newline at end of file
+diff --git a/src/Controller/CKEditorUploadImageController.php b/src/Controller/CKEditorUploadImageController.php
+index fb8a61a..5029b43 100644
+--- a/src/Controller/CKEditorUploadImageController.php
++++ b/src/Controller/CKEditorUploadImageController.php
+@@ -6,6 +6,8 @@
+ 
+ namespace Drupal\ckeditor_uploadimage\Controller;
+ 
++use Drupal\media\Entity\Media;
++use Drupal\node\NodeInterface;
+ use Drupal\Core\Controller\ControllerBase;
+ use Drupal\Component\Utility\Bytes;
+ use Symfony\Component\HttpFoundation\Request;
+@@ -31,7 +33,7 @@ class CKEditorUploadImageController extends ControllerBase {
+     else {
+       $maxDimensions = 0;
+     }
+-    $maxFilesize = min(Bytes::toInt($imageUpload['max_size']), Environment::getUploadMaxSize());
++    $maxFilesize = min(Bytes::toNumber($imageUpload['max_size']), Environment::getUploadMaxSize());
+     $destination = $imageUpload['scheme'] . '://' . $imageUpload['directory'];
+     /** @var \Drupal\Core\File\FileSystemInterface $fileSystem */
+     $fileSystem = \Drupal::service('file_system');
+@@ -87,7 +89,7 @@ class CKEditorUploadImageController extends ControllerBase {
+         $uri  = $file[0]->getFileUri();
+         $uuid = $file[0]->uuid();
+         $fileName = $fileSystem->basename($uri);
+-        $url = file_url_transform_relative(file_create_url($uri));
++        $url = \Drupal::service('file_url_generator')->generateString($uri);
+         $entityType = $file[0]->getEntityTypeId();
+         $moduleHandler = \Drupal::service('module_handler');
+         if ($moduleHandler->moduleExists('inline_responsive_images')){
+@@ -106,12 +108,12 @@ class CKEditorUploadImageController extends ControllerBase {
+           $mediaImageFields = \Drupal::service('entity_field.manager')->getFieldDefinitions('media', 'image');
+           if (isset($mediaImageFields['field_media_image']) && $imageUpload['media_entity_image']) {
+             // Create media entity with saved file.
+-            $imageMedia = \Drupal\media\Entity\Media::create([
++            $imageMedia = Media::create([
+               'bundle' => 'image',
+               'name' => $alt,
+               'uid' => \Drupal::currentUser()->id(),
+               'langcode' => \Drupal::languageManager()->getDefaultLanguage()->getId(),
+-              'status' => \Drupal\node\NodeInterface::PUBLISHED,
++              'status' => NodeInterface::PUBLISHED,
+               'thumbnail' => [
+                 'target_id' => $file[0]->id(),
+               ],
+diff --git a/src/Plugin/CKEditorPlugin/DrupalUploadImage.php b/src/Plugin/CKEditorPlugin/DrupalUploadImage.php
+index 77cd72f..7cb02a9 100644
+--- a/src/Plugin/CKEditorPlugin/DrupalUploadImage.php
++++ b/src/Plugin/CKEditorPlugin/DrupalUploadImage.php
+@@ -41,7 +41,7 @@ class DrupalUploadImage extends PluginBase implements CKEditorPluginInterface, C
+    * {@inheritdoc}
+    */
+   function getFile() {
+-    return drupal_get_path('module', 'ckeditor_uploadimage') . '/js/plugins/' . $this->getPluginId() . '/plugin.js';
++    return \Drupal::service('extension.list.module')->getPath('ckeditor_uploadimage') . '/js/plugins/' . $this->getPluginId() . '/plugin.js';
+   }
+ 
+   /**
+@@ -89,7 +89,7 @@ class DrupalUploadImage extends PluginBase implements CKEditorPluginInterface, C
+     $filterFormatId = $editor->getFilterFormat()->id();
+     $editorObj = editor_load($filterFormatId);
+     $imageUploadSettings = $editorObj->getImageUploadSettings();
+-    $maxFilesize = min(Bytes::toInt($imageUploadSettings['max_size']), Environment::getUploadMaxSize());
++    $maxFilesize = min(Bytes::toNumber($imageUploadSettings['max_size']), Environment::getUploadMaxSize());
+     return [
+       'maxImageFilesize' => $maxFilesize,
+       'imageUploadUrl' => Url::fromRoute('ckeditor_uploadimage.save', ['filterFormatId' => $filterFormatId])->toString(),
+diff --git a/src/Plugin/CKEditorPlugin/DrupalUploadImageImce.php b/src/Plugin/CKEditorPlugin/DrupalUploadImageImce.php
+index fe2cccd..023de15 100644
+--- a/src/Plugin/CKEditorPlugin/DrupalUploadImageImce.php
++++ b/src/Plugin/CKEditorPlugin/DrupalUploadImageImce.php
+@@ -41,7 +41,7 @@ class DrupalUploadImageImce extends PluginBase implements CKEditorPluginInterfac
+    * {@inheritdoc}
+    */
+   function getFile() {
+-    return drupal_get_path('module', 'ckeditor_uploadimage') . '/js/plugins/drupaluploadimage/plugin.js';
++    return \Drupal::service('extension.list.module')->getPath('ckeditor_uploadimage') . '/js/plugins/drupaluploadimage/plugin.js';
+   }
+ 
+   /**
+@@ -89,7 +89,7 @@ class DrupalUploadImageImce extends PluginBase implements CKEditorPluginInterfac
+     $filterFormatId = $editor->getFilterFormat()->id();
+     $editorObj = editor_load($filterFormatId);
+     $imageUploadSettings = $editorObj->getImageUploadSettings();
+-    $maxFilesize = min(Bytes::toInt($imageUploadSettings['max_size']), Environment::getUploadMaxSize());
++    $maxFilesize = min(Bytes::toNumber($imageUploadSettings['max_size']), Environment::getUploadMaxSize());
+     return [
+       'maxImageFilesize' => $maxFilesize,
+       'imageUploadUrl' => Url::fromRoute('ckeditor_uploadimage.save', ['filterFormatId' => $filterFormatId])->toString(),
