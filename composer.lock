@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "35f61f78d1f34adc6f518ef295f52863",
+    "content-hash": "960a5f0d2bd9b5d7c2cb7de322ef728c",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -5135,29 +5135,30 @@
         },
         {
             "name": "drupal/editor_advanced_link",
-            "version": "2.1.1",
+            "version": "2.2.4",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/editor_advanced_link.git",
-                "reference": "2.1.1"
+                "reference": "2.2.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/editor_advanced_link-2.1.1.zip",
-                "reference": "2.1.1",
-                "shasum": "ba8f12aee9ac6c4d7b60ee916e7bd69e98c99d4a"
+                "url": "https://ftp.drupal.org/files/projects/editor_advanced_link-2.2.4.zip",
+                "reference": "2.2.4",
+                "shasum": "cd0db397827f2e21ec8a68211e8a153463a6c89b"
             },
             "require": {
                 "drupal/core": "^9.2 || ^10"
             },
             "require-dev": {
-                "drupal/ckeditor": "*"
+                "drupal/ckeditor": "*",
+                "phpro/grumphp": "^2.0"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.1.1",
-                    "datestamp": "1667462197",
+                    "version": "2.2.4",
+                    "datestamp": "1688040059",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -5174,7 +5175,7 @@
                     "homepage": "https://www.drupal.org/user/931394"
                 }
             ],
-            "description": "Add title, target etc. attributes to Text Editor's link dialog if the text format allows them.",
+            "description": "Editor Advanced link",
             "homepage": "https://www.drupal.org/project/editor_advanced_link",
             "support": {
                 "source": "https://git.drupalcode.org/project/editor_advanced_link"
@@ -7956,27 +7957,27 @@
         },
         {
             "name": "drupal/leaflet",
-            "version": "2.2.12",
+            "version": "10.0.16",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/leaflet.git",
-                "reference": "2.2.12"
+                "reference": "10.0.16"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/leaflet-2.2.12.zip",
-                "reference": "2.2.12",
-                "shasum": "26a0435ec5080a3a514ba37789205b3406dcdfab"
+                "url": "https://ftp.drupal.org/files/projects/leaflet-10.0.16.zip",
+                "reference": "10.0.16",
+                "shasum": "5b37163e3b1fde2e247bfa2c95e898f81888f903"
             },
             "require": {
-                "drupal/core": "^8.8 || ^9 || ^10",
+                "drupal/core": "^9 || ^10",
                 "drupal/geofield": "^1.31"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.2.12",
-                    "datestamp": "1669197065",
+                    "version": "10.0.16",
+                    "datestamp": "1688332238",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -8028,24 +8029,24 @@
         },
         {
             "name": "drupal/leaflet_maptiler",
-            "version": "1.0.0-beta11",
+            "version": "1.0.0-beta12",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/leaflet_maptiler.git",
-                "reference": "8.x-1.0-beta11"
+                "reference": "8.x-1.0-beta12"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/leaflet_maptiler-8.x-1.0-beta11.zip",
-                "reference": "8.x-1.0-beta11",
-                "shasum": "9153cfb4594496f14d70ad230ad355fd92a9ac6e"
+                "url": "https://ftp.drupal.org/files/projects/leaflet_maptiler-8.x-1.0-beta12.zip",
+                "reference": "8.x-1.0-beta12",
+                "shasum": "cadba5b7ee834b217a39f581ef2d395c0f196663"
             },
             "require": {
                 "drupal/core": "^8 || ^9 || ^10",
-                "drupal/leaflet": "^1.0 || ^2.0"
+                "drupal/leaflet": "^10.0"
             },
             "conflict": {
-                "drupal/leaflet": "<1.20"
+                "drupal/leaflet": "<=5"
             },
             "require-dev": {
                 "drupal/geofield": "*"
@@ -8053,8 +8054,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.0-beta11",
-                    "datestamp": "1682075746",
+                    "version": "8.x-1.0-beta12",
+                    "datestamp": "1689259576",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Beta releases are not covered by Drupal security advisories."
