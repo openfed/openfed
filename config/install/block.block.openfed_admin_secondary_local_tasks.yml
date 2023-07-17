@@ -5,7 +5,7 @@ dependencies:
     - openfed_admin
 id: openfed_admin_secondary_local_tasks
 theme: openfed_admin
-region: content
+region: pre_content
 weight: -3
 provider: null
 plugin: local_tasks_block

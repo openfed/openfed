@@ -1,8 +1,8 @@
 name: Openfed Admin
 type: theme
 description: 'Openfed administration theme'
-core_version_requirement: ^8.8 || ^9
-base theme: adminimal_theme
+core_version_requirement: ^8.8 || ^9 || ^10
+base theme: claro
 
 # defines libraries group in which we can add css/js.
 libraries:
