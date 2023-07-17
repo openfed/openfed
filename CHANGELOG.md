@@ -1,6 +1,20 @@
 CHANGELOG
 =========
 
+17 July 2023 - Version 11.1.9
+------------------------------
+  Security, outdated and unsupported module update:
+    - update kiso
+    - update admin_toolbar
+    - update google_analytics
+    - update office_hours
+    - update linkit
+    - update leaflet
+    - update leaflet_maptiler
+    - update editor_advanced_link
+  Hook update for office_hours legacy support:
+    - openfed_update_91110()
+
 21 April 2023 - Version 11.1.8
 ------------------------------
   Update leaflet_maptiler due to incompatibilities with new version
