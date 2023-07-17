@@ -27,6 +27,9 @@
         ]
     },
     "scripts": {
+        "pre-update-cmd": [
+            "OpenfedProject\\composer\\OpenfedValidations::validateUpdate810"
+        ],
         "post-install-cmd": [
             "OpenfedProject\\composer\\ScriptHandler::createRequiredFiles"
         ],
