@@ -1,0 +1,13 @@
+name: CKEditor Find/Replace
+type: module
+description: This plugin module adds the find and replace dialog to CKEditor in Drupal 8
+core: 8.x
+core_version_requirement: ^9.4 || ^10
+package: CKEditor
+dependencies:
+  - drupal:ckeditor
+
+# Information added by Drupal.org packaging script on 2021-12-09
+version: '8.x-1.0-beta2'
+project: 'ckeditor_find'
+datestamp: 1639070937

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "71e8d8025d41c2a8cbd6cc8efbcb42c0",
+    "content-hash": "92e1361a291a14effcde4a5af395042a",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2878,31 +2878,31 @@
         },
         {
             "name": "drupal/ckeditor_codemirror",
-            "version": "3.0.0-beta4",
+            "version": "2.5.0-beta1",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/ckeditor_codemirror.git",
-                "reference": "3.0.0-beta4"
+                "reference": "8.x-2.5-beta1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/ckeditor_codemirror-3.0.0-beta4.zip",
-                "reference": "3.0.0-beta4",
-                "shasum": "d1cf9b27c5af188c1dcf1885e672fed4555c9de7"
+                "url": "https://ftp.drupal.org/files/projects/ckeditor_codemirror-8.x-2.5-beta1.zip",
+                "reference": "8.x-2.5-beta1",
+                "shasum": "c30197ea0afe6b15d9e8d94d29227a1ca240c8be"
             },
             "require": {
-                "drupal/core": "^9.4 || ^10",
-                "php": ">=8.0"
+                "drupal/ckeditor": "*",
+                "drupal/core": "^9.4 || ^10.0"
             },
             "require-dev": {
                 "drupal/coder": "^8.3",
-                "phpcompatibility/php-compatibility": "^9.3"
+                "phpcompatibility/php-compatibility": "10.x-dev"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "3.0.0-beta4",
-                    "datestamp": "1676407269",
+                    "version": "8.x-2.5-beta1",
+                    "datestamp": "1677117316",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Beta releases are not covered by Drupal security advisories."
@@ -2915,77 +2915,24 @@
             ],
             "authors": [
                 {
-                    "name": "Christopher C. Wells (wells)",
-                    "homepage": "https://www.drupal.org/u/wells",
+                    "name": "Nickolay Leshchev (Plazik)",
+                    "homepage": "https://www.drupal.org/u/plazik",
                     "role": "Maintainer"
                 },
                 {
-                    "name": "wells",
-                    "homepage": "https://www.drupal.org/user/2452278"
+                    "name": "Christopher C. Wells (wells)",
+                    "homepage": "https://www.drupal.org/u/wells",
+                    "role": "Co-maintainer"
                 }
             ],
-            "description": "CodeMirror source syntax highlighting for CKEditor 5.",
+            "description": "Adds the CKEditor CodeMirror source syntax highlighter plugin.",
             "homepage": "https://drupal.org/project/ckeditor_codemirror",
             "keywords": [
                 "Drupal"
             ],
             "support": {
                 "source": "https://git.drupalcode.org/project/ckeditor_codemirror",
-                "issues": "https://www.drupal.org/project/issues/ckeditor_codemirror"
-            }
-        },
-        {
-            "name": "drupal/ckeditor_find",
-            "version": "2.0.0-beta1",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/ckeditor_find.git",
-                "reference": "2.0.0-beta1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/ckeditor_find-2.0.0-beta1.zip",
-                "reference": "2.0.0-beta1",
-                "shasum": "6569df47549af7993f435d3fb1eecf490eeb7554"
-            },
-            "require": {
-                "drupal/core": "^9.4 || ^10"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "2.0.0-beta1",
-                    "datestamp": "1687265667",
-                    "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Beta releases are not covered by Drupal security advisories."
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0+"
-            ],
-            "authors": [
-                {
-                    "name": "Shawn Duncan (FatherShawn)",
-                    "homepage": "https://www.drupal.org/u/fathershawn",
-                    "role": "Maintainer"
-                },
-                {
-                    "name": "FatherShawn",
-                    "homepage": "https://www.drupal.org/user/628748"
-                },
-                {
-                    "name": "kwfinken",
-                    "homepage": "https://www.drupal.org/user/2514950"
-                }
-            ],
-            "description": "This plugin module adds the find and replace dialog to CKEditor in Drupal 8",
-            "homepage": "https://drupal.org/project/ckeditor_find",
-            "support": {
-                "source": "http://cgit.drupalcode.org/ckeditor_find",
-                "issues": "https://drupal.org/project/issues/ckeditor_find"
+                "issues": "https://www.drupal.org/project/issues/ckeditor_codemirror?version=8.x"
             }
         },
         {
@@ -15192,16 +15139,16 @@
         },
         {
             "name": "simplesamlphp/xml-common",
-            "version": "v1.12.1",
+            "version": "v1.12.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/simplesamlphp/xml-common.git",
-                "reference": "89a31ba1dd5bf5fe7573555e3d8238f9af66df5f"
+                "reference": "27e7f7c88d9178568ae5220f9922e506c5a90a65"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/simplesamlphp/xml-common/zipball/89a31ba1dd5bf5fe7573555e3d8238f9af66df5f",
-                "reference": "89a31ba1dd5bf5fe7573555e3d8238f9af66df5f",
+                "url": "https://api.github.com/repos/simplesamlphp/xml-common/zipball/27e7f7c88d9178568ae5220f9922e506c5a90a65",
+                "reference": "27e7f7c88d9178568ae5220f9922e506c5a90a65",
                 "shasum": ""
             },
             "require": {
@@ -15247,7 +15194,7 @@
                 "issues": "https://github.com/simplesamlphp/xml-common/issues",
                 "source": "https://github.com/simplesamlphp/xml-common"
             },
-            "time": "2023-06-04T21:46:50+00:00"
+            "time": "2023-07-17T19:15:36+00:00"
         },
         {
             "name": "simplesamlphp/xml-security",
@@ -19625,7 +19572,14 @@
             "time": "2023-02-22T23:07:41+00:00"
         }
     ],
-    "aliases": [],
+    "aliases": [
+        {
+            "package": "drupal/ckeditor_codemirror",
+            "version": "2.5.0.0-beta1",
+            "alias": "3.0.0-beta4",
+            "alias_normalized": "3.0.0.0-beta4"
+        }
+    ],
     "minimum-stability": "dev",
     "stability-flags": {
         "drupal/rules": 20,
