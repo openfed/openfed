@@ -5,6 +5,7 @@ dependencies:
     - filter.format.embeddable_text
     - filter.format.flexible_html
     - node.type.page
+    - workflows.workflow.openfed_workflow
   module:
     - content_moderation
     - content_translation
