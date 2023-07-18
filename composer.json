@@ -95,6 +95,7 @@
                 "Issue #2321071: BaseFieldOverride fails": "https://www.drupal.org/files/issues/2019-12-24/2321071-39.patch",
                 "Issue #2325899: UI fatal caused by views argument handlers no longer can provide their own default argument handling": "https://www.drupal.org/files/issues/2023-03-29/2325899-169_reroll-9.5-189.patch",
                 "Issue #2649268: Entity Field Query throws QueryException when querying all revisions and setting condition on entity reference field": "https://www.drupal.org/files/issues/2019-09-12/2649268-32.patch",
+                "Issue #2737619: Views entity reference relationships must join on langcode for translatable entities": "https://www.drupal.org/files/issues/2023-07-18/language_aware_relationship-2737619-41.patch",
                 "Issue #3071446: Remove invalid iframe attributes from oembed": "https://www.drupal.org/files/issues/2019-07-31/remove-iframe-attributes-3071446-4.patch"
             },
             "drupal/ckeditor": {
