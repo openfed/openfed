@@ -7,19 +7,19 @@ use Drupal\Core\DrupalKernel;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
- * A class to do several validations before updating to Openfed 8.x-10.0. This
+ * A class to do several validations before updating to Openfed 12.x. This
  * will help maintainers to do an informed update.
  *
- * This file is present in Openfed 8.x-9.11+ so composer can early call it in
- * Openfed 8.x-10.0 and make a check before having to update Openfed. As such,
- * this file is not supposed to be used by Openfed 8.x-9.x.
+ * This file is present in Openfed 11.2+ so composer can early call it in
+ * Openfed 12 and make a check before having to update Openfed. As such,
+ * this file is not supposed to be used by Openfed 11.1 and bellow.
  */
 class OpenfedValidations {
 
   /**
-   *
+   * Validates if Openfed can be updated to version 12.
    */
-  public static function validateUpdate810(Event $event) {
+  public static function validateUpdate12(Event $event) {
 
     // This check will assure that other checks will be performed only if this
     // is a Drupal site, otherwise they will be ignored (like for first time
@@ -28,25 +28,23 @@ class OpenfedValidations {
       return;
     }
 
-    // We should run the validations only on Openfed 8.x-10.0 when we're
-    // updating from Openfed 8.x-9.x.
+    // We should run the validations only on Openfed 11.2 when we're
+    // updating from Openfed <= 11.1.
     if (!self::_checkProjectVersion()) {
       return;
     }
 
     // Composer.json requires some manual updates, this will check if those
     // updates were done.
-    self::_checkComposerFile();
+    // self::_checkComposerFile();
 
-    // Some modules were removed from Openfed 8.10 and they should be deleted
+    // Some modules were removed from Openfed 12 and they should be deleted
     // before updating to this version.
-    self::_checkDeprecatedModules();
+    // self::_checkDeprecatedModules();
 
     // Twig Tweak module was updated so, if used, it should be checked for
     // compatibility issues.
-    self::_checkTwigTweak2Compatibility();
-
-    // self::_checkTwigTweak3Compatibility();
+    self::_checkTwigTweak3Compatibility();
   }
 
   /**
@@ -63,21 +61,22 @@ class OpenfedValidations {
   }
 
   /**
-   * Checks if the current version is at least Openfed8 10.0.
+   * Checks if the current version is at least Openfed 11.2.
    *
    * @return bool
-   *   Return true if current version is 10.0 or more, false otherwise.
+   *   Return true if current version is 11.2 or more, false otherwise.
    */
   private static function _checkProjectVersion() {
     $composer_openfed = json_decode(file_get_contents('composer.openfed.json'), TRUE);
-    $current_version = isset($composer_openfed['require']['openfed/openfed8']) ? $composer_openfed['require']['openfed/openfed8'] : $composer_openfed['require']['openfed/openfed'];
+    $current_version = $composer_openfed['require']['openfed/openfed'];
     preg_match('/(?:[\d+\.?]+[a-zA-Z0-9-]*)/', $current_version, $matches);
+
     // If current version is dev, we should ignore version check.
     if (strpos($current_version, 'dev') !== FALSE) {
       return FALSE;
     }
 
-    return version_compare($matches[0], '10.0', '>=');
+    return version_compare($matches[0], '11.2.x', '>=');
   }
 
   /**
@@ -115,7 +114,7 @@ class OpenfedValidations {
     foreach ($modules_to_check as $module) {
       $output = trim(shell_exec('drush pml --field="status" --filter="name~=#(' . $module . ')#i"'));
       if ($output == 'Enabled') {
-        throw new \ErrorException("You can't proceed with Openfed update until you uninstall $module. See Openfed 8x-10.0 release notes.");
+        throw new \ErrorException("You can't proceed with Openfed update until you uninstall $module. See Openfed 12 release notes.");
       }
     }
   }
@@ -151,63 +150,6 @@ class OpenfedValidations {
   }
 
   /**
-   * Check template for Twig Tweak 2.x compatibility issues.
-   * See https://www.drupal.org/docs/contributed-modules/twig-tweak/migrating-to-twig-tweak-2x
-   *
-   * @throws \ErrorException
-   */
-  private static function _checkTwigTweak2Compatibility() {
-    if (self::_isTwigTweakEnabled()) {
-      self::_initDrupalContainer();
-
-      // 1. Check Rendering Blocks.
-      $available_blocks = array_keys(\Drupal::service('plugin.manager.block')->getDefinitions());
-      $search = shell_exec('find ./docroot/themes/ ./config/ -name "*.twig" | xargs grep -hi "drupal_block"');
-      $pattern = '/drupal_block\([\'|"]([a-zA-Z0-9\-_]+)[\'|"]\)/';
-      preg_match_all($pattern, $search, $matches);
-
-      foreach ($matches[1] as $block_id) {
-        // If one of the block matches is an available block plugin id, we
-        // should not proceed.
-        if (!in_array($block_id, $available_blocks)) {
-          throw new \ErrorException("You should convert your theme to Twig Tweak 2.x before updating Openfed. See https://www.drupal.org/docs/contributed-modules/twig-tweak/migrating-to-twig-tweak-2x#rendering-blocks.");
-        }
-      }
-
-      // 2. Check preg_replace filter declaration.
-      $search = shell_exec('find ./docroot/themes/ ./config/ -name "*.twig" | xargs grep -hi "preg_replace"');
-      $pattern = '/preg_replace\([\'|"]\/?/';
-      preg_match_all($pattern, $search, $matches);
-
-      foreach ($matches[0] as $expression) {
-        // If one of the block matches is an available block plugin id, we
-        // should not proceed.
-        if (substr($expression, -1) != '/') {
-          throw new \ErrorException("You should convert your theme to Twig Tweak 2.x before updating Openfed. See https://www.drupal.org/docs/contributed-modules/twig-tweak/migrating-to-twig-tweak-2x#preg-replace-filter.");
-        }
-      }
-
-      // 3. Check Entity access.
-      $twig_tweak_check_access = \Drupal::service('settings')->get('twig_tweak_check_access');
-      if ($twig_tweak_check_access === FALSE) {
-        throw new \ErrorException("You should convert your settings.php to Twig Tweak 2.x before updating Openfed. See https://www.drupal.org/docs/contributed-modules/twig-tweak/migrating-to-twig-tweak-2x#entity-access.");
-      }
-
-      // 4. Check Region wrapper.
-      // 5. Check Default field language.
-      // 6. Check preg_replace filter declaration.
-      $search = shell_exec('find ./docroot/themes/ ./config/ -name "*.twig" | xargs grep -hi "drupal_set_message"');
-      $pattern = '/drupal_set_message\([\'|"]/';
-      preg_match_all($pattern, $search, $matches);
-
-      if (!empty($matches[0])) {
-        throw new \ErrorException("You should convert your theme to Twig Tweak 2.x before updating Openfed. See https://www.drupal.org/docs/contributed-modules/twig-tweak/migrating-to-twig-tweak-2x#default-field-language.");
-      }
-
-    }
-  }
-
-  /**
    * Check template for Twig Tweak 3.x compatibility issues.
    * See https://git.drupalcode.org/project/twig_tweak/-/blob/3.x/docs/migration-to-3.x.md
    *
@@ -215,7 +157,16 @@ class OpenfedValidations {
    */
   private static function _checkTwigTweak3Compatibility() {
     if (self::_isTwigTweakEnabled()) {
-      // @todo for Openfed 11.
+      self::_initDrupalContainer();
+
+      // 1. Check for drupal_entity() and drupal_field() with second argument as null or not present.
+      $entityFieldSearch = shell_exec('find ./docroot/themes/ ./config/ -name "*.twig" | xargs grep -hiP "drupal_(entity|field)\([\'\"].*?[\'\"](,\s*null)?\)"');
+      $entityFieldPattern = '/drupal_(entity|field)\([\'\"]([^,]*)[\'\"](,\s*null)?\)/';
+      preg_match_all($entityFieldPattern, $entityFieldSearch, $entityFieldMatches);
+
+      if (!empty($entityFieldMatches[0])) {
+        throw new \ErrorException("In your theme, drupal_entity() or drupal_field() is used with the second argument as null or missing. Convert your theme to Twig Tweak 3.x before updating Openfed. See https://git.drupalcode.org/project/twig_tweak/-/blob/3.x/docs/migration-to-3.x.md.");
+      }
     }
   }
 
