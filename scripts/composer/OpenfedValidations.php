@@ -73,7 +73,7 @@ class OpenfedValidations {
       return FALSE;
     }
 
-    return version_compare($matches[0], '12.x', '<');
+    return version_compare($matches[0], '12', '<');
   }
 
   /**
