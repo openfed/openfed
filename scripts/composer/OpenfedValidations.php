@@ -7,8 +7,9 @@ use Drupal\Core\DrupalKernel;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
- * A class to do several validations before updating to Openfed 12.x. This
- * will help maintainers to do an informed update.
+ * A class to do several validations before updating to Openfed 12.x.
+ *
+ * This will help maintainers to do an informed update.
  *
  * This file is present in Openfed 11.2+ so composer can early call it in
  * Openfed 12 and make a check before having to update Openfed. As such,
@@ -24,35 +25,36 @@ class OpenfedValidations {
     // This check will assure that other checks will be performed only if this
     // is a Drupal site, otherwise they will be ignored (like for first time
     // installations).
-    if (!self::_isDrupalSite()) {
+    if (!self::isDrupalSite()) {
       return;
     }
 
     // We should run the validations only on Openfed 11.2 when we're
     // updating from Openfed <= 11.1.
-    if (!self::_checkProjectVersion()) {
+    if (!self::checkProjectVersion()) {
       return;
     }
 
     // Composer.json requires some manual updates, this will check if those
     // updates were done.
-    // self::_checkComposerFile();
+    // self::checkComposerFile();
 
     // Some modules were removed from Openfed 12 and they should be deleted
     // before updating to this version.
-    // self::_checkDeprecatedModules();
+    // self::checkDeprecatedModules();
 
     // Twig Tweak module was updated so, if used, it should be checked for
     // compatibility issues.
-    self::_checkTwigTweak3Compatibility();
+    self::checkTwigTweak3Compatibility();
   }
 
   /**
    * Check if current site is a Drupal site.
    *
    * @return bool
+   *   TRUE if drupal is bootstrapped.
    */
-  private static function _isDrupalSite() {
+  private static function isDrupalSite() {
     $output = trim(shell_exec('drush status --field="Drupal bootstrap"'));
     if (empty($output)) {
       return FALSE;
@@ -66,7 +68,7 @@ class OpenfedValidations {
    * @return bool
    *   Return true if current version is 11.2 or more, false otherwise.
    */
-  private static function _checkProjectVersion() {
+  private static function checkProjectVersion() {
     $composer_openfed = json_decode(file_get_contents('composer.openfed.json'), TRUE);
     $current_version = $composer_openfed['require']['openfed/openfed'];
     preg_match('/(?:[\d+\.?]+[a-zA-Z0-9-]*)/', $current_version, $matches);
@@ -83,8 +85,9 @@ class OpenfedValidations {
    * Checks if composer file was updated as it should.
    *
    * @throws \ErrorException
+   *   Exception when composer.json is not up-to-date.
    */
-  private static function _checkComposerFile() {
+  private static function checkComposerFile() {
     // We'll make sure that the composer merge is updated in the old composer
     // file.
     $composer_file = json_decode(file_get_contents('composer.json'), TRUE);
@@ -95,12 +98,12 @@ class OpenfedValidations {
   }
 
   /**
-   * Checks if deprecated modules are enabled end stops update if that's the
-   * case.
+   * Checks if deprecated modules are enabled and stops update if true.
    *
    * @throws \ErrorException
+   *   Exception when deprecated modules are enabled.
    */
-  private static function _checkDeprecatedModules() {
+  private static function checkDeprecatedModules() {
     $modules_to_check = [
       'toolbar_themes',
       'sharemessage',
@@ -123,8 +126,9 @@ class OpenfedValidations {
    * Checks if Twig Tweak is enabled.
    *
    * @return bool
+   *   TRUE if twig is enabled.
    */
-  private static function _isTwigTweakEnabled() {
+  private static function isTwigTweakEnabled() {
     $module = 'twig_tweak';
     $output = trim(shell_exec('drush pml --field="status" --filter="' . $module . '"'));
     if ($output == 'Enabled') {
@@ -138,7 +142,7 @@ class OpenfedValidations {
    *
    * @throws \Exception
    */
-  private static function _initDrupalContainer() {
+  private static function initDrupalContainer() {
     $autoloader = require_once getcwd() . '/docroot/autoload.php';
     $request = Request::createFromGlobals();
     $kernel = DrupalKernel::createFromRequest($request, $autoloader, 'prod');
@@ -151,15 +155,18 @@ class OpenfedValidations {
 
   /**
    * Check template for Twig Tweak 3.x compatibility issues.
-   * See https://git.drupalcode.org/project/twig_tweak/-/blob/3.x/docs/migration-to-3.x.md
+   *
+   * See https://git.drupalcode.org/project/twig_tweak/-/blob/3.x/docs/migration-to-3.x.md.
    *
    * @throws \ErrorException
+   *   Exception when twig tweak 3 compatibility fails.
    */
-  private static function _checkTwigTweak3Compatibility() {
-    if (self::_isTwigTweakEnabled()) {
-      self::_initDrupalContainer();
+  private static function checkTwigTweak3Compatibility() {
+    if (self::isTwigTweakEnabled()) {
+      self::initDrupalContainer();
 
-      // 1. Check for drupal_entity() and drupal_field() with second argument as null or not present.
+      // 1. Check for drupal_entity() and drupal_field() with second argument
+      // as null or not present.
       $entityFieldSearch = shell_exec('find ./docroot/themes/ ./config/ -name "*.twig" | xargs grep -hiP "drupal_(entity|field)\([\'\"].*?[\'\"](,\s*null)?\)"');
       $entityFieldPattern = '/drupal_(entity|field)\([\'\"]([^,]*)[\'\"](,\s*null)?\)/';
       preg_match_all($entityFieldPattern, $entityFieldSearch, $entityFieldMatches);

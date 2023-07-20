@@ -6,21 +6,29 @@ use Composer\Script\Event;
 use Drupal\Component\Utility\NestedArray;
 use Drupal\Core\DrupalKernel;
 use Symfony\Component\HttpFoundation\Request;
-use ZipArchive;
 
+/**
+ * A class to update composer files to the newer version of Openfed.
+ */
 class OpenfedUpdate {
 
   /**
+   * Openfed project github URL.
+   *
    * @var string
    */
   protected static $openfedRepo = 'https://github.com/openfed/openfed-project';
 
   /**
+   * Openfed project github archive tags URL.
+   *
    * @var string
    */
   protected static $openfedZip = 'https://github.com/openfed/openfed-project/archive/refs/tags/';
 
   /**
+   * The latest Openfed version.
+   *
    * @var string
    */
   protected static $latestOpenfedVersion;
@@ -29,12 +37,13 @@ class OpenfedUpdate {
    * Update current openfed project files.
    *
    * @param \Composer\Script\Event $event
+   *   The composer script event.
    */
   public static function update(Event $event) {
-    self::_setLatestOpenfedVersion(self::$openfedRepo);
+    self::setLatestOpenfedVersion(self::$openfedRepo);
 
     // Check if there's a new Openfed version and update if so.
-    if (self::_newVersionExists()) {
+    if (self::newVersionExists()) {
       echo "\n\n---- Project files will be updated to Openfed version " . self::$latestOpenfedVersion . "\n";
 
       $url = self::$openfedZip . self::$latestOpenfedVersion . '.zip';
@@ -43,7 +52,7 @@ class OpenfedUpdate {
 
       $zip_resource = fopen($zipFile, "w");
 
-      self::_initDrupalContainer();
+      self::initDrupalContainer();
       /** @var GuzzleHttp\Psr\Response $response */
       $response = \Drupal::httpClient()->get($url, ['sink' => $zip_resource]);
 
@@ -51,7 +60,7 @@ class OpenfedUpdate {
         echo "Error :- Cannot connect.";
       }
 
-      $zip = new ZipArchive;
+      $zip = new \ZipArchive();
       if ($zip->open($zipFile) != "true") {
         throw new \ErrorException("Error :- Unable to open the Zip File.");
       }
@@ -67,15 +76,15 @@ class OpenfedUpdate {
 
       // Composer.json and composer.patches.json, if exists, will be merged.
       // This is a best effort merge and should be manually confirmed.
-      self::_mergeComposer($extractPath . DIRECTORY_SEPARATOR . 'openfed-project-' . self::$latestOpenfedVersion . DIRECTORY_SEPARATOR . 'composer.json', '.' . DIRECTORY_SEPARATOR . 'composer.json');
+      self::mergeComposer($extractPath . DIRECTORY_SEPARATOR . 'openfed-project-' . self::$latestOpenfedVersion . DIRECTORY_SEPARATOR . 'composer.json', '.' . DIRECTORY_SEPARATOR . 'composer.json');
       unlink($extractPath . DIRECTORY_SEPARATOR . 'openfed-project-' . self::$latestOpenfedVersion . DIRECTORY_SEPARATOR . 'composer.json');
-      self::_mergeComposer($extractPath . DIRECTORY_SEPARATOR . 'openfed-project-' . self::$latestOpenfedVersion . DIRECTORY_SEPARATOR . 'composer.patches.json', '.' . DIRECTORY_SEPARATOR . 'composer.patches.json');
+      self::mergeComposer($extractPath . DIRECTORY_SEPARATOR . 'openfed-project-' . self::$latestOpenfedVersion . DIRECTORY_SEPARATOR . 'composer.patches.json', '.' . DIRECTORY_SEPARATOR . 'composer.patches.json');
       unlink($extractPath . DIRECTORY_SEPARATOR . 'openfed-project-' . self::$latestOpenfedVersion . DIRECTORY_SEPARATOR . 'composer.patches.json');
 
       // All the remaining files will be copied as is (i.e.
       // composer.openfed.json)
-      self::_recurseCopy($extractPath . DIRECTORY_SEPARATOR . 'openfed-project-' . self::$latestOpenfedVersion, '.');
-      self::_deleteDirectory($extractPath);
+      self::recurseCopy($extractPath . DIRECTORY_SEPARATOR . 'openfed-project-' . self::$latestOpenfedVersion, '.');
+      self::deleteDirectory($extractPath);
 
       echo "---- Files updated. You still have to check your composer.json manually.\n\n";
     }
@@ -84,12 +93,12 @@ class OpenfedUpdate {
   /**
    * Merge composer files, keeping existing values.
    *
-   * @param $new
-   *  New composer file, from github repo.
-   * @param $old
-   *  Old composer file, the one in the filesystem.
+   * @param string $new
+   *   New composer file, from github repo.
+   * @param string $old
+   *   Old composer file, the one in the filesystem.
    */
-  private static function _mergeComposer($new, $old) {
+  private static function mergeComposer($new, $old) {
     $new_composer = json_decode(file_get_contents($new), TRUE);
     $old_composer = json_decode(file_get_contents($old), TRUE);
 
@@ -103,18 +112,18 @@ class OpenfedUpdate {
   /**
    * Copy files from one dir to another.
    *
-   * @param $src
-   *  Source directory.
-   * @param $dst
-   *  Destination directory.
+   * @param string $src
+   *   Source directory.
+   * @param string $dst
+   *   Destination directory.
    */
-  private static function _recurseCopy($src, $dst) {
+  private static function recurseCopy($src, $dst) {
     $dir = opendir($src);
     @mkdir($dst);
     while (FALSE !== ($file = readdir($dir))) {
       if (($file != '.') && ($file != '..')) {
         if (is_dir($src . DIRECTORY_SEPARATOR . $file)) {
-          self::_recurseCopy($src . DIRECTORY_SEPARATOR . $file, $dst . DIRECTORY_SEPARATOR . $file);
+          self::recurseCopy($src . DIRECTORY_SEPARATOR . $file, $dst . DIRECTORY_SEPARATOR . $file);
         }
         else {
           copy($src . DIRECTORY_SEPARATOR . $file, $dst . DIRECTORY_SEPARATOR . $file);
@@ -127,13 +136,13 @@ class OpenfedUpdate {
   /**
    * Delete directory from filesystem.
    *
-   * @param $dir
-   *  The directory to remove.
+   * @param string $dir
+   *   The directory to remove.
    *
    * @return bool
    *   True on success, false otherwise.
    */
-  public static function _deleteDirectory($dir) {
+  public static function deleteDirectory($dir) {
     if (!file_exists($dir)) {
       return TRUE;
     }
@@ -144,7 +153,7 @@ class OpenfedUpdate {
       if ($item == '.' || $item == '..') {
         continue;
       }
-      if (!self::_deleteDirectory($dir . DIRECTORY_SEPARATOR . $item)) {
+      if (!self::deleteDirectory($dir . DIRECTORY_SEPARATOR . $item)) {
         return FALSE;
       }
     }
@@ -157,7 +166,7 @@ class OpenfedUpdate {
    * @return bool
    *   True if there's a new version, false otherwise.
    */
-  private static function _newVersionExists() {
+  private static function newVersionExists() {
     $composer_openfed = json_decode(file_get_contents('composer.openfed.json'), TRUE);
     $current_version = $composer_openfed['require']['openfed/openfed'];
 
@@ -173,7 +182,7 @@ class OpenfedUpdate {
   /**
    * Set the latest openfed version variable.
    */
-  private static function _setLatestOpenfedVersion() {
+  private static function setLatestOpenfedVersion() {
     $latest_openfed_version = explode("\n", trim(shell_exec("git -c 'versionsort.suffix=-' ls-remote --tags --sort='-v:refname' " . self::$openfedRepo . " | cut -d '/' -f 3 | grep -v -")));
     self::$latestOpenfedVersion = $latest_openfed_version[0];
   }
@@ -183,7 +192,7 @@ class OpenfedUpdate {
    *
    * @throws \Exception
    */
-  private static function _initDrupalContainer() {
+  private static function initDrupalContainer() {
     $autoloader = require_once getcwd() . '/docroot/autoload.php';
     $request = Request::createFromGlobals();
     $kernel = DrupalKernel::createFromRequest($request, $autoloader, 'prod');
@@ -195,4 +204,3 @@ class OpenfedUpdate {
   }
 
 }
-
