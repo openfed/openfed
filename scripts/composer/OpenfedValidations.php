@@ -34,10 +34,6 @@ class OpenfedValidations {
       return;
     }
 
-    // Composer.json requires some manual updates, this will check if those
-    // updates were done.
-     self::checkComposerFile();
-
     // Some modules were removed from Openfed 12, so they should be deleted
     // before updating to this version.
      self::checkDeprecatedModules();
@@ -78,21 +74,6 @@ class OpenfedValidations {
     }
 
     return version_compare($matches[0], '12.x', '<');
-  }
-
-  /**
-   * Checks if composer file was updated as it should.
-   *
-   * @throws \ErrorException
-   *   Exception when composer.json is not up-to-date.
-   */
-  private static function checkComposerFile() {
-    // We'll make sure that the composer merge is updated in the old composer
-    // file.
-    $composer_file = json_decode(file_get_contents('composer.json'), TRUE);
-    if (strpos($composer_file['require']['wikimedia/composer-merge-plugin'], '*') !== FALSE) {
-      throw new \ErrorException("Your composer.json doesn't seem to be up to date.");
-    }
   }
 
   /**
