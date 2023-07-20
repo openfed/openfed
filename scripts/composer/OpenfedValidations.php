@@ -29,8 +29,7 @@ class OpenfedValidations {
       return;
     }
 
-    // We should run the validations only on Openfed 11.2 when we're
-    // updating from Openfed <= 11.1.
+    // We validate if Openfed version is bellow 12.
     if (!self::checkProjectVersion()) {
       return;
     }
@@ -63,10 +62,10 @@ class OpenfedValidations {
   }
 
   /**
-   * Checks if the current version is at least Openfed 11.2.
+   * Checks if the current version is bellow Openfed 12.
    *
    * @return bool
-   *   Return true if current version is 11.2 or more, false otherwise.
+   *   Return true if current version is bellow 12, false otherwise.
    */
   private static function checkProjectVersion() {
     $composer_openfed = json_decode(file_get_contents('composer.openfed.json'), TRUE);
@@ -78,7 +77,7 @@ class OpenfedValidations {
       return FALSE;
     }
 
-    return version_compare($matches[0], '11.2.x', '>=');
+    return version_compare($matches[0], '12.x', '<');
   }
 
   /**
