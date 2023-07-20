@@ -37,11 +37,11 @@ class OpenfedValidations {
 
     // Composer.json requires some manual updates, this will check if those
     // updates were done.
-    // self::checkComposerFile();
+     self::checkComposerFile();
 
-    // Some modules were removed from Openfed 12 and they should be deleted
+    // Some modules were removed from Openfed 12, so they should be deleted
     // before updating to this version.
-    // self::checkDeprecatedModules();
+     self::checkDeprecatedModules();
 
     // Twig Tweak module was updated so, if used, it should be checked for
     // compatibility issues.
@@ -91,8 +91,7 @@ class OpenfedValidations {
     // We'll make sure that the composer merge is updated in the old composer
     // file.
     $composer_file = json_decode(file_get_contents('composer.json'), TRUE);
-    $merged_composers = array_search('composer.libraries.json', $composer_file['extra']['merge-plugin']['require']);
-    if (strpos($composer_file['require']['wikimedia/composer-merge-plugin'], '^1.') !== FALSE || $merged_composers !== FALSE) {
+    if (strpos($composer_file['require']['wikimedia/composer-merge-plugin'], '*') !== FALSE) {
       throw new \ErrorException("Your composer.json doesn't seem to be up to date.");
     }
   }
@@ -104,16 +103,7 @@ class OpenfedValidations {
    *   Exception when deprecated modules are enabled.
    */
   private static function checkDeprecatedModules() {
-    $modules_to_check = [
-      'toolbar_themes',
-      'sharemessage',
-      'simple_gmap',
-      'scheduled_updates',
-      'field_default_token',
-      'contact_storage_clear',
-      'yamlform_clear',
-      'features',
-    ];
+    $modules_to_check = [];
     foreach ($modules_to_check as $module) {
       $output = trim(shell_exec('drush pml --field="status" --filter="name~=#(' . $module . ')#i"'));
       if ($output == 'Enabled') {
