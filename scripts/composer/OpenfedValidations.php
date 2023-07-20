@@ -50,7 +50,7 @@ class OpenfedValidations {
    *   TRUE if drupal is bootstrapped.
    */
   private static function isDrupalSite() {
-    $output = trim(shell_exec('drush status --field="Drupal bootstrap"'));
+    $output = trim(shell_exec('drush status --field="Drupal bootstrap"') ?? '');
     if (empty($output)) {
       return FALSE;
     }
@@ -83,7 +83,11 @@ class OpenfedValidations {
    *   Exception when deprecated modules are enabled.
    */
   private static function checkDeprecatedModules() {
-    $modules_to_check = [];
+    $modules_to_check = [
+      'ofed_switcher',
+      'rdf',
+      'adminimal_theme',
+    ];
     foreach ($modules_to_check as $module) {
       $output = trim(shell_exec('drush pml --field="status" --filter="name~=#(' . $module . ')#i"'));
       if ($output == 'Enabled') {
