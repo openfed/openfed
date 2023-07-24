@@ -29,14 +29,14 @@ class OpenfedValidations {
       return;
     }
 
-    // We validate if Openfed version is bellow 12.
+    // We validate if Openfed version is 12 or above.
     if (!self::checkProjectVersion()) {
       return;
     }
 
     // Some modules were removed from Openfed 12, so they should be deleted
     // before updating to this version.
-     self::checkDeprecatedModules();
+    self::checkDeprecatedModules();
 
     // Twig Tweak module was updated so, if used, it should be checked for
     // compatibility issues.
@@ -58,10 +58,10 @@ class OpenfedValidations {
   }
 
   /**
-   * Checks if the current version is bellow Openfed 12.
+   * Checks if the current version is Openfed 12 or above.
    *
    * @return bool
-   *   Return true if current version is bellow 12, false otherwise.
+   *   Return true if current version is 12 or above, false otherwise.
    */
   private static function checkProjectVersion() {
     $composer_openfed = json_decode(file_get_contents('composer.openfed.json'), TRUE);
@@ -73,7 +73,7 @@ class OpenfedValidations {
       return FALSE;
     }
 
-    return version_compare($matches[0], '12', '<');
+    return version_compare($matches[0], '12.x', '>=');
   }
 
   /**
