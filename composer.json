@@ -104,6 +104,9 @@
             "drupal/current_page_crumb": {
                 "Issue #3333995: Wrong RouteObjectInterface for Drupal 10": "https://git.drupalcode.org/project/current_page_crumb/-/merge_requests/4.diff"
             },
+            "drupal/disable_route_normalizer": {
+                "Issue #3376799: Could not check compatibility between Drupal\\disable_route_normalizer\\DisableRouteNormalizer\\DisableRouteNormalizer and Drupal\\redirect\\EventSubscriber\\RouteNormalizerRequestSubscriber": "https://www.drupal.org/files/issues/2023-07-25/disable_route_normalizer-deprecated-class-GetResponseEvent-3376799-2.patch"
+            },
             "drupal/entity_embed": {
                 "Issue #2882866: Provide a preview display setting for use in WYSIWYG editors": "https://www.drupal.org/files/issues/2019-09-18/entity_embed-preview_display_plugin-2882866-28.patch"
             },
