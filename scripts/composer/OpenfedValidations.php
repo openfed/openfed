@@ -107,7 +107,6 @@ class OpenfedValidations {
    */
   private static function checkDeprecatedThemes() {
     $themes_to_check = [
-      'openfed_admin',
       'adminimal_theme',
     ];
     foreach ($themes_to_check as $theme) {
