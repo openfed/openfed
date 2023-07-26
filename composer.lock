@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9a387c5631f870c68624871c25b7bf24",
+    "content-hash": "85d401bdfdb9ec044605a24ddc414ed2",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -14919,12 +14919,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/simplesamlphp/simplesamlphp.git",
-                "reference": "d81adb91d3e9522a422ca8aafeed8db606441287"
+                "reference": "e2fa6bff72acdae1a2962d5dcb00814785266eae"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/simplesamlphp/simplesamlphp/zipball/d81adb91d3e9522a422ca8aafeed8db606441287",
-                "reference": "d81adb91d3e9522a422ca8aafeed8db606441287",
+                "url": "https://api.github.com/repos/simplesamlphp/simplesamlphp/zipball/e2fa6bff72acdae1a2962d5dcb00814785266eae",
+                "reference": "e2fa6bff72acdae1a2962d5dcb00814785266eae",
                 "shasum": ""
             },
             "require": {
@@ -15039,7 +15039,7 @@
                 "issues": "https://github.com/simplesamlphp/simplesamlphp/issues",
                 "source": "https://github.com/simplesamlphp/simplesamlphp"
             },
-            "time": "2023-07-19T16:54:53+00:00"
+            "time": "2023-07-26T10:28:19+00:00"
         },
         {
             "name": "simplesamlphp/simplesamlphp-assets-base",
@@ -18554,7 +18554,7 @@
         },
         {
             "name": "twig/intl-extra",
-            "version": "v3.6.0",
+            "version": "v3.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/intl-extra.git",
@@ -18602,7 +18602,7 @@
                 "twig"
             ],
             "support": {
-                "source": "https://github.com/twigphp/intl-extra/tree/v3.6.0"
+                "source": "https://github.com/twigphp/intl-extra/tree/v3.7.0"
             },
             "funding": [
                 {
