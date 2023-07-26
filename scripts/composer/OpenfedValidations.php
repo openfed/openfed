@@ -38,6 +38,10 @@ class OpenfedValidations {
     // before updating to this version.
     self::checkDeprecatedModules();
 
+    // Some themes were removed from Openfed 12, so they should be deleted
+    // before updating to this version.
+    self::checkDeprecatedThemes();
+
     // Twig Tweak module was updated so, if used, it should be checked for
     // compatibility issues.
     self::checkTwigTweak3Compatibility();
@@ -85,13 +89,31 @@ class OpenfedValidations {
   private static function checkDeprecatedModules() {
     $modules_to_check = [
       'ofed_switcher',
-      'rdf',
-      'adminimal_theme',
+      'rdf'
     ];
     foreach ($modules_to_check as $module) {
       $output = trim(shell_exec('drush pml --field="status" --filter="name~=#(' . $module . ')#i"'));
       if ($output == 'Enabled') {
         throw new \ErrorException("You can't proceed with Openfed update until you uninstall $module. See Openfed 12 release notes.");
+      }
+    }
+  }
+
+  /**
+   * Checks if deprecated themes are enabled and stops update if true.
+   *
+   * @throws \ErrorException
+   *   Exception when deprecated themes are enabled.
+   */
+  private static function checkDeprecatedThemes() {
+    $themes_to_check = [
+      'openfed_admin',
+      'adminimal_theme',
+    ];
+    foreach ($themes_to_check as $theme) {
+      $output = trim(shell_exec('drush pml --field="status" --filter="name~=#(' . $theme . ')#i"'));
+      if ($output == 'Enabled') {
+        throw new \ErrorException("You can't proceed with Openfed update until you uninstall $theme. If you use $theme as the administration theme, you have to manually change it before you are able to uninstall the theme. See Openfed 12 release notes.");
       }
     }
   }
