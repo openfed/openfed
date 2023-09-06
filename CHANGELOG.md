@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+06 September 2023 - Version 11.1.10
+------------------------------
+  Issue #48: update script to take the current major version in consideration
+
 17 July 2023 - Version 11.1.9
 ------------------------------
   Security, outdated and unsupported module update:
