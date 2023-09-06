@@ -5,142 +5,14 @@
  */
 
 /**
- * Minimum 10.0 schema version to allow upgrading from.
- */
-function openfed_update_last_removed() {
-  return 81002;
-}
-
-/**
  * This will content management view, unsetting broken bulk actions.
  */
-function openfed_update_91101() {
-  $config_factory = \Drupal::configFactory();
-  $config = $config_factory->getEditable('views.view.content');
-  $original_config = $config->get('display.default.display_options.fields.node_bulk_form');
+function openfed_update_101203() {
+  $default_admin_theme = 'openfed_admin';
+  // Make sure the theme is installed.
+  \Drupal::service('theme_installer')->install([$default_admin_theme]);
 
-  if ($original_config['include_exclude'] == 'exclude' && empty($original_config['selected_actions'])) {
-    $actions = [
-      'node_publish_action',
-      'node_save_action',
-      'node_unpublish_action',
-      'pin',
-      'unpin',
-    ];
-    $config->set('display.default.display_options.fields.node_bulk_form.selected_actions', $actions);
-    $config->save(TRUE);
-  }
-}
-
-/**
- * Fix newly added documents & images not set with the correct mime type.
- */
-function openfed_update_91102() {
-  // Load file entity handling functions.
-  module_load_include('inc', 'file_entity', 'file_entity.file');
-
-  // Load all files.
-  /** @var \Drupal\file\FileInterface[] $files */
-  $files = \Drupal::entityTypeManager()
-    ->getStorage('file')
-    ->loadByProperties(['type' => 'other']);
-  //$file = reset($files) ?: NULL;
-
-  // For each file, get the correct file type and re-save it.
-  /** @var \Drupal\file\FileInterface|null $file */
-  foreach ($files as $file) {
-    $types = file_entity_file_type($file);
-    $type = reset($types);
-    $file->set('type', $type);
-    $file->save();
-  }
-}
-
-/**
- * Fix a problem with a contrib patch for pathauto, which was creating an update
- * hook that is already used in the module.
- * This hook update will run the same code as pathauto_update_8108().
- */
-function openfed_update_91103() {
-  // Load all pattern configuration entities.
-  foreach (\Drupal::configFactory()->listAll('pathauto.pattern.') as $pattern_config_name) {
-    $pattern_config = \Drupal::configFactory()->getEditable($pattern_config_name);
-
-    // Loop patterns and swap the node_type plugin by the entity_bundle:node
-    // plugin.
-    if ($pattern_config->get('type') === 'canonical_entities:node') {
-      $selection_criteria = $pattern_config->get('selection_criteria');
-      foreach ($selection_criteria as $uuid => $condition) {
-        if ($condition['id'] === 'node_type') {
-          $pattern_config->set("selection_criteria.$uuid.id", 'entity_bundle:node');
-          $pattern_config->save();
-          break;
-        }
-      }
-    }
-  }
-}
-
-/**
- * Fix a template regression issue with office_hours module.
- * This update looks for office_hours fields and, for each one, creates a twig
- * file with legacy HTML.
- */
-function openfed_update_91110() {
-  // Check if is enabled.
-
-  if (\Drupal::moduleHandler()->moduleExists('office_hours')) {
-    $theme = \Drupal::theme()->getActiveTheme();
-    $directory = $theme->getPath() . '/templates/office_hours';
-
-    $field_override_template = "{%
-          set classes = [
-          'field',
-          'field--name-' ~ field_name|clean_class,
-          'field--type-' ~ field_type|clean_class,
-          'field--label-' ~ label_display,
-        ]
-      %}
-      {%
-        set title_classes = [
-          'field__label',
-          label_display == 'visually_hidden' ? 'visually-hidden',
-        ]
-      %}
-      {% set label_wrapper = label_display == 'above' ? 'h2' : 'div' %}
-      {% set multiple = items|length > 1 ? TRUE : FALSE %}
-
-      {% if label_hidden %}
-      {% if multiple %}
-        <div{{ attributes.addClass(classes, 'field__items') }}>
-          {% for item in items %}
-            <div{{ item.attributes.addClass('field__item') }}>{{ item.content }}</div>
-          {% endfor %}
-        </div>
-      {% else %}
-        {% for item in items %}
-          <div{{ attributes.addClass(classes, 'field__item') }}>{{ item.content }}</div>
-        {% endfor %}
-      {% endif %}
-    {% else %}
-      <div{{ attributes.addClass(classes) }}>
-        <{{ label_wrapper }}{{ title_attributes.addClass(title_classes) }}>{{ label }}</{{ label_wrapper }}>
-        {% if multiple %}
-          <ul class='field__items'>
-            {% for item in items %}
-              <li{{ item.attributes.addClass('field__item') }}>{{ item.content }}</li>
-            {% endfor %}
-          </ul>
-        {% else %}
-          {% for item in items %}
-            <div{{ item.attributes.addClass('field__item') }}>{{ item.content }}</div>
-          {% endfor %}
-        {% endif %}
-      </div>
-    {% endif %}";
-
-    $file_system = \Drupal::service('file_system');
-    $file_system->prepareDirectory($directory, \Drupal\Core\File\FileSystemInterface:: CREATE_DIRECTORY | \Drupal\Core\File\FileSystemInterface::MODIFY_PERMISSIONS);
-    $file_system->saveData($field_override_template, $directory . '/field--office-hours.html.twig', \Drupal\Core\File\FileSystemInterface::EXISTS_RENAME);
-  }
+  // Set it as the admin theme.
+  $config = \Drupal::service('config.factory')->getEditable('system.theme');
+  $config->set('admin', $default_admin_theme)->save();
 }
