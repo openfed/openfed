@@ -34,13 +34,19 @@ class OpenfedUpdate {
   protected static $latestOpenfedVersion;
 
   /**
+   * @var string
+   */
+  protected static $currentOpenfedVersion;
+
+  /**
    * Update current openfed project files.
    *
    * @param \Composer\Script\Event $event
    *   The composer script event.
    */
   public static function update(Event $event) {
-    self::setLatestOpenfedVersion(self::$openfedRepo);
+    self::getCurrentVersion();
+    self::setLatestOpenfedVersion();
 
     // Check if there's a new Openfed version and update if so.
     if (self::newVersionExists()) {
@@ -167,8 +173,7 @@ class OpenfedUpdate {
    *   True if there's a new version, false otherwise.
    */
   private static function newVersionExists() {
-    $composer_openfed = json_decode(file_get_contents('composer.openfed.json'), TRUE);
-    $current_version = $composer_openfed['require']['openfed/openfed'];
+    $current_version = self::$currentOpenfedVersion;
 
     // If current version is dev, we don't need to check if there's a newer
     // version.
@@ -180,11 +185,34 @@ class OpenfedUpdate {
   }
 
   /**
+   * Checks if there's a more recent version of Openfed.
+   *
+   * @return bool
+   *   True if there's a new version, false otherwise.
+   */
+  private static function _getCurrentVersion() {
+    $composer_openfed = json_decode(file_get_contents('composer.openfed.json'), TRUE);
+    $current_version = $composer_openfed['require']['openfed/openfed'];
+
+    self::$currentOpenfedVersion = $current_version;
+  }
+
+  /**
    * Set the latest openfed version variable.
    */
   private static function setLatestOpenfedVersion() {
-    $latest_openfed_version = explode("\n", trim(shell_exec("git -c 'versionsort.suffix=-' ls-remote --tags --sort='-v:refname' " . self::$openfedRepo . " | cut -d '/' -f 3 | grep -v -")));
-    self::$latestOpenfedVersion = $latest_openfed_version[0];
+    $available_openfed_version = explode("\n", trim(shell_exec("git -c 'versionsort.suffix=-' ls-remote --tags --sort='-v:refname' " . self::$openfedRepo . " | cut -d '/' -f 3 | grep -v -")));
+
+    // Get the current major version.
+    $current_major_version = strstr(self::$currentOpenfedVersion,'.', true) . '.';
+
+    // On updates we need to filter openfed versions that match the current
+    // major version.
+    $latest_openfed_version = array_filter($available_openfed_version, function($version) use ($current_major_version) {
+      return (strpos($version, $current_major_version) === 0 ? true : false);
+    });
+
+    self::$latestOpenfedVersion = current($latest_openfed_version);
   }
 
   /**
