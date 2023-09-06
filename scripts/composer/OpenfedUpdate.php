@@ -50,50 +50,70 @@ class OpenfedUpdate {
 
     // Check if there's a new Openfed version and update if so.
     if (self::newVersionExists()) {
-      echo "\n\n---- Project files will be updated to Openfed version " . self::$latestOpenfedVersion . "\n";
-
-      $url = self::$openfedZip . self::$latestOpenfedVersion . '.zip';
-      $zipFile = self::$latestOpenfedVersion . '.zip';
-      $extractPath = self::$latestOpenfedVersion;
-
-      $zip_resource = fopen($zipFile, "w");
-
-      self::initDrupalContainer();
-      /** @var GuzzleHttp\Psr\Response $response */
-      $response = \Drupal::httpClient()->get($url, ['sink' => $zip_resource]);
-
-      if (!$response) {
-        echo "Error :- Cannot connect.";
-      }
-
-      $zip = new \ZipArchive();
-      if ($zip->open($zipFile) != "true") {
-        throw new \ErrorException("Error :- Unable to open the Zip File.");
-      }
-
-      $zip->extractTo($extractPath);
-      $zip->close();
-
-      // We'll merge the contents of the zip archive, but we'll ignore some
-      // files. Those files will be removed/unlink.
-      unlink($zipFile);
-      unlink($extractPath . DIRECTORY_SEPARATOR . 'openfed-project-' . self::$latestOpenfedVersion . DIRECTORY_SEPARATOR . '.gitignore');
-      unlink($extractPath . DIRECTORY_SEPARATOR . 'openfed-project-' . self::$latestOpenfedVersion . DIRECTORY_SEPARATOR . 'README.md');
-
-      // Composer.json and composer.patches.json, if exists, will be merged.
-      // This is a best effort merge and should be manually confirmed.
-      self::mergeComposer($extractPath . DIRECTORY_SEPARATOR . 'openfed-project-' . self::$latestOpenfedVersion . DIRECTORY_SEPARATOR . 'composer.json', '.' . DIRECTORY_SEPARATOR . 'composer.json');
-      unlink($extractPath . DIRECTORY_SEPARATOR . 'openfed-project-' . self::$latestOpenfedVersion . DIRECTORY_SEPARATOR . 'composer.json');
-      self::mergeComposer($extractPath . DIRECTORY_SEPARATOR . 'openfed-project-' . self::$latestOpenfedVersion . DIRECTORY_SEPARATOR . 'composer.patches.json', '.' . DIRECTORY_SEPARATOR . 'composer.patches.json');
-      unlink($extractPath . DIRECTORY_SEPARATOR . 'openfed-project-' . self::$latestOpenfedVersion . DIRECTORY_SEPARATOR . 'composer.patches.json');
-
-      // All the remaining files will be copied as is (i.e.
-      // composer.openfed.json)
-      self::recurseCopy($extractPath . DIRECTORY_SEPARATOR . 'openfed-project-' . self::$latestOpenfedVersion, '.');
-      self::deleteDirectory($extractPath);
-
-      echo "---- Files updated. You still have to check your composer.json manually.\n\n";
+      self::overwriteFiles();
     }
+  }
+
+  /**
+   * Update current openfed project files.
+   *
+   * @param \Composer\Script\Event $event
+   *   The composer script event.
+   */
+  public static function upgrade(Event $event) {
+    self::getCurrentVersion();
+    self::setLatestOpenfedVersion(true);
+
+    // Check if there's a new Openfed version and update if so.
+    if (self::newVersionExists()) {
+      self::overwriteFiles();
+    }
+  }
+
+  private static function overwriteFiles() {
+    echo "\n\n---- Project files will be updated to Openfed version " . self::$latestOpenfedVersion . "\n";
+
+    $url = self::$openfedZip . self::$latestOpenfedVersion . '.zip';
+    $zipFile = self::$latestOpenfedVersion . '.zip';
+    $extractPath = self::$latestOpenfedVersion;
+
+    $zip_resource = fopen($zipFile, "w");
+
+    self::initDrupalContainer();
+    /** @var GuzzleHttp\Psr\Response $response */
+    $response = \Drupal::httpClient()->get($url, ['sink' => $zip_resource]);
+
+    if (!$response) {
+      echo "Error :- Cannot connect.";
+    }
+
+    $zip = new \ZipArchive();
+    if ($zip->open($zipFile) != "true") {
+      throw new \ErrorException("Error :- Unable to open the Zip File.");
+    }
+
+    $zip->extractTo($extractPath);
+    $zip->close();
+
+    // We'll merge the contents of the zip archive, but we'll ignore some
+    // files. Those files will be removed/unlink.
+    unlink($zipFile);
+    unlink($extractPath . DIRECTORY_SEPARATOR . 'openfed-project-' . self::$latestOpenfedVersion . DIRECTORY_SEPARATOR . '.gitignore');
+    unlink($extractPath . DIRECTORY_SEPARATOR . 'openfed-project-' . self::$latestOpenfedVersion . DIRECTORY_SEPARATOR . 'README.md');
+
+    // Composer.json and composer.patches.json, if exists, will be merged.
+    // This is a best effort merge and should be manually confirmed.
+    self::mergeComposer($extractPath . DIRECTORY_SEPARATOR . 'openfed-project-' . self::$latestOpenfedVersion . DIRECTORY_SEPARATOR . 'composer.json', '.' . DIRECTORY_SEPARATOR . 'composer.json');
+    unlink($extractPath . DIRECTORY_SEPARATOR . 'openfed-project-' . self::$latestOpenfedVersion . DIRECTORY_SEPARATOR . 'composer.json');
+    self::mergeComposer($extractPath . DIRECTORY_SEPARATOR . 'openfed-project-' . self::$latestOpenfedVersion . DIRECTORY_SEPARATOR . 'composer.patches.json', '.' . DIRECTORY_SEPARATOR . 'composer.patches.json');
+    unlink($extractPath . DIRECTORY_SEPARATOR . 'openfed-project-' . self::$latestOpenfedVersion . DIRECTORY_SEPARATOR . 'composer.patches.json');
+
+    // All the remaining files will be copied as is (i.e.
+    // composer.openfed.json)
+    self::recurseCopy($extractPath . DIRECTORY_SEPARATOR . 'openfed-project-' . self::$latestOpenfedVersion, '.');
+    self::deleteDirectory($extractPath);
+
+    echo "---- Files updated. You still have to check your composer.json manually.\n\n";
   }
 
   /**
@@ -200,17 +220,21 @@ class OpenfedUpdate {
   /**
    * Set the latest openfed version variable.
    */
-  private static function setLatestOpenfedVersion() {
+  private static function setLatestOpenfedVersion($upgrade = false) {
     $available_openfed_version = explode("\n", trim(shell_exec("git -c 'versionsort.suffix=-' ls-remote --tags --sort='-v:refname' " . self::$openfedRepo . " | cut -d '/' -f 3 | grep -v -")));
 
-    // Get the current major version.
-    $current_major_version = strstr(self::$currentOpenfedVersion,'.', true) . '.';
+    // If this is an upgrade, we don't need to filter by the current major
+    // version.
+    if (!$upgrade) {
+      // Get the current major version.
+      $current_major_version = strstr(self::$currentOpenfedVersion,'.', true) . '.';
 
-    // On updates we need to filter openfed versions that match the current
-    // major version.
-    $latest_openfed_version = array_filter($available_openfed_version, function($version) use ($current_major_version) {
-      return (strpos($version, $current_major_version) === 0 ? true : false);
-    });
+      // On updates we need to filter openfed versions that match the current
+      // major version.
+      $latest_openfed_version = array_filter($available_openfed_version, function($version) use ($current_major_version) {
+        return (strpos($version, $current_major_version) === 0 ? true : false);
+      });
+    }
 
     self::$latestOpenfedVersion = current($latest_openfed_version);
   }
