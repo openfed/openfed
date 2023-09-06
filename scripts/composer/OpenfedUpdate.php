@@ -221,7 +221,7 @@ class OpenfedUpdate {
    * Set the latest openfed version variable.
    */
   private static function setLatestOpenfedVersion($upgrade = false) {
-    $available_openfed_version = explode("\n", trim(shell_exec("git -c 'versionsort.suffix=-' ls-remote --tags --sort='-v:refname' " . self::$openfedRepo . " | cut -d '/' -f 3 | grep -v -")));
+    $available_openfed_version = $latest_openfed_version = explode("\n", trim(shell_exec("git -c 'versionsort.suffix=-' ls-remote --tags --sort='-v:refname' " . self::$openfedRepo . " | cut -d '/' -f 3 | grep -v -")));
 
     // If this is an upgrade, we don't need to filter by the current major
     // version.
