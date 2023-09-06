@@ -125,6 +125,8 @@ class OpenfedValidations {
     $themes_to_check = [
       'openfed_admin',
       'adminimal_theme',
+      'seven',
+      'bartik',
     ];
 
     // Check if one of these themes is set as the admin theme and set another.
