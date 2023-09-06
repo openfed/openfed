@@ -190,7 +190,7 @@ class OpenfedUpdate {
    * @return bool
    *   True if there's a new version, false otherwise.
    */
-  private static function _getCurrentVersion() {
+  private static function getCurrentVersion() {
     $composer_openfed = json_decode(file_get_contents('composer.openfed.json'), TRUE);
     $current_version = $composer_openfed['require']['openfed/openfed'];
 
