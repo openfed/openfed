@@ -1,6 +1,42 @@
 CHANGELOG
 =========
 
+21 April 2023 - Version 11.1.8
+------------------------------
+  Update leaflet_maptiler due to incompatibilities with new version
+
+20 April 2023 - Version 11.1.7
+------------------------------
+  Revert update for smart_trim module due to PHP7.3 incompatibilities
+
+20 April 2023 - Version 11.1.6
+------------------------------
+  Update bootstrap theme
+  Update editor_advanced_link module
+  Update field_encrypt module
+  Update leaflet module
+  Update smart_trim module
+  Update twig_field_value module
+
+12 April 2023 - Version 11.1.5
+------------------------------
+  Update Core
+  Update Alertbox module to fix D9/D10 compatibility
+
+23 March 2023 - Version 11.1.3
+------------------------------
+  Update leaflet_maptiler due to leaflet_maptiler_token incompatibility
+  Update partial_date due to D9 limitations
+  Add core patch for #3260652
+
+20 March 2023 - Version 11.1.2
+------------------------------
+  Downgrade smart_trim due to PHP compatibility.
+
+20 March 2023 - Version 11.1.1
+------------------------------
+  Update several contrib modules to their latest version.
+
 20 December 2022 - Version 11.1.0
 ------------------------------
   Initial Openfed 11.1 release, using Drupal Core 9.4
