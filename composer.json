@@ -128,6 +128,9 @@
                 "Issue #2870738: Wrong active trail with multiple menu items with the same path": "https://www.drupal.org/files/issues/2022-03-22/multiple-menu-links-2870738-20.patch",
                 "Issue #2914746: Fatal error after installing the module (incompatibility with Context & Menu position module)": "https://www.drupal.org/files/issues/2022-04-06/2914746-27.patch"
             },
+            "drupal/onomasticon": {
+                "Issue #3340245: Enhance accessibility on Onomasticon module": "https://www.drupal.org/files/issues/2023-09-22/onomasticon-enhance-accessibility-3340245-7.patch"
+            },
             "drupal/page_manager": {
                 "Issue #2820218: Page manager does not respect existing route defaults for title callbacks": "https://www.drupal.org/files/issues/2018-03-21/2820218-50.patch",
                 "Issue #2858877: Allow for block visibility rules": "https://www.drupal.org/files/issues/2022-11-15/page_manager-block_visibility_conditions-2858877-71.patch"
@@ -253,6 +256,7 @@
         "drupal/node_edit_redirect": "1.0-rc4",
         "drupal/ofed_switcher": "1.7",
         "drupal/office_hours": "1.11",
+        "drupal/onomasticon": "2.2.2",
         "drupal/openfed_social": "1.5",
         "drupal/optional_end_date": "1.3",
         "drupal/override_node_options": "2.7",
