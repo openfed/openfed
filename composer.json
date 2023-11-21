@@ -274,6 +274,7 @@
         "drupal/simplesamlphp_auth": "4.x-dev",
         "drupal/sitemap": "2.0-beta4",
         "drupal/smart_trim": "2.1.0",
+        "drupal/soundcloudfield": "2.0.7",
         "drupal/super_login": "2.1.1",
         "drupal/taxonomy_access_fix": "4.0.0",
         "drupal/tmgmt": "1.15",
