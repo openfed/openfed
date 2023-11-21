@@ -180,6 +180,7 @@
         "drupal/bootstrap": "3.29",
         "drupal/ckeditor_abbreviation": "3.0.0",
         "drupal/ckeditor_codemirror": "2.5-beta1 as 3.0.0-beta4",
+        "drupal/ckeditor_find": "1.0-beta3",
         "drupal/colorbox": "2.0.1",
         "drupal/components": "3.0.0-beta3",
         "drupal/conditional_fields": "4.0.0-alpha3",
