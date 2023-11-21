@@ -162,7 +162,7 @@
         "cweagans/composer-patches": "*",
         "openfed/kiso": "3.0",
         "drush/drush": "^11.0",
-        "drupal/core-recommended": "10.1.1",
+        "drupal/core-recommended": "10.1.*",
         "drupal/core-composer-scaffold": "*",
         "drupal/addanother": "1.2",
         "drupal/address": "1.12",
