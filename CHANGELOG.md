@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+29 November 2023 - Version 12.1.0
+------------------------------
+
+- Removed 2 ckeditor related hard-coded contrib modules
+- Updated contrib modules
+
 06 September 2023 - Version 11.2.0
 ------------------------------
   Downgrade patch for page_manager issue https://www.drupal.org/project/page_manager/issues/2858877 since it throws an error when combining with patch from issue https://www.drupal.org/project/panels/issues/3183258.
