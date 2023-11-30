@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+29 November 2023 - Version 12.1.0
+------------------------------
+
+- Removed 2 ckeditor related hard-coded contrib modules
+- Updated contrib modules
+
 06 September 2023 - Version 12.1.0-beta4
 ------------------------------
   Update install hooks

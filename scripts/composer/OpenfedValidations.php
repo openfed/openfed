@@ -36,15 +36,14 @@ class OpenfedValidations {
 
     // Some modules were removed from Openfed 12, so they should be deleted
     // before updating to this version.
-    self::checkDeprecatedModules();
+    self::checkDeprecatedModules($event->getArguments());
 
     // Some themes were removed from Openfed 12, so they should be deleted
     // before updating to this version.
-    self::checkDeprecatedThemes();
+    self::checkDeprecatedThemes($event->getArguments());
 
-    // Twig Tweak module was updated so, if used, it should be checked for
-    // compatibility issues.
-    self::checkTwigTweak3Compatibility();
+
+    shell_exec('drush cr');
   }
 
   /**
@@ -62,10 +61,10 @@ class OpenfedValidations {
   }
 
   /**
-   * Checks if the current version is Openfed 12 or above.
+   * Checks if the current version is Openfed 12.2 or above.
    *
    * @return bool
-   *   Return true if current version is 12 or above, false otherwise.
+   *   Return true if current version is 12.2 or above, false otherwise.
    */
   private static function checkProjectVersion() {
     $composer_openfed = json_decode(file_get_contents('composer.openfed.json'), TRUE);
@@ -77,7 +76,7 @@ class OpenfedValidations {
       return FALSE;
     }
 
-    return version_compare($matches[0], '12.x', '>=');
+    return version_compare(trim($matches[0], '.'), '12.2', '>=');
   }
 
   /**
@@ -86,16 +85,26 @@ class OpenfedValidations {
    * @throws \ErrorException
    *   Exception when deprecated modules are enabled.
    */
-  private static function checkDeprecatedModules() {
-    $modules_to_check = [
-      'ofed_switcher',
-      'rdf'
-    ];
+  private static function checkDeprecatedModules($arguments = []) {
+    $recheck = false;
+    $modules_to_check = []; //TODO: set the modules to disable on Openfed13
     foreach ($modules_to_check as $module) {
-      $output = trim(shell_exec('drush pml --field="status" --filter="name~=#(' . $module . ')#i"'));
+      $output = trim(shell_exec('drush pml --field="status" --filter="name=' . $module . '"'));
       if ($output == 'Enabled') {
-        throw new \ErrorException("You can't proceed with Openfed update until you uninstall $module. See Openfed 12 release notes.");
+        if (in_array('fix', $arguments)) {
+          shell_exec('drush pmu ' . $module);
+          $recheck = true;
+          // Re-run to make sure modules were disabled.
+          self::checkDeprecatedModules();
+        } else {
+          throw new \ErrorException("You can't proceed with Openfed update until you uninstall $module. See Openfed 12 release notes.");
+        }
       }
+    }
+
+    // Re-run to make sure modules were disabled.
+    if ($recheck) {
+      self::checkDeprecatedModules();
     }
   }
 
@@ -105,70 +114,34 @@ class OpenfedValidations {
    * @throws \ErrorException
    *   Exception when deprecated themes are enabled.
    */
-  private static function checkDeprecatedThemes() {
-    $themes_to_check = [
-      'adminimal_theme',
-    ];
+  private static function checkDeprecatedThemes($arguments = []) {
+    $recheck = false;
+    $themes_to_check = []; //TODO: set the themes to disable on Openfed13
+
+    // Check if one of these themes is set as the admin theme and set another.
+    $admin_theme = current(unserialize(trim(shell_exec('drush cget --include-overridden system.theme admin --format=php'))));
+    if (in_array('fix', $arguments)) {
+      if (in_array($admin_theme, $themes_to_check)) {
+        // Temporarly set kiso as admin theme so we can uninstall current theme.
+        shell_exec('drush cset system.theme admin kiso -y');
+      }
+    }
+
     foreach ($themes_to_check as $theme) {
-      $output = trim(shell_exec('drush pml --field="status" --filter="name~=#(' . $theme . ')#i"'));
+      $output = trim(shell_exec('drush pml --field="status" --filter="name=' . $theme . '"'));
       if ($output == 'Enabled') {
-        throw new \ErrorException("You can't proceed with Openfed update until you uninstall $theme. If you use $theme as the administration theme, you have to manually change it before you are able to uninstall the theme. See Openfed 12 release notes.");
+        if (in_array('fix', $arguments)) {
+          shell_exec('drush thun ' . $theme);
+          $recheck = true;
+        } else {
+          throw new \ErrorException("You can't proceed with Openfed update until you uninstall $theme. If you use $theme as the administration theme, you have to manually change it before you are able to uninstall the theme. See Openfed 12 release notes.");
+        }
       }
     }
-  }
 
-  /**
-   * Checks if Twig Tweak is enabled.
-   *
-   * @return bool
-   *   TRUE if twig is enabled.
-   */
-  private static function isTwigTweakEnabled() {
-    $module = 'twig_tweak';
-    $output = trim(shell_exec('drush pml --field="status" --filter="' . $module . '"'));
-    if ($output == 'Enabled') {
-      return TRUE;
-    }
-    return FALSE;
-  }
-
-  /**
-   * Initiates Drupal container.
-   *
-   * @throws \Exception
-   */
-  private static function initDrupalContainer() {
-    $autoloader = require_once getcwd() . '/docroot/autoload.php';
-    $request = Request::createFromGlobals();
-    $kernel = DrupalKernel::createFromRequest($request, $autoloader, 'prod');
-    $kernel->boot();
-    $kernel->preHandle($request);
-    if (PHP_SAPI !== 'cli') {
-      $request->setSession($kernel->getContainer()->get('session'));
-    }
-  }
-
-  /**
-   * Check template for Twig Tweak 3.x compatibility issues.
-   *
-   * See https://git.drupalcode.org/project/twig_tweak/-/blob/3.x/docs/migration-to-3.x.md.
-   *
-   * @throws \ErrorException
-   *   Exception when twig tweak 3 compatibility fails.
-   */
-  private static function checkTwigTweak3Compatibility() {
-    if (self::isTwigTweakEnabled()) {
-      self::initDrupalContainer();
-
-      // 1. Check for drupal_entity() and drupal_field() with second argument
-      // as null or not present.
-      $entityFieldSearch = shell_exec('find ./docroot/themes/ ./config/ -name "*.twig" | xargs grep -hiP "drupal_(entity|field)\([\'\"].*?[\'\"](,\s*null)?\)"');
-      $entityFieldPattern = '/drupal_(entity|field)\([\'\"]([^,]*)[\'\"](,\s*null)?\)/';
-      preg_match_all($entityFieldPattern, $entityFieldSearch, $entityFieldMatches);
-
-      if (!empty($entityFieldMatches[0])) {
-        throw new \ErrorException("In your theme, drupal_entity() or drupal_field() is used with the second argument as null or missing. Convert your theme to Twig Tweak 3.x before updating Openfed. See https://git.drupalcode.org/project/twig_tweak/-/blob/3.x/docs/migration-to-3.x.md.");
-      }
+    // Re-run to make sure module was disabled.
+    if ($recheck) {
+      self::checkDeprecatedThemes();
     }
   }
 
