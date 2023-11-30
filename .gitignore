@@ -3,6 +3,7 @@ libraries/
 docroot/
 vendor/
 modules/*
+!modules/d10_compatibility/
 !modules/openfed_features/
 .idea
 /autoload.php

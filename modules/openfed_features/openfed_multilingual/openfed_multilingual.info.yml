@@ -3,7 +3,7 @@ description: Tools to create a multilingual site.
 package: Openfed
 
 type: module
-core_version_requirement: ^9
+core_version_requirement: ^9 || ^10
 
 dependencies:
   - drupal:config_translation

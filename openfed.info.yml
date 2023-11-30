@@ -1,7 +1,7 @@
 name: Openfed
 type: profile
 description: 'OpenFed base installation with modules and configurations needed for Fast2Web offer by Fedict.'
-core_version_requirement: ^9
+core_version_requirement: ^10
 version: '12.1.0'
 
 distribution:
@@ -13,9 +13,9 @@ dependencies:
   - openfed:openfed_svg_file
   # core
   - drupal:block
-  - drupal:ckeditor
   - drupal:config
   - drupal:content_moderation
+  - drupal:content_translation
   - drupal:contextual
   - drupal:datetime
   - drupal:dynamic_page_cache
@@ -31,6 +31,7 @@ dependencies:
   - drupal:options
   - drupal:page_cache
   - drupal:path
+  - drupal:role_delegation
   - drupal:taxonomy
   - drupal:toolbar
   - drupal:user
@@ -43,6 +44,7 @@ dependencies:
   - admin_toolbar_content_languages:admin_toolbar_content_languages
   - allowed_formats:allowed_formats
   - antibot:antibot
+  - ckeditor:ckeditor
   - ckeditor_abbreviation:ckeditor_abbreviation
   - ckeditor_codemirror:ckeditor_codemirror
   - ckeditor_uploadimage:ckeditor_uploadimage

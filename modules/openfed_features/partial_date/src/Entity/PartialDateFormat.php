@@ -7,7 +7,7 @@ use Drupal\Core\Config\Entity\ConfigEntityBase;
 
 /**
  * Defines the FormatType config entity.
- * 
+ *
  * @ConfigEntityType(
  *   id = "partial_date_format",
  *   label = @Translation("Partial date format"),
@@ -53,18 +53,18 @@ class PartialDateFormat extends ConfigEntityBase implements PartialDateFormatInt
    * @var string
    */
   protected $id;
-  
+
   /**
    * @var string
    */
   protected $meridiem = 'a';
-  
+
   /**
    * @var string
    * This controls how year designation is handled: 1BC = 1BCE = -1 and 1AD = 1CE = 1.
    */
   protected $year_designation = 'ce';
-  
+
   /**
    * @var array
    */
@@ -77,12 +77,12 @@ class PartialDateFormat extends ConfigEntityBase implements PartialDateFormatInt
     'second' => 'none',
     'timezone' => 'none',
   ];
-  
+
   /**
    * @var array
    */
   protected $components = array(
-    'year' => array('format' => 'y-ce', 'empty' => '', 'weight' => 0), 
+    'year' => array('format' => 'y-ce', 'empty' => '', 'weight' => 0),
     'month' => array('format' => 'm', 'empty' => '', 'weight' => 1),
     'day' => array('format' => 'j', 'empty' => '', 'weight' => 2),
     'hour' => array('format' => 'H', 'empty' => '', 'weight' => 3),

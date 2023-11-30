@@ -5,15 +5,15 @@ dependencies:
     - system
   theme:
     - openfed_admin
-id: openfed_admin_breadcrumbs
+id: openfed_admin_messages
 theme: openfed_admin
-region: breadcrumb
-weight: 0
+region: highlighted
+weight: -3
 provider: null
-plugin: system_breadcrumb_block
+plugin: system_messages_block
 settings:
-  id: system_breadcrumb_block
-  label: Breadcrumbs
+  id: system_messages_block
+  label: 'Status messages'
   label_display: '0'
   provider: system
 visibility: {  }

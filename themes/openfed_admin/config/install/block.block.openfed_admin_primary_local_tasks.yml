@@ -3,15 +3,17 @@ status: true
 dependencies:
   theme:
     - openfed_admin
-id: openfed_admin_page_title
+id: openfed_admin_primary_local_tasks
 theme: openfed_admin
 region: header
-weight: -3
+weight: -1
 provider: null
-plugin: page_title_block
+plugin: local_tasks_block
 settings:
-  id: page_title_block
-  label: 'Page title'
+  id: local_tasks_block
+  label: 'Primary tabs'
   label_display: '0'
   provider: core
+  primary: true
+  secondary: false
 visibility: {  }

@@ -5,8 +5,10 @@ dependencies:
     - filter.format.embeddable_text
     - filter.format.flexible_html
     - node.type.page
+    - workflows.workflow.openfed_workflow
   module:
     - content_moderation
+    - content_translation
     - contextual
     - file
     - file_entity
@@ -38,28 +40,23 @@ permissions:
   - 'delete any page content'
   - 'delete content translations'
   - 'edit any page content'
+  - 'enter page revision log entry'
   - 'override page authored by option'
   - 'override page authored on option'
   - 'override page published option'
-  - 'override page revision log entry'
   - 'override page revision option'
   - 'revert page revisions'
   - 'translate any entity'
-  - 'translate media'
-  - 'translate page node'
   - 'update content translations'
   - 'use openfed_workflow transition archive'
   - 'use openfed_workflow transition drafting'
   - 'use openfed_workflow transition publish'
-  - 'use openfed_workflow transition review'
   - 'use text format embeddable_text'
   - 'use text format flexible_html'
   - 'view all revisions'
   - 'view any unpublished content'
   - 'view latest version'
   - 'view media'
-  - 'view moderation states'
   - 'view own unpublished content'
   - 'view page revisions'
   - 'view the administration theme'
-  - 'use openfed_workflow transition review'
