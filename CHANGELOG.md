@@ -1,6 +1,16 @@
 CHANGELOG
 =========
 
+22 January 2024 - Version 11.2.1
+------------------------------
+  Updated onomasticon version and patches.
+  Added splidejs/splide library.
+  Added ten1seven/what-input library.
+  Require kiso 3.0.*.
+  Created LICENSE.
+  Fixed patches for menu_trail_by_path module.
+
+
 06 September 2023 - Version 11.2.0
 ------------------------------
   Downgrade patch for page_manager issue https://www.drupal.org/project/page_manager/issues/2858877 since it throws an error when combining with patch from issue https://www.drupal.org/project/panels/issues/3183258.
