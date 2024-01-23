@@ -247,7 +247,7 @@ projects[field_slideshow][version] = "1.83"
 projects[field_slideshow][subdir] = contrib
 projects[field_slideshow][patch][2326155] = "https://www.drupal.org/files/issues/field_slideshow-swipe-2326155-1.patch"
 
-projects[file_entity][version] = "2.37"
+projects[file_entity][version] = "2.38"
 projects[file_entity][subdir] = contrib
 
 projects[flag][version] = "3.9"
