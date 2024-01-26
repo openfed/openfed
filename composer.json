@@ -124,7 +124,7 @@
                 "Issue #2907989: Problem creating pathauto joined paths": "https://www.drupal.org/files/issues/wrong_joined_paths-2907989-4.patch"
             },
             "drupal/menu_trail_by_path": {
-                "Issue #3099308: Menu Trail by Path: several issues": "https://www.drupal.org/files/issues/2024-01-22/menu_trail_by_path_issues-3099308-15.patch"
+                "Issue #3099308: Menu Trail by Path: several issues": "https://www.drupal.org/files/issues/2024-01-22/menu_trail_by_path_issues-3099308-16.patch"
             },
             "drupal/onomasticon": {
                 "Issue #3340245: Enhance accessibility on Onomasticon module": "https://www.drupal.org/files/issues/2023-09-22/onomasticon-enhance-accessibility-3340245-7.patch"
