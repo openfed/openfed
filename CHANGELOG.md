@@ -1,6 +1,14 @@
 CHANGELOG
 =========
 
+29 January 2024 - Version 11.2.3
+------------------------------
+  Fixed patches for menu_trail_by_path module.
+
+26 January 2024 - Version 11.2.2
+------------------------------
+  Fixed patches for menu_trail_by_path module.
+
 22 January 2024 - Version 11.2.1
 ------------------------------
   Updated onomasticon version and patches.
