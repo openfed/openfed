@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "27d8f5ed927232bd39ba00984e5b1d18",
+    "content-hash": "e239509307df94d417754b1726fb3708",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1775,6 +1775,64 @@
                 }
             ],
             "time": "2022-12-14T08:49:07+00:00"
+        },
+        {
+            "name": "drupal/account_field_split",
+            "version": "2.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/account_field_split.git",
+                "reference": "2.0.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/account_field_split-2.0.2.zip",
+                "reference": "2.0.2",
+                "shasum": "1dcdf15885d9b3787055a025d6f6be3e86d2cbb1"
+            },
+            "require": {
+                "drupal/core": "^8.8 || ^9 || ^10"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "2.0.2",
+                    "datestamp": "1680660511",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Dima Storozhuk (dstorozhuk)",
+                    "homepage": "https://www.drupal.org/u/dstorozhuk",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Greg Boggs",
+                    "homepage": "https://www.drupal.org/user/153069"
+                },
+                {
+                    "name": "nikitamelnik",
+                    "homepage": "https://www.drupal.org/user/3604881"
+                },
+                {
+                    "name": "weseze",
+                    "homepage": "https://www.drupal.org/user/417521"
+                }
+            ],
+            "description": "Split up user profile \\\"User name and password\\\" fields.",
+            "homepage": "https://drupal.org/project/account_field_split",
+            "support": {
+                "source": "https://git.drupalcode.org/project/account_field_split",
+                "issues": "https://drupal.org/project/issues/account_field_split"
+            }
         },
         {
             "name": "drupal/addanother",
@@ -8298,6 +8356,79 @@
             "homepage": "https://www.drupal.org/project/multiselect",
             "support": {
                 "source": "https://git.drupalcode.org/project/multiselect"
+            }
+        },
+        {
+            "name": "drupal/nocurrent_pass",
+            "version": "2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/nocurrent_pass.git",
+                "reference": "2.0.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/nocurrent_pass-2.0.0.zip",
+                "reference": "2.0.0",
+                "shasum": "311b215cf52b9a588bcee9bbefa73403f6c82555"
+            },
+            "require": {
+                "drupal/core": "^8.8 || ^9 || ^10"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "2.0.0",
+                    "datestamp": "1706363381",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Darrell Duane (DarrellDuane)",
+                    "homepage": "https://www.drupal.org/u/darrellduane",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "David Czinege (david.czinege)",
+                    "homepage": "https://www.drupal.org/u/davidczinege",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Wes Jones (earthday47)",
+                    "homepage": "https://www.drupal.org/u/earthday47",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Andrew Zahura (shkiper)",
+                    "homepage": "https://www.drupal.org/u/shkiper",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Viktor Holovachek (AstonVictor)",
+                    "homepage": "https://www.drupal.org/u/astonvictor",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "shkiper",
+                    "homepage": "https://www.drupal.org/user/2261152"
+                }
+            ],
+            "description": "This module makes the 'current password' field on the user edit form optional.",
+            "homepage": "https://www.drupal.org/project/nocurrent_pass",
+            "keywords": [
+                "Drupal"
+            ],
+            "support": {
+                "source": "https://git.drupalcode.org/project/nocurrent_pass",
+                "issues": "https://www.drupal.org/project/issues/nocurrent_pass"
             }
         },
         {
