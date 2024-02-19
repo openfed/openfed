@@ -304,6 +304,7 @@
         "drupal/workbench_moderation": "1.7",
         "drupal/workbench_moderation_actions": "2.1.0-alpha1",
         "drupal/xmlrpc": "1.0-rc1",
+        "drupal/yoast_seo": "2.0-alpha10",
         "jackmoore/colorbox": "1.6.4",
         "ckeditor/uploadwidget": "4.17.1",
         "ckeditor/uploadimage": "4.17.1",
