@@ -50,6 +50,7 @@ dependencies:
   - ckeditor_uploadimage:ckeditor_uploadimage
   - ctools:ctools
   - current_page_crumb:current_page_crumb
+  - decorative_image_widget:decorative_image_widget
   - diff:diff
   - ds:ds
   - entity:entity
