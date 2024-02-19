@@ -101,6 +101,9 @@
             "drupal/ckeditor": {
                 "Issue #2771837: drupalimage CKEditor plugin should not require data-entity-uuid and data-entity-type when image upload is disabled": "https://www.drupal.org/files/issues/2023-03-08/2771837-90.patch"
             },
+            "drupal/ckeditor_accordion": {
+                "Issue #3124167: Provide an accessible variant": "https://www.drupal.org/files/issues/2023-10-31/ckeditor_accordion-provide-accessible-variant-3124167-32.patch"
+            },
             "drupal/disable_route_normalizer": {
                 "Issue #3376799: Could not check compatibility between Drupal\\disable_route_normalizer\\DisableRouteNormalizer\\DisableRouteNormalizer and Drupal\\redirect\\EventSubscriber\\RouteNormalizerRequestSubscriber": "https://www.drupal.org/files/issues/2023-07-26/disable_route_normalizer-deprecated-class-GetResponseEvent-3376799-4.patch"
             },
@@ -179,6 +182,7 @@
         "drupal/block_content_permissions": "1.11",
         "drupal/bootstrap": "3.29",
         "drupal/ckeditor_abbreviation": "3.0.0",
+        "drupal/ckeditor_accordion": "2.1.0",
         "drupal/ckeditor_codemirror": "2.5-beta1 as 3.0.0-beta4",
         "drupal/ckeditor_find": "1.0-beta3",
         "drupal/colorbox": "2.0.1",
