@@ -242,6 +242,7 @@
         "drupal/matomo": "1.22",
         "drupal/measuremail": "1.0-beta8",
         "drupal/media_entity_generic": "1.2",
+        "drupal/media_file_bulk_archive": "1.0.0-alpha1",
         "drupal/memcache": "2.5",
         "drupal/menu_block": "1.10",
         "drupal/menu_breadcrumb": "2.0.0-alpha0",
