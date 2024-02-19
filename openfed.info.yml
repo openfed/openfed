@@ -82,6 +82,7 @@ dependencies:
   - super_login:super_login
   - token:token
   - username_enumeration_prevention:username_enumeration_prevention
+  - yoast_seo:yoast_seo
 
 themes:
   - openfed_admin
