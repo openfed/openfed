@@ -1,0 +1,34 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the Openfed File Entity module.
+ */
+
+use Drupal\openfed\Helper;
+use Drupal\user\Entity\Role;
+
+/**
+ * Implements hook_install().
+ */
+function openfed_file_entity_install() {
+  // Update default permissions for openfed roles.
+  $openfed_roles = [
+    Helper::CONTENT_EDITOR_ROLE_ID => ['create files'],
+    'authenticated' => ['view files'],
+    'anonymous' => ['view files'],
+  ];
+
+  foreach ($openfed_roles as $role_id => $permissions) {
+    if ($role = Role::load($role_id)) {
+      foreach ($permissions as $permission) {
+        if ($role->hasPermission($permission)) {
+          continue;
+        }
+
+        $role->grantPermission($permission);
+        $role->save();
+      }
+    }
+  }
+}
