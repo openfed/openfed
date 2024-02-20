@@ -5,7 +5,6 @@ dependencies:
     - filter.format.embeddable_text
     - filter.format.flexible_html
   module:
-    - file_entity
     - filter
     - media
     - system
@@ -17,5 +16,4 @@ permissions:
   - 'access content'
   - 'use text format embeddable_text'
   - 'use text format flexible_html'
-  - 'view files'
   - 'view media'

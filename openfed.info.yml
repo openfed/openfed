@@ -58,7 +58,6 @@ dependencies:
   - entity_embed:entity_embed
   - extlink:extlink
   - field_formatter:field_formatter
-  - file_entity:file_entity
   - honeypot:honeypot
   - imce:imce
   - link_attributes:link_attributes

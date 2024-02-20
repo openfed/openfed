@@ -22,18 +22,20 @@ function openfed_update_101203() {
  * "pathauto.settings.yml" configuration to fix File URL alias status issue.
  */
 function openfed_update_101204() {
-  // Loads pathauto settings configuration.
-  $config = \Drupal::configFactory()->getEditable('pathauto.settings');
-  // Gets the pathauto enabled entity types.
-  $enabled_entity_types = $config->get('enabled_entity_types');
-  // If the File entity type is already enabled we do nothing.
-  if (in_array('file', $enabled_entity_types)) {
-    return;
+  if (\Drupal::moduleHandler()->moduleExists('file_entity')) {
+    // Loads pathauto settings configuration.
+    $config = \Drupal::configFactory()->getEditable('pathauto.settings');
+    // Gets the pathauto enabled entity types.
+    $enabled_entity_types = $config->get('enabled_entity_types');
+    // If the File entity type is already enabled we do nothing.
+    if (in_array('file', $enabled_entity_types)) {
+      return;
+    }
+    // Adds the File entity to the array of enabled entity types.
+    $enabled_entity_types[] = 'file';
+    sort($enabled_entity_types);
+    // We update the configuration.
+    $config->set('enabled_entity_types', $enabled_entity_types);
+    $config->save();
   }
-  // Adds the File entity to the array of enabled entity types.
-  $enabled_entity_types[] = 'file';
-  sort($enabled_entity_types);
-  // We update the configuration.
-  $config->set('enabled_entity_types', $enabled_entity_types);
-  $config->save();
 }

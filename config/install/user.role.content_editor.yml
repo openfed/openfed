@@ -11,7 +11,6 @@ dependencies:
     - content_translation
     - contextual
     - file
-    - file_entity
     - filter
     - media
     - node
@@ -34,7 +33,6 @@ permissions:
   - 'administer menu'
   - 'administer url aliases'
   - 'create content translations'
-  - 'create files'
   - 'create page content'
   - 'create url aliases'
   - 'delete any page content'
