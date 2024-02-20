@@ -50,6 +50,7 @@ dependencies:
   - ckeditor_uploadimage:ckeditor_uploadimage
   - ctools:ctools
   - current_page_crumb:current_page_crumb
+  - decorative_image_widget:decorative_image_widget
   - diff:diff
   - ds:ds
   - entity:entity
@@ -81,6 +82,7 @@ dependencies:
   - super_login:super_login
   - token:token
   - username_enumeration_prevention:username_enumeration_prevention
+  - yoast_seo:yoast_seo
 
 themes:
   - openfed_admin
