@@ -113,6 +113,9 @@
             "drupal/facets": {
                 "Issue #3057943: Set target page URL": "https://www.drupal.org/files/issues/2022-01-20/facets-set_base_path-3057943-25.patch"
             },
+            "drupal/file_entity": {
+                "Issue #3277484: Wrong encoding on Download link formatter": "https://www.drupal.org/files/issues/2022-04-27/fix_download_link_encoding-3277484-3.patch"
+            },
             "drupal/image_effects": {
                 "Issue #3146575: D8.8.6 -> D8.8.7 = Usupport schema version": "https://www.drupal.org/files/issues/2020-07-14/unsuported_schema_version-3146575-7.patch"
             },
