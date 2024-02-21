@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * Implements hook_modules_installed().
+ */
+function openfed_file_Entity_modules_installed($modules, $is_syncing) {
+  if (in_array('file_entity', $modules)) {
+    $view_id = 'file_entity_files';
+    /** @var \Drupal\views\Entity\View $view */
+    if ($view = \Drupal::entityTypeManager()->getStorage('view')->load($view_id)) {
+      // We disable the file_entity_files view to avoid confusion with the files
+      // overview from core.
+      $view->setStatus(FALSE);
+      $view->save();
+    }
+  }
+}
