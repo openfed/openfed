@@ -3,7 +3,7 @@
 /**
  * Implements hook_modules_installed().
  */
-function openfed_file_Entity_modules_installed($modules, $is_syncing) {
+function openfed_file_entity_modules_installed($modules, $is_syncing) {
   if (in_array('file_entity', $modules)) {
     $view_id = 'file_entity_files';
     /** @var \Drupal\views\Entity\View $view */
