@@ -15,6 +15,7 @@ function openfed_file_entity_install() {
   // Update default permissions for openfed roles.
   $openfed_roles = [
     Helper::CONTENT_EDITOR_ROLE_ID => ['create files'],
+    Helper::CONTENT_AUTHOR_ROLE_ID => ['create files'],
     'authenticated' => ['view files'],
     'anonymous' => ['view files'],
   ];

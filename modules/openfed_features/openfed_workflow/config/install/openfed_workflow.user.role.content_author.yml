@@ -13,7 +13,6 @@ permissions:
   - 'access site in maintenance mode'
   - 'access toolbar'
   - 'create content translations'
-  - 'create files'
   - 'create page content'
   - 'delete any page content'
   - 'delete content translations'
