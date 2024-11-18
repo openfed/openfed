@@ -1,6 +1,13 @@
 CHANGELOG
 =========
 
+28 October 2024 - Version 12.2.5
+------------------------------
+- Update drupal/core-recommended due to CVE-2024-45440.
+- Update drupal/facets due to SA-CONTRIB-2024-047
+- Update drupal/seckit due to SA-CONTRIB-2024-039
+- Update drupal/diff due to SA-CONTRIB-2024-042
+
 03 October 2024 - Version 12.2.4
 ------------------------------
 - Update the version of menu_link_field_attributes module.
