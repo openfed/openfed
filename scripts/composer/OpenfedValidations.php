@@ -121,7 +121,8 @@ class OpenfedValidations {
     $themes_to_check = []; //TODO: set the themes to disable on Openfed13
 
     // Check if one of these themes is set as the admin theme and set another.
-    $admin_theme = current(unserialize(trim(shell_exec('drush cget --include-overridden system.theme admin --format=php'))));
+    $cget_system_theme = shell_exec('drush cget --include-overridden system.theme admin --format=php');
+    $admin_theme = current(unserialize(trim($cget_system_theme)));
     if (in_array('fix', $arguments)) {
       if (in_array($admin_theme, $themes_to_check)) {
         // Temporarly set kiso as admin theme so we can uninstall current theme.
