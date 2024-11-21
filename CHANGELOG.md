@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+21 November 2024 - Version 12.2.6
+------------------------------
+- Small change to the validation script to make it compatible with more systems.
+- Update info and CHANGELOG
+
 28 October 2024 - Version 12.2.5
 ------------------------------
 - Update drupal/core-recommended due to CVE-2024-45440.
