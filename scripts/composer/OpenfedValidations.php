@@ -56,7 +56,8 @@ class OpenfedValidations {
    */
   private static function isDrupalSite() {
     $output = trim(shell_exec('drush status --field="Drupal bootstrap"') ?? '');
-    if (empty($output)) {
+    if (empty($output) || $output != 'Successful') {
+      print_r("## This is not a valid Drupal site or it's not properly installed yet. Skipping Openfed update validation.\n");
       return FALSE;
     }
     return TRUE;
@@ -122,11 +123,15 @@ class OpenfedValidations {
 
     // Check if one of these themes is set as the admin theme and set another.
     $cget_system_theme = shell_exec('drush cget --include-overridden system.theme admin --format=php');
-    $admin_theme = current(unserialize(trim($cget_system_theme)));
-    if (in_array('fix', $arguments)) {
-      if (in_array($admin_theme, $themes_to_check)) {
-        // Temporarly set kiso as admin theme so we can uninstall current theme.
-        shell_exec('drush cset system.theme admin kiso -y');
+    if (empty($cget_system_theme)) {
+      print_r("## Not possible to check Admin Theme because this is not a valid Drupal site or it's not properly installed yet. Skipping Openfed update validation.\n");
+    } else {
+      $admin_theme = current(unserialize(trim($cget_system_theme)));
+      if (in_array('fix', $arguments)) {
+        if (in_array($admin_theme, $themes_to_check)) {
+          // Temporarly set kiso as admin theme so we can uninstall current theme.
+          shell_exec('drush cset system.theme admin kiso -y');
+        }
       }
     }
 
