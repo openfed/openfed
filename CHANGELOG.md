@@ -1,6 +1,13 @@
 CHANGELOG
 =========
 
+29 November 2024 - Version 12.2.7
+------------------------------
+- Update drupal/core-recommended due to SA-CORE-2024-003,SA-CORE-2024-004,SA-CORE-2024-006,SA-CORE-2024-007 and SA-CORE-2024-008
+- Update drupal core to 10.2.12 to fix Twig issue #3487031
+- Fix drupal core version to 10.2.12 instead of using wildcard for minor versions.
+- Update honeypot module to version 2.1.4 to fix pontential future issues related with #3468450
+
 21 November 2024 - Version 12.2.6
 ------------------------------
 - Small change to the validation script to make it compatible with more systems.
@@ -17,7 +24,6 @@ CHANGELOG
 ------------------------------
 - Update the version of menu_link_field_attributes module.
 
-
 30 September 2024 - Version 12.2.3
 ------------------------------
 - Partially revert commit b6734ed, which introduced issues when uploading new media items for new installations
@@ -25,7 +31,6 @@ CHANGELOG
 - Add metatag module patch for issue 3469872
 - Add Orejime Video to Openfed
 - Add and enable media_library_edit module
-
 
 17 July 2024 - Version 12.2.2
 ------------------------------
