@@ -1,0 +1,18 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the Openfed Admin theme.
+ */
+
+/**
+ * Implements hook_preprocess_links().
+ */
+function openfed_admin_preprocess_links__dropbutton__operations(&$variables) {
+  foreach ($variables['links'] as $key => $item) {
+    // If item doesn't have a link, we just remove it.
+    if (empty($item['link'])) {
+      unset($variables['links'][$key]);
+    }
+  }
+}
