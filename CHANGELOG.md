@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+20 February 2025 - Version 12.3.0
+------------------------------
+- Update drupal/core-recommended due to SA-CORE-2025-001,SA-CORE-2025-002 and SA-CORE-2025-003
+
 29 November 2024 - Version 12.2.7
 ------------------------------
 - Update drupal/core-recommended due to SA-CORE-2024-003,SA-CORE-2024-004,SA-CORE-2024-006,SA-CORE-2024-007 and SA-CORE-2024-008
