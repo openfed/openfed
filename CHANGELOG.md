@@ -1,9 +1,19 @@
 CHANGELOG
 =========
 
+13 March 2025 - Version 12.3.1
+------------------------------
+- Fixed issue with menu_link_weight module
+- Updated page_manager/panels modules and patches
+- Updated rules and typed_data modules
+
 20 February 2025 - Version 12.3.0
 ------------------------------
 - Update drupal/core-recommended due to SA-CORE-2025-001,SA-CORE-2025-002 and SA-CORE-2025-003
+- Fix Openfed update validations
+- Add drupal/ckeditor_media_resize
+- Update drupal/honeypot module
+- Update openfed_admin theme to remove empty link items
 
 29 November 2024 - Version 12.2.7
 ------------------------------
