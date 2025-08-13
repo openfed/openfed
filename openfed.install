@@ -5,6 +5,7 @@
  */
 
 use Drupal\Core\Config\Entity\ConfigEntityUpdater;
+use Drupal\Core\DrupalKernelInterface;
 use Drupal\field\FieldConfigInterface;
 
 /**
@@ -92,4 +93,37 @@ function openfed_update_101206(&$sandbox) {
     $installer = \Drupal::service('module_installer');
     $installer->install(['twig_real_content']);
   }
+}
+
+/**
+ * Implements hook_update_dependencies().
+ */
+function openfed_update_dependencies() {
+  $dependencies = [];
+
+  if (Drupal::moduleHandler()->moduleExists('yoast_seo')) {
+    $dependencies['openfed'][120301] = [
+      'yoast_seo' => 8204,
+    ];
+  }
+
+  return $dependencies;
+}
+
+/**
+ * Disable the yoast_seo auto refresh feature for existing websites.
+ */
+function openfed_update_120301(&$sandbox) {
+  if (!Drupal::moduleHandler()->moduleExists('yoast_seo')) {
+    return t('Yoast SEO is not enabled. No changes applied.');
+  }
+
+  Drupal::configFactory()->getEditable('yoast_seo.settings')
+    ->set('auto_refresh_seo_result', FALSE)
+    ->save();
+  $kernel = \Drupal::service('kernel');
+  assert($kernel instanceof DrupalKernelInterface);
+  $kernel->rebuildContainer();
+
+  return t('Yoast SEO auto refresh disabled.');
 }
