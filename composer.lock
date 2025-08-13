@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4e8a406a9d754f2024ad01ca1b08c7a9",
+    "content-hash": "bfb078b8b26fd45e8355fccc064eb1a4",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -7893,17 +7893,17 @@
         },
         {
             "name": "drupal/matomo",
-            "version": "1.23.0",
+            "version": "1.25.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/matomo.git",
-                "reference": "8.x-1.23"
+                "reference": "8.x-1.25"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/matomo-8.x-1.23.zip",
-                "reference": "8.x-1.23",
-                "shasum": "c2dbf12878388c5859e64f1e74a9ca5110d1623f"
+                "url": "https://ftp.drupal.org/files/projects/matomo-8.x-1.25.zip",
+                "reference": "8.x-1.25",
+                "shasum": "5e65764f4499061fa33cb5c46afcc26a85b8725e"
             },
             "require": {
                 "drupal/core": "^9.0 || ^10"
@@ -7919,8 +7919,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.23",
-                    "datestamp": "1700936102",
+                    "version": "8.x-1.25",
+                    "datestamp": "1738948462",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
