@@ -119,6 +119,9 @@
             "drupal/facets": {
                 "Issue #3057943: Set target page URL": "https://www.drupal.org/files/issues/2022-01-20/facets-set_base_path-3057943-25.patch"
             },
+            "drupal/file_encrypt": {
+                "Issue #2946320: Fix download route when installed with the redirect module": "https://www.drupal.org/files/issues/2021-01-12/2946320-6.patch"
+            },
             "drupal/file_entity": {
                 "Issue #3277484: Wrong encoding on Download link formatter": "https://www.drupal.org/files/issues/2022-04-27/fix_download_link_encoding-3277484-3.patch"
             },
