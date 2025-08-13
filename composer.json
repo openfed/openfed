@@ -165,6 +165,9 @@
             "drupal/video_embed_field": {
                 "Issue #3175436: Video Embed Field Accessibility issues": "https://www.drupal.org/files/issues/2020-10-07/retrieve-title-3175436-2.patch",
                 "Issue #3196304: Video Embed Field - youtube requests using https instead": "https://www.drupal.org/files/issues/2021-02-03/fix_thumbnail_download-3196304-2.patch"
+            },
+            "drupal/openfed_social": {
+                "Issue #3540920: 'Add Bluesky, Threads & Mastodon networks'": "https://www.drupal.org/files/issues/2025-08-12/openfed_social-add-extra-networks-3540920-2.patch"
             }
         },
         "patchLevel": {
