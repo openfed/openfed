@@ -8,7 +8,6 @@ dependencies:
     - media.type.iframe
   module:
     - text
-third_party_settings: { }
 id: media.iframe.embed_entity
 targetEntityType: media
 bundle: iframe

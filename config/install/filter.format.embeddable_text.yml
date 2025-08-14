@@ -7,11 +7,11 @@ name: 'Embeddable Text'
 format: embeddable_text
 weight: 5
 filters:
-  filter_htmlcorrector:
-    id: filter_htmlcorrector
-    provider: filter
+  entity_embed:
+    id: entity_embed
+    provider: entity_embed
     status: true
-    weight: 10
+    weight: 0
     settings: {  }
   filter_html:
     id: filter_html
@@ -22,9 +22,9 @@ filters:
       allowed_html: '<a href hreflang> <em> <strong> <cite> <blockquote cite> <code> <ul type> <ol start type> <li> <dl> <dt> <dd> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id>'
       filter_html_help: true
       filter_html_nofollow: false
-  entity_embed:
-    id: entity_embed
-    provider: entity_embed
+  filter_htmlcorrector:
+    id: filter_htmlcorrector
+    provider: filter
     status: true
-    weight: 0
+    weight: 10
     settings: {  }

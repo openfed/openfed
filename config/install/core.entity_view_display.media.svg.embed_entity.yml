@@ -8,7 +8,6 @@ dependencies:
     - media.type.svg
   module:
     - openfed_svg_file
-third_party_settings: { }
 id: media.svg.embed_entity
 targetEntityType: media
 bundle: svg
