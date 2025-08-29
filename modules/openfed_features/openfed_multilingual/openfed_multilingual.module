@@ -5,6 +5,8 @@
  * Contains openfed_multilingual.module.
  */
 
+use Drupal\Core\Url;
+
 /**
  * Implements hook_language_switch_links_alter();
  *
@@ -18,9 +20,9 @@ function openfed_multilingual_language_switch_links_alter(array &$links, $type, 
       if ($node && !array_key_exists($langcode, $node->getTranslationLanguages(TRUE)) || ($node->getTranslation($langcode) && !$node->getTranslation($langcode)
             ->access('view'))
       ) {
-        //There is no translation in that language, disable url
-        unset($links[$langcode]['url']);
-        //And do something with attributes (eg. add class)
+        // Set the URL to a non-link to disable the language switch for untranslated content.
+        $links[$langcode]['url'] = new Url('<nolink>');
+        // And do something with attributes (eg. add class).
         $links[$langcode]['attributes']['class'][] = 'disabled';
       }
     }
