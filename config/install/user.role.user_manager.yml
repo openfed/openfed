@@ -4,6 +4,7 @@ dependencies:
   config:
     - filter.format.embeddable_text
     - filter.format.flexible_html
+    - user.role.content_editor
   module:
     - filter
     - role_delegation
