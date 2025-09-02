@@ -98,7 +98,6 @@
                 "Issue #2321071: BaseFieldOverride fails": "https://www.drupal.org/files/issues/2023-11-02/2321071-71.patch",
                 "Issue #2325899: UI fatal caused by views argument handlers no longer can provide their own default argument handling": "https://www.drupal.org/files/issues/2024-04-04/2325899-10.2.5-184.patch",
                 "Issue #2649268: Entity Field Query throws QueryException when querying all revisions and setting condition on entity reference field": "https://www.drupal.org/files/issues/2019-09-12/2649268-32.patch",
-                "Issue #2737619: Views entity reference relationships must join on langcode for translatable entities": "https://www.drupal.org/files/issues/2023-07-18/language_aware_relationship-2737619-41.patch",
                 "Issue #2898335: Using AJAX in menu link's edit form causes database connection serialization errors": "https://www.drupal.org/files/issues/2025-02-26/2898335-10.patch"
             },
             "drupal/ckeditor": {
