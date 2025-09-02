@@ -149,7 +149,7 @@
                 "Issue #3469872: Site name not translated on Webforms": "https://www.drupal.org/files/issues/2024-08-23/metatag-issues-with-webform-translations-3469872-3.patch"
             },
             "drupal/page_manager": {
-                "Issue #2665328: Fix Variants take entity label, not the variant title": "https://www.drupal.org/files/issues/2024-07-29/2665328-130-page_manager_variant_title.patch",
+                "Issue #2665328: Fix Variants take entity label, not the variant title": "https://www.drupal.org/files/issues/2025-05-08/2665328-title-tokens-137.patch",
                 "Issue #2858877: Allow for block visibility rules (Patch 1)": "https://git.drupalcode.org/project/page_manager/-/merge_requests/24.patch",
                 "Issue #2858877: Allow for block visibility rules (Patch 2)": "https://www.drupal.org/files/issues/2025-03-05/page_manager-block_visibility_conditions-resolver_service-2858877-83.patch"
             },
