@@ -1,0 +1,26 @@
+diff --git a/modules/d10_compatibility/ckeditor_uploadimage/src/Plugin/CKEditorPlugin/DrupalUploadImage.php b/modules/d10_compatibility/ckeditor_uploadimage/src/Plugin/CKEditorPlugin/DrupalUploadImage.php
+index 7cb02a9..d3c7396 100644
+--- a/modules/d10_compatibility/ckeditor_uploadimage/src/Plugin/CKEditorPlugin/DrupalUploadImage.php
++++ b/modules/d10_compatibility/ckeditor_uploadimage/src/Plugin/CKEditorPlugin/DrupalUploadImage.php
+@@ -89,7 +89,7 @@ class DrupalUploadImage extends PluginBase implements CKEditorPluginInterface, C
+     $filterFormatId = $editor->getFilterFormat()->id();
+     $editorObj = editor_load($filterFormatId);
+     $imageUploadSettings = $editorObj->getImageUploadSettings();
+-    $maxFilesize = min(Bytes::toNumber($imageUploadSettings['max_size']), Environment::getUploadMaxSize());
++    $maxFilesize = min(Bytes::toNumber($imageUploadSettings['max_size'] ?? Environment::getUploadMaxSize()), Environment::getUploadMaxSize());
+     return [
+       'maxImageFilesize' => $maxFilesize,
+       'imageUploadUrl' => Url::fromRoute('ckeditor_uploadimage.save', ['filterFormatId' => $filterFormatId])->toString(),
+diff --git a/modules/d10_compatibility/ckeditor_uploadimage/src/Plugin/CKEditorPlugin/DrupalUploadImageImce.php b/modules/d10_compatibility/ckeditor_uploadimage/src/Plugin/CKEditorPlugin/DrupalUploadImageImce.php
+index 023de15..203a6d2 100644
+--- a/modules/d10_compatibility/ckeditor_uploadimage/src/Plugin/CKEditorPlugin/DrupalUploadImageImce.php
++++ b/modules/d10_compatibility/ckeditor_uploadimage/src/Plugin/CKEditorPlugin/DrupalUploadImageImce.php
+@@ -89,7 +89,7 @@ class DrupalUploadImageImce extends PluginBase implements CKEditorPluginInterfac
+     $filterFormatId = $editor->getFilterFormat()->id();
+     $editorObj = editor_load($filterFormatId);
+     $imageUploadSettings = $editorObj->getImageUploadSettings();
+-    $maxFilesize = min(Bytes::toNumber($imageUploadSettings['max_size']), Environment::getUploadMaxSize());
++    $maxFilesize = min(Bytes::toNumber($imageUploadSettings['max_size'] ?? Environment::getUploadMaxSize()), Environment::getUploadMaxSize());
+     return [
+       'maxImageFilesize' => $maxFilesize,
+       'imageUploadUrl' => Url::fromRoute('ckeditor_uploadimage.save', ['filterFormatId' => $filterFormatId])->toString(),

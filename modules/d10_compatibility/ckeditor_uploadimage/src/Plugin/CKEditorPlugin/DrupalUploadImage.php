@@ -89,7 +89,7 @@ class DrupalUploadImage extends PluginBase implements CKEditorPluginInterface, C
     $filterFormatId = $editor->getFilterFormat()->id();
     $editorObj = editor_load($filterFormatId);
     $imageUploadSettings = $editorObj->getImageUploadSettings();
-    $maxFilesize = min(Bytes::toNumber($imageUploadSettings['max_size']), Environment::getUploadMaxSize());
+    $maxFilesize = min(Bytes::toNumber($imageUploadSettings['max_size'] ?? Environment::getUploadMaxSize()), Environment::getUploadMaxSize());
     return [
       'maxImageFilesize' => $maxFilesize,
       'imageUploadUrl' => Url::fromRoute('ckeditor_uploadimage.save', ['filterFormatId' => $filterFormatId])->toString(),
