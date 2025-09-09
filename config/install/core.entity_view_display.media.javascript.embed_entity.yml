@@ -8,7 +8,6 @@ dependencies:
     - media.type.javascript
   module:
     - text
-third_party_settings: { }
 id: media.javascript.embed_entity
 targetEntityType: media
 bundle: javascript
