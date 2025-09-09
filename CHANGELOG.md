@@ -1,6 +1,27 @@
 CHANGELOG
 =========
 
+09 September 2025 - Version 12.3.2
+------------------------------
+- Drupal core to version 10.3.14
+- Module updates:
+  - Block Class to version 4.0.1
+  - Colorbox to version 2.1.4
+  - Conditional Fields to version 4.0.0-alpha6
+  - Matomo to version 1.25
+  - Panels to version 4.9
+  - Redirect to version 1.11
+  - Search API to version 1.38
+  - Search API Solr to version 4.3.10
+- CKEditor Accordion: Fixed accessibility issue
+- CKEditor Upload Image: Fixed undefined array key warning and deprecated function message
+- KISO: A new release of KISO is made available with several fixes and improvements
+- Openfed Multilingual: Show links to other languages, even if the translation is not available
+- Openfed Social: New social networks added (Bluesky, Threads and Mastodon)
+- Page Manager: Fixed issue with page variant titles taking entity label instead of variant title
+- Webform: Fixed issue where authenticated users were unable to downloads encrypted Webform uploads
+- Yoast SEO: Disable automatic refresh after content change
+
 13 March 2025 - Version 12.3.1
 ------------------------------
 - Fixed issue with menu_link_weight module
