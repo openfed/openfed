@@ -9,3 +9,4 @@ modules/*
 /autoload.php
 /.editorconfig
 /.gitattributes
+/composer.lock
