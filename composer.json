@@ -184,7 +184,7 @@
         "composer/installers": "*",
         "oomphinc/composer-installers-extender": "*",
         "cweagans/composer-patches": "*",
-        "openfed/kiso": "3.0.*",
+        "openfed/kiso": "3.1.*",
         "drush/drush": "^12.0",
         "drupal/core-recommended": "10.3.14",
         "drupal/core-composer-scaffold": "*",
