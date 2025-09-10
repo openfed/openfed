@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+10 September 2025 - Version 12.3.3
+------------------------------
+- Bump KISO to version 3.1.x
+
 09 September 2025 - Version 12.3.2
 ------------------------------
 - Drupal core to version 10.3.14
