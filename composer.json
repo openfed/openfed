@@ -177,6 +177,9 @@
             },
             "drupal/openfed_social": {
                 "Issue #3540920: 'Add Bluesky, Threads & Mastodon networks'": "https://www.drupal.org/files/issues/2025-08-12/openfed_social-add-extra-networks-3540920-2.patch"
+            },
+            "drupal/yoast_seo": {
+                "Issue #3537343: Snippet attribute javascript error": "https://www.drupal.org/files/issues/2025-08-07/3537343-MR-43_fix-javascript-error.patch"
             }
         },
         "patchLevel": {
