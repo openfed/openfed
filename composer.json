@@ -135,7 +135,7 @@
                 "Issue #3046214: Add Default menu_link_content attributes UI": "https://www.drupal.org/files/issues/2024-08-21/3046214-add-default-attributes-32.patch"
             },
             "drupal/menu_block": {
-                "Issue #3089134: Ability to display the menu selected by the page": "https://www.drupal.org/files/issues/2022-03-24/3089134-26.patch"
+                "Issue #3089134: Ability to display the menu selected by the page": "https://www.drupal.org/files/issues/2025-10-10/menu_block-mulitple_menu_block-3089134-53.patch"
             },
             "drupal/menu_link": {
                 "Issue #2894298: Attempt to create field storage menu_link which is reserved by entity type node.": "https://www.drupal.org/files/issues/2019-07-23/menu_link-field-storage-2894298-11.patch",
