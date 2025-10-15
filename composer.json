@@ -145,7 +145,7 @@
                 "Issue #3509158: AJAX not working on menu item edit form": "https://www.drupal.org/files/issues/2025-02-26/menu_link_weight-3509158-2.patch"
             },
             "drupal/menu_trail_by_path": {
-                "Issue #3099308: Menu Trail by Path: several issues": "https://www.drupal.org/files/issues/2024-01-26/menu_trail_by_path_issues-3099308-16.patch"
+                "Issue #3099308: Menu Trail by Path: several issues": "https://www.drupal.org/files/issues/2025-10-15/menu_trail_by_path_issues-3099308-17.patch"
             },
             "drupal/metatag": {
                 "Issue #3469872: Site name not translated on Webforms": "https://www.drupal.org/files/issues/2024-08-23/metatag-issues-with-webform-translations-3469872-3.patch"
