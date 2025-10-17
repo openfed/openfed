@@ -128,7 +128,7 @@
                 "Issue #3146575: D8.8.6 -> D8.8.7 = Usupport schema version": "https://www.drupal.org/files/issues/2020-07-14/unsuported_schema_version-3146575-7.patch"
             },
             "drupal/inline_entity_form": {
-                "Issue #2822764: Support adding new entities when translating": "https://www.drupal.org/files/issues/2022-07-20/2822764-89.patch"
+                "Issue #2822764: Support adding new entities when translating": "https://www.drupal.org/files/issues/2025-08-27/2822764-149.patch"
             },
             "drupal/language_selection_page": {
                 "Issue #3416302: Document/create update hook for blacklisted paths": "https://www.drupal.org/files/issues/2025-04-29/language_selection_page-blacklist_paths_update_hook-3416302-4.patch"
