@@ -1,6 +1,45 @@
 CHANGELOG
 =========
 
+21 October 2025 - Version 12.5.0
+------------------------------
+- Security updates:
+  - Colorbox - Moderately critical - Cross Site Scripting - SA-CONTRIB-2025-041
+    https://www.drupal.org/sa-contrib-2025-041
+  - Drupal core - Moderately critical - Cross Site Scripting - SA-CORE-2025-004
+    https://www.drupal.org/sa-core-2025-004
+  - EU Cookie Compliance (GDPR Compliance) - Moderately critical - Cross Site Scripting - SA-CONTRIB-2025-072
+    https://www.drupal.org/sa-contrib-2025-072
+  - Matomo Analytics - Moderately critical - Cross site request forgery - SA-CONTRIB-2025-008
+    https://www.drupal.org/sa-contrib-2025-008
+  - Panels - Critical - Access bypass - SA-CONTRIB-2025-033
+    https://www.drupal.org/sa-contrib-2025-033
+  - Search API Solr - Moderately critical - Cross Site Request Forgery - SA-CONTRIB-2025-046
+    https://www.drupal.org/sa-contrib-2025-046
+  - Simple XML sitemap - Moderately critical - Cross-site Scripting - SA-CONTRIB-2025-083
+    https://www.drupal.org/sa-contrib-2025-083
+  - Real-time SEO for Drupal - Moderately critical - Cross-site Scripting - SA-CONTRIB-2025-091
+    https://www.drupal.org/sa-contrib-2025-091
+- Modules added:
+  - https://www.drupal.org/project/page_cache_query_ignore
+  - https://www.drupal.org/project/robotstxt
+  - https://www.drupal.org/project/svg_image
+  - https://www.drupal.org/project/tfa
+- Modules removed:
+  - https://www.drupal.org/project/account_field_split
+  - https://www.drupal.org/project/ckeditor_media_resize
+  - https://www.drupal.org/project/ckeditor5_paste_filter
+  - https://www.drupal.org/project/content_browser
+  - https://www.drupal.org/project/content_translation_workflow
+  - https://www.drupal.org/project/eu_cookie_compliance
+  - https://www.drupal.org/project/fast_404
+  - https://www.drupal.org/project/fences
+  - https://www.drupal.org/project/matomo
+  - https://www.drupal.org/project/media_file_bulk_archive
+  - https://www.drupal.org/project/url_embed
+  - https://www.drupal.org/project/xmlrpc
+
+
 21 October 2025 - Version 12.3.4
 ------------------------------
 - Field labels in paragraphs now show the correct translation.
