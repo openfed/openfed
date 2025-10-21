@@ -131,6 +131,9 @@
             "drupal/language_selection_page": {
                 "Issue #3416302: Document/create update hook for blacklisted paths": "https://www.drupal.org/files/issues/2025-04-29/language_selection_page-blacklist_paths_update_hook-3416302-4.patch"
             },
+            "drupal/link_attributes": {
+                "Issue #3046214: Add Default menu_link_content attributes UI": "https://www.drupal.org/files/issues/2024-08-21/3046214-add-default-attributes-32.patch"
+            },
             "drupal/menu_block": {
                 "Issue #3089134: Ability to display the menu selected by the page": "https://www.drupal.org/files/issues/2025-10-10/menu_block-mulitple_menu_block-3089134-53.patch"
             },
@@ -170,6 +173,9 @@
             },
             "drupal/openfed_social": {
                 "Issue #3540920: 'Add Bluesky, Threads & Mastodon networks'": "https://www.drupal.org/files/issues/2025-08-12/openfed_social-add-extra-networks-3540920-2.patch"
+            },
+            "drupal/yoast_seo": {
+                "Issue #3537343: Snippet attribute javascript error": "https://www.drupal.org/files/issues/2025-08-07/3537343-MR-43_fix-javascript-error.patch"
             }
         },
         "patchLevel": {

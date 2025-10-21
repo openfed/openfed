@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+21 October 2025 - Version 12.3.4
+------------------------------
+- Field labels in paragraphs now show the correct translation.
+- Fixed javascript issue caused by the Yoast SEO module upgrade.
+- More flexibility is added to choose which menu link attributes are configurable.
+
 10 September 2025 - Version 12.3.3
 ------------------------------
 - Bump KISO to version 3.1.x
