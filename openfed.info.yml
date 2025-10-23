@@ -37,7 +37,6 @@ dependencies:
   # contrib
   - admin_toolbar:admin_toolbar
   - admin_toolbar:admin_toolbar_tools
-  - admin_toolbar:admin_toolbar_links_access_filter
   - admin_toolbar_content_languages:admin_toolbar_content_languages
   - antibot:antibot
   - ctools:ctools
