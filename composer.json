@@ -159,9 +159,6 @@
             "drupal/panels": {
                 "Issue #2769099: Block visibility conditions": "https://www.drupal.org/files/issues/2025-02-03/2769099-67.patch"
             },
-            "drupal/paragraphs": {
-                "Issue #2461695: Support translatable paragraph entity reference revision field": "https://www.drupal.org/files/issues/2020-03-06/2461695-276.patch"
-            },
             "drupal/paragraphs_asymmetric_translation_widgets": {
                 "Issue #3555739: Indicates not recommended multilingual paragraphs field configuration": "https://www.drupal.org/files/issues/2025-11-03/paragraphs-asymmetric-translation-widgets-indicates-not-recommended-multilingual-paragraph-fields-3555739-2.patch",
                 "Issue #2992777: Implement a migration path": "https://www.drupal.org/files/issues/2022-12-23/2992777-paragraphs_asymmetric_translation_widgets-52.patch"
