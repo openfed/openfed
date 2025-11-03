@@ -127,3 +127,114 @@ function openfed_update_120301(&$sandbox) {
 
   return t('Yoast SEO auto refresh disabled.');
 }
+
+/**
+ * Update translatable entity reference fields to use the
+ * paragraphs_classic_asymmetric widget and enable the
+ * paragraphs_asymmetric_translation_widgets module if needed.
+ *
+ * This hook scans all translatable entity reference fields for the
+ * entity_reference_paragraphs widget in all form modes. If found, it enables the
+ * paragraphs_asymmetric_translation_widgets module and updates the widget type to
+ * paragraphs_classic_asymmetric for all form modes.
+ *
+ * @param array $sandbox
+ *   An array used to store information between calls when the update is
+ *   run in batches.
+ *
+ * @return string
+ *   A string message listing all updated fields.
+ */
+function openfed_update_120500(&$sandbox) {
+  $entity_type_manager = \Drupal::entityTypeManager();
+  $content_translation_manager = \Drupal::service('content_translation.manager');
+  $needs_module = FALSE;
+  $form_display_updates = [];
+  $updated_fields = [];
+
+  $field_storage_configs = $entity_type_manager->getStorage('field_storage_config')->loadMultiple();
+
+  foreach ($field_storage_configs as $field_storage_config) {
+    $field_configs = $entity_type_manager->getStorage('field_config')->loadByProperties([
+      'field_name' => $field_storage_config->getName(),
+    ]);
+    if (empty($field_configs)) {
+      continue;
+    }
+    foreach ($field_configs as $field_config) {
+      // Only process entity reference revision fields.
+      if ($field_config->getType() !== 'entity_reference_revisions') {
+        continue;
+      }
+      // Only process translatable fields.
+      if (!$field_config->isTranslatable()) {
+        continue;
+      }
+      // Only process fields referencing paragraphs.
+      if ($field_config->getFieldStorageDefinition()->getSetting('target_type') !== 'paragraph') {
+        continue;
+      }
+      // Check if content translation is enabled for this entity type and bundle.
+      // Skip when not enabled. The InlineParagraphsWidget::initIsTranslating
+      // method checks if the host entity is translatable.
+      $entity_type = $field_config->getTargetEntityTypeId();
+      $bundle = $field_config->getTargetBundle();
+      if (!$content_translation_manager->isEnabled($entity_type, $bundle)) {
+        continue;
+      }
+      $form_display_storage = $entity_type_manager->getStorage('entity_form_display');
+      $ids = $form_display_storage->getQuery()
+        ->condition('targetEntityType', $entity_type)
+        ->condition('bundle', $bundle)
+        ->execute();
+      if (empty($ids)) {
+        continue;
+      }
+      $form_displays = $form_display_storage->loadMultiple($ids);
+      foreach ($form_displays as $form_display) {
+        $component = $form_display->getComponent($field_config->getName());
+        if (!$component || $component['type'] !== 'entity_reference_paragraphs') {
+          continue;
+        }
+        $needs_module = TRUE;
+        $key = $form_display->id();
+        if (!isset($form_display_updates[$key])) {
+          $form_display_updates[$key] = [
+            'fields' => [],
+            'entity_type' => $entity_type,
+            'bundle' => $bundle,
+            'mode' => $form_display->getMode(),
+          ];
+        }
+        $form_display_updates[$key]['fields'][$field_config->getName()] = $component;
+      }
+    }
+  }
+
+  if ($needs_module && !\Drupal::moduleHandler()->moduleExists('paragraphs_asymmetric_translation_widgets')) {
+    \Drupal::service('module_installer')->install(['paragraphs_asymmetric_translation_widgets']);
+  }
+
+  foreach ($form_display_updates as $id => $item) {
+    $form_display = $entity_type_manager->getStorage('entity_form_display')->load($id);
+    foreach ($item['fields'] as $field_name => $component) {
+      $form_display->setComponent($field_name, [
+          'type' => 'paragraphs_classic_asymmetric',
+        ] + $component);
+      $updated_fields[] = sprintf(
+        'Updated widget for field "%s" on entity "%s", bundle "%s", form mode "%s".',
+        $field_name,
+        $item['entity_type'],
+        $item['bundle'],
+        $item['mode']
+      );
+    }
+    $form_display->save();
+  }
+
+  if (!empty($updated_fields)) {
+    return "\n" . implode("\n", $updated_fields) . "\n";
+  }
+
+  return NULL;
+}
