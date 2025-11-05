@@ -30,7 +30,7 @@ class OpenfedValidations {
     }
 
     // We validate if Openfed version is 12 or above.
-    if (!self::checkProjectVersion()) {
+    if (self::checkProjectVersion()) {
       return;
     }
 
