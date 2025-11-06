@@ -1,6 +1,14 @@
 CHANGELOG
 =========
 
+06 November 2025 - Version 12.3.5
+------------------------------
+- Openfed Social was updated to 1.8.
+- Fixed checkVersion in the validateUpdate12 script.
+- Removed the validateUpdate12 script from pre-update-cmd because of conflicts with the composer-patches plugin.
+  The script should now be run manually via `composer run project-validate-update12` which is included in the
+  openfed-project project.
+
 21 October 2025 - Version 12.3.4
 ------------------------------
 - Field labels in paragraphs now show the correct translation.
