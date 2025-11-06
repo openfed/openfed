@@ -38,10 +38,6 @@ CHANGELOG
   - https://www.drupal.org/project/media_file_bulk_archive
   - https://www.drupal.org/project/url_embed
   - https://www.drupal.org/project/xmlrpc
-- Scripts:
-  - Removed the validateUpdate12 script from pre-update-cmd because of conflicts with the composer-patches plugin.
-    The script should now be run manually via `composer run project-validate-update12` which is included in the
-    openfed-project project.
 
 06 November 2025 - Version 12.3.5
 ------------------------------
