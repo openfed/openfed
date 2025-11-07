@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+07 November 2025 - Version 12.5.1
+------------------------------
+- Fixed patch order for paragraphs_asymmetric_translation_widgets module.
+
 06 November 2025 - Version 12.5.0
 ------------------------------
 - Security updates:
