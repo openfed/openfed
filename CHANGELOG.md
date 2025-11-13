@@ -1,6 +1,14 @@
 CHANGELOG
 =========
 
+13 November 2025 - Version 12.3.6
+------------------------------
+- Security release for:
+  - https://www.drupal.org/sa-core-2025-005
+  - https://www.drupal.org/sa-core-2025-006
+  - https://www.drupal.org/sa-core-2025-007
+  - https://www.drupal.org/sa-core-2025-008
+
 06 November 2025 - Version 12.3.5
 ------------------------------
 - Openfed Social was updated to 1.8.
