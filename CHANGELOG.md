@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+13 November 2025 - Version 12.5.2
+------------------------------
+- Drupal core to version 10.5.6
+
 07 November 2025 - Version 12.5.1
 ------------------------------
 - Fixed patch order for paragraphs_asymmetric_translation_widgets module.
