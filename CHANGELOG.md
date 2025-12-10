@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+10 December 2025 - Version 12.3.7
+------------------------------
+- Bring all drupal/core-* packages in sync.
+
 13 November 2025 - Version 12.3.6
 ------------------------------
 - Security release for:
