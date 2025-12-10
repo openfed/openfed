@@ -1,6 +1,14 @@
 CHANGELOG
 =========
 
+10 December 2025 - Version 12.5.3
+------------------------------
+- Bring all drupal/core-* packages in sync.
+- New major version of KISO (4.0.0).
+  - Breaking change after upgrade extlink for css override.
+  - WCAG improvements for image formatter links.
+- Use combined patch for paragraphs_asymmetric_translation_widgets module.
+
 13 November 2025 - Version 12.5.2
 ------------------------------
 - Drupal core to version 10.5.6
