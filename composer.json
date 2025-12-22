@@ -168,6 +168,9 @@
             },
             "drupal/yoast_seo": {
                 "Issue #3537343: Snippet attribute javascript error": "https://www.drupal.org/files/issues/2025-08-07/3537343-MR-43_fix-javascript-error.patch"
+            },
+            "codemirror/codemirror": {
+                "Issue #3531472: Drupal 10.5 / 11.2 incompatibility": "https://www.drupal.org/files/issues/2025-11-13/ckeditor_codemirror-codemirror-LIBRARY-3531472-copyobj-hasownproperty-fix.diff"
             }
         },
         "patchLevel": {
