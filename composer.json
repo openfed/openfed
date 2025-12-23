@@ -185,7 +185,6 @@
         "ckeditor/link": "4.17.1",
         "ckeditor/notification": "4.17.1",
         "ckeditor/notificationaggregator": "4.17.1",
-        "ckeditor/templates": "4.17.1",
         "ckeditor/uploadimage": "4.17.1",
         "ckeditor/uploadwidget": "4.17.1",
         "composer/installers": "*",
