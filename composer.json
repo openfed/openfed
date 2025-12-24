@@ -340,8 +340,7 @@
         "openfed/kiso": "^4.0",
         "smillart/wai-aria-patterns-and-widgets": "1.0.*",
         "splidejs/splide": "^4.1",
-        "ten1seven/what-input": "^5.2",
-        "w8tcha/codemirror": "1.17.12"
+        "ten1seven/what-input": "^5.2"
     },
     "require-dev": {
         "drupal/coder": "8.*",
