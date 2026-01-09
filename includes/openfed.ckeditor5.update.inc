@@ -285,9 +285,15 @@ function _openfed_update_cke_cleanup_modules(array &$sandbox) {
     'ckeditor' => 'CKEditor 4',
     'ckeditor_config' => 'CKEditor custom config',
   ];
+  $module_handler = \Drupal::moduleHandler();
   $module_installer = \Drupal::service('module_installer');
 
   foreach ($modules_to_uninstall as $module => $label) {
+    // Only attempt to uninstall if the module is actually installed.
+    if (!$module_handler->moduleExists($module)) {
+      continue;
+    }
+
     try {
       $module_installer->uninstall([$module]);
       $sandbox['messages'][] = "Disabled {$label} module. Deprecated and will be removed in future Openfed versions.";
