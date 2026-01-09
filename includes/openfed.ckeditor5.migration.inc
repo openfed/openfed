@@ -548,13 +548,23 @@ function _openfed_migrate_templates_extract_ckeditor_templates($js_file, array &
   $templates_str = $templates_match[1];
 
   // Parse individual templates.
-  $template_regex = '/\{\s*title:\s*Drupal\.t\(["\']([^"\']+)["\']\)\s*,\s*image:\s*["\']([^"\']+)["\']\s*,\s*description:\s*Drupal\.t\(["\']([^"\']+)["\']\)\s*,\s*html:\s*(.+?)\s*,?\s*\}/s';
+  // More flexible regex that handles:
+  // - title: Drupal.t("...") OR title: "..." OR title: '...'
+  // - description: Drupal.t("...") OR description: "..." OR description: '...'
+  // - image: "..." OR image: '...'
+  // - html: "..." + "..." OR html: '...' + '...' (with concatenation)
+  $template_regex = '/\{\s*' .
+    'title:\s*(?:Drupal\.t\()?\s*["\']([^"\']+)["\']\s*\)?\s*,\s*' .
+    'image:\s*["\']([^"\']+)["\']\s*,\s*' .
+    'description:\s*(?:Drupal\.t\()?\s*["\']([^"\']+)["\']\s*\)?\s*,\s*' .
+    'html:\s*(.+?)\s*,?\s*' .
+    '\}/s';
 
   preg_match_all($template_regex, $templates_str, $matches, PREG_SET_ORDER);
 
   if (empty($matches)) {
     $sandbox['messages'][] = "    WARNING: No templates matched the expected format in JS file";
-    $sandbox['messages'][] = "    Expected format: { title: Drupal.t('...'), image: '...', description: Drupal.t('...'), html: '...' }";
+    $sandbox['messages'][] = "    Expected format: { title: 'Title' or Drupal.t('Title'), image: 'image.png', description: 'Description' or Drupal.t('Description'), html: '...' }";
     return [];
   }
 
