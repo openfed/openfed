@@ -238,3 +238,36 @@ function openfed_update_120500(&$sandbox) {
 
   return NULL;
 }
+
+/**
+ * Migrate CKEditor 4 configurations to CKEditor 5.
+ */
+function openfed_update_130000(&$sandbox) {
+  // Include the CKEditor 5 update functions.
+  include_once __DIR__ . '/includes/openfed.ckeditor5.update.inc';
+
+  // Initialize sandbox for batch processing.
+  if (!isset($sandbox['current'])) {
+    _openfed_update_cke_initialize($sandbox);
+
+    // Early return if no editors to migrate.
+    if ($sandbox['#finished'] ?? 0 === 1) {
+      return implode("\n", $sandbox['messages']);
+    }
+  }
+
+  // Refactor ckeditor_stylesheets before processing editors (runs once).
+  if (!($sandbox['stylesheets_refactored'] ?? FALSE)) {
+    include_once __DIR__ . '/includes/openfed.ckeditor5.migration.inc';
+    _openfed_refactor_ckeditor_stylesheets($sandbox);
+    $sandbox['stylesheets_refactored'] = TRUE;
+  }
+
+  // Process one editor per batch iteration.
+  _openfed_update_cke_process_editor($sandbox);
+
+  // Finalize when all editors are processed.
+  if ($sandbox['#finished'] >= 1) {
+    return _openfed_update_cke_finalize($sandbox);
+  }
+}
