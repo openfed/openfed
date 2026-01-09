@@ -278,17 +278,18 @@ function _openfed_update_cke_finalize(array &$sandbox) {
  */
 function _openfed_update_cke_cleanup_modules(array &$sandbox) {
   $modules_to_uninstall = [
-    'ckeditor' => 'CKEditor 4',
-    'anchor_link' => 'Anchor link',
     'ckeditor_templates' => 'CKEditor templates',
     'ckeditor4_codemirror' => 'CKEditor4 codemirror',
+    'anchor_link' => 'Anchor link',
+    'fakeobjects' => 'Fake Objects (dependency for anchor_link)',
+    'ckeditor' => 'CKEditor 4',
   ];
   $module_installer = \Drupal::service('module_installer');
 
   foreach ($modules_to_uninstall as $module => $label) {
     try {
       $module_installer->uninstall([$module]);
-      $sandbox['messages'][] = "Disabled {$label} module.";
+      $sandbox['messages'][] = "Disabled {$label} module. Deprecated and will be removed in future Openfed versions.";
     }
     catch (\Exception $e) {
       $sandbox['messages'][] = "Warning: Could not uninstall {$label} module: " . $e->getMessage();
