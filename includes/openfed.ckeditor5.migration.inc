@@ -422,39 +422,43 @@ function _openfed_migrate_templates(array &$sandbox, $editor, $format, array &$s
     $sandbox['messages'][] = "    Enabled ckeditor5_plugin_pack_templates module";
   }
 
-  // Initialize templates processing state in sandbox if not already done.
+  // Initialize templates tracking in sandbox if not already done.
   if (!isset($sandbox['templates_processed'])) {
     $sandbox['templates_processed'] = FALSE;
-    $sandbox['templates_file_searched'] = FALSE;
-    $sandbox['templates_file'] = NULL;
     $sandbox['template_ids'] = [];
   }
 
-  // Search for templates file only once.
-  if (!$sandbox['templates_file_searched']) {
-    $sandbox['templates_file'] = _openfed_migrate_templates_find_ckeditor_templates_file('ckeditor_templates.js');
-    $sandbox['templates_file_searched'] = TRUE;
-
-    if ($sandbox['templates_file']) {
-      $sandbox['messages'][] = "    Found template file: " . $sandbox['templates_file'];
+  // Check if templates have already been processed.
+  if ($sandbox['templates_processed']) {
+    // Templates already created, add this format to existing template configs.
+    if (!empty($sandbox['template_ids'])) {
+      $sandbox['messages'][] = "    Templates already extracted, adding format to existing templates";
+      _openfed_migrate_templates_add_format_to_templates($sandbox['template_ids'], $format, $sandbox);
+    }
+    else {
+      $sandbox['messages'][] = "    No templates were previously extracted";
     }
   }
+  else {
+    // First format with Templates button enabled - search for and process the file.
+    $js_file = _openfed_migrate_templates_find_ckeditor_templates_file('ckeditor_templates.js');
 
-  $js_file = $sandbox['templates_file'];
-
-  if (!$js_file) {
-    if (!$sandbox['templates_processed']) {
+    if (!$js_file) {
       $sandbox['messages'][] = "    Warning: Could not find ckeditor_templates.js file. Skipping template extraction.";
+      // Mark as processed even though no file found, to prevent repeated searches.
       $sandbox['templates_processed'] = TRUE;
+      $sandbox['template_ids'] = [];
+      return;
     }
-    return;
-  }
 
-  // Extract templates from the JS file only once (first time).
-  if (!$sandbox['templates_processed']) {
+    $sandbox['messages'][] = "    Found template file: " . $js_file;
+
+    // Extract templates from the JS file.
     $template_ids = _openfed_migrate_templates_extract_ckeditor_templates($js_file, $sandbox, $format);
-    $sandbox['template_ids'] = $template_ids;
+
+    // Mark as processed and save template IDs.
     $sandbox['templates_processed'] = TRUE;
+    $sandbox['template_ids'] = $template_ids;
 
     if (count($template_ids) > 0) {
       $sandbox['messages'][] = "    Created " . count($template_ids) . " template(s)";
@@ -471,16 +475,14 @@ function _openfed_migrate_templates(array &$sandbox, $editor, $format, array &$s
         $sandbox['messages'][] = "    Removed: " . $min_js_file;
       }
     }
-  }
-  else {
-    // Templates already created, add this format to existing template configs.
-    if (count($sandbox['template_ids']) > 0) {
-      _openfed_migrate_templates_add_format_to_templates($sandbox['template_ids'], $format, $sandbox);
+    else {
+      $sandbox['messages'][] = "    No templates were extracted from the file";
+      return;
     }
   }
 
-  // Add insertTemplate button to toolbar if not present.
-  if (count($sandbox['template_ids']) > 0) {
+  // Add insertTemplate button to toolbar if templates exist.
+  if (!empty($sandbox['template_ids'])) {
     $toolbar_items = $settings['toolbar']['items'] ?? [];
     if (!in_array('insertTemplate', $toolbar_items)) {
       $toolbar_items[] = 'insertTemplate';
@@ -526,6 +528,7 @@ function _openfed_migrate_templates_find_ckeditor_templates_file($filename) {
 function _openfed_migrate_templates_extract_ckeditor_templates($js_file, array &$sandbox, $format) {
   $content = file_get_contents($js_file);
   if (!$content) {
+    $sandbox['messages'][] = "    ERROR: Could not read template file";
     return [];
   }
 
@@ -537,7 +540,8 @@ function _openfed_migrate_templates_extract_ckeditor_templates($js_file, array &
 
   // Extract templates array.
   if (!preg_match('/templates:\s*\[([\s\S]*?)\]\s*,?\s*}\s*\)/', $content, $templates_match)) {
-    $sandbox['messages'][] = "    No templates found in JS file";
+    $sandbox['messages'][] = "    WARNING: No templates array found in JS file";
+    $sandbox['messages'][] = "    The file may have an unexpected format. Please check the template file structure.";
     return [];
   }
 
@@ -547,6 +551,14 @@ function _openfed_migrate_templates_extract_ckeditor_templates($js_file, array &
   $template_regex = '/\{\s*title:\s*Drupal\.t\(["\']([^"\']+)["\']\)\s*,\s*image:\s*["\']([^"\']+)["\']\s*,\s*description:\s*Drupal\.t\(["\']([^"\']+)["\']\)\s*,\s*html:\s*(.+?)\s*,?\s*\}/s';
 
   preg_match_all($template_regex, $templates_str, $matches, PREG_SET_ORDER);
+
+  if (empty($matches)) {
+    $sandbox['messages'][] = "    WARNING: No templates matched the expected format in JS file";
+    $sandbox['messages'][] = "    Expected format: { title: Drupal.t('...'), image: '...', description: Drupal.t('...'), html: '...' }";
+    return [];
+  }
+
+  $sandbox['messages'][] = "    Found " . count($matches) . " template(s) in JS file, creating config entities...";
 
   $config_storage = \Drupal::service('config.storage');
   $uuid_service = \Drupal::service('uuid');
@@ -608,6 +620,7 @@ function _openfed_migrate_templates_extract_ckeditor_templates($js_file, array &
 
     $config_name = 'ckeditor5_plugin_pack_templates.ckeditor5_template.' . $id;
     $config_storage->write($config_name, $config_data);
+    $sandbox['messages'][] = "      Created template config: $id (\"$title\")";
 
     // Remove image file if it exists.
     if ($image_path && file_exists($image_path)) {
