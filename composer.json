@@ -204,6 +204,7 @@
         "drupal/block_content_permissions": "1.11",
         "drupal/bootstrap": "3.38",
         "drupal/ckeditor4_codemirror": "^1.0",
+        "drupal/ckeditor5_paste_filter": "^1.1",
         "drupal/ckeditor5_plugin_pack": "^1.4",
         "drupal/ckeditor_abbreviation": "^5.0",
         "drupal/ckeditor_accordion": "2.3.0",
