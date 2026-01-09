@@ -454,7 +454,7 @@ function _openfed_migrate_templates(array &$sandbox, $editor, $format, array &$s
     $sandbox['messages'][] = "    Found template file: " . $js_file;
 
     // Extract templates from the JS file.
-    $template_ids = _openfed_migrate_templates_extract_ckeditor_templates($js_file, $sandbox, $format);
+    $template_ids = _openfed_migrate_templates_extract_ckeditor_templates($js_file, $sandbox, $format, $settings);
 
     // Mark as processed and save template IDs.
     $sandbox['templates_processed'] = TRUE;
@@ -525,7 +525,7 @@ function _openfed_migrate_templates_find_ckeditor_templates_file($filename) {
 /**
  * Extract CKEditor templates from JS file and create config entities.
  */
-function _openfed_migrate_templates_extract_ckeditor_templates($js_file, array &$sandbox, $format) {
+function _openfed_migrate_templates_extract_ckeditor_templates($js_file, array &$sandbox, $format, array &$settings) {
   $content = file_get_contents($js_file);
   if (!$content) {
     $sandbox['messages'][] = "    ERROR: Could not read template file";
@@ -580,6 +580,9 @@ function _openfed_migrate_templates_extract_ckeditor_templates($js_file, array &
   $template_ids = [];
   $format_id = $format->id();
 
+  // Collect all classes from templates for validation.
+  $classes_to_validate = ['ul' => [], 'a' => []];
+
   foreach ($matches as $match) {
     $title = $match[1];
     $image = $match[2];
@@ -597,6 +600,9 @@ function _openfed_migrate_templates_extract_ckeditor_templates($js_file, array &
     $html = preg_replace('/^["\']\\s*|\\s*["\']$/', '', $html);
     $html = preg_replace('/,\\s*$/', '', $html);
     $html = trim($html);
+
+    // Extract classes from ul and a tags in the template HTML.
+    _openfed_migrate_templates_extract_classes_from_html($html, $classes_to_validate);
 
     // Generate machine name from title.
     $id = strtolower($title);
@@ -642,7 +648,116 @@ function _openfed_migrate_templates_extract_ckeditor_templates($js_file, array &
     $index++;
   }
 
+  // Validate and add missing styles for ul and a tags with classes.
+  _openfed_migrate_templates_validate_and_add_styles($classes_to_validate, $settings, $sandbox);
+
   return $template_ids;
+}
+
+/**
+ * Extract classes from ul and a tags in template HTML.
+ *
+ * @param string $html
+ *   The HTML content to parse.
+ * @param array $classes_to_validate
+ *   Array to collect classes, keyed by tag name (ul, a).
+ */
+function _openfed_migrate_templates_extract_classes_from_html($html, array &$classes_to_validate) {
+  // Extract classes from <ul> tags.
+  if (preg_match_all('/<ul\s+[^>]*class=["\']([^"\']+)["\'][^>]*>/i', $html, $ul_matches)) {
+    foreach ($ul_matches[1] as $class_attr) {
+      // Split by spaces to get individual classes.
+      $classes = preg_split('/\s+/', trim($class_attr));
+      foreach ($classes as $class) {
+        if (!empty($class)) {
+          $classes_to_validate['ul'][$class] = $class;
+        }
+      }
+    }
+  }
+
+  // Extract classes from <a> tags.
+  if (preg_match_all('/<a\s+[^>]*class=["\']([^"\']+)["\'][^>]*>/i', $html, $a_matches)) {
+    foreach ($a_matches[1] as $class_attr) {
+      // Split by spaces to get individual classes.
+      $classes = preg_split('/\s+/', trim($class_attr));
+      foreach ($classes as $class) {
+        if (!empty($class)) {
+          $classes_to_validate['a'][$class] = $class;
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Validate classes against existing styles and add missing ones.
+ *
+ * @param array $classes_to_validate
+ *   Array of classes to validate, keyed by tag name (ul, a).
+ * @param array $settings
+ *   The editor settings array.
+ * @param array $sandbox
+ *   The sandbox array for messages.
+ */
+function _openfed_migrate_templates_validate_and_add_styles(array $classes_to_validate, array &$settings, array &$sandbox) {
+  // Check if there are any classes to validate.
+  $has_classes = FALSE;
+  foreach ($classes_to_validate as $tag => $classes) {
+    if (!empty($classes)) {
+      $has_classes = TRUE;
+      break;
+    }
+  }
+
+  if (!$has_classes) {
+    return;
+  }
+
+  // Get existing styles.
+  $existing_styles = $settings['plugins']['ckeditor5_style']['styles'] ?? [];
+
+  // Build a map of existing styles by element and class.
+  $existing_style_map = [];
+  foreach ($existing_styles as $style) {
+    if (isset($style['element'])) {
+      // Parse element like "<ul class='check-list'>"
+      if (preg_match('/<(\w+)\s+[^>]*class=["\']([^"\']+)["\']/', $style['element'], $matches)) {
+        $tag = $matches[1];
+        $class_attr = $matches[2];
+        $classes = preg_split('/\s+/', trim($class_attr));
+        foreach ($classes as $class) {
+          if (!empty($class)) {
+            $existing_style_map[$tag][$class] = true;
+          }
+        }
+      }
+    }
+  }
+
+  // Check and add missing styles.
+  $added_styles = [];
+  foreach ($classes_to_validate as $tag => $classes) {
+    foreach ($classes as $class) {
+      if (!isset($existing_style_map[$tag][$class])) {
+        // Create a new style entry.
+        $new_style = [
+          'label' => ucfirst(str_replace(['-', '_'], ' ', $class)),
+          'element' => "<$tag class=\"$class\">",
+        ];
+        $existing_styles[] = $new_style;
+        $added_styles[] = "$tag.$class";
+        $sandbox['messages'][] = "      Added style: $tag.$class";
+      }
+    }
+  }
+
+  // Update settings if new styles were added.
+  if (!empty($added_styles)) {
+    $settings['plugins']['ckeditor5_style']['styles'] = $existing_styles;
+    $sandbox['messages'][] = "    Added " . count($added_styles) . " missing style(s) from templates";
+    $sandbox['messages'][] = "⚠️  WARNING: Manual validation required!";
+  }
 }
 
 /**
