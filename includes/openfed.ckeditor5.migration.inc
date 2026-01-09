@@ -756,7 +756,7 @@ function _openfed_migrate_templates_validate_and_add_styles(array $classes_to_va
   if (!empty($added_styles)) {
     $settings['plugins']['ckeditor5_style']['styles'] = $existing_styles;
     $sandbox['messages'][] = "    Added " . count($added_styles) . " missing style(s) from templates";
-    $sandbox['messages'][] = "⚠️  WARNING: Manual validation required!";
+    $sandbox['messages'][] = "    ⚠️  WARNING: Manual validation required!";
   }
 }
 
