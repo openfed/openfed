@@ -175,6 +175,9 @@
             },
             "drupal/yoast_seo": {
                 "Issue #3537343: Snippet attribute javascript error": "https://www.drupal.org/files/issues/2025-08-07/3537343-MR-43_fix-javascript-error.patch"
+            },
+            "drupal/onomasticon": {
+                "Issue #3459880: Compat 10.3 missing schema": "https://www.drupal.org/files/issues/2024-07-08/compat-10.3-missing-schema.patch"
             }
         },
         "patchLevel": {
