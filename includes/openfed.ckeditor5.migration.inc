@@ -547,28 +547,73 @@ function _openfed_migrate_templates_extract_ckeditor_templates($js_file, array &
 
   $templates_str = $templates_match[1];
 
-  // Parse individual templates.
-  // More flexible regex that handles:
-  // - title: Drupal.t("...") OR title: "..." OR title: '...'
-  // - description: Drupal.t("...") OR description: "..." OR description: '...'
-  // - image: "..." OR image: '...'
-  // - html: "..." + "..." OR html: '...' + '...' (with concatenation)
-  $template_regex = '/\{\s*' .
-    'title:\s*(?:Drupal\.t\()?\s*["\']([^"\']+)["\']\s*\)?\s*,\s*' .
-    'image:\s*["\']([^"\']+)["\']\s*,\s*' .
-    'description:\s*(?:Drupal\.t\()?\s*["\']([^"\']+)["\']\s*\)?\s*,\s*' .
-    'html:\s*(.+?)\s*,?\s*' .
-    '\}/s';
+  // Split templates by },\s* pattern to separate individual template objects
+  // This is more reliable than trying to match the entire template with one regex
+  $template_objects = preg_split('/\}\s*,\s*(?=\{|$)/', $templates_str);
 
-  preg_match_all($template_regex, $templates_str, $matches, PREG_SET_ORDER);
+  // Filter out empty entries
+  $template_objects = array_filter($template_objects, function($obj) {
+    return !empty(trim($obj));
+  });
 
-  if (empty($matches)) {
+  $sandbox['messages'][] = "    Split into " . count($template_objects) . " template object(s), parsing...";
+
+  $parsed_templates = [];
+  foreach ($template_objects as $idx => $template_obj) {
+    // Clean up the template string
+    $template_obj = trim($template_obj);
+    if (empty($template_obj)) {
+      continue;
+    }
+
+    // Add back closing brace if it was removed by split
+    if (!preg_match('/\}\s*$/', $template_obj)) {
+      $template_obj .= '}';
+    }
+
+    // Extract title
+    if (!preg_match('/title:\s*(?:Drupal\.t\()?\s*["\']([^"\']+)["\']\s*\)?/', $template_obj, $title_match)) {
+      $sandbox['messages'][] = "      ⚠️  Template #" . ($idx + 1) . ": Could not extract title";
+      continue;
+    }
+    $title = $title_match[1];
+
+    // Extract image
+    if (!preg_match('/image:\s*["\']([^"\']+)["\']/', $template_obj, $image_match)) {
+      $sandbox['messages'][] = "      ⚠️  Template #" . ($idx + 1) . " ('$title'): Could not extract image";
+      continue;
+    }
+    $image = $image_match[1];
+
+    // Extract description
+    if (!preg_match('/description:\s*(?:Drupal\.t\()?\s*["\']([^"\']+)["\']\s*\)?/', $template_obj, $desc_match)) {
+      $sandbox['messages'][] = "      ⚠️  Template #" . ($idx + 1) . " ('$title'): Could not extract description";
+      continue;
+    }
+    $description = $desc_match[1];
+
+    // Extract html - everything after 'html:' until the end
+    if (!preg_match('/html:\s*([\s\S]+?)(?:\s*\}?\s*$)/', $template_obj, $html_match)) {
+      $sandbox['messages'][] = "      ⚠️  Template #" . ($idx + 1) . " ('$title'): Could not extract html";
+      continue;
+    }
+    $html_parts = $html_match[1];
+
+    $parsed_templates[] = [
+      'title' => $title,
+      'image' => $image,
+      'description' => $description,
+      'html_parts' => $html_parts,
+    ];
+  }
+
+  if (empty($parsed_templates)) {
     $sandbox['messages'][] = "    ⚠️  WARNING: No templates matched the expected format in JS file";
     $sandbox['messages'][] = "    Expected format: { title: 'Title' or Drupal.t('Title'), image: 'image.png', description: 'Description' or Drupal.t('Description'), html: '...' }";
     return [];
   }
 
-  $sandbox['messages'][] = "    Found " . count($matches) . " template(s) in JS file, creating config entities...";
+  $sandbox['messages'][] = "    Found " . count($parsed_templates) . " template(s) in JS file, creating config entities...";
 
   $config_storage = \Drupal::service('config.storage');
   $uuid_service = \Drupal::service('uuid');
@@ -583,11 +628,11 @@ function _openfed_migrate_templates_extract_ckeditor_templates($js_file, array &
   // Collect all classes from templates for validation.
   $classes_to_validate = ['ul' => [], 'a' => []];
 
-  foreach ($matches as $match) {
-    $title = $match[1];
-    $image = $match[2];
-    $description = $match[3];
-    $html_parts = $match[4];
+  foreach ($parsed_templates as $template) {
+    $title = $template['title'];
+    $image = $template['image'];
+    $description = $template['description'];
+    $html_parts = $template['html_parts'];
 
     // Construct image path.
     $image_path = '';
