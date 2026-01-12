@@ -308,10 +308,10 @@ function _openfed_migrate_source_editing(array &$sandbox, $editor, $format, arra
       $modified_tags = [];
 
       // Elements where we should remove the class attribute.
-      $elements_with_class = ['abbr', 'em', 'strong', 'ul', 'ol', 'li', 'table', 'caption', 'tbody', 'thead', 'tfoot', 'th', 'td', 'tr', 'blockquote', 'a', 'img'];
+      $elements_with_class = ['abbr', 'em', 'strong', 'ul', 'ol', 'li', 'table', 'caption', 'tbody', 'thead', 'tfoot', 'th', 'td', 'tr', 'blockquote', 'a', 'img', 'h2', 'h3', 'h4', 'h5', 'h6'];
 
       // Elements that are fully supported by CKEditor5 and should be removed entirely.
-      $fully_supported_elements = ['abbr', 'em', 'strong', 'li'];
+      $fully_supported_elements = ['abbr', 'em', 'strong', 'li', 'p'];
 
       foreach ($original_tags as $tag) {
         $should_remove = FALSE;
