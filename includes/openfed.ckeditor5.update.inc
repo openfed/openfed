@@ -83,7 +83,7 @@ function _openfed_update_cke_process_editor(array &$sandbox) {
     $editor = $editor_storage->load($editor_id);
 
     if (!$editor) {
-      $sandbox['messages'][] = "Warning: Editor {$editor_id} not found. Skipping.";
+      $sandbox['messages'][] = "⚠️  Warning: Editor {$editor_id} not found. Skipping.";
       _openfed_update_cke_update_progress($sandbox);
       return;
     }
@@ -218,7 +218,7 @@ function _openfed_update_cke_apply_custom_migrations(&$sandbox, $editor, $format
       }
     }
     else {
-      $sandbox['messages'][] = "  WARNING: Function {$migration_function} does not exist";
+      $sandbox['messages'][] = "  ⚠️  WARNING: Function {$migration_function} does not exist";
     }
   }
 
@@ -299,7 +299,7 @@ function _openfed_update_cke_cleanup_modules(array &$sandbox) {
       $sandbox['messages'][] = "Disabled {$label} module. Deprecated and will be removed in future Openfed versions.";
     }
     catch (\Exception $e) {
-      $sandbox['messages'][] = "Warning: Could not uninstall {$label} module: " . $e->getMessage();
+      $sandbox['messages'][] = "⚠️  Warning: Could not uninstall {$label} module: " . $e->getMessage();
     }
   }
 }

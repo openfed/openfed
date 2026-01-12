@@ -444,7 +444,7 @@ function _openfed_migrate_templates(array &$sandbox, $editor, $format, array &$s
     $js_file = _openfed_migrate_templates_find_ckeditor_templates_file('ckeditor_templates.js');
 
     if (!$js_file) {
-      $sandbox['messages'][] = "    Warning: Could not find ckeditor_templates.js file. Skipping template extraction.";
+      $sandbox['messages'][] = "    ⚠️  Warning: Could not find ckeditor_templates.js file. Skipping template extraction.";
       // Mark as processed even though no file found, to prevent repeated searches.
       $sandbox['templates_processed'] = TRUE;
       $sandbox['template_ids'] = [];
@@ -540,7 +540,7 @@ function _openfed_migrate_templates_extract_ckeditor_templates($js_file, array &
 
   // Extract templates array.
   if (!preg_match('/templates:\s*\[([\s\S]*?)\]\s*,?\s*}\s*\)/', $content, $templates_match)) {
-    $sandbox['messages'][] = "    WARNING: No templates array found in JS file";
+    $sandbox['messages'][] = "    ⚠️  WARNING: No templates array found in JS file";
     $sandbox['messages'][] = "    The file may have an unexpected format. Please check the template file structure.";
     return [];
   }
@@ -563,7 +563,7 @@ function _openfed_migrate_templates_extract_ckeditor_templates($js_file, array &
   preg_match_all($template_regex, $templates_str, $matches, PREG_SET_ORDER);
 
   if (empty($matches)) {
-    $sandbox['messages'][] = "    WARNING: No templates matched the expected format in JS file";
+    $sandbox['messages'][] = "    ⚠️  WARNING: No templates matched the expected format in JS file";
     $sandbox['messages'][] = "    Expected format: { title: 'Title' or Drupal.t('Title'), image: 'image.png', description: 'Description' or Drupal.t('Description'), html: '...' }";
     return [];
   }
@@ -613,7 +613,7 @@ function _openfed_migrate_templates_extract_ckeditor_templates($js_file, array &
     $svg_code = _openfed_migrate_templates_get_svg_for_image($image);
 
     if (!$svg_code && $image_path) {
-      $sandbox['messages'][] = "      Warning: No SVG icon found for image \"$image\" in template \"$title\"";
+      $sandbox['messages'][] = "      ⚠️  Warning: No SVG icon found for image \"$image\" in template \"$title\"";
       $sandbox['messages'][] = "      Please manually validate at /admin/config/ckeditor5-templates/content-templates and convert image \"{$images_path}\" to SVG";
     }
 
@@ -949,7 +949,7 @@ function _openfed_refactor_ckeditor_stylesheets(array &$sandbox) {
         }
       }
       else {
-        $sandbox['messages'][] = "    WARNING: SCSS file not found for: $css_path";
+        $sandbox['messages'][] = "    ⚠️  WARNING: SCSS file not found for: $css_path";
       }
     }
 
