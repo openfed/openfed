@@ -260,35 +260,78 @@ function _openfed_migrate_media(array &$sandbox, $editor, $format, array &$setti
  *
  * This runs AFTER computeSmartDefaultSettings() has already migrated the editor.
  * Removes any styles that use <img> tags, which are not supported in CKEditor 5 styles.
+ * If no styles remain after cleanup (or were empty to begin with), removes the style button from toolbar.
  */
 function _openfed_migrate_styles(array &$sandbox, $editor, $format, array &$settings, array $enabled_buttons) {
   $sandbox['messages'][] = "    Removing img tags from ckeditor5_style styles...";
 
+  // Check if styles configuration exists and is not empty.
   if (!isset($settings['plugins']['ckeditor5_style']['styles'])) {
     $sandbox['messages'][] = "    No ckeditor5_style styles found, skipping";
+    return;
+  }
+
+  $styles = $settings['plugins']['ckeditor5_style']['styles'];
+
+  // Check if styles array is empty (CKEditor 4 had Styles button but no actual styles configured).
+  if (empty($styles)) {
+    $sandbox['messages'][] = "    Styles array was already empty (no styles configured in CKEditor 4)";
+    _openfed_migrate_styles_remove_empty_config($settings, $sandbox);
+    return;
+  }
+
+  $modified = FALSE;
+
+  foreach ($styles as $index => $style) {
+    if (isset($style['element']) && preg_match('/^<img\b/', $style['element'])) {
+      $sandbox['messages'][] = "    Removing style: " . ($style['label'] ?? 'unlabeled') . " (img tag)";
+      unset($styles[$index]);
+      $modified = TRUE;
+    }
+  }
+
+  if ($modified) {
+    // Reindex array to prevent gaps in numeric keys.
+    $styles = array_values($styles);
+    $settings['plugins']['ckeditor5_style']['styles'] = $styles;
+    $sandbox['messages'][] = "    SUCCESS: img tags removed from styles";
   }
   else {
-    $styles = $settings['plugins']['ckeditor5_style']['styles'];
-    $modified = FALSE;
-
-    foreach ($styles as $index => $style) {
-      if (isset($style['element']) && preg_match('/^<img\b/', $style['element'])) {
-        $sandbox['messages'][] = "    Removing style: " . ($style['label'] ?? 'unlabeled') . " (img tag)";
-        unset($styles[$index]);
-        $modified = TRUE;
-      }
-    }
-
-    if ($modified) {
-      // Reindex array to prevent gaps in numeric keys.
-      $styles = array_values($styles);
-      $settings['plugins']['ckeditor5_style']['styles'] = $styles;
-      $sandbox['messages'][] = "    SUCCESS: img tags removed from styles";
-    }
-    else {
-      $sandbox['messages'][] = "    No img tags found in styles";
-    }
+    $sandbox['messages'][] = "    No img tags found in styles";
   }
+
+  // Check if styles array is now empty after removing img tags.
+  if (empty($styles)) {
+    $sandbox['messages'][] = "    Styles array is empty after cleanup";
+    _openfed_migrate_styles_remove_empty_config($settings, $sandbox);
+  }
+}
+
+/**
+ * Helper function to remove empty style configuration and button.
+ *
+ * @param array $settings
+ *   The editor settings array.
+ * @param array $sandbox
+ *   The sandbox array for messages.
+ */
+function _openfed_migrate_styles_remove_empty_config(array &$settings, array &$sandbox) {
+  // Remove style button from toolbar.
+  $toolbar_items = $settings['toolbar']['items'] ?? [];
+  $original_count = count($toolbar_items);
+
+  $toolbar_items = array_values(array_filter($toolbar_items, function($item) {
+    return $item !== 'style';
+  }));
+
+  if (count($toolbar_items) < $original_count) {
+    $settings['toolbar']['items'] = $toolbar_items;
+    $sandbox['messages'][] = "    Removed 'style' button from toolbar";
+  }
+
+  // Remove the empty styles configuration.
+  unset($settings['plugins']['ckeditor5_style']);
+  $sandbox['messages'][] = "    Removed empty ckeditor5_style plugin configuration";
 }
 
 /**
