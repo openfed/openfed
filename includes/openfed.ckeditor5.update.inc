@@ -282,8 +282,8 @@ function _openfed_update_cke_cleanup_modules(array &$sandbox) {
     'ckeditor4_codemirror' => 'CKEditor4 codemirror',
     'anchor_link' => 'Anchor link',
     'fakeobjects' => 'Fake Objects (dependency for anchor_link)',
-    'ckeditor' => 'CKEditor 4',
     'ckeditor_config' => 'CKEditor custom config',
+    'ckeditor' => 'CKEditor 4',
   ];
   $module_handler = \Drupal::moduleHandler();
   $module_installer = \Drupal::service('module_installer');
