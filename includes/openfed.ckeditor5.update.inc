@@ -112,6 +112,9 @@ function _openfed_update_cke_process_editor(array &$sandbox) {
     $new_settings = $updated_editor->getSettings();
     _openfed_update_cke_apply_custom_migrations($sandbox, $updated_editor, $text_format, $new_settings, $enabled_buttons);
 
+    // Post-process settings to avoid duplicate toolbar items.
+    _openfed_update_cke_dedupe_toolbar_items($sandbox, $new_settings);
+
     // Save the updated editor.
     $updated_editor->setSettings($new_settings);
     $updated_editor->save();
@@ -223,6 +226,78 @@ function _openfed_update_cke_apply_custom_migrations(&$sandbox, $editor, $format
   }
 
   $sandbox['messages'][] = "Custom migrations completed for format: {$format->id()}";
+}
+
+/**
+ * Remove duplicate items from the CKEditor5 toolbar while preserving order.
+ *
+ * Duplicates can creep in when CKEditor4 toolbars contain repeated buttons
+ * across groups (e.g. "Source" appearing multiple times). Core migration and
+ * subsequent custom migrations can both add buttons too.
+ *
+ * @param array $sandbox
+ *   The batch sandbox.
+ * @param array $settings
+ *   The editor settings array (passed by reference).
+ */
+function _openfed_update_cke_dedupe_toolbar_items(array &$sandbox, array &$settings): void {
+  if (empty($settings['toolbar']['items']) || !is_array($settings['toolbar']['items'])) {
+    return;
+  }
+
+  $original = $settings['toolbar']['items'];
+  $seen = [];
+  $deduped = [];
+  $removed_counts = [];
+
+  foreach ($original as $item) {
+    // CKEditor5 toolbars can contain separators or group markers.
+    // Keep them, but avoid collapsing multiple separators into one.
+    if ($item === '|' || $item === '-') {
+      $last = end($deduped);
+      if ($last === $item) {
+        continue;
+      }
+      $deduped[] = $item;
+      continue;
+    }
+
+    // For button names: keep the first occurrence, drop subsequent ones.
+    $key = is_string($item) ? $item : json_encode($item);
+    if (isset($seen[$key])) {
+      $label = is_string($item) ? $item : 'non-string-item';
+      $removed_counts[$label] = ($removed_counts[$label] ?? 0) + 1;
+      continue;
+    }
+    $seen[$key] = TRUE;
+    $deduped[] = $item;
+  }
+
+  // Trim leading/trailing separators that might have become orphaned.
+  while (!empty($deduped) && (reset($deduped) === '|' || reset($deduped) === '-')) {
+    array_shift($deduped);
+  }
+  while (!empty($deduped) && (end($deduped) === '|' || end($deduped) === '-')) {
+    array_pop($deduped);
+  }
+
+  if ($deduped !== $original) {
+    $settings['toolbar']['items'] = array_values($deduped);
+
+    // Build a readable message of removed duplicates.
+    // Example: Source (x2), blockQuote (x1)
+    $details = '';
+    if (!empty($removed_counts)) {
+      ksort($removed_counts);
+      $parts = [];
+      foreach ($removed_counts as $label => $count) {
+        $parts[] = "{$label} (x{$count})";
+      }
+      $details = ' Removed duplicates: ' . implode(', ', $parts) . '.';
+    }
+
+    $sandbox['messages'][] = '  Cleaned up toolbar: removed duplicate buttons.' . $details;
+  }
 }
 
 /**
