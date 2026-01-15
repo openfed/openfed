@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+15 January 2026 - Version 12.5.4
+------------------------------
+- Security updates:
+  - Role Delegation - Moderately critical - Access bypass - SA-CONTRIB-2026-002
+    https://www.drupal.org/sa-contrib-2026-002
+
 10 December 2025 - Version 12.5.3
 ------------------------------
 - Bring all drupal/core-* packages in sync.
