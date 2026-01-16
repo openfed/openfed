@@ -1,5 +1,5 @@
 name: Openfed CKEditor
-description: Provides CKEditor enhancements for OpenFed.
+description: Provides CKEditor enhancements for Openfed.
 type: module
 core_version_requirement: ^10.5 || ^11
 package: Openfed
