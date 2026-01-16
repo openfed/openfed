@@ -7,7 +7,7 @@ part of the Fast2Web offering.
 
 ## Recommendations for Deprecated Modules
 
-Openfed marks some contributed modules as **deprecated**. These modules may still be present for backwards compatibility, but they are not recommended for new builds and may be removed in a future Openfed version.
+Openfed marks some contributed modules as **deprecated**. These modules may still be present for backwards compatibility, but they are not recommended for new builds and will be removed in a future Openfed version.
 
 | Module (machine name) | Status in Openfed | Recommendation |
 | --- | --- | --- |
