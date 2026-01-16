@@ -242,7 +242,7 @@ function openfed_update_120500(&$sandbox) {
 /**
  * Migrate CKEditor 4 configurations to CKEditor 5.
  */
-function openfed_update_130000(&$sandbox) {
+function openfed_update_130600(&$sandbox) {
   // Include the CKEditor 5 update functions.
   include_once __DIR__ . '/includes/openfed.ckeditor5.update.inc';
 
