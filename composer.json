@@ -317,7 +317,7 @@
         "drupal/views_bulk_operations": "4.4.0-beta1",
         "drupal/views_slideshow": "5.0.1",
         "drupal/wba_menu_link": "1.0-rc4",
-        "drupal/webform": "6.2.*",
+        "drupal/webform": "^6.3@beta",
         "drupal/webform_encrypt": "2.0.0-alpha1",
         "drupal/webform_translation_permissions": "2.1.0",
         "drupal/weight": "3.6",
