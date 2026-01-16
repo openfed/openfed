@@ -365,6 +365,7 @@ function _openfed_update_cke_cleanup_modules(array &$sandbox) {
     'anchor_link' => 'Anchor link',
     'fakeobjects' => 'Fake Objects (dependency for anchor_link)',
     'ckeditor_config' => 'CKEditor custom config',
+    'ckeditor_uploadimage' => 'CKEditor upload image',
     'ckeditor' => 'CKEditor 4',
   ];
   $module_handler = \Drupal::moduleHandler();

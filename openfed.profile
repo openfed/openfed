@@ -125,6 +125,7 @@ function openfed_system_info_alter(array &$info, Extension $file, $type): void {
     'anchor_link',
     'fakeobjects',
     'ckeditor_config',
+    'ckeditor_uploadimage',
     'ckeditor',
   ];
 
