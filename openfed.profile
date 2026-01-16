@@ -140,5 +140,5 @@ function openfed_system_info_alter(array &$info, Extension $file, $type): void {
 
   // Mark the module as deprecated.
   $info[ExtensionLifecycle::LIFECYCLE_IDENTIFIER] = ExtensionLifecycle::DEPRECATED;
-  $info[ExtensionLifecycle::LIFECYCLE_LINK_IDENTIFIER] = "https://github.com/openfed/openfed?tab=readme-ov-file#installation";
+  $info[ExtensionLifecycle::LIFECYCLE_LINK_IDENTIFIER] = "https://github.com/openfed/openfed?tab=readme-ov-file#recommendations-for-deprecated-modules";
 }
