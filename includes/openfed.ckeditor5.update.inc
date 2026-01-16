@@ -329,6 +329,13 @@ function _openfed_update_cke_finalize(array &$sandbox) {
       _openfed_update_cke_cleanup_modules($sandbox);
     }
 
+    // Enable Openfed CKEditor module if not already enabled.
+    $module_handler = \Drupal::moduleHandler();
+    if (!$module_handler->moduleExists('openfed_ckeditor')) {
+      \Drupal::service('module_installer')->install(['openfed_ckeditor']);
+      $sandbox['messages'][] = 'Enabled Openfed CKEditor module.';
+    }
+
     // Clear all caches.
     drupal_flush_all_caches();
     $sandbox['messages'][] = 'Cleared all caches.';
