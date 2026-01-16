@@ -1,5 +1,5 @@
-name: Openfed Distribution
-description: Openfed Distribution
+name: Openfed Distribution Updater
+description: Openfed Distribution Updater
 package: Openfed
 
 type: module

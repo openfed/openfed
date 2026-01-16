@@ -23,11 +23,6 @@ function _openfed_update_cke_initialize(array &$sandbox) {
       \Drupal::service('module_installer')->install(['ckeditor5']);
       $sandbox['messages'][] = 'Enabled CKEditor 5 module.';
     }
-    // Enable Openfed core module if not already enabled.
-    if (!$module_handler->moduleExists('openfed_core')) {
-      \Drupal::service('module_installer')->install(['openfed_core']);
-      $sandbox['messages'][] = 'Enabled Openfed core module.';
-    }
 
     // Get all CKEditor 4 editors.
     $editor_ids = _openfed_update_cke_get_ckeditor4_editors();

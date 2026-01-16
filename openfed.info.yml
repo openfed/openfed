@@ -10,7 +10,6 @@ distribution:
 # Required modules. These cannot be uninstalled.
 dependencies:
   # openfed
-  - openfed:openfed_core
   - openfed:openfed_administration
   # core
   - drupal:block
