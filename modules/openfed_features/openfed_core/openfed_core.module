@@ -1,0 +1,37 @@
+<?php
+
+/**
+ * @file
+ * Openfed Core module.
+ */
+
+use Drupal\Core\Extension\Extension;
+use Drupal\Core\Extension\ExtensionLifecycle;
+
+/**
+ * Implements hook_system_info_alter().
+ */
+function openfed_core_system_info_alter(array &$info, Extension $file, $type): void {
+  // Only act on modules.
+  if ($type !== 'module') {
+    return;
+  }
+
+  // List of deprecated modules in Openfed.
+  $deprecated_modules = [
+    'ckeditor_templates',
+    'ckeditor4_codemirror',
+    'anchor_link',
+    'fakeobjects',
+    'ckeditor_config',
+    'ckeditor',
+  ];
+
+  // Mark deprecated modules as hidden.
+  if (!in_array($file->getName(), $deprecated_modules)) {
+    return;
+  }
+
+  $info[ExtensionLifecycle::LIFECYCLE_IDENTIFIER] = ExtensionLifecycle::DEPRECATED;
+  $info[ExtensionLifecycle::LIFECYCLE_LINK_IDENTIFIER] = "https://github.com/openfed/openfed?tab=readme-ov-file#installation";
+}
