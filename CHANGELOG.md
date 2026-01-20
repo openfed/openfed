@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+20 January 2026 - Version 12.6.0
+------------------------------
+- Drupal core to version ~10.6
+
 20 January 2026 - Version 12.5.5
 ------------------------------
 - Missing shema for filter onomasticon
