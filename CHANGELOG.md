@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+20 January 2026 - Version 12.5.5
+------------------------------
+- Missing shema for filter onomasticon
+- Module updates:
+  - Webform to version ^6.3@beta
+
 15 January 2026 - Version 12.5.4
 ------------------------------
 - Security updates:
