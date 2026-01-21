@@ -343,7 +343,7 @@
         "drush/drush": "^12.0",
         "jackmoore/colorbox": "1.6.4",
         "oomphinc/composer-installers-extender": "*",
-        "openfed/kiso": "^4.0",
+        "openfed/kiso": "^5.0",
         "smillart/wai-aria-patterns-and-widgets": "1.0.*",
         "splidejs/splide": "^4.1",
         "ten1seven/what-input": "^5.2"
