@@ -147,10 +147,15 @@ function openfed_update_120301(&$sandbox) {
  */
 function openfed_update_120500(&$sandbox) {
   $entity_type_manager = \Drupal::entityTypeManager();
-  $content_translation_manager = \Drupal::service('content_translation.manager');
   $needs_module = FALSE;
   $form_display_updates = [];
   $updated_fields = [];
+
+  // Only load the content translation manager if the module is enabled.
+  $content_translation_manager = NULL;
+  if (\Drupal::moduleHandler()->moduleExists('content_translation')) {
+    $content_translation_manager = \Drupal::service('content_translation.manager');
+  }
 
   $field_storage_configs = $entity_type_manager->getStorage('field_storage_config')->loadMultiple();
 
@@ -179,7 +184,7 @@ function openfed_update_120500(&$sandbox) {
       // method checks if the host entity is translatable.
       $entity_type = $field_config->getTargetEntityTypeId();
       $bundle = $field_config->getTargetBundle();
-      if (!$content_translation_manager->isEnabled($entity_type, $bundle)) {
+      if ($content_translation_manager === NULL || !$content_translation_manager->isEnabled($entity_type, $bundle)) {
         continue;
       }
       $form_display_storage = $entity_type_manager->getStorage('entity_form_display');
@@ -190,6 +195,7 @@ function openfed_update_120500(&$sandbox) {
       if (empty($ids)) {
         continue;
       }
+
       $form_displays = $form_display_storage->loadMultiple($ids);
       foreach ($form_displays as $form_display) {
         $component = $form_display->getComponent($field_config->getName());
@@ -232,9 +238,5 @@ function openfed_update_120500(&$sandbox) {
     $form_display->save();
   }
 
-  if (!empty($updated_fields)) {
-    return "\n" . implode("\n", $updated_fields) . "\n";
-  }
-
-  return NULL;
+  return !empty($updated_fields) ? "\n" . implode("\n", $updated_fields) . "\n" : NULL;
 }
