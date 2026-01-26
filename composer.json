@@ -273,7 +273,7 @@
         "drupal/onomasticon": "2.2.4",
         "drupal/openfed_social": "1.8",
         "drupal/optional_end_date": "2.0.0-beta1",
-        "drupal/orejime_videos": "1.0.*",
+        "drupal/orejime_videos": "^1.1",
         "drupal/override_node_options": "2.9",
         "drupal/page_cache_query_ignore": "2.4.0",
         "drupal/page_manager": "4.0-rc3",
