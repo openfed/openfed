@@ -575,10 +575,15 @@ function _openfed_migrate_templates_extract_ckeditor_templates($js_file, array &
     return [];
   }
 
-  // Extract imagesPath.
+  // Extract imagesPath - handle both simple strings and ternary expressions.
   $images_path = '';
   if (preg_match('/imagesPath:\s*["\']([^"\']+)["\']/', $content, $matches)) {
+    // Simple string format.
     $images_path = $matches[1];
+  }
+  elseif (preg_match('/imagesPath:\s*[\s\S]*?\+\s*["\']([^"\']+)["\']/', $content, $matches)) {
+    // Ternary expression with concatenation - extract the path suffix.
+    $images_path = '/' . ltrim($matches[1], '/');
   }
 
   // Extract templates array.
@@ -697,11 +702,11 @@ function _openfed_migrate_templates_extract_ckeditor_templates($js_file, array &
     $id = preg_replace('/\s+/', '_', $id);
     $id = preg_replace('/[^a-z0-9_]/', '', $id);
 
-    // Get SVG code for image.
-    $svg_code = _openfed_migrate_templates_get_svg_for_image($image);
+    // Create SVG icon from image.
+    $svg_code = _openfed_migrate_templates_create_svg_from_image($image_path, $sandbox);
 
     if (!$svg_code && $image_path) {
-      $sandbox['messages'][] = "      ⚠️  Warning: No SVG icon found for image \"$image\" in template \"$title\"";
+      $sandbox['messages'][] = "      ⚠️  Warning: No SVG icon created for image \"$image\" in template \"$title\"";
       $sandbox['messages'][] = "      Please manually validate at /admin/config/ckeditor5-templates/content-templates and convert image \"{$images_path}\" to SVG";
     }
 
@@ -849,67 +854,48 @@ function _openfed_migrate_templates_validate_and_add_styles(array $classes_to_va
 }
 
 /**
- * Get SVG code for template image.
+ * Create an SVG from an image file by embedding it as base64.
+ *
+ * @param string $image_path
+ *   The full path to the image file.
+ * @param array $sandbox
+ *   The sandbox array for messages.
+ *
+ * @return string
+ *   The SVG code with embedded image, or empty string if conversion failed.
  */
-function _openfed_migrate_templates_get_svg_for_image($image_name) {
-  $svg_map = [
-    'textblock-blue.png' => '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 70">
-  <defs>
-    <clipPath id="rounded">
-      <rect x="0" y="0" width="100" height="70" rx="12" ry="12"/>
-    </clipPath>
-  </defs>
+function _openfed_migrate_templates_create_svg_from_image($image_path, array &$sandbox): string {
+  if (!file_exists($image_path)) {
+    return '';
+  }
 
-  <rect x="0" y="0" width="100" height="70" rx="12" ry="12" fill="#E3E9ED"/>
+  $image_info = @getimagesize($image_path);
+  if (!$image_info) {
+    $sandbox['messages'][] = "      Could not get image info for: " . basename($image_path);
+    return '';
+  }
 
-  <rect x="0" y="0" width="8" height="70" fill="#9EC6D3" clip-path="url(#rounded)"/>
+  $width = $image_info[0];
+  $height = $image_info[1];
+  $mime_type = $image_info['mime'];
 
-  <circle cx="45" cy="35" r="3" fill="#000"/>
-  <circle cx="55" cy="35" r="3" fill="#000"/>
-  <circle cx="65" cy="35" r="3" fill="#000"/>
-</svg>',
+  // Read the image file and encode as base64.
+  $image_data = file_get_contents($image_path);
+  if (!$image_data) {
+    $sandbox['messages'][] = "      Could not read image file: " . basename($image_path);
+    return '';
+  }
 
-    'organigram.png' => '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 140">
-  <rect x="80" y="0" width="40" height="30" fill="#4A4A4A"/>
-  <line x1="100" y1="30" x2="100" y2="55" stroke="#4A4A4A" stroke-width="2"/>
-  <line x1="30" y1="55" x2="170" y2="55" stroke="#4A4A4A" stroke-width="2"/>
-  <line x1="50" y1="55" x2="50" y2="80" stroke="#4A4A4A" stroke-width="2"/>
-  <line x1="100" y1="55" x2="100" y2="80" stroke="#4A4A4A" stroke-width="2"/>
-  <line x1="150" y1="55" x2="150" y2="80" stroke="#4A4A4A" stroke-width="2"/>
-  <rect x="20" y="80" width="60" height="40" fill="#4A4A4A"/>
-  <rect x="70" y="80" width="60" height="40" fill="#2FA4B8"/>
-  <rect x="120" y="80" width="60" height="40" fill="#4A4A4A"/>
-</svg>',
+  $base64 = base64_encode($image_data);
 
-    'template2.gif' => '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 140">
-  <rect x="2" y="2" width="180" height="100" fill="#FFFFFF" stroke="#4A4A4A" stroke-width="2"/>
-  <rect x="20" y="20" width="60" height="8" rx="3" fill="#BFC7CC"/>
-  <rect x="100" y="20" width="60" height="8" rx="3" fill="#BFC7CC"/>
-  <rect x="20" y="40" width="60" height="5" rx="2.5" fill="#BFC7CC"/>
-  <rect x="20" y="52" width="60" height="5" rx="2.5" fill="#BFC7CC"/>
-  <rect x="20" y="64" width="60" height="5" rx="2.5" fill="#BFC7CC"/>
-  <rect x="100" y="40" width="60" height="5" rx="2.5" fill="#BFC7CC"/>
-  <rect x="100" y="52" width="60" height="5" rx="2.5" fill="#BFC7CC"/>
-  <rect x="100" y="64" width="60" height="5" rx="2.5" fill="#BFC7CC"/>
-  <rect x="20" y="76" width="140" height="5" rx="3" fill="#BFC7CC"/>
-  <rect x="20" y="88" width="140" height="5" rx="3" fill="#BFC7CC"/>
-</svg>',
+  // Create SVG with embedded image.
+  $svg = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 ' . $width . ' ' . $height . '">';
+  $svg .= '<image width="' . $width . '" height="' . $height . '" xlink:href="data:' . $mime_type . ';base64,' . $base64 . '"/>';
+  $svg .= '</svg>';
 
-    'ico-table.svg' => '<svg enable-background="new 0 0 480 480" version="1.1" viewBox="0 0 480 480" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
-  <path d="m472 0h-464c-4.418 0-8 3.582-8 8v464c0 4.418 3.582 8 8 8h464c4.418 0 8-3.582 8-8v-464c0-4.418-3.582-8-8-8zm-8 464h-448v-384h448v384zm0-400h-448v-48h448v48z"/>
-  <rect x="32" y="32" width="16" height="16"/>
-  <rect x="64" y="32" width="16" height="16"/>
-  <rect x="96" y="32" width="16" height="16"/>
-  <path d="m200 392h80c4.418 0 8-3.582 8-8v-64c0-4.418-3.582-8-8-8h-80c-4.418 0-8 3.582-8 8v64c0 4.418 3.582 8 8 8zm8-64h64v48h-64v-48z"/>
-  <path d="m200 232h80c4.418 0 8-3.582 8-8v-64c0-4.418-3.582-8-8-8h-80c-4.418 0-8 3.582-8 8v64c0 4.418 3.582 8 8 8zm8-64h64v48h-64v-48z"/>
-  <path d="m328 392h80c4.418 0 8-3.582 8-8v-64c0-4.418-3.582-8-8-8h-80c-4.418 0-8 3.582-8 8v64c0 4.418 3.582 8 8 8zm8-64h64v48h-64v-48z"/>
-  <path d="m328 232h80c4.418 0 8-3.582 8-8v-64c0-4.418-3.582-8-8-8h-80c-4.418 0-8 3.582-8 8v64c0 4.418 3.582 8 8 8zm8-64h64v48h-64v-48z"/>
-  <path d="m72 392h80c4.418 0 8-3.582 8-8v-64c0-4.418-3.582-8-8-8h-80c-4.418 0-8 3.582-8 8v64c0 4.418 3.582 8 8 8zm8-64h64v48h-64v-48z"/>
-  <path d="m72 232h80c4.418 0 8-3.582 8-8v-64c0-4.418-3.582-8-8-8h-80c-4.418 0-8 3.582-8 8v64c0 4.418 3.582 8 8 8zm8-64h64v48h-64v-48z"/>
-</svg>',
-  ];
+  $sandbox['messages'][] = "      Created SVG from image: " . basename($image_path) . " ({$width}x{$height})";
 
-  return $svg_map[$image_name] ?? '';
+  return $svg;
 }
 
 /**
