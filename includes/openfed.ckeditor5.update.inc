@@ -24,6 +24,12 @@ function _openfed_update_cke_initialize(array &$sandbox) {
       $sandbox['messages'][] = 'Enabled CKEditor 5 module.';
     }
 
+    // Enable CKEditor 5 Find and Replace plugin if CKEditor Find module is present.
+    if ($module_handler->moduleExists('ckeditor_find')) {
+      \Drupal::service('module_installer')->install(['ckeditor5_plugin_pack_find_and_replace']);
+      $sandbox['messages'][] = 'Enabled CKEditor 5 Find and Replace plugin module.';
+    }
+
     // Get all CKEditor 4 editors.
     $editor_ids = _openfed_update_cke_get_ckeditor4_editors();
 
