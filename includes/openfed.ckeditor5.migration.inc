@@ -974,16 +974,11 @@ function _openfed_refactor_ckeditor_stylesheets(array &$sandbox) {
   }
 
   // Find all .info.yml files in custom themes.
-  $info_files = [];
-  $iterator = new \RecursiveIteratorIterator(
-    new \RecursiveDirectoryIterator($custom_themes_path, \RecursiveDirectoryIterator::SKIP_DOTS)
-  );
+  /** @var \Drupal\Core\File\FileSystemInterface $file_system */
+  $file_system = \Drupal::service('file_system');
 
-  foreach ($iterator as $file) {
-    if ($file->isFile() && preg_match('/\.info\.yml$/', $file->getFilename())) {
-      $info_files[] = $file->getPathname();
-    }
-  }
+  $files = $file_system->scanDirectory($custom_themes_path, '/\.info\.yml$/');
+  $info_files = array_column($files, 'uri');
 
   if (empty($info_files)) {
     $sandbox['messages'][] = "  No .info.yml files found in custom themes.";
@@ -996,7 +991,7 @@ function _openfed_refactor_ckeditor_stylesheets(array &$sandbox) {
     $content = file_get_contents($info_file);
 
     // Check if the file contains ckeditor_stylesheets.
-    if (strpos($content, 'ckeditor_stylesheets:') === FALSE) {
+    if (!str_contains($content, 'ckeditor_stylesheets:')) {
       continue;
     }
 
@@ -1010,21 +1005,9 @@ function _openfed_refactor_ckeditor_stylesheets(array &$sandbox) {
     foreach ($css_paths as $css_path) {
       $sandbox['messages'][] = "    CSS path: $css_path";
 
-      // Try to find the SCSS source file.
-      $scss_path = preg_replace('/\.css$/', '.scss', $css_path);
-      $full_scss_path = $theme_dir . '/' . $scss_path;
-
-      // Also check scss/ directory variant.
-      $scss_alt_path = str_replace('css/', 'scss/', $scss_path);
-      $full_scss_alt_path = $theme_dir . '/' . $scss_alt_path;
-
-      $actual_scss_path = NULL;
-      if (file_exists($full_scss_path)) {
-        $actual_scss_path = $full_scss_path;
-      }
-      elseif (file_exists($full_scss_alt_path)) {
-        $actual_scss_path = $full_scss_alt_path;
-      }
+      // Try to find the SCSS source file by scanning the theme directory.
+      $scss_filename = basename(preg_replace('/\.css$/', '.scss', $css_path));
+      $actual_scss_path = _openfed_find_file_in_directory($theme_dir, $scss_filename);
 
       if ($actual_scss_path) {
         _openfed_update_scss_for_ckeditor5($sandbox, $actual_scss_path);
@@ -1099,6 +1082,62 @@ function _openfed_extract_css_paths_from_info($content) {
 }
 
 /**
+ * Find a file by name within a directory, scanning recursively.
+ *
+ * @param string $directory
+ *   The directory to search in.
+ * @param string $filename
+ *   The filename to search for.
+ *
+ * @return string|null
+ *   The full path to the file if found, or NULL if not found.
+ */
+function _openfed_find_file_in_directory($directory, $filename) {
+  // First check the root of the directory.
+  $root_path = $directory . '/' . $filename;
+  if (file_exists($root_path)) {
+    return $root_path;
+  }
+
+  // Common subdirectories where SCSS files might live.
+  $common_paths = [
+    'src/scss',
+    'scss',
+    'assets/scss',
+    'styles/scss',
+    'css',
+    'src/css',
+    'assets/css',
+    'styles',
+  ];
+
+  // Check common paths first for performance.
+  foreach ($common_paths as $subdir) {
+    $path = $directory . '/' . $subdir . '/' . $filename;
+    if (file_exists($path)) {
+      return $path;
+    }
+  }
+
+  // If not found in common paths, scan the entire directory recursively
+  // using Drupal's file system service.
+  /** @var \Drupal\Core\File\FileSystemInterface $file_system */
+  $file_system = \Drupal::service('file_system');
+
+  // Escape special regex characters in the filename and create a pattern.
+  $pattern = '/^' . preg_quote($filename, '/') . '$/';
+
+  $files = $file_system->scanDirectory($directory, $pattern);
+  if (!empty($files)) {
+    // Return the first match found.
+    $file = reset($files);
+    return $file->uri;
+  }
+
+  return NULL;
+}
+
+/**
  * Update SCSS file to use CKEditor 5 class names.
  *
  * @param array $sandbox
@@ -1109,27 +1148,89 @@ function _openfed_extract_css_paths_from_info($content) {
 function _openfed_update_scss_for_ckeditor5(array &$sandbox, $scss_file_path) {
   $content = file_get_contents($scss_file_path);
 
-  // Build updated content with header.
-  $updated_content = "// CKEditor 5 content styles\n";
-  $updated_content .= "// Original styles updated for CKEditor 5\n";
-  $updated_content .= "// Updated: .cke_editable replaced with .ck-content\n";
-  $updated_content .= "// Removed: Lines containing .cke_panel_listItem (CKEditor 4 specific)\n";
-  $updated_content .= "// Source: https://www.drupal.org/node/3259165\n";
-  $updated_content .= "\n";
-
-  // Replace .cke_editable with .ck-content and remove lines with .cke_panel_listItem.
+  // Remove lines containing .cke_panel_listItem (CKEditor 4 specific).
   $lines = explode("\n", $content);
+  $filtered_lines = [];
   foreach ($lines as $line) {
-    // Skip lines containing .cke_panel_listItem.
-    if (strpos($line, '.cke_panel_listItem') !== FALSE) {
-      continue;
+    if (!str_contains($line, '.cke_panel_listItem')) {
+      $filtered_lines[] = $line;
     }
-    // Replace .cke_editable with .ck-content.
-    $line = str_replace('.cke_editable', '.ck-content', $line);
-    $updated_content .= $line . "\n";
+  }
+  $content = implode("\n", $filtered_lines);
+
+  // Check if the content contains .cke_editable section.
+  if (preg_match('/\.cke_editable\s*\{([\s\S]*)\}/s', $content, $matches, PREG_OFFSET_CAPTURE)) {
+    // Extract the inner content of .cke_editable.
+    $inner_content = $matches[1][0];
+
+    // Get the content before .cke_editable.
+    $before_content = trim(substr($content, 0, $matches[0][1]));
+
+    // Get the content after .cke_editable (after the closing brace).
+    $after_start = $matches[0][1] + strlen($matches[0][0]);
+    $after_content = trim(substr($content, $after_start));
+
+    // Combine all content parts, indented for .ck-content wrapper.
+    $combined_content = '';
+    if (!empty($before_content)) {
+      $combined_content .= _openfed_indent_scss_content($before_content, 2) . "\n\n";
+    }
+    // Inner content already has indentation from original file, just use it as-is.
+    $combined_content .= $inner_content;
+    if (!empty($after_content)) {
+      $combined_content .= "\n\n" . _openfed_indent_scss_content($after_content, 2);
+    }
+
+    // Build updated content: wrap everything in .ck-content.
+    $updated_content = ".ck-content {\n";
+    $updated_content .= $combined_content . "\n";
+    $updated_content .= "}\n";
+  }
+  else {
+    // No .cke_editable found, wrap the full content in .ck-content.
+    $indented_content = _openfed_indent_scss_content(trim($content), 2);
+
+    $updated_content = ".ck-content {\n";
+    $updated_content .= $indented_content . "\n";
+    $updated_content .= "}\n";
   }
 
+  $sandbox['messages'][] = "    CKEditor 5 content styles";
+  $sandbox['messages'][] = "    Original styles updated for CKEditor 5";
+  $sandbox['messages'][] = "    All content wrapped in .ck-content";
+  $sandbox['messages'][] = "    Removed: Lines containing .cke_panel_listItem (CKEditor 4 specific)";
+  $sandbox['messages'][] = "    Source: https://www.drupal.org/node/3259165";
+
   file_put_contents($scss_file_path, $updated_content);
-  $sandbox['messages'][] = "    Updated SCSS with .ck-content replacement: " . basename($scss_file_path);
+  $sandbox['messages'][] = "    Updated SCSS with .ck-content: " . basename($scss_file_path);
+}
+
+/**
+ * Indent SCSS content by a specified number of spaces.
+ *
+ * @param string $content
+ *   The SCSS content to indent.
+ * @param int $spaces
+ *   The number of spaces to indent.
+ *
+ * @return string
+ *   The indented content.
+ */
+function _openfed_indent_scss_content($content, $spaces) {
+  $indent = str_repeat(' ', $spaces);
+  $lines = explode("\n", $content);
+  $indented_lines = [];
+
+  foreach ($lines as $line) {
+    // Only indent non-empty lines.
+    if (trim($line) !== '') {
+      $indented_lines[] = $indent . $line;
+    }
+    else {
+      $indented_lines[] = $line;
+    }
+  }
+
+  return implode("\n", $indented_lines);
 }
 
