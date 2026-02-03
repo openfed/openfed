@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+03 February 2026 - Version 12.6.1
+------------------------------
+- Patch for rules module to fix annotation issues after Drupal core 10.6 update.
+- Openfed 12.5 update hook now also supports monolingual sites.
+- Translations for Openfed federal header are now imported correctly.
+
 20 January 2026 - Version 12.6.0
 ------------------------------
 - Drupal core to version ~10.6
