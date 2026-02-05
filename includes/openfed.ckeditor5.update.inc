@@ -115,6 +115,15 @@ function _openfed_update_cke_process_editor(array &$sandbox) {
     // Post-process settings to avoid duplicate toolbar items.
     _openfed_update_cke_dedupe_toolbar_items($sandbox, $new_settings);
 
+    // Check for extra validation violations after save.
+    $violations = \Drupal\ckeditor5\Plugin\Editor\CKEditor5::validatePair($updated_editor, $text_format);
+    if ($violations->count() > 0) {
+      $sandbox['messages'][] = "⚠️  Text format validation errors found:";
+      foreach ($violations as $violation) {
+        $sandbox['messages'][] = "  - " . $violation->getMessage();
+      }
+    }
+
     // Save the updated editor.
     $updated_editor->setSettings($new_settings);
     $updated_editor->save();
