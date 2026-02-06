@@ -8,6 +8,9 @@ use Drupal\Core\Config\Entity\ConfigEntityUpdater;
 use Drupal\Core\DrupalKernelInterface;
 use Drupal\field\FieldConfigInterface;
 
+// Include general update helper functions.
+include_once __DIR__ . '/includes/openfed.update.inc';
+
 /**
  * This will content management view, unsetting broken bulk actions.
  */

@@ -5,6 +5,12 @@
  * Helper functions for openfed_update_cke - CKEditor 4 to 5 migration.
  */
 
+use Drupal\ckeditor5\HTMLRestrictions;
+use Drupal\ckeditor5\Plugin\Editor\CKEditor5;
+use Drupal\editor\EditorInterface;
+use Drupal\filter\Entity\FilterFormat;
+use Drupal\filter\FilterFormatInterface;
+
 /**
  * Initialize the CKEditor 5 migration batch process.
  *
@@ -21,13 +27,13 @@ function _openfed_update_cke_initialize(array &$sandbox) {
     $module_handler = \Drupal::moduleHandler();
     if (!$module_handler->moduleExists('ckeditor5')) {
       \Drupal::service('module_installer')->install(['ckeditor5']);
-      $sandbox['messages'][] = 'Enabled CKEditor 5 module.';
+      _openfed_log_message($sandbox, 'Enabled CKEditor 5 module.', 'debug');
     }
 
     // Enable CKEditor 5 Find and Replace plugin if CKEditor Find module is present.
     if ($module_handler->moduleExists('ckeditor_find')) {
       \Drupal::service('module_installer')->install(['ckeditor5_plugin_pack_find_and_replace']);
-      $sandbox['messages'][] = 'Enabled CKEditor 5 Find and Replace plugin module.';
+      _openfed_log_message($sandbox, 'Enabled CKEditor 5 Find and Replace plugin module.', 'debug');
     }
 
     // Get all CKEditor 4 editors.
@@ -37,18 +43,18 @@ function _openfed_update_cke_initialize(array &$sandbox) {
     $sandbox['total'] = count($editor_ids);
 
     if ($sandbox['total'] === 0) {
-      $sandbox['messages'][] = 'No CKEditor 4 formats found to migrate.';
+      _openfed_log_message($sandbox, 'No CKEditor 4 formats found to migrate.', 'debug');
       $sandbox['#finished'] = 1;
       return;
     }
 
-    $sandbox['messages'][] = "Found {$sandbox['total']} format(s) to migrate.";
+    _openfed_log_message($sandbox, "Found {$sandbox['total']} format(s) to migrate.", 'debug');
 
     // Mark that stylesheets haven't been refactored yet.
     $sandbox['stylesheets_refactored'] = FALSE;
   }
   catch (\Exception $e) {
-    $sandbox['messages'][] = 'Error during initialization: ' . $e->getMessage();
+    _openfed_log_message($sandbox, 'Error during initialization: ' . $e->getMessage(), 'error');
     $sandbox['#finished'] = 1;
   }
 }
@@ -86,18 +92,19 @@ function _openfed_update_cke_process_editor(array &$sandbox) {
   try {
     $entity_type_manager = \Drupal::entityTypeManager();
     $editor_storage = $entity_type_manager->getStorage('editor');
+    /** @var EditorInterface $editor */
     $editor = $editor_storage->load($editor_id);
 
     if (!$editor) {
-      $sandbox['messages'][] = "⚠️  Warning: Editor {$editor_id} not found. Skipping.";
+      _openfed_log_message($sandbox, "Editor {$editor_id} not found. Skipping.", 'warning');
       _openfed_update_cke_update_progress($sandbox);
       return;
     }
 
-    $sandbox['messages'][] = "Migrating format: {$editor_id}";
+    _openfed_log_message($sandbox, "Migrating format: {$editor_id}", '', 0, TRUE);
 
     // Get the text format.
-    $text_format = $editor->getFilterFormat();
+    $text_format = FilterFormat::load($editor->id());
     if (!$text_format) {
       throw new \RuntimeException("Text format not found for {$editor_id}");
     }
@@ -108,6 +115,7 @@ function _openfed_update_cke_process_editor(array &$sandbox) {
     // Perform base migration using Drupal core's service.
     $smart_defaults = \Drupal::service('ckeditor5.smart_default_settings');
     $result = $smart_defaults->computeSmartDefaultSettings($editor, $text_format);
+    /** @var \Drupal\editor\Entity\Editor $updated_editor */
     $updated_editor = $result[0];
     $migration_messages = $result[1];
 
@@ -121,24 +129,48 @@ function _openfed_update_cke_process_editor(array &$sandbox) {
     // Post-process settings to avoid duplicate toolbar items.
     _openfed_update_cke_dedupe_toolbar_items($sandbox, $new_settings);
 
-    // Check for extra validation violations after save.
-    $violations = \Drupal\ckeditor5\Plugin\Editor\CKEditor5::validatePair($updated_editor, $text_format);
-    if ($violations->count() > 0) {
-      $sandbox['messages'][] = "⚠️  Text format validation errors found:";
-      foreach ($violations as $violation) {
-        $sandbox['messages'][] = "  - " . $violation->getMessage();
-      }
-    }
-
     // Save the updated editor.
     $updated_editor->setSettings($new_settings);
     $updated_editor->save();
 
-    $sandbox['messages'][] = "Successfully migrated format: {$editor_id}";
+    // Update filter_html settings based on CKEditor 5 configuration.
+    $has_html_restrictions = $updated_editor->getFilterFormat()->filters('filter_html')->status;
+    if ($has_html_restrictions) {
+      $ckeditor5PluginManager = \Drupal::service('plugin.manager.ckeditor5.plugin');
+      $enabled_plugins = $ckeditor5PluginManager->getEnabledDefinitions($updated_editor);
+      // Compute elements provided by the current CKEditor 5 settings.
+      $restrictions = new HTMLRestrictions($ckeditor5PluginManager->getProvidedElements(array_keys($enabled_plugins), $updated_editor));
+
+      // Compute eventual filter_html setting. Eventual as in: this is the list
+      // of eventually allowed HTML tags.
+      // @see \Drupal\filter\FilterFormatFormBase::submitForm()
+      // @see ckeditor5_form_filter_format_form_alter()
+      $filter_html_config = $updated_editor->getFilterFormat()->filters('filter_html')->getConfiguration();
+      $filter_html_config['settings']['allowed_html'] = $restrictions->toFilterHtmlAllowedTagsString();
+      // Ensure that the result of ::computeSmartDefaultSettings() always complies
+      // with the config schema.
+      // TRICKY: because we're validating using `editor.editor.*` as the config
+      // name, TextEditorObjectDependentValidatorTrait will load the stored filter
+      // format. That has not yet been updated at this point, so in order for
+      // validation to pass, it must first be saved.
+      // @see \Drupal\ckeditor5\Plugin\Validation\Constraint\TextEditorObjectDependentValidatorTrait::createTextEditorObjectFromContext()
+      // @todo Remove this work-around in https://www.drupal.org/project/drupal/issues/3231354
+      $updated_editor->getFilterFormat()->setFilterConfig('filter_html', $filter_html_config)->save();
+    }
+
+    // Check for extra validation violations after save.
+    $violations = CKEditor5::validatePair($updated_editor, $text_format, FALSE);
+    if ($violations->count() > 0) {
+      _openfed_log_message($sandbox, "Text format validation errors found:", 'warning');
+      foreach ($violations as $violation) {
+        _openfed_log_message($sandbox, "- " . $violation->getMessage(), '', 2, TRUE);
+      }
+    }
+
+    _openfed_log_message($sandbox, "Successfully migrated format: {$editor_id}", 'success');
   }
   catch (\Exception $e) {
-    $sandbox['messages'][] = "Error migrating format {$editor_id}: " . $e->getMessage();
-    $sandbox['errors']++;
+    _openfed_log_message($sandbox, "Error migrating format {$editor_id}: " . $e->getMessage(), 'error');
     \Drupal::logger('openfed')->error('CKEditor migration error for @editor_id: @message', [
       '@editor_id' => $editor_id,
       '@message' => $e->getMessage(),
@@ -157,7 +189,7 @@ function _openfed_update_cke_process_editor(array &$sandbox) {
  * @return array
  *   Array of enabled button names.
  */
-function _openfed_update_cke_get_enabled_buttons($editor) {
+function _openfed_update_cke_get_enabled_buttons(EditorInterface $editor) {
   $original_settings = $editor->getSettings();
   $original_toolbar = $original_settings['toolbar']['rows'] ?? [];
 
@@ -185,7 +217,7 @@ function _openfed_update_cke_log_messages(array &$sandbox, array $migration_mess
   foreach ($migration_messages as $type => $type_messages) {
     foreach ($type_messages as $message) {
       $clean_message = strip_tags($message);
-      $sandbox['messages'][] = "  [{$type}] {$clean_message}";
+      _openfed_log_message($sandbox, "- " . $clean_message, "debug", 2);
     }
   }
 }
@@ -204,8 +236,8 @@ function _openfed_update_cke_log_messages(array &$sandbox, array $migration_mess
  * @param array $enabled_buttons
  *   Array of enabled button names from CKEditor 4.
  */
-function _openfed_update_cke_apply_custom_migrations(&$sandbox, $editor, $format, array &$settings, array $enabled_buttons) {
-  $sandbox['messages'][] = "Starting custom migrations for format: {$format->id()}";
+function _openfed_update_cke_apply_custom_migrations(&$sandbox, EditorInterface $editor, FilterFormatInterface $format, array &$settings, array $enabled_buttons) {
+  _openfed_log_message($sandbox, "Starting custom migrations for format: {$format->id()}", 'debug');
 
   # Load CKEditor migration helper functions.
   include_once __DIR__ . '/openfed.ckeditor5.migration.inc';
@@ -221,26 +253,25 @@ function _openfed_update_cke_apply_custom_migrations(&$sandbox, $editor, $format
     '_openfed_migrate_templates',
   ];
 
-  $sandbox['messages'][] = "Checking " . count($migrations) . " migration functions";
+  _openfed_log_message($sandbox, "Checking " . count($migrations) . " migration functions", 'debug');
 
   foreach ($migrations as $migration_function) {
     if (function_exists($migration_function)) {
-      $sandbox['messages'][] = "  Executing: {$migration_function}";
+      _openfed_log_message($sandbox, "Executing: {$migration_function}", 'debug', 2);
       try {
         $migration_function($sandbox, $editor, $format, $settings, $enabled_buttons);
-        $sandbox['messages'][] = "  ✓ {$migration_function} completed";
+        _openfed_log_message($sandbox, "✓ {$migration_function} completed", 'debug', 2);
       }
       catch (\Exception $e) {
-        $sandbox['messages'][] = "  ERROR in {$migration_function}: " . $e->getMessage();
-        $sandbox['errors']++;
+        _openfed_log_message($sandbox, "ERROR in {$migration_function}: " . $e->getMessage(), 'error');
       }
     }
     else {
-      $sandbox['messages'][] = "  ⚠️  WARNING: Function {$migration_function} does not exist";
+      _openfed_log_message($sandbox, "Function {$migration_function} does not exist", 'warning');
     }
   }
 
-  $sandbox['messages'][] = "Custom migrations completed for format: {$format->id()}";
+  _openfed_log_message($sandbox, "Custom migrations completed for format: {$format->id()}", 'debug');
 }
 
 /**
@@ -311,7 +342,7 @@ function _openfed_update_cke_dedupe_toolbar_items(array &$sandbox, array &$setti
       $details = ' Removed duplicates: ' . implode(', ', $parts) . '.';
     }
 
-    $sandbox['messages'][] = '  Cleaned up toolbar: removed duplicate buttons.' . $details;
+    _openfed_log_message($sandbox, '  Cleaned up toolbar: removed duplicate buttons.' . $details, 'debug');
   }
 }
 
@@ -348,23 +379,17 @@ function _openfed_update_cke_finalize(array &$sandbox) {
     $module_handler = \Drupal::moduleHandler();
     if (!$module_handler->moduleExists('openfed_ckeditor')) {
       \Drupal::service('module_installer')->install(['openfed_ckeditor']);
-      $sandbox['messages'][] = 'Enabled Openfed CKEditor module.';
+      _openfed_log_message($sandbox, 'Enabled Openfed CKEditor module.', 'debug');
     }
 
-    // Clear all caches.
-    drupal_flush_all_caches();
-    $sandbox['messages'][] = 'Cleared all caches.';
-
     // Add summary.
-    $summary = _openfed_update_cke_build_summary($sandbox);
-    $sandbox['messages'][] = $summary;
+    _openfed_update_cke_build_summary($sandbox);
   }
   catch (\Exception $e) {
-    $sandbox['messages'][] = 'Error during finalization: ' . $e->getMessage();
-    $sandbox['errors']++;
+    _openfed_log_message($sandbox, 'Error during finalization: ' . $e->getMessage(), 'error');
   }
 
-  return implode("\n", $sandbox['messages']);
+  return "Summary CKEditor4 > CKEditor5\n" . implode("\n", $sandbox['messages']);
 }
 
 /**
@@ -394,10 +419,10 @@ function _openfed_update_cke_cleanup_modules(array &$sandbox) {
 
     try {
       $module_installer->uninstall([$module]);
-      $sandbox['messages'][] = "Disabled {$label} module. Deprecated and will be removed in future Openfed versions.";
+      _openfed_log_message($sandbox, "Disabled {$label} module. Deprecated and will be removed in future Openfed versions.", 'debug');
     }
     catch (\Exception $e) {
-      $sandbox['messages'][] = "⚠️  Warning: Could not uninstall {$label} module: " . $e->getMessage();
+      _openfed_log_message($sandbox, "Could not uninstall {$label} module: " . $e->getMessage(), 'warning');
     }
   }
 }
@@ -417,9 +442,10 @@ function _openfed_update_cke_build_summary(array &$sandbox) {
   $successful = $total - $errors;
 
   if ($errors > 0) {
-    return "\nMigration completed: {$successful}/{$total} format(s) migrated successfully, {$errors} error(s).";
+    _openfed_log_message($sandbox, "Migration completed: {$successful}/{$total} format(s) migrated successfully, {$errors} error(s).", 'error');
+  }
+  else {
+    _openfed_log_message($sandbox, "Migration completed successfully! All {$total} format(s) migrated.", 'success');
   }
 
-  return "\nMigration completed successfully! All {$total} format(s) migrated.";
 }
-
