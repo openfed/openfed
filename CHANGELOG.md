@@ -1,6 +1,25 @@
 CHANGELOG
 =========
 
+09 February 2026 - Version 13.6.1
+------------------------------
+- Bug Fixes
+  - Rules module (4.0.1): Fixed annotation issues introduced in Drupal core 10.6
+    - Resolves: https://www.drupal.org/project/rules/issues/3563101
+  - OpenFed 12.5 update hook: Added support for monolingual sites
+  - OpenFed federal header: Fixed translation import issues
+- Improvements & Maintenance
+  - Orejime Videos module (1.1.0): Updated for better compatibility and stability
+  - CKEditor CodeMirror (3.1.1): Fixed CKEditor 5 compatibility issues
+    - Resolves: https://www.drupal.org/project/ckeditor_codemirror/issues/3531472
+  - Project dependencies: Restructured to enable Composer-managed Sass framework from openfed-libraries
+  - OpenFed 12.6 update hook: Added the following improvements:
+    - Wrap all CKEditor 5 stylesheets content within .ck-content to prevent editor styling conflicts
+    - Generate template SVGs based on base64-encoded legacy images
+    - Automatically enable the Find & Replace module
+    - Auto-validate all text editors after update to prevent configuration errors
+    - Reduce update verbosity by displaying only critical warnings and errors
+
 21 January 2026 - Version 13.6.0
 ------------------------------
 - CKEditor5 support
