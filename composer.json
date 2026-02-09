@@ -163,9 +163,6 @@
             "drupal/paragraphs_asymmetric_translation_widgets": {
                 "Issue: #3558026: paragraphs_asymmetric_translation_widgets combined patch": "https://www.drupal.org/files/issues/2025-11-15/paragraphs-asymmetric-translation-widgets-3558026-combined-2.patch"
             },
-            "drupal/rules": {
-                "Issue #3563101: doctrine/annotations is abandoned": "https://www.drupal.org/files/issues/2025-12-30/3563101-2-rules-replace-annotation-registry.patch"
-            },
             "drupal/token": {
                 "Issue #2945272: Bulk generating nodes with [node:content-type]/[node:title]": "https://www.drupal.org/files/issues/2019-03-14/2945272-8-token-language.patch"
             },
@@ -289,7 +286,7 @@
         "drupal/redirect": "1.12",
         "drupal/robotstxt": "1.6",
         "drupal/role_delegation": "^1.5",
-        "drupal/rules": "4.0.0",
+        "drupal/rules": "4.0.1",
         "drupal/scheduler": "2.2.1",
         "drupal/scheduler_content_moderation_integration": "3.0.4",
         "drupal/search_api": "1.39",
