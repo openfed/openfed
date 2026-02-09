@@ -85,9 +85,6 @@
             }
         },
         "patches": {
-            "codemirror/codemirror": {
-                "Issue #3531472: Drupal 10.5 / 11.2 incompatibility": "https://www.drupal.org/files/issues/2025-11-13/ckeditor_codemirror-codemirror-LIBRARY-3531472-copyobj-hasownproperty-fix.diff"
-            },
             "drupal/alertbox": {
                 "Issue #3384311: Drupal 10 compatibility incomplete": "https://www.drupal.org/files/issues/2023-08-30/Fix_D10_requirement_issue.patch"
             },
@@ -211,7 +208,7 @@
         "drupal/ckeditor5_plugin_pack": "^1.4",
         "drupal/ckeditor_abbreviation": "^5.0",
         "drupal/ckeditor_accordion": "2.3.0",
-        "drupal/ckeditor_codemirror": "3.1.0",
+        "drupal/ckeditor_codemirror": "3.1.1",
         "drupal/ckeditor_find": "1.0-beta3",
         "drupal/ckeditor_templates": "^1.4",
         "drupal/colorbox": "2.1.4",
