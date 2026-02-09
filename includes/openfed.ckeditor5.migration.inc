@@ -5,25 +5,28 @@
  * CKEditor 4 to CKEditor 5 migration helper functions.
  */
 
+use Drupal\editor\EditorInterface;
+use Drupal\filter\FilterFormatInterface;
+
 /**
  * Post-migration fix: Convert anchor link to bookmarks.
  *
  * This runs AFTER computeSmartDefaultSettings() has already migrated the editor.
  * Convert.
  */
-function _openfed_migrate_anchor_link(array &$sandbox, $editor, $format, array &$settings, array $enabled_buttons) {
+function _openfed_migrate_anchor_link(array &$sandbox, EditorInterface $editor, FilterFormatInterface $format, array &$settings, array $enabled_buttons) {
   // Check if Anchor button was enabled in CKEditor 4.
   if (!in_array('Anchor', $enabled_buttons)) {
-    $sandbox['messages'][] = "    No Anchor button found in CKEditor 4 toolbar, skipping bookmark migration";
+    _openfed_log_message($sandbox, "No Anchor button found in CKEditor 4 toolbar, skipping bookmark migration", 'debug', 4);
     return;
   }
 
-  $sandbox['messages'][] = "    Found Anchor button in CKEditor 4 toolbar";
+  _openfed_log_message($sandbox, "Found Anchor button in CKEditor 4 toolbar", 'debug', 4);
 
   // Ensure bookmark module is enabled.
   if (!\Drupal::moduleHandler()->moduleExists('ckeditor5_plugin_pack_bookmark')) {
     \Drupal::service('module_installer')->install(['ckeditor5_plugin_pack_bookmark']);
-    $sandbox['messages'][] = "    Enabled ckeditor5_plugin_pack_bookmark module";
+    _openfed_log_message($sandbox, "Enabled ckeditor5_plugin_pack_bookmark module", 'debug', 4);
   }
 
   // Get toolbar items.
@@ -36,16 +39,16 @@ function _openfed_migrate_anchor_link(array &$sandbox, $editor, $format, array &
     $toolbar_items = array_values(array_filter($toolbar_items, function($item) {
       return $item !== 'anchor';
     }));
-    $sandbox['messages'][] = "    Removed anchor button from toolbar";
+    _openfed_log_message($sandbox, "Removed anchor button from toolbar", 'debug', 4);
   }
 
   // Add bookmark button if not already present.
   if (!$has_bookmark) {
     $toolbar_items[] = 'bookmark';
-    $sandbox['messages'][] = "    Added bookmark button to toolbar";
+    _openfed_log_message($sandbox, "Added bookmark button to toolbar", 'debug', 4);
   }
   else {
-    $sandbox['messages'][] = "    bookmark button already in toolbar";
+    _openfed_log_message($sandbox, "bookmark button already in toolbar", 'debug', 4);
   }
 
   // Update toolbar items.
@@ -78,7 +81,7 @@ function _openfed_migrate_anchor_link(array &$sandbox, $editor, $format, array &
           }
 
           $updated_tags[] = $modified_tag;
-          $sandbox['messages'][] = "      Modified source editing: '" . htmlspecialchars($tag) . "' -> '" . htmlspecialchars($modified_tag) . "'";
+          _openfed_log_message($sandbox, "Modified source editing: '" . htmlspecialchars($tag) . "' -> '" . htmlspecialchars($modified_tag) . "'", 'debug', 6);
           $modified = TRUE;
         }
         else {
@@ -95,7 +98,7 @@ function _openfed_migrate_anchor_link(array &$sandbox, $editor, $format, array &
     }
   }
 
-  $sandbox['messages'][] = "    SUCCESS: Anchor migrated to bookmark";
+  _openfed_log_message($sandbox, "Anchor migrated to bookmark", 'debug', 4);
 }
 
 /**
@@ -104,8 +107,8 @@ function _openfed_migrate_anchor_link(array &$sandbox, $editor, $format, array &
  * This runs AFTER computeSmartDefaultSettings() has already migrated the editor.
  * Sets specific CodeMirror options for the source editing plugin.
  */
-function _openfed_migrate_codemirror(array &$sandbox, $editor, $format, array &$settings, array $enabled_buttons) {
-  $sandbox['messages'][] = "    Setting CodeMirror options...";
+function _openfed_migrate_codemirror(array &$sandbox, EditorInterface $editor, FilterFormatInterface $format, array &$settings, array $enabled_buttons) {
+  _openfed_log_message($sandbox, "Setting CodeMirror options...", 'debug', 4);
 
   if (!isset($settings['plugins'])) {
     $settings['plugins'] = [];
@@ -124,7 +127,7 @@ function _openfed_migrate_codemirror(array &$sandbox, $editor, $format, array &$
   $settings['plugins']['ckeditor_codemirror_source_editing']['options']['searchBottom'] = TRUE;
   $settings['plugins']['ckeditor_codemirror_source_editing']['options']['styleActiveLine'] = TRUE;
 
-  $sandbox['messages'][] = "    SUCCESS: CodeMirror options set";
+  _openfed_log_message($sandbox, "CodeMirror options set", 'debug', 4);
 }
 
 
@@ -134,11 +137,11 @@ function _openfed_migrate_codemirror(array &$sandbox, $editor, $format, array &$
  * This runs AFTER computeSmartDefaultSettings() has already migrated the editor.
  * Adds link button and sets default Linkit profile if entity_embed filter is enabled.
  */
-function _openfed_migrate_entity_embed(array &$sandbox, $editor, $format, array &$settings, array $enabled_buttons) {
+function _openfed_migrate_entity_embed(array &$sandbox, EditorInterface $editor, FilterFormatInterface $format, array &$settings, array $enabled_buttons) {
   $filters = $format->get('filters');
 
   if (isset($filters['entity_embed']) && !empty($filters['entity_embed']['status'])) {
-    $sandbox['messages'][] = "    entity_embed filter enabled, checking link toolbar...";
+    _openfed_log_message($sandbox, "entity_embed filter enabled, checking link toolbar...", 'debug', 4);
 
     $toolbar = $settings['toolbar'] ?? [];
     $has_link = FALSE;
@@ -151,10 +154,10 @@ function _openfed_migrate_entity_embed(array &$sandbox, $editor, $format, array 
     }
 
     if (!$has_link) {
-      $sandbox['messages'][] = "    Adding link button to toolbar...";
+      _openfed_log_message($sandbox, "Adding link button to toolbar...", 'debug', 4);
       $toolbar['items'][] = 'link';
       $settings['toolbar'] = $toolbar;
-      $sandbox['messages'][] = "    Added link button";
+      _openfed_log_message($sandbox, "Added link button", 'debug', 4);
     }
 
     // Set default Linkit profile.
@@ -163,13 +166,13 @@ function _openfed_migrate_entity_embed(array &$sandbox, $editor, $format, array 
         $settings['plugins']['linkit_extension'] = [];
       }
       $settings['plugins']['linkit_extension']['linkit_profile'] = 'default';
-      $sandbox['messages'][] = "    Set default Linkit profile";
+      _openfed_log_message($sandbox, "Set default Linkit profile", 'debug', 4);
     }
 
-    $sandbox['messages'][] = "    SUCCESS: entity_embed configured";
+    _openfed_log_message($sandbox, "entity_embed configured", 'debug', 4);
   }
   else {
-    $sandbox['messages'][] = "    entity_embed not enabled, skipping";
+    _openfed_log_message($sandbox, "entity_embed not enabled, skipping", 'debug', 4);
   }
 }
 /**
@@ -178,22 +181,22 @@ function _openfed_migrate_entity_embed(array &$sandbox, $editor, $format, array 
  * This runs AFTER computeSmartDefaultSettings() has already migrated the editor.
  * Removes heading1 (H1) from enabled headings.
  */
-function _openfed_migrate_heading(array &$sandbox, $editor, $format, array &$settings, array $enabled_buttons) {
+function _openfed_migrate_heading(array &$sandbox, EditorInterface $editor, FilterFormatInterface $format, array &$settings, array $enabled_buttons) {
   if (isset($settings['plugins']['ckeditor5_heading']['enabled_headings'])) {
     $enabled_headings = $settings['plugins']['ckeditor5_heading']['enabled_headings'];
 
     if (in_array('heading1', $enabled_headings)) {
-      $sandbox['messages'][] = "    Removing heading1 (H1)...";
+      _openfed_log_message($sandbox, "Removing heading1 (H1)...", 'debug', 4);
       $enabled_headings = array_values(array_diff($enabled_headings, ['heading1']));
       $settings['plugins']['ckeditor5_heading']['enabled_headings'] = $enabled_headings;
-      $sandbox['messages'][] = "    SUCCESS: Removed heading1";
+      _openfed_log_message($sandbox, "Removed heading1", 'debug', 4);
     }
     else {
-      $sandbox['messages'][] = "    heading1 not enabled";
+      _openfed_log_message($sandbox, "heading1 not enabled", 'debug', 4);
     }
   }
   else {
-    $sandbox['messages'][] = "    Heading plugin not found, skipping";
+    _openfed_log_message($sandbox, "Heading plugin not found, skipping", 'debug', 4);
   }
 }
 
@@ -203,12 +206,12 @@ function _openfed_migrate_heading(array &$sandbox, $editor, $format, array &$set
  * This runs AFTER computeSmartDefaultSettings() has already migrated the editor.
  * Ensures at least 2 view modes are available if allow_view_mode_override is enabled.
  */
-function _openfed_migrate_media(array &$sandbox, $editor, $format, array &$settings, array $enabled_buttons) {
+function _openfed_migrate_media(array &$sandbox, EditorInterface $editor, FilterFormatInterface $format, array &$settings, array $enabled_buttons) {
   if (isset($settings['plugins']['media_media'])) {
     $media_settings = $settings['plugins']['media_media'];
 
     if (!empty($media_settings['allow_view_mode_override'])) {
-      $sandbox['messages'][] = "    Fixing Media plugin view mode configuration...";
+      _openfed_log_message($sandbox, "Fixing Media plugin view mode configuration...", 'debug', 4);
 
       $filters = $format->get('filters');
 
@@ -219,7 +222,7 @@ function _openfed_migrate_media(array &$sandbox, $editor, $format, array &$setti
 
         // Ensure at least 2 view modes are available.
         if (count($existing_modes) < 2) {
-          $sandbox['messages'][] = "    Extending allowed_view_modes to ensure at least 2 modes...";
+          _openfed_log_message($sandbox, "Extending allowed_view_modes to ensure at least 2 modes...", 'debug', 4);
 
           // Start with existing modes or empty array.
           $new_modes = $existing_modes;
@@ -239,19 +242,19 @@ function _openfed_migrate_media(array &$sandbox, $editor, $format, array &$setti
           $format->set('filters', $filters);
           $format->save();
 
-          $sandbox['messages'][] = "    SUCCESS: Media plugin configured with " . count($new_modes) . " view modes";
+          _openfed_log_message($sandbox, "Media plugin configured with " . count($new_modes) . " view modes", 'debug', 4);
         }
         else {
-          $sandbox['messages'][] = "    Media plugin already has " . count($existing_modes) . " view modes, no changes needed";
+          _openfed_log_message($sandbox, "Media plugin already has " . count($existing_modes) . " view modes, no changes needed", 'debug', 4);
         }
       }
       else {
-        $sandbox['messages'][] = "    media_embed filter not enabled, skipping";
+        _openfed_log_message($sandbox, "media_embed filter not enabled, skipping", 'debug', 4);
       }
     }
   }
   else {
-    $sandbox['messages'][] = "    Media plugin not found, skipping";
+    _openfed_log_message($sandbox, "Media plugin not found, skipping", 'debug', 4);
   }
 }
 
@@ -262,12 +265,12 @@ function _openfed_migrate_media(array &$sandbox, $editor, $format, array &$setti
  * Removes any styles that use <img> tags, which are not supported in CKEditor 5 styles.
  * If no styles remain after cleanup (or were empty to begin with), removes the style button from toolbar.
  */
-function _openfed_migrate_styles(array &$sandbox, $editor, $format, array &$settings, array $enabled_buttons) {
-  $sandbox['messages'][] = "    Removing img tags from ckeditor5_style styles...";
+function _openfed_migrate_styles(array &$sandbox, EditorInterface $editor, FilterFormatInterface $format, array &$settings, array $enabled_buttons) {
+  _openfed_log_message($sandbox, "Removing img tags from ckeditor5_style styles...", 'debug', 4);
 
   // Check if styles configuration exists and is not empty.
   if (!isset($settings['plugins']['ckeditor5_style']['styles'])) {
-    $sandbox['messages'][] = "    No ckeditor5_style styles found, skipping";
+    _openfed_log_message($sandbox, "No ckeditor5_style styles found, skipping", 'debug', 4);
     return;
   }
 
@@ -275,7 +278,7 @@ function _openfed_migrate_styles(array &$sandbox, $editor, $format, array &$sett
 
   // Check if styles array is empty (CKEditor 4 had Styles button but no actual styles configured).
   if (empty($styles)) {
-    $sandbox['messages'][] = "    Styles array was already empty (no styles configured in CKEditor 4)";
+    _openfed_log_message($sandbox, "Styles array was already empty (no styles configured in CKEditor 4)", 'debug', 4);
     _openfed_migrate_styles_remove_empty_config($settings, $sandbox);
     return;
   }
@@ -284,7 +287,7 @@ function _openfed_migrate_styles(array &$sandbox, $editor, $format, array &$sett
 
   foreach ($styles as $index => $style) {
     if (isset($style['element']) && preg_match('/^<img\b/', $style['element'])) {
-      $sandbox['messages'][] = "    Removing style: " . ($style['label'] ?? 'unlabeled') . " (img tag)";
+      _openfed_log_message($sandbox, "Removing style: " . ($style['label'] ?? 'unlabeled') . " (img tag)", 'debug', 4);
       unset($styles[$index]);
       $modified = TRUE;
     }
@@ -294,15 +297,15 @@ function _openfed_migrate_styles(array &$sandbox, $editor, $format, array &$sett
     // Reindex array to prevent gaps in numeric keys.
     $styles = array_values($styles);
     $settings['plugins']['ckeditor5_style']['styles'] = $styles;
-    $sandbox['messages'][] = "    SUCCESS: img tags removed from styles";
+    _openfed_log_message($sandbox, "img tags removed from styles", 'debug', 4);
   }
   else {
-    $sandbox['messages'][] = "    No img tags found in styles";
+    _openfed_log_message($sandbox, "No img tags found in styles", 'debug', 4);
   }
 
   // Check if styles array is now empty after removing img tags.
   if (empty($styles)) {
-    $sandbox['messages'][] = "    Styles array is empty after cleanup";
+    _openfed_log_message($sandbox, "Styles array is empty after cleanup", 'debug', 4);
     _openfed_migrate_styles_remove_empty_config($settings, $sandbox);
   }
 }
@@ -326,12 +329,12 @@ function _openfed_migrate_styles_remove_empty_config(array &$settings, array &$s
 
   if (count($toolbar_items) < $original_count) {
     $settings['toolbar']['items'] = $toolbar_items;
-    $sandbox['messages'][] = "    Removed 'style' button from toolbar";
+    _openfed_log_message($sandbox, "Removed 'style' button from toolbar", 'debug', 4);
   }
 
   // Remove the empty styles configuration.
   unset($settings['plugins']['ckeditor5_style']);
-  $sandbox['messages'][] = "    Removed empty ckeditor5_style plugin configuration";
+  _openfed_log_message($sandbox, "Removed empty ckeditor5_style plugin configuration", 'debug', 4);
 }
 
 /**
@@ -340,7 +343,7 @@ function _openfed_migrate_styles_remove_empty_config(array &$settings, array &$s
  * This runs AFTER computeSmartDefaultSettings() has already migrated the editor.
  * Removes redundant tags and attributes from source editing allowed_tags.
  */
-function _openfed_migrate_source_editing(array &$sandbox, $editor, $format, array &$settings, array $enabled_buttons) {
+function _openfed_migrate_source_editing(array &$sandbox, EditorInterface $editor, FilterFormatInterface $format, array &$settings, array $enabled_buttons) {
   if (isset($settings['plugins']['ckeditor5_sourceEditing'])) {
     $source_editing = $settings['plugins']['ckeditor5_sourceEditing'];
 
@@ -354,7 +357,7 @@ function _openfed_migrate_source_editing(array &$sandbox, $editor, $format, arra
       $elements_with_class = ['abbr', 'em', 'strong', 'ul', 'ol', 'li', 'table', 'caption', 'tbody', 'thead', 'tfoot', 'th', 'td', 'tr', 'blockquote', 'a', 'img', 'h2', 'h3', 'h4', 'h5', 'h6'];
 
       // Elements that are fully supported by CKEditor5 and should be removed entirely.
-      $fully_supported_elements = ['abbr', 'em', 'strong', 'li', 'p'];
+      $fully_supported_elements = ['abbr', 'em', 'strong', 'li', 'p', 'br'];
 
       foreach ($original_tags as $tag) {
         $should_remove = FALSE;
@@ -424,24 +427,24 @@ function _openfed_migrate_source_editing(array &$sandbox, $editor, $format, arra
       }
 
       if (count($removed_tags) > 0 || count($modified_tags) > 0) {
-        $sandbox['messages'][] = "    Fixing Source Editing plugin...";
+        _openfed_log_message($sandbox, "Fixing Source Editing plugin...", 'debug', 4);
         foreach ($removed_tags as $removed) {
-          $sandbox['messages'][] = "      Removed source editing: '" . htmlspecialchars($removed['tag']) . "' (" . htmlspecialchars($removed['reason']) . ")";
+          _openfed_log_message($sandbox, "Removed source editing: '" . htmlspecialchars($removed['tag']) . "' (" . htmlspecialchars($removed['reason']) . ")", 'debug', 6);
         }
         foreach ($modified_tags as $modified) {
-          $sandbox['messages'][] = "      Modified source editing: '" . htmlspecialchars($modified['from']) . "' -> '" . htmlspecialchars($modified['to']) . "'";
+          _openfed_log_message($sandbox, "Modified source editing: '" . htmlspecialchars($modified['from']) . "' -> '" . htmlspecialchars($modified['to']) . "'", 'debug', 6);
         }
 
         $settings['plugins']['ckeditor5_sourceEditing']['allowed_tags'] = $updated_tags;
-        $sandbox['messages'][] = "    SUCCESS: Source Editing cleaned";
+        _openfed_log_message($sandbox, "Source Editing cleaned", 'debug', 4);
       }
       else {
-        $sandbox['messages'][] = "    Source Editing already clean";
+        _openfed_log_message($sandbox, "Source Editing already clean", 'debug', 4);
       }
     }
   }
   else {
-    $sandbox['messages'][] = "    Source Editing plugin not found, skipping";
+    _openfed_log_message($sandbox, "Source Editing plugin not found, skipping", 'debug', 4);
   }
 }
 
@@ -451,18 +454,18 @@ function _openfed_migrate_source_editing(array &$sandbox, $editor, $format, arra
  * This runs AFTER computeSmartDefaultSettings() has already migrated the editor.
  * Extracts templates from ckeditor_templates.js files and creates config entities.
  */
-function _openfed_migrate_templates(array &$sandbox, $editor, $format, array &$settings, array $enabled_buttons) {
+function _openfed_migrate_templates(array &$sandbox, EditorInterface $editor, FilterFormatInterface $format, array &$settings, array $enabled_buttons) {
   // Check if Templates button was in CKEditor 4.
   if (!in_array('Templates', $enabled_buttons)) {
     return;
   }
 
-  $sandbox['messages'][] = "    Templates button was enabled in CKEditor 4";
+  _openfed_log_message($sandbox, "Templates button was enabled in CKEditor 4", 'debug', 4);
 
   // Ensure ckeditor5_plugin_pack_templates module is enabled.
   if (!\Drupal::moduleHandler()->moduleExists('ckeditor5_plugin_pack_templates')) {
     \Drupal::service('module_installer')->install(['ckeditor5_plugin_pack_templates']);
-    $sandbox['messages'][] = "    Enabled ckeditor5_plugin_pack_templates module";
+    _openfed_log_message($sandbox, "Enabled ckeditor5_plugin_pack_templates module", 'debug', 4);
   }
 
   // Initialize templates tracking in sandbox if not already done.
@@ -475,11 +478,11 @@ function _openfed_migrate_templates(array &$sandbox, $editor, $format, array &$s
   if ($sandbox['templates_processed']) {
     // Templates already created, add this format to existing template configs.
     if (!empty($sandbox['template_ids'])) {
-      $sandbox['messages'][] = "    Templates already extracted, adding format to existing templates";
+      _openfed_log_message($sandbox, "Templates already extracted, adding format to existing templates", 'debug', 4);
       _openfed_migrate_templates_add_format_to_templates($sandbox['template_ids'], $format, $sandbox);
     }
     else {
-      $sandbox['messages'][] = "    No templates were previously extracted";
+      _openfed_log_message($sandbox, "No templates were previously extracted", 'debug', 4);
     }
   }
   else {
@@ -487,14 +490,14 @@ function _openfed_migrate_templates(array &$sandbox, $editor, $format, array &$s
     $js_file = _openfed_migrate_templates_find_ckeditor_templates_file('ckeditor_templates.js');
 
     if (!$js_file) {
-      $sandbox['messages'][] = "    ⚠️  Warning: Could not find ckeditor_templates.js file. Skipping template extraction.";
+      _openfed_log_message($sandbox, "Could not find ckeditor_templates.js file. Skipping template extraction.", 'debug', 5);
       // Mark as processed even though no file found, to prevent repeated searches.
       $sandbox['templates_processed'] = TRUE;
       $sandbox['template_ids'] = [];
       return;
     }
 
-    $sandbox['messages'][] = "    Found template file: " . $js_file;
+    _openfed_log_message($sandbox, "Found template file: " . $js_file, 'debug', 4);
 
     // Extract templates from the JS file.
     $template_ids = _openfed_migrate_templates_extract_ckeditor_templates($js_file, $sandbox, $format, $settings);
@@ -504,22 +507,22 @@ function _openfed_migrate_templates(array &$sandbox, $editor, $format, array &$s
     $sandbox['template_ids'] = $template_ids;
 
     if (count($template_ids) > 0) {
-      $sandbox['messages'][] = "    Created " . count($template_ids) . " template(s)";
+      _openfed_log_message($sandbox, "Created " . count($template_ids) . " template(s)", 'debug', 4);
 
       // Remove the JS files.
       if (file_exists($js_file)) {
         unlink($js_file);
-        $sandbox['messages'][] = "    Removed: " . $js_file;
+        _openfed_log_message($sandbox, "Removed: " . $js_file, 'debug', 4);
       }
 
       $min_js_file = _openfed_migrate_templates_find_ckeditor_templates_file('ckeditor_templates.min.js');
       if ($min_js_file && file_exists($min_js_file)) {
         unlink($min_js_file);
-        $sandbox['messages'][] = "    Removed: " . $min_js_file;
+        _openfed_log_message($sandbox, "Removed: " . $min_js_file, 'debug', 4);
       }
     }
     else {
-      $sandbox['messages'][] = "    No templates were extracted from the file";
+      _openfed_log_message($sandbox, "No templates were extracted from the file", 'debug', 4);
       return;
     }
   }
@@ -530,13 +533,13 @@ function _openfed_migrate_templates(array &$sandbox, $editor, $format, array &$s
     if (!in_array('insertTemplate', $toolbar_items)) {
       $toolbar_items[] = 'insertTemplate';
       $settings['toolbar']['items'] = $toolbar_items;
-      $sandbox['messages'][] = "    Added insertTemplate button to toolbar";
+      _openfed_log_message($sandbox, "Added insertTemplate button to toolbar", 'debug', 4);
     }
     else {
-      $sandbox['messages'][] = "    insertTemplate button already in toolbar";
+      _openfed_log_message($sandbox, "insertTemplate button already in toolbar", 'debug', 4);
     }
 
-    $sandbox['messages'][] = "    SUCCESS: Templates configured for format: " . $format->id();
+    _openfed_log_message($sandbox, "Templates configured for format: " . $format->id(), 'debug', 4);
   }
 }
 
@@ -568,10 +571,10 @@ function _openfed_migrate_templates_find_ckeditor_templates_file($filename) {
 /**
  * Extract CKEditor templates from JS file and create config entities.
  */
-function _openfed_migrate_templates_extract_ckeditor_templates($js_file, array &$sandbox, $format, array &$settings) {
+function _openfed_migrate_templates_extract_ckeditor_templates($js_file, array &$sandbox, FilterFormatInterface $format, array &$settings) {
   $content = file_get_contents($js_file);
   if (!$content) {
-    $sandbox['messages'][] = "    ERROR: Could not read template file";
+    _openfed_log_message($sandbox, "Could not read template file", 'error', 4);
     return [];
   }
 
@@ -588,8 +591,8 @@ function _openfed_migrate_templates_extract_ckeditor_templates($js_file, array &
 
   // Extract templates array.
   if (!preg_match('/templates:\s*\[([\s\S]*?)\]\s*,?\s*}\s*\)/', $content, $templates_match)) {
-    $sandbox['messages'][] = "    ⚠️  WARNING: No templates array found in JS file";
-    $sandbox['messages'][] = "    The file may have an unexpected format. Please check the template file structure.";
+    _openfed_log_message($sandbox, "No templates array found in JS file", 'warning', 4);
+    _openfed_log_message($sandbox, "- The file may have an unexpected format. Please check the template file structure.", '', 4, TRUE);
     return [];
   }
 
@@ -604,7 +607,7 @@ function _openfed_migrate_templates_extract_ckeditor_templates($js_file, array &
     return !empty(trim($obj));
   });
 
-  $sandbox['messages'][] = "    Split into " . count($template_objects) . " template object(s), parsing...";
+  _openfed_log_message($sandbox, "Split into " . count($template_objects) . " template object(s), parsing...", 'debug', 4);
 
   $parsed_templates = [];
   foreach ($template_objects as $idx => $template_obj) {
@@ -621,28 +624,28 @@ function _openfed_migrate_templates_extract_ckeditor_templates($js_file, array &
 
     // Extract title
     if (!preg_match('/title:\s*(?:Drupal\.t\()?\s*["\']([^"\']+)["\']\s*\)?/', $template_obj, $title_match)) {
-      $sandbox['messages'][] = "      ⚠️  Template #" . ($idx + 1) . ": Could not extract title";
+      _openfed_log_message($sandbox, "Template #" . ($idx + 1) . ": Could not extract title", 'warning', 6);
       continue;
     }
     $title = $title_match[1];
 
     // Extract image
     if (!preg_match('/image:\s*["\']([^"\']+)["\']/', $template_obj, $image_match)) {
-      $sandbox['messages'][] = "      ⚠️  Template #" . ($idx + 1) . " ('$title'): Could not extract image";
+      _openfed_log_message($sandbox, "Template #" . ($idx + 1) . " ('$title'): Could not extract image", 'warning', 6);
       continue;
     }
     $image = $image_match[1];
 
     // Extract description
     if (!preg_match('/description:\s*(?:Drupal\.t\()?\s*["\']([^"\']+)["\']\s*\)?/', $template_obj, $desc_match)) {
-      $sandbox['messages'][] = "      ⚠️  Template #" . ($idx + 1) . " ('$title'): Could not extract description";
+      _openfed_log_message($sandbox, "Template #" . ($idx + 1) . " ('$title'): Could not extract description", 'warning', 6);
       continue;
     }
     $description = $desc_match[1];
 
     // Extract html - everything after 'html:' until the end
     if (!preg_match('/html:\s*([\s\S]+?)(?:\s*\}?\s*$)/', $template_obj, $html_match)) {
-      $sandbox['messages'][] = "      ⚠️  Template #" . ($idx + 1) . " ('$title'): Could not extract html";
+      _openfed_log_message($sandbox, "Template #" . ($idx + 1) . " ('$title'): Could not extract html", 'warning', 6);
       continue;
     }
     $html_parts = $html_match[1];
@@ -656,12 +659,12 @@ function _openfed_migrate_templates_extract_ckeditor_templates($js_file, array &
   }
 
   if (empty($parsed_templates)) {
-    $sandbox['messages'][] = "    ⚠️  WARNING: No templates matched the expected format in JS file";
-    $sandbox['messages'][] = "    Expected format: { title: 'Title' or Drupal.t('Title'), image: 'image.png', description: 'Description' or Drupal.t('Description'), html: '...' }";
+    _openfed_log_message($sandbox, "No templates matched the expected format in JS file", 'warning', 4);
+    _openfed_log_message($sandbox, "- Expected format: { title: 'Title' or Drupal.t('Title'), image: 'image.png', description: 'Description' or Drupal.t('Description'), html: '...' }", '', 4, TRUE);
     return [];
   }
 
-  $sandbox['messages'][] = "    Found " . count($parsed_templates) . " template(s) in JS file, creating config entities...";
+  _openfed_log_message($sandbox, "Found " . count($parsed_templates) . " template(s) in JS file, creating config entities...", 'debug', 4);
 
   $config_storage = \Drupal::service('config.storage');
   $uuid_service = \Drupal::service('uuid');
@@ -706,8 +709,8 @@ function _openfed_migrate_templates_extract_ckeditor_templates($js_file, array &
     $svg_code = _openfed_migrate_templates_create_svg_from_image($image_path, $sandbox);
 
     if (!$svg_code && $image_path) {
-      $sandbox['messages'][] = "      ⚠️  Warning: No SVG icon created for image \"$image\" in template \"$title\"";
-      $sandbox['messages'][] = "      Please manually validate at /admin/config/ckeditor5-templates/content-templates and convert image \"{$images_path}\" to SVG";
+      _openfed_log_message($sandbox, "No SVG icon created for image \"$image\" in template \"$title\"", 'warning', 6);
+      _openfed_log_message($sandbox, "- Please manually validate at /admin/config/ckeditor5-templates/content-templates and convert image \"{$images_path}\" to SVG", '', 6, TRUE);
     }
 
     // Create config entity.
@@ -729,12 +732,12 @@ function _openfed_migrate_templates_extract_ckeditor_templates($js_file, array &
 
     $config_name = 'ckeditor5_plugin_pack_templates.ckeditor5_template.' . $id;
     $config_storage->write($config_name, $config_data);
-    $sandbox['messages'][] = "      Created template config: $id (\"$title\")";
+    _openfed_log_message($sandbox, "Created template config: $id (\"$title\")", 'debug', 6);
 
     // Remove image file if it exists.
     if ($image_path && file_exists($image_path)) {
       unlink($image_path);
-      $sandbox['messages'][] = "      Removed image: " . $image_path;
+      _openfed_log_message($sandbox, "Removed image: " . $image_path, 'debug', 6);
     }
 
     $template_ids[] = $id;
@@ -840,7 +843,7 @@ function _openfed_migrate_templates_validate_and_add_styles(array $classes_to_va
         ];
         $existing_styles[] = $new_style;
         $added_styles[] = "$tag.$class";
-        $sandbox['messages'][] = "      Added style: $tag.$class";
+        _openfed_log_message($sandbox, "Added style: $tag.$class", 'debug', 6);
       }
     }
   }
@@ -848,8 +851,8 @@ function _openfed_migrate_templates_validate_and_add_styles(array $classes_to_va
   // Update settings if new styles were added.
   if (!empty($added_styles)) {
     $settings['plugins']['ckeditor5_style']['styles'] = $existing_styles;
-    $sandbox['messages'][] = "    Added " . count($added_styles) . " missing style(s) from templates";
-    $sandbox['messages'][] = "    ⚠️  WARNING: Manual validation required!";
+    _openfed_log_message($sandbox, "Added " . count($added_styles) . " missing style(s) from templates", 'debug', 4);
+    _openfed_log_message($sandbox, "Manual validation required!", 'debug', 4);
   }
 }
 
@@ -871,7 +874,7 @@ function _openfed_migrate_templates_create_svg_from_image($image_path, array &$s
 
   $image_info = @getimagesize($image_path);
   if (!$image_info) {
-    $sandbox['messages'][] = "      Could not get image info for: " . basename($image_path);
+    _openfed_log_message($sandbox, "Could not get image info for: " . basename($image_path), 'error', 6);
     return '';
   }
 
@@ -882,7 +885,7 @@ function _openfed_migrate_templates_create_svg_from_image($image_path, array &$s
   // Read the image file and encode as base64.
   $image_data = file_get_contents($image_path);
   if (!$image_data) {
-    $sandbox['messages'][] = "      Could not read image file: " . basename($image_path);
+    _openfed_log_message($sandbox, "Could not read image file: " . basename($image_path), 'error', 6);
     return '';
   }
 
@@ -893,7 +896,7 @@ function _openfed_migrate_templates_create_svg_from_image($image_path, array &$s
   $svg .= '<image width="' . $width . '" height="' . $height . '" xlink:href="data:' . $mime_type . ';base64,' . $base64 . '"/>';
   $svg .= '</svg>';
 
-  $sandbox['messages'][] = "      Created SVG from image: " . basename($image_path) . " ({$width}x{$height})";
+  _openfed_log_message($sandbox, "Created SVG from image: " . basename($image_path) . " ({$width}x{$height})", 'debug', 6);
 
   return $svg;
 }
@@ -908,7 +911,7 @@ function _openfed_migrate_templates_create_svg_from_image($image_path, array &$s
  * @param array $sandbox
  *   The sandbox array for messages.
  */
-function _openfed_migrate_templates_add_format_to_templates(array $template_ids, $format, array &$sandbox) {
+function _openfed_migrate_templates_add_format_to_templates(array $template_ids, FilterFormatInterface $format, array &$sandbox) {
   $config_storage = \Drupal::service('config.storage');
   $format_id = $format->id();
   $updated_count = 0;
@@ -928,10 +931,10 @@ function _openfed_migrate_templates_add_format_to_templates(array $template_ids,
   }
 
   if ($updated_count > 0) {
-    $sandbox['messages'][] = "    Added format '$format_id' to $updated_count template(s)";
+    _openfed_log_message($sandbox, "Added format '$format_id' to $updated_count template(s)", 'debug', 4);
   }
   else {
-    $sandbox['messages'][] = "    Format '$format_id' already in all templates";
+    _openfed_log_message($sandbox, "Format '$format_id' already in all templates", 'debug', 4);
   }
 }
 
@@ -948,14 +951,14 @@ function _openfed_migrate_templates_add_format_to_templates(array $template_ids,
  *   The sandbox array.
  */
 function _openfed_refactor_ckeditor_stylesheets(array &$sandbox) {
-  $sandbox['messages'][] = "Refactoring ckeditor_stylesheets in theme.info.yml files...";
+  _openfed_log_message($sandbox, "Refactoring ckeditor_stylesheets in theme.info.yml files...", 'debug');
 
   $app_root = \Drupal::root();
   $custom_themes_path = $app_root . '/themes/custom';
 
   // Check if custom themes directory exists.
   if (!is_dir($custom_themes_path)) {
-    $sandbox['messages'][] = "  No custom themes directory found.";
+    _openfed_log_message($sandbox, "No custom themes directory found.", 'debug', 2);
     return;
   }
 
@@ -967,7 +970,7 @@ function _openfed_refactor_ckeditor_stylesheets(array &$sandbox) {
   $info_files = array_column($files, 'uri');
 
   if (empty($info_files)) {
-    $sandbox['messages'][] = "  No .info.yml files found in custom themes.";
+    _openfed_log_message($sandbox, "No .info.yml files found in custom themes.", 'debug', 2);
     return;
   }
 
@@ -981,7 +984,7 @@ function _openfed_refactor_ckeditor_stylesheets(array &$sandbox) {
       continue;
     }
 
-    $sandbox['messages'][] = "  Found ckeditor_stylesheets in: " . basename(dirname($info_file));
+    _openfed_log_message($sandbox, "Found ckeditor_stylesheets in: " . basename(dirname($info_file)), 'debug', 2);
 
     // Extract CSS paths from ckeditor_stylesheets section.
     $css_paths = _openfed_extract_css_paths_from_info($content);
@@ -989,7 +992,7 @@ function _openfed_refactor_ckeditor_stylesheets(array &$sandbox) {
 
     // Process each CSS path.
     foreach ($css_paths as $css_path) {
-      $sandbox['messages'][] = "    CSS path: $css_path";
+      _openfed_log_message($sandbox, "CSS path: $css_path", 'debug', 4);
 
       // Try to find the SCSS source file by scanning the theme directory.
       $scss_filename = basename(preg_replace('/\.css$/', '.scss', $css_path));
@@ -1002,11 +1005,11 @@ function _openfed_refactor_ckeditor_stylesheets(array &$sandbox) {
         $full_css_path = $theme_dir . '/' . $css_path;
         if (file_exists($full_css_path)) {
           unlink($full_css_path);
-          $sandbox['messages'][] = "    Removed old CSS file (will be regenerated): $css_path";
+          _openfed_log_message($sandbox, "Removed old CSS file (will be regenerated): $css_path", 'debug', 4);
         }
       }
       else {
-        $sandbox['messages'][] = "    ⚠️  WARNING: SCSS file not found for: $css_path";
+        _openfed_log_message($sandbox, "SCSS file not found for: $css_path", 'warning', 4);
       }
     }
 
@@ -1014,19 +1017,18 @@ function _openfed_refactor_ckeditor_stylesheets(array &$sandbox) {
     $updated_content = str_replace('ckeditor_stylesheets:', 'ckeditor5-stylesheets:', $content);
     file_put_contents($info_file, $updated_content);
 
-    $sandbox['messages'][] = "  Updated ckeditor_stylesheets to ckeditor5-stylesheets in: " . basename($info_file);
+    _openfed_log_message($sandbox, "Updated ckeditor_stylesheets to ckeditor5-stylesheets in: " . basename($info_file), 'debug', 2);
     $updated_count++;
   }
 
   if ($updated_count > 0) {
-    $sandbox['messages'][] = "Successfully updated $updated_count theme.info.yml file(s).";
-    $sandbox['messages'][] = "";
-    $sandbox['messages'][] = "⚠️  WARNING: Manual validation required!";
-    $sandbox['messages'][] = "Please manually review heading styles (h1-h6) in updated SCSS files.";
-    $sandbox['messages'][] = "After validation, recompile your theme's CSS to apply changes.";
+    _openfed_log_message($sandbox, "Successfully updated $updated_count theme.info.yml file(s).", 'debug');
+    _openfed_log_message($sandbox, "Manual validation required for ckeditor stylesheet!", 'warning');
+    _openfed_log_message($sandbox, "- Please manually review heading styles (h1-h6) in updated SCSS files.", '', 2, TRUE);
+    _openfed_log_message($sandbox, "- After validation, recompile your theme's CSS to apply changes.", '', 2, TRUE);
   }
   else {
-    $sandbox['messages'][] = "No ckeditor_stylesheets definitions found in theme.info.yml files.";
+    _openfed_log_message($sandbox, "No ckeditor_stylesheets definitions found in theme.info.yml files.", 'debug');
   }
 }
 
@@ -1181,14 +1183,14 @@ function _openfed_update_scss_for_ckeditor5(array &$sandbox, $scss_file_path) {
     $updated_content .= "}\n";
   }
 
-  $sandbox['messages'][] = "    CKEditor 5 content styles";
-  $sandbox['messages'][] = "    Original styles updated for CKEditor 5";
-  $sandbox['messages'][] = "    All content wrapped in .ck-content";
-  $sandbox['messages'][] = "    Removed: Lines containing .cke_panel_listItem (CKEditor 4 specific)";
-  $sandbox['messages'][] = "    Source: https://www.drupal.org/node/3259165";
+  _openfed_log_message($sandbox, "CKEditor ckeditor_stylesheets", 'debug', 4);
+  _openfed_log_message($sandbox, "- Original styles updated for CKEditor 5", 'debug', 6);
+  _openfed_log_message($sandbox, "- All content wrapped in .ck-content", 'debug', 6);
+  _openfed_log_message($sandbox, "- Removed: Lines containing .cke_panel_listItem (CKEditor 4 specific)", 'debug', 6);
+  _openfed_log_message($sandbox, "- Source: https://www.drupal.org/node/3259165", 'debug', 6);
 
   file_put_contents($scss_file_path, $updated_content);
-  $sandbox['messages'][] = "    Updated SCSS with .ck-content: " . basename($scss_file_path);
+  _openfed_log_message($sandbox, "Updated SCSS with .ck-content: " . basename($scss_file_path), 'debug', 4);
 }
 
 /**
@@ -1219,4 +1221,3 @@ function _openfed_indent_scss_content($content, $spaces) {
 
   return implode("\n", $indented_lines);
 }
-
