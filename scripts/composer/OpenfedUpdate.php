@@ -98,19 +98,35 @@ class OpenfedUpdate {
     // We'll merge the contents of the zip archive, but we'll ignore some
     // files. Those files will be removed/unlink.
     unlink($zipFile);
-    unlink($extractPath . DIRECTORY_SEPARATOR . 'openfed-project-' . self::$latestOpenfedVersion . DIRECTORY_SEPARATOR . '.gitignore');
-    unlink($extractPath . DIRECTORY_SEPARATOR . 'openfed-project-' . self::$latestOpenfedVersion . DIRECTORY_SEPARATOR . 'README.md');
+
+    // Remove files that should be ignored during the update process.
+    $projectDir = $extractPath . DIRECTORY_SEPARATOR . 'openfed-project-' . self::$latestOpenfedVersion . DIRECTORY_SEPARATOR;
+    $filesToRemove = ['.gitignore', 'README.md', 'CHANGELOG.md'];
+
+    foreach ($filesToRemove as $file) {
+      $filePath = $projectDir . $file;
+      if (file_exists($filePath)) {
+        unlink($filePath);
+      }
+    }
 
     // Composer.json and composer.patches.json, if exists, will be merged.
     // This is a best effort merge and should be manually confirmed.
-    self::mergeComposer($extractPath . DIRECTORY_SEPARATOR . 'openfed-project-' . self::$latestOpenfedVersion . DIRECTORY_SEPARATOR . 'composer.json', '.' . DIRECTORY_SEPARATOR . 'composer.json');
-    unlink($extractPath . DIRECTORY_SEPARATOR . 'openfed-project-' . self::$latestOpenfedVersion . DIRECTORY_SEPARATOR . 'composer.json');
-    self::mergeComposer($extractPath . DIRECTORY_SEPARATOR . 'openfed-project-' . self::$latestOpenfedVersion . DIRECTORY_SEPARATOR . 'composer.patches.json', '.' . DIRECTORY_SEPARATOR . 'composer.patches.json');
-    unlink($extractPath . DIRECTORY_SEPARATOR . 'openfed-project-' . self::$latestOpenfedVersion . DIRECTORY_SEPARATOR . 'composer.patches.json');
+    $composerFiles = ['composer.json', 'composer.patches.json'];
+
+    foreach ($composerFiles as $composerFile) {
+      $sourcePath = $projectDir . $composerFile;
+      $targetPath = '.' . DIRECTORY_SEPARATOR . $composerFile;
+
+      if (file_exists($sourcePath)) {
+        self::mergeComposer($sourcePath, $targetPath);
+        unlink($sourcePath);
+      }
+    }
 
     // All the remaining files will be copied as is (i.e.
     // composer.openfed.json)
-    self::recurseCopy($extractPath . DIRECTORY_SEPARATOR . 'openfed-project-' . self::$latestOpenfedVersion, '.');
+    self::recurseCopy($projectDir, '.');
     self::deleteDirectory($extractPath);
 
     echo "---- Files updated. You still have to check your composer.json manually.\n\n";
