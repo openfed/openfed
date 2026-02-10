@@ -105,9 +105,6 @@
             "drupal/ckeditor_accordion": {
                 "Issue #3124167: Provide an accessible variant": "https://www.drupal.org/files/issues/2025-10-13/ckeditor_accordion-provide-accessible-variant-3124167-55.patch"
             },
-            "drupal/ckeditor_media_resize": {
-                "Issue #3409595: Selected widths larger than largest available size (CKE Media Resize Extra Large) should fall back to the largest size rather than Default width": "https://www.drupal.org/files/issues/2025-02-13/ckeditor_media_resize-3409595-8.patch"
-            },
             "drupal/disable_route_normalizer": {
                 "Issue #3376799: Could not check compatibility between Drupal\\disable_route_normalizer\\DisableRouteNormalizer\\DisableRouteNormalizer and Drupal\\redirect\\EventSubscriber\\RouteNormalizerRequestSubscriber": "https://www.drupal.org/files/issues/2023-07-26/disable_route_normalizer-deprecated-class-GetResponseEvent-3376799-4.patch"
             },
