@@ -159,7 +159,7 @@ function _openfed_update_cke_process_editor(array &$sandbox) {
     }
 
     // Check for extra validation violations after save.
-    $violations = CKEditor5::validatePair($updated_editor, $text_format, FALSE);
+    $violations = CKEditor5::validatePair($updated_editor, $text_format);
     if ($violations->count() > 0) {
       _openfed_log_message($sandbox, "Text format validation errors found:", 'warning');
       foreach ($violations as $violation) {
