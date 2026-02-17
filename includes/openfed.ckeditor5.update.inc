@@ -251,6 +251,7 @@ function _openfed_update_cke_apply_custom_migrations(&$sandbox, EditorInterface 
     '_openfed_migrate_styles',
     '_openfed_migrate_source_editing',
     '_openfed_migrate_templates',
+    '_openfed_migrate_copy_paste',
   ];
 
   _openfed_log_message($sandbox, "Checking " . count($migrations) . " migration functions", 'debug');

@@ -5,6 +5,7 @@
  * CKEditor 4 to CKEditor 5 migration helper functions.
  */
 
+use Drupal\ckeditor5\Plugin\CKEditor5PluginConfigurableInterface;
 use Drupal\editor\EditorInterface;
 use Drupal\filter\FilterFormatInterface;
 
@@ -935,6 +936,54 @@ function _openfed_migrate_templates_add_format_to_templates(array $template_ids,
   }
   else {
     _openfed_log_message($sandbox, "Format '$format_id' already in all templates", 'debug', 4);
+  }
+}
+
+/**
+ * Post-migration fix: Activate the ckeditor5_paste_filter.
+ *
+ * This runs AFTER computeSmartDefaultSettings() has already migrated the editor.
+ * Enables the ckeditor5_paste_filter module if any paste-related buttons
+ * (Cut, Copy, Paste, PasteText, PasteFromWord) were enabled in CKEditor 4.
+ */
+function _openfed_migrate_copy_paste(array &$sandbox, EditorInterface $editor, FilterFormatInterface $format, array &$settings, array $enabled_buttons) {
+  // Define paste-related buttons to check for.
+  $paste_buttons = ['Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord'];
+
+  // Find which paste buttons were enabled.
+  $found_buttons = array_intersect($paste_buttons, $enabled_buttons);
+
+  if (empty($found_buttons)) {
+    _openfed_log_message($sandbox, "No paste-related buttons found in CKEditor 4 toolbar, skipping paste filter migration", 'debug', 4);
+    return;
+  }
+
+  _openfed_log_message($sandbox, "Found paste-related buttons in CKEditor 4: " . implode(', ', $found_buttons), 'debug', 4);
+
+  // Install the ckeditor5_paste_filter module.
+  try {
+    if (!\Drupal::moduleHandler()->moduleExists('ckeditor5_paste_filter')) {
+      \Drupal::service('module_installer')->install(['ckeditor5_paste_filter']);
+      _openfed_log_message($sandbox, "Successfully enabled ckeditor5_paste_filter module", 'debug', 4);
+    }
+
+    if (!isset($settings['plugins'])) {
+      $settings['plugins'] = [];
+    }
+
+    if (!isset($settings['plugins']['ckeditor5_paste_filter_pasteFilter'])) {
+      $settings['plugins']['ckeditor5_paste_filter_pasteFilter'] = [];
+    }
+
+    // Enable the paste filter plugin.
+    $cke5_plugin_manager = \Drupal::service('plugin.manager.ckeditor5.plugin');
+    /** @var CKEditor5PluginConfigurableInterface $plugin */
+    $plugin = $cke5_plugin_manager->getPlugin('ckeditor5_paste_filter_pasteFilter', $editor);
+    $settings['plugins']['ckeditor5_paste_filter_pasteFilter'] = $plugin->getConfiguration();
+    $settings['plugins']['ckeditor5_paste_filter_pasteFilter']['enabled'] = TRUE;
+  }
+  catch (\Exception $e) {
+    _openfed_log_message($sandbox, "Failed to enable ckeditor5_paste_filter module: " . $e->getMessage(), 'error', 4);
   }
 }
 
