@@ -195,7 +195,7 @@
         "drupal/allowed_formats": "3.0.1",
         "drupal/anchor_link": "2.7",
         "drupal/antibot": "2.0.4",
-        "drupal/append_file_info": "1.0",
+        "drupal/append_file_info": "1.1.0",
         "drupal/back_to_top": "3.0.3",
         "drupal/better_exposed_filters": "6.0.6",
         "drupal/block_class": "4.0.1",
