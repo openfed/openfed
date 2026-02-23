@@ -158,8 +158,11 @@ function _openfed_update_cke_process_editor(array &$sandbox) {
       $updated_editor->getFilterFormat()->setFilterConfig('filter_html', $filter_html_config)->save();
     }
 
+    // Reload the updated editor to ensure we have the latest data for validation.
+    $updated_text_format = $updated_editor->getFilterFormat();
+
     // Check for extra validation violations after save.
-    $violations = CKEditor5::validatePair($updated_editor, $text_format);
+    $violations = CKEditor5::validatePair($updated_editor, $updated_text_format, FALSE);
     if ($violations->count() > 0) {
       _openfed_log_message($sandbox, "Text format validation errors found:", 'warning');
       foreach ($violations as $violation) {
@@ -252,6 +255,7 @@ function _openfed_update_cke_apply_custom_migrations(&$sandbox, EditorInterface 
     '_openfed_migrate_source_editing',
     '_openfed_migrate_templates',
     '_openfed_migrate_copy_paste',
+    '_openfed_migrate_media_embed_resize',
   ];
 
   _openfed_log_message($sandbox, "Checking " . count($migrations) . " migration functions", 'debug');

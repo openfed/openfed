@@ -12,8 +12,8 @@ use Drupal\filter\FilterFormatInterface;
 /**
  * Post-migration fix: Convert anchor link to bookmarks.
  *
- * This runs AFTER computeSmartDefaultSettings() has already migrated the editor.
- * Convert.
+ * This runs AFTER computeSmartDefaultSettings() has already migrated the
+ * editor. Convert.
  */
 function _openfed_migrate_anchor_link(array &$sandbox, EditorInterface $editor, FilterFormatInterface $format, array &$settings, array $enabled_buttons) {
   // Check if Anchor button was enabled in CKEditor 4.
@@ -105,8 +105,8 @@ function _openfed_migrate_anchor_link(array &$sandbox, EditorInterface $editor, 
 /**
  * Post-migration fix: Set CodeMirror options.
  *
- * This runs AFTER computeSmartDefaultSettings() has already migrated the editor.
- * Sets specific CodeMirror options for the source editing plugin.
+ * This runs AFTER computeSmartDefaultSettings() has already migrated the
+ * editor. Sets specific CodeMirror options for the source editing plugin.
  */
 function _openfed_migrate_codemirror(array &$sandbox, EditorInterface $editor, FilterFormatInterface $format, array &$settings, array $enabled_buttons) {
   _openfed_log_message($sandbox, "Setting CodeMirror options...", 'debug', 4);
@@ -135,8 +135,9 @@ function _openfed_migrate_codemirror(array &$sandbox, EditorInterface $editor, F
 /**
  * Post-migration fix: Fix entity_embed filter and link toolbar.
  *
- * This runs AFTER computeSmartDefaultSettings() has already migrated the editor.
- * Adds link button and sets default Linkit profile if entity_embed filter is enabled.
+ * This runs AFTER computeSmartDefaultSettings() has already migrated the
+ * editor. Adds link button and sets default Linkit profile if entity_embed
+ * filter is enabled.
  */
 function _openfed_migrate_entity_embed(array &$sandbox, EditorInterface $editor, FilterFormatInterface $format, array &$settings, array $enabled_buttons) {
   $filters = $format->get('filters');
@@ -179,8 +180,8 @@ function _openfed_migrate_entity_embed(array &$sandbox, EditorInterface $editor,
 /**
  * Post-migration fix: Fix Heading plugin - remove heading1 (H1).
  *
- * This runs AFTER computeSmartDefaultSettings() has already migrated the editor.
- * Removes heading1 (H1) from enabled headings.
+ * This runs AFTER computeSmartDefaultSettings() has already migrated the
+ * editor. Removes heading1 (H1) from enabled headings.
  */
 function _openfed_migrate_heading(array &$sandbox, EditorInterface $editor, FilterFormatInterface $format, array &$settings, array $enabled_buttons) {
   if (isset($settings['plugins']['ckeditor5_heading']['enabled_headings'])) {
@@ -204,8 +205,9 @@ function _openfed_migrate_heading(array &$sandbox, EditorInterface $editor, Filt
 /**
  * Post-migration fix: Fix Media plugin view mode configuration.
  *
- * This runs AFTER computeSmartDefaultSettings() has already migrated the editor.
- * Ensures at least 2 view modes are available if allow_view_mode_override is enabled.
+ * This runs AFTER computeSmartDefaultSettings() has already migrated the
+ * editor. Ensures at least 2 view modes are available if
+ * allow_view_mode_override is enabled.
  */
 function _openfed_migrate_media(array &$sandbox, EditorInterface $editor, FilterFormatInterface $format, array &$settings, array $enabled_buttons) {
   if (isset($settings['plugins']['media_media'])) {
@@ -262,9 +264,10 @@ function _openfed_migrate_media(array &$sandbox, EditorInterface $editor, Filter
 /**
  * Post-migration fix: Remove unsupported img tags from ckeditor5_style styles.
  *
- * This runs AFTER computeSmartDefaultSettings() has already migrated the editor.
- * Removes any styles that use <img> tags, which are not supported in CKEditor 5 styles.
- * If no styles remain after cleanup (or were empty to begin with), removes the style button from toolbar.
+ * This runs AFTER computeSmartDefaultSettings() has already migrated the
+ * editor. Removes any styles that use <img> tags, which are not supported in
+ * CKEditor 5 styles. If no styles remain after cleanup (or were empty to begin
+ * with), removes the style button from toolbar.
  */
 function _openfed_migrate_styles(array &$sandbox, EditorInterface $editor, FilterFormatInterface $format, array &$settings, array $enabled_buttons) {
   _openfed_log_message($sandbox, "Removing img tags from ckeditor5_style styles...", 'debug', 4);
@@ -341,8 +344,9 @@ function _openfed_migrate_styles_remove_empty_config(array &$settings, array &$s
 /**
  * Post-migration fix: Fix Source Editing plugin.
  *
- * This runs AFTER computeSmartDefaultSettings() has already migrated the editor.
- * Removes redundant tags and attributes from source editing allowed_tags.
+ * This runs AFTER computeSmartDefaultSettings() has already migrated the
+ * editor. Removes redundant tags and attributes from source editing
+ * allowed_tags.
  */
 function _openfed_migrate_source_editing(array &$sandbox, EditorInterface $editor, FilterFormatInterface $format, array &$settings, array $enabled_buttons) {
   if (isset($settings['plugins']['ckeditor5_sourceEditing'])) {
@@ -452,8 +456,9 @@ function _openfed_migrate_source_editing(array &$sandbox, EditorInterface $edito
 /**
  * Post-migration fix: Extract CKEditor templates and create config entities.
  *
- * This runs AFTER computeSmartDefaultSettings() has already migrated the editor.
- * Extracts templates from ckeditor_templates.js files and creates config entities.
+ * This runs AFTER computeSmartDefaultSettings() has already migrated the
+ * editor. Extracts templates from ckeditor_templates.js files and creates
+ * config entities.
  */
 function _openfed_migrate_templates(array &$sandbox, EditorInterface $editor, FilterFormatInterface $format, array &$settings, array $enabled_buttons) {
   // Check if Templates button was in CKEditor 4.
@@ -942,8 +947,9 @@ function _openfed_migrate_templates_add_format_to_templates(array $template_ids,
 /**
  * Post-migration fix: Activate the ckeditor5_paste_filter.
  *
- * This runs AFTER computeSmartDefaultSettings() has already migrated the editor.
- * Enables the ckeditor5_paste_filter module if any paste-related buttons
+ * This runs AFTER computeSmartDefaultSettings() has already migrated the
+ * editor. Enables the ckeditor5_paste_filter module if any paste-related
+ * buttons
  * (Cut, Copy, Paste, PasteText, PasteFromWord) were enabled in CKEditor 4.
  */
 function _openfed_migrate_copy_paste(array &$sandbox, EditorInterface $editor, FilterFormatInterface $format, array &$settings, array $enabled_buttons) {
@@ -983,12 +989,88 @@ function _openfed_migrate_copy_paste(array &$sandbox, EditorInterface $editor, F
     $settings['plugins']['ckeditor5_paste_filter_pasteFilter']['enabled'] = TRUE;
   }
   catch (\Exception $e) {
-    _openfed_log_message($sandbox, "Failed to enable ckeditor5_paste_filter module: " . $e->getMessage(), 'error', 4);
+    _openfed_log_message($sandbox, "Failed to enable ckeditor5_paste_filter module: " . $e->getMessage(), 'error', 4) ;
   }
 }
 
 /**
- * Refactor ckeditor_stylesheets to ckeditor5-stylesheets in theme.info.yml files.
+ * Post-migration fix: Migrate media embed resize configuration.
+ *
+ * This runs AFTER computeSmartDefaultSettings() has already migrated the
+ * editor. Enable the ckeditor_media_resize module if Media Embed button was
+ * enabled in CKEditor 4.
+ */
+function _openfed_migrate_media_embed_resize(array &$sandbox, EditorInterface $editor, FilterFormatInterface $format, array &$settings, array $enabled_buttons) {
+  $toolbar_items = $settings['toolbar']['items'] ?? [];
+  if (!in_array('drupalMedia', $toolbar_items)) {
+    _openfed_log_message($sandbox, "No drupalMedia buttons found in CKEditor 5 toolbar, skipping media embed resize migration", 'debug', 4);
+    return;
+  }
+
+  // Install the ckeditor_media_resize module.
+  try {
+    if (!\Drupal::moduleHandler()->moduleExists('ckeditor_media_resize')) {
+      \Drupal::service('module_installer')->install(['ckeditor_media_resize']);
+
+      // Reload the format to ensure the new filter is available.
+      $format = \Drupal::entityTypeManager()->getStorage('filter_format')->load($format->id());
+      _openfed_log_message($sandbox, "Successfully enabled ckeditor_media_resize module", 'debug', 4);
+    }
+
+    if (!isset($settings['plugins'])) {
+      $settings['plugins'] = [];
+    }
+
+    if (!isset($settings['plugins']['ckeditor_media_resize_mediaResize'])) {
+      $settings['plugins']['ckeditor_media_resize_mediaResize'] = [];
+    }
+
+    $filters = $format->get('filters');
+
+    // Enable the media resize plugin.
+    $cke5_plugin_manager = \Drupal::service('plugin.manager.ckeditor5.plugin');
+    /** @var CKEditor5PluginConfigurableInterface $plugin */
+    $plugin = $cke5_plugin_manager->getPlugin('ckeditor_media_resize_mediaResize', $editor);
+    $settings['plugins']['ckeditor_media_resize_mediaResize'] = $plugin->getConfiguration();
+
+    /** @var \Drupal\filter\FilterPluginManager $filter_manager */
+    $filter_manager = \Drupal::service('plugin.manager.filter');
+
+    // Check if required filters are enabled.
+    $filter_html_enabled = isset($filters['filter_html']) && !empty($filters['filter_html']['status']);
+
+    if (!$filter_html_enabled) {
+      _openfed_log_message($sandbox, "Warning: filter_resize_media requires 'Limit allowed HTML tags' filter to be active", 'warning', 4);
+    }
+
+    // Only proceed with adjusting filter settings if the filter_resize_media filter is not enabled.
+    if (!isset($filters['filter_resize_media']) || !$filters['filter_resize_media']['status']) {
+      // Calculate the weight: should run before media_embed filter.
+      $media_embed_weight = isset($filters['media_embed']['weight']) ? $filters['media_embed']['weight'] : 0;
+      // Set weight to be 2 less than media_embed (more negative = earlier execution).
+      $resize_filter_weight = $media_embed_weight - 2;
+
+      $filter_resize_media = $filter_manager->createInstance('filter_resize_media');
+      $filter_resize_media_config = $filter_resize_media->getConfiguration();
+      $filter_resize_media_config['status'] = TRUE;
+      $filter_resize_media_config['weight'] = $resize_filter_weight;
+      $format->setFilterConfig('filter_resize_media', $filter_resize_media_config);
+      $format->save();
+      $editor->set('filterFormat', $format);
+      _openfed_log_message($sandbox, "Enabled filter_resize_media with weight $resize_filter_weight (media_embed weight: $media_embed_weight)", 'debug', 4);
+    }
+    else {
+      _openfed_log_message($sandbox, "filter_resize_media already enabled", 'debug', 4);
+    }
+  }
+  catch (\Exception $e) {
+    _openfed_log_message($sandbox, "Failed to enable ckeditor_media_resize module: " . $e->getMessage(), 'error', 4);
+  }
+}
+
+/**
+ * Refactor ckeditor_stylesheets to ckeditor5-stylesheets in theme.info.yml
+ * files.
  *
  * This function:
  * - Finds all theme.info.yml files in custom themes
@@ -1082,7 +1164,8 @@ function _openfed_refactor_ckeditor_stylesheets(array &$sandbox) {
 }
 
 /**
- * Extract CSS paths from ckeditor_stylesheets section in theme.info.yml content.
+ * Extract CSS paths from ckeditor_stylesheets section in theme.info.yml
+ * content.
  *
  * @param string $content
  *   The content of the .info.yml file.
