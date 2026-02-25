@@ -1,6 +1,14 @@
 CHANGELOG
 =========
 
+25 February 2026 - Version 12.6.2
+------------------------------
+- The rules module is updated to fix the issue caused by the abandonment of doctrine/annotations in Drupal core 10.6.
+- The CHANGELOG.md file is not copied to the project anymore when running the project-update command.
+- The active trail is now fixed on view pages with a menu link coupled.
+- The append_file_info module is updated to fix a schema validation issue.
+- The alertbox module is updated to fix various issues.
+
 03 February 2026 - Version 12.6.1
 ------------------------------
 - Patch for rules module to fix annotation issues after Drupal core 10.6 update.
