@@ -276,3 +276,12 @@ function openfed_update_130600(&$sandbox) {
     return _openfed_update_cke_finalize($sandbox);
   }
 }
+
+/**
+ * Update the CKEditor 5 stylesheet to ensure media embeds are properly styled in list items.
+ */
+function openfed_update_1306002(&$sandbox) {
+  // Include the CKEditor 5 update functions.
+  include_once __DIR__ . '/includes/openfed.ckeditor5.update.inc';
+  _openfed_update_cke_media_embed_list_item();
+}

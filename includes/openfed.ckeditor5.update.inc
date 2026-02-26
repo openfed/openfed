@@ -454,3 +454,119 @@ function _openfed_update_cke_build_summary(array &$sandbox) {
   }
 
 }
+
+/**
+ * Don't allow list styling in media embed previews, as it can cause unwanted
+ * spacing and bullets in the editor.
+ *
+ * @return string|void
+ */
+function _openfed_update_cke_media_embed_list_item() {
+  $app_root = \Drupal::root();
+  $custom_themes_path = $app_root . '/themes/custom';
+
+  // Check if custom themes directory exists.
+  if (!is_dir($custom_themes_path)) {
+    return;
+  }
+
+  // Find all .info.yml files in custom themes.
+  /** @var \Drupal\Core\File\FileSystemInterface $file_system */
+  $file_system = \Drupal::service('file_system');
+
+  $files = $file_system->scanDirectory($custom_themes_path, '/\.info\.yml$/');
+  $info_files = array_column($files, 'uri');
+
+  if (empty($info_files)) {
+    return;
+  }
+
+  # Load CKEditor migration helper functions.
+  include_once __DIR__ . '/openfed.ckeditor5.migration.inc';
+
+  $updated_count = 0;
+  foreach ($info_files as $info_file) {
+    $content = file_get_contents($info_file);
+
+    // Check if the file contains ckeditor_stylesheets.
+    if (!str_contains($content, 'ckeditor5-stylesheets:')) {
+      continue;
+    }
+
+    // Extract CSS paths from ckeditor_stylesheets section.
+    $css_paths = _openfed_extract_css_paths_from_info($content, '/^ckeditor5-stylesheets:/');
+    $theme_dir = dirname($info_file);
+
+    // Process each CSS path.
+    foreach ($css_paths as $css_path) {
+      // Try to find the SCSS source file by scanning the theme directory.
+      $scss_filename = basename(preg_replace('/\.css$/', '.scss', $css_path));
+      $actual_scss_path = _openfed_find_file_in_directory($theme_dir, $scss_filename);
+
+      if ($actual_scss_path) {
+        $content = file_get_contents($actual_scss_path);
+
+        // Check if the content already contains this rule to avoid duplicates.
+        if (str_contains($content, '[data-drupal-media-preview] ul')) {
+          continue;
+        }
+
+        // Prepare the new CSS content to insert within .ck-content.
+        $new_css_content = <<<'SCSS'
+  /* Remove list styling ONLY for media preview wrapper */
+  [data-drupal-media-preview] ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  [data-drupal-media-preview] li {
+    margin: 0;
+    padding: 0;
+  }
+
+SCSS;
+
+        // Find the .ck-content section and insert before its closing brace.
+        if (preg_match('/\.ck-content\s*\{/s', $content, $matches, PREG_OFFSET_CAPTURE)) {
+          $opening_brace_pos = $matches[0][1] + strlen($matches[0][0]);
+
+          // Count braces to find the matching closing brace for .ck-content.
+          $brace_count = 1;
+          $pos = $opening_brace_pos;
+          $closing_brace_pos = FALSE;
+
+          while ($pos < strlen($content) && $brace_count > 0) {
+            $char = $content[$pos];
+            if ($char === '{') {
+              $brace_count++;
+            }
+            elseif ($char === '}') {
+              $brace_count--;
+              if ($brace_count === 0) {
+                $closing_brace_pos = $pos;
+                break;
+              }
+            }
+            $pos++;
+          }
+
+          if ($closing_brace_pos !== FALSE) {
+            // Insert the new content before the closing brace.
+            $updated_content = substr($content, 0, $closing_brace_pos) . $new_css_content . substr($content, $closing_brace_pos);
+            file_put_contents($actual_scss_path, $updated_content);
+
+            // Remove compiled CSS file if it exists.
+            $full_css_path = $theme_dir . '/' . $css_path;
+            if (file_exists($full_css_path)) {
+              unlink($full_css_path);
+            }
+          }
+        }
+      }
+    }
+    $updated_count++;
+  }
+
+  return 'Updated CKE5 media embed list item styles in ' . $updated_count . ' theme(s).';
+}
