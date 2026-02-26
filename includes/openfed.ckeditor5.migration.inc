@@ -1169,18 +1169,20 @@ function _openfed_refactor_ckeditor_stylesheets(array &$sandbox) {
  *
  * @param string $content
  *   The content of the .info.yml file.
+ * @param string $pattern
+ *   The regex pattern to identify the start of the ckeditor_stylesheets section.
  *
  * @return array
  *   Array of CSS paths.
  */
-function _openfed_extract_css_paths_from_info($content) {
+function _openfed_extract_css_paths_from_info($content, $pattern = '/^ckeditor_stylesheets:/') {
   $css_paths = [];
   $lines = explode("\n", $content);
   $in_section = FALSE;
 
   foreach ($lines as $line) {
     // Check if we're entering the ckeditor_stylesheets section.
-    if (preg_match('/^ckeditor_stylesheets:/', $line)) {
+    if (preg_match($pattern, $line)) {
       $in_section = TRUE;
       continue;
     }
