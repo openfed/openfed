@@ -1,6 +1,17 @@
 CHANGELOG
 =========
 
+26 February 2026 - Version 13.6.2
+------------------------------
+- CKEditor5 migration improvements:
+  - Error handling in the update hook now also tests for fundamental violations.
+  - Post migration support for ckeditor5_paste_filter module.
+  - Post-migration support for ckeditor_media_resize module.
+- The active trail is now fixed on view pages with a menu link coupled.
+- The CHANGELOG.md file is not copied to the project anymore when running the project-update command.
+- The append_file_info module is updated to fix a schema validation issue.
+- The alertbox module is updated to fix various issues.
+
 09 February 2026 - Version 13.6.1
 ------------------------------
 - Bug Fixes
