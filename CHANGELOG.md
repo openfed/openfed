@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+12 March 2026 - Version 13.6.3
+------------------------------
+- Fix incorrect update hook numbering.
+
 26 February 2026 - Version 13.6.2
 ------------------------------
 - CKEditor5 migration improvements:
