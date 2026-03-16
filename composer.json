@@ -158,6 +158,9 @@
             "drupal/panels": {
                 "Issue #2769099: Block visibility conditions": "https://www.drupal.org/files/issues/2025-02-03/2769099-67.patch"
             },
+            "drupal/paragraphs": {
+                "Issue #2868252: Consider adding a hook to Paragraphs::getSummary": "https://www.drupal.org/files/issues/2023-11-20/2868252-paragraph-summary-alter-46.patch"
+            },
             "drupal/paragraphs_asymmetric_translation_widgets": {
                 "Issue: #3558026: paragraphs_asymmetric_translation_widgets combined patch": "https://www.drupal.org/files/issues/2025-11-15/paragraphs-asymmetric-translation-widgets-3558026-combined-2.patch"
             },
