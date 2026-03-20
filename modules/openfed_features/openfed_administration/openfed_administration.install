@@ -28,3 +28,42 @@ function openfed_administration_install() {
     }
   }
 }
+
+/**
+ * Rename "Embeddable" labels to "Media" in the media view config.
+ */
+function openfed_administration_update_10001() {
+  $config = \Drupal::configFactory()->getEditable('views.view.media');
+  $data = $config->getRawData();
+
+  if (empty($data)) {
+    return 'Config views.view.media not found, nothing to update.';
+  }
+
+  $changed = FALSE;
+
+  // Recursively replace exact string matches.
+  $replace_embeddable = function (&$value) use (&$replace_embeddable, &$changed) {
+    if (is_array($value)) {
+      foreach ($value as &$item) {
+        $replace_embeddable($item);
+      }
+      return;
+    }
+
+    if ($value === 'Embeddable') {
+      $value = 'Media';
+      $changed = TRUE;
+    }
+  };
+
+  $replace_embeddable($data);
+
+  if ($changed) {
+    $config->setData($data)->save(TRUE);
+    return 'Updated views.view.media labels from "Embeddable" to "Media".';
+  }
+
+  return 'No "Embeddable" labels found in views.view.media.';
+}
+
