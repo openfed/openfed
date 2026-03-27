@@ -115,6 +115,9 @@
             "drupal/facets": {
                 "Issue #3057943: Set target page URL": "https://www.drupal.org/files/issues/2022-01-20/facets-set_base_path-3057943-25.patch"
             },
+            "drupal/field_group": {
+                "Issue #3160987: Form required class missing from horizontal field groups in Claro": "https://git.drupalcode.org/project/field_group/-/merge_requests/108.patch"
+            },
             "drupal/file_encrypt": {
                 "Issue #2946320: Fix download route when installed with the redirect module": "https://www.drupal.org/files/issues/2021-01-12/2946320-6.patch"
             },
@@ -162,8 +165,12 @@
             "drupal/panels": {
                 "Issue #2769099: Block visibility conditions": "https://www.drupal.org/files/issues/2025-02-03/2769099-67.patch"
             },
+            "drupal/paragraphs": {
+                "Issue #3153915: Missing required mark when field is required.": "https://www.drupal.org/files/issues/2022-03-11/paragraphs-n3153915-10.patch"
+            },
             "drupal/paragraphs_asymmetric_translation_widgets": {
-                "Issue: #3558026: paragraphs_asymmetric_translation_widgets combined patch": "https://www.drupal.org/files/issues/2025-11-15/paragraphs-asymmetric-translation-widgets-3558026-combined-2.patch"
+                "Issue #3558026: Paragraphs_asymmetric_translation_widgets combined patch": "https://www.drupal.org/files/issues/2025-11-15/paragraphs-asymmetric-translation-widgets-3558026-combined-2.patch",
+                "Issue #3581868: Missing required mark when field is required.": "https://www.drupal.org/files/issues/2026-03-27/paragraphs-asymmetric-translation-widgets-missing-required-asteriks-3581868-3.patch"
             },
             "drupal/token": {
                 "Issue #2945272: Bulk generating nodes with [node:content-type]/[node:title]": "https://www.drupal.org/files/issues/2019-03-14/2945272-8-token-language.patch"
