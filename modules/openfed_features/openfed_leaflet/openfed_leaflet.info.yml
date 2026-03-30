@@ -1,0 +1,10 @@
+name: Openfed Leaflet
+description: Maps integration for the Leaflet module.
+package: Openfed
+type: module
+core_version_requirement: ^10 || ^11
+
+dependencies:
+  - leaflet:leaflet
+  - geofield:geofield
+  - token_filter:token_filter
