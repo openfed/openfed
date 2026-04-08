@@ -1,0 +1,19 @@
+<?php
+
+/**
+ * @file
+ * Contains openfed_conditional_fields_content_translation.module.
+ */
+
+/**
+ * Implements hook_entity_type_alter().
+ */
+function openfed_conditional_fields_content_translation_entity_type_alter(array &$entity_types) {
+  foreach ($entity_types as $entity_type) {
+    // Replaces the default content translation handler with our custom one that
+    // restores access for conditional field dependents on translation forms.
+    if ($entity_type->isTranslatable() && $entity_type->hasHandlerClass('translation')) {
+      $entity_type->setHandlerClass('translation', 'Drupal\openfed_conditional_fields_content_translation\ContentTranslationHandler');
+    }
+  }
+}
