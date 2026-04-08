@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+08 April 2026 - Version 12.6.3
+------------------------------
+- Breadcrumbs on views pages are now shown correctly.
+
 25 February 2026 - Version 12.6.2
 ------------------------------
 - The rules module is updated to fix the issue caused by the abandonment of doctrine/annotations in Drupal core 10.6.
