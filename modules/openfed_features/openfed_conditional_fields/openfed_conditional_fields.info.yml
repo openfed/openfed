@@ -1,0 +1,8 @@
+name: Openfed Conditional Fields
+description: Provides enhancements for the Conditional Fields module.
+package: Openfed
+type: module
+core_version_requirement: ^10 || ^11
+
+dependencies:
+  - conditional_fields:conditional_fields
