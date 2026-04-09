@@ -1,6 +1,18 @@
 CHANGELOG
 =========
 
+09 April 2026 - Version 13.6.4
+------------------------------
+- New Features:
+  - Added Openfed Leaflet module with custom token support for rendering maps (#179).
+  - Implemented custom content translation handler to restore field access for conditional fields (#181).
+  - Renamed "Embeddable" labels to "Media" in media view configuration and removed duplicate menu links (#173).
+- Bug Fixes:
+  - Added hook suggestion for `Paragraphs::getSummary` to enhance paragraph summary customisation (#167).
+  - Added missing required CSS class for field groups & paragraph fields in Claro (#176).
+  - Fixed the breadcrumb on Views pages (#170).
+  - Added compatibility patch for tooltip issue preventing editing of embedded entities (#163).
+
 12 March 2026 - Version 13.6.3
 ------------------------------
 - Fix incorrect update hook numbering.
