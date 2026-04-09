@@ -166,6 +166,7 @@
                 "Issue #2769099: Block visibility conditions": "https://www.drupal.org/files/issues/2025-02-03/2769099-67.patch"
             },
             "drupal/paragraphs": {
+                "Issue #2868252: Consider adding a hook to Paragraphs::getSummary": "https://www.drupal.org/files/issues/2025-07-18/2868252-paragraph-summary-alter-57.patch",
                 "Issue #3153915: Missing required mark when field is required.": "https://www.drupal.org/files/issues/2022-03-11/paragraphs-n3153915-10.patch"
             },
             "drupal/paragraphs_asymmetric_translation_widgets": {
