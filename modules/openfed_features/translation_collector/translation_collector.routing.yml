@@ -1,0 +1,23 @@
+translation_collector.settings:
+  path: '/admin/config/regional/translation-collector'
+  defaults:
+    _form: '\Drupal\translation_collector\Form\SettingsForm'
+    _title: 'Translation Collector'
+  requirements:
+    _permission: 'administer site configuration'
+
+translation_collector.export:
+  path: '/admin/config/regional/translation-collector/strings/export'
+  defaults:
+    _controller: '\Drupal\translation_collector\Controller\ExportController::export'
+    _title: 'Export collected strings'
+  requirements:
+    _permission: 'administer site configuration'
+
+translation_collector.import:
+  path: '/admin/config/regional/translation-collector/strings/import'
+  defaults:
+    _form: '\Drupal\translation_collector\Form\ImportForm'
+    _title: 'Import translations'
+  requirements:
+    _permission: 'administer site configuration'

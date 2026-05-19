@@ -1,0 +1,5 @@
+translation_collector_config.settings_tab:
+  title: 'Config settings'
+  route_name: translation_collector_config.settings
+  base_route: translation_collector.settings
+  weight: 1

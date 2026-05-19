@@ -1,0 +1,14 @@
+translation_collector.export_action:
+  title: 'Export XLSX'
+  class: '\Drupal\translation_collector\Plugin\Menu\LocalAction\ExportStringsLocalAction'
+  route_name: translation_collector.export
+  cache_contexts:
+    - 'url.query_args'
+  appears_on:
+    - view.translation_collector_strings.overview
+
+translation_collector.import_action:
+  title: 'Import XLSX'
+  route_name: translation_collector.import
+  appears_on:
+    - view.translation_collector_strings.overview
