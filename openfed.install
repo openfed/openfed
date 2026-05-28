@@ -240,3 +240,48 @@ function openfed_update_120500(&$sandbox) {
 
   return !empty($updated_fields) ? "\n" . implode("\n", $updated_fields) . "\n" : NULL;
 }
+
+/**
+ * Applies Openfed release 12.6.4 update tasks.
+ */
+function openfed_update_120604() {
+  $messages = [];
+  $messages[] = _openfed_update_120604_fix_extlink_settings();
+
+  return implode(' ', array_filter($messages));
+}
+
+/**
+ * Extlink settings updated for icon accessibility and placement.
+ */
+function _openfed_update_120604_fix_extlink_settings() {
+  if (!\Drupal::moduleHandler()->moduleExists('extlink')) {
+    return t('Extlink is not enabled. No settings changes were applied.');
+  }
+
+  // Loads extlink settings configuration.
+  $config = \Drupal::configFactory()->getEditable('extlink.settings');
+  $changed = [];
+
+  if ($config->get('extlink_hide_icons') !== TRUE) {
+    $config->set('extlink_hide_icons', TRUE);
+    $changed[] = 'hide decorative icons from screen readers';
+  }
+
+  // Set icon placement to append when the legacy value is 0 (string or int).
+  $icon_placement = $config->get('extlink_icon_placement');
+  if ((string) $icon_placement === '0') {
+    $config->set('extlink_icon_placement', 'append');
+    $changed[] = 'place the external link icon after link text';
+  }
+
+  if (empty($changed)) {
+    return t('No Extlink settings changes were needed.');
+  }
+
+  $config->save();
+
+  return t('Updated Extlink settings: @changes.', [
+    '@changes' => implode('; ', $changed),
+  ]);
+}
