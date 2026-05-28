@@ -7,6 +7,7 @@
 use Drupal\Core\Config\Entity\ConfigEntityUpdater;
 use Drupal\Core\DrupalKernelInterface;
 use Drupal\field\FieldConfigInterface;
+use Drupal\views\Entity\View;
 
 // Include general update helper functions.
 include_once __DIR__ . '/includes/openfed.update.inc';
@@ -291,9 +292,60 @@ function openfed_update_130602(&$sandbox) {
  */
 function openfed_update_130605() {
   $messages = [];
+  $messages[] = _openfed_update_130605_fix_bef_reset_button_settings();
   $messages[] = _openfed_update_130605_fix_extlink_settings();
 
   return implode(' ', array_filter($messages));
+}
+
+/**
+ * Fixes inconsistent BEF reset button settings across Views displays.
+ */
+function _openfed_update_130605_fix_bef_reset_button_settings() {
+  if (!\Drupal::moduleHandler()->moduleExists('views')) {
+    return t('Views is not enabled. No settings changes were applied.');
+  }
+
+  $updated_views = [];
+
+  /** @var \Drupal\views\Entity\View[] $views */
+  $views = View::loadMultiple();
+  foreach ($views as $view) {
+    $displays = $view->get('display');
+    $view_changed = FALSE;
+
+    foreach ($displays as $display_id => $display) {
+      $options = $display['display_options']['exposed_form']['options'] ?? NULL;
+      if (!is_array($options)) {
+        continue;
+      }
+
+      $general = $options['bef']['general'] ?? NULL;
+      if (!is_array($general)) {
+        continue;
+      }
+
+      $reset_button_is_false = in_array($options['reset_button'] ?? NULL, [FALSE, 0, '0', NULL, ''], TRUE);
+      $always_show_is_true = in_array($general['reset_button_always_show'] ?? NULL, [TRUE, 1, '1'], TRUE);
+
+      if ($reset_button_is_false && $always_show_is_true) {
+        $displays[$display_id]['display_options']['exposed_form']['options']['bef']['general']['reset_button_always_show'] = FALSE;
+        $view_changed = TRUE;
+      }
+    }
+
+    if ($view_changed) {
+      $view->set('display', $displays);
+      $view->save();
+      $updated_views[] = $view->id();
+    }
+  }
+
+  if (!$updated_views) {
+    return t('No Views required reset button setting updates.');
+  }
+
+  return t('Updated reset button settings for: @views.', ['@views' => implode(', ', $updated_views)]);
 }
 
 /**
