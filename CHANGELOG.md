@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+09 June 2026 - Version 13.6.5
+------------------------------
+- The extlink icon is now WCAG 2.1 compliant.
+- Make sure the reset button is not shown when the reset button is disabled in the view exposed filters, even when "always show" is true.
+
 09 April 2026 - Version 13.6.4
 ------------------------------
 - New Features:
