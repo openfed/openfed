@@ -17,23 +17,6 @@ class Helper {
 
   const WORKFLOW_ADVANCED_CONFIG = 'advanced';
 
-  protected $drupal_root;
-
-  protected $site_path;
-
-  /**
-   * Helper constructor.
-   *
-   * @param string $drupal_root
-   *   The path to the Drupal root.
-   * @param string $site_path
-   *   The path to the site's configuration (e.g. sites/default).
-   */
-  function __construct($drupal_root, $site_path) {
-    $this->root = $drupal_root;
-    $this->sitePath = (string) $site_path;
-  }
-
   /**
    * Gets the list of potential languages.
    *
