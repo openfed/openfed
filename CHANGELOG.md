@@ -1,6 +1,17 @@
 CHANGELOG
 =========
 
+29 July 2026 - Version 13.6.6
+------------------------------
+- Removed unused dynamic class properties in Openfed Helper (#193)
+- Fixed undefined array key 1 in menu_link_weight (#201)
+- Bumped admin_toolbar_content_languages to 1.0-beta7 (#200)
+- Bumped video_embed_field to 3.1.0 (#199)
+- Bumped wba_menu_link to 2.0.0 (#198)
+- Bumped search_api_autocomplete to 1.12 (#197)
+- Bumped paragraphs to 1.21 (#196)
+- Bumped colorbox to 2.1.5 (#195)
+
 09 June 2026 - Version 13.6.5
 ------------------------------
 - The extlink icon is now WCAG 2.1 compliant.
