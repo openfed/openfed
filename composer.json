@@ -298,7 +298,7 @@
         "drupal/page_cache_query_ignore": "2.4.0",
         "drupal/page_manager": "4.0-rc3",
         "drupal/panels": "4.9",
-        "drupal/paragraphs": "1.19",
+        "drupal/paragraphs": "1.21",
         "drupal/paragraphs_asymmetric_translation_widgets": "1.4",
         "drupal/paragraphs_summary_token": "2.0.10",
         "drupal/pathauto": "1.14",
