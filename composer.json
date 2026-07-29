@@ -146,7 +146,8 @@
             },
             "drupal/menu_link_weight": {
                 "Issue #3456674: JavaScript error when adding a menu link and the node title field is not presented in the edit form": "https://www.drupal.org/files/issues/2024-06-24/js-error-when-node-title-is-missing-3456674-2.patch",
-                "Issue #3509158: AJAX not working on menu item edit form": "https://www.drupal.org/files/issues/2025-02-26/menu_link_weight-3509158-2.patch"
+                "Issue #3509158: AJAX not working on menu item edit form": "https://www.drupal.org/files/issues/2025-02-26/menu_link_weight-3509158-2.patch",
+                "Issue #3606998: Undefined array key 1 in Drupal\\menu_link_weight\\MenuParentFormSelector\\CshsMenuParentFormSelector->parentSelectElement()": "https://www.drupal.org/files/issues/2026-06-29/menu-link-weight-undefined-array-key-3606998-3.patch"
             },
             "drupal/menu_trail_by_path": {
                 "Issue #3099308: Menu Trail by Path: several issues": "https://www.drupal.org/files/issues/2025-10-15/menu_trail_by_path_issues-3099308-17.patch"
