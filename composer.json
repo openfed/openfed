@@ -311,7 +311,7 @@
         "drupal/scheduler_content_moderation_integration": "3.0.4",
         "drupal/search_api": "1.39",
         "drupal/search_api_attachments": "10.0.5",
-        "drupal/search_api_autocomplete": "1.10",
+        "drupal/search_api_autocomplete": "1.12",
         "drupal/search_api_solr": "4.3.10",
         "drupal/seckit": "2.0.*",
         "drupal/securelogin": "1.21",
