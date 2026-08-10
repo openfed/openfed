@@ -1,0 +1,97 @@
+<?php
+
+declare(strict_types=1);
+
+/**
+ * @file
+ * Install, update, and uninstall functions for translation_collector.
+ */
+
+/**
+ * Implements hook_schema().
+ */
+function translation_collector_schema(): array {
+  $schema['translation_collector_strings'] = [
+    'description' => 'Stores translatable strings encountered during page requests.',
+    'fields' => [
+      'id' => [
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'description' => 'Primary key.',
+      ],
+      'source' => [
+        'type' => 'text',
+        'not null' => TRUE,
+        'description' => 'The source string in English.',
+      ],
+      'source_hash' => [
+        'type' => 'varchar_ascii',
+        'length' => 64,
+        'not null' => TRUE,
+        'description' => 'SHA-256 hash of the source string for deduplication.',
+      ],
+      'context' => [
+        'type' => 'varchar_ascii',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+        'description' => 'The translation context.',
+      ],
+      'langcode' => [
+        'type' => 'varchar_ascii',
+        'length' => 12,
+        'not null' => TRUE,
+        'default' => '',
+        'description' => 'The language code the string was translated to.',
+      ],
+      'is_translated' => [
+        'type' => 'int',
+        'size' => 'tiny',
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => 'Whether a translation exists (1) or not (0).',
+      ],
+      'string_type' => [
+        'type' => 'varchar_ascii',
+        'length' => 32,
+        'not null' => TRUE,
+        'default' => 'interface',
+        'description' => 'Type of string: interface or config.',
+      ],
+      'location' => [
+        'type' => 'varchar',
+        'length' => 1024,
+        'not null' => TRUE,
+        'default' => '',
+        'description' => 'Additional location info. For config strings: config_name:property.path. Empty for interface strings.',
+      ],
+      'url' => [
+        'type' => 'varchar',
+        'length' => 2048,
+        'not null' => TRUE,
+        'default' => '',
+        'description' => 'The last URL where this string was encountered.',
+      ],
+      'last_seen' => [
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => 'Timestamp of the last time this string was seen.',
+      ],
+    ],
+    'primary key' => ['id'],
+    'unique keys' => [
+      'source_context_lang' => ['source_hash', 'context', 'langcode'],
+    ],
+    'indexes' => [
+      'langcode' => ['langcode'],
+      'is_translated' => ['is_translated'],
+      'string_type' => ['string_type'],
+      'last_seen' => ['last_seen'],
+    ],
+  ];
+
+  return $schema;
+}

@@ -1,0 +1,11 @@
+name: Translation Collector
+type: module
+description: 'Collects interface translatable strings and provides shared export and collector infrastructure.'
+package: Translation (Experimental)
+core_version_requirement: ^10.3 || ^11
+configure: translation_collector.settings
+lifecycle: experimental
+dependencies:
+  - drupal:locale
+  - drupal:language
+  - drupal:views

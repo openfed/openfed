@@ -1,0 +1,11 @@
+translation_collector_config.settings:
+  type: config_object
+  label: 'Translation Collector Config collector settings'
+  mapping:
+    include_config_prefixes:
+      type: sequence
+      label: 'Included config name prefixes'
+      sequence:
+        type: string
+        label: 'Config prefix'
+
