@@ -245,7 +245,7 @@
         "drupal/embed": "1.10",
         "drupal/encrypt": "3.2",
         "drupal/entity": "1.6",
-        "drupal/entity_browser": "2.15",
+        "drupal/entity_browser": "2.16",
         "drupal/entity_embed": "1.7",
         "drupal/entity_reference_revisions": "1.12",
         "drupal/entityqueue": "1.10",
