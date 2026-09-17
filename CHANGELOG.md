@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+17 September 2026 - Version 13.6.7
+------------------------------
+- Bumped entity to 1.8 (#204)
+- Bumped entity_browser to 2.16 (#202)
+- Bumped diff to 2.0.1 (#203)
+
 29 July 2026 - Version 13.6.6
 ------------------------------
 - Removed unused dynamic class properties in Openfed Helper (#193)
