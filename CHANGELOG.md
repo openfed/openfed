@@ -1,5 +1,9 @@
 CHANGELOG
 =========
+09 October 2026 - Version 12.6.5
+------------------------------
+- Bumped leaflet to 10.4.13 (#205)
+- Bumped country to 2.1.3 (#206)
 
 17 September 2026 - Version 13.6.7
 ------------------------------
