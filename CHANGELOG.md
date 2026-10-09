@@ -1,5 +1,15 @@
 CHANGELOG
 =========
+09 October 2026 - Version 12.6.5
+------------------------------
+- Bumped colorbox to 2.1.5 (#195)
+- Bumped paragraphs to 1.21 (#196)
+- Bumped search_api_autocomplete to 1.12 (#197)
+- Bumped entity_browser to 2.16 (#202)
+- Bumped diff to 2.0.1 (#203)
+- Bumped entity to 1.8 (#204)
+- Bumped leaflet to 10.4.13 (#205)
+- Bumped country to 2.1.3 (#206)
 
 09 June 2026 - Version 12.6.4
 ------------------------------
