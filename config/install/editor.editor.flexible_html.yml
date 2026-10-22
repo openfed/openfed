@@ -4,69 +4,93 @@ dependencies:
   config:
     - filter.format.flexible_html
   module:
-    - ckeditor
+    - ckeditor5
 format: flexible_html
-editor: ckeditor
+editor: ckeditor5
 settings:
   toolbar:
-    rows:
-      -
-        -
-          name: Formatting
-          items:
-            - Bold
-            - Italic
-            - Strike
-            - '-'
-            - Superscript
-            - Subscript
-        -
-          name: Alignment
-          items:
-            - JustifyLeft
-            - JustifyCenter
-            - JustifyRight
-        -
-          name: Links
-          items:
-            - DrupalLink
-            - DrupalUnlink
-        -
-          name: Lists
-          items:
-            - BulletedList
-            - NumberedList
-        -
-          name: Media
-          items:
-            - Blockquote
-            - DrupalImage
-        -
-          name: Tools
-          items:
-            - abbr
-            - Source
-            - special_content
+    items:
+      - bold
+      - italic
+      - strikethrough
+      - '|'
+      - superscript
+      - subscript
+      - '|'
+      - alignment
+      - '|'
+      - link
+      - '|'
+      - bulletedList
+      - numberedList
+      - '|'
+      - blockQuote
+      - drupalInsertImage
+      - '|'
+      - abbreviation
+      - sourceEditing
+      - special_content
   plugins:
-    drupallink:
-      linkit_enabled: true
-      linkit_profile: default
-    codemirror:
+    ckeditor5_alignment:
+      enabled_alignments:
+        - center
+        - left
+        - right
+    ckeditor5_imageResize:
+      allow_resize: true
+    ckeditor5_list:
+      properties:
+        reversed: false
+        startIndex: true
+      multiBlock: true
+    ckeditor5_sourceEditing:
+      allowed_tags:
+        - '<cite>'
+        - '<mark>'
+        - '<footer>'
+        - '<div id class role aria-*>'
+        - '<dl class>'
+        - '<dt class>'
+        - '<dd class>'
+        - '<h2 id>'
+        - '<h3 id>'
+        - '<h4 id>'
+        - '<h5 id>'
+        - '<h6 id>'
+        - '<table id cellpadding cellspacing frame rules sortable summary width>'
+        - '<caption align id>'
+        - '<tbody id align char charoff valign>'
+        - '<thead id align char charoff valign>'
+        - '<tfoot id align char charoff valign>'
+        - '<th id abbr axis bgcolor char charoff headers height nowrap scope valign width>'
+        - '<td id abbr axis bgcolor char charoff headers height nowrap scope valign width>'
+        - '<tr id align bgcolor char charoff valign>'
+        - '<small class>'
+        - '<address class>'
+        - '<button id role class autofocus disabled form* name type value>'
+        - '<span class>'
+        - '<colgroup class id align char charoff span valign width>'
+        - '<ul if type>'
+        - '<ol id type>'
+        - '<drupal-entity id class data-*>'
+        - '<blockquote cite>'
+        - '<a name hreflang role data-* aria-* target>'
+        - '<img data-*>'
+    ckeditor_codemirror_source_editing:
       enable: true
-      startupMode: wysiwyg
       mode: htmlmixed
-      theme: default
       options:
+        autoCloseBrackets: true
+        autoCloseTags: true
+        folding: true
         lineNumbers: true
         lineWrapping: true
         matchBrackets: true
-        autoCloseTags: true
-        autoCloseBrackets: true
-        enableSearchTools: true
-        enableCodeFolding: true
-        enableCodeFormatting: true
-        autoFormatOnStart: true
-        autoFormatOnModeChange: true
-        autoFormatOnUncomment: true
+        matchTags: true
+        searchBottom: true
+        styleActiveLine: true
+    linkit_extension:
+      linkit_enabled: true
+      linkit_profile: default
 image_upload:
   status: false
