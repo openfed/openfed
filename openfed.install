@@ -7,6 +7,7 @@
 use Drupal\Core\Config\Entity\ConfigEntityUpdater;
 use Drupal\Core\DrupalKernelInterface;
 use Drupal\field\FieldConfigInterface;
+use Drupal\user\Entity\Role;
 use Drupal\views\Entity\View;
 
 // Include general update helper functions.
@@ -380,5 +381,131 @@ function _openfed_update_130605_fix_extlink_settings() {
 
   return t('Updated Extlink settings: @changes.', [
     '@changes' => implode('; ', $changed),
+  ]);
+}
+
+/**
+ * Bridge update for Openfed 14.
+ *
+ * Tasks:
+ *
+ * - Replace openfed_admin with Claro as the admin theme, installing Claro if
+ *   needed and uninstalling openfed_admin when it is no longer the default
+ *   theme.
+ * - Migrate block_content_permissions permissions to their core equivalents
+ *   and uninstall the module. Keep the package in composer.json until this
+ *   update has run; review "administer blocks" permissions manually.
+ */
+function openfed_update_130609() {
+  $messages = [];
+  $messages[] = _openfed_update_130609_migrate_admin_theme();
+  $messages[] = _openfed_update_130609_migrate_block_content_permissions();
+
+  return implode(' ', array_filter($messages));
+}
+
+/**
+ * Replaces the Openfed admin theme with Claro.
+ */
+function _openfed_update_130609_migrate_admin_theme() {
+  $theme_config = \Drupal::configFactory()->getEditable('system.theme');
+  if ($theme_config->get('admin') !== 'openfed_admin') {
+    return t('The admin theme is not openfed_admin. No theme changes applied.');
+  }
+
+  $installed_themes = \Drupal::config('core.extension')->get('theme') ?? [];
+  $theme_installer = \Drupal::service('theme_installer');
+  if (!isset($installed_themes['claro'])) {
+    $theme_installer->install(['claro']);
+  }
+
+  $theme_config->set('admin', 'claro')->save();
+
+  if (isset($installed_themes['openfed_admin'])) {
+    if ($theme_config->get('default') === 'openfed_admin') {
+      return t('Changed the admin theme to Claro. openfed_admin remains installed because it is still the default theme.');
+    }
+
+    $theme_installer->uninstall(['openfed_admin']);
+  }
+
+  return t('Changed the admin theme to Claro and uninstalled openfed_admin.');
+}
+
+/**
+ * Migrates block_content_permissions to core block_content permissions.
+ */
+function _openfed_update_130609_migrate_block_content_permissions() {
+  if (!\Drupal::moduleHandler()->moduleExists('block_content_permissions')) {
+    return t('block_content_permissions is not enabled. No changes applied.');
+  }
+
+  $renamed = [
+    'administer block content types' => 'administer block types',
+    'view restricted block content' => 'access block library',
+  ];
+  $updated_roles = [];
+  $restore = [];
+
+  /** @var \Drupal\user\RoleInterface[] $roles */
+  $roles = Role::loadMultiple();
+  foreach ($roles as $role) {
+    if ($role->isAdmin()) {
+      continue;
+    }
+
+    $grant = [];
+    $revoke = [];
+
+    foreach ($role->getPermissions() as $permission) {
+      // Both modules define these, but block_content_permissions is the
+      // registered provider, so uninstalling it strips them from the roles.
+      if (preg_match('/^(create|delete any) .+ block content$/', $permission)) {
+        $restore[$role->id()][] = $permission;
+      }
+
+      if (isset($renamed[$permission])) {
+        $revoke[] = $permission;
+        $grant[] = $renamed[$permission];
+      }
+      // "update any" became "edit any" in core. "create" and "delete any" keep
+      // their identifiers.
+      elseif (preg_match('/^update any (.+) block content$/', $permission, $matches)) {
+        $revoke[] = $permission;
+        $grant[] = "edit any {$matches[1]} block content";
+      }
+
+      // Core needs this permission to reach the block content overview page.
+      if (preg_match('/^(create|delete any|update any) (.+) block content$/', $permission) || $permission === 'administer block content types') {
+        $grant[] = 'access block library';
+      }
+    }
+
+    if (!$grant && !$revoke) {
+      continue;
+    }
+
+    foreach (array_unique($grant) as $permission) {
+      $role->grantPermission($permission);
+    }
+    foreach (array_unique($revoke) as $permission) {
+      $role->revokePermission($permission);
+    }
+    $role->save();
+    $updated_roles[] = $role->id();
+  }
+
+  \Drupal::service('module_installer')->uninstall(['block_content_permissions']);
+
+  foreach ($restore as $role_id => $permissions) {
+    $role = Role::load($role_id);
+    foreach ($permissions as $permission) {
+      $role->grantPermission($permission);
+    }
+    $role->save();
+  }
+
+  return t('Migrated block content permissions for roles: @roles. block_content_permissions has been uninstalled.', [
+    '@roles' => $updated_roles ? implode(', ', $updated_roles) : t('none'),
   ]);
 }
