@@ -91,5 +91,5 @@ install:
   - yoast_seo:yoast_seo
 
 themes:
-  - openfed_admin
+  - claro
   - kiso
