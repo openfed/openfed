@@ -5,8 +5,6 @@
  * Profile file of Openfed that modifies the install form.
  */
 
-use Drupal\Core\Extension\Extension;
-use Drupal\Core\Extension\ExtensionLifecycle;
 use Drupal\openfed\Form\SetupLanguagesForm;
 use Drupal\openfed\Form\SetupMenusForm;
 use Drupal\openfed\Form\SetupRolesForm;
@@ -107,39 +105,4 @@ function openfed_form_install_optional_settings(array &$form, FormStateInterface
 function openfed_post_install() {
   // Get rid of "The content access permissions need to be rebuilt" message.
   node_access_rebuild();
-}
-
-/**
- * Implements hook_system_info_alter().
- */
-function openfed_system_info_alter(array &$info, Extension $file, $type): void {
-  // Only act on modules.
-  if ($type !== 'module') {
-    return;
-  }
-
-  // List of deprecated modules in Openfed.
-  $deprecated_modules = [
-    'ckeditor_templates',
-    'ckeditor4_codemirror',
-    'anchor_link',
-    'fakeobjects',
-    'ckeditor_config',
-    'ckeditor_uploadimage',
-    'ckeditor',
-  ];
-
-  // Check if the module is deprecated.
-  if (!in_array($file->getName(), $deprecated_modules)) {
-    return;
-  }
-
-  // Skip if lifecycle info is already set.
-  if (isset($info[ExtensionLifecycle::LIFECYCLE_IDENTIFIER]) && $info[ExtensionLifecycle::LIFECYCLE_IDENTIFIER] === ExtensionLifecycle::DEPRECATED) {
-    return;
-  }
-
-  // Mark the module as deprecated.
-  $info[ExtensionLifecycle::LIFECYCLE_IDENTIFIER] = ExtensionLifecycle::DEPRECATED;
-  $info[ExtensionLifecycle::LIFECYCLE_LINK_IDENTIFIER] = "https://github.com/openfed/openfed?tab=readme-ov-file#recommendations-for-deprecated-modules";
 }
