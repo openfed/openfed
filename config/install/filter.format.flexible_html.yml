@@ -46,7 +46,7 @@ filters:
     status: true
     weight: -9
     settings:
-      allowed_html: '<div id class role aria-*> <em class> <strong class> <cite> <code> <ul if type class> <ol id start type class> <li class> <dl class> <dt class> <dd class> <h2 id class> <h3 id class> <h4 id class> <h5 id class> <h6 id class> <br> <s> <sup> <sub> <drupal-entity id class alt title data-*> <table class id cellpadding cellspacing frame rules sortable summary width> <caption align class id> <tbody class id align char charoff valign> <thead class id align char charoff valign> <tfoot class id align char charoff valign> <th class id abbr axis bgcolor char charoff colspan headers height nowrap rowspan scope valign width> <td class id abbr axis bgcolor char charoff colspan headers height nowrap rowspan scope valign width> <tr class id align bgcolor char charoff valign> <hr> <mark> <small class> <address class> <footer> <p class> <abbr title class> <blockquote cite class> <a name href hreflang class role data-* aria-* target> <button id role class autofocus disabled form* name type value> <img src alt height width class data-*> <span class> <colgroup class id align char charoff span valign width>'
+      allowed_html: '<br> <p class="text-align-left text-align-center text-align-right"> <cite> <mark> <footer> <div id class role aria-*> <dl class> <dt class> <dd class> <h2 id class="text-align-left text-align-center text-align-right"> <h3 id class="text-align-left text-align-center text-align-right"> <h4 id class="text-align-left text-align-center text-align-right"> <h5 id class="text-align-left text-align-center text-align-right"> <h6 id class="text-align-left text-align-center text-align-right"> <table id cellpadding cellspacing frame rules sortable summary width> <caption align id> <tbody id align char charoff valign> <thead id align char charoff valign> <tfoot id align char charoff valign> <th id abbr axis bgcolor char charoff headers height nowrap scope valign width> <td id abbr axis bgcolor char charoff headers height nowrap scope valign width> <tr id align bgcolor char charoff valign> <small class> <address class> <button id role class autofocus disabled form* name type value> <span class> <colgroup class id align char charoff span valign width> <ul if type> <ol id type start> <drupal-entity id class data-* alt title data-embed-button="node special_content" data-entity-type="node media"> <blockquote cite> <a name hreflang role data-* aria-* target href> <img data-* src alt height width> <strong> <em> <s> <sub> <sup> <li> <abbr title>'
       filter_html_help: true
       filter_html_nofollow: false
   filter_html_escape:
@@ -81,6 +81,7 @@ filters:
     weight: -10
     settings:
       title: true
+      media_substitution: metadata
   media_embed:
     id: media_embed
     provider: media
