@@ -1,0 +1,6 @@
+translation_collector.settings:
+  title: 'Translation Collector'
+  route_name: translation_collector.settings
+  parent: system.admin_config_regional
+  description: 'Configure translatable string collection.'
+  weight: 20

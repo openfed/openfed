@@ -1,0 +1,28 @@
+services:
+  translation_collector_config.settings:
+    class: Drupal\translation_collector_config\Settings
+    arguments: ['@config.factory']
+
+  translation_collector_config.collector:
+    class: Drupal\translation_collector_config\ConfigStringCollector
+    arguments: ['@translation_collector.activation_checker', '@translation_collector_config.response_config_name_collector', '@translation_collector_config.config_name_collector', '@config.typed', '@language.config_factory_override', '@language_manager']
+    tags:
+      - { name: translation_collector.collector }
+
+  translation_collector_config.config_name_collector:
+    class: Drupal\translation_collector_config\ConfigNameCollector
+
+  translation_collector_config.response_config_name_collector:
+    class: Drupal\translation_collector_config\ResponseConfigNameCollector
+
+  translation_collector_config.response_cache_tag_subscriber:
+    class: Drupal\translation_collector_config\EventSubscriber\ResponseCacheTagSubscriber
+    arguments: ['@translation_collector_config.response_config_name_collector', '@translation_collector.activation_checker']
+    tags:
+      - { name: event_subscriber }
+
+  translation_collector_config.config_translation_overrider:
+    class: Drupal\translation_collector_config\ConfigTranslationOverrider
+    arguments: ['@translation_collector_config.config_name_collector', '@translation_collector.activation_checker', '@translation_collector_config.settings']
+    tags:
+      - { name: config.factory.override, priority: -256 }

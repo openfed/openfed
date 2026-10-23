@@ -1,0 +1,6 @@
+translation_collector_config.settings:
+  title: 'Config settings'
+  route_name: translation_collector_config.settings
+  parent: translation_collector.settings
+  description: 'Configure config-prefix collection for translation inventory.'
+  weight: 0

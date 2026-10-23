@@ -1,0 +1,9 @@
+name: 'Translation Collector: Config Strings'
+type: module
+description: 'Collects translatable configuration strings encountered during page requests.'
+package: Translation (Experimental)
+core_version_requirement: ^10.3 || ^11
+lifecycle: experimental
+dependencies:
+  - translation_collector:translation_collector
+  - drupal:config_translation

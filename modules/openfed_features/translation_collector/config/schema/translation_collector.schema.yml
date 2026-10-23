@@ -1,0 +1,19 @@
+translation_collector.settings:
+  type: config_object
+  label: 'Translation Collector settings'
+  mapping:
+    enabled:
+      type: boolean
+      label: 'Enabled'
+    roles:
+      type: sequence
+      label: 'Roles to collect for'
+      sequence:
+        type: string
+        label: 'Role ID'
+    exclude_paths:
+      type: sequence
+      label: 'Excluded request path patterns'
+      sequence:
+        type: string
+        label: 'Path pattern'

@@ -1,0 +1,25 @@
+services:
+  translation_collector.export_manager:
+    class: Drupal\translation_collector\Export\StringsExportManager
+    arguments: ['@database', '@date.formatter', '@file_system']
+
+  translation_collector.import_manager:
+    class: Drupal\translation_collector\Import\StringsImportManager
+    arguments: ['@file_system', '@locale.storage', '@language.config_factory_override', '@database', '@config.factory', '@logger.factory']
+
+  translation_collector.activation_checker:
+    class: Drupal\translation_collector\TranslationCollectorActivationChecker
+    arguments: ['@config.factory', '@current_user', '@plugin.manager.condition']
+
+  translation_collector.persist_subscriber:
+    class: Drupal\translation_collector\EventSubscriber\CollectorPersistSubscriber
+    arguments: ['@translation_collector.activation_checker', '@database', '@datetime.time', '@language_manager']
+    tags:
+      - { name: event_subscriber }
+
+  translation_collector.interface_translation_collector:
+    class: Drupal\translation_collector\InterfaceTranslationCollector
+    arguments: ['@string_translator.locale.lookup', '@service_container']
+    tags:
+      - { name: string_translator, priority: 255 }
+      - { name: translation_collector.collector }
