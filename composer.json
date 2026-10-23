@@ -175,14 +175,15 @@
                 "Issue #3537343: Snippet attribute javascript error": "https://www.drupal.org/files/issues/2025-08-07/3537343-MR-43_fix-javascript-error.patch"
             }
         },
-        "patchLevel": {
-            "drupal/core": "-p2"
-        },
-        "enable-patching": true
+        "composer-patches": {
+            "package-depths": {
+                "drupal/core": 2
+            }
+        }
     },
     "require": {
-        "composer/installers": "*",
-        "cweagans/composer-patches": "*",
+        "composer/installers": "^2.3",
+        "cweagans/composer-patches": "^2.0",
         "drupal/action": "^0.2",
         "drupal/addanother": "1.4",
         "drupal/address": "2.0.4",
@@ -197,7 +198,7 @@
         "drupal/block_class": "4.0.1",
         "drupal/block_content_permissions": "1.11",
         "drupal/book": "^2.0",
-        "drupal/bootstrap": "3.38",
+        "drupal/bootstrap": "3.45",
         "drupal/ckeditor5_paste_filter": "^1.1",
         "drupal/ckeditor5_plugin_pack": "^1.4",
         "drupal/ckeditor_abbreviation": "^5.0",
@@ -304,7 +305,7 @@
         "drupal/social_media_links": "2.10",
         "drupal/soundcloudfield": "2.0.8",
         "drupal/super_login": "2.1.2",
-        "drupal/svg_image": "3.2.2",
+        "drupal/svg_image": "3.2.5",
         "drupal/taxonomy_access_fix": "4.0.2",
         "drupal/tfa": "1.12",
         "drupal/tmgmt": "1.17",
@@ -334,11 +335,14 @@
         "drupal/yoast_seo": "2.2",
         "drush/drush": "^12.0",
         "jackmoore/colorbox": "1.6.4",
-        "oomphinc/composer-installers-extender": "*",
+        "mnsami/composer-custom-directory-installer": "^2.3",
         "openfed/kiso": "^5.0",
         "smillart/wai-aria-patterns-and-widgets": "1.0.*",
         "splidejs/splide": "^4.1",
         "ten1seven/what-input": "^5.2"
+    },
+    "replace": {
+        "oomphinc/composer-installers-extender": "^2.0"
     },
     "require-dev": {
         "drupal/coder": "8.*",
@@ -350,13 +354,14 @@
             "php": "8.1"
         },
         "allow-plugins": {
-            "simplesamlphp/composer-module-installer": true,
             "composer/installers": true,
-            "oomphinc/composer-installers-extender": true,
             "cweagans/composer-patches": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true,
             "drupal/console-extend-plugin": true,
             "drupal/core-composer-scaffold": true,
-            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "mnsami/composer-custom-directory-installer": true,
+            "oomphinc/composer-installers-extender": false,
+            "simplesamlphp/composer-module-installer": true,
             "simplesamlphp/composer-xmlprovider-installer": true
         }
     }
