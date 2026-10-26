@@ -1,0 +1,192 @@
+diff --git a/config/schema/facets.facet.schema.yml b/config/schema/facets.facet.schema.yml
+index 342f1c1..b8a0636 100644
+--- a/config/schema/facets.facet.schema.yml
++++ b/config/schema/facets.facet.schema.yml
+@@ -23,6 +23,9 @@ facets.facet.*:
+     url_alias:
+       type: label
+       label: 'Name of facet as used in the URL'
++    base_path:
++      type: label
++      label: 'Base path for the facet as used in the URL'
+     facet_source_id:
+       type: string
+       label: 'Facet source id'
+diff --git a/src/Entity/Facet.php b/src/Entity/Facet.php
+index b36c4b2..69514af 100644
+--- a/src/Entity/Facet.php
++++ b/src/Entity/Facet.php
+@@ -42,6 +42,7 @@ use Drupal\facets\FacetInterface;
+  *     "id",
+  *     "name",
+  *     "url_alias",
++ *     "base_path",
+  *     "weight",
+  *     "min_count",
+  *     "missing",
+@@ -96,6 +97,13 @@ class Facet extends ConfigEntityBase implements FacetInterface {
+    */
+   protected $url_alias;
+ 
++  /**
++   * The name for the base_path when used in the URL.
++   *
++   * @var $base_path
++   */
++  protected $base_path;
++
+   /**
+    * A string describing the facet.
+    *
+@@ -719,6 +727,20 @@ class Facet extends ConfigEntityBase implements FacetInterface {
+     $this->url_alias = $url_alias;
+   }
+ 
++  /**
++   * {@inheritdoc}
++   */
++  public function setBasePath($base_path) {
++    $this->base_path = $base_path;
++  }
++
++  /**
++   * {@inheritdoc}
++   */
++  public function getBasePath() {
++    return $this->base_path;
++  }
++
+   /**
+    * {@inheritdoc}
+    */
+diff --git a/src/FacetInterface.php b/src/FacetInterface.php
+index c44803e..b6b82e4 100644
+--- a/src/FacetInterface.php
++++ b/src/FacetInterface.php
+@@ -123,6 +123,21 @@ interface FacetInterface extends ConfigEntityInterface {
+    */
+   public function setUrlAlias($url_alias);
+ 
++  /**
++   * Sets the base path of the facet for use in the URL.
++   *
++   * @param string $base_path
++   *   The base path of the facet for use in the URL.
++   */
++  public function setBasePath($base_path);
++
++  /**
++   * Returns the base path of the facet for use in the URL.
++   *
++   * @return mixed
++   */
++  public function getBasePath();
++
+   /**
+    * Sets an item with value to active.
+    *
+diff --git a/src/Form/FacetForm.php b/src/Form/FacetForm.php
+index 49603bf..ce44ea7 100644
+--- a/src/Form/FacetForm.php
++++ b/src/Form/FacetForm.php
+@@ -3,6 +3,7 @@
+ namespace Drupal\facets\Form;
+ 
+ use Drupal\Component\Utility\Html;
++use Drupal\Core\Path\PathValidatorInterface;
+ use Drupal\Core\Entity\EntityForm;
+ use Drupal\Core\Entity\EntityTypeManagerInterface;
+ use Drupal\Core\Form\FormStateInterface;
+@@ -55,6 +56,13 @@ class FacetForm extends EntityForm {
+    */
+   protected $facetSourcePluginManager;
+ 
++  /**
++   * The path validator service.
++   *
++   * @var \Drupal\Core\Path\PathValidatorInterface
++   */
++  protected $pathValidator;
++
+   /**
+    * The facet manager.
+    *
+@@ -76,12 +84,13 @@ class FacetForm extends EntityForm {
+    * @param \Drupal\facets\FacetManager\DefaultFacetManager $facets_manager
+    *   The facet manager.
+    */
+-  public function __construct(EntityTypeManagerInterface $entity_type_manager, ProcessorPluginManager $processor_plugin_manager, WidgetPluginManager $widget_plugin_manager, FacetSourcePluginManager $facet_source_plugin_manager, DefaultFacetManager $facets_manager) {
++  public function __construct(EntityTypeManagerInterface $entity_type_manager, ProcessorPluginManager $processor_plugin_manager, WidgetPluginManager $widget_plugin_manager, FacetSourcePluginManager $facet_source_plugin_manager, DefaultFacetManager $facets_manager, PathValidatorInterface $pathValidator) {
+     $this->entityTypeManager = $entity_type_manager;
+     $this->processorPluginManager = $processor_plugin_manager;
+     $this->widgetPluginManager = $widget_plugin_manager;
+     $this->facetSourcePluginManager = $facet_source_plugin_manager;
+     $this->facetsManager = $facets_manager;
++    $this->pathValidator = $pathValidator;
+   }
+ 
+   /**
+@@ -93,7 +102,8 @@ class FacetForm extends EntityForm {
+       $container->get('plugin.manager.facets.processor'),
+       $container->get('plugin.manager.facets.widget'),
+       $container->get('plugin.manager.facets.facet_source'),
+-      $container->get('facets.manager')
++      $container->get('facets.manager'),
++      $container->get('path.validator')
+     );
+   }
+ 
+@@ -396,6 +406,15 @@ class FacetForm extends EntityForm {
+       '#maxlength' => 50,
+       '#required' => TRUE,
+     ];
++
++    $form['facet_settings']['base_path'] = [
++      '#type' => 'textfield',
++      '#title' => $this->t('Base path'),
++      '#description' => $this->t('If you using views block like your facet source, you can set base path.'),
++      '#default_value' => $facet->getBasePath(),
++      '#maxlength' => 255,
++    ];
++
+     $form['facet_settings']['show_title'] = [
+       '#type' => 'checkbox',
+       '#title' => $this->t('Show title of facet'),
+@@ -748,6 +767,7 @@ class FacetForm extends EntityForm {
+ 
+     $facet->setWidget($form_state->getValue('widget'), $form_state->getValue('widget_config'));
+     $facet->setUrlAlias($form_state->getValue(['facet_settings', 'url_alias']));
++    $facet->setBasePath($form_state->getValue(['facet_settings', 'base_path']));
+     $facet->setWeight((int) $form_state->getValue(['facet_settings', 'weight']));
+     $facet->setMinCount((int) $form_state->getValue(
+       [
+diff --git a/src/Plugin/facets/facet_source/SearchApiDisplay.php b/src/Plugin/facets/facet_source/SearchApiDisplay.php
+index 9c91741..63bb3a6 100644
+--- a/src/Plugin/facets/facet_source/SearchApiDisplay.php
++++ b/src/Plugin/facets/facet_source/SearchApiDisplay.php
+@@ -166,6 +166,11 @@ class SearchApiDisplay extends FacetSourcePluginBase implements SearchApiFacetSo
+     if ($this->isRenderedInCurrentRequest()) {
+       return \Drupal::service('path.current')->getPath();
+     }
++
++    if (!empty($this->facet->getBasePath())) {
++      return $this->facet->getBasePath();
++    }
++
+     return $this->getDisplay()->getPath();
+   }
+ 
+diff --git a/src/Plugin/facets/url_processor/QueryString.php b/src/Plugin/facets/url_processor/QueryString.php
+index 2ddda79..d4e629e 100644
+--- a/src/Plugin/facets/url_processor/QueryString.php
++++ b/src/Plugin/facets/url_processor/QueryString.php
+@@ -224,6 +224,9 @@ class QueryString extends UrlProcessorPluginBase {
+       asort($filter_params, \SORT_NATURAL);
+       $result_get_params->set($this->filterKey, array_values($filter_params));
+ 
++      if (!empty($routeParameters) && empty($url->getRouteParameters())) {
++        $url->setRouteParameters($routeParameters);
++      }
+       if ($result_get_params->all() !== [$this->filterKey => []]) {
+         $new_url_params = $result_get_params->all();
+ 

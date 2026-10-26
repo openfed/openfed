@@ -1,0 +1,238 @@
+diff --git a/config/schema/link_attributes.schema.yml b/config/schema/link_attributes.schema.yml
+index 11bdbdf..f9c6631 100644
+--- a/config/schema/link_attributes.schema.yml
++++ b/config/schema/link_attributes.schema.yml
+@@ -16,3 +16,14 @@ field.widget.settings.link_attributes:
+     widget_default_open:
+       type: string
+       label: 'Widget expand behavior'
++
++core.base_field_override.menu_link_content.menu_link_content.*.third_party.link_attributes:
++  type: mapping
++  label: 'Link Attributes'
++  mapping:
++    enabled_attributes:
++      type: sequence
++      label: 'Enabled Attributes'
++      sequence:
++        type: boolean
++        label: 'Enabled'
+diff --git a/link_attributes.links.menu.yml b/link_attributes.links.menu.yml
+new file mode 100644
+index 0000000..3ae8212
+--- /dev/null
++++ b/link_attributes.links.menu.yml
+@@ -0,0 +1,5 @@
++link_attributes.settings:
++  title: 'Link Attributes'
++  parent: system.admin_config_content
++  description: 'Configure menu link attribute settings.'
++  route_name: link_attributes.settings
+diff --git a/link_attributes.module b/link_attributes.module
+index 6c9aa12..fe9083a 100644
+--- a/link_attributes.module
++++ b/link_attributes.module
+@@ -5,10 +5,34 @@
+  * Contains main module functions.
+  */
+ 
++use Drupal\Core\Entity\Display\EntityFormDisplayInterface;
++use Drupal\Core\Field\Entity\BaseFieldOverride;
+ use Drupal\Core\Hook\Attribute\LegacyHook;
+ use Drupal\link_attributes\Hook\LinkAttributesHooks;
+ use Drupal\Core\Routing\RouteMatchInterface;
+ 
++/**
++ * Expose the selected link attributes on menu link content form.
++ *
++ * Implements hook_entity_form_display_alter().
++ */
++function link_attributes_entity_form_display_alter(EntityFormDisplayInterface $form_display, array $context) {
++  $entity_type = $context['entity_type'];
++  $bundle = $context['bundle'];
++  if ($entity_type == 'menu_link_content' && $context['form_mode'] == 'default') {
++    // Load the fieldDefinition and check the
++    // third_party_settings.link_attributes.enabled_attributes to see which
++    // fields to display.
++    $fieldDefinition = \Drupal::service('entity_field.manager')->getFieldDefinitions($entity_type, $bundle)['link'];
++    if ($fieldDefinition instanceof BaseFieldOverride) {
++      $enabled_attributes = $fieldDefinition->getThirdPartySetting('link_attributes', 'enabled_attributes') ?? [];
++      $link = $form_display->getComponent('link');
++      $link['settings']['enabled_attributes'] = array_merge($link['settings']['enabled_attributes'], $enabled_attributes);
++      $form_display->setComponent('link', $link);
++    }
++  }
++}
++
+ /**
+  * Implements hook_help().
+  */
+diff --git a/link_attributes.routing.yml b/link_attributes.routing.yml
+new file mode 100644
+index 0000000..5b2c910
+--- /dev/null
++++ b/link_attributes.routing.yml
+@@ -0,0 +1,8 @@
++
++link_attributes.settings:
++  path: '/admin/config/link_attributes'
++  defaults:
++    _title: 'Link Attributes Settings'
++    _form: '\Drupal\link_attributes\Form\LinkAttributesSettingsForm'
++  requirements:
++    _permission: 'administer site configuration'
+diff --git a/src/Form/LinkAttributesSettingsForm.php b/src/Form/LinkAttributesSettingsForm.php
+new file mode 100644
+index 0000000..0841a7d
+--- /dev/null
++++ b/src/Form/LinkAttributesSettingsForm.php
+@@ -0,0 +1,149 @@
++<?php
++
++namespace Drupal\link_attributes\Form;
++
++use Drupal\Core\Config\ConfigFactoryInterface;
++use Drupal\Core\Config\TypedConfigManagerInterface;
++use Drupal\Core\Entity\EntityFieldManagerInterface;
++use Drupal\Core\Field\Entity\BaseFieldOverride;
++use Drupal\Core\Form\ConfigFormBase;
++use Drupal\Core\Form\FormStateInterface;
++use Drupal\link_attributes\LinkAttributesManager;
++use Drupal\link_attributes\Plugin\Field\FieldWidget\LinkWithAttributesWidget;
++use Symfony\Component\DependencyInjection\ContainerInterface;
++
++/**
++ * Settings form.
++ */
++class LinkAttributesSettingsForm extends ConfigFormBase {
++
++  /**
++   * The LinkAttributesManager.
++   *
++   * @var \Drupal\link_attributes\LinkAttributesManager
++   */
++  protected $linkAttributesManager;
++  /**
++   * The EntityFieldManager.
++   *
++   * @var \Drupal\Core\Entity\EntityFieldManagerInterface
++   */
++  protected $entityFieldManager;
++  /**
++   * The menu_link_content fieldDefinition.
++   *
++   * @var \Drupal\Core\Field\FieldDefinitionInterface
++   */
++  protected $linkFieldDefinition;
++
++  /**
++   * Constructor.
++   *
++   * @param \Drupal\Core\Config\ConfigFactoryInterface $config_factory
++   *   The factory for configuration objects.
++   * @param \Drupal\link_attributes\LinkAttributesManager $link_attributes_manager
++   *   The link attributes manager.
++   * @param \Drupal\Core\Entity\EntityFieldManagerInterface $entityFieldManager
++   *   The entity field manager.
++   * @param \Drupal\Core\Config\TypedConfigManagerInterface $typed_config_manager
++   *   The typed configuration manager.
++   */
++  public function __construct(ConfigFactoryInterface $config_factory, LinkAttributesManager $link_attributes_manager, EntityFieldManagerInterface $entityFieldManager, TypedConfigManagerInterface $typed_config_manager) {
++    parent::__construct($config_factory, $typed_config_manager);
++    $this->linkAttributesManager = $link_attributes_manager;
++    $this->entityFieldManager = $entityFieldManager;
++
++    $baseFieldDefinitions = $this->entityFieldManager->getFieldDefinitions('menu_link_content', 'menu_link_content');
++    $this->linkFieldDefinition = $baseFieldDefinitions['link'];
++  }
++
++  /**
++   * {@inheritdoc}
++   */
++  public static function create(ContainerInterface $container) {
++    return new static(
++      $container->get('config.factory'),
++      $container->get('plugin.manager.link_attributes'),
++      $container->get('entity_field.manager'),
++      $container->get('config.typed')
++    );
++  }
++
++  /**
++   * Gets the configuration names that will be editable.
++   *
++   * @return array
++   *   An array of configuration object names that are editable if called in
++   *   conjunction with the trait's config() method.
++   */
++  protected function getEditableConfigNames() {
++    return [];
++  }
++
++  /**
++   * {@inheritdoc}
++   */
++  public function getFormId() {
++    return 'link_attributes_settings_form';
++  }
++
++  /**
++   * {@inheritdoc}
++   */
++  public function buildForm(array $form, FormStateInterface $form_state) {
++    // Build the array of available link attributes.
++    $options = [];
++    $plugin_definitions = $this->linkAttributesManager->getDefinitions();
++    array_walk($plugin_definitions, function ($definition, $key) use (&$options) {
++      $options[$key] = $definition['title'];
++    });
++    ksort($options);
++
++    // Build an array of the enabled attributes from the field
++    // third_party_settings.link_attributes.enabled_attributes.
++    $enabled_attributes = [];
++    if ($this->linkFieldDefinition instanceof BaseFieldOverride) {
++      $enabled_attributes = $this->linkFieldDefinition->getThirdPartySetting('link_attributes', 'enabled_attributes') ?? [];
++    }
++    $enabledAttrs = [];
++    array_walk($enabled_attributes, function ($enabled, $attr) use (&$enabledAttrs) {
++      $enabledAttrs[$attr] = $enabled ? $attr : 0;
++    });
++
++    // Build the array of default attributes from the widget.
++    $widgetDefaultAttrs = [];
++    array_walk(LinkWithAttributesWidget::defaultSettings()['enabled_attributes'], function ($enabled, $attr) use (&$widgetDefaultAttrs) {
++      $widgetDefaultAttrs[$attr] = $enabled ? $attr : 0;
++    });
++
++    $form['enabled_attributes'] = [
++      '#type' => 'checkboxes',
++      '#title' => $this->t('Enabled Menu Link Attributes'),
++      '#options' => $options,
++      '#default_value' => $enabledAttrs ?: $widgetDefaultAttrs,
++    ];
++
++    return parent::buildForm($form, $form_state);
++  }
++
++  /**
++   * {@inheritdoc}
++   */
++  public function submitForm(array &$form, FormStateInterface $form_state) {
++    $enabled_attributes = $form_state->getValue('enabled_attributes');
++    $enabled_attributes = array_map(function ($value) {
++      return $value !== 0 ? TRUE : FALSE;
++    }, $enabled_attributes);
++
++    $linkFieldOverride = BaseFieldOverride::loadByName('menu_link_content', 'menu_link_content', 'link');
++    if (!$linkFieldOverride) {
++      $linkFieldOverride = BaseFieldOverride::createFromBaseFieldDefinition($this->linkFieldDefinition, 'menu_link_content');
++    }
++
++    $linkFieldOverride->setThirdPartySetting('link_attributes', 'enabled_attributes', $enabled_attributes);
++    $linkFieldOverride->save();
++
++    $this->messenger()->addStatus($this->t('The menu link settings have been saved.'));
++  }
++
++}

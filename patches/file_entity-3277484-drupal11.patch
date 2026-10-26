@@ -1,0 +1,21 @@
+diff --git a/src/Plugin/Field/FieldFormatter/FileDownloadLinkFormatter.php b/src/Plugin/Field/FieldFormatter/FileDownloadLinkFormatter.php
+index a5163d9..5172ce6 100644
+--- a/src/Plugin/Field/FieldFormatter/FileDownloadLinkFormatter.php
++++ b/src/Plugin/Field/FieldFormatter/FileDownloadLinkFormatter.php
+@@ -3,6 +3,7 @@
+ namespace Drupal\file_entity\Plugin\Field\FieldFormatter;
+ 
+ use Drupal\Component\Utility\DeprecationHelper;
++use Drupal\Component\Utility\Html;
+ use Drupal\file\IconMimeTypes;
+ use Drupal\Core\StringTranslation\ByteSizeMarkup;
+ use Drupal\Core\Extension\ModuleHandlerInterface;
+@@ -157,7 +158,7 @@ class FileDownloadLinkFormatter extends FileFormatterBase implements ContainerFa
+       // Prepare the text and the URL of the link.
+       $mime_type = $file->getMimeType();
+       $token_data['file'] = $file;
+-      $link_text = $this->token->replace($this->getSetting('text'), $token_data);
++      $link_text = Html::decodeEntities($this->token->replace($this->getSetting('text'), $token_data));
+       $file_size = (int) $file->getSize();
+       // Set options as per anchor format described at
+       // http://microformats.org/wiki/file-format-examples

@@ -1,0 +1,41 @@
+diff --git a/core/lib/Drupal/Core/Entity/Query/Sql/Tables.php b/core/lib/Drupal/Core/Entity/Query/Sql/Tables.php
+index 4b45452e..e6983ce0 100644
+--- a/core/lib/Drupal/Core/Entity/Query/Sql/Tables.php
++++ b/core/lib/Drupal/Core/Entity/Query/Sql/Tables.php
+@@ -222,7 +222,7 @@ class Tables implements TablesInterface {
+         if ($index_prefix === '' && $field_storage->isMultiple()) {
+           $index_prefix = $condition_prefix;
+         }
+-        $table = $this->ensureFieldTable($index_prefix, $field_storage, $type, $langcode, $base_table, $entity_id_field, $field_id_field, $delta);
++        $table = $this->ensureFieldTable($index_prefix, $field_storage, $type, $langcode, $base_table, $entity_id_field, $field_id_field, $delta, $entity_type_id);
+         $sql_column = $table_mapping->getFieldColumnName($field_storage, $column);
+       }
+       // The field is stored in a shared table.
+@@ -343,6 +343,8 @@ class Tables implements TablesInterface {
+             throw new QueryException(sprintf("Cannot determine entity type for relationship '%s' for field '%s'", $relationship_specifier ?? '', $field));
+           }
+           $entity_type = $this->entityTypeManager->getActiveDefinition($entity_type_id);
++          // Since the entity type has changed we need to check if this entity type supports revisions.
++          $all_revisions = $all_revisions && $entity_type->isRevisionable();
+           $field_storage_definitions = $this->entityFieldManager->getActiveFieldStorageDefinitions($entity_type_id);
+           // Add the new entity base table using the table and sql column.
+           $base_table = $this->addNextBaseTable($entity_type, $table, $sql_column, $field_storage);
+@@ -443,14 +445,15 @@ class Tables implements TablesInterface {
+    * @return string
+    *   The alias of the joined table.
+    */
+-  protected function ensureFieldTable($index_prefix, &$field, $type, $langcode, $base_table, $entity_id_field, $field_id_field, $delta) {
++  protected function ensureFieldTable($index_prefix, &$field, $type, $langcode, $base_table, $entity_id_field, $field_id_field, $delta, $field_entity_type_id) {
+     $field_name = $field->getName();
+     $key = $index_prefix . $field_name . (is_numeric($delta) ? '.' . $delta : '') . ($langcode ? '.' . $langcode : '');
+     if (!isset($this->fieldTables[$key])) {
+-      $entity_type_id = $this->sqlQuery->getMetaData('entity_type');
++      $entity_type_id = $field_entity_type_id;
++      $entity_type = $this->entityTypeManager->getDefinition($entity_type_id);
+       /** @var \Drupal\Core\Entity\Sql\DefaultTableMapping $table_mapping */
+       $table_mapping = $this->entityTypeManager->getStorage($entity_type_id)->getTableMapping();
+-      $table = !$this->sqlQuery->getMetaData('all_revisions') ? $table_mapping->getDedicatedDataTableName($field) : $table_mapping->getDedicatedRevisionTableName($field);
++      $table = !($this->sqlQuery->getMetaData('all_revisions') && $entity_type->isRevisionable()) ? $table_mapping->getDedicatedDataTableName($field) : $table_mapping->getDedicatedRevisionTableName($field);
+       if ($field->getCardinality() != 1) {
+         $this->sqlQuery->addMetaData('simple_query', FALSE);
+       }

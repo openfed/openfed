@@ -1,0 +1,162 @@
+diff --git a/menu_link.install b/menu_link.install
+index c07c776..11f3d1a 100644
+--- a/menu_link.install
++++ b/menu_link.install
+@@ -30,3 +30,46 @@ function menu_link_update_9201() {
+   ->condition('provider','', '=')
+   ->execute();
+ }
++
++/**
++ * Replace old join-parents-path token with the new one.
++ */
++function menu_link_update_9202() {
++  if (\Drupal::service('module_handler')->moduleExists('pathauto')) {
++    $old_token = '[node:field_menulink:join-parents-path]';
++    $new_token = '[menu_link:join-parents-path]';
++
++    // Get all pathauto patterns.
++    /** @var \Drupal\pathauto\PathautoPatternInterface[] $pathauto_patterns */
++    $pathauto_patterns = \Drupal::entityTypeManager()
++      ->getStorage('pathauto_pattern')
++      ->loadMultiple();
++
++    // Replace the old token with the new one for all patterns.
++    $updated_patterns = [];
++    foreach ($pathauto_patterns as $pathauto_pattern) {
++      $pattern = $pathauto_pattern->getPattern();
++      if (strpos($pattern, $old_token) !== FALSE) {
++        $pattern = str_replace($old_token, $new_token, $pattern);
++        $pathauto_pattern->setPattern($pattern);
++        $pathauto_pattern->save();
++        $updated_patterns[] = $pathauto_pattern;
++      }
++    }
++    if (count($updated_patterns)) {
++      \Drupal::messenger()->addMessage(count($updated_patterns) . ' pathauto patterns updated.');
++    }
++
++    // Update pathauto settings with the new token.
++    $pathauto_config = \Drupal::service('config.factory')->getEditable('pathauto.settings');
++    $safe_tokens = $pathauto_config->get('safe_tokens');
++    foreach ($safe_tokens as &$safe_token) {
++      if ($safe_token == trim($old_token, '[]')) {
++        $safe_token = trim($new_token, '[]');
++      }
++    }
++    $pathauto_config->set('safe_tokens', $safe_tokens);
++    $pathauto_config->save();
++  }
++
++}
+diff --git a/menu_link.tokens.inc b/menu_link.tokens.inc
+new file mode 100644
+index 0000000..fa445f1
+--- /dev/null
++++ b/menu_link.tokens.inc
+@@ -0,0 +1,105 @@
++<?php
++
++/**
++ * @file
++ * Token integration for the Menu Link module.
++ */
++
++use Drupal\Core\Render\BubbleableMetadata;
++
++/**
++ * Implements hook_token_info_alter().
++ */
++function menu_link_token_info() {
++  $info['types']['menu_link'] = [
++    'name' => t('Menu links'),
++    'description' => t('Tokens related to menu links.'),
++  ];
++  $info['tokens']['menu_link']['join-parents-path'] = [
++    'name' => t('Join parents path'),
++    'description' => t('The array values each cleaned by Pathauto and then joined with the slash into a string that resembles an URL.'),
++  ];
++
++  return $info;
++}
++
++/**
++ * Implements hook_tokens().
++ */
++function menu_link_tokens($type, $tokens, array $data, array $options, BubbleableMetadata $bubbleable_metadata) {
++  $replacements = [];
++
++  if ($type == 'menu_link' && !empty($data['node'])) {
++    /** @var \Drupal\menu_link\Plugin\Field\MenuLinkItemList $items *//**/
++    $items = $data['node']->field_menulink;
++    $moduleHandler = \Drupal::service('module_handler');
++
++    foreach ($tokens as $name => $original) {
++      switch ($name) {
++        // Token [node:field_menulink:join-parents-path].
++        case 'join-parents-path':
++          if (!$moduleHandler->moduleExists('pathauto')) {
++            \Drupal::messenger()->addError(t('To use the token @token, pathauto must be enabled.', ['@token' => '[menu_link:join-parents-path]']));
++            return '';
++          }
++          $values = [];
++
++          foreach ($items as $delta => $item) {
++            $menu_links = [];
++            $id = $items[$delta]->getMenuPluginId();
++            /** @var \Drupal\Core\Menu\MenuLinkManager $menu_link_manager */
++            $menu_link_manager = \Drupal::service('plugin.manager.menu.link');
++            $parent_ids = $menu_link_manager->getParentIds($id);
++
++            // If no parents and if ID doesn't exists in the menu_tree,
++            // maybe this item was added to the menu using Menu
++            // Management interface.
++            if (empty($parent_ids) && empty($menu_link_manager->getDefinition($id, FALSE))) {
++              /** @var \Drupal\Core\Entity\Plugin\DataType\EntityAdapter $node */
++              $node = $items->getParent();
++              $node_id = $node->getValue()->id();
++              $langcode = $node->get('langcode');
++              // If the item is assigned in more than one menu position or on
++              // another menus, only the fist match on menu_link_content will be
++              // used to build the path.
++              // Should we create aliases based on other menu trees?
++              /** @var \Drupal\menu_link_content\Entity\MenuLinkContent $menu_content */
++              $menu_content = current(\Drupal::entityTypeManager()
++                ->getStorage('menu_link_content')
++                ->loadByProperties(array('langcode' => $langcode->getLangcode(),'link__uri' => 'entity:node/' . $node_id)));
++              // Maybe this node doesn't have a menu link, let's check.
++              if ($menu_content) {
++                $uuid = $menu_content->uuid();
++                $id = 'menu_link_content:' . $uuid;
++                $parent_ids = $menu_link_manager->getParentIds($id);
++              }
++            }
++
++            // No parents means that this item is not assigned to a menu.
++            if (!empty($parent_ids)) {
++              foreach ($parent_ids as $parent_id) {
++                // Excluding current item to avoid duplicates.
++                if ($parent_id != $id) {
++                  $menu_links[] = $menu_link_manager->createInstance($parent_id);
++                }
++              }
++            }
++
++            $menu_links = array_reverse($menu_links);
++            /** @var  \Drupal\menu_link\Plugin\Menu\MenuLinkField $menu_link */
++            foreach ($menu_links as $menu_link) {
++              $value = \Drupal::service('pathauto.alias_cleaner')
++                ->cleanString($menu_link->getTitle(), $options);
++              $values[] = $value;
++            }
++          }
++
++          $replacements[$original] = implode('/', $values);
++          break;
++      }
++    }
++  }
++
++  return $replacements;
++}
++

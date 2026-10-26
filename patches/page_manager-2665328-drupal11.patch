@@ -1,0 +1,702 @@
+diff --git a/page_manager.services.yml b/page_manager.services.yml
+index bef3747..0fc6d02 100644
+--- a/page_manager.services.yml
++++ b/page_manager.services.yml
+@@ -1,4 +1,7 @@
+ services:
++  page_manager.page_manager_helper:
++    class: Drupal\page_manager\PageManagerHelper
++    arguments: ['@token', '@entity_type.manager', '@entity.repository', '@module_handler']
+   logger.channel.page_manager:
+     parent: logger.channel_base
+     arguments: ['page_manager']
+diff --git a/src/Entity/Page.php b/src/Entity/Page.php
+index 3954bf7..d207b5f 100644
+--- a/src/Entity/Page.php
++++ b/src/Entity/Page.php
+@@ -14,6 +14,7 @@ use Drupal\page_manager\Event\PageManagerContextEvent;
+ use Drupal\page_manager\Event\PageManagerEvents;
+ use Drupal\page_manager\PageInterface;
+ use Drupal\page_manager\PageVariantInterface;
++use Symfony\Component\HttpFoundation\Request;
+ 
+ /**
+  * Defines a Page entity class.
+@@ -378,9 +379,18 @@ class Page extends ConfigEntityBase implements PageInterface {
+   /**
+    * {@inheritdoc}
+    */
+-  public function getContexts() {
++  public function getContexts(Request $request = NULL, $reset_cache = FALSE) {
++    if ($reset_cache) {
++      // Reset contexts when requested.
++      $this->contexts = [];
++    }
++    // @todo add the other global contexts here as they are added
++    // @todo maybe come up with a non-hardcoded way of doing this?
++    $global_contexts = [
++      'current_user',
++    ];
+     if (!$this->contexts) {
+-      $this->eventDispatcher()->dispatch(new PageManagerContextEvent($this), PageManagerEvents::PAGE_CONTEXT);
++      $this->eventDispatcher()->dispatch(new PageManagerContextEvent($this, $request), PageManagerEvents::PAGE_CONTEXT);
+       foreach ($this->getParameters() as $machine_name => $configuration) {
+         // Parameters can be updated in the UI, so unless it's a global context
+         // we'll need to rely on the current settings in the tempstore instead
+diff --git a/src/Entity/PageVariant.php b/src/Entity/PageVariant.php
+index f59add5..32dbf6f 100644
+--- a/src/Entity/PageVariant.php
++++ b/src/Entity/PageVariant.php
+@@ -10,6 +10,7 @@ use Drupal\Core\Entity\EntityTypeInterface;
+ use Drupal\Core\Plugin\DefaultSingleLazyPluginCollection;
+ use Drupal\page_manager\PageInterface;
+ use Drupal\page_manager\PageVariantInterface;
++use Symfony\Component\HttpFoundation\Request;
+ 
+ /**
+  * Defines the page variant entity.
+@@ -245,6 +246,14 @@ class PageVariant extends ConfigEntityBase implements PageVariantInterface {
+     return $this;
+   }
+ 
++  /**
++   * {@inheritdoc}
++   */
++  public function getTitle() {
++    $config = $this->getVariantPluginCollection()->getConfiguration();
++    return isset($config['page_title']) ? $config['page_title'] : $this->label();
++  }
++
+   /**
+    * {@inheritdoc}
+    */
+@@ -274,10 +283,10 @@ class PageVariant extends ConfigEntityBase implements PageVariantInterface {
+   /**
+    * {@inheritdoc}
+    */
+-  public function getContexts() {
++  public function getContexts(Request $request = NULL, $reset_cache = FALSE) {
+     if (is_null($this->contexts)) {
+       $static_contexts = $this->getContextMapper()->getContextValues($this->getStaticContexts());
+-      $page_contexts = $this->getPage()->getContexts();
++      $page_contexts = $this->getPage()->getContexts($request, $reset_cache) ?: [];
+       $this->contexts = $page_contexts + $static_contexts;
+     }
+     return $this->contexts;
+@@ -374,7 +383,7 @@ class PageVariant extends ConfigEntityBase implements PageVariantInterface {
+   /**
+    * {@inheritdoc}
+    */
+-  public function setStaticContext($name, $configuration) {
++  public function setStaticContext($name, array $configuration) {
+     $this->static_context[$name] = $configuration;
+     $this->resetCollectedContexts();
+     return $this;
+diff --git a/src/Event/PageManagerContextEvent.php b/src/Event/PageManagerContextEvent.php
+index aaa8689..bb096de 100644
+--- a/src/Event/PageManagerContextEvent.php
++++ b/src/Event/PageManagerContextEvent.php
+@@ -3,6 +3,7 @@
+ namespace Drupal\page_manager\Event;
+ 
+ use Drupal\page_manager\PageInterface;
++use Symfony\Component\HttpFoundation\Request;
+ use Symfony\Contracts\EventDispatcher\Event;
+ 
+ /**
+@@ -19,14 +20,24 @@ class PageManagerContextEvent extends Event {
+    */
+   protected $page;
+ 
++  /**
++   * The request for this event.
++   *
++   * @var null|\Symfony\Component\HttpFoundation\Request
++   */
++  protected $request;
++
+   /**
+    * Creates a new PageManagerContextEvent.
+    *
+    * @param \Drupal\page_manager\PageInterface $page
+    *   The page entity.
++   * @param \Symfony\Component\HttpFoundation\Request|null $request
++   *   The request for this event.
+    */
+-  public function __construct(PageInterface $page) {
++  public function __construct(PageInterface $page, Request $request = NULL) {
+     $this->page = $page;
++    $this->request = $request;
+   }
+ 
+   /**
+@@ -39,4 +50,14 @@ class PageManagerContextEvent extends Event {
+     return $this->page;
+   }
+ 
++  /**
++   * Returns the request for this event.
++   *
++   * @return null|\Symfony\Component\HttpFoundation\Request
++   *   The request for this event
++   */
++  public function getRequest() {
++    return $this->request;
++  }
++
+ }
+diff --git a/src/EventSubscriber/RouteParamContext.php b/src/EventSubscriber/RouteParamContext.php
+index 1f0bb17..e57a133 100644
+--- a/src/EventSubscriber/RouteParamContext.php
++++ b/src/EventSubscriber/RouteParamContext.php
+@@ -53,7 +53,7 @@ class RouteParamContext implements EventSubscriberInterface {
+    *   The page entity context event.
+    */
+   public function onPageContext(PageManagerContextEvent $event) {
+-    $request = $this->requestStack->getCurrentRequest();
++    $request = $event->getRequest() ?? $this->requestStack->getCurrentRequest();
+     $page = $event->getPage();
+     $routes = $this->routeProvider->getRoutesByPattern($page->getPath())->all();
+     $route = reset($routes);
+diff --git a/src/PageInterface.php b/src/PageInterface.php
+index 4d50ba4..10eb478 100644
+--- a/src/PageInterface.php
++++ b/src/PageInterface.php
+@@ -5,6 +5,7 @@ namespace Drupal\page_manager;
+ use Drupal\Component\Plugin\Context\ContextInterface;
+ use Drupal\Core\Config\Entity\ConfigEntityInterface;
+ use Drupal\Core\Entity\EntityWithPluginCollectionInterface;
++use Symfony\Component\HttpFoundation\Request;
+ 
+ /**
+  * Provides an interface for page entities.
+@@ -220,11 +221,16 @@ interface PageInterface extends ConfigEntityInterface, EntityWithPluginCollectio
+ 
+   /**
+    * Gets the values for all defined contexts.
++   * 
++   * @param \Symfony\Component\HttpFoundation\Request| null $request
++   *   The request to fetch contexts for.
++   * @param bool $reset_cache
++   *   Boolean indicating whether or not to reset the internal contexts cache.
+    *
+    * @return \Drupal\Core\Plugin\Context\ContextInterface[]
+    *   An array of set context values, keyed by context name.
+    */
+-  public function getContexts();
++  public function getContexts(Request $request = NULL, $reset_cache = FALSE);
+ 
+   /**
+    * Sets the context for a given name.
+diff --git a/src/PageManagerHelper.php b/src/PageManagerHelper.php
+new file mode 100644
+index 0000000..9f6d761
+--- /dev/null
++++ b/src/PageManagerHelper.php
+@@ -0,0 +1,171 @@
++<?php
++/**
++ * @file
++ * Contains Drupal\page_manager\PageManagerHelper.
++ */
++
++namespace Drupal\page_manager;
++
++use Drupal\Component\Render\HtmlEscapedText;
++use Drupal\Core\Entity\EntityManagerInterface;
++use Drupal\Core\Entity\EntityRepositoryInterface;
++use Drupal\Core\Entity\EntityTypeManagerInterface;
++use Drupal\Core\Extension\ModuleHandlerInterface;
++use Drupal\Core\Plugin\Context\Context;
++use Drupal\Core\Render\Markup;
++use Drupal\Core\Utility\Token;
++use Symfony\Component\HttpFoundation\Request;
++
++/**
++ * Helper service for page_manager.
++ */
++class PageManagerHelper {
++
++  /**
++   * The token service.
++   *
++   * @var \Drupal\Core\Utility\Token
++   */
++  protected $token;
++
++  /**
++   * The entity type manager service.
++   *
++   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
++   */
++  protected $entityTypeManager;
++
++  /** The entity repository service.
++   *
++   * @var \Drupal\Core\Entity\EntityRepositoryInterface
++   */
++  protected $entityRepository;
++
++  /**
++   * The module handler service.
++   *
++   * @var \Drupal\Core\Extension\ModuleHandlerInterface
++   */
++  protected $moduleHandler;
++
++  /**
++   * Constructs a new PageManagerHelper.
++   *
++   * @param \Drupal\Core\Utility\Token $token
++   *   The token service.
++   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_manager
++   *   The entity manager service.
++   * @param \Drupal\Core\Entity\EntityRepositoryInterface $entity_repository
++   *  The entity repository service.
++   *
++   */
++  public function __construct(Token $token, EntityTypeManagerInterface $entity_type_manager, EntityRepositoryInterface $entity_repository, ModuleHandlerInterface $module_handler) {
++    $this->token = $token;
++    $this->entityTypeManager = $entity_type_manager;
++    $this->entityRepository = $entity_repository;
++    $this->moduleHandler = $module_handler;
++  }
++
++  /**
++   * Title callback for page variants.
++   *
++   * @param mixed $page_manager_page_variant
++   *   The PageVariant entity.
++   * @param Request|null $request
++   *   The request.
++   *
++   * @return string
++   *   The title of the page variant after replacing any tokens.
++   *
++   * @see \Drupal\page_manager\Routing\PageManagerRoutes::alterRoutes()
++   */
++  public function getVariantTitle($_page_manager_page_variant = NULL, Request $request = NULL) {
++    $variant_title = '';
++    if ($_page_manager_page_variant != NULL) {
++      if (is_string($_page_manager_page_variant)) {
++        $_page_manager_page_variant = $this->entityRepository->loadEntityByConfigTarget('page_variant', $_page_manager_page_variant);
++      }
++      $variant_title = $this->getTitle($_page_manager_page_variant->getTitle(), $_page_manager_page_variant->getContexts($request));
++    }
++    return $variant_title;
++  }
++
++  /**
++   * Gets the title using given context and replaces tokens.
++   *
++   * @param string $title
++   *   The title string.
++   * @param \Drupal\Core\Plugin\Context\ContextInterface[] $contexts
++   *   An array of set context values, keyed by context name.
++   *
++   * @return string
++   *   The title after replacing any tokens for given context.
++   */
++  public function getTitle($title, array $contexts) {
++    $contexts = $this->fixContexts($contexts);
++    // Token replace only escapes replacement values, ensure a consistent
++    // behavior by also escaping the input and then returning it as a Markup
++    // object to avoid double escaping.
++    // @todo: Simplify this when core provides an API for this in
++    //   https://www.drupal.org/node/2580723.
++    $title = (string) $this->token->replace(new HtmlEscapedText($title), $this->getContextAsTokenData($contexts));
++    return Markup::create($title);
++  }
++
++  /**
++   * Sometimes the contexts doesn't have the entity loaded. Fix them.
++   *
++   * @param \Drupal\Core\Plugin\Context\ContextInterface[] $contexts
++   *   An array of set context values, keyed by context name.
++   *
++   * @return \Drupal\Core\Plugin\Context\ContextInterface[]
++   *   Fixed contexts.
++   */
++  protected function fixContexts(array $contexts) {
++    $fixed_contexts = [];
++    foreach ($contexts as $context_name => $context) {
++      $data_type = $context->getContextDefinition()->getDataType();
++      if (preg_match('/entity:(\w+)/', $data_type, $matches)) {
++        $entity_type = $matches[1];
++        if (is_numeric($context->getContextValue())) {
++          $storage = $this->entityTypeManager->getStorage($entity_type);
++          $entity = $storage->load($context->getContextValue());
++          $context = $entity ? new Context($context->getContextDefinition(), $entity) : NULL;
++        }
++      }
++      if ($context) {
++        $fixed_contexts[$context_name] = $context;
++      }
++    }
++    return $fixed_contexts;
++  }
++
++  /**
++   * Returns available context as token data.
++   *
++   * @param \Drupal\Core\Plugin\Context\ContextInterface[] $contexts
++   *   An array of set context values, keyed by context name.
++   *
++   * @return array
++   *   An array with token data values keyed by token type.
++   */
++  protected function getContextAsTokenData(array $contexts) {
++    $data = [];
++    foreach ($contexts as $context) {
++      // @todo Simplify this when token and typed data types are unified in
++      //   https://drupal.org/node/2163027.
++      if (strpos((string) $context->getContextDefinition()->getDataType(), 'entity:') === 0) {
++        $token_type = substr($context->getContextDefinition()->getDataType(), 7);
++        if ($token_type == 'taxonomy_term') {
++          $token_type = 'term';
++        }
++        $data[$token_type] = $context->getContextValue();
++      }
++    }
++
++    $this->moduleHandler->alter('page_manager_context_as_token', $data, $contexts);
++
++    return $data;
++  }
++
++}
+diff --git a/src/PageVariantInterface.php b/src/PageVariantInterface.php
+index 82ec902..e449c0f 100644
+--- a/src/PageVariantInterface.php
++++ b/src/PageVariantInterface.php
+@@ -4,6 +4,7 @@ namespace Drupal\page_manager;
+ 
+ use Drupal\Core\Config\Entity\ConfigEntityInterface;
+ use Drupal\Core\Entity\EntityWithPluginCollectionInterface;
++use Symfony\Component\HttpFoundation\Request;
+ 
+ /**
+  * Provides an interface defining a PageVariant entity.
+@@ -38,6 +39,14 @@ interface PageVariantInterface extends ConfigEntityInterface, EntityWithPluginCo
+    */
+   public function setVariantPluginId($variant);
+ 
++  /**
++   * Retrieves the display title of the variant.
++   *
++   * @return string
++   *   The translated title for variant instance.
++   */
++  public function getTitle();
++
+   /**
+    * Gets the page this variant is on.
+    *
+@@ -62,10 +71,15 @@ interface PageVariantInterface extends ConfigEntityInterface, EntityWithPluginCo
+   /**
+    * Gets the values for all defined contexts.
+    *
++   * @param \Symfony\Component\HttpFoundation\Request| null $request
++   *   The request to fetch contexts for.
++   * @param bool $reset_cache
++   *   Boolean indicating whether or not to reset the internal contexts cache.
++   *
+    * @return \Drupal\Core\Plugin\Context\ContextInterface[]
+    *   An array of set context values, keyed by context name.
+    */
+-  public function getContexts();
++  public function getContexts(Request $request = NULL, $reset_cache = FALSE);
+ 
+   /**
+    * Resets the collected contexts.
+@@ -169,7 +183,7 @@ interface PageVariantInterface extends ConfigEntityInterface, EntityWithPluginCo
+    *
+    * @return $this
+    */
+-  public function setStaticContext($name, $configuration);
++  public function setStaticContext($name, array $configuration);
+ 
+   /**
+    * Removes a specific static context.
+diff --git a/src/Plugin/DisplayVariant/PageBlockDisplayVariant.php b/src/Plugin/DisplayVariant/PageBlockDisplayVariant.php
+index c3e9c89..0db123e 100644
+--- a/src/Plugin/DisplayVariant/PageBlockDisplayVariant.php
++++ b/src/Plugin/DisplayVariant/PageBlockDisplayVariant.php
+@@ -14,12 +14,12 @@ use Drupal\Core\Form\FormStateInterface;
+ use Drupal\Core\Plugin\Context\ContextHandlerInterface;
+ use Drupal\Core\Plugin\ContextAwarePluginInterface;
+ use Drupal\Core\Render\Element;
+-use Drupal\Core\Render\Markup;
+ use Drupal\Core\Security\TrustedCallbackInterface;
+ use Drupal\Core\Session\AccountInterface;
+ use Drupal\Core\Utility\Token;
+ use Drupal\ctools\Plugin\DisplayVariant\BlockDisplayVariant;
+ use Drupal\ctools\Plugin\PluginWizardInterface;
++use Drupal\page_manager\PageManagerHelper;
+ use Drupal\page_manager_ui\Form\VariantPluginContentForm;
+ use Symfony\Component\DependencyInjection\ContainerInterface;
+ 
+@@ -40,6 +40,13 @@ class PageBlockDisplayVariant extends BlockDisplayVariant implements PluginWizar
+    */
+   protected $moduleHandler;
+ 
++  /**
++   * The page_manager helper.
++   *
++   * @var \Drupal\page_manager\PageManagerHelper
++   */
++  protected $pageManagerHelper;
++
+   /**
+    * Constructs a new BlockDisplayVariant.
+    *
+@@ -63,10 +70,13 @@ class PageBlockDisplayVariant extends BlockDisplayVariant implements PluginWizar
+    *   The condition manager.
+    * @param \Drupal\Core\Extension\ModuleHandlerInterface $module_handler
+    *   The module handler.
++   * @param \Drupal\page_manager\PageManagerHelper $page_manager_helper
++   *   The page_manager helper.
+    */
+-  public function __construct(array $configuration, $plugin_id, $plugin_definition, ContextHandlerInterface $context_handler, AccountInterface $account, UuidInterface $uuid_generator, Token $token, BlockManager $block_manager, ConditionManager $condition_manager, ModuleHandlerInterface $module_handler) {
++  public function __construct(array $configuration, $plugin_id, $plugin_definition, ContextHandlerInterface $context_handler, AccountInterface $account, UuidInterface $uuid_generator, Token $token, BlockManager $block_manager, ConditionManager $condition_manager, ModuleHandlerInterface $module_handler, PageManagerHelper $page_manager_helper) {
+     parent::__construct($configuration, $plugin_id, $plugin_definition, $context_handler, $account, $uuid_generator, $token, $block_manager, $condition_manager);
+ 
++    $this->pageManagerHelper = $page_manager_helper;
+     $this->moduleHandler = $module_handler;
+   }
+ 
+@@ -84,7 +94,8 @@ class PageBlockDisplayVariant extends BlockDisplayVariant implements PluginWizar
+       $container->get('token'),
+       $container->get('plugin.manager.block'),
+       $container->get('plugin.manager.condition'),
+-      $container->get('module_handler')
++      $container->get('module_handler'),
++      $container->get('page_manager.page_manager_helper')
+     );
+   }
+ 
+@@ -170,7 +181,7 @@ class PageBlockDisplayVariant extends BlockDisplayVariant implements PluginWizar
+       }
+     }
+ 
+-    $build['#title'] = $this->renderPageTitle($this->configuration['page_title']);
++    $build['#title'] = $this->renderPageTitle($this->configuration['page_title'], $this->getContexts());
+ 
+     $cacheability->applyTo($build);
+ 
+@@ -303,14 +314,7 @@ class PageBlockDisplayVariant extends BlockDisplayVariant implements PluginWizar
+    *   The page title after replacing any tokens.
+    */
+   protected function renderPageTitle($page_title) {
+-    $data = $this->getContextAsTokenData();
+-    // Token replace only escapes replacement values, ensure a consistent
+-    // behavior by also escaping the input and then returning it as a Markup
+-    // object to avoid double escaping.
+-    // @todo Simplify this when core provides an API for this in
+-    //   https://www.drupal.org/node/2580723.
+-    $title = (string) $this->token->replace(new HtmlEscapedText($page_title), $data);
+-    return Markup::create($title);
++    return $this->pageManagerHelper->getTitle($page_title, $this->getContexts());
+   }
+ 
+   /**
+@@ -321,7 +325,8 @@ class PageBlockDisplayVariant extends BlockDisplayVariant implements PluginWizar
+    */
+   protected function getContextAsTokenData() {
+     $data = [];
+-    foreach ($this->getContexts() as $context) {
++    $contexts = $this->getContexts();
++    foreach ($contexts as $context) {
+       // @todo Simplify this when token and typed data types are unified in
+       //   https://drupal.org/node/2163027.
+       if (strpos((string) $context->getContextDefinition()->getDataType(), 'entity:') === 0) {
+@@ -332,6 +337,9 @@ class PageBlockDisplayVariant extends BlockDisplayVariant implements PluginWizar
+         $data[$token_type] = $context->getContextValue();
+       }
+     }
++
++    $this->moduleHandler->alter('page_manager_context_as_token', $data, $contexts);
++
+     return $data;
+   }
+ 
+@@ -359,4 +367,11 @@ class PageBlockDisplayVariant extends BlockDisplayVariant implements PluginWizar
+     return $vars;
+   }
+ 
++  /**
++   * {@inheritdoc}
++   */
++  public function getTitle() {
++    return $this->configuration['page_title'] ?: $this->label();
++  }
++
+ }
+diff --git a/src/Routing/PageManagerRoutes.php b/src/Routing/PageManagerRoutes.php
+index 017a3ae..62f0e3f 100644
+--- a/src/Routing/PageManagerRoutes.php
++++ b/src/Routing/PageManagerRoutes.php
+@@ -92,7 +92,7 @@ class PageManagerRoutes extends RouteSubscriberBase {
+       $defaults['_base_route_name'] = $base_route_name;
+ 
+       $defaults['_entity_view'] = '_page_manager_page_variant';
+-      $defaults['_title'] = $entity->label();
++      $defaults['_title_callback'] = 'page_manager.page_manager_helper:getVariantTitle';
+       $defaults['_page_manager_page'] = $entity->id();
+       $parameters['_page_manager_page_variant']['type'] = 'entity:page_variant';
+       $parameters['_page_manager_page']['type'] = 'entity:page';
+diff --git a/tests/src/Unit/PageBlockDisplayVariantTest.php b/tests/src/Unit/PageBlockDisplayVariantTest.php
+index d551b16..ac85a16 100644
+--- a/tests/src/Unit/PageBlockDisplayVariantTest.php
++++ b/tests/src/Unit/PageBlockDisplayVariantTest.php
+@@ -20,6 +20,7 @@ use Drupal\page_manager\Plugin\DisplayVariant\PageBlockDisplayVariant;
+ use Drupal\Tests\UnitTestCase;
+ use Prophecy\PhpUnit\ProphecyTrait;
+ use Symfony\Component\DependencyInjection\ContainerBuilder;
++use Drupal\page_manager\PageManagerHelper;
+ 
+ /**
+  * Tests the block variant plugin.
+@@ -53,8 +54,9 @@ class PageBlockDisplayVariantTest extends UnitTestCase {
+     $block_manager = $this->prophesize(BlockManager::class);
+     $condition_manager = $this->prophesize(ConditionManager::class);
+     $module_handler = $this->prophesize(ModuleHandlerInterface::class);
++    $page_manager_helper = $this->prophesize(PageManagerHelper::class);
+ 
+-    $variant_plugin = new PageBlockDisplayVariant([], '', [], $context_handler->reveal(), $account->reveal(), $uuid_generator->reveal(), $token->reveal(), $block_manager->reveal(), $condition_manager->reveal(), $module_handler->reveal());
++    $variant_plugin = new PageBlockDisplayVariant([], '', [], $context_handler->reveal(), $account->reveal(), $uuid_generator->reveal(), $token->reveal(), $block_manager->reveal(), $condition_manager->reveal(), $module_handler->reveal(), $page_manager_helper->reveal());
+ 
+     // Empty block.
+     $expected_build = [
+@@ -143,6 +145,7 @@ class PageBlockDisplayVariantTest extends UnitTestCase {
+     $context_handler->applyContextMapping($block2->reveal(), [])->shouldBeCalledTimes(1);
+ 
+     $module_handler = $this->prophesize(ModuleHandlerInterface::class);
++    $page_manager_helper = $this->prophesize(PageManagerHelper::class);
+     $module_handler->alter();
+     $uuid_generator = $this->prophesize(UuidInterface::class);
+     $page_title = 'Page title';
+@@ -152,7 +155,7 @@ class PageBlockDisplayVariantTest extends UnitTestCase {
+ 
+     $variant_plugin = $this->getMockBuilder(PageBlockDisplayVariant::class)
+       // phpcs:ignore
+-      ->setConstructorArgs([['page_title' => $page_title, 'uuid' => 'UUID'], 'test', [], $context_handler->reveal(), $account->reveal(), $uuid_generator->reveal(), $token, $block_manager->reveal(), $condition_manager->reveal(), $module_handler->reveal()])
++      ->setConstructorArgs([['page_title' => $page_title, 'uuid' => 'UUID'], 'test', [], $context_handler->reveal(), $account->reveal(), $uuid_generator->reveal(), $token, $block_manager->reveal(), $condition_manager->reveal(), $module_handler->reveal(), $page_manager_helper->reveal()])
+       ->onlyMethods(['renderPageTitle'])
+       ->getMock();
+ 
+@@ -216,8 +219,9 @@ class PageBlockDisplayVariantTest extends UnitTestCase {
+     $block_manager = $this->prophesize(BlockManager::class);
+     $condition_manager = $this->prophesize(ConditionManager::class);
+     $module_handler = $this->prophesize(ModuleHandlerInterface::class);
++    $page_manager_helper = $this->prophesize(PageManagerHelper::class);
+ 
+-    $variant_plugin = new PageBlockDisplayVariant([], '', [], $context_handler->reveal(), $account->reveal(), $uuid_generator->reveal(), $token->reveal(), $block_manager->reveal(), $condition_manager->reveal(), $module_handler->reveal());
++    $variant_plugin = new PageBlockDisplayVariant([], '', [], $context_handler->reveal(), $account->reveal(), $uuid_generator->reveal(), $token->reveal(), $block_manager->reveal(), $condition_manager->reveal(), $module_handler->reveal(), $page_manager_helper->reveal());
+ 
+     $values = ['page_title' => "Go hang a salami, I'm a lasagna hog!"];
+ 
+diff --git a/tests/src/Unit/PageManagerRoutesTest.php b/tests/src/Unit/PageManagerRoutesTest.php
+index 1e7291a..04a877d 100644
+--- a/tests/src/Unit/PageManagerRoutesTest.php
++++ b/tests/src/Unit/PageManagerRoutesTest.php
+@@ -91,8 +91,7 @@ class PageManagerRoutesTest extends UnitTestCase {
+     $page1->getVariants()
+       ->willReturn(['variant1' => $variant1->reveal()]);
+     $page1->label()
+-      ->willReturn('Page label')
+-      ->shouldBeCalled();
++      ->shouldNotBeCalled();
+     $page1->usesAdminTheme()
+       ->willReturn(TRUE)
+       ->shouldBeCalled();
+@@ -128,7 +127,7 @@ class PageManagerRoutesTest extends UnitTestCase {
+     $route = $collection->get('page_manager.page_view_page1_variant1');
+     $expected_defaults = [
+       '_entity_view' => '_page_manager_page_variant',
+-      '_title' => 'Page label',
++      '_title_callback' => 'page_manager.page_manager_helper:getVariantTitle',
+       '_page_manager_page_variant' => 'variant1',
+       '_page_manager_page' => 'page1',
+       '_page_manager_page_variant_weight' => 0,
+@@ -207,7 +206,7 @@ class PageManagerRoutesTest extends UnitTestCase {
+     $route = $collection->get('page_manager.page_view_page1_variant1');
+     $expected_defaults = [
+       '_entity_view' => '_page_manager_page_variant',
+-      '_title' => NULL,
++      '_title_callback' => 'page_manager.page_manager_helper:getVariantTitle',
+       '_page_manager_page_variant' => 'variant1',
+       '_page_manager_page' => 'page1',
+       '_page_manager_page_variant_weight' => 0,
+@@ -239,9 +238,19 @@ class PageManagerRoutesTest extends UnitTestCase {
+     $data['no_slug'] = ['/test_route', '/test_route'];
+     $data['slug'] = ['/test_route/{test_route}', '/test_route/{test_route}'];
+     $data['placeholder'] = ['/test_route/%', '/test_route/{test_route}'];
+-    $data['slug_with_default'] = ['/test_route/{default_exists}', '/test_route/{default_exists}'];
+-    $data['placeholder_with_default'] = ['/test_route/%', '/test_route/{default_exists}'];
+-    $data['with_requirement'] = ['/test_route/{foo}', '/test_route/{foo}', ['foo' => '\d+']];
++    $data['slug_with_default'] = [
++      '/test_route/{default_exists}',
++      '/test_route/{default_exists}',
++    ];
++    $data['placeholder_with_default'] = [
++      '/test_route/%',
++      '/test_route/{default_exists}',
++    ];
++    $data['with_requirement'] = [
++      '/test_route/{foo}',
++      '/test_route/{foo}',
++      ['foo' => '\d+'],
++    ];
+     return $data;
+   }
+ 
+@@ -298,7 +307,7 @@ class PageManagerRoutesTest extends UnitTestCase {
+         'path' => '/test_route1',
+         'defaults' => [
+           '_entity_view' => '_page_manager_page_variant',
+-          '_title' => 'Page 1',
++          '_title_callback' => 'page_manager.page_manager_helper:getVariantTitle',
+           '_page_manager_page_variant' => 'variant1',
+           '_page_manager_page' => 'page1',
+           '_page_manager_page_variant_weight' => 0,
+@@ -326,7 +335,7 @@ class PageManagerRoutesTest extends UnitTestCase {
+         'path' => '/test_route2',
+         'defaults' => [
+           '_entity_view' => '_page_manager_page_variant',
+-          '_title' => 'Page 2',
++          '_title_callback' => 'page_manager.page_manager_helper:getVariantTitle',
+           '_page_manager_page_variant' => 'variant2',
+           '_page_manager_page' => 'page2',
+           '_page_manager_page_variant_weight' => 0,
+@@ -388,7 +397,7 @@ class PageManagerRoutesTest extends UnitTestCase {
+ 
+     $expected_defaults = [
+       '_entity_view' => '_page_manager_page_variant',
+-      '_title' => NULL,
++      '_title_callback' => 'page_manager.page_manager_helper:getVariantTitle',
+       '_page_manager_page_variant' => 'variant1',
+       '_page_manager_page' => 'page1',
+       '_page_manager_page_variant_weight' => 0,
+diff --git a/tests/src/Unit/PageVariantTest.php b/tests/src/Unit/PageVariantTest.php
+index ec60289..5625f94 100644
+--- a/tests/src/Unit/PageVariantTest.php
++++ b/tests/src/Unit/PageVariantTest.php
+@@ -69,7 +69,7 @@ class PageVariantTest extends UnitTestCase {
+    */
+   public function testGetContexts($static_contexts, $page_contexts, $expected) {
+     $this->contextMapper->getContextValues([])->willReturn($static_contexts)->shouldBeCalledTimes(1);
+-    $this->page->getContexts()->willReturn($page_contexts)->shouldBeCalledTimes(1);
++    $this->page->getContexts(NULL, FALSE)->willReturn($page_contexts)->shouldBeCalledTimes(1);
+ 
+     $contexts = $this->pageVariant->getContexts();
+     $this->assertSame($expected, $contexts);
+@@ -106,7 +106,7 @@ class PageVariantTest extends UnitTestCase {
+    */
+   public function testGetContextsAfterReset() {
+     $this->contextMapper->getContextValues([])->willReturn([])->shouldBeCalledTimes(2);
+-    $this->page->getContexts()->willReturn([])->shouldBeCalledTimes(2);
++    $this->page->getContexts(NULL, FALSE)->willReturn([])->shouldBeCalledTimes(2);
+ 
+     $expected = [];
+     $contexts = $this->pageVariant->getContexts();

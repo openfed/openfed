@@ -1,0 +1,488 @@
+diff --git a/paragraphs_asymmetric_translation_widgets.install b/paragraphs_asymmetric_translation_widgets.install
+new file mode 100644
+index 0000000..8838433
+--- /dev/null
++++ b/paragraphs_asymmetric_translation_widgets.install
+@@ -0,0 +1,34 @@
++<?php
++
++/**
++ * @file
++ * Install, update and uninstall functions for paragraphs_asymmetric_translation_widgets.
++ */
++
++/**
++ * Helper function to set the module weight to paragraphs weight + 1 from key_value table.
++ */
++function _paragraphs_asymmetric_translation_widgets_set_weight_relative() {
++  // Get the weight of the paragraphs module from core.extension config.
++  $extension_config = \Drupal::configFactory()->get('core.extension');
++  $editor_module_weight = $extension_config->get('module.paragraphs');
++  // Set the weight of paragraphs_asymmetric_translation_widgets to paragraphs weight + 1.
++  module_set_weight('paragraphs_asymmetric_translation_widgets', $editor_module_weight + 1);
++}
++
++/**
++ * Implements hook_install().
++ *
++ * Sets the module weight to paragraphs weight + 1 on install.
++ */
++function paragraphs_asymmetric_translation_widgets_install() {
++  _paragraphs_asymmetric_translation_widgets_set_weight_relative();
++}
++
++/**
++ * Update hook to ensure module weight is set to paragraphs weight + 1.
++ */
++function paragraphs_asymmetric_translation_widgets_update_8101() {
++  _paragraphs_asymmetric_translation_widgets_set_weight_relative();
++  return t('Module weight for paragraphs_asymmetric_translation_widgets set to paragraphs weight + 1.');
++}
+diff --git a/paragraphs_asymmetric_translation_widgets.module b/paragraphs_asymmetric_translation_widgets.module
+index d9387a4..2cf1adf 100644
+--- a/paragraphs_asymmetric_translation_widgets.module
++++ b/paragraphs_asymmetric_translation_widgets.module
+@@ -6,7 +6,12 @@
+  */
+ 
+ use Drupal\Core\Entity\EntityInterface;
++use Drupal\Core\Form\FormStateInterface;
++use Drupal\Core\Render\Element;
++use Drupal\Core\Url;
++use Drupal\field\FieldStorageConfigInterface;
+ use Drupal\paragraphs\ParagraphInterface;
++use Drush\Drush;
+ 
+ /**
+  * Implements hook_field_formatter_info_alter().
+@@ -119,3 +124,164 @@ function paragraphs_asymmetric_translation_widgets_entity_translation_delete(Ent
+     }
+   }
+ }
++
++/**
++ * Implements hook_module_implements_alter().
++ *
++ * Our paragraphs_asymmetric_translation_widgets__form_field_config_edit_form_alter()
++ * needs to be run after that of the content_translation module in order to see
++ * the current state of the translation field.
++ *
++ * The hook here can't be more specific, as the $hook that's passed in to this
++ * function is form_alter, and not form_FORM_ID_alter.
++ */
++function paragraphs_asymmetric_translation_widgets_module_implements_alter(&$implementations, $hook) {
++  if ($hook == 'form_alter' && isset($implementations['paragraphs_asymmetric_translation_widgets'])) {
++    $group = $implementations['paragraphs_asymmetric_translation_widgets'];
++    unset($implementations['paragraphs_asymmetric_translation_widgets']);
++    $implementations['paragraphs_asymmetric_translation_widgets'] = $group;
++  }
++}
++
++/**
++ * Implements hook_form_FORM_ID_alter().
++ *
++ * Indicates not recommended multilingual paragraphs field configuration.
++ */
++function paragraphs_asymmetric_translation_widgets_form_field_config_edit_form_alter(&$form, FormStateInterface $form_state, $form_id) {
++  // Only act on the field configuration edit form.
++  if ($form_id !== 'field_config_edit_form') {
++    return;
++  }
++
++  if (!isset($form['paragraphs_message'])) {
++    return;
++  }
++
++  $message_text = t('The recommended multilingual configuration is to not enable translation on Paragraph fields. See the <a href=":documentation">online documentation</a>.', [
++    ':documentation' => Url::fromUri('https://www.drupal.org/node/2735121')
++      ->toString(),
++  ]);
++
++  $form['paragraphs_message'] = [
++    '#theme' => 'status_messages',
++    '#weight' => -1,
++    '#message_list' => [
++      'warning' => [$message_text],
++    ],
++  ];
++}
++
++/**
++ * Implements hook_form_FORM_ID_alter().
++ *
++ * Indicates not recommended multilingual paragraphs field configuration.
++ */
++function paragraphs_asymmetric_translation_widgets_form_language_content_settings_form_alter(&$form, FormStateInterface $form_state, $form_id) {
++  if (!isset($form['settings']['paragraphs_message'])) {
++    return;
++  }
++
++  $content_translation_manager = \Drupal::service('content_translation.manager');
++  $map = \Drupal::service('entity_field.manager')->getFieldMapByFieldType('entity_reference_revisions');
++  foreach ($map as $entity_type_id => $info) {
++    $field_storage_definitions = \Drupal::service('entity_field.manager')->getFieldStorageDefinitions($entity_type_id);
++
++    /** @var \Drupal\Core\Field\FieldStorageDefinitionInterface  $storage_definition */
++    foreach ($field_storage_definitions as $name => $storage_definition) {
++      if ($storage_definition->getSetting('target_type') && $storage_definition->getSetting('target_type') == 'paragraph') {
++        // For configurable fields, check all bundles on which the field exists,
++        // for base fields that are translatable, check all bundles,
++        // untranslatable base fields do not show up at all.
++        $bundles = [];
++        if ($storage_definition instanceof FieldStorageConfigInterface) {
++          $bundles = $storage_definition->getBundles();
++        }
++        elseif ($storage_definition->isTranslatable()) {
++          $bundles = Element::children($form['settings'][$entity_type_id]);
++        }
++        foreach($bundles as $bundle) {
++          if (!$content_translation_manager->isEnabled($entity_type_id, $bundle)) {
++            continue;
++          }
++
++          // Update the label and if the paragraph field is translatable.
++          if (isset($form['settings'][$entity_type_id][$bundle]['fields'][$name]['#label'])) {
++            $form['settings'][$entity_type_id][$bundle]['fields'][$name]['#label'] = t('@field_label (* not recommended)', $form['settings'][$entity_type_id][$bundle]['fields'][$name]['#label']->getArguments());
++          }
++        }
++      }
++    }
++  }
++
++  $message_text = t('(* not recommended) The recommended multilingual configuration is to not enable translation on Paragraph fields. See the <a href=":documentation">online documentation</a>.', [
++    ':documentation' => Url::fromUri('https://www.drupal.org/node/2735121')
++      ->toString()]);
++
++  $form['settings']['paragraphs_message'] = [
++    '#theme' => 'status_messages',
++    '#weight' => -1,
++    '#message_list' => [
++      'warning' => [$message_text],
++    ],
++  ];
++}
++
++/**
++ * Automatically migrate paragraphs fields from symmetrical to non-symmetrical.
++ *
++ * This hook is supposed to run in the following situations:
++ * - when importing config through Drush
++ * - when importing config through the form at
++ *   /admin/config/development/configuration.
++ * - when updating config through the edit form
++ *   at /admin/structure/types/manage/content/fields/<id>
++ * - when updating config through the overview form
++ *   at /admin/config/regional/content-language.
++ *
++ * Implements hook_entity_field_config_update().
++ */
++function paragraphs_asymmetric_translation_widgets_field_config_update(EntityInterface $entity) {
++  /** @var \Drupal\field\Entity\FieldConfig $entity */
++  if ($entity->getType() !== 'entity_reference_revisions') {
++    return;
++  }
++
++  if (!($entity->isTranslatable() && !$entity->original->isTranslatable())) {
++    return;
++  }
++
++  $fieldName = $entity->getName();
++  $entityTypeId = $entity->getTargetEntityTypeId();
++  $bundle = $entity->getTargetBundle();
++
++  // Build and execute batch.
++  $batch = \Drupal::service('paragraphs_asymmetric_translation_widgets.migrate')
++    ->getBatch($entityTypeId, $bundle, $fieldName);
++
++  if (!is_array($batch)) {
++    return;
++  }
++
++  batch_set($batch);
++
++  if (Drush::hasContainer()) {
++    drush_backend_batch_process();
++  }
++}
++
++/**
++ * Implements hook_entity_type_alter().
++ */
++function paragraphs_asymmetric_translation_widgets_entity_type_alter(array &$entity_types) {
++  foreach ($entity_types as $entity_type) {
++    if ($entity_type->get('id') == 'paragraph') {
++      // Disable untranslated field validation when editing non-default
++      // revision, see https://www.drupal.org/node/2938191 for more information.
++      $constraints = $entity_type->getConstraints();
++      unset($constraints['EntityUntranslatableFields']);
++      $entity_type->setConstraints($constraints);
++    }
++  }
++}
++
+diff --git a/paragraphs_asymmetric_translation_widgets.services.yml b/paragraphs_asymmetric_translation_widgets.services.yml
+new file mode 100644
+index 0000000..32a1127
+--- /dev/null
++++ b/paragraphs_asymmetric_translation_widgets.services.yml
+@@ -0,0 +1,6 @@
++services:
++  paragraphs_asymmetric_translation_widgets.migrate:
++    class: Drupal\paragraphs_asymmetric_translation_widgets\MigrateParagraphs
++    arguments:
++      - '@entity_type.manager'
++      - '@messenger'
+diff --git a/src/Drush/Commands/MigrateParagraphsCommand.php b/src/Drush/Commands/MigrateParagraphsCommand.php
+new file mode 100644
+index 0000000..3ceab01
+--- /dev/null
++++ b/src/Drush/Commands/MigrateParagraphsCommand.php
+@@ -0,0 +1,64 @@
++<?php
++
++namespace Drupal\paragraphs_asymmetric_translation_widgets\Drush\Commands;
++
++use Drupal\paragraphs_asymmetric_translation_widgets\MigrateParagraphs;
++use Drush\Commands\DrushCommands;
++use Symfony\Component\DependencyInjection\ContainerInterface;
++
++/**
++ * Drush command for migrating paragraphs fields.
++ */
++class MigrateParagraphsCommand extends DrushCommands {
++
++  /**
++   * The paragraphs migration service.
++   *
++   * @var \Drupal\paragraphs_asymmetric_translation_widgets\MigrateParagraphs
++   */
++  protected $migrateParagraphs;
++
++  /**
++   * Constructs a new MigrateParagraphsCommand object.
++   *
++   * @param \Drupal\paragraphs_asymmetric_translation_widgets\MigrateParagraphs $migrateParagraphs
++   *   The paragraphs migration service.
++   */
++  public function __construct(
++    MigrateParagraphs $migrateParagraphs
++  ) {
++    $this->migrateParagraphs = $migrateParagraphs;
++  }
++
++  /**
++   * Creates the command with its migration service.
++   */
++  public static function create(ContainerInterface $container): self {
++    return new self($container->get('paragraphs_asymmetric_translation_widgets.migrate'));
++  }
++
++  /**
++   * Migrate paragraphs fields from symmetrical to non-symmetrical.
++   *
++   * @param string $entityTypeId
++   *   The entity type ID the field is attached to.
++   * @param string $fieldName
++   *   The name of the field whose paragraphs will be migrated.
++   *
++   * @command paragraphs:migrate-to-non-symmetrical
++   *
++   * @usage paragraphs:migrate $entity_type $field_name
++   */
++  public function migrateCommand(string $entityTypeId, string $fieldName) {
++    $batch = $this->migrateParagraphs->getBatch($entityTypeId, NULL, $fieldName);
++
++    if (!is_array($batch)) {
++      $this->io()->success('No paragraphs to migrate.');
++      return;
++    }
++
++    batch_set($batch);
++    drush_backend_batch_process();
++  }
++
++}
+diff --git a/src/MigrateParagraphs.php b/src/MigrateParagraphs.php
+new file mode 100644
+index 0000000..869db35
+--- /dev/null
++++ b/src/MigrateParagraphs.php
+@@ -0,0 +1,161 @@
++<?php
++
++namespace Drupal\paragraphs_asymmetric_translation_widgets;
++
++use Drupal\Core\Batch\BatchBuilder;
++use Drupal\Core\DependencyInjection\DependencySerializationTrait;
++use Drupal\Core\Entity\EntityTypeManagerInterface;
++use Drupal\Core\Entity\TranslatableInterface;
++use Drupal\Core\Messenger\MessengerInterface;
++use Drupal\Core\StringTranslation\StringTranslationTrait;
++
++/**
++ * Service for migrating paragraphs from symmetric to asymmetric.
++ */
++class MigrateParagraphs {
++
++  use DependencySerializationTrait;
++  use StringTranslationTrait;
++
++  /**
++   * The entity type manager.
++   *
++   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
++   */
++  protected $entityTypeManager;
++
++  /**
++   * The messenger service.
++   *
++   * @var \Drupal\Core\Messenger\MessengerInterface
++   */
++  protected $messenger;
++
++  /**
++   * Constructs a new MigrateParagraphs object.
++   *
++   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entityTypeManager
++   *   The entity type manager.
++   * @param \Drupal\Core\Messenger\MessengerInterface $messenger
++   *   The messenger service.
++   */
++  public function __construct(
++    EntityTypeManagerInterface $entityTypeManager,
++    MessengerInterface $messenger
++  ) {
++    $this->entityTypeManager = $entityTypeManager;
++    $this->messenger = $messenger;
++  }
++
++  /**
++   * Create a batch array for migrating paragraphs.
++   */
++  public function getBatch(string $entityTypeId, ?string $bundle, string $fieldName): ?array {
++    $storage = $this->entityTypeManager
++      ->getStorage($entityTypeId);
++    $definition = $this->entityTypeManager
++      ->getDefinition($entityTypeId);
++
++    $entityQuery = $storage->getQuery()
++      ->accessCheck(FALSE)
++      ->exists($fieldName);
++
++    if ($bundle && $bundleKey = $definition->getKey('bundle')) {
++      $entityQuery->condition($bundleKey, $bundle);
++    }
++
++    $entityIds = $entityQuery->execute();
++
++    if ($entityIds === []) {
++      return NULL;
++    }
++
++    $batch_builder = (new BatchBuilder())
++      ->setTitle(t('Migrating paragraphs'))
++      ->setFinishCallback([$this, 'batchFinishCallback']);
++
++    foreach ($entityIds as $entityId) {
++      $batch_builder->addOperation(
++        [$this, 'migrateEntity'],
++        [$fieldName, $entityTypeId, $entityId]
++      );
++    }
++
++    return $batch_builder->toArray();
++  }
++
++    /**
++     * Migrate paragraphs from symmetric to asymmetric for a single entity.
++     *
++     * @param string $fieldName
++     *   The name of the paragraphs field that will be migrated.
++     * @param string $entityTypeId
++     *   The entity type ID of the entity whose paragraphs will be migrated.
++     * @param string $entityId
++     *   The ID of the entity whose paragraphs will be migrated.
++     * @param array|\DrushBatchContext $context
++     *   An associative array containing contextual information.
++     */
++  public function migrateEntity(string $fieldName, string $entityTypeId, string $entityId, &$context): void {
++    $entityTypeDefinition = $this->entityTypeManager->getDefinition($entityTypeId);
++    $entity = $this->entityTypeManager->getStorage($entityTypeId)->load($entityId);
++
++    if ($entity instanceof TranslatableInterface) {
++      foreach ($entity->getTranslationLanguages(FALSE) as $language) {
++        // Go through all translations of the entity and set the values from
++        // original entity if there are no existing values.
++        $entity_translation = $entity->getTranslation($language->getId());
++
++        if ($entity_translation->get($fieldName)->target_id === NULL) {
++          $entity_translation->{$fieldName} = $entity->{$fieldName};
++          $entity_translation->save();
++        }
++      }
++    }
++
++    // Collect processed entities
++    $context['results'][] = $entityId;
++
++    // Optional message displayed under the progress bar.
++    $context['message'] = $this->t('Migrating @field_name from symmetric to asymmetric for @entity_type_label with bundle @bundle and ID @id.', [
++      '@field_name' => $fieldName,
++      '@entity_type_label' => $entityTypeDefinition->getSingularLabel(),
++      '@bundle' => $entity->bundle(),
++      '@id' => $entityId,
++    ]);
++  }
++
++  /**
++   * Finish callback for the batch process.
++   *
++   * @param bool $success
++   *   Success of the operation.
++   * @param array $results
++   *   Array of results for post processing.
++   * @param array $operations
++   *   Array of operations.
++   */
++  public function batchFinishCallback(bool $success, array $results, array $operations) {
++    if ($success) {
++      $this->messenger->addMessage(
++        $this->formatPlural(
++          count($results),
++          'Successfully migrated paragraphs for 1 entity.',
++          'Successfully migrated paragraphs for @count entities.',
++        )
++      );
++    }
++    else {
++      // An error occurred.
++      // $operations contains the operations that remained unprocessed.
++      $error_operation = reset($operations);
++      $this->messenger->addMessage(
++        $this->t('An error occurred while processing @operation with arguments: @args', [
++          '@operation' => $error_operation[0],
++          '@args' => print_r($error_operation[0], TRUE),
++        ])
++      );
++    }
++  }
++
++}
+diff --git a/src/Plugin/Field/FieldWidget/ParagraphsClassicAsymmetricWidget.php b/src/Plugin/Field/FieldWidget/ParagraphsClassicAsymmetricWidget.php
+index 819a692..290ca06 100644
+--- a/src/Plugin/Field/FieldWidget/ParagraphsClassicAsymmetricWidget.php
++++ b/src/Plugin/Field/FieldWidget/ParagraphsClassicAsymmetricWidget.php
+@@ -135,6 +135,12 @@ class ParagraphsClassicAsymmetricWidget extends InlineParagraphsWidget {
+         if (!empty($form_state->get('content_translation'))) {
+           $paragraphs_entity = $this->createDuplicateWithSingleLanguage($paragraphs_entity, $langcode);
+         }
++        elseif ($paragraphs_entity->hasTranslation($langcode)) {
++          // If host entity translation refers to same paragraph entity, then
++          // fetch that instead. This is possible if Classic widget has been
++          // changed to Asymmetric widget with existing content.
++          $paragraphs_entity = $paragraphs_entity->getTranslation($langcode);
++        }
+       }
+       // -- paragraphs_asymmetric_translation_widgets addition end
+       else {

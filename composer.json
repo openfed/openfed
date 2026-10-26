@@ -79,16 +79,12 @@
             }
         },
         "patches": {
-            "drupal/block_content_permissions": {
-                "Issue #2920739: Allow accessing the \"Custom block library\" page without \"Administer blocks\" permission": "https://www.drupal.org/files/issues/2023-01-09/block_content_permissions-access_listing_page-2920739-59.patch"
-            },
             "drupal/core": {
-                "Issue #2321071: BaseFieldOverride fails": "https://www.drupal.org/files/issues/2023-11-02/2321071-71.patch",
-                "Issue #2325899: UI fatal caused by views argument handlers no longer can provide their own default argument handling": "https://www.drupal.org/files/issues/2024-04-04/2325899-10.2.5-184.patch",
-                "Issue #2649268: Entity Field Query throws QueryException when querying all revisions and setting condition on entity reference field": "https://www.drupal.org/files/issues/2019-09-12/2649268-32.patch",
+                "Issue #2321071: BaseFieldOverride fails": "patches/core-2321071-drupal11.patch",
+                "Issue #2649268: Entity Field Query throws QueryException when querying all revisions and setting condition on entity reference field": "patches/core-2649268-drupal11.patch",
                 "Issue #2898335: Using AJAX in menu link's edit form causes database connection serialization errors": "https://www.drupal.org/files/issues/2025-02-26/2898335-10.patch",
-                "Issue #3221375: Wrong language field labels after `drush cr` because of Drush language negotiation": "https://www.drupal.org/files/issues/2024-02-23/3221375_lost-field-labels-translations.patch",
-                "Issue #3359511: [regression] missing menu active trail since Drupal 9.5.9": "https://www.drupal.org/files/issues/2026-03-24/3359511-152-10.6.patch"
+                "Issue #3221375: Wrong language field labels after `drush cr` because of Drush language negotiation": "https://git.drupalcode.org/project/drupal/-/merge_requests/13139.patch",
+                "Issue #3359511: [regression] missing menu active trail since Drupal 9.5.9": "https://www.drupal.org/files/issues/2026-09-16/drupal-3359511-regression-missing-menu-11.4.x.patch"
             },
             "drupal/ckeditor_accordion": {
                 "Issue #3124167: Provide an accessible variant": "https://www.drupal.org/files/issues/2025-10-13/ckeditor_accordion-provide-accessible-variant-3124167-55.patch"
@@ -96,34 +92,27 @@
             "drupal/ckeditor_media_resize": {
                 "Issue #3409595: Selected widths larger than largest available size (CKE Media Resize Extra Large) should fall back to the largest size rather than Default width": "https://www.drupal.org/files/issues/2025-02-13/ckeditor_media_resize-3409595-8.patch"
             },
-            "drupal/disable_route_normalizer": {
-                "Issue #3376799: Could not check compatibility between Drupal\\disable_route_normalizer\\DisableRouteNormalizer\\DisableRouteNormalizer and Drupal\\redirect\\EventSubscriber\\RouteNormalizerRequestSubscriber": "https://www.drupal.org/files/issues/2023-07-26/disable_route_normalizer-deprecated-class-GetResponseEvent-3376799-4.patch"
-            },
             "drupal/entity_embed": {
-                "Issue #2882866: Provide a preview display setting for use in WYSIWYG editors": "https://www.drupal.org/files/issues/2019-09-18/entity_embed-preview_display_plugin-2882866-28.patch",
+                "Issue #2882866: Provide a preview display setting for use in WYSIWYG editors": "https://www.drupal.org/files/issues/2022-10-27/entity_embed-2882866-35.patch",
                 "Issue #3531672: Drupal 10.5/11.2 compatability (tooltip broken, cannot edit embedded entities)": "https://www.drupal.org/files/issues/2025-12-22/entity_embed.issue-3531672-62.patch"
             },
             "drupal/facets": {
-                "Issue #3057943: Set target page URL": "https://www.drupal.org/files/issues/2022-01-20/facets-set_base_path-3057943-25.patch"
+                "Issue #3057943: Set target page URL": "patches/facets-3057943-drupal11.patch"
             },
             "drupal/field_group": {
-                "Issue #3160987: Form required class missing from horizontal field groups in Claro": "https://git.drupalcode.org/project/field_group/-/merge_requests/108.patch"
-            },
-            "drupal/file_encrypt": {
-                "Issue #2946320: Fix download route when installed with the redirect module": "https://www.drupal.org/files/issues/2021-01-12/2946320-6.patch"
+                "Issue #3160987: Form required class missing from horizontal field groups in Claro": "https://www.drupal.org/files/issues/2026-03-27/field-group-required-field-missing-asteriks-3160987-53.patch"
             },
             "drupal/file_entity": {
-                "Issue #3206218: Notice: Undefined index: id caused by hook_action_info_alter": "https://www.drupal.org/files/issues/2021-03-29/pathauto-update-action-3206218-2.patch",
-                "Issue #3277484: Wrong encoding on Download link formatter": "https://www.drupal.org/files/issues/2022-04-27/fix_download_link_encoding-3277484-3.patch"
+                "Issue #3277484: Wrong encoding on Download link formatter": "patches/file_entity-3277484-drupal11.patch"
             },
             "drupal/inline_entity_form": {
-                "Issue #2822764: Support adding new entities when translating": "https://www.drupal.org/files/issues/2025-08-27/2822764-149.patch"
+                "Issue #2822764: Support adding new entities when translating": "https://git.drupalcode.org/project/inline_entity_form/-/merge_requests/174.patch"
             },
             "drupal/language_selection_page": {
                 "Issue #3416302: Document/create update hook for blacklisted paths": "https://www.drupal.org/files/issues/2025-04-29/language_selection_page-blacklist_paths_update_hook-3416302-4.patch"
             },
             "drupal/link_attributes": {
-                "Issue #3046214: Add Default menu_link_content attributes UI": "https://www.drupal.org/files/issues/2024-08-21/3046214-add-default-attributes-32.patch"
+                "Issue #3046214: Add Default menu_link_content attributes UI": "patches/link_attributes-3046214-drupal11.patch"
             },
             "drupal/menu_block": {
                 "Issue #3089134: Ability to display the menu selected by the page": "https://www.drupal.org/files/issues/2025-10-10/menu_block-mulitple_menu_block-3089134-53.patch"
@@ -133,7 +122,7 @@
             },
             "drupal/menu_link": {
                 "Issue #2894298: Attempt to create field storage menu_link which is reserved by entity type node.": "https://www.drupal.org/files/issues/2019-07-23/menu_link-field-storage-2894298-11.patch",
-                "Issue #2907989: Problem creating pathauto joined paths": "https://www.drupal.org/files/issues/2024-02-22/wrong_joined_paths-2907989-9.patch"
+                "Issue #2907989: Problem creating pathauto joined paths": "patches/menu_link-2907989-10-drupal11.patch"
             },
             "drupal/menu_link_weight": {
                 "Issue #3456674: JavaScript error when adding a menu link and the node title field is not presented in the edit form": "https://www.drupal.org/files/issues/2024-06-24/js-error-when-node-title-is-missing-3456674-2.patch",
@@ -144,29 +133,29 @@
                 "Issue #3099308: Menu Trail by Path: several issues": "https://www.drupal.org/files/issues/2025-10-15/menu_trail_by_path_issues-3099308-17.patch"
             },
             "drupal/metatag": {
-                "Issue #3469872: Site name not translated on Webforms": "https://www.drupal.org/files/issues/2024-08-23/metatag-issues-with-webform-translations-3469872-3.patch"
+                "Issue #3469872: Site name not translated on Webforms": "patches/metatag-3469872-drupal11.patch"
             },
             "drupal/onomasticon": {
                 "Issue #3459880: Compat 10.3 missing schema": "https://www.drupal.org/files/issues/2024-07-08/compat-10.3-missing-schema.patch"
             },
             "drupal/page_manager": {
-                "Issue #2665328: Fix Variants take entity label, not the variant title": "https://www.drupal.org/files/issues/2025-05-08/2665328-title-tokens-137.patch",
+                "Issue #2665328: Fix Variants take entity label, not the variant title": "patches/page_manager-2665328-drupal11.patch",
                 "Issue #2858877: Allow for block visibility rules (Patch 1)": "https://git.drupalcode.org/project/page_manager/-/merge_requests/24.patch",
                 "Issue #2858877: Allow for block visibility rules (Patch 2)": "https://www.drupal.org/files/issues/2025-03-05/page_manager-block_visibility_conditions-resolver_service-2858877-83.patch"
             },
             "drupal/panels": {
-                "Issue #2769099: Block visibility conditions": "https://www.drupal.org/files/issues/2025-02-03/2769099-67.patch"
+                "Issue #2769099: Block visibility conditions": "https://www.drupal.org/files/issues/2025-10-17/2769099-70.patch"
             },
             "drupal/paragraphs": {
-                "Issue #2868252: Consider adding a hook to Paragraphs::getSummary": "https://www.drupal.org/files/issues/2025-07-18/2868252-paragraph-summary-alter-57.patch",
+                "Issue #2868252: Consider adding a hook to Paragraphs::getSummary": "https://www.drupal.org/files/issues/2026-08-06/2868252-paragraph-summary-alter-60.patch",
                 "Issue #3153915: Missing required mark when field is required.": "https://www.drupal.org/files/issues/2022-03-11/paragraphs-n3153915-10.patch"
             },
             "drupal/paragraphs_asymmetric_translation_widgets": {
-                "Issue #3558026: Paragraphs_asymmetric_translation_widgets combined patch": "https://www.drupal.org/files/issues/2025-11-15/paragraphs-asymmetric-translation-widgets-3558026-combined-2.patch",
+                "Issue #3558026: Paragraphs_asymmetric_translation_widgets combined patch": "patches/paragraphs_asymmetric_translation_widgets-3558026-drupal11.patch",
                 "Issue #3581868: Missing required mark when field is required.": "https://www.drupal.org/files/issues/2026-03-27/paragraphs-asymmetric-translation-widgets-missing-required-asteriks-3581868-3.patch"
             },
             "drupal/token": {
-                "Issue #2945272: Bulk generating nodes with [node:content-type]/[node:title]": "https://www.drupal.org/files/issues/2019-03-14/2945272-8-token-language.patch"
+                "Issue #2945272: Bulk generating nodes with [node:content-type]/[node:title]": "https://www.drupal.org/files/issues/2025-09-10/2945272-19.patch"
             },
             "drupal/video_embed_field": {
                 "Issue #3196304: Video Embed Field - youtube requests using https instead": "https://www.drupal.org/files/issues/2021-02-03/fix_thumbnail_download-3196304-2.patch"
@@ -195,7 +184,6 @@
         "drupal/back_to_top": "3.0.3",
         "drupal/better_exposed_filters": "7.2.0",
         "drupal/block_class": "4.0.2",
-        "drupal/block_content_permissions": "1.11",
         "drupal/bootstrap": "3.45",
         "drupal/ckeditor5_paste_filter": "^1.1",
         "drupal/ckeditor5_plugin_pack": "^1.4",
@@ -223,7 +211,7 @@
         "drupal/ds": "3.37",
         "drupal/editor_advanced_link": "2.3.4",
         "drupal/embed": "1.10",
-        "drupal/encrypt": "3.2",
+        "drupal/encrypt": "^3.0@dev",
         "drupal/entity": "1.8",
         "drupal/entity_browser": "2.17",
         "drupal/entity_embed": "1.7",
@@ -231,10 +219,10 @@
         "drupal/entityqueue": "1.13",
         "drupal/extlink": "2.0.5",
         "drupal/facets": "2.0.*",
-        "drupal/field_encrypt": "3.2.1",
+        "drupal/field_encrypt": "^4.1",
         "drupal/field_formatter": "3.0.1",
         "drupal/field_group": "4.0.0",
-        "drupal/file_encrypt": "1.0-alpha3",
+        "drupal/file_encrypt": "^2.0@alpha",
         "drupal/file_entity": "2.9",
         "drupal/focal_point": "2.1.3",
         "drupal/geocoder": "4.38",
@@ -282,7 +270,7 @@
         "drupal/paragraphs_asymmetric_translation_widgets": "1.4",
         "drupal/paragraphs_summary_token": "2.0.11",
         "drupal/pathauto": "1.15",
-        "drupal/real_aes": "2.6",
+        "drupal/real_aes": "^2.6",
         "drupal/redirect": "1.13",
         "drupal/robotstxt": "1.6",
         "drupal/role_delegation": "^1.6",
@@ -322,14 +310,14 @@
         "drupal/views_slideshow": "5.0.1",
         "drupal/wba_menu_link": "^3.0",
         "drupal/webform": "^6.3.1",
-        "drupal/webform_encrypt": "2.0.0-alpha1",
+        "drupal/webform_encrypt": "^2.0@beta",
         "drupal/webform_translation_permissions": "2.1.0",
         "drupal/weight": "3.6",
         "drupal/workbench_access": "2.0.5",
         "drupal/workbench_moderation": "1.10",
         "drupal/workbench_moderation_actions": "2.1.0-alpha2",
         "drupal/yoast_seo": "2.2",
-        "drush/drush": "^12.0",
+        "drush/drush": "^13.7",
         "jackmoore/colorbox": "1.6.4",
         "mnsami/composer-custom-directory-installer": "^2.3",
         "openfed/kiso": "dev-drupal-11.4-compatibility",
@@ -347,7 +335,7 @@
     "config": {
         "sort-packages": true,
         "platform": {
-            "php": "8.1"
+            "php": "8.3"
         },
         "allow-plugins": {
             "composer/installers": true,
@@ -358,7 +346,8 @@
             "mnsami/composer-custom-directory-installer": true,
             "oomphinc/composer-installers-extender": false,
             "simplesamlphp/composer-module-installer": true,
-            "simplesamlphp/composer-xmlprovider-installer": true
+            "simplesamlphp/composer-xmlprovider-installer": true,
+            "symfony/runtime": true
         }
     }
 }
