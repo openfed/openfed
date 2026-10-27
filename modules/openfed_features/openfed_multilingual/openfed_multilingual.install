@@ -53,7 +53,6 @@ function openfed_multilingual_install() {
   // Set "/en" as the default path prefix for English language
   \Drupal::configFactory()
     ->getEditable('language.negotiation')
-    ->set('url.prefixes.en', 'en')
-    ->save(TRUE);
+    ->set('url.prefixes.en', 'en')->save();
 
 }
