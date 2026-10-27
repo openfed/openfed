@@ -3,7 +3,7 @@ description: 'Add SVG image formatter to file field.'
 package: Openfed
 
 type: module
-core_version_requirement: ^9 || ^10
+core_version_requirement: ^11.4
 
 dependencies:
   - drupal:file

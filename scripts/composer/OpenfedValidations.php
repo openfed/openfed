@@ -3,8 +3,6 @@
 namespace OpenfedProject\composer;
 
 use Composer\Script\Event;
-use Drupal\Core\DrupalKernel;
-use Symfony\Component\HttpFoundation\Request;
 
 /**
  * A class to do several validations before updating to Openfed 12.x.
@@ -92,7 +90,7 @@ class OpenfedValidations {
     $recheck = false;
     $modules_to_check = []; //TODO: set the modules to disable on Openfed13
     foreach ($modules_to_check as $module) {
-      $output = trim(shell_exec('drush pml --field="status" --filter="name=' . $module . '"'));
+      $output = trim(shell_exec('drush pml --field="status" --filter="name=' . $module . '"') ?? '');
       if ($output == 'Enabled') {
         if (in_array('fix', $arguments)) {
           shell_exec('drush pmu ' . $module);
@@ -136,7 +134,7 @@ class OpenfedValidations {
     }
 
     foreach ($themes_to_check as $theme) {
-      $output = trim(shell_exec('drush pml --field="status" --filter="name=' . $theme . '"'));
+      $output = trim(shell_exec('drush pml --field="status" --filter="name=' . $theme . '"') ?? '');
       if ($output == 'Enabled') {
         if (in_array('fix', $arguments)) {
           shell_exec('drush thun ' . $theme);
