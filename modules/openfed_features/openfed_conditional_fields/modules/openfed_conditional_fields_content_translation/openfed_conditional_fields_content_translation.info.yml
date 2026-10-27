@@ -2,7 +2,7 @@ name: Openfed Conditional Fields Content Translation
 description: Fixes conditional field access on content translation forms.
 package: Openfed
 type: module
-core_version_requirement: ^10 || ^11
+core_version_requirement: ^11.4
 
 dependencies:
   - drupal:content_translation

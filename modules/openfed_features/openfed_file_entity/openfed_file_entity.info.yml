@@ -2,7 +2,7 @@ name: Openfed File Entity
 type: module
 description: Provides default configurations for file_entity module.
 package: Openfed
-core_version_requirement: ^9 || ^10
+core_version_requirement: ^11.4
 dependencies:
   - file_entity:file_entity
   - openfed_multilingual:openfed_multilingual
