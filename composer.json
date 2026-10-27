@@ -32,7 +32,9 @@
         ],
         "post-update-cmd": [
             "OpenfedProject\\composer\\ScriptHandler::createRequiredFiles"
-        ]
+        ],
+        "rector:check": "@php vendor/bin/rector process --config=rector.php --dry-run",
+        "rector:fix": "@php vendor/bin/rector process --config=rector.php"
     },
     "extra": {
         "installer-types": [
@@ -334,7 +336,9 @@
     },
     "require-dev": {
         "drupal/coder": "8.*",
-        "drupal/devel": "5.5.*"
+        "drupal/core-dev": "11.4.1",
+        "drupal/devel": "5.5.*",
+        "palantirnet/drupal-rector": "^1.1"
     },
     "config": {
         "sort-packages": true,
@@ -349,9 +353,12 @@
             "drupal/core-composer-scaffold": true,
             "mnsami/composer-custom-directory-installer": true,
             "oomphinc/composer-installers-extender": false,
+            "php-http/discovery": true,
+            "phpstan/extension-installer": true,
             "simplesamlphp/composer-module-installer": true,
             "simplesamlphp/composer-xmlprovider-installer": true,
-            "symfony/runtime": true
+            "symfony/runtime": true,
+            "tbachert/spi": true
         }
     }
 }

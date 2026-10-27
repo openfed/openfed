@@ -60,7 +60,7 @@ function openfed_administration_update_10001() {
   $replace_embeddable($data);
 
   if ($changed) {
-    $config->setData($data)->save(TRUE);
+    $config->setData($data)->save();
     return 'Updated views.view.media labels from "Embeddable" to "Media".';
   }
 
