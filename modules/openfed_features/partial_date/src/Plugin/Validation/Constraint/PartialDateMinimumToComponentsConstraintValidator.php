@@ -13,7 +13,7 @@ class PartialDateMinimumToComponentsConstraintValidator extends ConstraintValida
   /**
    * {@inheritdoc}
    */
-  public function validate($value, Constraint $constraint) {
+  public function validate(mixed $value, Constraint $constraint): void {
     /** @var \Drupal\Core\Field\FieldItemInterface $value */
     if ($value->isEmpty()) {
       return;

@@ -154,7 +154,7 @@ class PartialDateWidget extends WidgetBase implements ContainerFactoryPluginInte
   /**
    * {@inheritdoc}
    */
-  public function settingsForm(array $form, \Drupal\Core\Form\FormStateInterface $form_state) {
+  public function settingsForm(array $form, FormStateInterface $form_state) {
     //debug_only:     var_dump($this->settings);
     $elements = array();
     $elements['txt_long'] = array(

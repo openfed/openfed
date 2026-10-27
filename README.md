@@ -96,6 +96,13 @@ After changing patches, run `ddev composer patches-relock`, followed by
 Patch format compatibility does not guarantee that an individual patch still
 applies to the selected Drupal release.
 
+## Rector
+
+Rector checks Drupal 10/11 deprecations in `modules/openfed_features` using `rector.php`.
+This repository already declares Rector as a development dependency; install it with `composer install --dev`.
+Run `composer rector:check` to preview suggested changes or `composer rector:fix` to apply them.
+Review all changes and run tests; a clean Rector check does not certify Drupal compatibility.
+
 ## Bug Report
 
 You should use, preferably, Drupal.org [Openfed issue queue](https://www.drupal.org/project/issues/openfed).
