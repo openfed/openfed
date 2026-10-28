@@ -1,7 +1,8 @@
-<?php 
+<?php
 
 namespace Drupal\partial_date\Plugin\Field\FieldWidget;
 
+use Drupal\Core\Field\FieldDefinitionInterface;
 use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Field\WidgetBase;
 use Drupal\Core\Field\FieldItemListInterface;
@@ -23,10 +24,8 @@ class PartialDateWidget extends WidgetBase implements ContainerFactoryPluginInte
 
   /**
    * The configuration factory.
-   *
-   * @var \Drupal\Core\Config\ConfigFactoryInterface
    */
-  protected $configFactory;
+  protected ConfigFactoryInterface $configFactory;
 
   /**
    * Constructs a PartialDateWidget object.
@@ -44,7 +43,7 @@ class PartialDateWidget extends WidgetBase implements ContainerFactoryPluginInte
    * @param \Drupal\Core\Config\ConfigFactoryInterface $config_factory
    *   The configuration factory.
    */
-  public function __construct($plugin_id, $plugin_definition, $field_definition, $settings, $third_party_settings, ConfigFactoryInterface $config_factory){
+  public function __construct($plugin_id, $plugin_definition, FieldDefinitionInterface $field_definition, array $settings, array $third_party_settings, ConfigFactoryInterface $config_factory) {
     parent::__construct($plugin_id, $plugin_definition, $field_definition, $settings, $third_party_settings);
     $this->configFactory = $config_factory;
   }
@@ -52,7 +51,7 @@ class PartialDateWidget extends WidgetBase implements ContainerFactoryPluginInte
   /**
    * {@inheritdoc}
    */
-  public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
+  public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition): static {
     return new static(
       $plugin_id,
       $plugin_definition,
@@ -63,15 +62,17 @@ class PartialDateWidget extends WidgetBase implements ContainerFactoryPluginInte
     );
   }
 
-
-  public function hasTime() {
+  /**
+   * Determines if the field has time components.
+   */
+  public function hasTime(): bool {
     return $this->getFieldSetting('has_time') && $this->getSetting('has_time');
   }
 
   /**
    * {@inheritdoc}
    */
-  public function formElement(FieldItemListInterface $items, $delta, array $element, array &$form, FormStateInterface $form_state) {
+  public function formElement(FieldItemListInterface $items, $delta, array $element, array &$form, FormStateInterface $form_state): array {
     $config = $this->configFactory->get('partial_date.settings');
     $item = $items[$delta];
 
@@ -82,7 +83,7 @@ class PartialDateWidget extends WidgetBase implements ContainerFactoryPluginInte
 
     $element['#theme_wrappers'][] = 'form_element';
 
-    $element['from'] = array(
+    $element['from'] = [
       '#type' => 'partial_datetime_element',
       '#title' => t('Date'),
       '#title_display' => 'invisible',
@@ -92,36 +93,36 @@ class PartialDateWidget extends WidgetBase implements ContainerFactoryPluginInte
       '#minimum_components' => $this->getFieldSetting('minimum_components')['from']['granularity'],
       '#component_styles' => $config->get('partial_date_component_field_inline_styles'),
       '#increments' => $this->getSetting('increments'),
-    );
+    ];
 
     $element['#component_help'] = $help_txt['components'];
 
-    $element['txt'] = array(
+    $element['txt'] = [
       '#type' => 'container',
-      '#attributes' => array('class' => array('container-inline')),
-    );
-    $txt_element = array(
+      '#attributes' => ['class' => ['container-inline']],
+    ];
+    $txt_element = [
       '#type' => 'textfield',
       '#title' => t('Text override'),
       '#title_display' => 'invisible',
       '#maxlength' => 255,
-    );
+    ];
     if (!empty($this->getSetting('txt_long'))) {
-      $element['txt']['long'] = $txt_element + array(
+      $element['txt']['long'] = $txt_element + [
         '#id' => 'txt_long',
         '#placeholder' => $help_txt['txt_long'],
         '#default_value' => $item->txt_long,
         '#size' => 80,
-      );
+      ];
     }
     if (!empty($this->getSetting('txt_short'))) {
-      $element['txt']['short'] = $txt_element + array(
+      $element['txt']['short'] = $txt_element + [
         '#id' => 'txt_short',
         '#placeholder' => $help_txt['txt_short'],
         '#default_value' => $item->txt_short,
         '#maxlength' => 100,
         '#size' => 40,
-      );
+      ];
     }
 
     return $element;
@@ -132,157 +133,162 @@ class PartialDateWidget extends WidgetBase implements ContainerFactoryPluginInte
    */
   public static function defaultSettings() {
     $components = array_fill_keys(partial_date_component_keys(), 1);
-    return array(
+    return [
       'txt_short' => FALSE,
       'txt_long' => FALSE,
       'has_time' => TRUE,
       'year_estimates_values' => '',
       'tz_handling' => 'none',
       'components' => $components,
-      'increments' => array(
+      'increments' => [
         'second' => 1,
         'minute' => 1,
-      ),
-      'help_txt' => array(
+      ],
+      'help_txt' => [
         'components' => '',
         'txt_short' => new TranslatableMarkup('Short description of date'),
         'txt_long' => new TranslatableMarkup('Longer description of date'),
-      ),
-    ) + parent::defaultSettings();
+      ],
+    ] + parent::defaultSettings();
   }
 
   /**
    * {@inheritdoc}
    */
-  public function settingsForm(array $form, FormStateInterface $form_state) {
-    //debug_only:     var_dump($this->settings);
-    $elements = array();
-    $elements['txt_long'] = array(
+  public function settingsForm(array $form, FormStateInterface $form_state): array {
+    // debug_only:     var_dump($this->settings);.
+    $elements = [];
+    $elements['txt_long'] = [
       '#type' => 'checkbox',
       '#id' => 'txt_long',
       '#title' => t('Provide a textfield for collection of a long description of the date'),
       '#default_value' => $this->getSetting('txt_long'),
-    );
-    $elements['txt_short'] = array(
+    ];
+    $elements['txt_short'] = [
       '#type' => 'checkbox',
       '#id' => 'txt_short',
       '#title' => t('Provide a textfield for collection of a short description of the date'),
       '#default_value' => $this->getSetting('txt_short'),
-    );
-    $elements['has_time'] = array(
+    ];
+    $elements['has_time'] = [
       '#type' => 'checkbox',
       '#id' => 'has_time',
       '#title' => t('Show time components'),
       '#default_value' => $this->hasTime(),
       '#description' => t('Clear if not interested in holding time. Check to make time controls available.'),
       '#disabled' => !$this->getFieldSetting('has_time'),
-    );
-    //ensure that if field does not allow time specification, the option is not available!
+    ];
+    // Ensure that if field does not allow time specification, the option is
+    // not available!
     if (!$this->getFieldSetting('has_time')) {
       $elements['has_time']['#type'] = 'value';
       $elements['has_time']['#value'] = 0;
       $this->setSetting('has_time', 0);
     }
-    //Java Script markers to dynamically hide form elements based on the above checkboxes.
-    $statesVisible_HasTime = array(
-      'visible' => array(
-        ':input[id="has_time"]' => array('checked' => TRUE),
-      ),
-    );
-    $elements['components'] = array(
+    // Java Script markers to dynamically hide form elements based on the
+    // above checkboxes.
+    $statesVisible_HasTime = [
+      'visible' => [
+        ':input[id="has_time"]' => ['checked' => TRUE],
+      ],
+    ];
+    $elements['components'] = [
       '#type' => 'partial_date_components_element',
       '#title' => t('Date components'),
       '#default_value' => $this->getSetting('components'),
       '#show_time' => $this->getFieldSetting('has_time'),
       '#description' => t('Select the date attributes to collect and store.'),
       '#time_states' => $statesVisible_HasTime,
-    );
+    ];
 
     if ($this->getFieldSetting('has_time')) {
       $tz_options = $this->getTimezoneOptions();
-      $elements['tz_handling'] = array(
+      $elements['tz_handling'] = [
         '#type' => 'select',
         '#title' => t('Time zone handling'),
         '#default_value' => $this->getSetting('tz_handling'),
         '#options' => $tz_options,
         '#required' => TRUE,
         '#description' => t('Currently, this is only informative; not used in any calculations. <br>')
-          . t('Only %date handling option will render the timezone selector to users.', array('%date' => $tz_options['date'])),
+        . t('Only %date handling option will render the timezone selector to users.', ['%date' => $tz_options['date']]),
         '#states' => $statesVisible_HasTime,
-      );
-      $incremtOptions = array_combine(array(1, 2, 5, 10, 15), array(1, 2, 5, 10, 15));
+      ];
+      $incremtOptions = array_combine([1, 2, 5, 10, 15], [1, 2, 5, 10, 15]);
       $increments = $this->getSetting('increments');
-      $elements['increments'] = array();
-      $elements['increments']['minute'] = array(
+      $elements['increments'] = [];
+      $elements['increments']['minute'] = [
         '#type' => 'select',
         '#title' => t('Minute increments'),
         '#default_value' => $increments['minute'],
         '#options' => $incremtOptions,
         '#required' => TRUE,
         '#states' => $statesVisible_HasTime,
-      );
-      $elements['increments']['second'] = array(
+      ];
+      $elements['increments']['second'] = [
         '#type' => 'select',
         '#title' => t('Second increments'),
         '#default_value' => $increments['second'],
         '#options' => $incremtOptions,
         '#required' => TRUE,
         '#states' => $statesVisible_HasTime,
-      );
+      ];
     }
     $elements['help_txt'] = $this->buildHelpTxtElement();
     return $elements;
   }
 
-  protected function buildHelpTxtElement() {
-    $element = array(
+  /**
+   * Builds the help text element.
+   */
+  protected function buildHelpTxtElement(): array {
+    $element = [
       '#tree' => TRUE,
       '#type' => 'fieldset',
       '#title' => t('Inline help'),
       '#collapsible' => TRUE,
       '#collapsed' => TRUE,
       '#description' => t('This provides additional help per component, or a way to override the default description text.'),
-    );
+    ];
 
     $help_txt = $this->getSetting('help_txt');
-    $element['components'] = array(
+    $element['components'] = [
       '#type' => 'textarea',
       '#title' => t('Date components'),
       '#default_value' => $help_txt['components'],
       '#rows' => 3,
       '#description' => t('Instructions to present under the date or date range components. No help shown by default.'),
-    );
-    $element['txt_short'] = array(
+    ];
+    $element['txt_short'] = [
       '#type' => 'textfield',
       '#title' => t('Short date description'),
       '#default_value' => $help_txt['txt_short'],
-      '#description' => t('Instructions to present for short date description (if used). Default is %default', array('%default' => t('Short date description'))),
-      '#states' => array(
-        'visible' => array(
-          ':input[id="txt_short"]' => array('checked' => TRUE),
-        ),
-      ),
-    );
-    $element['txt_long'] = array(
+      '#description' => t('Instructions to present for short date description (if used). Default is %default', ['%default' => t('Short date description')]),
+      '#states' => [
+        'visible' => [
+          ':input[id="txt_short"]' => ['checked' => TRUE],
+        ],
+      ],
+    ];
+    $element['txt_long'] = [
       '#type' => 'textfield',
       '#title' => t('Long date description'),
       '#default_value' => $help_txt['txt_long'],
-      '#description' => t('Instructions to present for long date description (if used). Default is %default', array('%default' => t('Longer description of date'))),
-      '#states' => array(
-        'visible' => array(
-          ':input[id="txt_long"]' => array('checked' => TRUE),
-        ),
-      ),
-    );
+      '#description' => t('Instructions to present for long date description (if used). Default is %default', ['%default' => t('Longer description of date')]),
+      '#states' => [
+        'visible' => [
+          ':input[id="txt_long"]' => ['checked' => TRUE],
+        ],
+      ],
+    ];
     return $element;
   }
 
   /**
    * {@inheritdoc}
    */
-  public function settingsSummary() {
-    $summary = array();
-    $has_time  = $this->hasTime();
+  public function settingsSummary(): array {
+    $summary = [];
+    $has_time = $this->hasTime();
 
     if ($has_time) {
       $timezone = $this->getSetting('tz_handling');
@@ -290,7 +296,7 @@ class PartialDateWidget extends WidgetBase implements ContainerFactoryPluginInte
         $summary[] = t('No timezone translations');
       }
       else {
-        $summary[] = t('Timezone handling: ') . $this->getTimezoneOptions()[$timezone];
+        $summary[] = t('Timezone handling: @timezone', ['@timezone' => $this->getTimezoneOptions()[$timezone]]);
       }
     }
     elseif ($this->getFieldSetting('has_time')) {
@@ -304,13 +310,13 @@ class PartialDateWidget extends WidgetBase implements ContainerFactoryPluginInte
     $components = partial_date_components($exclude);
     $from_components = array_filter($this->getSetting('components'));
     if (!empty($from_components)) {
-      $txt = t('Available components: ');
+      $available_components = [];
       foreach ($components as $key => $label) {
         if (!empty($from_components[$key])) {
-          $txt .= $label . ', ';
+          $available_components[] = $label;
         }
       }
-      $summary[] = $txt;
+      $summary[] = t('Available components: @components', ['@components' => implode(', ', $available_components)]);
     }
     if ($this->getSetting('txt_short') || $this->getSetting('txt_long')) {
       $summary[] = t('Allow text override');
@@ -321,22 +327,22 @@ class PartialDateWidget extends WidgetBase implements ContainerFactoryPluginInte
   /**
    * {@inheritdoc}
    */
-  public function massageFormValues(array $values, array $form, FormStateInterface $form_state) {
-    //prepare field components from form element
-    $field = array();
+  public function massageFormValues(array $values, array $form, FormStateInterface $form_state): array {
+    // Prepare field components from form element.
+    $field = [];
     foreach ($values as $delta => $value) {
-      $value += array(
-        'txt' => array(),
+      $value += [
+        'txt' => [],
         'from' => '',
-      );
-      $field[$delta] = array();
+      ];
+      $field[$delta] = [];
       if (!empty($value['txt'])) {
         $field[$delta]['txt_short'] = $value['txt']['short'] ?: NULL;
         $field[$delta]['txt_long']  = $value['txt']['long'] ?: NULL;
       }
       foreach (partial_date_components() as $key => $label) {
         if (!empty($value['from'][$key])) {
-          $field[$delta][$key] =  $value['from'][$key];
+          $field[$delta][$key] = $value['from'][$key];
         }
       }
     }
@@ -349,14 +355,14 @@ class PartialDateWidget extends WidgetBase implements ContainerFactoryPluginInte
    * @return array
    *   An array of options for timezone handling.
    */
-  protected function getTimezoneOptions() {
-    return array(
+  protected function getTimezoneOptions(): array {
+    return [
       'none' => new TranslatableMarkup('No timezone conversion'),
-      'date' => new TranslatableMarkup('User selectable', array(), array('context' => 'datetime')),
+      'date' => new TranslatableMarkup('User selectable', [], ['context' => 'datetime']),
       'site' => new TranslatableMarkup("Site's timezone"),
       'user' => new TranslatableMarkup("User's account timezone"),
-      'utc' => new TranslatableMarkup('UTC', array(), array('context' => 'datetime')),
-    );
+      'utc' => new TranslatableMarkup('UTC', [], ['context' => 'datetime']),
+    ];
   }
 
   /**
@@ -365,7 +371,7 @@ class PartialDateWidget extends WidgetBase implements ContainerFactoryPluginInte
    * @param array $components
    *   An array of components, passed by reference.
    */
-  protected function filterComponents(&$components) {
+  protected function filterComponents(array &$components) {
     // Do not filter the timezone if it is a minimum component.
     $minimum_components = $this->getFieldSetting('minimum_components');
     $tz_handling = $this->getSetting('tz_handling');

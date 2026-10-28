@@ -50,25 +50,35 @@ use Drupal\Core\Config\Entity\ConfigEntityBase;
 class PartialDateFormat extends ConfigEntityBase implements PartialDateFormatInterface {
 
   /**
+   * The ID of the partial date format.
+   *
    * @var string
    */
   protected $id;
 
   /**
+   * The meridiem of the partial date format.
+   *
    * @var string
    */
   protected $meridiem = 'a';
 
   /**
+   * The year designation of the partial date format.
+   *
+   * This controls how year designation is handled:
+   *   1BC = 1BCE = -1 and 1AD = 1CE = 1.
+   *
    * @var string
-   * This controls how year designation is handled: 1BC = 1BCE = -1 and 1AD = 1CE = 1.
    */
   protected $year_designation = 'ce';
 
   /**
+   * The display type of the partial date format.
+   *
    * @var array
    */
-  protected $display = [
+  protected array $display = [
     'year' => 'estimate_label',
     'month' => 'estimate_label',
     'day' => 'estimate_label',
@@ -79,27 +89,31 @@ class PartialDateFormat extends ConfigEntityBase implements PartialDateFormatInt
   ];
 
   /**
+   * The components of the partial date format.
+   *
    * @var array
    */
-  protected $components = array(
-    'year' => array('format' => 'y-ce', 'empty' => '', 'weight' => 0),
-    'month' => array('format' => 'm', 'empty' => '', 'weight' => 1),
-    'day' => array('format' => 'j', 'empty' => '', 'weight' => 2),
-    'hour' => array('format' => 'H', 'empty' => '', 'weight' => 3),
-    'minute' => array('format' => 'i', 'empty' => '', 'weight' => 4),
-    'second' => array('format' => 's', 'empty' => '', 'weight' => 5),
-    'timezone' => array('format' => 'T', 'empty' => '', 'weight' => 6),
-    'approx' => array('value' => '', 'weight'=> -1),
-    'c1' => array('value' => '', 'weight'=> 7),
-    'c2' => array('value' => '', 'weight'=> 8),
-    'c3' => array('value' => '', 'weight'=> 9),
-  );
+  protected array $components = [
+    'year' => ['format' => 'y-ce', 'empty' => '', 'weight' => 0],
+    'month' => ['format' => 'm', 'empty' => '', 'weight' => 1],
+    'day' => ['format' => 'j', 'empty' => '', 'weight' => 2],
+    'hour' => ['format' => 'H', 'empty' => '', 'weight' => 3],
+    'minute' => ['format' => 'i', 'empty' => '', 'weight' => 4],
+    'second' => ['format' => 's', 'empty' => '', 'weight' => 5],
+    'timezone' => ['format' => 'T', 'empty' => '', 'weight' => 6],
+    'approx' => ['value' => '', 'weight' => -1],
+    'c1' => ['value' => '', 'weight' => 7],
+    'c2' => ['value' => '', 'weight' => 8],
+    'c3' => ['value' => '', 'weight' => 9],
+  ];
 
   /**
+   * The separators of the partial date format.
+   *
    * @var array
-   * An array with specific separators.
+   *   An array with specific separators.
    */
-  protected $separator = [
+  protected array $separator = [
     'date' => '/',
     'time' => ':',
     'datetime' => ' ',
@@ -114,44 +128,44 @@ class PartialDateFormat extends ConfigEntityBase implements PartialDateFormatInt
     return $this->get('meridiem');
   }
 
-   /**
-    * {@inheritdoc}
-    */
-   public function getYearDesignation() {
-     return $this->get('year_designation');
-   }
+  /**
+   * {@inheritdoc}
+   */
+  public function getYearDesignation() {
+    return $this->get('year_designation');
+  }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function getDisplay($component) {
-      assert('in_array($component, ["year", "month", "day", "hour", "minute", "second", "timezone"], TRUE)');
-      return $this->get('display')[$component];
-    }
+  /**
+   * {@inheritdoc}
+   */
+  public function getDisplay($component) {
+    assert('in_array($component, ["year", "month", "day", "hour", "minute", "second", "timezone"], TRUE)');
+    return $this->get('display')[$component];
+  }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function getComponent($component_name) {
-      assert('in_array($component, ["year", "month", "day", "hour", "minute", "second", "timezone", "approx", "c1", "c2", "c3"], TRUE)');
-      return $this->get('components')[$component_name];
-    }
+  /**
+   * {@inheritdoc}
+   */
+  public function getComponent($component_name) {
+    assert('in_array($component, ["year", "month", "day", "hour", "minute", "second", "timezone", "approx", "c1", "c2", "c3"], TRUE)');
+    return $this->get('components')[$component_name];
+  }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function getComponents() {
-      $components = $this->get('components');
-      uasort($components, [SortArray::class, 'sortByWeightElement']);
-      return $components;
-    }
+  /**
+   * {@inheritdoc}
+   */
+  public function getComponents() {
+    $components = $this->get('components');
+    uasort($components, [SortArray::class, 'sortByWeightElement']);
+    return $components;
+  }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function getSeparator($component) {
-      assert('in_array($component, ["date", "time", "datetime", "range", "other"], TRUE)');
-      return $this->get('separator')[$component];
-    }
+  /**
+   * {@inheritdoc}
+   */
+  public function getSeparator($component) {
+    assert('in_array($component, ["date", "time", "datetime", "range", "other"], TRUE)');
+    return $this->get('separator')[$component];
+  }
 
 }

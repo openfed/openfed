@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Contains install and update functions for Openfed Administration.
@@ -7,7 +8,7 @@
 /**
  * Implements hook_install().
  */
-function openfed_administration_install() {
+function openfed_administration_install(): void {
   // Discover all the module configurations that we'll use to override existing
   // ones.
   $module = basename(__FILE__, '.install');
@@ -32,7 +33,7 @@ function openfed_administration_install() {
 /**
  * Rename "Embeddable" labels to "Media" in the media view config.
  */
-function openfed_administration_update_10001() {
+function openfed_administration_update_10001(): string {
   $config = \Drupal::configFactory()->getEditable('views.view.media');
   $data = $config->getRawData();
 
@@ -43,7 +44,7 @@ function openfed_administration_update_10001() {
   $changed = FALSE;
 
   // Recursively replace exact string matches.
-  $replace_embeddable = function (&$value) use (&$replace_embeddable, &$changed) {
+  $replace_embeddable = function (&$value) use (&$replace_embeddable, &$changed): void {
     if (is_array($value)) {
       foreach ($value as &$item) {
         $replace_embeddable($item);

@@ -1,0 +1,14 @@
+{
+    "name": "vendor_name/FieldFormatter",
+    "description": "description",
+    "minimum-stability": "stable",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "peter.neyens",
+            "email": "email@example.com"
+        }
+    ],
+    "require": {
+    }
+}

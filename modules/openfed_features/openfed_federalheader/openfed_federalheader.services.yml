@@ -1,0 +1,5 @@
+
+services:
+  Drupal\openfed_federalheader\Hook\OpenfedFederalheaderHooks:
+    class: Drupal\openfed_federalheader\Hook\OpenfedFederalheaderHooks
+    autowire: true

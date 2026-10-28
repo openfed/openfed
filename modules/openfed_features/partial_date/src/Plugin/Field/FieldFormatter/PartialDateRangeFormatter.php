@@ -24,36 +24,36 @@ class PartialDateRangeFormatter extends PartialDateFormatter {
   /**
    * {@inheritdoc}
    */
-  public static function defaultSettings() {
-    return parent::defaultSettings() + array(
+  public static function defaultSettings(): array {
+    return parent::defaultSettings() + [
       'range_reduce' => TRUE,
-    );
+    ];
   }
 
   /**
    * {@inheritdoc}
    */
-  public function settingsForm(array $form, FormStateInterface $form_state) {
+  public function settingsForm(array $form, FormStateInterface $form_state): array {
     $elements = parent::settingsForm($form, $form_state);
 
-    $elements['range_reduce'] = array(
+    $elements['range_reduce'] = [
       '#type' => 'checkbox',
       '#title' => t('Reduce common values from range display'),
       '#default_value' => $this->getSetting('range_reduce'),
       '#description' => t('This setting allows a simplified display for range values. For example "2015 Jan-Sep" instead of full specification "2015 Jan-2015 Sep"'),
-    );
+    ];
     return $elements;
   }
 
   /**
    * {@inheritdoc}
    */
-  public function viewElements(FieldItemListInterface $items, $langcode) {
+  public function viewElements(FieldItemListInterface $items, $langcode): array {
     $element = [];
     foreach ($items as $delta => $item) {
       $override = $this->getTextOverride($item);
       if ($override) {
-        $element[$delta] = array('#markup' => $override);
+        $element[$delta] = ['#markup' => $override];
       }
       else {
         $from = $item->from;
@@ -92,35 +92,36 @@ class PartialDateRangeFormatter extends PartialDateFormatter {
     return $element;
   }
 
-  /*
+  /**
    * Reduce identical range components to simplify the display.
-   * Format is needed to know which side should be cleared. The order in which
-   * year, month and day are displayed is important:
-   * Ex. 2015 Jun to 2015 Sep => 2015 Jun to Sep
-   * but Jun 2015 to Sep 2015 => Jun to Sep 2015
-   * Rules:
-   * 1. If all date correspondent components are equal, keep only left side and quit (no time compression)
-   * 2. If time components are present, stop further compression (mixed date & time compression is confusing).
-   * 3. If same year, check format order:
-   *    a. YYYY / MM - compress right  (2015 Jun - Sep)
-   *    b. MM / YYYY - compress left   (Jun - Sep 2015)
-   *    (not same year - stop further compression)
-   * 4. If same month, check format order:
-   *    a. MM / DD - compress right  (Jun 15 - 25)
-   *    b. DD / MM - compress left   (15 - 25 Jun)
-   * (same day was
+   *
+   * The format determines which side to clear based on the display order of
+   * year, month, and day. For example, "2015 Jun to 2015 Sep" becomes
+   * "2015 Jun to Sep", while "Jun 2015 to Sep 2015" becomes "Jun to Sep 2015".
+   *
+   * Reduction rules:
+   * - If all date components match, clear the right-hand date components and
+   *   stop without reducing time components.
+   * - Otherwise, if either date has time components, stop to avoid mixing date
+   *   and time reduction.
+   * - If the years differ, stop. Otherwise, use the format order:
+   *   - YYYY / MM: clear the right-hand year (2015 Jun - Sep).
+   *   - MM / YYYY: clear the left-hand year (Jun - Sep 2015).
+   * - If the months also match, use the format order:
+   *   - MM / DD: clear the right-hand month (Jun 15 - 25).
+   *   - DD / MM: clear the left-hand month (15 - 25 Jun).
    */
   protected function reduceRange(array &$from, array &$to) {
-    $sameDate = ($from['year']  == $to['year']) &&
+    $sameDate = ($from['year'] == $to['year']) &&
                 ($from['month'] == $to['month']) &&
-                ($from['day']   == $to['day']);
+                ($from['day'] == $to['day']);
     if ($sameDate) {
       $to['year']  = NULL;
       $to['month'] = NULL;
       $to['day']   = NULL;
       return;
     }
-    $hasTime =  isset($from['hour'])   || isset($to['hour']) ||
+    $hasTime = isset($from['hour'])   || isset($to['hour']) ||
                 isset($from['minute']) || isset($to['minute']) ||
                 isset($from['second']) || isset($to['second']);
     if ($hasTime) {
@@ -130,7 +131,7 @@ class PartialDateRangeFormatter extends PartialDateFormatter {
       $format = $this->getFormat();
       $year_weight = $format->getComponent('year')['weight'];
       $month_weight = $format->getComponent('month')['weight'];
-      //If "year before month" compress right (otherwise left)
+      // If "year before month" compress right (otherwise left)
       if ($year_weight <= $month_weight) {
         $to['year'] = NULL;
       }
@@ -140,7 +141,7 @@ class PartialDateRangeFormatter extends PartialDateFormatter {
 
       if ($from['month'] == $to['month']) {
         $day_weight = $format->getComponent('month')['weight'];
-        //If "month before day" compress right (otherwise left)
+        // If "month before day" compress right (otherwise left)
         if ($month_weight <= $day_weight) {
           $to['month'] = NULL;
         }

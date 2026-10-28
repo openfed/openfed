@@ -1,5 +1,7 @@
 <?php
 
+use Drupal\Core\Hook\Attribute\LegacyHook;
+use Drupal\partial_date\Hook\PartialDateHooks;
 use Drupal\Core\Datetime\TimeZoneFormHelper;
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\partial_date\DateTools;
@@ -7,55 +9,17 @@ use Drupal\partial_date\DateTools;
 /**
  * Implements hook_help().
  */
+#[LegacyHook]
 function partial_date_help($route_name, RouteMatchInterface $route_match) {
-  switch ($route_name) {
-    // Main module help for partial_date module.
-    case 'help.page.partial_date':
-      $output = '<h3>' . t('About') . '</h3>';
-      $output .= '<p>' . t('The <i>Partial Date</i> module provides the ability to store incomplete dates (like Year & Month only). '
-          . 'For more information see the <a href=":doc">online documentation</a>.',
-          array(':doc' => 'https://www.drupal.org/project/partial_date')) . '</p>';
-      $output .= '<h3>' . t('Uses') . '</h3>';
-      $output .= '<dl>';
-      $output .= '<dt>'. t('Partial date formats') . '</dt>';
-      $output .= '<dd>'. t('Three formats are provided by default (<i>short</i>, <i>medium</i> & <i>long</i>). '
-          . 'You may addapt them to your needs or create additional ones through <a href=":doc">configuration page</a>.',
-          array(':doc' => '/admin/config/regional/partial-date-formats')) . '</dd>';
-      $output .= '<dt>'. t('Estimates') . '</dt>';
-      $output .= '<dd>'. t('The module allow users to enter a more readable text value, for example, "<i>The stone age </i>" or "<i>Jurrassic period </i>". '
-          . 'These estimate values are optional and can be disabled.') . '</dd>';
-      $output .= '<dt>'. t('Timezone') . '</dt>';
-      $output .= '<dd>'. t('Currently a timezone may be available to users. However, it is for informational uses only. '
-          . 'Not timezone conversion is performed. This may change in the future.') . '</dd>';
-      $output .= '</dl>';
-      return $output;
-  }
+  return \Drupal::service(PartialDateHooks::class)->help($route_name, $route_match);
 }
 
 /**
  * Implements hook_theme().
  */
-function partial_date_theme() {
-  return array(
-    'partial_date' => [
-      'variables' => [
-        'date' => [],
-        'format' => NULL,
-      ],
-      'file' => 'partial_date.theme.inc',
-    ],
-    'partial_date_range' => [
-      'variables' => [
-        'from' => [],
-        'to' => [],
-        'format' => NULL,
-      ],
-      'file' => 'partial_date.theme.inc',
-    ],
-    'checkbox_with_options' => array(
-      'render element' => 'element',
-    ),
-  );
+#[LegacyHook]
+function partial_date_theme(): array {
+  return \Drupal::service(PartialDateHooks::class)->theme();
 }
 
 /**
@@ -222,7 +186,7 @@ function partial_date_year_designation_decorator($year, $designation = 'ce') {
 /**
  * Generates a numeric date string.
  */
-function partial_date_float(array $c) {
+function partial_date_float(array $c): float {
   foreach (partial_date_components(array('timezone')) as $key => $label) {
     if (!isset($c[$key]) || !strlen($c[$key])) {
       $c[$key] = 0;
@@ -247,7 +211,7 @@ function partial_date_float(array $c) {
 /**
  * Returns any configured separators for two components.
  */
-function _partial_date_component_separator_type($a, $b) {
+function _partial_date_component_separator_type($a, $b): string {
   $a_type = _partial_date_component_type($a);
   $b_type = _partial_date_component_type($b);
   if (!$a_type || !$b_type) {
@@ -269,7 +233,7 @@ function _partial_date_component_separator_type($a, $b) {
  * @return mixed
  *   One of date, time or FALSE.
  */
-function _partial_date_component_type($key) {
+function _partial_date_component_type($key): string|false {
   switch ($key) {
     case 'year':
     case 'month':

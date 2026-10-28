@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Contains install and update functions for Openfed Multilingual.
@@ -7,7 +8,7 @@
 /**
  * Implements hook_install().
  */
-function openfed_multilingual_install() {
+function openfed_multilingual_install(): void {
   // Enable content translation using the proper service before importing the
   // configurations. This will avoid wrong schemas after the import.
   /** @var \Drupal\content_translation\ContentTranslationManager $content_translation */

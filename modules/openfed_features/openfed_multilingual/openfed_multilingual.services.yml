@@ -1,0 +1,5 @@
+
+services:
+  Drupal\openfed_multilingual\Hook\OpenfedMultilingualHooks:
+    class: Drupal\openfed_multilingual\Hook\OpenfedMultilingualHooks
+    autowire: true

@@ -52,11 +52,14 @@ class PartialDateFormatter implements PartialDateFormatterInterface {
             break;
 
           case 'estimate_range':
-            list($estimate_start, $estimate_end) = explode('|', $date[$type . '_estimate']);
+            [$estimate_start, $estimate_end] = explode('|', $date[$type . '_estimate']);
             $start = $this->formatComponent($type, [$type => $estimate_start] + $date, $format);
             $end = $this->formatComponent($type, [$type => $estimate_end], $format);
             if (strlen($start) && strlen($end)) {
-              $markup = t('@estimate_start to @estimate_end', array('@estimate_start' => $estimate_start, '@estimate_end' => $estimate_end));
+              $markup = t('@estimate_start to @estimate_end', [
+                '@estimate_start' => $estimate_start,
+                '@estimate_end' => $estimate_end,
+              ]);
             }
             elseif (strlen($estimate_start)) {
               $markup = $estimate_start;
@@ -73,8 +76,9 @@ class PartialDateFormatter implements PartialDateFormatterInterface {
 
         if (!strlen($markup)) {
           if (isset($component['empty']) && strlen($component['empty'])) {
-            // What do we get? If numeric, assume a date / time component, otherwise
-            // we can assume that we no longer have a date / time like value.
+            // What do we get? If numeric, assume a date / time component,
+            // otherwise we can assume that we no longer have a date / time
+            // like value.
             $markup = $component['empty'];
             if (!is_numeric($markup)) {
               $type = 'other';
@@ -106,9 +110,9 @@ class PartialDateFormatter implements PartialDateFormatterInterface {
   /**
    * Formats a single date component.
    *
-   * @param $key
+   * @param string $key
    *   The component key.
-   * @param $date
+   * @param array $date
    *   The partial date array.
    * @param \Drupal\partial_date\Entity\PartialDateFormatInterface $format
    *   The partial date format.
@@ -116,10 +120,11 @@ class PartialDateFormatter implements PartialDateFormatterInterface {
    * @return string
    *   The formatted component.
    */
-  protected function formatComponent($key, $date, PartialDateFormatInterface $format) {
+  protected function formatComponent(string $key, array $date, PartialDateFormatInterface $format): string {
     $value = isset($date[$key]) && strlen($date[$key]) ? $date[$key] : FALSE;
     if (!$value) {
-      return ''; //if component value is missing, return an empty string.
+      // If component value is missing, return an empty string.
+      return '';
     }
     $keyFormat = $format->getComponent($key)['format'];
 
@@ -138,7 +143,7 @@ class PartialDateFormatter implements PartialDateFormatterInterface {
         $value = '12';
       }
     }
-    // Add suffixes for year and time formats
+    // Add suffixes for year and time formats.
     $suffix = '';
     switch ($keyFormat) {
       case 'd-S':
@@ -158,7 +163,7 @@ class PartialDateFormatter implements PartialDateFormatterInterface {
     switch ($keyFormat) {
       case 'y-ce':
       case 'y':
-        return (strlen($value) > 2 ?  substr($value, - 2) : $value) . $suffix;
+        return (strlen($value) > 2 ? substr($value, -2) : $value) . $suffix;
 
       case 'F':
         return DateTools::monthNames($value) . $suffix;
@@ -166,7 +171,8 @@ class PartialDateFormatter implements PartialDateFormatterInterface {
       case 'M':
         return DateTools::monthAbbreviations($value) . $suffix;
 
-      // Numeric representation of the day of the week  0 (for Sunday) through 6 (for Saturday)
+      // Numeric representation of the day of the week  0 (for Sunday)
+      // through 6 (for Saturday)
       case 'w':
         if (!empty($date['year']) && !empty($date['month'])) {
           return DateTools::dayOfWeek($date['year'], $date['month'], $value) . $suffix;
@@ -181,7 +187,8 @@ class PartialDateFormatter implements PartialDateFormatterInterface {
           $day = DateTools::dayOfWeek($date['year'], $date['month'], $value);
           if ($keyFormat == 'D') {
             return DateTools::weekdayAbbreviations($day, 3) . $suffix;
-          } else {
+          }
+          else {
             return DateTools::weekdayNames($day) . $suffix;
           }
         }
@@ -212,31 +219,32 @@ class PartialDateFormatter implements PartialDateFormatterInterface {
         try {
           $tz = new \DateTimeZone($value);
           $transitions = $tz->getTransitions();
-          return $transitions[0]['abbr']  . $suffix;
+          return $transitions[0]['abbr'] . $suffix;
         }
-        catch (\Exception $e) {}
+        catch (\Exception $e) {
+        }
         return '';
 
-
-      // Todo: implement
+      // @todo implement
       // Year types
-      // ISO-8601 year number
+      // ISO-8601 year number.
       case 'o':
 
         // Day types
-        // The day of the year
+        // The day of the year.
       case 'z':
-        // ISO-8601 numeric representation of the day of the week
+        // ISO-8601 numeric representation of the day of the week.
       case 'N':
 
         // Timezone offsets
-        // Whether or not the date is in daylight saving time
+        // Whether or not the date is in daylight saving time.
       case 'I':
-        // Difference to Greenwich time (GMT) in hours
+        // Difference to Greenwich time (GMT) in hours.
       case 'O':
-        // Difference to Greenwich time (GMT) with colon between hours and minutes
+        // Difference to Greenwich time (GMT) with colon between hours
+        // and minutes.
       case 'P':
-        // Timezone offset in seconds
+        // Timezone offset in seconds.
       case 'Z':
 
       default:

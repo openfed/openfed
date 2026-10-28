@@ -52,7 +52,7 @@ class PartialDateTimeComputed extends TypedData {
           if (!empty($estimates[$component][$value])) {
             $this->partialDate[$component . '_estimate_label'] = $estimates[$component][$value];
           }
-          list($from, $to) = explode('|', $value);
+          [$from, $to] = explode('|', $value);
           $this->partialDate[$component . '_estimate_value'] = ($range_setting === 'from') ? $from : $to;
         }
       }
@@ -63,7 +63,7 @@ class PartialDateTimeComputed extends TypedData {
   /**
    * {@inheritdoc}
    */
-  public function setValue($value, $notify = TRUE) {
+  public function setValue($value, $notify = TRUE): void {
     $this->partialDate = $value;
     // Notify the parent of any changes.
     if ($notify && isset($this->parent)) {

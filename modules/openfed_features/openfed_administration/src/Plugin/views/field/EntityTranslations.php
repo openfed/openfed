@@ -2,7 +2,6 @@
 
 namespace Drupal\openfed_administration\Plugin\views\field;
 
-use Drupal\Core\Entity\ContentEntityInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Language\LanguageManagerInterface;
 use Drupal\Core\Link;
@@ -22,10 +21,8 @@ class EntityTranslations extends FieldPluginBase {
 
   /**
    * The language manager.
-   *
-   * @var \Drupal\Core\Language\LanguageManagerInterface
    */
-  protected $languageManager;
+  protected LanguageManagerInterface $languageManager;
 
   /**
    * Constructs a new RenderedEntity object.
@@ -48,7 +45,7 @@ class EntityTranslations extends FieldPluginBase {
   /**
    * {@inheritdoc}
    */
-  public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
+  public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition): static {
     return new static(
       $configuration,
       $plugin_id,
@@ -60,14 +57,14 @@ class EntityTranslations extends FieldPluginBase {
   /**
    * {@inheritdoc}
    */
-  public function query() {
+  public function query(): void {
     // No query.
   }
 
   /**
    * {@inheritdoc}
    */
-  public function buildOptionsForm(&$form, FormStateInterface $form_state) {
+  public function buildOptionsForm(&$form, FormStateInterface $form_state): void {
     // Get all the enabled site languages.
     $languages = $this->languageManager->getLanguages();
     $entity_languages_options = [];
@@ -76,13 +73,13 @@ class EntityTranslations extends FieldPluginBase {
       $entity_languages_options[$key] = $language->getName();
     }
     // Field with all the enabled languages on the website.
-    $form['entity_languages'] = array(
+    $form['entity_languages'] = [
       '#title' => $this->t('Languages to exclude'),
       '#description' => $this->t('Select the languages that should be excluded when displaying translations.'),
       '#type' => 'checkboxes',
       '#options' => $entity_languages_options,
       '#default_value' => $this->options['entity_languages'],
-    );
+    ];
 
     parent::buildOptionsForm($form, $form_state);
   }
@@ -90,8 +87,8 @@ class EntityTranslations extends FieldPluginBase {
   /**
    * {@inheritdoc}
    */
-  public function render(ResultRow $values) {
-    /** @var ContentEntityInterface $entity */
+  public function render(ResultRow $values): array {
+    /** @var \Drupal\Core\Entity\ContentEntityInterface $entity */
     $entity = $values->_entity;
     $entity_id = $entity->id();
     $entity_type = $entity->getEntityTypeId();
@@ -117,7 +114,6 @@ class EntityTranslations extends FieldPluginBase {
       foreach ($language_options as $language_prefix => $value) {
         $language_name = $this->languageManager->getLanguageName($language_prefix);
         // Check if the entity has any translations to display.
-
         if ($entity->hasTranslation($language_prefix)) {
           $options = [
             'language' => $languages[$language_prefix],
@@ -160,7 +156,7 @@ class EntityTranslations extends FieldPluginBase {
   /**
    * {@inheritdoc}
    */
-  protected function defineOptions() {
+  protected function defineOptions(): array {
     $options = parent::defineOptions();
     // Field options is empty by default since we don't want to exclude any
     // language.

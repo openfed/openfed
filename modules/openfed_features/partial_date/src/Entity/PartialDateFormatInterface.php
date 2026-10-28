@@ -5,8 +5,8 @@ namespace Drupal\partial_date\Entity;
 use Drupal\Core\Config\Entity\ConfigEntityInterface;
 
 /**
- * Provides an interface defining FormatType config entity
- * 
+ * Provides an interface defining FormatType config entity.
+ *
  * @author CosminFr
  */
 interface PartialDateFormatInterface extends ConfigEntityInterface {
@@ -45,7 +45,7 @@ interface PartialDateFormatInterface extends ConfigEntityInterface {
    *   - hour
    *   - minute
    *   - second
-   *   - timezone
+   *   - timezone.
    *
    * @return string
    *   One of the following display types:
@@ -62,29 +62,18 @@ interface PartialDateFormatInterface extends ConfigEntityInterface {
    * Gets information about a given component.
    *
    * @param string $component_name
-   *   - year
-   *   - month
-   *   - day
-   *   - hour
-   *   - minute
-   *   - second
-   *   - timezone
-   *   - approx
-   *   - c1
-   *   - c2
-   *   - c3
+   *   The component to retrieve information for. Valid components are year,
+   *   month, day, hour, minute, second, timezone, approx, c1, c2, and c3.
    *
    * @return array
-   *   An array of format information. If the component is 'year', 'month',
-   *   'day', 'hour', 'minute', 'second' or 'timezone', the array contains the
-   *   following keys:
-   *   - format: A PHP date format string for this component
-   *   - empty: An empty text for this component
-   *   If the component is 'approx', 'c1', 'c2' or 'c3', the array contains the
-   *   following keys:
-   *   - value: The value of to be displayed for this component
-   *   The following keys are contained for all components:
-   *   - weight: The weight of the component
+   *   The component's format information. For year, month, day, hour, minute,
+   *   second, and timezone components, the array contains:
+   *   - format: A PHP date format string.
+   *   - empty: The text to display when the component is empty.
+   *   For approx, c1, c2, and c3 components, the array contains:
+   *   - value: The value to display.
+   *   All component arrays also contain:
+   *   - weight: The component's weight.
    */
   public function getComponent($component_name);
 
@@ -107,7 +96,7 @@ interface PartialDateFormatInterface extends ConfigEntityInterface {
    *   - time: The separator to use between different time components
    *   - datetime: The separator to use between date and time components
    *   - range: The separator to use between components of a date range
-   *   - other: The separator to use for other components
+   *   - other: The separator to use for other components.
    *
    * @return string
    *   The separator for the given component.

@@ -5,23 +5,22 @@
  * Builds placeholder replacement maptiler tokens.
  */
 
+use Drupal\Core\Hook\Attribute\LegacyHook;
+use Drupal\openfed_leaflet\Hook\OpenfedLeafletTokensHooks;
 use Drupal\Core\Render\BubbleableMetadata;
-use Drupal\openfed_leaflet\TokenOperations;
 
 /**
  * Implements hook_token_info().
  */
-function openfed_leaflet_token_info() {
-  return \Drupal::classResolver()
-    ->getInstanceFromDefinition(TokenOperations::class)
-    ->tokenInfo();
+#[LegacyHook]
+function openfed_leaflet_token_info(): array {
+  return \Drupal::service(OpenfedLeafletTokensHooks::class)->tokenInfo();
 }
 
 /**
  * Implements hook_tokens().
  */
-function openfed_leaflet_tokens($type, $tokens, array $data, array $options, BubbleableMetadata $bubbleable_metadata) {
-  return \Drupal::classResolver()
-    ->getInstanceFromDefinition(TokenOperations::class)
-    ->tokens($type, $tokens, $data, $options, $bubbleable_metadata);
+#[LegacyHook]
+function openfed_leaflet_tokens(string $type, array $tokens, array $data, array $options, BubbleableMetadata $bubbleable_metadata): array {
+  return \Drupal::service(OpenfedLeafletTokensHooks::class)->tokens($type, $tokens, $data, $options, $bubbleable_metadata);
 }

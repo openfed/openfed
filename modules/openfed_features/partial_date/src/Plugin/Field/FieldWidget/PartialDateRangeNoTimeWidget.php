@@ -17,14 +17,17 @@ namespace Drupal\partial_date\Plugin\Field\FieldWidget;
  */
 class PartialDateRangeNoTimeWidget extends PartialDateRangeWidget {
 
-  public static function defaultSettings() {
+  /**
+   * {@inheritdoc}
+   */
+  public static function defaultSettings(): array {
     $components = array_fill_keys(partial_date_component_keys(), 1);
     unset($components['hour'], $components['minute'], $components['second'], $components['timezone']);
-    return array(
+    return [
       'has_time' => FALSE,
       'components' => $components,
       'components_to' => $components,
-    ) + parent::defaultSettings();
+    ] + parent::defaultSettings();
   }
 
 }

@@ -4,19 +4,20 @@
  * @file
  * Contains preproces functions for the Partial Date module.
  */
+
 use Drupal\Core\Cache\CacheableMetadata;
 
 /**
  * Prepares variables for a partial date.
  *
- * Default template: partial-date.html.twig
+ * Default template: partial-date.html.twig.
  *
- * @param array $variables:
+ * @param array $variables
  *   An array containing the following keys:
  *   date: An array of partial date components.
  *   format: A partial date format entity.
  */
-function template_preprocess_partial_date(array &$variables) {
+function template_preprocess_partial_date(array &$variables): void {
   /** @var \Drupal\partial_date\PartialDateFormatterInterface $formatter */
   $formatter = \Drupal::service('partial_date.formatter');
   /** @var \Drupal\partial_date\Entity\PartialDateFormatInterface $format */
@@ -31,15 +32,15 @@ function template_preprocess_partial_date(array &$variables) {
 /**
  * Prepares variables for a partial date range.
  *
- * Default template: partial-date-range.html.twig
+ * Default template: partial-date-range.html.twig.
  *
- * @param array $variables:
+ * @param array $variables
  *   An array containing the following keys:
  *   from: An array of partial from date components.
  *   to: An array of partial to date components.
  *   format: A partial date format entity.
  */
-function template_preprocess_partial_date_range(array &$variables) {
+function template_preprocess_partial_date_range(array &$variables): void {
   /** @var \Drupal\partial_date\Entity\PartialDateFormatInterface $format */
   $format = $variables['format'];
 

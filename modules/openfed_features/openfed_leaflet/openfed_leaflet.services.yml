@@ -1,0 +1,5 @@
+
+services:
+  Drupal\openfed_leaflet\Hook\OpenfedLeafletTokensHooks:
+    class: Drupal\openfed_leaflet\Hook\OpenfedLeafletTokensHooks
+    autowire: true

@@ -1,0 +1,5 @@
+
+services:
+  Drupal\openfed_svg_file\Hook\OpenfedSvgFileHooks:
+    class: Drupal\openfed_svg_file\Hook\OpenfedSvgFileHooks
+    autowire: true

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Contains install and update functions for Openfed Workflow.
@@ -7,7 +8,7 @@
 /**
  * Implements hook_install().
  */
-function openfed_workflow_install() {
+function openfed_workflow_install(): void {
   // Discover all the module configurations that we'll use to override existing
   // ones.
   $module = basename(__FILE__, '.install');

@@ -1,0 +1,5 @@
+
+services:
+  Drupal\openfed_conditional_fields_content_translation\Hook\OpenfedConditionalFieldsContentTranslationHooks:
+    class: Drupal\openfed_conditional_fields_content_translation\Hook\OpenfedConditionalFieldsContentTranslationHooks
+    autowire: true

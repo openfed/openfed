@@ -2,3 +2,11 @@ services:
   openfed_administration.content_type_manager:
     class: Drupal\openfed_administration\Service\ContentTypeManager
     arguments: ['@entity_type.manager', '@content_translation.manager']
+
+  Drupal\openfed_administration\Hook\OpenfedAdministrationHooks:
+    class: Drupal\openfed_administration\Hook\OpenfedAdministrationHooks
+    autowire: true
+
+  Drupal\openfed_administration\Hook\OpenfedAdministrationViewsHooks:
+    class: Drupal\openfed_administration\Hook\OpenfedAdministrationViewsHooks
+    autowire: true

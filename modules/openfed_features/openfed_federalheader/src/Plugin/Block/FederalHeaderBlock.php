@@ -17,7 +17,7 @@ class FederalHeaderBlock extends BlockBase {
   /**
    * {@inheritdoc}
    */
-  public function build() {
+  public function build(): array {
     $langcode = \Drupal::languageManager()->getCurrentLanguage()->getId();
     return [
       '#theme' => 'federalheader_block',

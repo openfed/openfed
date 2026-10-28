@@ -23,9 +23,9 @@ class ValidDayConstraintValidator extends ConstraintValidator {
     $property = $constraint->property;
     $date = $value->$property;
 
-    $day   = empty($date['day'])   ? 0 : $date['day'];
+    $day = empty($date['day']) ? 0 : $date['day'];
     $month = empty($date['month']) ? 0 : $date['month'];
-    $year  = empty($date['year'])  ? 0 : $date['year'];
+    $year = empty($date['year']) ? 0 : $date['year'];
 
     $maxDay = 31;
     $months = DateTools::monthMatrix($year);

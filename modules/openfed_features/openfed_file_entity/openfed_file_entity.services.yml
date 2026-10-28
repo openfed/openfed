@@ -1,0 +1,5 @@
+
+services:
+  Drupal\openfed_file_entity\Hook\OpenfedFileEntityHooks:
+    class: Drupal\openfed_file_entity\Hook\OpenfedFileEntityHooks
+    autowire: true

@@ -40,8 +40,8 @@ class PartialDateTimeRangeItem extends PartialDateTimeItem {
       }
 
       $properties[$key . '_to'] = DataDefinition::create('integer')
-        ->setLabel($label. t(' end '))
-        ->setDescription(t('The ' . $label . ' for the finishing date component.'))
+        ->setLabel(t('@label end', ['@label' => $label]))
+        ->setDescription(t('The @label for the finishing date component.', ['@label' => $label]))
         ->setRequired($minimum_components['to']['granularity'][$key]);
     }
 
@@ -56,7 +56,7 @@ class PartialDateTimeRangeItem extends PartialDateTimeItem {
   /**
    * {@inheritdoc}
    */
-  public static function schema(FieldStorageDefinitionInterface $field) {
+  public static function schema(FieldStorageDefinitionInterface $field): array {
     $schema = parent::schema($field);
 
     $schema['columns']['timestamp_to'] = [
@@ -75,7 +75,7 @@ class PartialDateTimeRangeItem extends PartialDateTimeItem {
       }
 
       $column = $schema['columns'][$key];
-      //Add "*_to" columns
+      // Add "*_to" columns.
       $column['description'] = 'The ' . $label . ' for the finishing date component.';
       $schema['columns'][$key . '_to'] = $column;
     }
@@ -117,7 +117,7 @@ class PartialDateTimeRangeItem extends PartialDateTimeItem {
   /**
    * {@inheritdoc}
    */
-  public function preSave() {
+  public function preSave(): void {
     parent::preSave();
 
     $data = $this->data;
@@ -147,7 +147,7 @@ class PartialDateTimeRangeItem extends PartialDateTimeItem {
         // The if-statements are broken up because $from_estimate_from is used
         // below even if $to[$component] is not empty.
         if (!empty($from[$component . '_estimate'])) {
-          list($from_estimate_from, $from_estimate_to) = explode('|', $from[$component . '_estimate']);
+          [$from_estimate_from, $from_estimate_to] = explode('|', $from[$component . '_estimate']);
           if (!isset($to[$component]) || !strlen($to[$component])) {
             $this->{$property} = $from_estimate_to;
             $data[$component . '_estimate_to_used'] = TRUE;
@@ -158,7 +158,7 @@ class PartialDateTimeRangeItem extends PartialDateTimeItem {
         if (!empty($to[$component . '_estimate'])) {
           $estimate = $to[$component . '_estimate'];
           $data[$component . '_to_estimate'] = $estimate;
-          list($to_estimate_from, $to_estimate_to) = explode('|', $estimate);
+          [$to_estimate_from, $to_estimate_to] = explode('|', $estimate);
           if (!isset($from[$component]) || !strlen($from[$component]) || $data[$component . '_estimate_from_used']) {
             $this->{$component} = isset($from_estimate_from) ? min($from_estimate_from, $to_estimate_from) : $to_estimate_from;
             $data[$component . '_estimate_from_used'] = TRUE;
@@ -191,34 +191,34 @@ class PartialDateTimeRangeItem extends PartialDateTimeItem {
   /**
    * {@inheritdoc}
    */
-  public function storageSettingsForm(array &$form, FormStateInterface $form_state, $has_data) {
+  public function storageSettingsForm(array &$form, FormStateInterface $form_state, $has_data): array {
     $elements = parent::storageSettingsForm($form, $form_state, $has_data);
     $minimum_components = $this->getSetting('minimum_components');
     foreach (partial_date_components() as $key => $label) {
-      $elements['minimum_components']['from']['granularity'][$key]['#title'] = t('From @date_component', array('@date_component' => $label));
+      $elements['minimum_components']['from']['granularity'][$key]['#title'] = t('From @date_component', ['@date_component' => $label]);
     }
-    foreach (partial_date_components(array('timezone')) as $key => $label) {
-      $elements['minimum_components']['from']['estimates'][$key]['#title'] = t('From Estimate @date_component', array('@date_component' => $label));
+    foreach (partial_date_components(['timezone']) as $key => $label) {
+      $elements['minimum_components']['from']['estimates'][$key]['#title'] = t('From Estimate @date_component', ['@date_component' => $label]);
     }
     foreach (partial_date_components() as $key => $label) {
-      $elements['minimum_components']['to']['granularity'][$key] = array(
+      $elements['minimum_components']['to']['granularity'][$key] = [
         '#type' => 'checkbox',
-        '#title' => t('To @date_component', array('@date_component' => $label)),
+        '#title' => t('To @date_component', ['@date_component' => $label]),
         '#default_value' => $minimum_components['to']['granularity'][$key],
-      );
+      ];
     }
-    foreach (partial_date_components(array('timezone')) as $key => $label) {
-      $elements['minimum_components']['to']['estimates'][$key] = array(
+    foreach (partial_date_components(['timezone']) as $key => $label) {
+      $elements['minimum_components']['to']['estimates'][$key] = [
         '#type' => 'checkbox',
-        '#title' => t('To Estimate @date_component', array('@date_component' => $label)),
+        '#title' => t('To Estimate @date_component', ['@date_component' => $label]),
         '#default_value' => $minimum_components['to']['estimates'][$key],
-      );
+      ];
       if (_partial_date_component_type($key) === 'time') {
-        $element['minimum_components']['to']['estimates'][$key] = array(
-          'visible' => array(
-            ':input[id="has_time"]' => array('checked' => TRUE),
-          ),
-        );
+        $element['minimum_components']['to']['estimates'][$key] = [
+          'visible' => [
+            ':input[id="has_time"]' => ['checked' => TRUE],
+          ],
+        ];
       }
     }
     return $elements;
@@ -227,7 +227,7 @@ class PartialDateTimeRangeItem extends PartialDateTimeItem {
   /**
    * {@inheritdoc}
    */
-  public static function defaultStorageSettings() {
+  public static function defaultStorageSettings(): array {
     $settings = parent::defaultStorageSettings();
     $settings['minimum_components']['to'] = $settings['minimum_components']['from'];
     return $settings;

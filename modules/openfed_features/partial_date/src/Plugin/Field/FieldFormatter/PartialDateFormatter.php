@@ -37,10 +37,8 @@ class PartialDateFormatter extends FormatterBase implements ContainerFactoryPlug
 
   /**
    * The partial date formatter.
-   *
-   * @var \Drupal\partial_date\PartialDateFormatterInterface
    */
-  protected $dateFormatter;
+  protected PartialDateFormatterInterface $dateFormatter;
 
   /**
    * Constructs a partial date formatter.
@@ -73,7 +71,7 @@ class PartialDateFormatter extends FormatterBase implements ContainerFactoryPlug
   /**
    * {@inheritdoc}
    */
-  public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
+  public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition): static {
     return new static(
       $plugin_id,
       $plugin_definition,
@@ -90,41 +88,35 @@ class PartialDateFormatter extends FormatterBase implements ContainerFactoryPlug
   /**
    * {@inheritdoc}
    */
-  public static function defaultSettings() {
-    return array(
+  public static function defaultSettings(): array {
+    return [
       'use_override' => 'none',
       'format' => 'short',
-    ) + parent::defaultSettings();
+    ] + parent::defaultSettings();
   }
 
   /**
    * {@inheritdoc}
    */
-  public function settingsForm(array $form, FormStateInterface $form_state) {
-    $elements = array();
+  public function settingsForm(array $form, FormStateInterface $form_state): array {
+    $elements = [];
 
-    $elements['use_override'] = array(
+    $elements['use_override'] = [
       '#type' => 'checkbox_with_options',
-      '#title' => t('Use date descriptions (if available)'),
+      '#title' => $this->t('Use date descriptions (if available)'),
       '#default_value' => $this->getSetting('use_override'),
       '#options' => $this->overrideOptions(),
       '#checkbox_value' => 'none',
       '#description' => t('This setting allows date values to be replaced with user specified date descriptions, if applicable.'),
-    );
-    $elements['format'] = array(
+    ];
+    $elements['format'] = [
       '#title' => t('Partial date format'),
       '#type' => 'select',
       '#default_value' => $this->getSetting('format'),
       '#required' => TRUE,
       '#options' => $this->formatOptions(),
-//      '#id' => 'partial-date-format-selector',
-//      '#attached' => array(
-//        'js' => array(drupal_get_path('module', 'partial_date') . '/partial-date-admin.js'),
-//      ),
-      '#description' => t('You can use any of the predefined partial date formats. '
-          . 'Or, you can configure partial date formats <a href=":config">here</a>.',
-          array(':config' => '/admin/config/regional/partial-date-formats')),
-    );
+      '#description' => $this->t('You can use any of the predefined partial date formats. Or, you can configure partial date formats <a href=":config">here</a>.', [':config' => '/admin/config/regional/partial-date-formats']),
+    ];
 
     return $elements;
   }
@@ -132,35 +124,47 @@ class PartialDateFormatter extends FormatterBase implements ContainerFactoryPlug
   /**
    * {@inheritdoc}
    */
-  public function settingsSummary() {
-    $summary = array();
+  public function settingsSummary(): array {
+    $summary = [];
 
     if ($this->getSetting('use_override') != 'none') {
       $overrides = $this->overrideOptions();
-      $summary[] = t(' User text: ') . $overrides[$this->getSetting('use_override')];
+      $summary[] = $this->t('User text: @override', ['@override' => $overrides[$this->getSetting('use_override')]]);
     }
 
-    $types   = $this->formatOptions();
-    $example = $this->dateFormatter->format($this->generateExampleDate(), $this->getFormat());
-    $summary[] = array('#markup' => t('Format: ') . $types[$this->getSetting('format')] . ' - ' . $example);
+    $types     = $this->formatOptions();
+    $example   = $this->dateFormatter->format($this->generateExampleDate(), $this->getFormat());
+    $summary[] = $this->t('Format: @format - @example', [
+      '@format' => $types[$this->getSetting('format')],
+      '@example' => $example,
+    ]);
 
     return $summary;
   }
 
-  protected function overrideOptions() {
-    return array(
-      'none' => t('Use date only', array(), array('context' => 'datetime')),
-      'short' => t('Use short description', array(), array('context' => 'datetime')),
-      'long' => t('Use long description', array(), array('context' => 'datetime')),
-      'long_short' => t('Use long or short description', array(), array('context' => 'datetime')),
-      'short_long' => t('Use short or long description', array(), array('context' => 'datetime')),
-    );
+  /**
+   * Returns the available override options.
+   */
+  protected function overrideOptions(): array {
+    return [
+      'none' => $this->t('Use date only', [], ['context' => 'datetime']),
+      'short' => $this->t('Use short description', [], ['context' => 'datetime']),
+      'long' => $this->t('Use long description', [], ['context' => 'datetime']),
+      'long_short' => $this->t('Use long or short description', [], ['context' => 'datetime']),
+      'short_long' => $this->t('Use short or long description', [], ['context' => 'datetime']),
+    ];
   }
 
-  protected function formatOptions() {
+  /**
+   * Returns the available format options.
+   *
+   * @return array
+   *   An array of format options.
+   */
+  protected function formatOptions(): array {
     $formats = $this->partialDateFormatStorage->loadMultiple();
-    $options = array();
-    foreach($formats as $key => $format) {
+    $options = [];
+    foreach ($formats as $key => $format) {
       $options[$key] = $format->label();
     }
     return $options;
@@ -169,12 +173,12 @@ class PartialDateFormatter extends FormatterBase implements ContainerFactoryPlug
   /**
    * {@inheritdoc}
    */
-  public function viewElements(FieldItemListInterface $items, $langcode) {
+  public function viewElements(FieldItemListInterface $items, $langcode): array {
     $element = [];
     foreach ($items as $delta => $item) {
       $override = $this->getTextOverride($item);
       if ($override) {
-        $element[$delta] = array('#markup' => $override);
+        $element[$delta] = ['#markup' => $override];
       }
       else {
         $from = $item->from;
@@ -199,10 +203,19 @@ class PartialDateFormatter extends FormatterBase implements ContainerFactoryPlug
    * @return \Drupal\partial_date\Entity\PartialDateFormatInterface
    *   The partial date format entity.
    */
-  protected function getFormat(){
+  protected function getFormat() {
     return $this->partialDateFormatStorage->load($this->getSetting('format'));
   }
 
+  /**
+   * Returns the text override for the given item, if applicable.
+   *
+   * @param \Drupal\partial_date\Plugin\Field\FieldType\PartialDateTimeItem $item
+   *   The partial date time item.
+   *
+   * @return string
+   *   The text override.
+   */
   protected function getTextOverride(PartialDateTimeItem $item) {
     $override = '';
     switch ($this->getSetting('use_override')) {
@@ -211,6 +224,7 @@ class PartialDateFormatter extends FormatterBase implements ContainerFactoryPlug
           $override = $item->txt_short;
         }
         break;
+
       case 'long':
         if (strlen($item->txt_long)) {
           $override = $item->txt_long;
@@ -225,6 +239,7 @@ class PartialDateFormatter extends FormatterBase implements ContainerFactoryPlug
           $override = $item->txt_short;
         }
         break;
+
       case 'short_long':
         if (strlen($item->txt_short)) {
           $override = $item->txt_short;
@@ -238,30 +253,32 @@ class PartialDateFormatter extends FormatterBase implements ContainerFactoryPlug
   }
 
   /**
-   * This generates a date component based on the specified timestamp and
-   * timezone. This is used for demonstrational purposes only, and may fall back
-   * to the request timestamp and site timezone.
+   * Generates a date component from the specified timestamp and timezone.
    *
-   * This could throw errors if outside PHP's native date range.
+   * This is used for demonstration purposes only and may fall back to the
+   * request timestamp and site timezone.
+   *
+   * This could throw errors if the timestamp is outside PHP's native date
+   * range.
    */
-  public function generateExampleDate($timestamp = 0, $timezone = NULL) {
+  public function generateExampleDate($timestamp = 0, $timezone = NULL): array|false {
     // PHP Date should handle any integer, but outside of the int range, 0 is
     // returned by intval(). On 32 bit systems this is Fri, 13 Dec 1901 20:45:54
-    // and Tue, 19 Jan 2038 03:14:07 GMT
+    // and Tue, 19 Jan 2038 03:14:07 GMT.
     $timestamp = intval($timestamp);
     if (!$timestamp) {
       $timestamp = \Drupal::time()->getRequestTime();
     }
     if (!$timezone) {
-      //$timezones = partial_date_granularity_field_options('timezone');
-      //$timezone = $timezones[rand(0, count($timezones) - 1)];
+      // $timezones = partial_date_granularity_field_options('timezone');
+      // $timezone = $timezones[rand(0, count($timezones) - 1)];
       $timezone = partial_date_timezone_handling_correlation('UTC', 'site');
     }
     try {
       $tz = new \DateTimeZone($timezone);
       $date = new \DateTime('@' . $timestamp, $tz);
       if ($date) {
-        return array(
+        return [
           'year' => $date->format('Y'),
           'month' => $date->format('n'),
           'day' => $date->format('j'),
@@ -269,10 +286,11 @@ class PartialDateFormatter extends FormatterBase implements ContainerFactoryPlug
           'minute' => $date->format('i'),
           'second' => $date->format('s'),
           'timezone' => $timezone,
-        );
+        ];
       }
     }
-    catch (\Exception $e) {}
+    catch (\Exception $e) {
+    }
 
     return FALSE;
   }

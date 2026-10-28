@@ -20,7 +20,7 @@ class PartialDateRangeWidget extends PartialDateWidget {
   /**
    * {@inheritdoc}
    */
-  public function formElement(FieldItemListInterface $items, $delta, array $element, array &$form, FormStateInterface $form_state) {
+  public function formElement(FieldItemListInterface $items, $delta, array $element, array &$form, FormStateInterface $form_state): array {
     $element = parent::formElement($items, $delta, $element, $form, $form_state);
 
     $config = $this->configFactory->get('partial_date.settings');
@@ -30,17 +30,17 @@ class PartialDateRangeWidget extends PartialDateWidget {
     $this->filterComponents($components);
 
     if ($this->getSetting('range_inline')) {
-      $element['#attributes'] = array('class' => array('container-inline'));
+      $element['#attributes'] = ['class' => ['container-inline']];
     }
 
     $element['from']['#title'] = $this->t('Start date');
 
     $help_txt = $this->getSetting('help_txt');
-    $element['_separator'] = array(
+    $element['_separator'] = [
       '#type' => 'markup',
       '#markup' => '<div class="partial-date-separator">&nbsp;' . $help_txt['range_separator'] . '&nbsp;</div>',
-    );
-    $element['to'] = array(
+    ];
+    $element['to'] = [
       '#type' => 'partial_datetime_element',
       '#title' => t('End date'),
       '#title_display' => 'invisible',
@@ -50,7 +50,7 @@ class PartialDateRangeWidget extends PartialDateWidget {
       '#minimum_components' => $this->getFieldSetting('minimum_components')['to']['granularity'],
       '#component_styles' => $config->get('partial_date_component_field_inline_styles'),
       '#increments' => $this->getSetting('increments'),
-    );
+    ];
 
     $estimates = array_filter($this->getSetting('estimates'));
     if ($estimates) {
@@ -60,41 +60,44 @@ class PartialDateRangeWidget extends PartialDateWidget {
     return $element;
   }
 
-  /*
+  /**
    * Builds estimate selectors with (prefix/sufix help texts)
-   * If no estimates are usable, return FALSE
+   *
+   * @param array $estimates
+   *   The estimates settings.
+   *
+   * @return array|false
+   *   The estimates element or FALSE if no estimates are defined.
    */
   protected function buildEstimatesElement(array $estimates) {
     $estimates = $this->getFieldSetting('estimates');
     $help_txt = $this->getSetting('help_txt');
     $has_content = FALSE;
-    $element = array(
+    $element = [
       '#type' => 'container',
-      '#attributes' => array('class' => array('container-inline')),
-      '#attached' => array('library' => array('partial_date/estimates')),
-    );
-    $element['prefix'] = array('#plain_text' => $help_txt['estimates_prefix']);
+      '#attributes' => ['class' => ['container-inline']],
+      '#attached' => ['library' => ['partial_date/estimates']],
+    ];
+    $element['prefix'] = ['#plain_text' => $help_txt['estimates_prefix']];
     $components = partial_date_components();
     foreach ($estimates as $key => $value) {
       if (!empty($value) && !empty($estimates[$key])) {
         $has_content = TRUE;
-        $estimate_label = t('@component estimate', array('@component' => $components[$key]));
-        $blank_option = array('' => $estimate_label);
-        $element[$key . '_estimate'] = array(
+        $estimate_label = t('@component estimate', ['@component' => $components[$key]]);
+        $blank_option = ['' => $estimate_label];
+        $element[$key . '_estimate'] = [
           '#type' => 'select',
           '#title' => $estimate_label,
           '#title_display' => 'invisible',
-//          '#value' => empty($element['#value'][$key . '_estimate']) ? '' : $element['#value'][$key . '_estimate'],
-//          '#attributes' => $element['#attributes'],
           '#options' => $blank_option + $estimates[$key],
-          '#attributes' => array(
-            'class' => array('estimate_selector'),
+          '#attributes' => [
+            'class' => ['estimate_selector'],
             'date_component' => $key,
-          ),
-        );
+          ],
+        ];
       }
     }
-    $element['sufix'] = array('#plain_text' => $help_txt['estimates_sufix']);
+    $element['sufix'] = ['#plain_text' => $help_txt['estimates_sufix']];
     if (!$has_content) {
       $element = FALSE;
     }
@@ -108,24 +111,24 @@ class PartialDateRangeWidget extends PartialDateWidget {
     $settings = parent::defaultSettings();
     $settings['components_to'] = $settings['components'];
     $settings['help_txt'] += [
-      'range_separator' => new TranslatableMarkup(' to '),
-      'estimates_prefix' => new TranslatableMarkup('... or choose from pre-defined estimates: '),
+      'range_separator' => new TranslatableMarkup('to'),
+      'estimates_prefix' => new TranslatableMarkup('... or choose from pre-defined estimates:'),
       'estimates_sufix' => '',
     ];
-    return $settings + array(
-      'estimates' => array(
+    return $settings + [
+      'estimates' => [
         'year' => TRUE,
         'month' => TRUE,
-      ),
+      ],
       'range_inline' => TRUE,
-    );
+    ];
   }
 
   /**
    * {@inheritdoc}
    */
-  public function settingsForm(array $form, FormStateInterface $form_state) {
-    //debug_only:     var_dump($this->settings);
+  public function settingsForm(array $form, FormStateInterface $form_state): array {
+    // debug_only:     var_dump($this->settings);.
     $elements = parent::settingsForm($form, $form_state);
 
     if (!$this->getFieldSetting('has_time')) {
@@ -133,31 +136,32 @@ class PartialDateRangeWidget extends PartialDateWidget {
       $elements['has_time']['#value'] = 0;
       $this->setSetting('has_time', 0);
     }
-    //Java Script markers to dynamically hide form elements based on the above checkboxes.
-    $statesVisible_HasTime = array(
-      'visible' => array(
-        ':input[id="has_time"]' => array('checked' => TRUE),
-      ),
-    );
+    // Java Script markers to dynamically hide form elements based on
+    // the above checkboxes.
+    $statesVisible_HasTime = [
+      'visible' => [
+        ':input[id="has_time"]' => ['checked' => TRUE],
+      ],
+    ];
 
     $elements['components_to'] = $elements['components'];
     $elements['components_to']['#title'] = t('Date components (to date)');
     $elements['components_to']['#default_value'] = $this->getSetting('components_to');
     $elements['components']['#title'] = t('Date components (from date)');
 
-    $elements['estimates'] = array(
+    $elements['estimates'] = [
       '#type' => 'partial_date_components_element',
       '#title' => t('Show estimates'),
       '#default_value' => $this->getSetting('estimates'),
       '#description' => t('Select the date component estimate attributes that you want to expose.'),
       '#show_time' => $this->getFieldSetting('has_time'),
       '#time_states' => $statesVisible_HasTime,
-    );
-    $elements['range_inline'] = array(
+    ];
+    $elements['range_inline'] = [
       '#type' => 'checkbox',
       '#title' => t('Show range end componets on the same line?'),
       '#default_value' => $this->getSetting('range_inline'),
-    );
+    ];
 
     return $elements;
   }
@@ -165,37 +169,37 @@ class PartialDateRangeWidget extends PartialDateWidget {
   /**
    * {@inheritdoc}
    */
-  protected function buildHelpTxtElement() {
+  protected function buildHelpTxtElement(): array {
     $element = parent::buildHelpTxtElement();
 
     $help_txt = $this->getSetting('help_txt');
-    $element['range_separator'] = array(
+    $element['range_separator'] = [
       '#type' => 'textfield',
       '#title' => t('Range separator'),
       '#default_value' => $help_txt['range_separator'],
       '#description' => t('Choose a short text between start and end components.'),
-    );
-    $element['estimates_prefix'] = array(
+    ];
+    $element['estimates_prefix'] = [
       '#type' => 'textfield',
       '#title' => t('Estimates prefix'),
       '#default_value' => $help_txt['estimates_prefix'],
       '#description' => t('Choose a short text to show before estimate selectors.'),
-    );
-    $element['estimates_sufix'] = array(
+    ];
+    $element['estimates_sufix'] = [
       '#type' => 'textfield',
       '#title' => t('Estimates sufix'),
       '#default_value' => $help_txt['estimates_sufix'],
       '#description' => t('Choose a short text to show after estimate selectors.'),
-    );
+    ];
     return $element;
   }
 
   /**
    * {@inheritdoc}
    */
-  public function settingsSummary() {
+  public function settingsSummary(): array {
     $summary = parent::settingsSummary();
-    $has_time  = $this->hasTime();
+    $has_time = $this->hasTime();
 
     $exclude = [];
     if (!$has_time) {
@@ -204,23 +208,27 @@ class PartialDateRangeWidget extends PartialDateWidget {
     $components = partial_date_components($exclude);
     $range_components = array_filter($this->getSetting('components_to'));
     if ($range_components) {
-      $txt = t('End of range components: ');
+      $labels = [];
       foreach ($components as $key => $label) {
         if (!empty($range_components[$key])) {
-          $txt .= $label . ', ';
+          $labels[] = $label;
         }
       }
-      $summary[] = $txt;
+      $summary[] = $this->t('End of range components: @components', [
+        '@components' => implode(', ', $labels),
+      ]);
     }
     $estimates = array_filter($this->getSetting('estimates'));
     if ($estimates) {
-      $txt = t('Use estimates for: ');
+      $labels = [];
       foreach ($components as $key => $label) {
         if (!empty($estimates[$key])) {
-          $txt .= $label . ', ';
+          $labels[] = $label;
         }
       }
-      $summary[] = $txt;
+      $summary[] = $this->t('Use estimates for: @components', [
+        '@components' => implode(', ', $labels),
+      ]);
     }
     return $summary;
   }
@@ -228,11 +236,11 @@ class PartialDateRangeWidget extends PartialDateWidget {
   /**
    * {@inheritdoc}
    */
-  public function massageFormValues(array $values, array $form, FormStateInterface $form_state) {
-    //prepare field components from form element
+  public function massageFormValues(array $values, array $form, FormStateInterface $form_state): array {
+    // Prepare field components from form element.
     $field = parent::massageFormValues($values, $form, $form_state);
     foreach ($values as $delta => $value) {
-      $value += array('to' => '');
+      $value += ['to' => ''];
 
       foreach (partial_date_components() as $key => $label) {
         if (!empty($value['to'][$key])) {

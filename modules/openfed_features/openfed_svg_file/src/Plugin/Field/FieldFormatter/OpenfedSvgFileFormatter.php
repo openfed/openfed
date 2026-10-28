@@ -3,7 +3,6 @@
 namespace Drupal\openfed_svg_file\Plugin\Field\FieldFormatter;
 
 use Drupal\Core\Field\FieldItemListInterface;
-use Drupal\Core\Form\FormStateInterface;
 use Drupal\file\Plugin\Field\FieldFormatter\FileFormatterBase;
 
 /**
@@ -22,32 +21,14 @@ class OpenfedSvgFileFormatter extends FileFormatterBase {
   /**
    * {@inheritdoc}
    */
-  public static function defaultSettings() {
-    return parent::defaultSettings();
+  public function settingsSummary(): array {
+    return [];
   }
 
   /**
    * {@inheritdoc}
    */
-  public function settingsForm(array $form, FormStateInterface $form_state) {
-    $form = parent::settingsForm($form, $form_state);
-
-    return $form;
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function settingsSummary() {
-    $summary = [];
-
-    return $summary;
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function viewElements(FieldItemListInterface $items, $langcode) {
+  public function viewElements(FieldItemListInterface $items, $langcode): array {
     $elements = [];
     $attributes = [];
 
@@ -93,6 +74,5 @@ class OpenfedSvgFileFormatter extends FileFormatterBase {
 
     return $elements;
   }
-
 
 }

@@ -9,7 +9,6 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\file\Element\ManagedFile;
 use Drupal\file\Plugin\Field\FieldWidget\FileWidget;
 
-
 /**
  * Plugin implementation of the 'openfed_svg_file' widget.
  *
@@ -26,19 +25,10 @@ class OpenfedSvgFileWidget extends FileWidget {
   /**
    * {@inheritdoc}
    */
-  public static function defaultSettings() {
+  public static function defaultSettings(): array {
     return [
       'progress_indicator' => 'throbber',
     ] + parent::defaultSettings();
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function formElement(FieldItemListInterface $items, $delta, array $element, array &$form, FormStateInterface $form_state) {
-    $element = parent::formElement($items, $delta, $element, $form, $form_state);
-
-    return $element;
   }
 
   /**
@@ -84,17 +74,17 @@ class OpenfedSvgFileWidget extends FileWidget {
       $element['field_content_wrapper']['output_type']['type'] = [
         '#type' => 'radios',
         '#title' => t('Output type'),
-        '#default_value' => isset($item['type']) ? $item['type'] : 'image',
+        '#default_value' => $item['type'] ?? 'image',
         '#options' => get_output_types(),
         '#required' => TRUE,
         '#attributes' => [
           'class' => ['openfed_svg_file_type'],
         ],
       ];
-      $element['field_content_wrapper']['output_type']['width'] = array(
+      $element['field_content_wrapper']['output_type']['width'] = [
         '#type' => 'number',
         '#title' => t('Width'),
-        '#default_value' => isset($item['width']) ? $item['width'] : 100,
+        '#default_value' => $item['width'] ?? 100,
         '#field_suffix' => 'px',
         '#size' => 4,
         '#min' => 1,
@@ -102,11 +92,11 @@ class OpenfedSvgFileWidget extends FileWidget {
         '#attributes' => [
           'class' => ['openfed_svg_file_width'],
         ],
-      );
-      $element['field_content_wrapper']['output_type']['height'] = array(
+      ];
+      $element['field_content_wrapper']['output_type']['height'] = [
         '#type' => 'number',
         '#title' => t('Height'),
-        '#default_value' => isset($item['height']) ? $item['height'] : 100,
+        '#default_value' => $item['height'] ?? 100,
         '#field_suffix' => 'px',
         '#size' => 4,
         '#min' => 1,
@@ -114,46 +104,46 @@ class OpenfedSvgFileWidget extends FileWidget {
         '#attributes' => [
           'class' => ['openfed_svg_file_height'],
         ],
-      );
-      $element['field_content_wrapper']['output_type']['title'] = array(
+      ];
+      $element['field_content_wrapper']['output_type']['title'] = [
         '#type' => 'textfield',
         '#title' => t('Title'),
-        '#value' => isset($item['title']) ? $item['title'] : '',
+        '#value' => $item['title'] ?? '',
         '#disabled' => TRUE,
-        '#states' => array(
-          'visible' => array(
-            [':input[name="' . $field_id . '[field_content_wrapper][output_type][type]"]' => array('value' => 'iframe')],
-            [':input[name="' . $field_id . '[field_content_wrapper][output_type][type]"]' => array('value' => 'image')],
-          ),
-          'enabled' => array(
-            [':input[name="' . $field_id . '[field_content_wrapper][output_type][type]"]' => array('value' => 'iframe')],
-            [':input[name="' . $field_id . '[field_content_wrapper][output_type][type]"]' => array('value' => 'image')],
-          ),
-          'required' => array(
-            [':input[name="' . $field_id . '[field_content_wrapper][output_type][type]"]' => array('value' => 'iframe')],
-          ),
-        ),
-      );
-      $element['field_content_wrapper']['output_type']['alt'] = array(
+        '#states' => [
+          'visible' => [
+            [':input[name="' . $field_id . '[field_content_wrapper][output_type][type]"]' => ['value' => 'iframe']],
+            [':input[name="' . $field_id . '[field_content_wrapper][output_type][type]"]' => ['value' => 'image']],
+          ],
+          'enabled' => [
+            [':input[name="' . $field_id . '[field_content_wrapper][output_type][type]"]' => ['value' => 'iframe']],
+            [':input[name="' . $field_id . '[field_content_wrapper][output_type][type]"]' => ['value' => 'image']],
+          ],
+          'required' => [
+            [':input[name="' . $field_id . '[field_content_wrapper][output_type][type]"]' => ['value' => 'iframe']],
+          ],
+        ],
+      ];
+      $element['field_content_wrapper']['output_type']['alt'] = [
         '#type' => 'textfield',
         '#title' => t('Alt'),
-        '#value' => isset($item['alt']) ? $item['alt'] : '',
+        '#value' => $item['alt'] ?? '',
         '#disabled' => TRUE,
-        '#states' => array(
-          'visible' => array(
-            [':input[name="' . $field_id . '[field_content_wrapper][output_type][type]"]' => array('value' => 'object')],
-            [':input[name="' . $field_id . '[field_content_wrapper][output_type][type]"]' => array('value' => 'image')],
-          ),
-          'enabled' => array(
-            [':input[name="' . $field_id . '[field_content_wrapper][output_type][type]"]' => array('value' => 'object')],
-            [':input[name="' . $field_id . '[field_content_wrapper][output_type][type]"]' => array('value' => 'image')],
-          ),
-          'required' => array(
-            [':input[name="' . $field_id . '[field_content_wrapper][output_type][type]"]' => array('value' => 'object')],
-            [':input[name="' . $field_id . '[field_content_wrapper][output_type][type]"]' => array('value' => 'image')],
-          ),
-        ),
-      );
+        '#states' => [
+          'visible' => [
+            [':input[name="' . $field_id . '[field_content_wrapper][output_type][type]"]' => ['value' => 'object']],
+            [':input[name="' . $field_id . '[field_content_wrapper][output_type][type]"]' => ['value' => 'image']],
+          ],
+          'enabled' => [
+            [':input[name="' . $field_id . '[field_content_wrapper][output_type][type]"]' => ['value' => 'object']],
+            [':input[name="' . $field_id . '[field_content_wrapper][output_type][type]"]' => ['value' => 'image']],
+          ],
+          'required' => [
+            [':input[name="' . $field_id . '[field_content_wrapper][output_type][type]"]' => ['value' => 'object']],
+            [':input[name="' . $field_id . '[field_content_wrapper][output_type][type]"]' => ['value' => 'image']],
+          ],
+        ],
+      ];
     }
 
     return parent::process($element, $form_state, $form);
@@ -172,7 +162,7 @@ class OpenfedSvgFileWidget extends FileWidget {
         $input['display'] = $element['#display_field'] ? 0 : 1;
       }
       if (isset($input['field_content_wrapper'])) {
-        $input = array_merge($input,$input['field_content_wrapper']['output_type']);
+        $input = array_merge($input, $input['field_content_wrapper']['output_type']);
       }
     }
 
@@ -192,7 +182,7 @@ class OpenfedSvgFileWidget extends FileWidget {
   /**
    * Form element validation handler for #type 'number'.
    */
-  public static function  element_validate_integer_positive(&$element, FormStateInterface $form_state, &$complete_form) {
+  public static function elementValidateIntegerPositive(array &$element, FormStateInterface $form_state, &$complete_form): void {
     $value = $element['#value'];
     if ($value !== '' && (!is_numeric($value) || intval($value) != $value || $value < 0)) {
       $form_state->setError($element, t('%name must be a positive integer.', ['%name' => $element['#title']]));
@@ -202,7 +192,7 @@ class OpenfedSvgFileWidget extends FileWidget {
   /**
    * {@inheritdoc}
    */
-  public function extractFormValues(FieldItemListInterface $items, array $form, FormStateInterface $form_state) {
+  public function extractFormValues(FieldItemListInterface $items, array $form, FormStateInterface $form_state): void {
     $field_name = $this->fieldDefinition->getName();
 
     $field_state = static::getWidgetState($form['#parents'], $field_name, $form_state);
@@ -221,4 +211,5 @@ class OpenfedSvgFileWidget extends FileWidget {
     parent::extractFormValues($items, $form, $form_state);
 
   }
+
 }

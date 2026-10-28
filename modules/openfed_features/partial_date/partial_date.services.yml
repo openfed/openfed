@@ -1,3 +1,7 @@
 services:
   partial_date.formatter:
     class: Drupal\partial_date\PartialDateFormatter
+
+  Drupal\partial_date\Hook\PartialDateHooks:
+    class: Drupal\partial_date\Hook\PartialDateHooks
+    autowire: true

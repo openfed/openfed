@@ -26,7 +26,7 @@ class OpenfedSvgFileItem extends FileItem {
   /**
    * {@inheritdoc}
    */
-  public static function defaultStorageSettings() {
+  public static function defaultStorageSettings(): array {
     return [
       'type' => '',
       'width' => '',
@@ -39,10 +39,10 @@ class OpenfedSvgFileItem extends FileItem {
   /**
    * {@inheritdoc}
    */
-  public static function defaultFieldSettings() {
+  public static function defaultFieldSettings(): array {
     $settings = [
-        'file_extensions' => 'svg',
-      ] + parent::defaultFieldSettings();
+      'file_extensions' => 'svg',
+    ] + parent::defaultFieldSettings();
 
     unset($settings['description_field']);
     return $settings;
@@ -51,7 +51,7 @@ class OpenfedSvgFileItem extends FileItem {
   /**
    * {@inheritdoc}
    */
-  public static function schema(FieldStorageDefinitionInterface $field_definition) {
+  public static function schema(FieldStorageDefinitionInterface $field_definition): array {
     return [
       'columns' => [
         'target_id' => [
@@ -120,7 +120,7 @@ class OpenfedSvgFileItem extends FileItem {
   /**
    * {@inheritdoc}
    */
-  public function storageSettingsForm(array &$form, FormStateInterface $form_state, $has_data) {
+  public function storageSettingsForm(array &$form, FormStateInterface $form_state, $has_data): array {
     $element = [];
 
     return $element;
@@ -145,7 +145,7 @@ class OpenfedSvgFileItem extends FileItem {
   /**
    * {@inheritdoc}
    */
-  public function isDisplayed() {
+  public function isDisplayed(): bool {
     // SVG items do not have per-item visibility settings.
     return TRUE;
   }

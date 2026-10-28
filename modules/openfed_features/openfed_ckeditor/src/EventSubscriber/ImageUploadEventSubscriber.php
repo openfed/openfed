@@ -38,7 +38,7 @@ class ImageUploadEventSubscriber implements EventSubscriberInterface {
     $error_message = $exception->getMessage();
 
     // Remove the object type prefix if present.
-    // e.g., "Object(Drupal\Core\Entity\Plugin\DataType\EntityAdapter): "
+    // e.g., "Object(Drupal\Core\Entity\Plugin\DataType\EntityAdapter): ".
     $error_message = preg_replace('/^Object\([^)]+\):\s*/', '', $error_message);
 
     // Decode HTML entities and strip tags for plain text display in alert().
@@ -48,7 +48,7 @@ class ImageUploadEventSubscriber implements EventSubscriberInterface {
     $upload = $request->files->get('upload');
 
     // Create a JSON response in the format expected by drupalImage.js:
-    // response.error.message
+    // response.error.message.
     $response = new JsonResponse([
       'error' => [
         'message' => sprintf("Couldn't upload file: %s\n%s", $upload->getClientOriginalName(), $error_message),

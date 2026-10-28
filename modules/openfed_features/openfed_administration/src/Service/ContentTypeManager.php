@@ -4,6 +4,7 @@ namespace Drupal\openfed_administration\Service;
 
 use Drupal\content_translation\ContentTranslationManagerInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Drupal\workflows\WorkflowInterface;
 
 /**
  * Provides helper methods for content types managements.
@@ -12,25 +13,20 @@ class ContentTypeManager {
 
   /**
    * The entity type manager.
-   *
-   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
    */
-  protected $entityTypeManager;
+  protected EntityTypeManagerInterface $entityTypeManager;
 
   /**
    * The content translation manager.
-   *
-   * @var \Drupal\content_translation\ContentTranslationManagerInterface
    */
-  protected $contentTranslationManager;
+  protected ContentTranslationManagerInterface $contentTranslationManager;
 
   /**
    * Constructs a ContentTypeManager object.
    *
    * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
    *   The entity type manager.
-   *
-   * @param ContentTranslationManagerInterface $content_translation_manager
+   * @param \Drupal\content_translation\ContentTranslationManagerInterface $content_translation_manager
    *   The content translation manager.
    */
   public function __construct(EntityTypeManagerInterface $entity_type_manager, ContentTranslationManagerInterface $content_translation_manager) {
@@ -44,7 +40,7 @@ class ContentTypeManager {
    * @param string $content_type_name
    *   The machine name of the content type.
    */
-  public function addWorkflowToBundle(string $content_type_name) {
+  public function addWorkflowToBundle(string $content_type_name): void {
     $workflow = $this->entityTypeManager->getStorage('workflow')->load('openfed_workflow');
 
     if (!$workflow instanceof WorkflowInterface) {
@@ -66,7 +62,7 @@ class ContentTypeManager {
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    */
-  public function assignPermissionsToRoles(string $content_type_name) {
+  public function assignPermissionsToRoles(string $content_type_name): void {
     $roles = $this->entityTypeManager->getStorage('user_role')->loadMultiple([
       'content_editor',
       'content_author',
@@ -104,7 +100,7 @@ class ContentTypeManager {
    * @param string $content_type_name
    *   The machine name of the content type.
    */
-  public function enableTranslation($content_type_name) {
+  public function enableTranslation(string $content_type_name): void {
     $this->contentTranslationManager->setEnabled('node', $content_type_name, TRUE);
   }
 
