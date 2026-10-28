@@ -2,16 +2,17 @@
 
 namespace Drupal\partial_date\Plugin\Validation\Constraint;
 
+use Drupal\Core\StringTranslation\TranslatableMarkup;
+use Drupal\Core\Validation\Attribute\Constraint as ConstraintAttribute;
 use Symfony\Component\Validator\Constraint;
 
 /**
  * Provides a constraint for a valid day.
- *
- * @Constraint(
- *   id = "ValidDay",
- *   label = @Translation("Valid day", context = "Validation"),
- * )
  */
+#[ConstraintAttribute(
+  id: 'ValidDay',
+  label: new TranslatableMarkup('Valid day', [], ['context' => 'Validation']),
+)]
 class ValidDayConstraint extends Constraint {
 
   /**

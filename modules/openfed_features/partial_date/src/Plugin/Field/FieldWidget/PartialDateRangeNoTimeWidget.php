@@ -2,19 +2,19 @@
 
 namespace Drupal\partial_date\Plugin\Field\FieldWidget;
 
+use Drupal\Core\Field\Attribute\FieldWidget;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
+
 /**
  * Provides a widget for Partial Date Range fields without time input.
  *
  * @see \Drupal\partial_date\Plugin\Field\FieldWidget\PartialDateNoTimeWidget
- *
- * @FieldWidget(
- *   id = "partial_date_range_only_widget",
- *   label = @Translation("Partial date range only"),
- *   field_types = {
- *     "partial_date_range",
- *   },
- * )
  */
+#[FieldWidget(
+  id: 'partial_date_range_only_widget',
+  label: new TranslatableMarkup('Partial date range only'),
+  field_types: ['partial_date_range'],
+)]
 class PartialDateRangeNoTimeWidget extends PartialDateRangeWidget {
 
   /**

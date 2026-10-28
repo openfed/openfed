@@ -3,29 +3,26 @@
 namespace Drupal\partial_date\Plugin\Field\FieldFormatter;
 
 use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Drupal\Core\Field\Attribute\FieldFormatter;
 use Drupal\Core\Field\FieldDefinitionInterface;
 use Drupal\Core\Field\FieldItemListInterface;
-use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Field\FormatterBase;
+use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
 use Drupal\partial_date\PartialDateFormatterInterface;
 use Drupal\partial_date\Plugin\Field\FieldType\PartialDateTimeItem;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Plugin implementation for Partial Date formatter.
- *
- * @FieldFormatter(
- *   id = "partial_date_formatter",
- *   module = "partial_date",
- *   label = @Translation("Default"),
- *   description = @Translation("Display partial date."),
- *   field_types = {"partial_date"},
- *   quickedit = {
- *     "editor" = "disabled",
- *   },
- * )
  */
+#[FieldFormatter(
+  id: 'partial_date_formatter',
+  label: new TranslatableMarkup('Default'),
+  description: new TranslatableMarkup('Display partial date.'),
+  field_types: ['partial_date'],
+)]
 class PartialDateFormatter extends FormatterBase implements ContainerFactoryPluginInterface {
 
   /**

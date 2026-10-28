@@ -6,6 +6,7 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Language\LanguageManagerInterface;
 use Drupal\Core\Link;
 use Drupal\Core\Url;
+use Drupal\views\Attribute\ViewsField;
 use Drupal\views\Plugin\views\field\FieldPluginBase;
 use Drupal\views\ResultRow;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -14,9 +15,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  * Field handler for showing links to translations available for a entity.
  *
  * @ingroup views_field_handlers
- *
- * @ViewsField("entity_translations")
  */
+#[ViewsField('entity_translations')]
 class EntityTranslations extends FieldPluginBase {
 
   /**

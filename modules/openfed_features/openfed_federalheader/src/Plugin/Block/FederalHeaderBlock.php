@@ -2,16 +2,17 @@
 
 namespace Drupal\openfed_federalheader\Plugin\Block;
 
+use Drupal\Core\Block\Attribute\Block;
 use Drupal\Core\Block\BlockBase;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
 
 /**
  * Provides a Federal header block.
- *
- * @Block(
- *   id = "federal_header_block",
- *   admin_label = @Translation("Federal header"),
- * )
  */
+#[Block(
+  id: 'federal_header_block',
+  admin_label: new TranslatableMarkup('Federal header'),
+)]
 class FederalHeaderBlock extends BlockBase {
 
   /**

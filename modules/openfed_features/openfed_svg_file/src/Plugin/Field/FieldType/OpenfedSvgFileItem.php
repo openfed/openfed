@@ -2,25 +2,27 @@
 
 namespace Drupal\openfed_svg_file\Plugin\Field\FieldType;
 
+use Drupal\Core\Field\Attribute\FieldType;
 use Drupal\Core\Field\FieldStorageDefinitionInterface;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
 use Drupal\Core\TypedData\DataDefinition;
+use Drupal\file\Plugin\Field\FieldType\FileFieldItemList;
 use Drupal\file\Plugin\Field\FieldType\FileItem;
 
 /**
  * Plugin implementation of the 'file' field type.
- *
- * @FieldType(
- *   id = "openfed_svg_file",
- *   label = @Translation("Openfed SVG File"),
- *   description = @Translation("This field stores the ID of a file as an integer value."),
- *   category = @Translation("Reference"),
- *   default_widget = "openfed_svg_file_widget",
- *   default_formatter = "openfed_svg_file_formatter",
- *   list_class = "\Drupal\file\Plugin\Field\FieldType\FileFieldItemList",
- *   constraints = {"ReferenceAccess" = {}, "FileValidation" = {}}
- * )
  */
+#[FieldType(
+  id: 'openfed_svg_file',
+  label: new TranslatableMarkup('Openfed SVG File'),
+  description: new TranslatableMarkup('This field stores the ID of a file as an integer value.'),
+  category: 'file_upload',
+  default_widget: 'openfed_svg_file_widget',
+  default_formatter: 'openfed_svg_file_formatter',
+  list_class: FileFieldItemList::class,
+  constraints: ['ReferenceAccess' => [], 'FileValidation' => []],
+)]
 class OpenfedSvgFileItem extends FileItem {
 
   /**

@@ -4,49 +4,39 @@ namespace Drupal\partial_date\Entity;
 
 use Drupal\Component\Utility\SortArray;
 use Drupal\Core\Config\Entity\ConfigEntityBase;
+use Drupal\Core\Entity\Attribute\ConfigEntityType;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
 
 /**
  * Defines the FormatType config entity.
  *
- * @ConfigEntityType(
- *   id = "partial_date_format",
- *   label = @Translation("Partial date format"),
- *   handlers = {
- *     "list_builder" = "Drupal\partial_date\Controller\PartialDateFormatListBuilder",
- *     "form" = {
- *        "add" = "Drupal\partial_date\Form\PartialDateFormatEditForm",
- *        "edit" = "Drupal\partial_date\Form\PartialDateFormatEditForm",
- *        "delete" = "Drupal\Core\Entity\EntityDeleteForm",
- *     },
- *     "route_provider" = {
- *       "html" = "Drupal\Core\Entity\Routing\DefaultHtmlRouteProvider",
- *     },
- *   },
- *   config_prefix = "format",
- *   admin_permission = "administer site configuration",
- *   entity_keys = {
- *     "id" = "id",
- *     "label" = "label",
- *   },
- *   links = {
- *     "collection" = "/admin/config/regional/partial-date-format",
- *     "add-form" = "/admin/config/regional/partial-date-format/add",
- *     "edit-form" = "/admin/config/regional/partial-date-format/manage/{partial_date_format}",
- *     "delete-form" = "/admin/config/regional/partial-date-format/manage/{partial_date_format}/delete",
- *   },
- *   config_export = {
- *     "id",
- *     "label",
- *     "meridiem",
- *     "year_designation",
- *     "display",
- *     "components",
- *     "separator",
- *   }
- * )
- *
  * @author CosminFr
  */
+#[ConfigEntityType(
+  id: 'partial_date_format',
+  label: new TranslatableMarkup('Partial date format'),
+  handlers: [
+    'list_builder' => 'Drupal\partial_date\Controller\PartialDateFormatListBuilder',
+    'form' => [
+      'add' => 'Drupal\partial_date\Form\PartialDateFormatEditForm',
+      'edit' => 'Drupal\partial_date\Form\PartialDateFormatEditForm',
+      'delete' => 'Drupal\Core\Entity\EntityDeleteForm',
+    ],
+    'route_provider' => [
+      'html' => 'Drupal\Core\Entity\Routing\DefaultHtmlRouteProvider',
+    ],
+  ],
+  config_prefix: 'format',
+  admin_permission: 'administer site configuration',
+  entity_keys: ['id' => 'id', 'label' => 'label'],
+  links: [
+    'collection' => '/admin/config/regional/partial-date-format',
+    'add-form' => '/admin/config/regional/partial-date-format/add',
+    'edit-form' => '/admin/config/regional/partial-date-format/manage/{partial_date_format}',
+    'delete-form' => '/admin/config/regional/partial-date-format/manage/{partial_date_format}/delete',
+  ],
+  config_export: ['id', 'label', 'meridiem', 'year_designation', 'display', 'components', 'separator'],
+)]
 class PartialDateFormat extends ConfigEntityBase implements PartialDateFormatInterface {
 
   /**

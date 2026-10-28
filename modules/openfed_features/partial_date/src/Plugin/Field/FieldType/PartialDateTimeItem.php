@@ -2,9 +2,11 @@
 
 namespace Drupal\partial_date\Plugin\Field\FieldType;
 
+use Drupal\Core\Field\Attribute\FieldType;
 use Drupal\Core\Field\FieldItemBase;
 use Drupal\Core\Field\FieldStorageDefinitionInterface;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
 use Drupal\Core\TypedData\DataDefinition;
 use Drupal\Core\TypedData\MapDataDefinition;
 use Drupal\partial_date\DateTools;
@@ -12,15 +14,14 @@ use Drupal\partial_date\Plugin\DataType\PartialDateTimeComputed;
 
 /**
  * Plugin implementation of the 'partial_date' field type.
- *
- * @FieldType(
- *   id = "partial_date",
- *   label = @Translation("Partial date and time"),
- *   description = @Translation("This field stores and renders partial dates."),
- *   default_widget = "partial_date_widget",
- *   default_formatter = "partial_date_formatter",
- * )
  */
+#[FieldType(
+  id: 'partial_date',
+  label: new TranslatableMarkup('Partial date and time'),
+  description: new TranslatableMarkup('This field stores and renders partial dates.'),
+  default_widget: 'partial_date_widget',
+  default_formatter: 'partial_date_formatter',
+)]
 class PartialDateTimeItem extends FieldItemBase {
 
   /**

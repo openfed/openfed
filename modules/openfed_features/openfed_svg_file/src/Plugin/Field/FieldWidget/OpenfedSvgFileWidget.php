@@ -4,22 +4,21 @@ namespace Drupal\openfed_svg_file\Plugin\Field\FieldWidget;
 
 use Drupal\Component\Utility\NestedArray;
 use Drupal\Core\Access\AccessResultInterface;
+use Drupal\Core\Field\Attribute\FieldWidget;
 use Drupal\Core\Field\FieldItemListInterface;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
 use Drupal\file\Element\ManagedFile;
 use Drupal\file\Plugin\Field\FieldWidget\FileWidget;
 
 /**
  * Plugin implementation of the 'openfed_svg_file' widget.
- *
- * @FieldWidget(
- *   id = "openfed_svg_file_widget",
- *   label = @Translation("Openfed SVG File Widget"),
- *   field_types = {
- *     "openfed_svg_file"
- *   }
- * )
  */
+#[FieldWidget(
+  id: 'openfed_svg_file_widget',
+  label: new TranslatableMarkup('Openfed SVG File Widget'),
+  field_types: ['openfed_svg_file'],
+)]
 class OpenfedSvgFileWidget extends FileWidget {
 
   /**

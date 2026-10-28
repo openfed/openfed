@@ -2,10 +2,11 @@
 
 namespace Drupal\partial_date\Plugin\Field\FieldWidget;
 
-use Drupal\Core\Field\FieldDefinitionInterface;
 use Drupal\Core\Config\ConfigFactoryInterface;
-use Drupal\Core\Field\WidgetBase;
+use Drupal\Core\Field\Attribute\FieldWidget;
+use Drupal\Core\Field\FieldDefinitionInterface;
 use Drupal\Core\Field\FieldItemListInterface;
+use Drupal\Core\Field\WidgetBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\StringTranslation\TranslatableMarkup;
@@ -13,13 +14,12 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Provides an widget for Partial Date fields.
- *
- * @FieldWidget(
- *   id = "partial_date_widget",
- *   label = @Translation("Partial date and time"),
- *   field_types = {"partial_date"},
- * )
  */
+#[FieldWidget(
+  id: 'partial_date_widget',
+  label: new TranslatableMarkup('Partial date and time'),
+  field_types: ['partial_date'],
+)]
 class PartialDateWidget extends WidgetBase implements ContainerFactoryPluginInterface {
 
   /**

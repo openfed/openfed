@@ -2,19 +2,19 @@
 
 namespace Drupal\partial_date\Plugin\Field\FieldWidget;
 
+use Drupal\Core\Field\Attribute\FieldWidget;
 use Drupal\Core\Field\FieldItemListInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\StringTranslation\TranslatableMarkup;
 
 /**
  * Provides an widget for Partial Date Range fields.
- *
- * @FieldWidget(
- *   id = "partial_date_range_widget",
- *   label = @Translation("Partial date and time range"),
- *   field_types = {"partial_date_range"},
- * )
  */
+#[FieldWidget(
+  id: 'partial_date_range_widget',
+  label: new TranslatableMarkup('Partial date and time range'),
+  field_types: ['partial_date_range'],
+)]
 class PartialDateRangeWidget extends PartialDateWidget {
 
   /**

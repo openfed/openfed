@@ -2,20 +2,19 @@
 
 namespace Drupal\openfed_svg_file\Plugin\Field\FieldFormatter;
 
+use Drupal\Core\Field\Attribute\FieldFormatter;
 use Drupal\Core\Field\FieldItemListInterface;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
 use Drupal\file\Plugin\Field\FieldFormatter\FileFormatterBase;
 
 /**
  * Plugin implementation of the 'openfed_svg_file' formatter.
- *
- * @FieldFormatter(
- *   id = "openfed_svg_file_formatter",
- *   label = @Translation("Openfed SVG file Formatter"),
- *   field_types = {
- *     "openfed_svg_file"
- *   }
- * )
  */
+#[FieldFormatter(
+  id: 'openfed_svg_file_formatter',
+  label: new TranslatableMarkup('Openfed SVG file Formatter'),
+  field_types: ['openfed_svg_file'],
+)]
 class OpenfedSvgFileFormatter extends FileFormatterBase {
 
   /**

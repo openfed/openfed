@@ -2,23 +2,20 @@
 
 namespace Drupal\partial_date\Plugin\Field\FieldFormatter;
 
+use Drupal\Core\Field\Attribute\FieldFormatter;
 use Drupal\Core\Field\FieldItemListInterface;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
 
 /**
  * Plugin implementation for Partial Date formatter.
- *
- * @FieldFormatter(
- *   id = "partial_date_range_formatter",
- *   module = "partial_date_range",
- *   label = @Translation("Default"),
- *   description = @Translation("Display partial date range."),
- *   field_types = {"partial_date_range"},
- *   quickedit = {
- *     "editor" = "disabled",
- *   },
- * )
  */
+#[FieldFormatter(
+  id: 'partial_date_range_formatter',
+  label: new TranslatableMarkup('Default'),
+  description: new TranslatableMarkup('Display partial date range.'),
+  field_types: ['partial_date_range'],
+)]
 class PartialDateRangeFormatter extends PartialDateFormatter {
 
   /**

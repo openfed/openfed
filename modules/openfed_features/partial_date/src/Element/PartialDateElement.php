@@ -3,14 +3,15 @@
 namespace Drupal\partial_date\Element;
 
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Render\Attribute\FormElement;
 use Drupal\Core\Render\Element\FormElementBase;
 
 /**
  * Provides a form element for partial date widget.
  *
- * @FormElementBase("partial_datetime_element")
  * @author CosminFr
  */
+#[FormElement('partial_datetime_element')]
 class PartialDateElement extends FormElementBase {
 
   /**
