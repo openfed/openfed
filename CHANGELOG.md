@@ -1,5 +1,16 @@
 CHANGELOG
 =========
+30 October 2026 - Version 14.0.0-alpha1
+------------------------------
+First alpha of Openfed 14, for new installations only. Upgrading from Openfed 13 is not supported yet.
+- Requires Drupal 11.4, PHP 8.3 and Drush 13.
+- Removed CKEditor 4. CKEditor 5 is now the only editor (#212).
+- Claro replaces Openfed admin as the admin theme (#215).
+- Updated the contrib modules for Drupal 11, including new major versions of better_exposed_filters, field_encrypt, alertbox, disable_route_normalizer, measuremail, admin_toolbar_content_languages, append_file_info, node_edit_redirect and wba_menu_link (#219, #221).
+- Refreshed the patches for Drupal 11.4 and removed those that are no longer needed (#221).
+- Replaced oomphinc/composer-installers-extender with mnsami/composer-custom-directory-installer (#217).
+- Removed block_content_permissions. Use the permissions of core's Block Content module.
+
 09 October 2026 - Version 12.6.5
 ------------------------------
 - Bumped leaflet to 10.4.13 (#205)
