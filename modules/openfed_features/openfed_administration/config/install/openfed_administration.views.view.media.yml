@@ -1,4 +1,3 @@
-target: views.view.media
 langcode: en
 status: true
 dependencies:

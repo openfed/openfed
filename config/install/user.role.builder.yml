@@ -9,7 +9,7 @@ dependencies:
 id: builder
 label: Builder
 weight: 3
-is_admin: null
+is_admin: false
 permissions:
   - 'use text format embeddable_text'
   - 'use text format flexible_html'

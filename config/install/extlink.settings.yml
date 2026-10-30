@@ -1,3 +1,4 @@
+langcode: en
 extlink_target: false
 extlink_target_no_override: false
 extlink_nofollow: false
@@ -19,4 +20,3 @@ extlink_font_awesome_classes:
   links: 'fas fa-external-link-square-alt'
   mailto: 'fas fa-envelope'
 extlink_icon_placement: '0'
-whitelisted_domains: {  }

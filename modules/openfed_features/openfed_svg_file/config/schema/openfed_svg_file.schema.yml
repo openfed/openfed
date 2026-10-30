@@ -1,0 +1,30 @@
+field.storage_settings.openfed_svg_file:
+  type: field.storage_settings.file
+  label: 'SVG file storage settings'
+  mapping:
+    type:
+      type: string
+      label: 'Type'
+    width:
+      type: string
+      label: 'Width'
+    height:
+      type: string
+      label: 'Height'
+    title:
+      type: string
+      label: 'Title'
+    alt:
+      type: string
+      label: 'Alt'
+
+field.field_settings.openfed_svg_file:
+  type: field.field_settings.file
+  label: 'SVG file field settings'
+  mapping:
+    description_field:
+      requiredKey: false
+
+field.widget.settings.openfed_svg_file_widget:
+  type: field.widget.settings.file_generic
+  label: 'SVG file widget settings'

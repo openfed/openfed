@@ -1,4 +1,3 @@
-target: views.view.moderated_content
 langcode: en
 status: true
 dependencies:

@@ -21,7 +21,7 @@ dependencies:
 id: content_editor
 label: 'Content Editor'
 weight: 4
-is_admin: null
+is_admin: false
 permissions:
   - 'access administration pages'
   - 'access content overview'

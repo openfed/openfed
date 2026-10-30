@@ -1,0 +1,7 @@
+views.field.entity_translations:
+  type: views_field
+  label: 'Entity translations'
+  mapping:
+    entity_languages:
+      type: mixed
+      label: 'Languages to exclude'

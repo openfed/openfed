@@ -13,7 +13,7 @@ dependencies:
 id: user_manager
 label: 'User Manager'
 weight: 7
-is_admin: null
+is_admin: false
 permissions:
   - 'access administration pages'
   - 'access toolbar'

@@ -44,7 +44,11 @@ function openfed_multilingual_install() {
       $existing_config = str_replace($module . '.', '', $module_config_name);
       $existing_config = \Drupal::configFactory()
         ->getEditable($existing_config);
-      $existing_config->setData($config->get())->save();
+      // Keep the uuid of the existing config (or create one), the override
+      // files don't have one.
+      $data = $config->get();
+      $data['uuid'] = $existing_config->get('uuid') ?: \Drupal::service('uuid')->generate();
+      $existing_config->setData($data)->save();
       // We don't need to keep this config.
       $config->delete();
     }
