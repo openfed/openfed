@@ -285,7 +285,7 @@
         "drupal/robotstxt": "1.6",
         "drupal/role_delegation": "^1.5",
         "drupal/rules": "4.0.1",
-        "drupal/scheduler": "2.2.1",
+        "drupal/scheduler": "2.2.3",
         "drupal/scheduler_content_moderation_integration": "3.0.4",
         "drupal/search_api": "1.39",
         "drupal/search_api_attachments": "10.0.5",
