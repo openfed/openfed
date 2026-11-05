@@ -1,6 +1,12 @@
 CHANGELOG
 =========
-09 October 2026 - Version 12.6.5
+05 November 2026 - Version 13.6.9
+------------------------------
+- Bumped bootstrap to 3.45 to address SA-CONTRIB-2026-236 (#228)
+- Bumped scheduler to 2.2.3 to address SA-CONTRIB-2026-306 (#229)
+- Bumped svg_image to 3.2.5 to address security advisories in enshrined/svg-sanitize (#230)
+
+09 October 2026 - Version 13.6.8
 ------------------------------
 - Bumped leaflet to 10.4.13 (#205)
 - Bumped country to 2.1.3 (#206)
