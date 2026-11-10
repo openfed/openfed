@@ -1,5 +1,10 @@
 CHANGELOG
 =========
+10 November 2026 - Version 14.0.0-alpha2
+------------------------------
+- Updated Kiso for Drupal 11 compatibility, migrated to object-oriented hooks, and applied PHPStan and PHPCS.
+- Resolved config validation errors in the shipped config.
+
 30 October 2026 - Version 14.0.0-alpha1
 ------------------------------
 First alpha of Openfed 14, for new installations only. Upgrading from Openfed 13 is not supported yet.

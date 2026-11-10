@@ -1,6 +1,6 @@
 # Openfed
 
-OpenFed is a general-purpose, multilingual Drupal 9 distribution.
+OpenFed is a general-purpose, multilingual Drupal 11 distribution.
 
 It is developed by/for the Belgian Federal Public Service for ICT (Fedict) as
 part of the Fast2Web offering.
@@ -22,8 +22,9 @@ After that you can just install Openfed like any other distribution.
 
 ### Server requirements
 
-Openfed <= 11.1.x requires PHP 7.3.
-Openfed 11.2.x requires PHP 8.1.
+* Openfed <= 11.1.x requires PHP 7.3.
+* Openfed 11.2.x requires PHP 8.1.
+* Openfed >= 14 requires PHP 8.3.
 
 ### Composer installers
 

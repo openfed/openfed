@@ -326,7 +326,7 @@
         "drush/drush": "^13.7",
         "jackmoore/colorbox": "1.6.4",
         "mnsami/composer-custom-directory-installer": "^2.3",
-        "openfed/kiso": "dev-drupal-11.4-compatibility",
+        "openfed/kiso": "dev-main",
         "smillart/wai-aria-patterns-and-widgets": "1.0.*",
         "splidejs/splide": "^4.1",
         "ten1seven/what-input": "^5.2"
