@@ -151,9 +151,9 @@
                 "Issue #3459880: Compat 10.3 missing schema": "https://www.drupal.org/files/issues/2024-07-08/compat-10.3-missing-schema.patch"
             },
             "drupal/page_manager": {
-                "Issue #2665328: Fix Variants take entity label, not the variant title": "https://www.drupal.org/files/issues/2025-05-08/2665328-title-tokens-137.patch",
-                "Issue #2858877: Allow for block visibility rules (Patch 1)": "https://git.drupalcode.org/project/page_manager/-/merge_requests/24.patch",
-                "Issue #2858877: Allow for block visibility rules (Patch 2)": "https://www.drupal.org/files/issues/2025-03-05/page_manager-block_visibility_conditions-resolver_service-2858877-83.patch"
+                "Issue #2665328: Fix Variants take entity label, not the variant title": "https://www.drupal.org/files/issues/2026-11-11/2665328-146.patch",
+                "Issue #2858877: Allow for block visibility rules (Patch 1)": "https://www.drupal.org/files/issues/2026-11-12/2858877-allow-for-block-84.patch",
+                "Issue #2858877: Allow for block visibility rules (Patch 2)": "https://www.drupal.org/files/issues/2026-11-12/page_manager-block_visibility_conditions-resolver_service-2858877-84.patch"
             },
             "drupal/panels": {
                 "Issue #2769099: Block visibility conditions": "https://www.drupal.org/files/issues/2025-02-03/2769099-67.patch"
