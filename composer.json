@@ -297,7 +297,7 @@
         "drupal/orejime_videos": "^1.1",
         "drupal/override_node_options": "2.9",
         "drupal/page_cache_query_ignore": "2.4.0",
-        "drupal/page_manager": "4.0-rc3",
+        "drupal/page_manager": "4.1",
         "drupal/panels": "4.9",
         "drupal/paragraphs": "1.21",
         "drupal/paragraphs_asymmetric_translation_widgets": "1.4",
