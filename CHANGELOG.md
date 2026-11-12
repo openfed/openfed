@@ -1,5 +1,10 @@
 CHANGELOG
 =========
+12 November 2026 - Version 12.6.7
+------------------------------
+- Bumped page_manager to 4.1 to address SA-CONTRIB-2026-330
+- Bumped smart_trim to 2.2.2 to address SA-CONTRIB-2026-332
+
 05 November 2026 - Version 12.6.6
 ------------------------------
 - Bumped bootstrap to 3.45 to address SA-CONTRIB-2026-236 (#228)
