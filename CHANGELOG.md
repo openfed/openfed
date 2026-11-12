@@ -1,5 +1,9 @@
 CHANGELOG
 =========
+12 November 2026 - Version 12.6.8
+------------------------------
+- Fixed page_manager patches after bump to 4.1.
+
 12 November 2026 - Version 12.6.7
 ------------------------------
 - Bumped page_manager to 4.1 to address SA-CONTRIB-2026-330
