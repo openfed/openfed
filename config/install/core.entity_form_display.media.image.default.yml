@@ -7,12 +7,18 @@ dependencies:
     - media.type.image
   module:
     - image
+    - media_entity_file_replace
     - path
 id: media.image.default
 targetEntityType: media
 bundle: image
 mode: default
 content:
+  replace_file:
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   created:
     type: datetime_timestamp
     weight: 10

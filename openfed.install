@@ -6,6 +6,7 @@
 
 use Drupal\Core\Config\Entity\ConfigEntityUpdater;
 use Drupal\Core\DrupalKernelInterface;
+use Drupal\Core\Utility\UpdateException;
 use Drupal\field\FieldConfigInterface;
 use Drupal\user\Entity\Role;
 use Drupal\views\Entity\View;
@@ -509,4 +510,23 @@ function _openfed_update_130609_migrate_block_content_permissions() {
   return t('Migrated block content permissions for roles: @roles. block_content_permissions has been uninstalled.', [
     '@roles' => $updated_roles ? implode(', ', $updated_roles) : t('none'),
   ]);
+}
+
+/**
+ * Enables source file replacement on default media form displays only.
+ */
+function openfed_update_140000() {
+  if (!\Drupal::moduleHandler()->moduleExists('media')) {
+    return t('Media is not enabled. File replacement configuration was skipped.');
+  }
+
+  include_once __DIR__ . '/includes/openfed.media_file_replace.inc';
+
+  if (!\Drupal::moduleHandler()->moduleExists('media_entity_file_replace')) {
+    if (!\Drupal::service('module_installer')->install(['media_entity_file_replace'])) {
+      throw new UpdateException('Unable to install media_entity_file_replace.');
+    }
+  }
+
+  return implode("\n", _openfed_configure_media_file_replace());
 }
