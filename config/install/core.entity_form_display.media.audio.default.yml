@@ -6,12 +6,18 @@ dependencies:
     - media.type.audio
   module:
     - file
+    - media_entity_file_replace
     - path
 id: media.audio.default
 targetEntityType: media
 bundle: audio
 mode: default
 content:
+  replace_file:
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   created:
     type: datetime_timestamp
     weight: 10
