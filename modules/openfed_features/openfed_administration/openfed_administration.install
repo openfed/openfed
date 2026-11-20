@@ -4,6 +4,8 @@
  * Contains install and update functions for Openfed Administration.
  */
 
+use Drupal\openfed_administration\Plugin\views\field\EntityTranslations;
+
 /**
  * Implements hook_install().
  */
@@ -64,6 +66,8 @@ function openfed_administration_update_10001() {
   $replace_embeddable($data);
 
   if ($changed) {
+    // Normalize legacy language exclusions before resaving the Media view.
+    _openfed_administration_normalize_view_entity_languages($data);
     $config->setData($data)->save();
     return 'Updated views.view.media labels from "Embeddable" to "Media".';
   }
@@ -71,3 +75,37 @@ function openfed_administration_update_10001() {
   return 'No "Embeddable" labels found in views.view.media.';
 }
 
+/**
+ * Store Views translation exclusions as lists of language codes.
+ */
+function openfed_administration_update_10002(): void {
+  // Numbered updates run before Views post-updates that resave the views.
+  $config_factory = \Drupal::configFactory();
+  foreach ($config_factory->listAll('views.view.') as $name) {
+    $config = $config_factory->getEditable($name);
+    $data = $config->getRawData();
+    if (_openfed_administration_normalize_view_entity_languages($data)) {
+      $config->setData($data)->save();
+    }
+  }
+}
+
+/**
+ * Normalizes translation exclusions in a view's stored field definitions.
+ */
+function _openfed_administration_normalize_view_entity_languages(array &$data): bool {
+  $changed = FALSE;
+  foreach ($data['display'] ?? [] as $display_id => $display) {
+    foreach ($display['display_options']['fields'] ?? [] as $field_id => $field) {
+      if (($field['plugin_id'] ?? NULL) !== 'entity_translations' || !array_key_exists('entity_languages', $field)) {
+        continue;
+      }
+      $languages = EntityTranslations::normalizeExcludedLanguages($field['entity_languages']);
+      if ($languages !== $field['entity_languages']) {
+        $data['display'][$display_id]['display_options']['fields'][$field_id]['entity_languages'] = $languages;
+        $changed = TRUE;
+      }
+    }
+  }
+  return $changed;
+}

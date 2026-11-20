@@ -281,8 +281,7 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          entity_languages:
-            en: 0
+          entity_languages: []
         type:
           id: type
           table: node_field_data
