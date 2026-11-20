@@ -1,0 +1,7 @@
+translation_collector_config.settings:
+  path: '/admin/config/regional/translation-collector/config'
+  defaults:
+    _form: '\Drupal\translation_collector_config\Form\SettingsForm'
+    _title: 'Config settings'
+  requirements:
+    _permission: 'administer site configuration'

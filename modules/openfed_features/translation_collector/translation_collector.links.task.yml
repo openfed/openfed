@@ -1,0 +1,11 @@
+translation_collector.settings_tab:
+  title: 'Settings'
+  route_name: translation_collector.settings
+  base_route: translation_collector.settings
+  weight: 0
+
+translation_collector.strings_tab:
+  title: 'Translation collector strings'
+  route_name: view.translation_collector_strings.overview
+  base_route: translation_collector.settings
+  weight: 10

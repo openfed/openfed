@@ -1,0 +1,10 @@
+{
+  "name": "translation_collector",
+  "description": "Base module for translatable string collector and export tools.",
+  "type": "drupal-module",
+  "license": "GPL-2.0-or-later",
+  "require": {
+    "phpoffice/phpspreadsheet": "^2.1"
+  }
+}
+
