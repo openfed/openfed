@@ -2,7 +2,6 @@
 
 namespace Drupal\openfed_administration\Plugin\views\field;
 
-use Drupal\Core\Entity\ContentEntityInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Language\LanguageManagerInterface;
 use Drupal\Core\Link;
@@ -76,13 +75,13 @@ class EntityTranslations extends FieldPluginBase {
       $entity_languages_options[$key] = $language->getName();
     }
     // Field with all the enabled languages on the website.
-    $form['entity_languages'] = array(
+    $form['entity_languages'] = [
       '#title' => $this->t('Languages to exclude'),
       '#description' => $this->t('Select the languages that should be excluded when displaying translations.'),
       '#type' => 'checkboxes',
       '#options' => $entity_languages_options,
-      '#default_value' => $this->options['entity_languages'],
-    );
+      '#default_value' => self::normalizeExcludedLanguages($this->options['entity_languages']),
+    ];
 
     parent::buildOptionsForm($form, $form_state);
   }
@@ -90,8 +89,33 @@ class EntityTranslations extends FieldPluginBase {
   /**
    * {@inheritdoc}
    */
+  public function submitOptionsForm(&$form, FormStateInterface $form_state) {
+    parent::submitOptionsForm($form, $form_state);
+    $path = ['options', 'entity_languages'];
+    $form_state->setValue($path, self::normalizeExcludedLanguages($form_state->getValue($path)));
+  }
+
+  /**
+   * Converts legacy checkbox values to a list of excluded language codes.
+   *
+   * @param mixed $value
+   *   The language list, checkbox map, or legacy empty default.
+   *
+   * @return string[]
+   *   The excluded language codes.
+   */
+  public static function normalizeExcludedLanguages(mixed $value): array {
+    if (!is_array($value)) {
+      return [];
+    }
+    return array_is_list($value) ? $value : array_keys(array_filter($value));
+  }
+
+  /**
+   * {@inheritdoc}
+   */
   public function render(ResultRow $values) {
-    /** @var ContentEntityInterface $entity */
+    /** @var \Drupal\Core\Entity\ContentEntityInterface $entity */
     $entity = $values->_entity;
     $entity_id = $entity->id();
     $entity_type = $entity->getEntityTypeId();
@@ -101,22 +125,16 @@ class EntityTranslations extends FieldPluginBase {
     }
 
     // Get all the enabled site languages.
-    $languages = $language_options = $this->languageManager->getLanguages();
+    $languages = $this->languageManager->getLanguages();
     $output = [];
 
     // Get the languages to use, according to the view field settings.
-    if (is_array($this->options['entity_languages'])) {
-      // This array will have the site enabled languages, excluding any selected
-      // languages on the view field settings.
-      $language_options = array_diff_key($languages, array_filter($this->options['entity_languages']));
-    }
+    $excluded = self::normalizeExcludedLanguages($this->options['entity_languages']);
+    $language_options = array_diff_key($languages, array_flip($excluded));
 
-    // If we have enabled languages, this will always be an array, but let's be
-    // sure.
     if (is_array($language_options)) {
       foreach ($language_options as $language_prefix => $value) {
         $language_name = $this->languageManager->getLanguageName($language_prefix);
-        // Check if the entity has any translations to display.
 
         if ($entity->hasTranslation($language_prefix)) {
           $options = [
@@ -164,7 +182,7 @@ class EntityTranslations extends FieldPluginBase {
     $options = parent::defineOptions();
     // Field options is empty by default since we don't want to exclude any
     // language.
-    $options['entity_languages'] = ['default' => ''];
+    $options['entity_languages'] = ['default' => []];
     return $options;
   }
 

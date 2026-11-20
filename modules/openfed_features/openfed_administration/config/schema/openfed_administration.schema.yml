@@ -3,5 +3,8 @@ views.field.entity_translations:
   label: 'Entity translations'
   mapping:
     entity_languages:
-      type: mixed
+      type: sequence
       label: 'Languages to exclude'
+      sequence:
+        type: string
+        label: 'Excluded language code'
