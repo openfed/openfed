@@ -27,6 +27,7 @@
         ]
     },
     "scripts": {
+        "project-prepare14": "OpenfedProject\\composer\\Openfed14Preparation::prepare",
         "post-install-cmd": [
             "OpenfedProject\\composer\\ScriptHandler::createRequiredFiles"
         ],
