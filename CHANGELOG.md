@@ -1,5 +1,11 @@
 CHANGELOG
 =========
+
+24 November 2026 - Version 14.0.0-alpha3
+------------------------------
+- Updated Page Manager to 4.1 and Smart Trim to 2.3.2 for security.
+- Fixed a Views configuration schema warning for language exclusions.
+
 10 November 2026 - Version 14.0.0-alpha2
 ------------------------------
 - Updated Kiso for Drupal 11 compatibility, migrated to object-oriented hooks, and applied PHPStan and PHPCS.
