@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+24 November 2026 - Version 14.0.0-alpha4
+------------------------------
+- Fixed #3221375 Drupal core patch for Drupal 11.4.
+
 24 November 2026 - Version 14.0.0-alpha3
 ------------------------------
 - Updated Page Manager to 4.1 and Smart Trim to 2.3.2 for security.
