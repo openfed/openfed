@@ -85,7 +85,7 @@
                 "Issue #2321071: BaseFieldOverride fails": "https://www.drupal.org/files/issues/2026-10-27/2321071-78.patch",
                 "Issue #2649268: Entity Field Query throws QueryException when querying all revisions and setting condition on entity reference field": "https://www.drupal.org/files/issues/2026-10-27/2649268-45.patch",
                 "Issue #2898335: Using AJAX in menu link's edit form causes database connection serialization errors": "https://www.drupal.org/files/issues/2025-02-26/2898335-10.patch",
-                "Issue #3221375: Wrong language field labels after `drush cr` because of Drush language negotiation": "https://git.drupalcode.org/project/drupal/-/merge_requests/13139.patch",
+                "Issue #3221375: Wrong language field labels after `drush cr` because of Drush language negotiation": "https://www.drupal.org/files/issues/2026-11-24/3221375-94.patch",
                 "Issue #3359511: [regression] missing menu active trail since Drupal 9.5.9": "https://www.drupal.org/files/issues/2026-09-16/drupal-3359511-regression-missing-menu-11.4.x.patch"
             },
             "drupal/ckeditor_accordion": {
